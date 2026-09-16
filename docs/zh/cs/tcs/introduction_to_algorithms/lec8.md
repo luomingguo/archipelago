@@ -1,18 +1,20 @@
 ---
-title: '优先队列 & 二叉堆'
+title: "优先队列与二叉堆"
 type: lecture
 lecture: 8
-tags: []
+tags: [priority-queue, binary-heap, heapsort]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-8-binary-heaps/
 ---
-# Lec 8 优先队列 & 二叉堆
+# Lec 8 优先队列与二叉堆
 
-介绍另外一种类似树的数据结构称为二叉堆，他给了我们排序的另外一种思路
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-8-binary-heaps/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec8/)
 
-- 优先队列接口
-- 优先队列的排序
-- 二叉堆
-- 堆排序
+## TL;DR
+
+- 优先队列关心插入和取出最值；不同数据结构在这两个操作之间分配不同成本。
+- 二叉堆用紧凑数组表示完全二叉树，并以堆序不变量保证根为最值；上浮和下沉的成本为 $O(\log n)$。
+- 自底向上建堆是 $O(n)$ 而非 $O(n\log n)$；反复删除最值得到原地堆排序，总时间为 $O(n\log n)$。
 
 ## 优先队列接口
 
@@ -79,7 +81,7 @@ Priority Queue 提供了一个用于排序通用的框架，这里将提供三�
   - ``Build(A)``, e.g。, 可以通过一个接一个顺序 insert 数据项
   - 重复执行``delete_min()``(或者``delete_max()``) 来确定排序顺序
 - 所有复杂的工作都发生在数据结构内部
-- 运行时间$T_{build} + n · T_{delete\_max} \le n · T_{insert} + n · T_{delete\_max}$​
+- 运行时间$T_{build} + n · T_{delete\_max} \le n · T_{insert} + n · T_{delete\_max}$
 - 很多排序算法我们可以看作是优先队列排序。
 
 ### 完全二叉树
@@ -97,7 +99,7 @@ Priority Queue 提供了一个用于排序通用的框架，这里将提供三�
 
 **视角：**数组与完全二叉树之间的双射。
 
-![截屏 2024-07-24 17.48.25](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a0cdf356961.png)
+![优先队列与二叉堆图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a0cdf356961.png)
 
 **数组 n 个元素的完全二叉树视角的高度为**：$\lceil\log_2{n}\rceil$(国外教材是， lgn)，所以它是一棵平衡的二叉树
 
@@ -115,10 +117,10 @@ Priority Queue 提供了一个用于排序通用的框架，这里将提供三�
 
 思路： 将较大的元素保持在树的较高位置，但仅在局部。
 
-- 最大堆性质，在节点 i 处： 对于$j \in \{left(i), right(i)\},有 Q[i] \ge Q[j]$​
+- 最大堆性质，在节点 i 处： 对于$j \in \{left(i), right(i)\},有 Q[i] \ge Q[j]$
 - 最大堆的是一个满足所有节点最大堆性质的数组
-- 推断： 在最大堆中，每个节点 i， 对于其子树中所有节点 j，都满足$Q[i] \ge  Q[j]$​
-  - ![截屏 2024-07-24 18.05.46](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a0d203b9b3e.png)
+- 推断： 在最大堆中，每个节点 i， 对于其子树中所有节点 j，都满足$Q[i] \ge  Q[j]$
+  - ![优先队列与二叉堆图示 2](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a0d203b9b3e.png)
 
 ### 插入操作
 
@@ -153,11 +155,11 @@ Priority Queue 提供了一个用于排序通用的框架，这里将提供三�
 - 最大堆性质保证所有节点都大于等于其后代，除了 Q[i]可能小于某些后代（除非 i 是叶节点，这种情况下已经满足）。
 - 如果需要交换，交换后 Q[j] 代替 Q[i] 保证了相同的性质。
 
-**运行时间**：树的高度，故时间复杂度为 $\Theta(\log n)$​。
+**运行时间**：树的高度，故时间复杂度为 $\Theta(\log n)$。
 
 ### 构建操作
 
-通过重复的 insert 实现最大堆优先队列是需要花费时间$\sum^n_{i=0}\log{i} = \log{n!} = O(n\log{n})$​。最大堆可以从一个无序数组中构建。方法是从最后一个非叶节点开始，向上逐个进行 **max heapify**，直到根节点。这种方法保证堆的构建是高效的，可以在线性时间内构建最大堆。
+通过重复的 insert 实现最大堆优先队列是需要花费时间$\sum^n_{i=0}\log{i} = \log{n!} = O(n\log{n})$。最大堆可以从一个无序数组中构建。方法是从最后一个非叶节点开始，向上逐个进行 **max heapify**，直到根节点。这种方法保证堆的构建是高效的，可以在线性时间内构建最大堆。
 
 ```python
 def build_max_heap(A):
@@ -166,7 +168,7 @@ def build_max_heap(A):
     max_heapify_down(A, n, i)     # O(log n - log i) fix max heap
 ```
 
-通过这样处理能够花费 O(n)而不是$O(n\log{n})$​的成本。我们可以用 Stirlig‘s 渐进 $n! = \Theta(\sqrt{n}(n/e)^e)$
+通过这样处理能够花费 O(n)而不是$O(n\log{n})$的成本。我们可以用 Stirlig‘s 渐进 $n! = \Theta(\sqrt{n}(n/e)^e)$
 $$
 T(n) < \sum^n_{i=1}(\log{n}-\log{i}) = \log{\frac{n^n}{n!}=O(\log(e^n/\sqrt{n})) = O(n\log{e}-\log{\sqrt{n})=O(n})}
 $$
@@ -186,3 +188,9 @@ $$
 - 使用数组进行原地优先队列排序就是选择排序。
 - 使用有序数组进行原地优先队列排序就是插入排序。
 - 使用二叉最大堆进行原地优先队列排序就是堆排序。
+
+## 我的理解
+
+::: insight
+建堆的线性界提醒我们，不能用“每个节点最多走树高”直接乘出松界：绝大多数节点靠近叶子，能下沉的距离很短，按高度分组求和才能看到 $O(n)$。
+:::

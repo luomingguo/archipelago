@@ -1,15 +1,22 @@
 ---
-title: 随机变量
+title: "随机变量与概率分布"
 type: lecture
 lecture: 21
-tags: []
+tags: [random-variable, probability-distribution, binomial-distribution]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture21-2024may02_mp4/
 ---
-# Lec 17 随机变量
+# Lec 21 随机变量与概率分布
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture21-2024may02_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec21.pdf)
+
+## TL;DR
+
+- 随机变量是从样本空间到数值的函数，它本身不是“随机的未知数”，随机性来自被抽取的样本点。
+- 概率质量函数（PMF）给出每个离散值的概率，累积分布函数（CDF）给出取值不超过阈值的概率。
+- 二项分布描述 $n$ 次独立 Bernoulli 试验中成功次数，其 PMF 为 $\binom nk p^k(1-p)^{n-k}$。
 
 ## Lecture 21：随机变量
-
-> 来源：MIT 6.1200J / 18.062J Mathematics for Computer Science，Spring 2024
 
 ------
 
@@ -114,3 +121,9 @@ $$f_{n,p}(\alpha n) \approx \frac{1}{\sqrt{2\pi\alpha(1-\alpha)n}} \cdot \left(\
 - $f(50) \approx 0.08$（在均值处仍很小）
 - $f(25) \approx 1.9 \times 10^{-7}$（极其微小）
 - 事实上，$\Pr[X = 25] > \Pr[X < 25]$（两者均极小）
+
+## 我的理解
+
+::: insight
+随机变量把复杂结果压缩成我们关心的可计算特征；同一个样本空间上可以定义许多不同随机变量。因此建模时首先要问“哪个数量能回答问题”，而不是立即套一个熟悉分布。
+:::

@@ -1,11 +1,20 @@
 ---
-title: 证明
+title: "谓词、集合与证明"
 type: lecture
 lecture: 1
-tags: []
+tags: [proof, propositional-logic, sets]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture01-2024feb06_mp4/
 ---
-# Lec 1 证明
+# Lec 1 谓词、集合与证明
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture01-2024feb06_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec01.pdf)
+
+## TL;DR
+
+- 数学证明是从明确公理出发，通过合法逻辑推理建立命题的过程；实验和大量例子不能替代证明。
+- 命题具有确定真值，谓词的真值则依赖变量；否定、合取、析取、蕴含和双条件把简单命题组合成复杂命题。
+- 蕴含 $PRightarrow Q$ 只在 $P$ 真而 $Q$ 假时为假，并与逆否命题等价；集合语言则用来精确表达对象的范围和关系。
 
 ## 一、证明
 
@@ -45,7 +54,7 @@ status: complete
 
 - 命题 1： $2 + 3 = 5$（True）
 - 命题 2： $2 + 3 = 6$（False）
-- 命题 3：$\forall n \in \mathbb{N},; n^2 + n + 41 \text{ is prime}$（False，$n = 41$ 时 $= 43 \times 41$）
+- 命题 3：$\forall n \in \mathbb{N},\; n^2 + n + 41 \text{ is prime}$（False，$n = 41$ 时 $= 43 \times 41$）
 
 **非命题示例：** "Hello."、"Who are you?"、"This statement is false."（自指悖论，不处理）
 
@@ -118,7 +127,7 @@ status: complete
 | F    | T    | T              |
 | F    | F    | T              |
 
-**注意：** $F \implies T$​ 这一种情况可能不太直观，所以我们用一个更具体的例子：
+**注意：** $F \implies T$ 这一种情况可能不太直观，所以我们用一个更具体的例子：
 
 ::: example
 每周三我们穿粉色
@@ -195,12 +204,11 @@ status: complete
 :::
 
 ::: theorem Theorem 8
-Gödel 不完备定理（*Gödel's Incompleteness Theorem*）： 不存在既完备又相容的公理集。
+Gödel 第一不完备定理（*Gödel's First Incompleteness Theorem*）：任何足以表达基本算术、可有效公理化且相容的形式系统，都不是完备的。
 :::
 
-::: theorem 推论 Corollary
-若要相容性（必要条件），则必然存在真命题无法被证明
-哥德巴赫猜想可能就是这样一个例子
+::: insight
+“不完备”是相对于某个特定形式系统而言：存在该系统无法证明也无法证伪的命题。目前不知道哥德巴赫猜想是否独立于常用公理系统，因此不能将它当作定理的已知实例。
 :::
 
 **平行公理的例子（三种等价有效的几何体系）：**
@@ -222,3 +230,9 @@ Gödel 不完备定理（*Gödel's Incompleteness Theorem*）： 不存在既完
 | *Converse*                    | 逆命题             |
 | *Consistent / Complete*       | 相容 / 完备        |
 | *Set-builder notation*        | 集合构造符         |
+
+## 我的理解
+
+::: insight
+证明的可检查性来自它把“相信”拆成一条条可独立验证的推理。在程序语言里，谓词常对应布尔函数，而证明不变量就是说明这些谓词为何在每一步之后仍然为真。
+:::

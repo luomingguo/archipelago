@@ -2,11 +2,18 @@
 title: CPU 时序攻击（CPU Timing Attacks）
 type: lecture
 lecture: 15
-tags: []
+tags: [side-channel, cache-timing, speculative-execution, constant-time]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/l16-cpu-timing-attacks.pdf'
 ---
 # Lec 15 CPU 时序攻击（CPU Timing Attacks）
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- 即使密码算法在抽象模型中安全，执行时间、缓存命中和推测执行也可能泄露与秘密相关的内部行为。
+- Flush+Reload 依赖共享内存，Prime+Probe 只需共享缓存组；Spectre/Meltdown 则利用暂态执行把本不应可见的数据编码进缓存状态。
+- 常数时间代码、避免秘密索引、硬件隔离与序列化可缩小泄露，但侧信道是跨层问题，单一补丁通常不能建立完整保证。
 
 ## 1. 侧信道攻击总览
 
@@ -53,10 +60,10 @@ status: complete
 
 不需要共享内存：
 
-1. **Prime**：攻击者填满某 Cache Set（使其全部属于攻击者数据）
+1. **Prime**：攻击者填满某缓存组（使其全部属于攻击者数据）
 2. **Wait**：受害者运行
 3. **Probe**：攻击者重新访问这些地址，测量时间
-   - 时间长 → 受害者访问了该 Cache Set（驱逐了攻击者的数据）
+   - 时间长 → 受害者访问了该缓存组（驱逐了攻击者的数据）
 
 可跨进程、跨 VM 使用（只需测量访问时间，无需共享内存）。
 
@@ -185,3 +192,7 @@ $$\Delta t = t_\text{miss} - t_\text{hit} \approx 200 - 4 = 196 \text{ 周期}$$
 **Meltdown 信息编码**：
 
 $$\text{probe\_array}[\text{secret} \times 4096] \quad \text{（利用 page size 避免 prefetcher 影响）}$$
+
+::: insight
+侧信道安全是硬件、编译器、运行时和应用共同维持的性质，单层“常数时间”承诺不足以覆盖整条执行路径。
+:::

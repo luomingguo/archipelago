@@ -2,12 +2,18 @@
 title: 寄存器分配 I（Register Allocation I）——活跃性分析、死代码消除与活跃区间
 type: lecture
 lecture: 21
-tags: []
+tags: [liveness-analysis, dead-code-elimination, dataflow-analysis, register-allocation]
 status: complete
 ---
 # Lec 21 寄存器分配 I（Register Allocation I）——活跃性分析、死代码消除与活跃区间
 
 > 寄存器分配的两讲共用一份 slides《Register Allocation (+ Liveness, Dead Code Elimination)》。本讲（L21）打地基：从**栈式 IR 转三地址码**，做**常量传播 / 死代码消除**，并用**活跃性分析 (liveness analysis)** 这一数据流分析支撑它们；最后引出**活跃区间 (live range / live interval)** 与寄存器分配问题的形式化。算法（线性扫描、图着色）放到 L22。
+
+## TL;DR
+
+- 将栈式 IR 转成三地址码会把隐含在操作数栈中的数据依赖显式化，使常量传播、死代码消除和寄存器分配可共享同一表示。
+- 变量在程序点活跃，当且仅当从该点出发存在一条路径，在被重新定义前使用它；因此活跃性是后向、并集的数据流问题。
+- 活跃区间近似值占用寄存器的时间段，重叠区间不能共享寄存器，为线性扫描与干涉图提供输入。
 
 ---
 

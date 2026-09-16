@@ -1,9 +1,10 @@
 ---
 title: zk-SNARKs
 type: lecture
-lecture: 17
-tags: []
+lecture: 19
+tags: [zk-snark, polynomial-commitment, zero-knowledge, verifiable-computation]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l19-snarks.pdf'
 ---
 # Lec 19 zk-SNARKs
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：以标准处理撰写，要点与本课"zk-SNARKs"一致。*
 
 ---
+
+## TL;DR
+
+- zk-SNARK 同时追求零知识、简洁证明与快速验证，适合验证远大于验证成本的计算。
+- 典型流程先把程序算术化，再用多项式承诺和证明系统保证约束被满足。
+- 不同家族在可信设置、证明大小、验证速度、后量子安全与证明者成本之间取舍。
 
 ## 0. 是什么
 
@@ -68,9 +75,13 @@ status: complete
 
 ---
 
-## 5. 本讲小结
+## 5. zk-SNARK 小结
 
 - zk-SNARK = 零知识 + 简洁 + 非交互 + 知识论证。
 - 流水线：算术化（R1CS/QAP）→ 多项式恒等 + 随机点检验 → 多项式承诺 → Fiat–Shamir 去交互 + 盲化做 ZK。
 - 家族取舍：Groth16（短证明/电路相关 setup）、PLONK（通用 setup）、STARK（透明/抗量子）。
 - 证明贵、验证廉；可信设置需多方仪式销毁毒废料。
+
+::: insight
+SNARK 把验证成本转移给证明者和设置阶段；评估方案时必须同时核算证明生成、可信设置与升级成本。
+:::

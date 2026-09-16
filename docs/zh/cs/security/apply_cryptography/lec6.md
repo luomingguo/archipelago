@@ -2,8 +2,9 @@
 title: Rabin、RSA 与为何需要后量子
 type: lecture
 lecture: 6
-tags: []
+tags: [rsa, rabin-cryptosystem, trapdoor-function, post-quantum-cryptography]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l06-pq.pdf'
 ---
 # Lec 6 Rabin、RSA 与为何需要后量子
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：经典材料（RSA 1977 / Rabin 1979 / Shor 1994），以标准处理撰写，要点与本课"Rabin, RSA, Why post-quantum?"一致。*
 
 ---
+
+## TL;DR
+
+- 陷门单向函数让公开参数支持正向计算，只有持有陷门者能高效求逆；RSA 与 Rabin 分别建立在 RSA 问题和整数分解/平方根困难上。
+- RSA 与 Rabin 的代数映射不是可直接使用的安全加密，仍需随机编码、认证和严格参数；“数学可逆”不等于 IND-CPA/CCA 安全。
+- Shor 算法能在量子计算机上高效求解分解与离散对数，使 RSA、DH 和 ECC 同时失效，后量子迁移必须在大规模量子机出现前完成。
 
 ## 0. 主线
 
@@ -70,7 +77,7 @@ L5 的公钥基于离散对数；本讲转向**基于因子分解**的陷门函�
 
 ---
 
-## 5. 本讲小结
+## 5. RSA、Rabin 与后量子小结
 
 | 方案 | 陷门基础 | 安全 ⟺ 分解？ | 量子安全？ |
 |------|----------|----------------|------------|
@@ -82,3 +89,7 @@ L5 的公钥基于离散对数；本讲转向**基于因子分解**的陷门函�
 - 公钥 = 陷门单向函数；RSA/Rabin 基于因子分解。
 - 教科书 RSA 必须随机化填充；Rabin 安全严格等价分解但有四义性。
 - Shor 摧毁所有经典数论公钥 → 后量子（格）登场。
+
+::: insight
+后量子迁移不是单次替换算法，而是包含资产盘点、混合部署、协议协商与长期密文保密期的生命周期工程。
+:::

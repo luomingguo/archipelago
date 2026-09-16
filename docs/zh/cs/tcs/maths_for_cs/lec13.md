@@ -1,11 +1,20 @@
 ---
-title: 连通性与树
+title: "连通性与树"
 type: lecture
 lecture: 13
-tags: []
+tags: [graph-connectivity, trees, eulerian-circuit]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture13-2024apr02_mp4/
 ---
 # Lec 13 连通性与树
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture13-2024apr02_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec13.pdf)
+
+## TL;DR
+
+- 游走允许重复顶点和边，迹不重复边，路径不重复顶点；在无向图中，顶点间有游走与有路径对可达性而言等价。
+- 连通分量是互相可达顶点的极大集合；欧拉回路恰好存在于所有非孤立顶点连通且每个顶点度数为偶数的图。
+- 树可等价刻画为连通无环图、极小连通图或极大无环图，并对 $n$ 个顶点恰有 $n-1$ 条边。
 
 ## 1. 游走、迹、路径
 
@@ -98,3 +107,9 @@ status: complete
 - $G$ 中每对顶点之间有**唯一路径**
 - $G$ 是**极小连通图**（删去任意一条边则不连通）
 - $G$ 是**极大无环图**（加入任意一条边则产生圈）
+
+## 我的理解
+
+::: insight
+树的多个等价定义提供了不同证明接口：需要排除环时用唯一路径，需要计数时用 $|E|=|V|-1$，需要构造时用“连通且删任意边都失连”。
+:::

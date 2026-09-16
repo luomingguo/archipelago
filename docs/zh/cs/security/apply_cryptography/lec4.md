@@ -2,8 +2,9 @@
 title: 对称原语 II：PRP、Feistel、DES 与 AES
 type: lecture
 lecture: 4
-tags: []
+tags: [pseudorandom-permutation, feistel-network, aes, linear-cryptanalysis]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l04-prp.pdf'
 ---
 # Lec 4 对称原语 II：PRP、Feistel、DES 与 AES
 
@@ -11,6 +12,12 @@ status: complete
 > *来源：课程自家 PRP/AES 讲义（Henry Corrigan-Gibbs），对应 2026"Symmetric-key primitives II"。*
 
 ---
+
+## TL;DR
+
+- PRP 是带密钥的可逆置换，PRF 是随机外观函数；在查询量远小于生日界时，PRP/PRF Switching Lemma 允许把两者近似替换。
+- Feistel 网络用不可逆轮函数构造可逆置换，Luby–Rackoff 给出轮数与安全性的联系；DES 展示了密钥长度和结构老化的风险。
+- AES 依靠迭代的非线性代换与线性混合抵抗差分、线性分析，但查表实现仍可能经缓存侧信道泄露密钥。
 
 ## 0. 量子 vs 后量子（先厘清概念）
 
@@ -119,10 +126,14 @@ $$\Pr\big[x[B_x]\oplus y[B_y]=k[B_k]\big] \ge \tfrac12 + e,\quad y\leftarrow F(k
 
 ---
 
-## 6. 本讲小结
+## 6. PRP、Feistel 与 AES 小结
 
 - 分组密码 = PRP；大输出时切换引理（$T^2/|X|$）让它可当 PRF 用。
 - 设计三步法：理想原语 → 构造 → 实例化（信仰之跃在第 3 步）。
 - Feistel 用随机函数造可逆置换；Luby–Rackoff 3/4 轮。
 - AES = 迭代 Even-Mansour（SubBytes/ShiftRows/MixColumns）；防缓存侧信道。
 - 攻击靠统计偏置 + 海量明密文对（线性/差分密码分析）。
+
+::: insight
+分组密码的抽象安全与实现安全是两层问题；理想化 PRP 证明不会自动覆盖缓存、功耗和故障侧信道。
+:::

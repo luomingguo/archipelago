@@ -1,21 +1,24 @@
 ---
-title: 深度优先搜索
+title: "深度优先搜索"
 type: lecture
 lecture: 10
-tags: []
+tags: [depth-first-search, topological-sort, cycle-detection]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-10-depth-first-search/
 ---
 # Lec 10 深度优先搜索
 
-- DFS
-- 全量 BFS/DFS
-- 图的连通性
-- 拓扑排序
-- 循环检测
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-10-depth-first-search/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec10/)
+
+## TL;DR
+
+- DFS 沿一条未访问边尽可能深入，再回溯处理其他分支；整个遍历依然只需 $O(|V|+|E|)$ 时间。
+- 对所有未访问顶点启动 DFS 可得到一片森林，并用完成顺序揭示连通性与依赖结构。
+- 有向图在无环时，顶点按 DFS 退出时间的逆序构成拓扑序；遇到指向当前递归栈的边则证明存在环。
 
 ## 背景： 可到达性问题
 
-![截屏 2024-07-31 18.54.20](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66aa17f178eca.png)
+![深度优先搜索图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66aa17f178eca.png)
 
 策略：设 P(s) = None， 然后运行 visit(s)
 
@@ -97,3 +100,9 @@ visit(u):
 - 断言： 如果 G 包含一个环，Full-DFS 将遍历从 v 到 v 的前驱的边
 - 证明： 考虑 G 中有一个环$(v_0, v_1, ... v_k, v_0)$
   - 不失一般性地，假设$v_0$是 Full-DFS 在环上访问的第一个顶点，对于每个$v_i$，在访问$v_i$完成之前，将访问$v_{i+1}$并完成访问，考虑边$(v_i, v_{i+1})$，如果$v_{i+1}$尚未被访问，他将访问被现在访问。因此在访问$v_0$完成之前，将第一次访问$v_k$（根据对$v_0$的假设），所以在访问$v_k$完成之前，将考虑边$(v_k, v_0)$，其中$v_0$是$v_k$的前驱
+
+## 我的理解
+
+::: insight
+BFS 保留的是距离层次，DFS 保留的是嵌套时间区间。后者不直接给无权最短路，却能把“先完成谁”变成拓扑顺序和环检测的证据。
+:::

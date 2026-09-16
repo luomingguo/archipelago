@@ -2,8 +2,9 @@
 title: 公钥加密：从 LWE 构造（Regev）
 type: lecture
 lecture: 7
-tags: []
+tags: [learning-with-errors, lattice-cryptography, public-key-encryption, post-quantum-cryptography]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l07-lwe.pdf'
 ---
 # Lec 7 公钥加密：从 LWE 构造（Regev）
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：以标准 Regev (2005) 处理撰写，要点与本课"PKE from LWE"一致。*
 
 ---
+
+## TL;DR
+
+- LWE 把“带少量噪声的线性方程难解”变成后量子公钥密码的安全基础。
+- Regev 加密用 LWE 样本生成公钥，用 $0$ 与 $q/2$ 的距离容纳解密噪声。
+- 参数必须同时满足安全性与正确性；模数、维度和误差分布共同决定噪声预算。
 
 ## 0. 主线
 
@@ -71,9 +78,13 @@ $$c_2-\mathbf{s}^\top\mathbf{c}_1 = (\mathbf{A}\mathbf{s}+\mathbf{e})^\top\mathb
 
 ---
 
-## 5. 本讲小结
+## 5. LWE 与 Regev 加密小结
 
 - LWE = "带噪线性方程难解"；判定/搜索等价，且有最坏-平均格归约背书。
 - Regev PKE：公钥是 LWE 样本，加密 = 用随机子集和掩盖 $\mu\lfloor q/2\rfloor$，解密靠噪声 $< q/4$。
 - 安全两步归约：判定-LWE（公钥伪随机）+ 留一散列（掩码近均匀）。
 - 噪声预算 $q/4$ 是格密码的核心约束，直接通向 FHE。
+
+::: insight
+在 LWE 系统里，正确性和安全性共享同一组参数；噪声太小削弱安全，太大又会使解密失败。
+:::

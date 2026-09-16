@@ -1,11 +1,20 @@
 ---
-title: 更多计数
+title: "容斥、鸽巢与组合恒等式"
 type: lecture
 lecture: 17
-tags: []
+tags: [inclusion-exclusion, pigeonhole-principle, combinatorial-identity]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture17-2024apr16_mp4/
 ---
-# Lec 17 更多计数
+# Lec 17 容斥、鸽巢与组合恒等式
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture17-2024apr16_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec17.pdf)
+
+## TL;DR
+
+- 容斥原理以交替加减的方式修正多个集合交集的重复计数，可用于计算并集、补集和互素元素个数。
+- 鸽巢原理把“对象数多于容器数”转化为必有碰撞的存在性结论；加强形式可给出至少某个容器的下界。
+- 双重计数通过两种方式计数同一集合证明组合恒等式，二项式定理和 Pascal 恒等式都可获得直接的组合解释。
 
 ## 1. 容斥原理（Inclusion-Exclusion，PIE）
 
@@ -124,3 +133,9 @@ $$\bigcup_{i=1}^{n} S_i = S_1 \cup \cdots \cup S_n, \quad \bigcap_{i=1}^{n} S_i 
 $$[n] := {1, 2, \ldots, n}$$
 
 边界约定：$\sum_{\emptyset} = 0$，$\prod_{\emptyset} = 1$，$\bigcup_{\emptyset} = \emptyset$，$\bigcap_{\emptyset} = U$（全集）。
+
+## 我的理解
+
+::: insight
+容斥与双重计数其实都在处理“一个对象被数了几次”。前者用交集层次逐步校正重复，后者主动构造两个重数恒等的视角。
+:::

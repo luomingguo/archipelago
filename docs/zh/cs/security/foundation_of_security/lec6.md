@@ -1,12 +1,19 @@
 ---
-title: '数字签名: RSA'
+title: 数字签名：RSA
 type: lecture
 lecture: 6
-tags: []
+tags: [rsa, digital-signature, elliptic-curve-cryptography, schnorr-signature]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec06.pdf'
 ---
-# Lec 6 数字签名: RSA
+# Lec 6 数字签名：RSA
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- RSA 的陷门置换来自模数分解困难，但“教科书式”直接对消息做幂运算具有乘法可塑性，不能作为安全签名。
+- RSA-FDH 和 RSA-PSS 通过哈希与随机化把消息编码到合适域；实践中应使用经过标准化的 PSS，而非自行设计填充。
+- ECDSA 与 Schnorr 以离散对数为基础并显著缩短密钥；每次签名的 nonce 必须唯一且不可预测，否则私钥可被恢复。
 
 ## 1. RSA 数学基础
 
@@ -155,3 +162,7 @@ $$s = k^{-1}(H(m) + dr) \bmod n$$
 
 $$e = H(R \| m),\ s = k + ex \bmod q$$
 $$\text{验证：} g^s = R \cdot y^e$$
+
+::: insight
+签名编码和填充属于密码构造本身，而不是可随意更换的序列化细节；错误组合会让安全归约失效。
+:::

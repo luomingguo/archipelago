@@ -1,11 +1,20 @@
 ---
-title: '动态规划 I: SRTBOT'
+title: "动态规划 I：SRTBOT 与 DAG"
 type: lecture
 lecture: 15
-tags: []
+tags: [dynamic-programming, memoization, dag]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-15-dynamic-programming-part-1-srtbot-fib-dags-bowling/
 ---
-# Lec 15 动态规划 I: SRTBOT
+# Lec 15 动态规划 I：SRTBOT 与 DAG
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-15-dynamic-programming-part-1-srtbot-fib-dags-bowling/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec15/)
+
+## TL;DR
+
+- 动态规划适用于子问题重叠的递归结构；备用子问题解把指数级递归树压缩为一张子问题 DAG。
+- SRTBOT 按子问题、递推关系、拓扑顺序、基本情况、原问题和时间分析组织设计与证明。
+- 自顶向下备忘录与自底向上填表计算同一个 DAG；两者的差别在于子问题的访问方式，而非数学递推。
 
 ## 本讲导览
 
@@ -157,7 +166,7 @@ def fib(n):
   return F[n]
 ```
 
-- 一个潜在的问题是，Fib 数可能增长到$\theta(n)$​位这么长，也就是说>> 机器字长 w，也就是说需要多个字来表示一个数字。
+- 一个潜在的问题是，Fib 数可能增长到$\theta(n)$位这么长，也就是说>> 机器字长 w，也就是说需要多个字来表示一个数字。
   - 这样一来加法操作需要分成多次按位加法来完成，每次加法的时间复杂度是$O(⌈n/w⌉)$
 
 - 非递归次数 *（标准加法 + 额外位操作） = 总的时间复杂度为$O(n + n^2 / w)$
@@ -173,7 +182,7 @@ DAG SSSP（单源最短路径）问题: 给定一个 DAG 和 源顶点 s， 计�
 
 - **S**ubproblems: 𝛿(s, v) for each v ∊ V
 
-- **R**elate: $𝛿(s, v) = \min \set{𝛿(s, u) + w(u, v) | u ∊ Adj^-(v) }  ∪ \set{∞}$​
+- **R**elate: $𝛿(s, v) = \min \left\{𝛿(s, u) + w(u, v) | u ∊ Adj^-(v) \right\}  ∪ \left\{∞\right\}$
   - 如果没有前驱节点，则路径长度为无穷大
 
 - **T**opo order：图 G 的拓扑排序
@@ -182,7 +191,7 @@ DAG SSSP（单源最短路径）问题: 给定一个 DAG 和 源顶点 s， 计�
 
 - **O**riginal: 𝛿(s, v) for all v ∊ V
 
-- **T**ime: $\sum_{v\in V}O(1 + |Adj^-(v)|) = O(|V| + |E|)$​
+- **T**ime: $\sum_{v\in V}O(1 + |Adj^-(v)|) = O(|V| + |E|)$
   - 每个顶点 vvv 的计算时间与其前驱顶点数量相关
 
 DAG 最短路径问题也可以通过 **边松弛算法** 来求解。松弛算法的思想是：
@@ -200,17 +209,17 @@ DAG 最短路径问题也可以通过 **边松弛算法** 来求解。松弛算�
 - 撞倒一个保龄球``i``，会获得$v_i$分
 - 撞到 2 个保龄球``i``和``i+1``，你将得到$v_i * v_{i+1}$分
 - 问题： 投掷 0 次或多次，使得目标是得到最大的分数
-- ![image-20240924102459539](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66f223025b56d.png)
+- ![动态规划 I：SRTBOT 与 DAG图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66f223025b56d.png)
 
 ### 基于分治算法的 SRTBOT 框架分析
 
 - Subproblems: B(i, j) = 从第 i, i + 1 ... j - 1 个保龄球最大总得分
 - Relation:
-  - $m = ⎣ (i+j) / 2⎦$​
+  - $m = ⎣ (i+j) / 2⎦$
   - 要么 m 和 m+1 同时被击中，要么没有
-  - $B(i, j) = \max \set{v_m·v_{m+1} + B(i,m)+B(m+2, j), B(i,m+1) + B(m+1,  j)}$
+  - $B(i, j) = \max \left\{v_m·v_{m+1} + B(i,m)+B(m+2, j), B(i,m+1) + B(m+1,  j)\right\}$
 - Topo order: 使 ``j-i``增长
-- Base Case: $B(i,i) = 0, B(i, i+1) = max \set{v_i, 0}$
+- Base Case: $B(i,i) = 0, B(i, i+1) = max \left\{v_i, 0\right\}$
 - Original: B(0, n)
 - Time = $T(n) = 4T(n/2) + O(1) = O(n^2)$
 
@@ -233,7 +242,7 @@ DAG 最短路径问题也可以通过 **边松弛算法** 来求解。松弛算�
 
 - **T**ime: θ(n) = θ(1) work * θ(n)  #subprobs
 
-![image-20240924102955019](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66f224262548f.png)
+![动态规划 I：SRTBOT 与 DAG图示 2](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66f224262548f.png)
 
 ```python
 # Bottom-up (iterative solution)
@@ -280,3 +289,9 @@ def bowl(v):
 > 良好的文本对齐应该将单词分成多行，以最小化包含单词的所有行的坏度总和。立方权重会对行中的大空白量进行严重惩罚。Microsoft Word 使用贪婪算法来对齐文本，该算法在移动到下一行之前，尽可能多地将单词放入一行。这种算法可能导致一些非常糟糕的行。相反，LATEX 使用动态规划格式化文本，以最小化这种空白量度量。
 >
 > 描述一个 \(O(n^2)\) 的算法，将 n 个单词适配到宽度为 s 的列中，以最小化所有行的坏度总和。
+
+## 我的理解
+
+::: insight
+动态规划最难的一步通常是定义子问题：状态必须包含足够信息，使剩余决策与过去无关；又不能携带无关历史，否则状态数会迅速爆炸。
+:::

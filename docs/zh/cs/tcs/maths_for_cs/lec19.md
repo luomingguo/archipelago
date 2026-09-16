@@ -1,15 +1,20 @@
 ---
-title: 条件概率
+title: "条件概率与 Bayes 定理"
 type: lecture
 lecture: 19
-tags: []
+tags: [conditional-probability, bayes-theorem, simpsons-paradox]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture19-2024apr25_mp4/
 ---
-# Lec 19 条件概率
+# Lec 19 条件概率与 Bayes 定理
 
-> 来源：MIT 6.1200J / 18.062J Mathematics for Computer Science，Spring 2024
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture19-2024apr25_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec19.pdf)
 
-------
+## TL;DR
+
+- 条件概率 $\Pr[A\mid B]=\Pr[A\cap B]/\Pr[B]$ 把样本空间限制到已知事件 $B$；乘法法则可把交集概率分解为条件概率之积。
+- Bayes 定理将“观察到证据的概率”反转为“观察证据后原因的概率”，后验同时取决于似然和先验基率。
+- Simpson 悖论表明分组中的相关方向可在合并数据后反转，原因是组别权重与混杂变量改变了总体比例。
 
 ## 1. 概率运算规则
 
@@ -134,3 +139,9 @@ $$\Pr[A \mid F] = \Pr[A \mid F \cap CS] \cdot \Pr[CS \mid F] + \Pr[A \mid F \cap
 **正确分析：** 双方均忽视了"Nicole 已被谋杀"这一已知事实，正确的概率是 $\Pr[G \mid A \cap M]$（即：在妻子已死且丈夫曾施暴的条件下，丈夫是凶手的概率），实际约为 **80%**。
 
 **教训：** 遇到条件概率问题，务必精确化所有事件，回归基本定义。
+
+## 我的理解
+
+::: insight
+诊断和分类中最容易忽略的是基率：即使检测很灵敏，当目标事件本来极罕见时，假阳性仍可能占阳性结果的大多数。因此只报准确率而不报先验分布会严重误导。
+:::

@@ -1,11 +1,20 @@
 ---
-title: 关系与计数
+title: "关系与计数原理"
 type: lecture
 lecture: 15
-tags: []
+tags: [relations, partial-order, counting]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture15-2024apr09_mp4/
 ---
-# Lec 15 关系与计数
+# Lec 15 关系与计数原理
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture15-2024apr09_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec15.pdf)
+
+## TL;DR
+
+- 二元关系是笛卡尔积的子集；函数是对每个输入恰好指定一个输出的特殊关系，单射与满射分别控制碰撞和覆盖。
+- 等价关系由自反、对称与传递性刻画，并把集合分割成不相交的等价类；偏序则用反对称性表示可比的先后或包含关系。
+- 双射法、加法法则和乘法法则通过构造或分解对象集计数；使用时要检查分类是否重叠及每步选择数是否恒定。
 
 ## 1. 关系（Relations）
 
@@ -139,3 +148,9 @@ $$|A_1 \times \cdots \times A_n| = |A_1| \cdot\ \cdots\ \cdot |A_n|$$
 **例：** 8 位序列号中无重复数字的比例：无重复的数量为 $10 \times 9 \times \cdots \times 3$，总数量为 $10^8$，比例约为 $1.8%$。
 
 **反例（不能用广义乘法法则）：** 求三位递增序列 $abc$（各位不同且 $a < b < c$）的数量。第二位的选择数依赖第一位的值（$a=7$ 时只有 $b=8$ 一种，$a=0$ 时有 8 种），因此**不满足**广义乘法法则的条件。
+
+## 我的理解
+
+::: insight
+计数问题的难点往往不是算式，而是为每个对象找到恰好一个生成过程。双射证明排除重复和遗漏，因而比“看起来有这么多种选择”更可靠。
+:::

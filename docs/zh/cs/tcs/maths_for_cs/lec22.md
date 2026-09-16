@@ -1,15 +1,20 @@
 ---
-title: 期望
+title: "期望与期望的线性"
 type: lecture
 lecture: 22
-tags: []
+tags: [expectation, linearity-of-expectation, indicator-random-variable]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture22-2024may07_mp4/
 ---
-# Lec 22 期望
+# Lec 22 期望与期望的线性
 
-> 来源：MIT 6.1200J / 18.062J Mathematics for Computer Science，Spring 2024
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture22-2024may07_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec22.pdf)
 
-------
+## TL;DR
+
+- 期望是随机变量按结果概率加权的平均值；对非负整数变量，也可用尾和公式将期望写成超过各阈值的概率之和。
+- 期望的线性对任意随机变量都成立，不需要独立性；因而可把难以直接分析的总量拆成简单随机变量之和。
+- 指示随机变量的期望等于对应事件的概率；用一组指示变量分别计数对象，是计算随机计数量期望的通用方法。
 
 ## 1. 期望的定义
 
@@ -121,7 +126,7 @@ $$\Pr[R = k] = \frac{1}{k!} \sum_{i=0}^{n-k} \frac{(-1)^i}{i!}$$
 
 一个随机变量的期望值（或称为期望）是一个能够揭示该变量行为特征的单一数值。期望值也被称为**均值**或**平均值**。更准确地说，一个随机变量的期望值是它的所有可能取值的加权平均值，其中每个取值的权重是它出现的概率。正式地讲，随机变量的期望值定义如下：
 
-$Ex[R] ::= \sum_{w\in S}R(w)\Pr[w]$​
+$Ex[R] ::= \sum_{w\in S}R(w)\Pr[w]$
 
 还有另外一种标准方法定义期望。
 
@@ -129,13 +134,13 @@ $Ex[R] ::= \sum_{w\in S}R(w)\Pr[w]$​
 >
 > Thm 17.5.1
 >
-> 对于任何随机变量 R，$Ex[R] = \sum_{x\in range(R)} x · \Pr[R = x]$​​。
+> 对于任何随机变量 R，$Ex[R] = \sum_{x\in range(R)} x · \Pr[R = x]$。
 >
 > 其中 range(R)表示 R 的取值范围，或者是值域
 
 直觉上， 期望值就是长期平均结果。如果你反复多次试验，比如扔骰子、抽签，每次结果是某个值 x，出现的概率是 $\Pr[R = x]$，那么在大量重复试验后，平均结果就会趋近于这个加权平均值。
 
-![image-20250530214238661](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683aa32e56c7c.png)
+![期望与期望的线性图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683aa32e56c7c.png)
 
 ## 期望的线性性质
 
@@ -145,7 +150,7 @@ $Ex[R] ::= \sum_{w\in S}R(w)\Pr[w]$​
 >
 > 对于任何随机变量$R_1$和$R_2$，都有$Ex[R_1+R_2] = Ex[R_1] + Ex[R_2]$
 
-![image-20250530212709650](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683c6727713a0.png)
+![期望与期望的线性图示 2](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683c6727713a0.png)
 
 > [!IMPORTANT]
 >
@@ -160,7 +165,7 @@ $Ex[R] ::= \sum_{w\in S}R(w)\Pr[w]$​
 > 定义**指示随机变量** $R_i$，表示事件 $A_i$ 是否发生：
 >
 > - 如果试验结果 $\omega$ 落在事件 $A_i$ 里，那么 $R_i(\omega) = 1$，
-> - 否则 $R_i(\omega) = 0$​。
+> - 否则 $R_i(\omega) = 0$。
 
 > [!IMPORTANT]
 >
@@ -207,20 +212,26 @@ $J = J_1 + J_2 + \dots + J_n$
 
 我们去 Taco Bell 买儿童套餐，每次会随机得到一辆不同颜色的“小赛车”。颜色一共有 nnn 种，每种颜色被选中的概率是**等概率**（uniform），且每次**独立**。我们大约要买多少次套餐，才能收集到 **每种颜色各至少一辆**？
 
-![image-20250601224131477](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683c66a72961e.png)
+![期望与期望的线性图示 3](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683c66a72961e.png)
 
-![image-20250601224334598](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683c671ac890d.png)
+![期望与期望的线性图示 4](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683c671ac890d.png)
 
 ### 无限求和的线性期望
 
-如果我们有一串随机变量$R_0, R_1, R_2, \dots$​，并且它们的期望之和是**绝对收敛**的，那么我们可以安全地交换期望和求和：
+如果我们有一串随机变量$R_0, R_1, R_2, \dots$，并且它们的期望之和是**绝对收敛**的，那么我们可以安全地交换期望和求和：
 $$
 \mathbb{E}[\sum^{\infin}_{i=0}R_i] = \sum^{\infin}_{i=0}E[R_i]
 $$
 绝对收敛： 就是把所有的$E[R_i]$都变成正数再求和，结果仍然是有限的（不发散）。为什么需要这个条件——因为无穷级数在数学上很敏感——如果不绝对收敛，可能交换求和顺序会改变结果，甚至得出错误的结论。
 
-![image-20250602212932486](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683da74499e1a.png)
+![期望与期望的线性图示 5](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683da74499e1a.png)
 
 ### 随机变量乘积的期望
 
 在一般情况下，**乘积的期望 ≠ 期望的乘积**。但如果如果两个随机变量 $R_1$ 和 $R_2$ 是**独立的**，那么：$E[R1⋅R2⋅⋯⋅Rn]=E[R1]⋅E[R2]⋅⋯⋅E[Rn]$
+
+## 我的理解
+
+::: insight
+期望只是分布的一个摘要，不代表典型结果：“手机随机归还”两种机制都有期望 1，但一种常出现少量正确，另一种只会全对或全错。要判断稳定性，还需要方差或尾概率。
+:::

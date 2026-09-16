@@ -2,13 +2,19 @@
 title: 语义（IMP）——完整大步操作语义
 type: lecture
 lecture: 7
-tags: []
+tags: [big-step-semantics, operational-semantics, imperative-language, error-semantics]
 status: complete
 ---
 # Lec 7 语义（IMP）——完整大步操作语义
 
 > 接 L6。给出 IMP 全部求值关系：布尔表达式、语句（赋值/顺序/if/while），并讨论"出错求值"
 > 记号约定：<span>$\langle \cdot, f\rangle \Downarrow \cdot$</span> 为大步求值关系，<span>$f$</span> 为帧（变量→值映射）
+
+## TL;DR
+
+- IMP 的大步语义用推理规则完整定义布尔表达式、赋值、顺序组合、条件与循环。
+- 状态在顺序语句中被线程化：前一条语句的终态就是后一条的初态；`while` 规则通过在前提中递归引用自身表达反复执行。
+- 除零或未定义变量会导致无规则可用，说明求值关系是部分函数；不停机程序则没有有限的大步推导树。
 
 ---
 

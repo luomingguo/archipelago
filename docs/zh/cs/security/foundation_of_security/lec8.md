@@ -2,11 +2,18 @@
 title: 传输层安全导论（Intro to Transport Security）
 type: lecture
 lecture: 8
-tags: []
+tags: [transport-security, authenticated-encryption, diffie-hellman, tls]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec08.pdf'
 ---
 # Lec 8 传输层安全导论（Intro to Transport Security）
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- 不可信网络上的安全信道同时需要机密性、完整性、对端认证与重放防护；单独加密无法阻止主动篡改。
+- Diffie–Hellman 让双方协商共享秘密，但裸协议不认证身份；TLS 1.3 将证书签名、临时 ECDHE、密钥派生和 AEAD 组合成完整握手。
+- 临时密钥带来前向安全；0-RTT 用更低延迟换取可重放风险，因此只能承载允许重复执行的请求。
 
 ## 1. 传输安全的目标
 
@@ -99,6 +106,16 @@ TLS 1.3 是当前 HTTPS 的标准协议。
 
 ### 6.1 握手流程（简化）
 
+下面的简化握手同时完成三件事：双方用临时 DH 份额计算会话秘密，服务器用证书签名证明份额来自正确身份，双方再用 Finished 消息确认看到的是同一份握手记录。任何一条主线缺失，都会留下窃听、中间人或降级攻击的空间。
+
+时序图省略了算法协商、证书链细节和多阶段密钥派生；它用于说明安全依赖关系，不应直接当作协议报文格式。
+
+第一步，客户端在 ClientHello 中发送自己支持的参数与临时公钥份额。第二步，服务器选择参数、发送自己的临时份额，并用证书对应的私钥签署握手上下文；证书验证与签名验证共同把这次临时交换绑定到目标域名。
+
+双方由同一个 DH 共享秘密派生握手密钥，但此时仍不能假定记录完整。Finished 对此前 transcript 做认证，使插入、删除、重排或降级协商都会导致验证失败。验证完成后，协议再派生独立的应用流量密钥。
+
+因此，图中的箭头不是三个彼此独立的“功能”：密钥交换提供机密性基础，签名提供身份，transcript 认证保证组合没有被篡改。TLS 的安全来自三者绑定，而不是其中某个算法单独足够强。
+
 ```text
 Client                          Server
   |                               |
@@ -165,3 +182,7 @@ $$\text{长期密钥 } sk \text{ 泄露} \not\Rightarrow \text{历史会话可�
 
 $$\text{ADec}(k, \text{AEnc}(k, m, \text{ad}), \text{ad}) = m$$
 $$\text{任何修改} \Rightarrow \text{ADec 返回 } \bot$$
+
+::: insight
+协议安全不是“安全原语”的简单相加；消息顺序、身份绑定和错误处理都会改变组合后的安全语义。
+:::

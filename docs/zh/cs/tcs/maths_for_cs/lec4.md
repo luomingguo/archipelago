@@ -1,13 +1,20 @@
 ---
-title: 状态机
+title: "状态机、不变量与终止性"
 type: lecture
 lecture: 4
-tags: []
+tags: [state-machine, invariant, termination]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture04-2024feb15_v4_mp4/
 ---
-# Lec 4 状态机
+# Lec 4 状态机、不变量与终止性
 
-今天我们将介绍一种名为状态机（*State Machine*）的全新抽象概念，它可以帮助我们对算法的工作原理进行建模。我们将展示如何使用归纳法来证明状态机的性质。但首先，让我们来看一个例子
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture04-2024feb15_v4_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec04.pdf)
+
+## TL;DR
+
+- 状态机由状态集、初始状态与转移关系组成，可达性问题询问是否存在一条从初始状态到目标状态的转移序列。
+- 不变量在初始状态成立，且每次合法转移都保持它；因此任何不满足不变量的状态都不可达。
+- 证明过程终止时，可构造一个值域下有界且每步严格下降的导出量（势函数），排除无限转移链。
 
 ## 一、引例：8 拼图问题
 
@@ -206,3 +213,9 @@ Simple Sort 必然终止
 |      |      |
 |      |      |
 |      |      |
+
+## 我的理解
+
+::: insight
+安全性和终止性需要两种不同证据：不变量说明“坏事永远不发生”，导出量说明“进程不会永远转圈”。程序验证中常必须同时提供两者。
+:::

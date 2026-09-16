@@ -2,12 +2,18 @@
 title: 低级虚拟机 III（Low-Level VM III）——表示与符号表
 type: lecture
 lecture: 17
-tags: []
+tags: [symbol-table, closure, runtime-representation, records]
 status: complete
 ---
 # Lec 17 低级虚拟机 III（Low-Level VM III）——表示与符号表
 
 > 接 L16。本讲的主题是**表示 (Representations)**：变量怎么命名/寻址（global/local/field/free）、用**符号表**在编译期把作用域算清楚、用**引用**加速自由变量（闭包）、以及记录 (Record) 的高效布局。一句话主旨贯穿全讲：**高效的低级表示靠的是把程序的静态信息固化下来、并据此强制高效的执行编码。**
+
+## TL;DR
+
+- 符号表在编译期把变量分类为 global / local / field / free，使字节码可用索引和偏移代替运行时字符串查找。
+- 局部变量按栈帧槽位排列，记录字段按固定布局访问，自由变量则通过闭包环境中的引用或偏移定位。
+- 表示设计的本质是把可靠的静态知识预编码到程序中：信息越精确，执行期分派越少，但也越需要正确的作用域和布局分析。
 
 ---
 

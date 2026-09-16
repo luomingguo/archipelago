@@ -1,19 +1,20 @@
 ---
-title: 加权最短路径
+title: "加权最短路径"
 type: lecture
 lecture: 11
-tags: []
+tags: [weighted-graph, shortest-path, relaxation]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-11-weighted-shortest-paths/
 ---
 # Lec 11 加权最短路径
 
-- 加权图定义和表示
-- 加权最短路径问题
-- 加权最短路径算法
-- 松弛算法
-- 最短路径树
-- DAG 松弛
-- 练习题
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-11-weighted-shortest-paths/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec11/)
+
+## TL;DR
+
+- 加权最短路径最小化路径上的边权之和，负权环可使最短路径没有有限最优值。
+- 松弛边 $(u,v)$ 尝试用 $d(u)+w(u,v)$ 改善 $d(v)$；当某条最短路上的边按顺序被松弛后，路径估计会变为精确值。
+- DAG 的拓扑序为每条边提供一次正确的松弛顺序，即使存在负边也可在 $O(|V|+|E|)$ 时间求解。
 
 ## 加权图
 
@@ -49,13 +50,13 @@ status: complete
 
 - **单源加权最短路径问题**：要求从$s \in V$到$t\in V$的加权最短路径是从 s 到 t 权重最小的路径，或者指出其不存在最小权重路径
 
-- $\delta(s, t) = \inf \set{w(\pi) | 从s到t的路径\pi}$ 表示 s 到 t 的最短路径权重（inf 意味着最小下确界）
+- $\delta(s, t) = \inf \left\{w(\pi) | 从s到t的路径\pi\right\}$ 表示 s 到 t 的最短路径权重（inf 意味着最小下确界）
 
 - 在加权图中，通常使用“距离”（distance）表示最短路径权重，而不是边的数量
 
 - 与无权图类似，
 
-  - 如果从 s 到 t 没有路径，则表示$\delta(s, t) = \infty$​  
+  - 如果从 s 到 t 没有路径，则表示$\delta(s, t) = \infty$  
   - 最短路径的子路径也是最短路径（否则可以拼接出更短的路径）
 
 >  为什么用下确界（inf）而不是最小值？可能不存在有限长度的最小权重路径?
@@ -72,7 +73,7 @@ Solution: 如果图中存在负权重环，可能会发生这种情况，负权�
 
 除了广度优先搜索之外，我们将介绍另外三种用于计算单源最短路径的算法，它们分别适用于不同类型的带权图。
 
-![image-20240801015248096](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66aa79f40855b.png)
+![加权最短路径图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66aa79f40855b.png)
 
 ### BFS 的局限性
 
@@ -95,7 +96,7 @@ Relaxation，一种通用的算法范式，松弛算法通过从一个非最优�
 
  当一条边违反三角不等式时！
 
-为了松弛最短路径估计 d(s, v)， 我们需要松弛到 v 的**一条入边**（假设途经顶点 u，且 e(u, v)是 v 的入边），如果我们保持 d(s, u)始终是 s 到 u 的最短路径上界，那么真实的最短路径$\delta(s, v) \le d(s, u) + w(u, v)$​，否则的话， 途经 u 的路径将成为当下的最短路径估计。
+为了松弛最短路径估计 d(s, v)， 我们需要松弛到 v 的**一条入边**（假设途经顶点 u，且 e(u, v)是 v 的入边），如果我们保持 d(s, u)始终是 s 到 u 的最短路径上界，那么真实的最短路径$\delta(s, v) \le d(s, u) + w(u, v)$，否则的话， 途经 u 的路径将成为当下的最短路径估计。
 
 换个说法就是：
 
@@ -106,7 +107,7 @@ Relaxation，一种通用的算法范式，松弛算法通过从一个非最优�
 
 - **断言**： 松弛是安全的： 维护每个 d(u, v) 作为到 v（或者是$\infty$）$\forall v \in    V$的加权最短路径
 
-- 证明：假设$d(s, v')$是所有$v'\in V$的路径的权重（或者是$\infty$​​）。松弛某条边（u, v）， 将 d(s, v)设置为 d(s, u) + w(u, v)， 这也是 s 到 v 途经 u 的路径权重
+- 证明：假设$d(s, v')$是所有$v'\in V$的路径的权重（或者是$\infty$）。松弛某条边（u, v）， 将 d(s, v)设置为 d(s, u) + w(u, v)， 这也是 s 到 v 途经 u 的路径权重
 
 ```python
 def general_relax(Adj, w, s):  # Adj: adjacency list, w: weights, s: start
@@ -151,7 +152,7 @@ def general_relax(Adj, w, s):  # Adj: adjacency list, w: weights, s: start
 
 下面是有 2n+1 个顶点和 3n 条边的加权有向图，这种图中，如果松弛顺序不佳，可能会执行指数级的修改松弛操作。
 
-![image-20240924070920176](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66f1f52682ca2.png)
+![加权最短路径图示 2](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66f1f52682ca2.png)
 
 这个图包含 n 个部分，每个部分 i 包含三条边，分别是$(v_{2i}, v_{2i+1}), (v_{2i}, v_{2i+2}), (v_{2i}, v_{2i+2})$，每条边的权重是$2^{n-i}$。我们称这些边为该部分的左边、上边和右边。在这个构造中，从$v_0$到$v_i$的最小权重路径是通过遍历上边直到达到$v_i$所在的部分来实现。从$v_0$ 开始的最短路径能够通过线性次数的修改边松弛来轻松找到：松弛每个连续部分的上边和左边。
 
@@ -194,8 +195,8 @@ def general_relax(Adj, w, s):  # Adj: adjacency list, w: weights, s: start
 - for all $v \in V$,  Set d(s, v) = $\infty$，and Set d(s, s) = 0
 - 处理 G 的拓扑排序顺序中的每个顶点 u：
   - 对于每个出边邻居$v\in Adj^+{(u)}$
-    - 如果$d(s, v) > d(s, u) + w(u, v)$​
-      - 松弛边，即设置$d(s, v) = d(s, u) + w(u, v)$​
+    - 如果$d(s, v) > d(s, u) + w(u, v)$
+      - 松弛边，即设置$d(s, v) = d(s, u) + w(u, v)$
 
 ```python
 def DAG_Relaxation(Adj, w, s):
@@ -218,11 +219,11 @@ def DAG_Relaxation(Adj, w, s):
   - 归纳步骤： 假设断言对前 k'个顶点成立，让 v 为 k'+1 个顶点
     - 考虑从 s 到 v 的最短路径，并让 u 为路径上 v 之前的顶点
     - u 在拓扑顺序中位于 v 之前， 所以归纳假设 d(s, u) =  $\delta(s, u)$
-    - 但$d(s, v) \ge \delta(s, v)$, 因为松弛是安全的，所以 d(s, v) = $\delta(s, v)$​
+    - 但$d(s, v) \ge \delta(s, v)$, 因为松弛是安全的，所以 d(s, v) = $\delta(s, v)$
 - 或者，
   - 对于任何顶点 v, DAG 松弛设置 d(s, v) = min{d(s, u) + w(u, v) | $u \in Adj^-(v)$}
   - 到 v 的最短路径必须经过 v 的某个入边邻居 u
-  - 所以根据归纳法 d(s, u) = $\delta(s, u)$，对于$u\in Adj^-(v)$，则 d(s, v) = $\delta(s, v)$​
+  - 所以根据归纳法 d(s, u) = $\delta(s, u)$，对于$u\in Adj^-(v)$，则 d(s, v) = $\delta(s, v)$
 
 ### 运行时间
 
@@ -235,3 +236,9 @@ def DAG_Relaxation(Adj, w, s):
 >  你已经被 MIT 招募参与一个新的兼职学生计划，每个学期只选一门课。你并不在乎毕业，只想选修 **19.854 高级量子机器学习区块链：神经接口** 课程，但你担心它庞大的先修课要求。MIT 的教授们允许你在先修课程中只修完一门之后就能选修该课程。然而，没有完成所有先修课直接通过课程会很困难。通过对同学们的调查，你得知每门课程及其先修课需要多少压力时间。给定一个课程、先修课以及调查得出的压力值的列表，描述一种线性时间的算法，找到一系列课程的顺序，以最小化修 19.854 课程所需的压力，并且不会同时修多于一门先修课。你可以假设每个学期都会提供所有课程。
 
 SOLUTION:构建一个图，每个课程对应一个顶点，如果课程 b 是课程 a 的先修课，则从课程 a 到课程 b 画一条带权的有向边，边的权重为修完课程 b 后再修课程 a 需要的压力值。使用拓扑排序松弛来找到从课程 19.854 到每个其他课程的最短路径。从那些没有先修课的课程（DAG 的终点）中，找到一个到 19.854 总压力最小的课程，并返回其反向的最短路径。
+
+## 我的理解
+
+::: insight
+松弛是后续最短路径算法的共同原语：算法之间的差别主要不在更新公式，而在如何选择下一条边，以及何时可以证明某个估计已经定型。
+:::

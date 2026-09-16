@@ -1,22 +1,20 @@
 ---
-title: 求和
+title: "求和方法"
 type: lecture
 lecture: 5
-tags: []
+tags: [summation, geometric-series, integral-bound]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture05-2024feb22_mp4/
 ---
-# Lec 5 求和
+# Lec 5 求和方法
 
-求和在许多领域都非常重要，例如：
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture05-2024feb22_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec05.pdf)
 
-- 求解递推关系（*recurrences*）
-- 计数（*counting*）
-- 概率（*probability*）
-- 算法运行时间分析（*runtime analysis*）
-- 大规模系统性能分析（*performance of large systems*）
-- 机器学习（*machine learning*）
+## TL;DR
 
-以及更多数学与计算机科学中的应用。
+- 几何级数可用分裂或扰动法求和；无穷级数公式还需要 $|x|<1$ 以保证余项收敛。
+- Ansatz 方法先假设和式属于某个有限维函数族，再用差分关系或若干样本点解出系数。
+- 重排双重求和要保持索引域不变；对单调函数，积分可用上下矩形夹住离散和，给出闭式估计和渐近界。
 
 ## 一、 等比级数与年金问题
 
@@ -86,13 +84,13 @@ $$xS = x + x^2 + \cdots + x^n$$
 
 两式相减：
 
-$$S - xS = 1 - x^n \implies (1-x)S = 1 - x^n \implies \boxed{S = \frac{1-x^n}{1-x}} \quad (x \neq 1)$$​
+$$S - xS = 1 - x^n \implies (1-x)S = 1 - x^n \implies \boxed{S = \frac{1-x^n}{1-x}} \quad (x \neq 1)$$
 
 **无穷等比级数**（$|x| < 1$）：
 
 $$\sum_{k=0}^{\infty} x^k = \lim_{n\to\infty} \frac{1-x^n}{1-x} = \frac{1}{1-x}$$
 
-**应用：** $p = 0.0533$，$m = 50000$，$n = 20$ 时，$V \approx \$638340$​。  
+**应用：** $p = 0.0533$，$m = 50000$，$n = 20$ 时，$V \approx \$638340$。  
 
 ::: example
 如果改成：每年支付 1 美元，并且永远支付下去，会怎样？
@@ -190,3 +188,9 @@ $$1 + \frac{2}{3}n\sqrt{n} - \frac{2}{3} \;\leq\; \sum_{k=1}^n \sqrt{k} \;\leq\;
 | *Exchange order of summation*    | 交换求和顺序     |
 | *Integral bound*                 | 积分界           |
 | *Weakly increasing / decreasing* | 弱递增 / 递减    |
+
+## 我的理解
+
+::: insight
+求和不只是符号运算，而是选择合适表示。扰动法利用级数在位移后的自相似，换序利用索引域的几何，积分界则把离散柱状面积与连续面积比较。
+:::

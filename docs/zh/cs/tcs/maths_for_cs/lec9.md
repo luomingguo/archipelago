@@ -1,15 +1,21 @@
 ---
-title: Modular Arithmetic
+title: "模运算"
 type: lecture
 lecture: 9
-tags: []
+tags: [modular-arithmetic, multiplicative-inverse, fermat-little-theorem]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture09-2024mar12_mp4/
 ---
-# Lec 09 Modular Arithmetic
+# Lec 9 模运算
 
-> MIT 6.1200J Mathematics for Computer Science, Spring 2024
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture09-2024mar12_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec09.pdf)
 
----
+## TL;DR
+
+- $a\equiv b\pmod n$ 表示 $n\mid(a-b)$；同余与加法、减法和乘法相容，因而可在余数类上做代数运算。
+- 模 $n$ 下的除法必须通过乘法逆元实现；$a$ 存在逆元当且仅当 $\gcd(a,n)=1$。
+- Fermat 小定理说明当 $p$ 为素数且 $p
+mid a$ 时，$a^{p-1}equiv1pmod p$，它支撑快速模幂、素性测试与公钥密码的基础论证。
 
 ## 1. 模运算的直觉
 
@@ -128,6 +134,8 @@ $$(p-1)! \cdot a^{p-1} \equiv_p (p-1)!$$
 
 **推论：** 模质数 $p$ 时，指数可以对 $p-1$ 取模（而非对 $p$）：
 
+当 $p \nmid a$ 时，由 Fermat 小定理可将正指数按 $p-1$ 化简：
+
 $$a^k \equiv_p a^{k \operatorname{rem} (p-1)}$$
 
 ---
@@ -168,3 +176,9 @@ $$\sum_{i=1}^{10} i \cdot a_i \equiv_{11} 0$$
 | *Fermat's Little Theorem (FLT)*     | Fermat 小定理   |
 | *Parity*                            | 奇偶性          |
 | *ISBN checksum*                     | ISBN 校验码     |
+
+## 我的理解
+
+::: insight
+模运算中“约分”失败的根本原因是乘数未必有逆元。先检查与模数互素，再乘以逆元，比套用普通数学直觉更安全。
+:::

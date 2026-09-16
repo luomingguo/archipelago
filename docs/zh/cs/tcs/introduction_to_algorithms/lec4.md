@@ -1,25 +1,20 @@
 ---
-title: 哈希
+title: "哈希"
 type: lecture
 lecture: 4
-tags: []
+tags: [hashing, direct-access-array, universal-hashing]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-4-hashing/
 ---
 # Lec 4 哈希
 
-今天的目标是关注静态查找
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-4-hashing/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec4/)
 
-- 比较模型
-- 直接访问数组
-- 哈希
-- 通用哈希
-- 练习题
+## TL;DR
 
-两个目标
-
-> 1. 证明你不能实现比 O(log n) 还快的 find(k)
->
-> 2. 展示如何 find(k)比 O(log n)还要快
+- 比较搜索需要 $\Omega(\log n)$ 次比较，而直接寻址通过把键当作下标将查询降为 $O(1)$，代价是与键域大小成正比的空间。
+- 哈希表把大键域压缩到小表中，用链接等方法处理冲突；性能取决于负载因子和冲突分布。
+- 通用哈希从函数族中随机选函数，使任意不同键的冲突概率受控，从而给出期望 $O(1)$ 操作。
 
 ## 比较模型
 
@@ -76,7 +71,7 @@ status: complete
 - 与数组的每个索引关联一个含义，如果键可以适应一个机器字，即$u \le 2^w$，则在最坏情况下 O(1)的查找/动态操作！
 - 这门课，假设输入的数字/字符串都可以适应一个字，除非长度有明确参数化
 - 计算机内存中的任何内容都是二进制整数，或使用（静态）64 位内存地址
-- 但空间复杂度是 O(u)，所以如果 $n << u$​，就会很糟糕... :(
+- 但空间复杂度是 O(u)，所以如果 $n << u$，就会很糟糕... :(
   - 例如如果键是 10 个字母，每个名字占一位，则需要$26^{10} \approx 17.6TB$
   - 如何使用更少的空间呢？
   - 答案： Hashing
@@ -125,9 +120,9 @@ Universal 哈希函数：$h_{ab}(k) = (((ak + b) \text{ mod } p) \text{ mod } m)
 
 - 哈希家族$\mathcal{H}(p, m) =  \{ h_{ab} \mid a, b \in \{0, \ldots, p - 1\} \text{ 且 } a \ne 0 \}$
 
-- 参数由一个大于 u 的固定质数 p 以及从范围 $\set{0, ..., p - 1}$​​​ 中选择的 a 和 b 构成
+- 参数由一个大于 u 的固定质数 p 以及从范围 $\left\{0, ..., p - 1\right\}$ 中选择的 a 和 b 构成
   - 通过选择具体的 a 和 b 值可以指定该族中的单个哈希函数
-- $\mathcal{H}$是通用家族：$Pr_{h\in \mathcal{H}}\set{h(k_i) =h(k_j)}\le 1/m\ \text{,}\forall k_i \neq k_j \in \set{0,...u-1}$
+- $\mathcal{H}$是通用家族：$Pr_{h\in \mathcal{H}}\left\{h(k_i) =h(k_j)\right\}\le 1/m\ \text{,}\forall k_i \neq k_j \in \left\{0,...u-1\right\}$
 - 为什么通用性有用？这意味着短链表长度（O(1）) ！（期望情况下）
 - $X_{ij}$ 是   h ∈ H 上的指示随机变量：如果 $h(k_i) = h(k_j)$，则 $X_{ij}$ = 1，否则 $X_{ij}$= 0
 - 索引 $h(k_i)$ 处链表的大小是随机变量 $h(k_i)= X_i = \sum_j{ X_{ij}}$
@@ -155,4 +150,8 @@ $$
 - 与动态数组分析，成本可以分摊到许多动态操作上
 - 因此，哈希表在期望分摊 O(1)时间内实现动态集合操作！ :)
 
-## 练习题
+## 我的理解
+
+::: insight
+哈希的常数时间不是无条件保证；随机化的作用是让输入难以稳定制造冲突，再由动态扩容把负载因子控制在常数范围。
+:::

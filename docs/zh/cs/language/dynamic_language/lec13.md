@@ -2,12 +2,18 @@
 title: 垃圾回收 II（GC II）——标记-清扫与复制式回收
 type: lecture
 lecture: 13
-tags: []
+tags: [garbage-collection, mark-and-sweep, copying-collector, compaction]
 status: complete
 ---
 # Lec 13 垃圾回收 II（GC II）——标记-清扫与复制式回收
 
 > 接 L12。展开 Mark-and-Sweep 的实现，引入**复制式回收 (copying collector)**、转发地址、语义垃圾与权衡
+
+## TL;DR
+
+- 标记-清扫从根集完整遍历可达图，再扫描所有分配对象回收未标记者，能正确处理环但会保留碎片。
+- 复制式回收将可达对象搬到另一半空间，用转发地址修复引用，同时完成回收与压紧，但牺牲一半可用内存。
+- GC 只能识别不可达对象；可达但程序不会再访问的「语义垃圾」仍需要程序员或更强的分析解决。
 
 ---
 

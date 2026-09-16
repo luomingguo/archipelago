@@ -2,12 +2,18 @@
 title: 优化（Optimizations）——暴露 IR、类型/值分析、栈缓存与寄存器分配
 type: lecture
 lecture: 19
-tags: []
+tags: [intermediate-representation, type-analysis, constant-propagation, register-allocation, optimization]
 status: complete
 ---
 # Lec 19 优化（Optimizations）——暴露 IR、类型/值分析、栈缓存与寄存器分配
 
 > 本讲是 Phase 5 的核心方法论。主线：把高层指令**拆开 (expose)** 成更细的 IR 操作，让**类型分析**和**值分析（常量传播）**有机会删掉冗余的类型检查与常量加载；再用**栈缓存 / 寄存器分配**把临时值从内存搬到寄存器。贯穿全程的一句话：**IR 是把分析推断出的信息编码进表示的统一载体。**
+
+## TL;DR
+
+- 将粗粒度 VM 指令拆成类型检查、解箱、运算与装箱等细粒度 IR，才能让分析看到可删除或合并的冗余工作。
+- 类型分析消除重复动态检查，值分析 / 常量传播把已知值向后传递，死代码消除再删掉失去使用者的操作。
+- 栈缓存和寄存器分配把临时值从内存留在机器寄存器中；IR 则是将所有分析结论统一编码为后续可消费事实的载体。
 
 ---
 

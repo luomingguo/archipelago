@@ -2,8 +2,9 @@
 title: 安全多方计算（MPC）
 type: lecture
 lecture: 13
-tags: []
+tags: [secure-multiparty-computation, garbled-circuit, secret-sharing, simulation]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l13-mpc.pdf'
 ---
 # Lec 13 安全多方计算（MPC）
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：以标准处理撰写（Yao 1986 / BGW 1988），要点与本课"Secure Multiparty Computation"一致。*
 
 ---
+
+## TL;DR
+
+- 安全多方计算（MPC）让互不信任的参与者只获知约定函数的输出，而不暴露各自输入。
+- Yao 混淆电路与不经意传输适合两方计算，BGW 用秘密共享支持多方计算。
+- 半诚实与恶意安全是不同威胁模型；实现成本随对手能力、参与方数量和网络条件变化。
 
 ## 0. 问题
 
@@ -67,9 +74,13 @@ $n$ 方各持私有输入 $x_1,\dots,x_n$，想共同计算 $f(x_1,\dots,x_n)$�
 
 ---
 
-## 5. 本讲小结
+## 5. 安全多方计算小结
 
 - MPC：多方算 $f$ 而不泄露各自输入；安全 = 现实可被理想模拟器复现。
 - 两方 Yao：混淆电路 + OT；OT 是 MPC 完备原语。
 - 多方 BGW：Shamir 共享，加法本地、乘法需降次交互。
 - 成本看乘法门；恶意安全需额外机制。
+
+::: insight
+MPC 的安全定义同时规定允许泄露的输出；选错函数，即使协议完美安全也可能暴露个人输入。
+:::

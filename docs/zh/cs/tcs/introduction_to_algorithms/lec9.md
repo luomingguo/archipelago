@@ -1,20 +1,24 @@
 ---
-title: 广度优先搜索
+title: "广度优先搜索"
 type: lecture
 lecture: 9
-tags: []
+tags: [graph-traversal, breadth-first-search, shortest-path]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-9-breadth-first-search/
 ---
 # Lec 9 广度优先搜索
 
-- 图的定义
-- 图的表示
-- 图的路径问题
-- 练习题
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-9-breadth-first-search/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec9/)
+
+## TL;DR
+
+- 邻接表用 $\Theta(|V|+|E|)$ 空间表示稀疏图，并让遍历算法只扫描真实存在的边。
+- BFS 从源点按边数分层扩展，队列保证所有距离 $i$ 的顶点都在距离 $i+1$ 的顶点之前处理。
+- 在无权图中，首次发现顶点时记录的层数就是最短路径长度，父指针则组成一棵最短路径树。
 
 ## 图的定义
 
-![截屏 2024-07-31 10.41.50](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a9a47d6cf6f.png)
+![广度优先搜索图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a9a47d6cf6f.png)
 
 - G = (V, E) 是一组定点和一组定点对$E \subseteq V \times V$的集合
 - 有向（Directed）边是有序对，例如$(u, v) \in V$，其中$ u, v \in V$
@@ -22,17 +26,17 @@ status: complete
 - 在这门课我所说的图都是简单图
   - 边是唯一的，例如（u, v）在 E 中值出现一次，并且
   - 边是不同顶点对，即对于（u, v） $\in$ E，$u\neq v$
-  - 简单图意味着$|E| = O(|V|^2)$，因为对于无向图来说$|E| \le {|V|(|V|-1)\over{2}}$， 对于有向图来说$|E| \le |V|(|V|-1)$​​
+  - 简单图意味着$|E| = O(|V|^2)$，因为对于无向图来说$|E| \le {|V|(|V|-1)\over{2}}$， 对于有向图来说$|E| \le |V|(|V|-1)$
 
 例子：
 
-![截屏 2024-07-31 14.02.10](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a9d36a61e4c.png)
+![广度优先搜索图示 2](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a9d36a61e4c.png)
 
 ##  邻接集合
 
-- 顶点$u\in V$的出邻居集合是$Adj^+(u) = \set{v\in V| (u, v) \in E}$
-- 顶点$u\in V$的入邻居集合是$Adj^-(u) = \set{v\in V| (v, u) \in E}$
-- 顶点$u\in V$的出度是$deg^+(u) =|Adj^+(u)|$​
+- 顶点$u\in V$的出邻居集合是$Adj^+(u) = \left\{v\in V| (u, v) \in E\right\}$
+- 顶点$u\in V$的入邻居集合是$Adj^-(u) = \left\{v\in V| (v, u) \in E\right\}$
+- 顶点$u\in V$的出度是$deg^+(u) =|Adj^+(u)|$
 - 顶点$u\in V$的入度是$deg^-(u) =|Adj^-(u)|$
 - 对于无向图而言，出度等于入度， 出邻居集合等于入邻居集合，我们一般会忽略+，比如$Adj(u) = Adj^+(u)$
 
@@ -44,8 +48,8 @@ status: complete
 - 当顶点被唯一打上标签 0 到|V|-1, 常用大小为|V|直接访问数组（direct access array），每个槽指向标签对应标签的顶点的邻接表。否则，如果不是用这种方式打标签，则通常用哈希表来存储 $\text{Adj}$，然后，通常将每个邻接表 Adj(u) 存储为一个简单的无序数组，数组中的元素是顶点 u 的出边。
 - 对于常见表示法，$\text{Adj}$ 的大小是 $\Theta(|V|)$，而每个 $\text{Adj}(u)$的大小是 $\Theta(\deg(u))$。
 - 由于根据握手引理，$\sum_{u \in V} \deg(u) \leq 2|E|$，图可以用 $\Theta(|V| + |E|)$的空间存储。
-- 因此，对于图上的算法，线性时间将意味着 $\Theta(|V| + |E|)$​（相对于图的大小来说是线性的）
-- 以下是使用直接访问数组作为顶层集合并用数组表示每个邻接表的图 G1 和 G2 的邻接表表示![截屏 2024-07-31 14.31.25](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a9da4a86aa5.png)
+- 因此，对于图上的算法，线性时间将意味着 $\Theta(|V| + |E|)$（相对于图的大小来说是线性的）
+- 以下是使用直接访问数组作为顶层集合并用数组表示每个邻接表的图 G1 和 G2 的邻接表表示![广度优先搜索图示 3](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a9da4a86aa5.png)
 
 >  总的来说有几种方法表示
 >
@@ -57,7 +61,7 @@ status: complete
 
 这种表示的一个缺点是，确定图中是否包含给定的边（u, v）可能需要 Ω(|V|) 的时间来遍历表示顶点 u 或 v 的邻接表数组。我们可以通过使用**哈希表来存储邻接表**来克服这个问题，哈希表能够在期望的 O(1) 时间内支持边的检查，仍然只使用 Θ(|V| + |E|) 的空间。然而，我们的算法不需要这种操作，因此我们将假设使用更简单的基于无序数组的邻接表表示。以下是使用 Python 字典的 G1 和 G2 的表示，它们为外层 Adj 集合和内层邻接表 Adj(u) 都使用了哈希表
 
-![截屏 2024-07-31 14.35.12](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a9db2bd854b.png)
+![广度优先搜索图示 4](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a9db2bd854b.png)
 
 ## 路径
 
@@ -68,7 +72,7 @@ status: complete
 - 路径是关于点的序列$p = (v_1, v_2, ..., v_k)$， 其中每一对有序顶点都满足 $(v_i, v_{i+1}) \in E $,对于所有的$1 \le i \lt k$成立
 - 如果路径中没有重复定点，则路径是简单路径
 - 路径的长度$\ell(p)$是路径中边的数量。
-- 从顶点 u 到顶点 v 的距离$\delta(u, v)$​是 u 到 v 的所有路径中最短路径的长度
+- 从顶点 u 到顶点 v 的距离$\delta(u, v)$是 u 到 v 的所有路径中最短路径的长度
 - 强连通性：如果每个节点到图中的其他节点都存在路径，则称该图为强连通图。
   - 每个连通的无向图也是强连通图，因为每个无向边同时也是出边
   - （连通分量： 其实就是一个图里面并查集集合数量的多少，相当于一个图中有多少个连通图。）
@@ -91,7 +95,7 @@ status: complete
 
 ### BFS
 
-> 如何计算所有 $v \in V$的$\delta(s, v)$和 $P(v)$​？
+> 如何计算所有 $v \in V$的$\delta(s, v)$和 $P(v)$？
 
 - 存储 $\delta(s, v)$ 和 P(v) 到 Set 数据结构中，并将顶点 v 映射 距离 和 父节点 。
 - 如果从 s 到 v 没有路径，不在 P 中存储 v，并将 $\delta(s, v)$ 设为 $\infty$。
@@ -102,7 +106,7 @@ status: complete
 - **目标**：计算层级集合（Level Set） $$L_i$$={v|v∈V 且 d(s,v)=i }（即，所有距离为 i 的顶点）。
   - 声明： 每个 $v \in L_i$ 必须与 $u \in L_{i-1}$ 相邻（即 $v \in \text{Adj}(u)$）。
   - 声明： 任何出现在 $L_j$ 中的顶点 j < i 不会出现在 $L_i$ 中。
-- **不变量**：对于所有 j < i，$\delta(s, v)$​​ 和 P(v) 已经正确计算。
+- **不变量**：对于所有 j < i，$\delta(s, v)$ 和 P(v) 已经正确计算。
 
 ----
 
@@ -112,19 +116,19 @@ status: complete
 
 对于每个 $u \in L_{i-1}$：
 
-​	对于每个顶点 $v \in \text{Adj}(u)$, 如果 v 未出现在任何 j < i 的 $L_j$ 中：
+	对于每个顶点 $v \in \text{Adj}(u)$, 如果 v 未出现在任何 j < i 的 $L_j$ 中：
 
-​		将 v 加入 $L_i$，设置 $\delta(s, v) = i$，并设置 $P(v) = u$。
+		将 v 加入 $L_i$，设置 $\delta(s, v) = i$，并设置 $P(v) = u$。
 
 重复计算 $L_i$ 从 $L_j$ 对于 j < i 直到 $L_i$ 为空集。
 
 **设置** $\delta(s, v) = \infty$ 对于任何 $v \in V$ 的 $\delta(s, v)$ 未设置的情况。
 
-**广度优先搜索**通过归纳正确计算所有 $\delta(s, v)$​ 和 P(v)。
+**广度优先搜索**通过归纳正确计算所有 $\delta(s, v)$ 和 P(v)。
 
 这里简单表述一下，给定一个图，一个常见的查询是找到从查询顶点 s 出发通过路径可达的所有顶点。从 s 开始的广度优先搜索（BFS）会发现 s 的层次集合（Level Set），层次集合$L_i$是 s 出发通过长度为 i 的最短路径能到到达的顶点集合。BFS 递增顺序发现各个层次，起始是 i=0, 此时$L_0$ = \{s\}，即只能到达自身。然后我们给出一个子问题，任何通过长度为 i+1 的最短路径的到达顶点，必须从一条长度为 i 的最短路径达到的顶点作为入边，因此它包含在层次$L_i$。因此，为了计算层次$L_{i + 1}$，需要通过$L_i$这个层次的计算。
 
-![截屏 2024-07-31 16.47.08](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a9fa1bb2c4e.png)
+![广度优先搜索图示 5](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a9fa1bb2c4e.png)
 
 ----
 
@@ -136,7 +140,7 @@ status: complete
 - 算法将每个顶点 u 添加到至多 1 个层级，并为每个 $v \in \text{Adj}(u)$ 花费 O(1) 时间。
 - 上界通过握手引理为 $O(1) \times \text{deg}(u) = O(|E|)$。
 - 最后花费 $\Theta(|V|)$ 时间为从 s 不可达的顶点 $v \in V$ 设置 $\delta(s, v)$。
-- 因此广度优先搜索运行时间为线性时间 $O(|V| + |E|)$​。
+- 因此广度优先搜索运行时间为线性时间 $O(|V| + |E|)$。
 
 ```python
 def bfs(Adj, s): # Adj: adjacency list, s: starting vertex
@@ -195,4 +199,10 @@ def unweighted_shortest_path(Adj, s, t):
 
 Solution:
 
-构建一个新图 G'=(V', E')，对于所有的顶点$u \in V$，在 V'上构建两个顶点$u_E$和$u_O$分别表示通过偶数和奇数个边到达顶点 u，相应地，对于每个（u, v） $\in $E， 在 E'上构建边$(u_E, v_O)和(u_O, v_E)$， 在 G'上运行 BFS，从$s_E$到$t_O$。由于 G'在偶顶点和奇数顶点之间是二分图，从$s_E$出发的偶数路径将始终以偶数顶点结束，而奇数路径将以奇数顶点结束，因此找到从$s_E$到$t_O$的最短路径表示原始图长度为奇数路径。由于 G'有 2|V|个顶点和 2|E|条边，构造 G‘并从$s_E$开始进行 BFS 各自需要 O(|V|+|E|)的时间复杂度。
+构建新图 $G'=(V',E')$。对每个顶点 $u\in V$，在 $V'$ 中建立两个顶点 $u_E$ 和 $u_O$，分别表示经过偶数条边和奇数条边到达 $u$。对每条 $(u,v)\in E$，在 $E'$ 中加入 $(u_E,v_O)$ 和 $(u_O,v_E)$。然后在 $G'$ 上从 $s_E$ 运行 BFS，寻找 $t_O$。由于 $G'$ 只在偶层和奇层顶点之间连边，从 $s_E$ 到 $t_O$ 的最短路径对应原图中边数为奇数的最短路径。$G'$ 有 $2|V|$ 个顶点和 $2|E|$ 条边，构图与 BFS 都需要 $O(|V|+|E|)$ 时间。
+
+## 我的理解
+
+::: insight
+BFS 的正确性来自队列所强制的“波前”顺序，而不是来自简单地访问所有顶点。一旦边有不同权重，边数层就不再等于路径权重，也正是后续松弛算法的起点。
+:::

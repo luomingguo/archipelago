@@ -2,8 +2,9 @@
 title: 全同态加密 II：Bootstrapping
 type: lecture
 lecture: 10
-tags: []
+tags: [fully-homomorphic-encryption, bootstrapping, circular-security, noise-management]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l10-fhe2.pdf'
 ---
 # Lec 10 全同态加密 II：Bootstrapping
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：以标准处理撰写（Gentry 2009），要点与本课"FHE 2"一致。*
 
 ---
+
+## TL;DR
+
+- 自举通过同态执行解密电路刷新密文，使有限深度同态加密升级为全同态加密。
+- 这要求方案能评估自身解密电路，并通常需要循环安全等额外假设。
+- 模数切换、密钥切换与打包技术决定 FHE 是否具有可接受的工程性能。
 
 ## 0. 主线
 
@@ -63,9 +70,13 @@ $$\mathrm{Eval}\big(\mathrm{Dec}_{(\cdot)}(c),\ \widetilde{sk}\big) = \mathrm{En
 
 ---
 
-## 5. 本讲小结
+## 5. 自举与噪声管理小结
 
 - Bootstrapping = 用加密的私钥同态运行解密电路 → 输出同明文、低噪声的新密文。
 - 成功要件：解密电路够浅 + circular security。
 - 配套：模数切换、重线性化压制噪声与维度。
 - 层级 FHE 够用就别 bootstrapping；它是性能瓶颈。
+
+::: insight
+自举把对自身解密电路的同态计算变成刷新机制，这一自指结构也带来了循环安全假设与巨大的性能成本。
+:::

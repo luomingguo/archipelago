@@ -1,15 +1,20 @@
 ---
-title: Cryptography
+title: "密码学"
 type: lecture
 lecture: 10
-tags: []
+tags: [cryptography, diffie-hellman, rsa, chinese-remainder-theorem]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture10-2024mar14_mp4/
 ---
-# Lec 10 Cryptography
+# Lec 10 密码学
 
-> MIT 6.1200J Mathematics for Computer Science, Spring 2024
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture10-2024mar14_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec10.pdf)
 
-------
+## TL;DR
+
+- 对称密码要求通信双方预先共享密钥；Diffie–Hellman 利用离散对数难题，让双方在公开信道上协商共享秘密。
+- RSA 从大素数 $p,q$ 构造 $n=pq$，使用互为模逆的指数加解密；正确性由模运算定理保证，安全性则依赖分解大合数的计算困难。
+- 中国剩余定理将若干两两互素模数下的余数唯一合并为乘积模数下的解，也可用于分解和加速模运算。
 
 ## 1. 密码学基础概念
 
@@ -173,3 +178,9 @@ $$x \equiv_p a \cdot 1 + b \cdot 0 = a, \qquad x \equiv_q a \cdot 0 + b \cdot 1 
 | *Prime Number Theorem*            | 质数定理                |
 | *Miller-Rabin*                    | Miller-Rabin 素性检验   |
 | *Chinese Remainder Theorem (CRT)* | 中国剩余定理            |
+
+## 我的理解
+
+::: insight
+数学上的正确性与密码学的安全性是两个不同命题：前者证明合法密文能被正确解密，后者需要明确对手模型和难题假设。教材版 RSA 展示数学结构，实际系统还必须使用安全填充和经审计的库。
+:::

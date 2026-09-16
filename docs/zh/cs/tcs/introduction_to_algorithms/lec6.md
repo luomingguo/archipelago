@@ -1,17 +1,20 @@
 ---
-title: 二叉树
+title: "二叉树与二叉搜索树"
 type: lecture
 lecture: 6
-tags: []
+tags: [binary-tree, binary-search-tree, tree-traversal]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-6-binary-trees-part-1/
 ---
-# Lec 6 二叉树
+# Lec 6 二叉树与二叉搜索树
 
-一种几乎优于所有目前我们所了解的数据结构——二叉树
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-6-binary-trees-part-1/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec6/)
 
-- 二叉树
-- 应用： 集合
-- 应用： 序列
+## TL;DR
+
+- 二叉树用父子指针表示层次结构，中序遍历为节点定义一个线性顺序，多数操作的成本受树高 $h$ 限制。
+- 二叉搜索树使中序顺序与键的排序顺序一致，因而搜索、插入和删除都可沿一条根到叶的路径完成。
+- 在节点中维护子树大小等增强信息，可以把按索引访问序列的问题也转化为 $O(h)$ 的树上导航。
 
 ## 二叉树
 
@@ -19,7 +22,7 @@ status: complete
 
 例子：
 
-![image-20250410021105158](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e18f97915.png)
+![二叉树与二叉搜索树图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e18f97915.png)
 
 ### 性质
 
@@ -65,7 +68,7 @@ status: complete
 - 如果 &lt;X&gt; 没有右孩子：将 &lt;Y&gt;作为 &lt;X&gt; 的右孩子。
 - 如果 &lt;X&gt; 有右孩子：将 &lt;Y&gt;作为 &lt;X&gt; 的后继节点的左孩子（后继节点不能有左孩子）。【就是在右孩子树找第一个，同理，如果是在其之前插入， 就找左子树的最后一个】
 
-![image-20250410023426800](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e195723eb.png)
+![二叉树与二叉搜索树图示 2](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e195723eb.png)
 
 从树中删除节点 &lt;X&gt; 的操作会根据 &lt;X&gt; 是否为叶节点而有所不同。如果 &lt;X&gt; 是叶节点，直接将其从父节点中断开即可，操作结束。若 &lt;X&gt; 不是叶节点，说明它至少有一个子节点，此时需借助遍历顺序中的前驱或后继节点来完成删除，有两种情况如下：
 
@@ -74,7 +77,7 @@ status: complete
 
 这种方式保证了我们最终删除的是一个叶节点，从而简化结构调整，且整个过程的运行时间为 O(h)，其中 h 是树的高度。
 
-![image-20250410023651042](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e19b145a1.png)
+![二叉树与二叉搜索树图示 3](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e19b145a1.png)
 
 ## 应用：集合
 
@@ -95,7 +98,7 @@ status: complete
 - 假设当前节点的左子树大小为$n_L$
 - 如果 i < $n_L$，说明第 *i* 个节点在左子树中，递归进入左子树；
 - 如果 i > $n_L$，说明第 *i* 个节点在右子树中，递归进入右子树，并更新索引为$i' = i - n_L - 1$
-- 否则，i = $n_L$​，你已经到达了所需的节点！
+- 否则，i = $n_L$，你已经到达了所需的节点！
 
 为了支持这种查找方式，每个节点通过“增强（augmentation）”方式添加一个 `size` 字段，记录其子树中节点的总数。在插入叶节点时，沿祖先路径将 `size` 值加 1；删除时则减 1，两个操作的时间复杂度都是 O(h)。
 
@@ -205,7 +208,6 @@ class Binary_Tree:
         if self.root:
             for A in self.root.subtree_iter():
                 yield A.item
-
 
 ```
 
@@ -341,3 +343,9 @@ class Set_Binary_Tree(Binary_Tree): # 二叉搜索树
         return ext.item
 
 ```
+
+## 我的理解
+
+::: insight
+二叉树本身不自动带来对数时间；真正的约束是树高。本讲把序列和集合两种接口统一到“在中序顺序上导航”，也为下一讲的平衡机制留出了唯一缺口。
+:::

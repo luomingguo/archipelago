@@ -1,11 +1,20 @@
 ---
-title: 有向图与 DAG
+title: "有向图与 DAG"
 type: lecture
 lecture: 14
-tags: []
+tags: [directed-graph, dag, topological-sort]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture14-2024apr04_mp4/
 ---
 # Lec 14 有向图与 DAG
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture14-2024apr04_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec14.pdf)
+
+## TL;DR
+
+- 有向图区分入边与出边，“可达”不再对称；强连通分量将互相可达的顶点缩约后，得到的凝聚图一定是 DAG。
+- DAG 不含有向环，因而必有入度为 0 的源点和出度为 0 的汇点，并且至少存在一个拓扑序。
+- 拓扑序把所有有向边的起点放在终点之前；它可用于表示依赖、调度任务和将偏序线性扩展。
 
 ## 1. 有向图基础
 
@@ -145,3 +154,9 @@ V4 = {大衣}
 **推论**（取 $t = \sqrt{n}$）：每个 $n$ 顶点 DAG 必然存在大小 $\geq \sqrt{n}$ 的链或反链。
 
 **证明：** 若最大链大小 $c \leq t$ 且最大反链大小 $\ell < n/t$，则按深度划分顶点得到 $c$ 个反链，每个大小 $< \ell$，总顶点数 $< c \cdot \ell < t \cdot (n/t) = n$——与共有 $n$ 个顶点矛盾。
+
+## 我的理解
+
+::: insight
+强连通分量是处理一般有向图的关键压缩：分量内的顶点在可达性上无法区分，分量之间则恢复为 DAG，从而可以再使用拓扑顺序和动态规划。
+:::

@@ -1,11 +1,20 @@
 ---
-title: '动态规划, Part 3: ASPS, Parens, Piano'
+title: "动态规划 III：APSP、括号与钢琴指法"
 type: lecture
 lecture: 17
-tags: []
+tags: [dynamic-programming, floyd-warshall, interval-dp, state-space]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-17-dynamic-programming-part-3-apsp-parens-piano/
 ---
-# Lec 17 动态规划, Part 3: ASPS, Parens, Piano
+# Lec 17 动态规划 III：APSP、括号与钢琴指法
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-17-dynamic-programming-part-3-apsp-parens-piano/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec17/)
+
+## TL;DR
+
+- Floyd–Warshall 用“中间顶点只允许来自前 $k$ 个顶点”作为状态扩展，在 $\Theta(|V|^3)$ 时间求得 APSP。
+- 区间动态规划把子串或子数组当作子问题，通过猜测最后一次分割或匹配位置组合更小区间。
+- 钢琴指法把时间索引和当前手指组成状态，形成分层 DAG，路径成本则表示相邻指法转换的难度。
 
 ## 本讲导览
 
@@ -25,7 +34,7 @@ SRTBOT 分析：
 
 - Relate
 
-  - $𝛿\_k(s, v) = \min \set{𝛿\_{k-1}(s, u) + w(u, v) | u ∊ Adj(v) } ∪ {𝛿_{k-1}(s, u)}$
+  - $𝛿\_k(s, v) = \min \left\{𝛿\_{k-1}(s, u) + w(u, v) | u ∊ Adj(v) \right\} ∪ {𝛿_{k-1}(s, u)}$
 
   - guessing "lost edge(u, v) on shortest s->v path"
 
@@ -52,7 +61,7 @@ Topo order of G
 
 - subprobs: d(u, v, k) = u->v 最短路径的权重，其中仅用到在集合{u, v} ∪ {1, 2, ...,k}的顶点 for  u, v ∊ V & 0 <= k <= |V|,  θ(|V|^3)
 
-- Relate: d(u, v, k) = $\min \set{d(u, v, k-1), d(u, k, k-1) + d(k, v, k-1)}$
+- Relate: d(u, v, k) = $\min \left\{d(u, v, k-1), d(u, k, k-1) + d(k, v, k-1)\right\}$
 
   - u --(1,...,k-1)---> v (第一种情况，不需要使用 k).即 k ∉SP
   - u --(k-1)--->k, k ---(k-1)--->v, 即 k ∊SP
@@ -77,8 +86,8 @@ Topo order of G
 
 - 如果$1 \lt f \lt f' $ 且 $t > t'$，则是不舒适的
 - 连续（平滑）演奏要求 $t = t'$ （否则罚分是无限大）
-- 弱指规则，尽量避免使用 $f' \in \set{4, 5}$
-- $\set{f, f'} = \set{3, 4}$ 是令人烦恼的
+- 弱指规则，尽量避免使用 $f' \in \left\{4, 5\right\}$
+- $\left\{f, f'\right\} = \left\{3, 4\right\}$ 是令人烦恼的
 
 目标： 为音符分配手指，以最小化总难度
 
@@ -93,7 +102,7 @@ Topo order of G
   - 没有足够的信息来填写 ？
   - 问题
     - 需要知道在开始$x(i+1)$时使用哪个手指
-    - 不同的起始手指可能会影响 $x(i + 1)$ 和 $d(t_i, f, t_{i+1}, ?)$​ 的结果
+    - 不同的起始手指可能会影响 $x(i + 1)$ 和 $d(t_i, f, t_{i+1}, ?)$ 的结果
   - 解决方案
     - 需要一个表来映射起始手指到$x(i+1)$的最优解
     - 也就是说，需要通过起始条件来扩展子问题
@@ -105,15 +114,21 @@ Topo order of G
   - For $0 \le i \lt n$ 且 $1 \le f \le F$
 - Relate
   - 猜测下个手指： 将 f' 分配给 $t_{i+1}$
-  - $x(i, f) = \min \set{x(i+1, f') + d(t_i, f, t_{i+1}, f') | 1 \le f' \le F}$
+  - $x(i, f) = \min \left\{x(i+1, f') + d(t_i, f, t_{i+1}, f') | 1 \le f' \le F\right\}$
 - 拓扑顺序
   - 逐步减小 i （任何 f 顺序）
 
 - Base
   - $x(n-1, f) = 0$ 没有转换
 - Original
-  - $\min \set{x(0, f) | 1\le f \le F}$
+  - $\min \left\{x(0, f) | 1\le f \le F\right\}$
 - Time
   - Θ(n · F) subproblems
   - Θ(F) work per subproblem
   - $Θ(n · F^2)$
+
+## 我的理解
+
+::: insight
+“增加一个维度”不只会让状态数变大，也可能让递推变得可写：Floyd–Warshall 的 $k$ 和钢琴指法的手指状态都是为了精确记录后续决策所需的边界信息。
+:::

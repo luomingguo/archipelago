@@ -2,8 +2,9 @@
 title: 秘密共享（Secret Sharing）
 type: lecture
 lecture: 12
-tags: []
+tags: [secret-sharing, shamir-secret-sharing, threshold-cryptography, polynomial-interpolation]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l12-ss.pdf'
 ---
 # Lec 12 秘密共享（Secret Sharing）
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：以标准处理撰写（Shamir 1979），要点与本课"Secret Sharing"一致。*
 
 ---
+
+## TL;DR
+
+- Shamir 秘密共享把秘密编码为随机多项式的常数项，任意 $t+1$ 份可恢复，至多 $t$ 份不泄露信息。
+- 它提供信息论安全，不依赖攻击者算力，但依赖随机性、分发渠道与参与者阈值。
+- 线性结构使共享值可局部相加，也为鲁棒共享与多方计算奠定基础。
 
 ## 0. 问题
 
@@ -58,9 +65,13 @@ $$p(x) = s + a_1 x + a_2 x^2 + \cdots + a_{t-1}x^{t-1},\quad p(0)=s.$$
 
 ---
 
-## 4. 本讲小结
+## 4. 秘密共享小结
 
 - $(t,n)$ 门限：$t$ 份重构、$t-1$ 份零信息。
 - Shamir = 随机 $t-1$ 次多项式，份额是点，重构靠拉格朗日插值。
 - 完美（信息论）安全 + 线性同态 → MPC 基石。
 - 实战配 VSS 防恶意分发；用于门限签名/密钥托管。
+
+::: insight
+阈值机制分散了信任，却没有消除信任；串通阈值、份额恢复和成员变更仍需明确治理。
+:::

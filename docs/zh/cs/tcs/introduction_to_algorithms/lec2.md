@@ -1,24 +1,20 @@
 ---
-title: 数据结构
+title: "数据结构与动态数组"
 type: lecture
 lecture: 2
-tags: []
+tags: [data-structures, sequence-interface, dynamic-array]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-2-data-structures-and-dynamic-arrays/
 ---
-# Lec 2 数据结构
+# Lec 2 数据结构与动态数组
 
-- 序列接口
-- 序列接口的实现
-- 集合接口
-- 集合接口的实现
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-2-data-structures-and-dynamic-arrays/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec2/)
 
-[lec2.md](./lec2.md)
+## TL;DR
 
-**数据结构** 是用于存储数据的方式，并提供对数据的操作的算法。
-
-接口（interface），也称 ADT（抽象数据类型，API 是一组操作的集合。接口定义了哪些操作是支持的（或者说适合什么问题），而数据结构则是如何支持这些操作的表示方式（即解决方案）
-
-这节课主要关注两个接口：序列（Sequence）和集合（Set)
+- 序列接口按位置组织数据，集合接口按键组织数据；同一接口可以有多种性能权衡不同的实现。
+- 静态数组支持 $O(1)$ 随机访问但中间更新为 $\Theta(n)$；链表则把已知节点附近的更新降为 $O(1)$。
+- 动态数组通过几何扩容把偶尔的 $\Theta(n)$ 复制成本分摊到多次插入上，使尾部插入的分摊成本为 $O(1)$。
 
 ## 序列接口
 
@@ -69,7 +65,7 @@ Linked List Sequence
 - 但现在 `get at(i)` 和 `set at(i, x)` 都需要 O(n)时间... :(
 - 我们能兼顾两者的优点吗？可以！（某种程度上...）
 
-![截屏 2024-07-30 15.27.16](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a895dfa604c.png)
+![数据结构与动态数组图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a895dfa604c.png)
 
 ### 静态数组
 
@@ -93,7 +89,7 @@ Linked List Sequence
   - 重新分配数组
   - 移动修改项之后的所有项
 
-![截屏 2024-07-30 15.27.50](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a8960220239.png)
+![数据结构与动态数组图示 2](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a8960220239.png)
 
 ### 动态数组
 
@@ -109,7 +105,7 @@ Linked List Sequence
 - 每当数组满时（r=1），分配$\Theta(n)$额外的空间以达到填充率$r_i$(e.g., 1/2)，使得在下一次重新分配前必须插入$\Theta(n)$项
 - 单次操作可能需要$\Theta(n)$时间进行重新分配
 - 但是，任意$\Theta(n)$次操作序列都需要花费$\Theta(n)$时间
-- 因此每次操作平均需要$\Theta(1)$​​时间
+- 因此每次操作平均需要$\Theta(1)$时间
 
 参考 Python 列表的做法，我们假设 n = 列表大小，
 
@@ -134,9 +130,9 @@ Linked List Sequence
 
 Python 列表的 append 和 pop 操作的摊销时间复杂度为 O(1)，其他操作可能为 O(n)！
 
-### 本讲小结
+### 序列结构的性能权衡
 
-![截屏 2024-07-30 15.40.18](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a898ee43760.png)
+![数据结构与动态数组图示 3](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a898ee43760.png)
 
 ## 集合接口
 
@@ -168,9 +164,9 @@ Python 列表的 append 和 pop 操作的摊销时间复杂度为 O(1)，其他�
 
 但是这个方法在动态操作上仍然不是很好（在数组中间操作，数据项仍然需要移动）
 
-### 本讲小结
+### 集合结构的性能权衡
 
-![截屏 2024-07-31 02.02.46](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a92aef712cd.png)
+![数据结构与动态数组图示 4](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a92aef712cd.png)
 
 > 思考下，有序数组容器操作复杂度为 nlogn， 如何进行构建的？
 
@@ -269,7 +265,7 @@ def Set_from_Seq(seq):
 >
 > (a) E [X] (b) E [Y ] (c) E [X + Y ]
 
-Solution: (a) 3/2 = 1.5, (b) ${1\over{36}}\sum^6_{i=1}\sum^6_{j=1}(i*y) = 49/4 = 12.25$​, (c) E[X+Y] = E[X] + E[Y] = 13.75
+Solution: (a) 3/2 = 1.5, (b) ${1\over{36}}\sum^6_{i=1}\sum^6_{j=1}(i*y) = 49/4 = 12.25$, (c) E[X+Y] = E[X] + E[Y] = 13.75
 
 > 令 A=600/6， B = 60 mod 42，判断下面的表达式
 >
@@ -279,19 +275,19 @@ Solution: (a) 3/2 = 1.5, (b) ${1\over{36}}\sum^6_{i=1}\sum^6_{j=1}(i*y) = 49/4 =
 
 > 用归纳法证明$\sum^n_{i=1}i^3 = [{n(n+1)\over2}]^2， 对于任何整数n \ge 1$成立
 
-![截屏 2024-08-07 08.31.01](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66b2c04e00c0d.png)
+![数据结构与动态数组图示 5](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66b2c04e00c0d.png)
 
 > 通过归纳法证明每个连通的无向图 G=(V,E) 其中|E| = |V| - 1 是无环的。
 
-Solution: 对顶点数 k 进行归纳。基本情况：k = 1,  一个包含一个顶点和零条边的图显然是无环的。现在假设对于任何有 k 个顶点和 k - 1 条边的连通图，这一命题成立，并考虑一个包含 k+1 个顶点和 k 条边的连通图 G。因为 G 是连通的，所以每个顶点至少连接一条边。由于每条边都连接两个顶点，所以 G 中的顶点平均度数是$2k/(k+1) < 2$​，因此图中至少存在一个度为 1 的顶点 v，它仅与一个顶点 u 相连。移除 v 和连接 v 和 u 的边，得到一个包含 k 个顶点和 k-1 条边的图 G',它仍然是连通的。顶点 v 不能在图 G 的任何环中，因为环中的顶点数至少为 2.因此，图 G 只有在 G’中存在环时才包含环。根据假设，G'是无环的，因此 G 也是无环的。
+Solution: 对顶点数 k 进行归纳。基本情况：k = 1,  一个包含一个顶点和零条边的图显然是无环的。现在假设对于任何有 k 个顶点和 k - 1 条边的连通图，这一命题成立，并考虑一个包含 k+1 个顶点和 k 条边的连通图 G。因为 G 是连通的，所以每个顶点至少连接一条边。由于每条边都连接两个顶点，所以 G 中的顶点平均度数是$2k/(k+1) < 2$，因此图中至少存在一个度为 1 的顶点 v，它仅与一个顶点 u 相连。移除 v 和连接 v 和 u 的边，得到一个包含 k 个顶点和 k-1 条边的图 G',它仍然是连通的。顶点 v 不能在图 G 的任何环中，因为环中的顶点数至少为 2.因此，图 G 只有在 G’中存在环时才包含环。根据假设，G'是无环的，因此 G 也是无环的。
 
 > **函数行为的渐进性**
 >
 > 按照复杂度一下函数进行排序，如果是紧确界的内用集合表示
 >
-> 比如 f1 = n; f2= $\sqrt{n}$, f3 = $n + \sqrt{n}$​， 答案为{f2, {f1, f3}} 或者是{f2, {f3, f1}}
+> 比如 f1 = n; f2= $\sqrt{n}$, f3 = $n + \sqrt{n}$， 答案为{f2, {f1, f3}} 或者是{f2, {f3, f1}}
 >
-> ![截屏 2024-07-30 16.27.05](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a8a3e0740e8.png)
+> ![数据结构与动态数组图示 6](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a8a3e0740e8.png)
 
 Solution:  $(\log{n})^a = o(n^b)$对于任何正常数 a, b 都成立，因此（f1, f5, f2, f3, f4）
 
@@ -299,7 +295,7 @@ b) ({f2, f5}, f3, f1, f4), 由 $n! \approx \sqrt{2 \pi n} \left(\frac{n}{e}\righ
 $$
 \binom{n}{k} \approx \frac{n^n}{k^k (n-k)^{n-k}}
 $$
-将 k = n/2 代入最终得到 $\binom{n}{n/2} \approx \frac{2^n}{\sqrt{n}}$​
+将 k = n/2 代入最终得到 $\binom{n}{n/2} \approx \frac{2^n}{\sqrt{n}}$
 
 > 给定一个数据结构 D，支持以下四种基本的序列操作，每种操作的时间复杂度为 O(1)
 >
@@ -418,3 +414,9 @@ def reorder_students(L):
     b.next = None
     return
 ```
+
+## 我的理解
+
+::: insight
+选数据结构不是选一个“最快的容器”，而是先写出业务需要的操作集，再为频繁操作付较少的代价。动态数组是用空间余量换取可预测的平均更新成本。
+:::

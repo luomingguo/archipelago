@@ -2,12 +2,19 @@
 title: 循环优化（Loop Optimizations）
 type: lecture
 lecture: 9
-tags: []
+tags: [loop-optimization, dominator, loop-invariant-code-motion, induction-variable]
 status: complete
+source: https://6110-sp25.github.io/assets/documents/lectures/L09-LoopOptimizations.pdf
 ---
 # Lec 09 循环优化（Loop Optimizations）
 
 > 参考：循环是优化重点——"90% 的执行时间花在 10% 的代码（多在循环）里"
+
+## TL;DR
+
+- 自然循环可由「回边的目标支配源点」识别，循环前置头为安全外提计算提供唯一入口。
+- 循环不变式外提、归纳变量简化和强度削弱把重复且昂贵的计算移出热路径或替换为更便宜的操作。
+- 变换的合法性取决于支配、定义到达、别名、异常和溢出语义；「在循环中不变」并不自动意味「可以外提」。
 
 ---
 
@@ -132,7 +139,11 @@ until 无新归纳变量
 
 ---
 
-## 5. 本讲小结
+::: insight
+循环是优化收益的放大器，也是语义风险的放大器。实现时应把「可以移」与「值得移」分开：前者由依赖和异常语义决定，后者还要看运行频率和目标机成本。
+:::
+
+## 5. 循环识别与经典优化小结
 
 - 识别循环：先算支配者（不动点交集）与支配树，找回边（头支配尾），自然循环 = 头 + 尾 + 之间节点；前置头承载外提代码。
 - 循环不变式外提：检测不变语句（操作数常量/定义在外/来自不变语句），满足支配出口 + 唯一定义 + 不被其他定义干扰三条件后提到前置头。

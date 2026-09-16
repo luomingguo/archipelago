@@ -1,11 +1,20 @@
 ---
-title: 图与着色
+title: "图与图着色"
 type: lecture
 lecture: 11
-tags: []
+tags: [graph-theory, graph-coloring, bipartite-graph]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture11-2024mar19_mp4/
 ---
-# Lec 11 图与着色
+# Lec 11 图与图着色
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture11-2024mar19_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec11.pdf)
+
+## TL;DR
+
+- 简单图由顶点与无向边组成，握手引理 $\sum_v\deg(v)=2|E|$ 来自每条边对度数总和贡献两次。
+- 二部图的顶点可分为两侧，每条边都跨越两侧；等价地，二部图恰好是可用两种颜色正确着色的图。
+- 贪心着色按某个顶点顺序使用最小可用颜色，保证不超过 $\Delta+1$ 色，但结果可能依赖顶点顺序且未必最优。
 
 ## 1. 简单图
 
@@ -105,3 +114,9 @@ $$\frac{A_L}{A_R} = \frac{|R|}{|L|}$$
 - $K_n$：最大度数 $n-1$，$\chi(K_n) = n$，上界紧。
 - 星图 $S_k$：最大度数 $k$，但 $\chi = 2$，上界很宽松。
 - 王冠图 $H_{k,k}$：$\chi = 2$，最大度数 $k$，但存在一种排序让贪心使用 $k$ 种颜色——算法在最坏情况下表现很差。
+
+## 我的理解
+
+::: insight
+图建模的价值在于抛弃与问题无关的细节，只保留对象和成对关系。但同一现实问题可以有多种图模型：顶点和边分别代表什么，会直接决定着色或匹配结论是否有意义。
+:::

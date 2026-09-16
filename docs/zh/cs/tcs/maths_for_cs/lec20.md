@@ -1,15 +1,20 @@
 ---
-title: 独立性
+title: "独立性"
 type: lecture
 lecture: 20
-tags: []
+tags: [independence, conditional-independence, birthday-paradox]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture20-2024apr30_mp4/
 ---
 # Lec 20 独立性
 
-> 来源：MIT 6.1200J / 18.062J Mathematics for Computer Science，Spring 2024
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture20-2024apr30_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec20.pdf)
 
-------
+## TL;DR
+
+- 事件 $A,B$ 独立当且仅当 $\Pr[A\cap B]=\Pr[A]\Pr[B]$；独立不等于互斥，除非其中一个事件概率为 0。
+- 两两独立只检查每一对事件，互独立还要求所有子集的交集概率都可分解；前者不能推出后者。
+- 条件化可以破坏原有独立性，也可以让原本相关的变量在给定共同原因后变得条件独立。
 
 ## 1. 基本定义
 
@@ -100,3 +105,9 @@ $$\Pr[\text{无碰撞}] \leq e^{-1/n} \cdot e^{-2/n} \cdots e^{-(d-1)/n} = e^{-\
 $$\Pr[H \mid H^{50}] = 1 \cdot \Pr[\text{有偏} \mid H^{50}] + \frac{1}{2} \cdot \Pr[\text{公平} \mid H^{50}]$$
 
 随着观测到的正面次数增多，$\Pr[\text{有偏} \mid H^{50}]$ 不断增大，$\Pr[H \mid H^{50}]$ 趋向于 1。
+
+## 我的理解
+
+::: insight
+独立性是概率分布的性质，不能只凭“两件事没有直接关系”的叙事判断。最稳妥的做法是写出需要的乘法等式，并明确是两两独立还是互独立。
+:::

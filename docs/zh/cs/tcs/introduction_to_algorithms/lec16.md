@@ -1,11 +1,20 @@
 ---
-title: '动态规划, Part2: LCS, LIS, Coins'
+title: "动态规划 II：LCS、LIS 与硬币游戏"
 type: lecture
 lecture: 16
-tags: []
+tags: [dynamic-programming, longest-common-subsequence, longest-increasing-subsequence, game-theory]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-16-dynamic-programming-part-2-lcs-lis-coins/
 ---
-# Lec 16 动态规划, Part2: LCS, LIS, Coins
+# Lec 16 动态规划 II：LCS、LIS 与硬币游戏
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-16-dynamic-programming-part-2-lcs-lis-coins/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec16/)
+
+## TL;DR
+
+- 最长公共子序列用两个后缀索引描述状态；当首元素相等时同时前进，否则在丢弃任一序列首元素之间取最优。
+- 最长递增子序列需要把“必须选当前元素”编入子问题，否则状态不足以判断下一个元素能否接入。
+- 交替硬币游戏可显式加入当前玩家状态，也可利用零和性把对手收益改写为总和减去己方收益。
 
 ## 本讲导览
 
@@ -38,7 +47,7 @@ Ex： Hieroglyphology 和 Michelangelo，其 LCS 为 hello 或者是 heglo 或 i
     L(i, j) = 
     \begin{cases}
     L(i+1, j+1) + 1 \text{  if A[i] = B[j]} \\
-    \max \set{L(i+1, j), L(i, j+1)}  \text{  其他}
+    \max \left\{L(i+1, j), L(i, j+1)\right\}  \text{  其他}
     \end{cases}
     $$
 
@@ -61,11 +70,11 @@ Ex： Hieroglyphology 和 Michelangelo，其 LCS 为 hello 或者是 heglo 或 i
 
   - 子问题数目： (|A| + 1) · (|B| + 1)
   - 每个子问题的工作量：O(1)
-  - 总共的运行时间 $O(|A|·|B|)$​
+  - 总共的运行时间 $O(|A|·|B|)$
 
 **LCS 子问题 DAG**
 
-![](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/666d5b886cbe8.png)
+![动态规划 II：LCS、LIS 与硬币游戏图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/666d5b886cbe8.png)
 
 （边缘的是 Base case， 每个节点都是一个子问题，对应于什么是最长公共子序列，比如（3，2）这个点而言， 子问题就是 EIR 和 ABIT 的 LCS 是什么？箭头是父指针）
 
@@ -104,7 +113,7 @@ SRTBOT 分析：
   - 已知第一个元素是 A[i]，那么第二个元素是哪个呢？
     - 可以是任何$A[j]\text{，其中} j  > i \text{ 且 } A[j] > A[i]$ ，
     - 也可能 A[i]是 LIS 最后一个元素
-  - $L(i) = 1 + \max \set{L(j) | i < j < n, A[i] < A[j]} ∪ \set{0}$
+  - $L(i) = 1 + \max \left\{L(j) | i < j < n, A[i] < A[j]\right\} ∪ \left\{0\right\}$
   - 错误的思路： 我们思考 i 是不是在 LIS 当中，在和不在分别讨论。第一反应是 L(i) =  max{L(i+1), 1+L(i+1)}， 因为这是子问题约束的关系
 - **T**opo order
   - for  i = |A|, ..., 0
@@ -112,7 +121,7 @@ SRTBOT 分析：
   - 无需，因为我们考虑的就是 A[i]就是最后一个 LIS 元素
 - **O**riginal:
   - 那个是 LIS 的第一个元素呢？ **靠猜**
-  - 我们 LIS(A)的长度为$\max \set{L(i) | 0\le i\le|A|}$
+  - 我们 LIS(A)的长度为$\max \left\{L(i) | 0\le i\le|A|\right\}$
   - 需要存储子问题父指针来重构序列
 - **T**ime:
   - 子问题个数： θ(|A|)
@@ -125,7 +134,7 @@ SRTBOT 分析：
 
 **LIS 子问题的 DAG 图**
 
-![](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/666e9fbdbde9f.png)
+![动态规划 II：LCS、LIS 与硬币游戏图示 2](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/666e9fbdbde9f.png)
 
 ```python
 def lis(A):
@@ -140,7 +149,7 @@ def lis(A):
 
 ## 交替硬币游戏
 
-给定一系列 n 个硬币，其价值为 $v_0, ... v_{n-1}$​，两个玩家轮流拿硬币，每轮可以从剩下的硬币中取第一个或者最后一个硬币，我的目标最大化我拿到的硬币总价值，我先开始。
+给定一系列 n 个硬币，其价值为 $v_0, ... v_{n-1}$，两个玩家轮流拿硬币，每轮可以从剩下的硬币中取第一个或者最后一个硬币，我的目标最大化我拿到的硬币总价值，我先开始。
 
 ### 方案一： 子问题扩展
 
@@ -151,8 +160,8 @@ def lis(A):
   - 玩家 p 必须选择 第$i$ 个或者 $j$ 个硬币（需要猜！）
   - 如果 p=me， 那么我将得到那个值，否则什么都没得到
   - 然后轮到另外一个玩家
-  - $X(i, j, me) = \max \set{X(i+1, j, u) + v_i, X(i, j-1, u) + v_j}$
-  - $X(i, j , u) = \min \set{X(i+1, j, me), X(i, j-1, me)}$
+  - $X(i, j, me) = \max \left\{X(i+1, j, u) + v_i, X(i, j-1, u) + v_j\right\}$
+  - $X(i, j , u) = \min \left\{X(i+1, j, me), X(i, j-1, me)\right\}$
 - **T**opo:  增大  ``j-i``
 - **B**ase:
   - $X(i, i, me) = v_i$
@@ -167,7 +176,7 @@ def lis(A):
 
 **子问题 DAG**
 
-![](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/666ea842acaff.png)
+![动态规划 II：LCS、LIS 与硬币游戏图示 3](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/666ea842acaff.png)
 
 以上，叫**子问题扩展**
 
@@ -182,7 +191,7 @@ def lis(A):
   - 我必须选择要么是第 i 个 要么是第 j 个
   - 因此，你能够获得 $x(i+1, j)$或者$x(i, j-1)$，分别对应于我选择硬币 i 或 j
   - 为了计算我能获得的价值，从总硬币值中减去这一部分
-  - $x(i, j) = \max \set{v_i + \sum^j_{k=i+1} v_k - x(i+1, j), v_j+\sum_{k=i}^{j-1}v_k-x(x, j-1)}$
+  - $x(i, j) = \max \left\{v_i + \sum^j_{k=i+1} v_k - x(i+1, j), v_j+\sum_{k=i}^{j-1}v_k-x(x, j-1)\right\}$
 - **T**opo order
   - 逐步增大 ``j-i``
 - **B**ase
@@ -193,10 +202,16 @@ def lis(A):
 - **T**ime Analysis
   - 子问题数目 $\Theta(n^2)$
   - 每个子问题的工作量 $\Theta(n)$，计算总和
-  - 运行时间为 $\Theta(n^3)$​
+  - 运行时间为 $\Theta(n^3)$
 
 **子问题 DAG**
 
-![](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/666ea862d10b2.png)
+![动态规划 II：LCS、LIS 与硬币游戏图示 4](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/666ea862d10b2.png)
 
 > 练习题： 将复杂度提升到$\Theta(n^2)$，通过以$\Theta(n^2)$时间内预处理所有和$\sum^j_{k=i}v_k$
+
+## 我的理解
+
+::: insight
+LIS 的状态设计展示了一个通用技巧：当“可行的未来”取决于历史中某个边界值时，把该边界值或其索引放进状态，就能恢复无后效性。
+:::

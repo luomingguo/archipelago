@@ -2,12 +2,18 @@
 title: 低级虚拟机 II（Low-Level VM II）——语法制导翻译与控制流图
 type: lecture
 lecture: 16
-tags: []
+tags: [syntax-directed-translation, bytecode, control-flow-graph, virtual-machine]
 status: complete
 ---
 # Lec 16 低级虚拟机 II（Low-Level VM II）——语法制导翻译与控制流图
 
 > 接 L15。本讲讲**怎么把 AST 翻译成字节码**：用**推理规则**（语法制导翻译）逐结构生成指令，把控制流显式化为**控制流图 (CFG)**。与 L2–L5 里"正则表达式→有限自动机"的构造法形成漂亮的类比。
+
+## TL;DR
+
+- 语法制导翻译为每种 AST 构造定义局部规则，递归翻译子结构并组合出字节码。
+- 顺序、条件和循环在 CFG 中变成基本块与跳转边，从而把源语言隐含的控制转移变成 VM 可直接执行的结构。
+- 翻译规则应同时维护栈效果、分支目标与局部不变式，让生成代码能以结构归纳的方式与源语义对应。
 
 ---
 

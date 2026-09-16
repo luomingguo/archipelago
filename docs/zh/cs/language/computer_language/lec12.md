@@ -2,13 +2,20 @@
 title: 数据流分析的理论基础（Foundations of Dataflow Analysis）
 type: lecture
 lecture: 12
-tags: []
+tags: [lattice, fixed-point, dataflow-analysis, abstract-interpretation]
 status: complete
+source: https://6110-sp25.github.io/assets/documents/lectures/L12-FoundationsOfDataflowAnalysis.pdf
 ---
 # Lec 12 数据流分析的理论基础（Foundations of Dataflow Analysis）
 
 > 内容：格论、偏序、传递函数、单调性/分配性、工作表算法、抽象函数与路径汇合解
 > 这是 L8 数据流分析的**形式化数学基础**
+
+## TL;DR
+
+- 格用偏序表达分析信息的精度，join / meet 定义控制流汇合时如何安全地合并事实。
+- 单调传递函数与有限升链使工作表算法收敛到最小不动点，到达定义、可用表达式和活跃性都是该框架的实例。
+- 抽象函数解释了分析为何健全但可能不精确；分配性决定工作表解是否等于理想的路径汇合解，无限升链则需要 widening。
 
 ---
 
@@ -201,7 +208,11 @@ f([a→3,b→2] ∨ [a→2,b→3]) = f([a→TOP,b→TOP]) = [...,c→TOP]  （�
 
 ---
 
-## 9. 本讲小结
+::: insight
+抽象分析的价值不在于完美还原运行时，而在于选择一个有限、可收敛且仍能证明所需性质的信息空间。精度与终止之间的取舍，是设计一个分析时最根本的工程选择。
+:::
+
+## 9. 格、不动点与分析精度小结
 
 - 数据流信息 = 格元素；偏序/lub/glb/完全格/Top-Bottom 是骨架，升链条件保证终止。
 - 传递函数须含恒等、复合封闭、单调（有时分配，分配⟹单调）；前/后向框架对称，工作表迭代到最小不动点。

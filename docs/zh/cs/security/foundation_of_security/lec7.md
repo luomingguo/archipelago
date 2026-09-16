@@ -2,11 +2,18 @@
 title: 案例研究：公钥基础设施（PKI）
 type: lecture
 lecture: 7
-tags: []
+tags: [public-key-infrastructure, digital-certificate, certificate-transparency, revocation]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec07.pdf'
 ---
 # Lec 7 案例研究：公钥基础设施（PKI）
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- PKI 用 CA 签发的证书把域名与公钥绑定，浏览器沿证书链验证签名、域名、有效期和策略，而不是仅验证服务器“拥有某个密钥”。
+- 根 CA 的广泛信任把任一 CA 的错误放大为系统性风险；短有效期、域名验证改进与最小化信任集合只能降低而不能消除风险。
+- CRL 与 OCSP 的吊销机制受可用性和隐私限制，Certificate Transparency 通过公开可审计日志帮助发现误签，但不能阻止首次攻击。
 
 ## 1. 公钥认证的核心问题
 
@@ -147,3 +154,7 @@ CT 不能阻止错误签发，但使其可被发现。2016 年发现 Symantec �
 - **信任锚（Trust Anchor）**：预装 Root CA，是整个链的安全基础
 - **CA 的签名不能证明服务器是可信的**，只证明了"CA 确认该公钥属于该域名"
 - **CT 日志**是 PKI 透明度的核心工具
+
+::: insight
+证书透明度主要提升事后可发现性，并不能阻止错误证书首次被使用；监控、告警和撤销流程仍是信任链的一部分。
+:::

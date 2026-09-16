@@ -1,16 +1,20 @@
 ---
-title: 排序
+title: "排序与递归"
 type: lecture
 lecture: 3
-tags: []
+tags: [comparison-sorting, recursion, master-theorem]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-3-sets-and-sorting/
 ---
-# Lec 3 排序
+# Lec 3 排序与递归
 
-在 Lec2 的练习题上，我们提前用序列接口实现了集合接口，发现时间复杂度比较高
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-3-sets-and-sorting/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec3/)
 
-- 排序
-- 递归
+## TL;DR
+
+- 选择排序和插入排序都在比较模型中运行，最坏时间为 $\Theta(n^2)$，但它们维护的不变量不同。
+- 归并排序用分治把问题分成两个子问题，再线性归并，对应递推 $T(n)=2T(n/2)+\Theta(n)$。
+- 主定理比较递归树中子问题增长与每层合并工作，快速判定标准分治递推的渐进界。
 
 ## 排序
 
@@ -89,12 +93,12 @@ def selection_sort(A): # Selection sort array A
 - prefix_max 分析：（找到最大值的前缀）
   - 基本情况，对于 i=0，数组只有一个元素，因此最大值的索引是 i
   - 归纳步骤，假设对于前 i 个元素的分析是正确的，即 `prefix_max(A, i - 1)` 能正确返回 A[:i] 中最大值的索引，如果在 A[i] 中有更大的值，函数会返回 i；否则，返回之前的最大值索引
-  - S(n) = S(n-1) + $\Theta(1)$​  => S(n) = cn
+  - S(n) = S(n-1) + $\Theta(1)$  => S(n) = cn
 - selection_sort 分析： （找到 0 和 i 之间最大的元素，然后将它换位）
   - 基本情况：对于 i=0，数组只有一个元素，因此它是有序的
   - 归纳步骤：假设对于前 i 个元素的排序是正确的，即 `selection_sort(A, i - 1)` 能够将 A[:i] 排序。选择排序算法将当前未排序的部分中最大（或最小）的元素放置到正确的位置，确保最后一个元素是数组中最大的一个。然后，剩下的前 i 个元素仍然是有序的，由归纳法可知
   - T(1) = $\Theta(1)$,  T(n) = T(n-1) + $\Theta(n)$
-    - 代换（猜测）： T(n) = $\Theta(n^2)$, $cn^2 = \Theta(n) + c(n-1)^2 \rightarrow c(2n-1) = \Theta(n)$​，满足，猜对了。
+    - 代换（猜测）： T(n) = $\Theta(n^2)$, $cn^2 = \Theta(n) + c(n-1)^2 \rightarrow c(2n-1) = \Theta(n)$，满足，猜对了。
     - 根据递归树： n 个节点链，每个节点工作量为$\Theta(i)$，$\sum^{n-1}_{i=0}i = \Theta(n^2)$
 
 ### 插入排序
@@ -169,7 +173,7 @@ def merge(L, R, A, i, j, a, b):     # S(b - a = n)
 
 - 基本情况： 当 n=0，数组是空的，所以显然正确
 - 归纳，假设对于 n 是正确的，数组 A[r]中的元素必须是 L 和 R 剩余前缀中的最大元素，并且他们是排序的，取最后一个元素中的最大值就足够了；其余部分通过归纳进行合并
-- S(0) = $\Theta(1)$, $S(n) = S(n-1) + \Theta(1) \rightarrow S(n) = \Theta(n)$​
+- S(0) = $\Theta(1)$, $S(n) = S(n-1) + \Theta(1) \rightarrow S(n) = \Theta(n)$
 
 merge_sort 分析
 
@@ -178,9 +182,9 @@ merge_sort 分析
 - $T(1) = \Theta(1), T(n) = 2T(n/2) + \Theta(n)$
   - 代入法： 假设$T(n) = \Theta(n\log{n})$
     - $cn\log{n} = \Theta(n) + 2c(n/2)\log{n/2} \rightarrow cn\log{2} = \Theta$
-  - 递归树: 深度$\log_2{n}$ 的完全二叉树有 n 个叶子，每一层 i 都 2^i 个节点，每个节点的工作量为$O(n/2^i)$，总工作量为$\sum^{\log_2n}_{i=0}(2^i)(n/2^i) = \sum^{\log_2n}_{i=0} n = \Theta(n\log{n})$​
+  - 递归树: 深度$\log_2{n}$ 的完全二叉树有 n 个叶子，每一层 i 都 2^i 个节点，每个节点的工作量为$O(n/2^i)$，总工作量为$\sum^{\log_2n}_{i=0}(2^i)(n/2^i) = \sum^{\log_2n}_{i=0} n = \Theta(n\log{n})$
 
-### 本讲小结
+### 排序算法的性能对比
 
 插入排序和选择排序是常见的排序算法，适用于排序小数量的项，因为它们易于理解和实现。这两种算法都是**增量式**的，即它们维护并扩展一个已排序的子集，直到所有项都被排序。它们之间的区别很微妙：
 
@@ -203,11 +207,11 @@ merge_sort 分析
 
 主定理提供了一种解决递归关系的方法，其中递归调用通过一个常数因子减少问题规模。给定一个形式为 T(n) = aT(n/b) + f(n) 且 T(1) = Θ(1) 的递归关系，其中分支因子 a ≥ 1，问题规模缩减因子 b > 1，以及渐近非负函数 f(n)，主定理通过比较 f(n) 和 $a^{\log_b{n}} = n^{\log_b{n}}$ 来给出递归关系的解，这里 $a^{\log_b{n}}$ 表示递归树底部的叶子数量。当 f(n) 的增长速度渐近快于 $n^{log_b a}$ 时，每层的工作量几何级数递减，因此根节点的工作量占主导地位；相反，当 f(n) 的增长速度较慢时，每层的工作量几何级数递增，因此叶子节点的工作量占主导地位。当它们的增长速度相当时，工作量均匀分布在递归树的 O(log n) 层上。
 
-![截屏 2024-08-07 13.04.02](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66b300503a149.png)
+![排序与递归图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66b300503a149.png)
 
 当 f(n)是一个多项式时，主定理变得更加简洁，此时地推关系为$T(n) = aT(n/b) + \Theta(n^c), c\ge 0$。这个特殊情况可以用代入法证明。
 
-![截屏 2024-08-07 19.30.07](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66b35ac89556d.png)
+![排序与递归图示 2](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66b35ac89556d.png)
 
 ## 练习题
 
@@ -244,3 +248,9 @@ Solution: T(n) = O($n\log^2{n}$)，（这个特例不能用主定理方法，因
 > T(n) = 4T(n/2) + O(n)
 
 Solution: T(n) = O($n^2$)，高度为$\log_2{n}$ 度为 4 的树，每个节点的工作量 O($2^k$)，k 为节点所在高度
+
+## 我的理解
+
+::: insight
+排序是一个很好的分界案例：先在比较模型内讨论算法，才能说明为何 $Theta(nlog n)$ 是可期的上界，以及为何后续线性排序必须利用键的额外结构。
+:::

@@ -1,19 +1,20 @@
 ---
-title: 复杂度
+title: "计算复杂性"
 type: lecture
 lecture: 19
-tags: []
+tags: [computational-complexity, p-vs-np, reduction]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-19-complexity/
 ---
-# Lec 19 复杂度
+# Lec 19 计算复杂性
 
-总览
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-19-complexity/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec19/)
 
-- 决策问题
+## TL;DR
 
-- P， NP,  EXP,  R 问题
-- 非确定性多项式时间
-- 规约
+- 复杂性理论常把问题写成是否问题，以统一讨论可判定性、验证器和多项式时间。
+- $P$ 包含可在多项式时间求解的判定问题；$NP$ 包含给定一个多项式长度证书后可在多项式时间验证的问题。
+- 多项式时间规约把一个问题的实例转换为另一个问题的实例，并保持答案；它是比较问题难度和建立 NP 完全性的主要工具。
 
 ## 决策问题
 
@@ -44,18 +45,18 @@ status: complete
 ## P, NP, EXP, R 问题
 
 - P = \{ 能够在多项式时间解决（或者叫多项式时间可判定）的问题 \}
-  - 时间复杂度$n^{O(1)}$​， n 是问题输入规模
+  - 时间复杂度$n^{O(1)}$， n 是问题输入规模
 - NP = \{ 通过“幸运“算法，能够在多项式时间解决的决策问题 \}
   - 正式的说是， 非确定性多项式时间
   - 非正式说，算法可以做出决策，并且决策总是幸运的命中最佳的一个
 
 - EXP = \{ 在指数时间可解决的问题 \}
-  - 时间复杂度$2^{n^{O(1)}}$​​
+  - 时间复杂度$2^{n^{O(1)}}$
   - 大部分问题在这个层面
 - R = \{ 能够在有限时间完成的问题 \}
   - R 来自 recursive languages
 
-![截屏 2024-06-17 11.49.44](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/666fb263c01ca.png)
+![计算复杂性图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/666fb263c01ca.png)
 
 ## 非确定性多项式时间（NP）
 
@@ -101,3 +102,9 @@ status: complete
 **最长简单路径**和**俄罗斯方块**是 NP 完全问题，所以如果 NP 中的某个问题不属于 P，那么这些问题也是。
 
 **国际象棋是 EXP 完全（EXP-complete）**：属于 EXP，并且可以从 EXP 中的每个问题归约过来（所以它不属于 P）。
+
+## 我的理解
+
+::: insight
+规约的方向容易写反：要证明新问题 $B$ 至少与已知难问题 $A$ 一样难，需要构造 $Aleq_p B$。这表示如果能快速求解 $B$，就会同时快速求解 $A$。
+:::

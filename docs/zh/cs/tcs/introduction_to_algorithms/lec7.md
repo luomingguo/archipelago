@@ -1,22 +1,20 @@
 ---
-title: AVL 树
+title: "AVL 树"
 type: lecture
 lecture: 7
-tags: []
+tags: [avl-tree, tree-rotation, balanced-tree]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-7-binary-trees-part-2-avl/
 ---
 # Lec 7 AVL 树
 
-我们这节课的终极目标是实现树的**平衡**：n 个节点的树如果它的高度是$O(\log{n})$，那么它是平衡的。
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-7-binary-trees-part-2-avl/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec7/)
 
-- 高度平衡
-- 树的旋转
-  - 局部重平衡
-  - 全局重平衡
-- 计算高度
-- 应用：序列
-- 应用：排序
-- 练习题
+## TL;DR
+
+- AVL 树要求每个节点的左右子树高度差至多为 1，该局部条件足以保证整树高度为 $O(\log n)$。
+- 单旋和双旋在保持中序顺序的同时改变局部深度，因此不会破坏二叉搜索树的键顺序。
+- 插入后一次局部重平衡即可停止；删除可能继续降低子树高度，因而需要沿祖先链反复检查。
 
 ## 高度平衡
 
@@ -30,13 +28,13 @@ status: complete
 >
 >  一个高度平衡的二叉树的高度为 $h = O(\log n)$（即 $n = 2^{\Omega(h)}$）
 
-证明：平衡意味着，$h = O(\log n)$，换句话说，平衡意味着 $\log{n}$ 是高度 h 的下界，表示为$n = 2^{\Omega(h)}$，即最少的节点数量与树的高度呈指数关系。为了证明这点，我们引入一个函数 F(h)，表示高度为 h 的平衡树中最少的节点数。基本情况和递推关系为，$F(0) = 1, F(1) = 2, F(h) = 1 + F(h-1) + F(h-2) \ge 2F(h-2)$​，根据递推关系，我们可以推出 $F(h) \ge 2^{ h/2 } = 2^{\Omega(h)}$​，得证。
+证明：平衡意味着，$h = O(\log n)$，换句话说，平衡意味着 $\log{n}$ 是高度 h 的下界，表示为$n = 2^{\Omega(h)}$，即最少的节点数量与树的高度呈指数关系。为了证明这点，我们引入一个函数 F(h)，表示高度为 h 的平衡树中最少的节点数。基本情况和递推关系为，$F(0) = 1, F(1) = 2, F(h) = 1 + F(h-1) + F(h-2) \ge 2F(h-2)$，根据递推关系，我们可以推出 $F(h) \ge 2^{ h/2 } = 2^{\Omega(h)}$，得证。
 
 ## 树的旋转
 
 当我们高度平衡的树中添加或删除叶节点时，可能会导致不平衡，我们想要在不改变遍历顺序的情况下改变树的结构——通过**旋转**！旋转操作会将一个子树从以下两种局部结构中的一种转换为另一种，并通过在 O(1)时间内修改节点之间的连接来实现这种转换
 
-![image-20241014153608700](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/670cc9eb13ca8.png)
+![AVL 树图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/670cc9eb13ca8.png)
 
 上述操作保留了遍历顺序，但能改变&lt;A&gt;和&lt;E&gt;的深度，后面会讲解如何在插入或或者删除一个节点后强制平衡。
 
@@ -55,7 +53,6 @@ def subtree_rotate_right(D):
         E.parent = D
     #B.subtree_update()
     #D.subtree_update()
-
 
 def subtree_rotate_left(B):
     assert B.right
@@ -94,7 +91,7 @@ Proof：既然 skew(&lt;B&gt;) = 2，说明&lt;B&gt; 的右子节点 &lt;F&gt; �
 - 如果 skew(&lt;F&gt;) = 0，说明 height(&lt;D&gt;) = h + 1
 - 如果 skew(&lt;F&gt;) = 1，说明 height(&lt;D&gt;) = h
 
-![截屏 2024-08-03 17.53.14](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66adfe15a78f8.png)
+![AVL 树图示 2](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66adfe15a78f8.png)
 
 旋转后：
 
@@ -106,7 +103,7 @@ Proof：既然 skew(&lt;B&gt;) = 2，说明&lt;B&gt; 的右子节点 &lt;F&gt; �
 
 **情况 3**：&lt;F&gt; 的偏斜度为 -1，因此 &lt;F&gt; 的左孩子 &lt;D&gt; 存在， 先需要对 &lt;F&gt; 执行一次右旋转，然后对&lt;B&gt; 执行一次左旋转（双旋）
 
-![截屏 2024-08-03 17.56.04](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66adfebebea94.png)
+![AVL 树图示 3](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66adfebebea94.png)
 
 设$h = \text{height}(A)$。那么高度 $\text{height}(<G>) = h$，而高度 $\text{height}(<C>)$ 和 $\text{height}(E)$ 都是 h 或 h - 1
 
@@ -149,7 +146,7 @@ Proof：既然 skew(&lt;B&gt;) = 2，说明&lt;B&gt; 的右子节点 &lt;F&gt; �
 
    - 因此可能需要平衡 &lt;X&gt; 的每一个祖先，但最多有 $h = O(\log n)$
 
-因此，在插入/删除后，只需 $O(\log n)$ 次旋转即可保持高度平衡！ 但需要评估可能 $O(\log n)$​ 个节点是否高度平衡。
+因此，在插入/删除后，只需 $O(\log n)$ 次旋转即可保持高度平衡！ 但需要评估可能 $O(\log n)$ 个节点是否高度平衡。
 
 ```python
 # 非子树增强版本
@@ -195,7 +192,7 @@ Sol: 朴素算法如下：
 **改进思路**：给每个节点增加一个字段，记录它子树的高度！如此一来， 节点 &lt;X&gt; 的高度可以在 $O(1)$ 时间内通过它的子节点高度计算得到：在 $O(1)$时间内查找并获取左子树和右子树的高度，然后取两个高度中的较大值加 1。在动态操作过程中，当树的结构发生变化时，必须**维护**节点的高度信息，即在子树改变的节点重计算子树增强
 
 - 旋转操作时更新重新链接的节点，在 $O(1)$ 时间内完成（祖先节点不会改变）
-- 插入或删除节点时，通过向上遍历树更新所有祖先节点的高度，时间复杂度为 $O(h)$​
+- 插入或删除节点时，通过向上遍历树更新所有祖先节点的高度，时间复杂度为 $O(h)$
 
 **增强二叉树的步骤**如下
 
@@ -242,7 +239,7 @@ Sol: 朴素算法如下：
 > ```
 
 Solution:
-![image-20241014190145047](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/670cfa1b5de01.png)
+![AVL 树图示 4](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/670cfa1b5de01.png)
 
 > 练习：维护一个包含 n 个比特的序列，支持以下两个操作，每个操作的时间复杂度为 $O(\log n)$：
 >
@@ -263,3 +260,9 @@ def update(A):
 为了实现 `flip(i)`，我们需要找到索引为 i 的节点 A，使用 `subtree_node_at(i)`，然后翻转存储在 `A.item` 的比特位。接着通过向上遍历树，更新 A 及其每个祖先节点的增强信息，这个操作可以在 $O(\log n)$时间内完成。
 
 为了实现 `count_ones_upto(i)`，我们首先定义基于子树的递归函数 `subtree_count_ones_upto(A, i)`，该函数返回节点 A 的子树中索引至多为 i 的 1 的数量。然后，`count_ones_upto(i)` 语义上等价于 `subtree_count_ones_upto(T.root, i)`。由于每次递归调用至多会对一个子节点进行递归调用，因此该操作耗时 $O(\log n)$。
+
+## 我的理解
+
+::: insight
+AVL 树的核心不是记住旋转图，而是证明两个不变量：旋转不改变中序顺序，重新计算局部高度后又恢复平衡。这也是所有平衡树实现的验证骨架。
+:::

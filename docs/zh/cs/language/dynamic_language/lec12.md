@@ -2,12 +2,18 @@
 title: 垃圾回收 I（Garbage Collection I）——可达性与引用计数
 type: lecture
 lecture: 12
-tags: []
+tags: [garbage-collection, reachability, reference-counting, mark-and-sweep]
 status: complete
 ---
 # Lec 12 垃圾回收 I（Garbage Collection I）——可达性与引用计数
 
 > Phase 3 开始。为什么会产生垃圾、如何用**可达性**近似"未来不再使用"、引用计数及其局限（环）
+
+## TL;DR
+
+- 运行时无法普遍准确预知对象未来是否还会被使用，因此 GC 以「从根集可达」作为安全的近似。
+- 引用计数在指针更新时增减计数，计数归零即可立即回收，但每次赋值都有成本，且不能回收不可达环。
+- 标记-清扫从根集遍历指针图标记可达对象，再统一回收未标记对象，能处理环但引入停顿与遍历成本。
 
 ---
 

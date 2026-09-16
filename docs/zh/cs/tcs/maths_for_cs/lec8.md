@@ -1,11 +1,20 @@
 ---
-title: 整除性
+title: "整除性与欧几里得算法"
 type: lecture
 lecture: 8
-tags: []
+tags: [divisibility, gcd, euclidean-algorithm]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture08-2024mar05_mp4/
 ---
-# Lec 8 整除性
+# Lec 8 整除性与欧几里得算法
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture08-2024mar05_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec08.pdf)
+
+## TL;DR
+
+- $a\mid b$ 表示 $b$ 是 $a$ 的整数倍；公因子对整数线性组合封闭，这是水壶可达性与 Bézout 恒等式的共同基础。
+- $\gcd(a,b)=\gcd(b,a\bmod b)$ 在保持公因子集的同时缩小参数，因而导出欧几里得算法。
+- 扩展欧几里得算法在求最大公因子的同时求出 $sa+tb=\gcd(a,b)$ 的系数，为模逆元和线性不定方程提供构造性方法。
 
 ## 一、数论
 
@@ -121,7 +130,7 @@ $b$ 和 $c$ 的**整数线性组合**（*integer linear combination*, ILC）是�
 
 **不变量：** $\gcd(x, y) = \gcd(a, b)$（由 Lemma 3 保持）。
 
-**终止性：** $x \operatorname{rem} y < y/2$（当 $y \leq x$ 时），故每两步后 $x + y$ 至少减半，步数上界为 $O(\log(a+b))$（即位数之和）。
+**终止性：** $0 \leq x \operatorname{rem} y < y$，因此第二个参数每步都严格变小。更精确地说，每两步至少将较大参数减半，所以欧几里得算法需要 $O(\log \min(a,b))$ 次取余。
 
 **示例：** $\gcd(1001, 777)$：
 
@@ -195,3 +204,9 @@ gcd(1001, 777) = gcd(777, 224)   [q=1]
 | *Euclid's Algorithm*                        | 欧几里得算法                  |
 | *Extended Euclidean Algorithm / Pulverizer* | 扩展欧几里得算法 / 辗转相除法 |
 | *Bézout's Identity*                         | Bézout 恒等式                 |
+
+## 我的理解
+
+::: insight
+欧几里得算法同时展示了算法证明的两个支点：每步保持不变的公因子集保证正确性，余数严格变小保证终止性。
+:::

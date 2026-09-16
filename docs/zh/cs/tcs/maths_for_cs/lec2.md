@@ -1,11 +1,20 @@
 ---
-title: 反证法和归纳法
+title: "反证法与数学归纳法"
 type: lecture
 lecture: 2
-tags: []
-status: stub
+tags: [contradiction, induction, logic]
+status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture02-2024feb09_mp4/
 ---
-# Lec 2 反证法和归纳法
+# Lec 2 反证法与数学归纳法
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture02-2024feb09_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec02.pdf)
+
+## TL;DR
+
+- 证明方法应当跟随命题的逻辑形式：存在命题需要构造见证，全称命题需要对任意对象论证，蕴含可用直接法或逆否法。
+- 反证法假设待证命题的否定，并从中推出矛盾；关键是说清矛盾与哪个既知事实或公理冲突。
+- 数学归纳法用基础情况和归纳步骤覆盖无限多个自然数命题；归纳假设必须足以推出下一个实例。
 
 ## 一、逻辑推导规则
 
@@ -19,8 +28,8 @@ status: stub
 
 | 名称                                   | 形式                                                        |
 | -------------------------------------- | ----------------------------------------------------------- |
-| 肯定前件推理                           | $P \implies Q,; P ;\vdash; Q$                               |
-| 否定后件推理（通过否定结果来否定前提） | $P \implies Q,; \neg Q ;\vdash; \neg P$                     |
+| 肯定前件推理                           | $P \implies Q,\; P ;\vdash; Q$                               |
+| 否定后件推理（通过否定结果来否定前提） | $P \implies Q,\; \neg Q ;\vdash; \neg P$                     |
 | 传递性                                 | $(P \implies Q) \land (Q \implies R) ;\vdash; P \implies R$ |
 | 反证规则                               | $(\neg P \implies \text{false}) ;\vdash; P$                 |
 
@@ -36,7 +45,7 @@ status: stub
 
 证明 $\exists x \in S.; P(x)$：直接构造一个满足条件的具体值。
 
-**Example.** $\exists n \in \mathbb{N},; n \geq 10 \text{ and isPrime}(n)$。
+**Example.** $\exists n \in \mathbb{N},\; n \geq 10 \text{ and isPrime}(n)$。
 
 *Proof.* 取 $n = 17$，17 是质数且 $17 \geq 10$。$\blacksquare$
 
@@ -46,7 +55,7 @@ status: stub
 
 证明 $\forall x \in S.; P(x)$：引入**任意**元素 $x \in S$（不作任何额外假设），证明 $P(x)$。
 
-**Example.** $\forall x \in \mathbb{R},; x^2 - 6x > -10$。
+**Example.** $\forall x \in \mathbb{R},\; x^2 - 6x > -10$。
 
 *Proof.* 设 $x$ 为任意实数，则 $x^2 - 6x + 9 = (x-3)^2 \geq 0$，故 $x^2 - 6x \geq -9 > -10$。$\blacksquare$
 
@@ -92,7 +101,7 @@ $a, b$ 均为偶数，与 $\gcd(a,b) = 1$ 矛盾。$\Rightarrow\Leftarrow$ $\bla
 
 **思路：** 在真正动手推导之前，先根据命题的**逻辑形式**机械地拆解证明目标。
 
-**Example.** 定理：$\forall n \in \mathbb{Z},; F(n) \iff B(n+1)$。
+**Example.** 定理：$\forall n \in \mathbb{Z},\; F(n) \iff B(n+1)$。
 
 ```text
 Proof Outline:
@@ -113,15 +122,15 @@ Proof Outline:
 设 $P(n)$ 为关于 $n \in \mathbb{N}$ 的谓词。若
 
 1. $P(0)$ 为真（*base case*）；
-2. $\forall n \in \mathbb{N},; P(n) \implies P(n+1)$（*inductive step*）；
+2. $\forall n \in \mathbb{N},\; P(n) \implies P(n+1)$（*inductive step*）；
 
-则 $\forall n \in \mathbb{N},; P(n)$。
+则 $\forall n \in \mathbb{N},\; P(n)$。
 
 归纳步骤中，"假设 $P(n)$ 为真"称为**归纳假设**（*induction hypothesis*, IH）。
 
 ### 5.1 标准示例
 
-**Example.** $\forall n \in \mathbb{N},; 1 + 2 + \cdots + n = \dfrac{n(n+1)}{2}$。
+**Example.** $\forall n \in \mathbb{N},\; 1 + 2 + \cdots + n = \dfrac{n(n+1)}{2}$。
 
 *Proof by induction.*
 
@@ -131,7 +140,7 @@ Proof Outline:
 
 $$\sum_{i=0}^{n+1} i = \underbrace{\sum_{i=0}^{n} i}_{= n(n+1)/2 \text{ by IH}} + (n+1) = \frac{n(n+1)}{2} + (n+1) = \frac{(n+1)(n+2)}{2}$$
 
-即 $P(n+1)$ 成立。由归纳原理，$P(n)$ 对所有 $n \in \mathbb{N}$ 成立。$\blacksquare$​
+即 $P(n+1)$ 成立。由归纳原理，$P(n)$ 对所有 $n \in \mathbb{N}$ 成立。$\blacksquare$
 
 ### 5.2 强化归纳假设
 
@@ -150,7 +159,7 @@ $$\sum_{i=0}^{n+1} i = \underbrace{\sum_{i=0}^{n} i}_{= n(n+1)/2 \text{ by IH}} 
 
 **Inductive step：** 设 $Q(n)$ 成立。对 $2^{n+1} \times 2^{n+1}$ 棋盘，设去掉格子 $(i,j)$ 在左上象限。在棋盘正中放一块 L 骨牌，覆盖其余三象限各一格；再对四个 $2^n \times 2^n$ 子棋盘分别应用 $Q(n)$，各去掉一格（左上去 $(i,j)$，其余去已被骨牌覆盖的格）。$\blacksquare$
 
-**结论：** $Q(n) \implies P(n)$，故 $P(n)$ 对所有 $n$​ 成立。
+**结论：** $Q(n) \implies P(n)$，故 $P(n)$ 对所有 $n$ 成立。
 
 <img src="https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260618014623983.png" alt="image-20260618014623983" style="zoom:50%;" />
 
@@ -170,3 +179,9 @@ $$\sum_{i=0}^{n+1} i = \underbrace{\sum_{i=0}^{n} i}_{= n(n+1)/2 \text{ by IH}} 
 | *Induction hypothesis (IH)* | 归纳假设          |
 | *Strengthen the IH*         | 强化归纳假设      |
 |                             |                   |
+
+## 我的理解
+
+::: insight
+反证和归纳都不是话术模板：反证要追踪否定后的逻辑后果，归纳要找到能在相邻规模之间传递的性质。当归纳步走不通时，先考虑加强命题，而不是放弃归纳。
+:::

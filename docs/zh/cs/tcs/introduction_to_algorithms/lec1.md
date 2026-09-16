@@ -1,17 +1,20 @@
 ---
-title: 介绍
+title: "算法与计算"
 type: lecture
 lecture: 1
-tags: []
+tags: [algorithm-analysis, correctness, word-ram]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-1-algorithms-and-computation/
 ---
-# Lec 1 介绍
+# Lec 1 算法与计算
 
-- 算法的定义
-- 渐进表示法
-- 计算模型
-- 数据结构
-- 练习题
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-1-algorithms-and-computation/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec1/)
+
+## TL;DR
+
+- 算法是一个规模有限、定义清楚的计算过程；评价算法时必须同时说明正确性与效率。
+- 渐进记号描述输入规模增长时的运行时间，帮助我们忽略机器常数并比较增长率。
+- Word-RAM 把对一个机器字的基本操作视为常数时间；数据结构则把算法需要的操作接口与具体表示分离。
 
 ## 算法的定义
 
@@ -83,7 +86,7 @@ a: A
 
 渐进表示法来忽略与问题输入规模无关的常数。O(f(n))表示一组定义在自然数域上的函数，这些函数满足以下性质。
 
-> **O 表示法**：当且仅当存在一个正实数 c 和一个正整数$n_0$​，使得对于所有 n ≥ n0，非负函数 g(n)属于 O(f(n))，即 g(n) ≤ c · f(n)
+> **O 表示法**：当且仅当存在一个正实数 c 和一个正整数$n_0$，使得对于所有 n ≥ n0，非负函数 g(n)属于 O(f(n))，即 g(n) ≤ c · f(n)
 
 该定义上界了一个函数的渐进增长，对于足够大的 n，即使我们将函数按常数量进行缩放或平移，该增长的上界仍然成立。按照惯例，人们更常说一个函数 g(n)是 O(f(n))或$g(n)=O(f(n))$，但他们真正的意思是集合包含关系，即$g(n) ∈ O(f(n))$。因此，由于我们问题的输入规模是$cn$（某个常数 c），我们可以忽略 c，直接说输入规模是 O(n)（即 n 的阶）。类似的表示法也可以用于下界。
 
@@ -93,7 +96,7 @@ a: A
 
 > **Θ表示法**：当且仅当 g(n) ∈ O(f(n))∩Ω(f(n))，非负函数 g(n)属于Θ(f(n))。
 
-![截屏 2024-07-30 13.15.27](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a876fd72691.png)
+![算法与计算图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66a876fd72691.png)
 
 ## 计算模型
 
@@ -157,11 +160,11 @@ Solution: 由公式可以$ n(n − 1). . .(n − 6005) $，当 n 较大时，每
 
 > 对于$\log_{6006}{(\log{(n^{\sqrt{n})})^2})}$的紧确界是什么？
 
-$\log_{6006}{(\log{(n^{\sqrt{n})})^2})} = {2\over{\log{6006}}}\log{()\sqrt{n}\log{n}} = \Theta(\log n^{1/2} + \log{\log{n}})= \Theta(\log{n})$​
+$\log_{6006}{(\log{(n^{\sqrt{n})})^2})} = {2\over{\log{6006}}}\log{()\sqrt{n}\log{n}} = \Theta(\log n^{1/2} + \log{\log{n}})= \Theta(\log{n})$
 
 > 证明$(\log{n})^a = O(n^b) 对于所有的常数a, b成立$
 
-Solution: 即证$\lim_{n\to \infty} n^b/(\log{n})^a$  趋近于正无穷，$\lim_{n\to \infty} n^b/(\log{n})^a = \lim_{n\to \infty} (b\log{n} - a\log{\log{n}}) = \lim_{x \to \infty}(bx-a\log{x} ) = \infty$​
+Solution: 即证$\lim_{n\to \infty} n^b/(\log{n})^a$  趋近于正无穷，$\lim_{n\to \infty} n^b/(\log{n})^a = \lim_{n\to \infty} (b\log{n} - a\log{\log{n}}) = \lim_{x \to \infty}(bx-a\log{x} ) = \infty$
 
 > 证明 $(\log{n})^{\log{n}} = \Omega(n)$
 
@@ -170,3 +173,9 @@ Solution: 即证$\lim_{n\to \infty} n^b/(\log{n})^a$  趋近于正无穷，$\lim
 > 证明 $(6n)! \notin \Theta(n!)$,但是$\log((6n)!) \in \Theta(\log(n!))$
 
 有斯特林估算公式$n! \approx \sqrt{2 \pi n} \left(\frac{n}{e}\right)^n(1+\Theta(1/n))$，将 6n 带进去，发现至少是原来$6^{6n}$倍，但是如果用对数函数，会发现$\log(n!) = \Theta(n\log{n})$，并且代入 6n，会发现只是常数倍的差距
+
+## 我的理解
+
+::: insight
+“解决问题”和“证明解法”是同一项工作的两面：没有明确的计算模型，效率声明就没有可比性；没有正确性论证，更快的程序也不能称为算法解。
+:::

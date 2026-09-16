@@ -142,9 +142,9 @@ Plan → Act → Observe → Update Plan → Act → ...
 
 ------
 
-### Agentic Coding 的风险：Cognitive Debt
+### Agentic Coding 的风险：认知负债
 
-最后几张图是在提醒：**Agent 越强，人越容易停止理解。**
+最后几张图是在提醒：Agent 越强，人越容易停止理解。
 
 Vibe Coding 很容易变成：
 

@@ -1,115 +1,178 @@
 ---
-title: 大偏差界——切比雪夫与切尔诺夫界
+title: "期望的应用与方差"
 type: lecture
 lecture: 23
-tags: []
+tags: [expectation, variance, union-bound, independence]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture23-2024may09_mp4/
 ---
-# Lec 24 大偏差界——切比雪夫与切尔诺夫界
+# Lec 23 期望的应用与方差
 
-> 来源：MIT 6.1200J / 18.062J Mathematics for Computer Science，Spring 2024
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture23-2024may09_mp4/) · 官方未提供本讲 Lecture notes
 
-------
+## TL;DR
 
-## 1. 方差回顾
+- 联合界用期望上界“至少一个事件发生”的概率；当事件互独立时，反向的指数下界说明期望较大时至少一个事件几乎必然发生。
+- 独立随机变量满足乘积的期望等于期望的乘积，但期望不与除法交换；先取比值再平均可以得到误导性结论。
+- 方差是与均值偏差平方的期望，度量分布的离散程度；独立变量之和的方差可相加，这解释了分散独立风险为何能降低波动。
 
-> **定义（方差）：** 随机变量 $R$ 的**方差**（*variance*）为： $$\text{Var}[R] = \mathbb{E}\left[(R - \mathbb{E}[R])^2\right]$$ **标准差**（*standard deviation*）$\sigma(R) = \sqrt{\text{Var}[R]}$。
+## 用指示变量计数事件
 
-**等价计算公式：**
+设 $E_1,\ldots,E_n$ 是同一样本空间上的事件，$N$ 表示实际发生的事件数。对每个事件定义指示变量
 
-$$\text{Var}[R] = \mathbb{E}[R^2] - \mathbb{E}[R]^2$$
+$$
+I_i=\begin{cases}
+1,&E_i\text{ 发生},\\
+0,&E_i\text{ 不发生}.
+\end{cases}
+$$
 
-**证明：**
+则 $N=\sum_{i=1}^n I_i$。由期望的线性，不论这些事件是否独立，都有
 
-$$\text{Var}[R] = \mathbb{E}[(R - \mathbb{E}[R])^2] = \mathbb{E}[R^2 - 2\mathbb{E}[R] \cdot R + \mathbb{E}[R]^2] = \mathbb{E}[R^2] - \mathbb{E}[R]^2$$
+$$
+\mathbb E[N]
+=\sum_{i=1}^n\mathbb E[I_i]
+=\sum_{i=1}^n\Pr[E_i].
+$$
 
-> **定理：** 若 $R_1, \ldots, R_n$ **两两独立**，则： $$\text{Var}[R_1 + \cdots + R_n] = \text{Var}[R_1] + \cdots + \text{Var}[R_n]$$
+### 联合界
 
-**警告：** $\sigma(R_1 + R_2) \neq \sigma(R_1) + \sigma(R_2)$（即使独立），但 $\sigma(R_1+R_2)^2 = \sigma(R_1)^2 + \sigma(R_2)^2$（独立时成立）。
+“至少一个事件发生”等价于 $N\ge 1$。因为在该事件上 $N\ge 1$，所以
 
-------
+$$
+\Pr\!\left[\bigcup_{i=1}^n E_i\right]
+=\Pr[N\ge 1]
+\le \mathbb E[N]
+=\sum_{i=1}^n\Pr[E_i].
+$$
 
-## 2. 马尔可夫不等式（*Markov's Inequality*）
+::: theorem 联合界（union bound）
+任意事件 $E_1,\ldots,E_n$ 都满足
 
-> **定理（马尔可夫不等式）：** 设 $R$ 为**非负**随机变量，则对任意 $x > 0$： $$\Pr[R \geq x] \leq \frac{\mathbb{E}[R]}{x}$$ 等价形式：$\Pr[R \geq c \cdot \mathbb{E}[R]] \leq \frac{1}{c}$。
+$$
+\Pr\!\left[\bigcup_{i=1}^n E_i\right]
+\le \sum_{i=1}^n\Pr[E_i].
+$$
 
-**证明：**
+这个结论不需要独立性，但右边可能大于 1，因而有时很松。
+:::
 
-$$\mathbb{E}[R] = \mathbb{E}[R \mid R \geq x] \Pr[R \geq x] + \mathbb{E}[R \mid R < x] \Pr[R < x] \geq x \cdot \Pr[R \geq x] + 0$$
+## 独立事件的反向界
 
-整理即得。
+若 $E_1,\ldots,E_n$ 互独立，则它们的补集也互独立：
 
-**非负性的必要性：** 若 $R$ 可取负值，则 $\mathbb{E}[R \mid R < x]$ 不再非负，不等式失效。
+$$
+\Pr[N=0]
+=\prod_{i=1}^n\bigl(1-\Pr[E_i]\bigr)
+\le \prod_{i=1}^n e^{-\Pr[E_i]}
+=e^{-\sum_i\Pr[E_i]}
+=e^{-\mathbb E[N]}.
+$$
 
-### 实用技巧：调整界
+因此
 
-若 $R$ 的取值范围为 $[\ell, u]$，可灵活变换：
+$$
+\Pr[N\ge1]\ge 1-e^{-\mathbb E[N]}.
+$$
 
-- 应用于 $R - \ell$（非负）得到更紧的上侧界
-- 应用于 $u - R$（非负）得到下侧界
+讲师把这个结论称为“Murphy 定律”：当失败模式互独立且失败数的期望很大时，至少一次失败的概率非常接近 1。
 
-**示例：** 成绩 $R \in [30, 100]$，$\mathbb{E}[R]=75$，估计 $\Pr[R \geq 90]$：
+::: pitfall
+这个下界依赖互独立。在“懒苏珊转盘”手机例子中，所有人是否拿回手机完全相关：要么全对，要么全错。每个人拿对的概率虽是 $1/n$，却不能使用上述独立下界。
+:::
 
-- 直接用马尔可夫：$75/90 \approx 0.833$
-- 对 $R-30$ 用马尔可夫：$\mathbb{E}[R-30]/60 = 45/60 = 0.75$（更紧）
+## 期望与乘法
 
-### 马尔可夫界的松紧性
+::: theorem 独立随机变量的乘积期望
+若 $X$ 与 $Y$ 独立，则
 
-- 懒苏珊转盘版手机问题：$\Pr[R \geq n] \leq 1/n$（马尔可夫），真实值也是 $1/n$——**紧！**
-- 袋中取手机版：$\Pr[R \geq n] \leq 1/n$（马尔可夫），真实值是 $1/n!$——**非常松！**
+$$
+\mathbb E[XY]=\mathbb E[X]\mathbb E[Y].
+$$
+:::
 
-------
+证明思路是按 $X=x,Y=y$ 对期望求和，再用独立性把联合概率分解为两个边缘概率。例如两枚独立公平六面骰子 $D_1,D_2$ 满足
 
-## 3. 切比雪夫不等式（*Chebyshev's Inequality*）
+$$
+\mathbb E[D_1D_2]
+=\mathbb E[D_1]\mathbb E[D_2]
+=3.5^2
+=12.25.
+$$
 
-> **定理（切比雪夫不等式）：** 对任意随机变量 $R$（无需非负）和 $x > 0$： $$\Pr[|R - \mathbb{E}[R]| \geq x] \leq \frac{\text{Var}[R]}{x^2} = \left(\frac{\sigma(R)}{x}\right)^2$$ 等价形式：$\Pr[|R - \mathbb{E}[R]| \geq c \cdot \sigma(R)] \leq \frac{1}{c^2}$。
+但 $D_1$ 并不与自身独立，因此
 
-**证明（对马尔可夫的应用）：**
+$$
+\mathbb E[D_1^2]=\frac{1^2+2^2+\cdots+6^2}{6}=\frac{91}{6}\ne 12.25.
+$$
 
-对非负随机变量 $(R - \mathbb{E}[R])^2$ 应用马尔可夫：
+### 不要交换期望与除法
 
-$$\Pr[|R - \mathbb{E}[R]| \geq x] = \Pr\left[(R - \mathbb{E}[R])^2 \geq x^2\right] \leq \frac{\mathbb{E}[(R-\mathbb{E}[R])^2]}{x^2} = \frac{\text{Var}[R]}{x^2}$$
+一般而言，
 
-**示例一（成绩）：** $\mathbb{E}[\text{score}]=75$，$\text{Var}[\text{score}]=25$，$\sigma=5$，估计 $\Pr[\text{score} \leq 65]$：
+$$
+\mathbb E\!\left[\frac1X\right]\ne\frac1{\mathbb E[X]}.
+$$
 
-$$\Pr[\text{score} \leq 65] \leq \Pr[|\text{score} - 75| \geq 10] \leq \frac{25}{100} = 0.25$$
+比较两个系统的相对性能时，“先对各工作负载求比值再取平均”可能在交换分子分母后仍宣称对方更好。如果问题是比较平均运行时间，应先分别计算期望，再比较两个期望。
 
-（距均值 2 个标准差，概率 $\leq 1/4$）
+## 方差与标准差
 
-**示例二（$n$ 次抛硬币）：** $R$ = 正面数，$\mathbb{E}[R]=n/2$，$\text{Var}[R]=n/4$：
+::: definition 方差
+随机变量 $X$ 的方差为
 
-$$\Pr\left[R \geq \frac{3n}{4}\right] \leq \Pr\left[|R - \frac{n}{2}| \geq \frac{n}{4}\right] \leq \frac{n/4}{(n/4)^2} = \frac{4}{n}$$
+$$
+\operatorname{Var}(X)
+=\mathbb E\!\left[(X-\mathbb E[X])^2\right].
+$$
 
-远优于马尔可夫给出的 $2/3$。
+标准差为 $\sigma(X)=\sqrt{\operatorname{Var}(X)}$，它与 $X$ 使用相同量纲。
+:::
 
-------
+方差通过平方避免正负偏差相互抵消，并给较大的偏离更高权重。它有一个常用等价公式：
 
-## 4. 切尔诺夫界（*Chernoff Bound*）
+$$
+\operatorname{Var}(X)=\mathbb E[X^2]-\mathbb E[X]^2.
+$$
 
-> **定理（切尔诺夫界）：** 设 $T_1, \ldots, T_n$ 为**互独立**随机变量，且 $0 \leq T_i \leq 1$，令 $T = \sum T_i$。则对所有 $c \geq 1$： $$\Pr[T \geq c \cdot \mathbb{E}[T]] \leq e^{-(c \ln c - c + 1) \cdot \mathbb{E}[T]}$$
+基本性质包括：
 
-**证明思路：** 对随机变量 $c^T$ 应用马尔可夫，利用独立性展开。
+- 平移不改变方差：$\operatorname{Var}(X+c)=\operatorname{Var}(X)$；
+- 缩放会平方地缩放方差：$\operatorname{Var}(cX)=c^2\operatorname{Var}(X)$；
+- 若 $X,Y$ 独立，则 $\operatorname{Var}(X+Y)=\operatorname{Var}(X)+\operatorname{Var}(Y)$。
 
-**应用（$n$ 次抛硬币，$c = 3/2$）：**
+对成功概率为 $p$ 的 Bernoulli 随机变量 $H$，因 $H^2=H$，
 
-$$\Pr\left[R \geq \frac{3n}{4}\right] = \Pr\left[R \geq \frac{3}{2} \cdot \frac{n}{2}\right] \leq e^{-0.1 \cdot n/2} = e^{-n/20}$$
+$$
+\operatorname{Var}(H)=p-p^2=p(1-p).
+$$
 
-这是**指数级**改进，远优于切比雪夫的 $4/n$！
+因此，$n$ 次独立抛硬币的正面数 $S=\sum_i H_i$ 满足
 
-**集中性示例（令 $c = 1 + 4/\sqrt{n}$）：** 对足够大的 $n$：
+$$
+\mathbb E[S]=np,
+\qquad
+\operatorname{Var}(S)=np(1-p).
+$$
 
-$$\Pr\left[R \geq \frac{n}{2} + 2\sqrt{n}\right] \leq 0.02$$
+## 分散投资的数学前提
 
-正面次数以极高概率集中在均值 $n/2$ 附近 $\sqrt{n}$ 量级的范围内，分布随 $n$ 增大越来越集中。
+设总资金为 $M$，平均分到 $k$ 个互相独立、方差为 1 的投资 $S_1,\ldots,S_k$ 中。总收益的方差为
 
-------
+$$
+\operatorname{Var}\!\left(\sum_{i=1}^k\frac{M}{k}S_i\right)
+=\sum_{i=1}^k\frac{M^2}{k^2}\operatorname{Var}(S_i)
+=\frac{M^2}{k}.
+$$
 
-## 5. 三种界的对比
+标准差为 $M/\sqrt{k}$，随独立投资数增加而下降。
 
-| 方法     | 所需条件     | 界的形式            | $n$ 次抛硬币 $\Pr[R \geq 3n/4]$ |
-| -------- | ------------ | ------------------- | ------------------------------- |
-| 马尔可夫 | $R \geq 0$   | $\mathbb{E}[R]/x$   | $2/3$（非常松）                 |
-| 切比雪夫 | 无（需方差） | $\text{Var}[R]/x^2$ | $4/n$                           |
-| 切尔诺夫 | 互独立，有界 | 指数级              | $e^{-n/20}$（指数紧）           |
+::: pitfall
+降低风险的结论依赖独立性。当资产受同一市场因素驱动时，协方差不为零，方差不能简单相加，分散化的收益也会减弱。
+:::
 
-**依赖关系：** 切比雪夫只需两两独立，切尔诺夫需要**互独立**，换来更强的指数级界。
+## 我的理解
+
+::: insight
+期望的线性不需独立，而乘积期望和方差可加性需要独立条件。记住这一分界比背公式更重要：加法中的交叉项可被期望线性直接处理，乘法和方差中的交叉项则必须靠独立性消去。
+:::

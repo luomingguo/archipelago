@@ -1,15 +1,20 @@
 ---
-title: 概率论导论
+title: "概率论导论"
 type: lecture
 lecture: 18
-tags: []
+tags: [probability, sample-space, monty-hall]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture18-2024apr23_mp4/
 ---
 # Lec 18 概率论导论
 
-> 来源：MIT 6.1200J / 18.062J Mathematics for Computer Science，Spring 2024
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture18-2024apr23_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec18.pdf)
 
-------
+## TL;DR
+
+- 有限概率模型由样本空间和每个结果的概率组成，事件是样本空间的子集，事件概率是其中结果概率之和。
+- 概率树必须列出完整的随机过程，边上写条件概率，根到叶的概率相乘，互斥叶结果的概率相加。
+- 蒙提霍尔问题中主持人知道奖品位置且必定打开空门，这个信息机制使换门胜率为 $2/3$，不是两扇剩余门各 $1/2$。
 
 ## 1. 概率论的重要性
 
@@ -113,3 +118,9 @@ $$\Pr[\text{换门赢}] = \frac{6}{9} = \frac{2}{3}$$
 $$\Pr[\text{红赢}] = \frac{37}{81}, \quad \Pr[\text{红输}] = \frac{42}{81}$$
 
 **掷一次时红胜绿，但掷两次时绿胜红——非传递性顺序反转！**
+
+## 我的理解
+
+::: insight
+概率情境中的直觉冲突往往来自样本空间变了，而计算者仍在使用原来的等可能假设。先写随机实验和信息生成过程，再谈概率，可避免大部分这类错误。
+:::

@@ -2,11 +2,18 @@
 title: 软件安全（Software Security）
 type: lecture
 lecture: 17
-tags: []
+tags: [software-security, memory-safety, injection, race-condition]
 status: complete
+source: 'https://mit-pdos.github.io/6.1600-notes/lec18.pdf'
 ---
 # Lec 17 软件安全（Software Security）
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- 软件漏洞不仅是内存越界，还包括解析与注入、并发竞态、TOCTOU 和资源耗尽；普通正确性 bug 在攻击者控制输入时可能升级为安全漏洞。
+- 缓冲区溢出与 use-after-free 可劫持控制流，SQL 注入和 XSS 则混淆数据与代码；共同根因是未维持边界与解释上下文。
+- 内存安全语言、结构化 API、严格解析和最小权限能消除漏洞类别，但仍需测试与架构隔离防止多个弱点被串成利用链。
 
 ## 1. 总体背景
 
@@ -193,3 +200,7 @@ NSA、Microsoft、Google 等均建议新项目优先使用内存安全语言。
 **整数溢出检测**（安全的乘法检查）：
 
 $$n \times 16 > \text{size} \iff n > \text{size} / 16 \quad \text{（先除再比较，避免溢出）}$$
+
+::: insight
+内存安全语言与编译器缓解的价值在于消灭漏洞类别；模糊测试更适合发现仍然存在的具体实例。
+:::

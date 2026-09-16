@@ -2,13 +2,20 @@
 title: 用正则表达式与上下文无关文法规范语言
 type: lecture
 lecture: 2
-tags: []
+tags: [regular-expression, finite-automata, context-free-grammar, abstract-syntax-tree]
 status: complete
+source: https://6110-sp25.github.io/assets/documents/lectures/L02-RegularExpressionsAndGrammars.pdf
 ---
 # Lec 02 用正则表达式与上下文无关文法规范语言
 
 > 配套复习课：R1–R2（前端阶段）
 > 参考：Cooper et al., Ch.2 Scanners；Ch.3 §3.1–3.2 Parsers
+
+## TL;DR
+
+- 词法层用正则表达式定义 token，再经结构归纳和子集构造转成 NFA / DFA 执行识别。
+- 嵌套结构超出正则语言的表达能力，因此语法层使用上下文无关文法（CFG）和语法树。
+- 结合性、优先级与悬挂 `else` 等歧义需通过改造具体文法解决，AST 则保留后续阶段真正需要的程序结构。
 
 ---
 
@@ -304,7 +311,11 @@ LastElse → if Expr then WithElse else LastElse
 
 ---
 
-## 11. 本讲小结
+::: insight
+正则表达式、CFG 和 AST 是三种不同职责的表示：前两者为「如何识别」服务，AST 为「后续如何理解和变换」服务。不应让解析器的便利性决定下游 IR 的形状。
+:::
+
+## 11. 语言规范与自动机小结
 
 - 语言分层：字母表 → 词法（正则表达式/自动机）→ 语法（文法）→ 语义。
 - 生成式与识别式对偶且可自动互转；正则表达式 ↔ NFA ↔ DFA（子集构造，可能指数膨胀）。

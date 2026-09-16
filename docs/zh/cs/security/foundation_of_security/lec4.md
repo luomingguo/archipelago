@@ -2,11 +2,18 @@
 title: 消息认证码（MAC）
 type: lecture
 lecture: 4
-tags: []
+tags: [message-authentication-code, unforgeability, pseudorandom-function, hmac]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec04.pdf'
 ---
 # Lec 4 消息认证码（*MAC*）
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- MAC 用共享密钥为消息生成标签，目标是在选择消息攻击下仍无法为新消息伪造有效标签，即 EUF-CMA 安全。
+- PRF 可直接导出定长消息 MAC；HMAC、CMAC 与 Poly1305 则处理哈希、分组密码或有限域运算中的实际约束。
+- MAC 提供来源与完整性但不提供机密性，也不提供第三方可验证的不可否认性，因为所有验证者都持有可伪造的同一密钥。
 
 ## 1. 问题背景
 
@@ -77,6 +84,10 @@ $$\text{Verify}(k, m, t) = [t \stackrel{?}{=} F(k, m)]$$
 ### 5.1 HMAC（基于哈希的 MAC）
 
 $$\text{HMAC}(k, m) = H\big((k \oplus \text{opad}) \| H((k \oplus \text{ipad}) \| m)\big)$$
+
+::: insight
+能生成合法 MAC 的组件也就具备伪造能力，因此密钥边界必须与被授权的写入边界一致。
+:::
 
 - $\text{opad} = \texttt{0x5c5c5c...}$，$\text{ipad} = \texttt{0x363636...}$（固定常数）
 - 防止对哈希函数 Length-Extension 攻击

@@ -2,8 +2,9 @@
 title: 全同态加密 I（FHE）
 type: lecture
 lecture: 9
-tags: []
+tags: [fully-homomorphic-encryption, learning-with-errors, gsw, bootstrapping]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l09-fhe1.pdf'
 ---
 # Lec 9 全同态加密 I（FHE）
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：以标准 FHE 处理撰写（Gentry 2009 / GSW 2013），要点与本课"FHE 1"一致。*
 
 ---
+
+## TL;DR
+
+- 全同态加密允许直接在密文上计算，并让解密结果等于对明文执行同一计算。
+- LWE 密文的线性运算自然增长噪声，乘法则更快消耗噪声预算。
+- GSW 类构造与自举说明“可计算性”来自控制噪声，而不是让密文变成明文。
 
 ## 0. 目标
 
@@ -68,9 +75,13 @@ Gentry 的突破：**自举（*bootstrapping*）**——把"解密电路"本身�
 
 ---
 
-## 5. 本讲小结
+## 5. 全同态加密基础小结
 
 - 同态级别：部分 → 层级 → 全。
 - LWE 密文加法便宜、乘法噪声放大；噪声预算 $q/4$ 限制深度。
 - GSW 把密文做成矩阵，明文 = 近似特征值，加/乘对应矩阵加/乘。
 - "全"同态靠 bootstrapping 刷新噪声（L10）。
+
+::: insight
+可以把同态密文理解为携带“噪声预算”的类型；每个运算都会消耗预算，超出上限就失去正确性。
+:::

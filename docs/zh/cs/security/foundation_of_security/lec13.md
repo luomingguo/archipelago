@@ -2,11 +2,18 @@
 title: 隔离（Isolation）
 type: lecture
 lecture: 13
-tags: []
+tags: [isolation, non-interference, virtualization, side-channel]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec15.pdf'
 ---
 # Lec 13 隔离（Isolation）
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- 隔离要求一个域的行为不能非法影响或泄露给另一个域；非干扰比“没有直接读写”更强，因为它还排除可观察的间接影响。
+- 模拟执行、时间复用、地址翻译与软件插桩从不同层面建立边界，虚拟机和浏览器沙箱通常组合多种机制。
+- 共享缓存、调度与推测执行仍会形成侧信道，说明功能隔离不等于信息流隔离；缓解需要分区、刷新、随机化或减少共享。
 
 ## 1. 隔离的动机
 
@@ -185,3 +192,7 @@ result = select(key_bit, v0, v1);  // 用 bit masking 实现
 | **Spectre** | 推测执行 + 缓存侧信道，突破语言级沙箱 |
 | **Meltdown** | 推测执行突破内核/用户态隔离 |
 | **KPTI** | Meltdown 的 OS 级缓解：用户态不映射内核页 |
+
+::: insight
+隔离与资源共享天然冲突；越追求缓存、内存和硬件的复用效率，越需要明确可观察的共享状态。
+:::

@@ -1,15 +1,24 @@
 ---
-title: 渐进分析
+title: "渐近分析"
 type: lecture
 lecture: 6
-tags: []
+tags: [asymptotic-analysis, harmonic-series, stirling-formula]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture06-2024feb27_mp4/
 ---
-# Lec 6 渐进分析
+# Lec 6 渐近分析
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture06-2024feb27_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec06.pdf)
+
+## TL;DR
+
+- $O$ 和 $\Omega$ 分别给出渐近上界与下界，$\Theta$ 给出紧界；$o$ 和 $\omega$ 表示比较函数严格更小或更大的增长率。
+- 渐近符号描述函数集合而非精确值；证明时需显式给出常数与阈值，不能把 $O$ 当作可随意约去的数字。
+- 调和数满足 $H_n=\Theta(\log n)$；Stirling 公式把 $n!$ 的乘法增长转换为可分析的指数形式。
 
 ## 一、引例：Goomy 叠叠乐
 
-**问题：** $n$ 块宽度为 1 的矩形叠放，每块可相对下一块错开，设 $d_i$ 为第 $i$​ 块右边缘相对第 0 块右边缘的偏移。能否让顶层 Goomy 悬出桌边超过 1 个单位？
+**问题：** $n$ 块宽度为 1 的矩形叠放，每块可相对下一块错开，设 $d_i$ 为第 $i$ 块右边缘相对第 0 块右边缘的偏移。能否让顶层 Goomy 悬出桌边超过 1 个单位？
 
 <img src="https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260618045214868.png" alt="image-20260618045214868" style="zoom:50%;" />
 
@@ -147,3 +156,9 @@ $$n\ln n - n + 1 \leq \ln(n!) \leq (n+1)\ln n - n + 1$$
 | *Theta* $\Theta$        | Theta（紧确界）           |
 | *Stirling's formula*    | Stirling 公式             |
 | *Closed form*           | 闭合公式                  |
+
+## 我的理解
+
+::: insight
+渐近分析丢弃常数与低阶项，但不丢弃前提。对小输入、隐藏常数很大或不同操作成本相差悬殊的系统，渐近界仍需要与模型和实测一起解读。
+:::

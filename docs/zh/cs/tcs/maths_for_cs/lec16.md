@@ -1,11 +1,20 @@
 ---
-title: 计数
+title: "计数技巧"
 type: lecture
 lecture: 16
-tags: []
+tags: [counting, binomial-coefficient, division-rule]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture16-2024apr11_mp4/
 ---
-# Lec 16 计数
+# Lec 16 计数技巧
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture16-2024apr11_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec16.pdf)
+
+## TL;DR
+
+- 除法法则适用于每个目标对象都被同样多个表示对象对应的情形；如果重数不一致，就不能直接整体相除。
+- 组合数 $\binom nr$ 计数从 $n$ 个不同对象中选出 $r$ 个的无序子集，由有序选择数除以 $r!$ 得到。
+- 复杂扑克牌型等问题需先选择一个不重不漏的分类或构造顺序，再使用乘法、加法或补集计数。
 
 ## 1. 规则回顾
 
@@ -38,7 +47,7 @@ status: complete
 2. 每个大小为 $r$ 的子集对应 $r!$ 个有序序列（所有排列）。
 3. 由除法法则，子集数为 $\frac{n!}{(n-r)! \cdot r!}$。
 
-$$\binom{n}{r} = \frac{n!}{(n-r)!, r!} \quad \text{（读作"$n$ 选 $r$"）}$$
+$$\binom{n}{r} = \frac{n!}{(n-r)!\,r!} \quad \text{（读作“$n$ 选 $r$”）}$$
 
 **例：**
 
@@ -108,3 +117,9 @@ $$\binom{n}{r} = \frac{n!}{(n-r)!, r!} \quad \text{（读作"$n$ 选 $r$"）}$$
 无对子手牌数 $= \binom{13}{5} \times 4^5$。
 
 至少有一对的手牌数 $= \binom{52}{5} - \binom{13}{5} \times 4^5 \approx 49.3%$ 的全部手牌。
+
+## 我的理解
+
+::: insight
+“至少一个”往往适合数补集，“恰好一个”往往适合分类，而“先选什么、再选什么”适合乘法。先用自然语言说清每个对象被怎样唯一生成，通常比直接写公式更不容易出错。
+:::

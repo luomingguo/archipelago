@@ -2,11 +2,18 @@
 title: 加密的实际应用（Encryption in Practice）
 type: lecture
 lecture: 11
-tags: []
+tags: [tls, encryption, traffic-analysis, key-management]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec11.pdf'
 ---
 # Lec 11 加密的实际应用（Encryption in Practice）
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- 文件加密与传输加密共享原语，却有不同生命周期：文件依赖长期密钥恢复，TLS 依赖握手协商、版本绑定和会话状态。
+- TLS 保护记录内容与握手完整性，但不会隐藏长度、时序、端点和流量模式，也不能替代应用层授权与输入验证。
+- 密钥生成、存储、派生、轮换与销毁往往比选择算法更容易失败；nonce 重用、降级和未认证元数据都会让安全原语失去保证。
 
 ## 1. 文件加密
 
@@ -66,6 +73,10 @@ $$\text{Client} \xrightarrow{\text{TLS 1.3}} \text{(攻击者改成 REJECT)} \xr
 | **端点身份保护** | 连接的 SNI 不泄露给攻击者（ECH）|
 
 ### 2.3 TLS 握手（简化）
+
+下面的时序图只保留建立信任所需的三条主线：临时 Diffie–Hellman 产生共享秘密，证书与签名绑定服务器身份，Finished 消息认证此前全部握手记录。读图时应注意，服务器长期私钥只负责签名，并不直接加密应用数据。
+
+客户端收到 ServerHello 后，不能只计算共享秘密就开始传输数据；它还必须验证证书链、域名、签名和握手摘要。服务端也要验证客户端的 Finished，确认主动攻击者没有分别与两端建立不同会话。最后，握手密钥与应用密钥分开派生，避免同一密钥跨用途复用。
 
 ```text
 Client                          Server
@@ -165,3 +176,7 @@ $$k = \text{HKDF}(\text{master\_secret},\ \text{"file encryption"},\ \text{salt}
 3. **禁用弱版本**：彻底移除对不安全协议的支持
 4. **临时密钥**：密钥交换使用 Ephemeral 密钥提供前向安全
 5. **Nonce 唯一**：AES-GCM 等 nonce-based 方案绝不重用 nonce
+
+::: insight
+加密协议保护的内容边界必须与系统暴露的元数据边界分开评估；流量模式常常仍能泄露身份、行为和关系。
+:::

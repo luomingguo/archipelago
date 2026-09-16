@@ -2,11 +2,18 @@
 title: 特权分离（Privilege Separation）
 type: lecture
 lecture: 18
-tags: []
+tags: [privilege-separation, least-privilege, sandboxing, attack-surface]
 status: complete
+source: 'https://mit-pdos.github.io/6.1600-notes/lec19.pdf'
 ---
 # Lec 18 特权分离（Privilege Separation）
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- 特权分离从“组件终会被攻破”出发，把系统拆成仅持最小权限的进程或服务，使单点失陷不会直接获得全部能力。
+- 边界应隔离高风险解析器、长期密钥和高价值数据；跨边界接口必须同时足够完成任务、足够窄以限制被攻破调用方。
+- OpenSSH、浏览器和支付系统说明分离可以显著缩小损害范围，但更多组件与 RPC 也增加状态同步、性能和接口漏洞成本。
 
 ## 1. 核心思想
 
@@ -196,3 +203,7 @@ $$\boxed{\text{最小权限} + \text{隔离边界} + \text{窄接口} = \text{�
 | 密钥/凭据单独隔离 | 防止应用层攻击窃取凭据 |
 | 只追加日志 | 防止攻击者销毁证据 |
 | 前端/后端隔离 | 暴露在互联网的代码攻破面最小化 |
+
+::: insight
+最小权限只有与最小接口同时实施才有效；拆分进程却保留宽泛 IPC，仍会把高权限能力暴露给低信任代码。
+:::

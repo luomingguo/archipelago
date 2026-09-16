@@ -1,11 +1,20 @@
 ---
-title: 匹配
+title: "匹配与稳定匹配"
 type: lecture
 lecture: 12
-tags: []
+tags: [matching, stable-matching, gale-shapley]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture12-2024mar21_mp4/
 ---
-# Lec 12 匹配
+# Lec 12 匹配与稳定匹配
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture12-2024mar21_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec12.pdf)
+
+## TL;DR
+
+- 匹配是一组不共享端点的边；完美匹配覆盖所有顶点，而最大匹配和最大权匹配分别优化边数与总权重。
+- 稳定匹配排除阻塞对：不存在一对对象都比起当前搭档更偏好彼此。
+- Gale–Shapley 让提议方反复向尚未拒绝自己的最偏好对象提议，被提议方暂留当前最优选项；算法总会终止并输出稳定匹配。
 
 ## 1. 匹配的基本定义
 
@@ -100,3 +109,9 @@ status: complete
 **定理：** G-S 算法将每位**评估方**配对到其**最劣**可行对象。
 
 > 在申请方主动求婚的 G-S 算法中，**申请方掌握所有主动权**。评估方只能被动接受，结果是所有稳定匹配中对其最不利的那个。若改为评估方主动求婚，则结果互换。
+
+## 我的理解
+
+::: insight
+“稳定”不等于“对所有人公平”。Gale–Shapley 的结果对提议方是所有稳定匹配中最优，对另一方则是最差；算法流程中谁拥有提议权，是一个真实的制度设计选择。
+:::

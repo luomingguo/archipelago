@@ -1,11 +1,20 @@
 ---
-title: 递归
+title: "递推关系"
 type: lecture
 lecture: 7
-tags: []
+tags: [recurrence, master-theorem, divide-and-conquer]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture07-2024feb29_mp4/
 ---
-# Lec 7 递归
+# Lec 7 递推关系
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture07-2024feb29_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec07.pdf)
+
+## TL;DR
+
+- 递推关系用更小规模的值定义当前值，分析递归算法时还必须写出基础情况。
+- 展开法和递归树把总成本按层分解，有助于识别顶层、各中间层或叶子层哪一部分主导总和。
+- 主定理处理 $T(n)=aT(n/b)+f(n)$，通过比较 $f(n)$ 与 $n^{\log_b a}$ 的增长率给出三类渐近解。
 
 ## 1. 递推关系
 
@@ -17,8 +26,8 @@ status: complete
 
 | 递推关系                                      | 闭合公式                                                     |
 | --------------------------------------------- | ------------------------------------------------------------ |
-| $a_0 = 1,; a_n = a_{n-1} + 1$                 | $a_n = n + 1$                                                |
-| $F_0 = 0,; F_1 = 1,; F_n = F_{n-1} + F_{n-2}$ | $F_n = \dfrac{1}{\sqrt{5}}\left[\left(\dfrac{1+\sqrt{5}}{2}\right)^n - \left(\dfrac{1-\sqrt{5}}{2}\right)^n\right]$ |
+| $a_0 = 1,\; a_n = a_{n-1} + 1$                 | $a_n = n + 1$                                                |
+| $F_0 = 0,\; F_1 = 1,\; F_n = F_{n-1} + F_{n-2}$ | $F_n = \dfrac{1}{\sqrt{5}}\left[\left(\dfrac{1+\sqrt{5}}{2}\right)^n - \left(\dfrac{1-\sqrt{5}}{2}\right)^n\right]$ |
 
 ------
 
@@ -116,7 +125,7 @@ $$T(n) = (n-1) + 2T(n/2)$$ $$= (n-1) + (n-2) + 4T(n/4)$$ $$= (n-1) + (n-2) + (n-
 
 分治算法的递推通常形如：
 
-$$T(n) = a \cdot T!\left(\left\lfloor \frac{n}{b} \right\rfloor\right) + f(n)$$
+$$T(n) = a \cdot T\!\left(\left\lfloor \frac{n}{b} \right\rfloor\right) + f(n)$$
 
 其中 $a \geq 1$（子问题数），$b > 1$（规模缩减比），$f(n)$（合并代价）。
 
@@ -134,7 +143,7 @@ $$T(n) = a \cdot T!\left(\left\lfloor \frac{n}{b} \right\rfloor\right) + f(n)$$
 
 递归树共 $\log_b n$ 层，节点总数 $\Theta(n^{\log_b a})$。每层工作量为：
 
-$$f(n),; a,f(n/b),; a^2 f(n/b^2),;\ldots$$
+$$f(n),\; a,f(n/b),\; a^2 f(n/b^2),\;\ldots$$
 
 - **Case 1（$f$ 增长慢）：** 叶节点数量主导，运行时间 $= \Theta(\text{叶子数}) = \Theta(n^{\log_b a})$。
 - **Case 3（$f$ 增长快）：** 根节点代价主导，运行时间 $= \Theta(f(n))$。
@@ -169,3 +178,9 @@ $$f(n),; a,f(n/b),; a^2 f(n/b^2),;\ldots$$
 | *Divide and conquer* | 分治法                 |
 | *Recursion tree*     | 递归调用树             |
 | *Karatsuba*          | Karatsuba 整数乘法算法 |
+
+## 我的理解
+
+::: insight
+递归树比背主定理更通用：它迫使我们说明每层有多少子问题、每个子问题多大、层数多少。当递推不符合主定理时，这三个问题仍是正确起点。
+:::

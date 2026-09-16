@@ -1,9 +1,10 @@
 ---
 title: Oblivious RAM（ORAM）
 type: lecture
-lecture: 18
-tags: []
+lecture: 20
+tags: [oblivious-ram, access-pattern, path-oram, privacy]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l20-oram.pdf'
 ---
 # Lec 20 Oblivious RAM（ORAM）
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：以标准处理撰写（Goldreich–Ostrovsky 1996 / Path ORAM 2013），要点与本课"Oblivious RAM"一致。*
 
 ---
+
+## TL;DR
+
+- 加密只隐藏数据内容；服务器观察读写地址和频率，仍可推断敏感访问模式。
+- ORAM 通过持续搬移、重加密和填充访问隐藏真实地址，平方根 ORAM 与 Path ORAM 代表不同设计路径。
+- 带宽开销、客户端位置图和 stash 溢出概率共同决定系统是否可用。
 
 ## 0. 问题
 
@@ -63,9 +70,13 @@ status: complete
 
 ---
 
-## 5. 本讲小结
+## 5. Oblivious RAM 小结
 
 - 加密不够，**访问模式**会泄露 → ORAM 让物理访问模式与逻辑操作不可区分。
 - 平凡方案 $O(N)$；理论下界 $\Omega(\log N)$。
 - Square-root ORAM：置乱 + shelter 扫描 + 周期重洗，摊销 $O(\sqrt N)$。
 - Path ORAM：二叉树 + position map，每次读写一条路径并把目标块重指派到新随机路径，$O(\log N)$。
+
+::: insight
+访问模式常与内容同样敏感；ORAM 的价值在于把“读了哪里”也纳入机密性边界。
+:::

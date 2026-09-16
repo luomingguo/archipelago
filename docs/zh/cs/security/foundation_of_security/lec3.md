@@ -1,12 +1,19 @@
 ---
-title: 'Collision Resistance & File Authentication'
+title: 碰撞抗性与文件认证
 type: lecture
 lecture: 3
-tags: []
+tags: [cryptographic-hash, collision-resistance, merkle-tree, commitment]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec03.pdf'
 ---
-# Lec 3 Collision Resistance & File Authentication
+# Lec 3 碰撞抗性与文件认证
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- 碰撞抗性要求攻击者无法有效找到两个不同输入产生同一摘要；对 $n$ 位输出，通用生日攻击约需 $2^{n/2}$ 次尝试。
+- 可信的小摘要可以认证大文件，Merkle 树进一步把单块成员证明压缩到对数大小，但根摘要本身仍需从可信渠道获得。
+- 哈希函数没有密钥，不能独自抵御主动替换；承诺、文件认证和签名分别还需要隐藏性、可信摘要或密钥机制。
 
 ## 1. 哈希函数的基本定义
 
@@ -140,3 +147,7 @@ $$c = H(r \| m) \quad r \xleftarrow{\$} \{0,1\}^{256}$$
 2. 生日攻击要求 $n \geq 256$ bits 才安全（$2^{128}$ 暴力代价）
 3. Merkle 树将认证开销从 $O(n)$ 降为 $O(\log n)$
 4. CRHF 不提供消息认证（无密钥），需 MAC 配合
+
+::: insight
+哈希只能把大对象的信任压缩成一个摘要，不能凭空创造信任；系统仍需保护摘要的来源与分发渠道。
+:::

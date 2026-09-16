@@ -1,11 +1,20 @@
 ---
-title: 分类讨论和强归纳法
+title: "分类讨论与强归纳法"
 type: lecture
 lecture: 3
-tags: []
+tags: [proof-by-cases, strong-induction, ramsey-theory]
 status: complete
+source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture03-2024feb20_v4_mp4/
 ---
-# Lec 3 分类讨论和强归纳法
+# Lec 3 分类讨论与强归纳法
+
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/resources/61200-sp24-lecture03-2024feb20_v4_mp4/) · [Lecture notes](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec03.pdf)
+
+## TL;DR
+
+- 分类讨论要求各情形的并覆盖全部可能，不要求各情形互斥；对每个情形分别证明同一结论即可。
+- 强归纳在证明 $P(n+1)$ 时可使用所有更小规模的命题，特别适合子问题规模不固定减一的递归结构。
+- 强归纳与普通归纳在逻辑力量上等价；它的优势是让归纳假设更贴近算法递归和分解论证的真实依赖。
 
 ## 一、证明技术汇总（截至本讲）
 
@@ -73,11 +82,11 @@ $\blacksquare$
 Proof: Proof by cases:
 
 - case 1: 假设 $C_1$ 为真， 那么 P(1) 是 真 因为....
-- case 2: 假设 $C_2$​ 为真， 那么 P(2) 是 真 因为....
+- case 2: 假设 $C_2$ 为真， 那么 P(2) 是 真 因为....
 - ....
 - case k: 假设 $C_k$ 为真， 那么 P(k) 是 真 因为....
 
-对每个情形 $C_i$ 分别证明 $P$，则 $P$​ 成立。这些 k 种情况是“穷尽的”（*exhaustive*）
+对每个情形 $C_i$ 分别证明 $P$，则 $P$ 成立。这些 k 种情况是“穷尽的”（*exhaustive*）
 
 著名的 多情形的例子：
 
@@ -180,3 +189,9 @@ $\blacksquare$
 | *Induction hypothesis (IH)*   | 归纳假设              |
 | *Beats ordering*              | 胜负排列              |
 | *Round robin tournament*      | 循环赛                |
+
+## 我的理解
+
+::: insight
+分类的质量决定证明的难度。好的分类由能直接触发已知引理的结构特征决定，而不是把对象平均切成若干块；Ramsey 例子中按一个顶点的边颜色分类正是因为鸽巢原理可以立即作用。
+:::

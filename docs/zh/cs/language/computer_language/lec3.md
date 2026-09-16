@@ -2,13 +2,20 @@
 title: 自顶向下分析（Top-Down Parsing）
 type: lecture
 lecture: 3
-tags: []
+tags: [recursive-descent, predictive-parsing, first-set, abstract-syntax-tree]
 status: complete
+source: https://6110-sp25.github.io/assets/documents/lectures/L03-TopDownParsing.pdf
 ---
 # Lec 03 自顶向下分析（Top-Down Parsing）
 
 > 配套复习课：R2 递归下降分析器 Demo（github.com/6110-sp25/recitation2）——其核心代码已整合进本讲第 8 节
 > 参考：Cooper et al., Ch.3 §3.3 Top-Down Parsing
+
+## TL;DR
+
+- 递归下降分析器为每个非终结符编写一个过程，用一个 token 的前看选择产生式并构造最左推导。
+- 可预测解析的前提是消除左递归、提取左公因子，并用不动点算法求 derives-ε 与 First 集。
+- 解析过程可以直接返回 AST 节点，屏蔽为消歧而引入的具体语法层细节。
 
 ---
 
@@ -301,7 +308,11 @@ TermPrime()
 
 ---
 
-## 11. 本讲小结
+::: insight
+消左递归和左因子分解是为了让选择产生式变得可预测，不是要改变程序的抽象结构。因此实现上应在构造 AST 时立即抹去这些为解析服务的临时形状。
+:::
+
+## 11. 预测分析与递归下降小结
 
 - 自顶向下 = 构最左推导，三动作：扩展非终结符 / 匹配终结符 / 接受。
 - 朴素回溯遇左递归会死循环 ⇒ 先消左递归（引入 `R → αR | ε`）。

@@ -2,13 +2,19 @@
 title: 语义（导论）——操作语义与求值关系
 type: lecture
 lecture: 6
-tags: []
+tags: [operational-semantics, big-step-semantics, inference-rule, interpreter]
 status: complete
 ---
 # Lec 6 语义（导论）——操作语义与求值关系
 
 > Phase 2 开始。从"语法"转向"语义"：用**求值关系 + 推理规则**精确定义程序行为
 > 参考：Glynn Winskel, *The Formal Semantics of Programming Languages*（IMP 语言）
+
+## TL;DR
+
+- 语法只规定程序的形状，语义必须进一步精确规定每个程序在给定状态下如何求值。
+- 大步操作语义用「配置 ⇒ 结果」的求值关系和推理规则描述执行，前提对应递归调用，结论对应返回值或状态更新。
+- IMP 用帧表示变量到值的映射，为后续完整定义表达式、语句、堆与闭包提供最小语义核心。
 
 ---
 

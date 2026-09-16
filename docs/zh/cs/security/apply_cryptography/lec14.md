@@ -2,8 +2,9 @@
 title: MPC：应用
 type: lecture
 lecture: 14
-tags: []
+tags: [secure-multiparty-computation, private-set-intersection, threshold-signature, spdz]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l14-mpc.pdf'
 ---
 # Lec 14 MPC：应用
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：以标准处理撰写，要点与本课"MPC Applications"一致。*
 
 ---
+
+## TL;DR
+
+- MPC 可用于私集合交、阈值签名和联合统计，但函数输出本身仍可能泄露敏感信息。
+- 阈值密码把密钥操作分散到多方，降低单点失陷风险，却不会消除参与方串通问题。
+- SPDZ 一类协议用离线预处理承担昂贵密码工作，使在线阶段更接近实际部署需求。
 
 ## 0. 主线
 
@@ -67,8 +74,12 @@ L13 给出 MPC 的通用构造（Yao/BGW）。本讲聚焦**把 MPC 落到具体
 
 ---
 
-## 6. 本讲小结
+## 6. MPC 应用小结
 
 - PSI（OPRF）、门限签名、隐私联合分析是 MPC 三大落地场景。
 - SPDZ 的离线/在线分离 + Beaver 三元组把乘法成本前置 → 在线极快。
 - 常与差分隐私互补；恶意安全靠 MAC/承诺。
+
+::: insight
+工程化 MPC 必须把输出泄露、参与方掉线和预处理材料耗尽纳入威胁模型，而不只计算密码运算次数。
+:::

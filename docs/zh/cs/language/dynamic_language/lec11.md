@@ -2,12 +2,18 @@
 title: '语义（闭包 II / 收官）——作用域语义对比与"免费的对象"'
 type: lecture
 lecture: 11
-tags: []
+tags: [lexical-scope, closure, object-model, records]
 status: complete
 ---
 # Lec 11 语义（闭包 II / 收官）——作用域语义对比与"免费的对象"
 
 > 接 L10，收尾语义单元。重点：IMP / MITScript / JS / Python 的**作用域规则对比**，记录即对象，以及"如何造一门语言"的总结
+
+## TL;DR
+
+- IMP、JavaScript、Python 与 MITScript 对声明时机、块作用域、未初始化变量和赋值目标有不同规则，实现必须把这些差异写进帧操作。
+- 记录提供可变字段，闭包提供携带环境的方法，两者结合就能构造原型化的对象系统。
+- 语言设计不是为每个高层概念增加独立机制，而是判断它能否由更小的语义核心组合得到，并明确这种降解的成本。
 
 ---
 

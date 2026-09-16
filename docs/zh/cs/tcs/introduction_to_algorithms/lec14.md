@@ -1,20 +1,26 @@
 ---
-title: 'Johnson''''s 算法'
+title: "全源最短路径与 Johnson 算法"
 type: lecture
 lecture: 14
-tags: []
+tags: [all-pairs-shortest-path, johnson-algorithm, reweighting]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-14-apsp-and-johnson/
 ---
-# Lec 14 Johnson's 算法
+# Lec 14 全源最短路径与 Johnson 算法
 
-- 全源最短路径
-- Johnson's 算法
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-14-apsp-and-johnson/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec14/)
+
+## TL;DR
+
+- 全源最短路径（APSP）可以对每个源点运行一次单源算法，但负边使我们不能直接使用 Dijkstra。
+- Johnson 算法用一次 Bellman–Ford 计算势函数，把每条边重标为非负，同时保持所有路径的相对优劣。
+- 重标后可从每个顶点运行 Dijkstra；结合二叉堆时总成本为 $O(|V||E|\log |V|)$，适合稀疏图。
 
 ## 复习 SSSP 算法
 
 我们主要学写了 4 个解决 SSSP 问题的算法，要解决最短路径问题，首先要定义和构造与你的问题相关的图，然后用其中一种算法来解决你的问题。一般来说，你会尽量用最快的方法，Bellman-Ford 可以应用到任何加权图问题，但它是最慢的一个，因此我们会优选其他方法。
 
-![截屏 2024-08-02 16.54.57](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66ac9ef037ede.png)
+![全源最短路径与 Johnson 算法图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66ac9ef037ede.png)
 
 我们针对单源最短路径（SSSP）问题介绍了这些算法，但在此过程中，我们还展示了如何使用这些算法来解决其他问题。例如，我们可以使用全量深度优先搜索（Full-DFS）或全量广度优先搜索（Full-BFS）来计算图中的连通分量，使用深度优先搜索（DFS）对有向无环图（DAG）中的顶点进行拓扑排序，并使用 Bellman-Ford 算法检测负权重环。
 
@@ -25,7 +31,7 @@ All-Pairs Shortest Paths(APSP)问题
 - 输入：加权有向图 G=(V, E)，加权函数$w: E\rightarrow \mathbb{Z}$
 - 输出：返回所有的$u, v \in V 的 \delta(u, v)$， 如果 G 存在负权重环则中止（因为对于任何一个$\delta(u, v) = -\infty$）。由此可以推断出，输出空间$O(|V|^2)$，因为需要知道每对顶点的加权最短路径
 - 应用： 对于了解整个网络很有用，比如传输、电路 layout、供应链管理等
-- 仅仅是用一个 SSSP 算法执行|V|次的效果也是挺好的，因为输出大小为$O(|V|^2)$​
+- 仅仅是用一个 SSSP 算法执行|V|次的效果也是挺好的，因为输出大小为$O(|V|^2)$
   - 当权值为正且受限于 O(|E|+|V|)时， 用 BFS 的时间复杂度是|V|·O(|V|+|E|)
   - 当图是 DAG 时，用 DAG 松弛的时间复杂度是|V|·O(|V|+|E|)
   - 当权重非负且图为无向图时，用 Dijkstra 算法的时间复杂度为|V|·O(|V|log|V|+|E|)
@@ -87,7 +93,7 @@ All-Pairs Shortest Paths(APSP)问题
   - 将这个条件重新排列为$h(v) \le h(u) + w(u, v)$，看起来像是三角不等式！
 - **思路**：如果将$h(v)设置为某个路径的\delta(s, v)$且 $\delta(s, v)$有限的，则条件将会满足
   - 但是图可能是不连通的，所以可能不存在这样的顶点 s
-- **新办法**： 添加一个新顶点 s， 并向每个$v\in V$​添加一个权重为 0 的有向边，即添加新顶点 s 指向图中所有的顶点的边。
+- **新办法**： 添加一个新顶点 s， 并向每个$v\in V$添加一个权重为 0 的有向边，即添加新顶点 s 指向图中所有的顶点的边。
 - 对于所有的$v\in V, \delta(s, v) \le 0$，因为存在权重为 0 的路径。
 - 断言： 如果$\delta(s, v)=-\infty$对于任何$v\in V$成立，那么原图中一定有负权重环
 - 证明
@@ -100,7 +106,7 @@ All-Pairs Shortest Paths(APSP)问题
 ## Johnson's 算法
 
 - 本质上是规约算法
-  - 将权值可能是正或负 ASPS 问题，规约成具有相同最短路径性质，且只有非负权重边的图问题
+  - 将权值可能是正或负 APSP 问题，规约成具有相同最短路径性质，且只有非负权重边的图问题
 - 算法步骤
 
 1. 从 G 构造$G_x$， 通过添加顶点 x 连接到每个顶点$v\in V$并设置权重为 0
@@ -132,4 +138,10 @@ All-Pairs Shortest Paths(APSP)问题
 - 构造 G' 需要 O(|V| + |E|) 时间
 - 运行 V 次 Dijkstra 算法需要 $O(|V| \cdot (|V| \log |V| + |E|))$时间
 - 计算从 G' 中的距离到 G 中的距离需要 O(|V|^2) 时间
-- 总时间复杂度为 $O(|V|^2 \log |V| + |V||E|)$​
+- 总时间复杂度为 $O(|V|^2 \log |V| + |V||E|)$
+
+## 我的理解
+
+::: insight
+势函数不是随意把负数变正：它使一条 $s	o t$ 路径的总权重只增加与端点有关的常数 $h(s)-h(t)$。因此同一对端点间的路径排名完全不变。
+:::

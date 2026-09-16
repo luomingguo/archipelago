@@ -2,7 +2,7 @@
 title: 用户测试
 type: lecture
 lecture: 17
-tags: [usability-testing, cognitive-walkthrough, user-research, prototyping, research-ethics]
+tags: [usability-testing, user-research, prototyping]
 status: complete
 source: 'https://61040-fa25.github.io/assets/lecture-notes/user-testing.pdf'
 ---

@@ -1,23 +1,26 @@
 ---
-title: 线性排序
+title: "线性时间排序"
 type: lecture
 lecture: 5
-tags: []
+tags: [linear-sorting, counting-sort, radix-sort]
 status: complete
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-5-linear-sorting/
 ---
-# Lec 5 线性排序
+# Lec 5 线性时间排序
 
-- 比较排序下界
-- 直接访问数组排序
-- 元祖排序
-- 计数排序
-- 基数排序
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-5-linear-sorting/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec5/)
+
+## TL;DR
+
+- 比较排序的 $\Omega(n\log n)$ 下界只适用于算法仅通过比较区分元素的模型。
+- 计数排序利用有限整数键域，在 $O(n+u)$ 时间内完成稳定排序，其成本依赖键域大小 $u$。
+- 基数排序将键拆成多个数位，从低位到高位反复调用稳定排序，在合适的数位基数下可达线性时间。
 
 ## 回顾
 
 - 任意含有 n 个节点的决策树，其高度至少为$\lceil \log_2{(n+1)} \rceil - 1$，这也是比较查找的下界。 也就是说搜索操作需要$\Omega(\log{n})$的时间复杂度
 - 通过 RAM（随机访问）和直接访问数组（Direct Access Array），可以加快搜索速度。特点是索引查找很快，但是需要大量的空间 $\Theta(u)$。直接访问数组本质上与数组没什么区别，只是对其 slot 提供了外部语义。 （u > n）
-- 解决空间问题可以通过映射（哈希）将键空间 u 下降到 $m = \Theta(n)$​。 哈希表在期望情况下可以实现 O(1) 时间复杂度的操作，如果是动态哈希表，则是均摊的 O(1)
+- 解决空间问题可以通过映射（哈希）将键空间 u 下降到 $m = \Theta(n)$。 哈希表在期望情况下可以实现 O(1) 时间复杂度的操作，如果是动态哈希表，则是均摊的 O(1)
   - 期望情况是，当哈希表的 slot 满足输入规模，且你的输入是独一无二的，那么你不需要检查冲突（不需要遍历链表的检查），此时最坏的情况就是线性时间
   -
 
@@ -25,7 +28,7 @@ status: complete
 
 上一次我们实现了更快的查找，我们能否实现更快的排序呢？
 
-![image-20241031084319222](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6722d2aaef0e5.png)
+![线性时间排序图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6722d2aaef0e5.png)
 
 ## 比较排序下界
 
@@ -59,7 +62,7 @@ def direct_access_sort(A):
 
 ```
 
-> 若键值范围更大，例如$u=\Omega(n^2) < n^2$​ 怎么办？
+> 若键域更大，例如 $u=\Omega(n^2)$，直接计数排序不再是线性时间，该怎么办？
 
 想法： 将每个键 k 表示为$(a, b)$，其中$k = a·n + b$ 且 $0\le b \lt n$，具体而言， $a = k// n = \lfloor k/n \rfloor < n$ 且 b = k % n = k mod n
 
@@ -151,3 +154,9 @@ def radix_sort(A):
         A[i] = D[i].item
 
 ```
+
+## 我的理解
+
+::: insight
+所谓“突破排序下界”其实是更换了模型：算法用了键是机器字、可分解或可寻址的信息。因此分析中必须把 $u$ 和字长写清楚。
+:::

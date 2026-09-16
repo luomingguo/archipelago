@@ -2,11 +2,18 @@
 title: 密钥交换与公钥加密
 type: lecture
 lecture: 10
-tags: []
+tags: [public-key-encryption, key-exchange, rsa-oaep, elliptic-curve-cryptography, forward-secrecy]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec10.pdf'
 ---
 # Lec 10 密钥交换与公钥加密
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- 公钥加密让发送方用公开密钥保护消息，密钥交换则让双方经交互得到共享秘密；两者都必须另行解决身份认证。
+- 裸 RSA 具有确定性和代数结构，无法达到 IND-CPA；RSA-OAEP、ElGamal 等方案通过随机化建立明确的安全边界。
+- 实际协议通常采用 KEM/DEM 或 HPKE 混合结构，并用临时 ECDH 提供前向安全，使长期密钥泄露不暴露历史会话。
 
 ## 1. 问题背景
 
@@ -161,3 +168,7 @@ $$K = aB = bA = abG,\quad k = \text{KDF}(K_x)$$
 
 $$(c_K, k) \leftarrow \text{Encap}(pk),\quad c_D = \text{AEAD}(k, m)$$
 $$\text{发送}: (c_K, c_D)$$
+
+::: insight
+前向安全本质上是密钥生命周期属性：及时销毁临时秘密，才能限制长期密钥失陷后的历史影响。
+:::

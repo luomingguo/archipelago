@@ -1,20 +1,23 @@
 ---
-title: 动态规划 IV：切割问题
+title: "动态规划 IV：杆切割、子集和与伪多项式时间"
 type: lecture
 lecture: 18
-tags: []
+tags: [dynamic-programming, subset-sum, pseudopolynomial-time]
 status: complete
-prev: 'Get Started | Markdown'
+source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-18-dynamic-programming-part-4-rods-subset-sum-pseudopolynomial/
 ---
-# Lec 18 动态规划 IV：切割问题
+# Lec 18 动态规划 IV：杆切割、子集和与伪多项式时间
 
-[TOC]
-::: raw
-Wraps in a `<div class="vp-raw">`
-:::
+> 资料依据：[课程视频与 transcript](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-18-dynamic-programming-part-4-rods-subset-sum-pseudopolynomial/) · [Lecture notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec18_pdf/)
+
+## TL;DR
+
+- 杆切割按剩余长度定义子问题，猜测第一段长度后递归求余下部分，总时间为 $\Theta(L^2)$。
+- 子集和以元素位置 $i$ 和剩余目标 $t$ 为状态，在“选当前数”与“不选”两个分支之间取布尔或，时间为 $O(nT)$。
+- $O(nT)$ 对数值 $T$ 是多项式，但对表示 $T$ 所需的 $\log T$ 位可能是指数级，因而子集和算法只是伪多项式时间。
 
 ## 本讲导览
-[[toc]]
+
 - 整数子问题
 - 伪多项式时间
 - 例子
@@ -24,7 +27,7 @@ Wraps in a `<div class="vp-raw">`
 
 ## 切割杆问题
 
-- 给定一个长度为 L 的杆，和不同长度$\mathcal{l}$的杆的价值 v($\mathcal{l}$), $\mathcal{l} \in \set{{1,2,...L}}$
+- 给定一个长度为 L 的杆，和不同长度$\mathcal{l}$的杆的价值 v($\mathcal{l}$), $\mathcal{l} \in \left\{{1,2,...L}\right\}$
 
 - 目标：切割杆最大化切割杆价值
 - Ex: L = 7, v = [0, 1, 10, 13, 18, 20, 31,32]
@@ -33,19 +36,19 @@ Wraps in a `<div class="vp-raw">`
 
 SRTBOT 分析：
 
-1. 子问题： $x(\mathcal{l})$: 切割长度$\mathcal{l}$的杆能获得的最大价值，对于$\mathcal{l} \in \set{0, 1, ..L}$成立
+1. 子问题： $x(\mathcal{l})$: 切割长度$\mathcal{l}$的杆能获得的最大价值，对于$\mathcal{l} \in \left\{0, 1, ..L\right\}$成立
 
 2. 递归关联子问题解：
 
    - 第一块为长度 p（猜的！）
-   - $x(\mathcal{l}) = max \set{v(p) + x(l-p) | p \in \set{1..., \mathcal{l}}}$​
+   - $x(\mathcal{l}) = max \left\{v(p) + x(l-p) | p \in \left\{1..., \mathcal{l}\right\}\right\}$
 
 3. 拓扑顺序
 
-   - 对$\mathcal{l}$增长： 子问题$x(\mathcal{l})$仅仅取决于严格递减的$\mathcal{l}$，所以不会成环。for $\mathcal{l}$​​ = 0, 1..., L
+   - 对$\mathcal{l}$增长： 子问题$x(\mathcal{l})$仅仅取决于严格递减的$\mathcal{l}$，所以不会成环。for $\mathcal{l}$ = 0, 1..., L
 
    - 子问题的 DAG
-     ![](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66b3f28aaf6e7.png)
+     ![动态规划 IV：杆切割、子集和与伪多项式时间图示 1](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66b3f28aaf6e7.png)
 
 4. 基本情况
 
@@ -69,25 +72,25 @@ $\Theta({L^2})$这是一个多项式时间吗？
 
 ## 子集求和
 
-- 输入： n 个正整数序列$A = \set{a_0, a_1, ..., a_{n-1}}$
+- 输入： n 个正整数序列$A = \left\{a_0, a_1, ..., a_{n-1}\right\}$
 - 输出： 是否在存在 A 的子集，使其求和恰好等于 T？即是否存在 A 的子集 A'，使得$\sum_{a\in A'}a = T$？
 - Ex： A = (1, 3, 4, 12, 19, 21, 22), T = 47， 可以找到子集 A' = \{3, 4, 19, 21\}
 - 这是个优化问题？
-  - 不是，这是一个决策问题。答案是 YES or NO， Ture or False，而不是求最大值最小值这类优化问题。
+  - 不是，这是一个决策问题。答案是 YES or NO， True or False，而不是求最大值最小值这类优化问题。
 
 **SRTBOT 分析**
 
 1. 子问题:
 
    - $x(i, t)$ = A[i:]的子集求和为 t
-   - $i \in \set{0, 1, ...n}$, $t \in \set{0,1, ...T}$​
+   - $i \in \left\{0, 1, ...n\right\}$, $t \in \left\{0,1, ...T\right\}$
 
 2. 递归关联子问题解：
 
    - 思路：第一项$a_i$ 是否在 A 合法子集 S 内（Guess！）
    - 如果是，用剩余项尝试求和成$t - a_i$
    - 如果不是，用剩余项尝试求和成 t
-   - $x(i, t) = \begin{cases} x(i+1, t-a_i) \text{ if } a_i\le t   \leftarrow a_i \in S \\ x(i+1, t) ，其他情况 \leftarrow a_i \notin S \end{cases}$​
+   - $x(i, t) = \begin{cases} x(i+1, t-a_i) \text{ if } a_i\le t   \leftarrow a_i \in S \\ x(i+1, t) ，其他情况 \leftarrow a_i \notin S \end{cases}$
 
 3. 拓扑顺序
 
@@ -96,21 +99,21 @@ $\Theta({L^2})$这是一个多项式时间吗？
 
 4. 基本情况
 
-   - $x(n, t) = \begin{cases} Yes \text{ if t = 0} \\ No \text{ if } t \neq 0 \end{cases}$​
+   - $x(n, t) = \begin{cases} Yes \text{ if t = 0} \\ No \text{ if } t \neq 0 \end{cases}$
 
 5. 原始问题
 
    - x(0, T)
 
-   - 解决所有子问题的 DGA
+   - 解决所有子问题的 DAG
 
      - 至底向上
 
-       ![](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66b42d75ce38b.png)
+       ![动态规划 IV：杆切割、子集和与伪多项式时间图示 2](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66b42d75ce38b.png)
 
      - 至顶向下
 
-       ![](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66b42d816e480.png)
+       ![动态规划 IV：杆切割、子集和与伪多项式时间图示 3](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66b42d816e480.png)
 
 6. 时间分析
 
@@ -127,7 +130,7 @@ $\Theta({L^2})$这是一个多项式时间吗？
 ## 伪多项式
 
 - 算法的伪多项式时间：运行时间上界由输入大小和输入整数的常次数多项式界定
-- 如果整数在输入大小上是多项式有界的，即$n^{O(1)}$（与基数排序在 $O(n)$​ 时间内运行的情况相同），那么这种算法在这种情况下是多项式的
+- 如果整数在输入大小上是多项式有界的，即$n^{O(1)}$（与基数排序在 $O(n)$ 时间内运行的情况相同），那么这种算法在这种情况下是多项式的
 - 计数排序 O(n+u)，基数排序$O(n\log_n{u})$，直接访问数组构建 O(n+u)，斐波那契 O(n)都是伪多项式算法
 - 计数排序是弱多项式（基于强多项式和伪多项式之间的概念）： 在以位数测量的输入大小（即输入整数的对数）上界由常数次多项式界定
 - 与切割杆问题相比，它是多项式的
@@ -159,9 +162,15 @@ $\Theta({L^2})$这是一个多项式时间吗？
 
 - 递归**关联**子问题（如果子问题定义是正确的，那么你可以写出一个递归关系）
 
-  - θ(1) 分支: 斐波那契数列,  保龄球得分问题， LCS，ACG，Floy-wareshall
+  - θ(1) 分支: 斐波那契数列,  保龄球得分问题， LCS，ACG，Floyd–Warshall
   - θ(degree) 分支: DAG, Bellman-ford
-  - θ(n) branching: LIS, 括号问题, Rob Cutting
+  - θ(n) branching: LIS, 括号问题, rod cutting
   - combine multiple sulution(not path in DAG): Fib, FW,括号
 
 - Original: combine multiple subprobs: DAG, LIS, B-F, F-W
+
+## 我的理解
+
+::: insight
+分析含整数参数的算法时，必须区分“数值”与“编码长度”。杆切割的输入本身就列出 $L$ 个价格，而子集和只需 $log T$ 位就能给出很大的 $T$，这一差别决定了复杂度的性质。
+:::
