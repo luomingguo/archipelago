@@ -1,8 +1,8 @@
 ---
-title: 设计 AI-Power 交互 II· 软件设计
+title: 设计 AI 驱动的交互 II：超越聊天
 type: lecture
 lecture: 8
-tags: [software-design, prd, prototyping, vibe-coding]
+tags: [human-ai-interaction, structured-output, agent-design, mixed-initiative]
 status: complete
 source: 'https://61040-fa25.github.io/assets/lecture-notes/designing_ai_powered_interactions_part_2.pdf'
 ---
@@ -15,6 +15,13 @@ source: 'https://61040-fa25.github.io/assets/lecture-notes/designing_ai_powered_
 - **掌握设计 人-LLM 交互 的基本技巧**：这样你能够在项目中加入 AI 功能
 - **理解其中的障碍**，以及克服这些障碍的设计模式
 - 下节课：LLM 推理与提示词的技术实现方法：“我到底该如何实现这些功能？”
+
+## TL;DR
+
+- 重复或高风险任务不应停留在开放聊天框中；结构化输入、字段化输出和渐进披露能降低用户组织提示与核验结果的成本。
+- 生成和执行必须分离：草稿、候选比较、来源检索与失败可见性让错误停留在可编辑阶段，不直接污染真实业务状态。
+- Agent 的本质是模型获得了环境观察、工具调用和多步行动能力；自动化程度应随风险、可逆性和权限连续调整。
+- Agentic harness 中的上下文、输入输出结构和工具权限都是产品设计决定，必须显式定义批准、暂停、撤销与审计点。
 
 ## 回顾
 
@@ -50,6 +57,10 @@ Prompt + Completion 的问题告诉我们：AI 产品难点不只是“生成答
 Agent 不只是“能聊天的模型”，而是能观察环境、调用工具、规划多步并采取行动的系统。能力越高，越需要把控制权设计成连续谱，而非“全自动/全手动”二选一：低风险、可逆的步骤可自动做；涉及外部沟通、资金、权限或不可逆变更时应停下来询问。可干预点包括批准计划、修改目标/约束、查看进度、暂停、撤销和事后审计。
 
 所谓 agentic harness，本质是为模型搭建的 **上下文 + 结构化输入 + 结构化输出 + 工具权限**。其中每一项都是产品设计，不应默认为模型“自己会处理”。
+
+::: insight
+“超越聊天”并不是把聊天框换成更花哨的界面，而是把原本隐含在提示词里的任务契约外化：哪些字段必填、模型能读什么、输出如何验证、哪一步会真正改变世界。契约越清晰，模型能力越容易被替换和评估，用户也越不需要学习提示词技巧。
+:::
 
 ## 配套工作
 

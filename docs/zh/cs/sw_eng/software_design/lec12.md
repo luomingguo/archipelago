@@ -1,16 +1,18 @@
 ---
-title: 现代AI coding工具 · 软件设计
+title: 现代 AI Coding 工具
 type: lecture
 lecture: 12
-tags: [vibe-coding]
+tags: [agentic-coding, context-engineering, code-review, cognitive-debt]
 status: complete
-source: 'https://61040-fa25.github.io/assets/lecture-notes/understanding-synchronizations.pdf'
 ---
-# Lec 12 现代 AI coding 工具
+# Lec 12 现代 AI Coding 工具
 
-### TL;DR
+## TL;DR
 
-AI Coding 正从 Vibe Coding 走向 Vibe Engineering 和 Multi-Agent：AI 不再只是生成代码，而是参与规划、实现、测试、Review 和重构等完整工程流程。随着多个 Agent 可以并行工作，真正的瓶颈从“写代码”转向人的 Design、Specification、任务分配和 Review 能力。
+- Coding Agent 通过“模型请求工具—执行—返回结果—继续决策”的循环完成搜索、编辑和测试；Instructions 与代码库上下文共同约束其行为。
+- Vibe Engineering 不只追求快速生成代码，而是让 Agent 参与研究、计划、实现、测试、Review、重构和版本控制这一完整工程闭环。
+- 多 Agent 能提高并行生成速度，却会把瓶颈推向规格、任务边界、冲突协调和人工 Review；低成本生成不代表低成本验收。
+- 过度接受不理解的改动会积累认知债务。人应保留对 purpose、概念边界、架构与关键路径的判断，并用可验证规格管理 Agent。
 
 ## Agent 编程的工作原理与使用原则
 
@@ -308,6 +310,10 @@ Junior + AI
 所以真正变化的可能不是简单的“Junior 消失”，而是：
 
 > **Junior Developer 的能力基线正在改变：除了会 Coding，还要会使用、指导、验证和管理 AI Agents。**
+
+::: insight
+Agent 提升的是“把明确意图转成候选实现”的吞吐量，因此越能并行生成代码，越需要减小每个任务的验收面。规格不是交给 Agent 的长篇说明书，而是人和机器共享的可验证边界：输入、输出、不变量、禁止事项和完成证据都清楚时，Review 才不会退化为重新理解一份陌生实现。
+:::
 
 ## 配套工作
 

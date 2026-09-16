@@ -1,8 +1,8 @@
 ---
-title: 人机 AI 交互基础 · 软件设计
+title: 人机 AI 交互基础
 type: lecture
 lecture: 6
-tags: [software-design, prd, prototyping, vibe-coding]
+tags: [human-ai-interaction, mental-model, ai-safety, prototyping]
 status: complete
 source: 'https://61040-fa25.github.io/assets/lecture-notes/human_ai_interaction_fundamentals.pdf'
 ---
@@ -12,13 +12,20 @@ AI 能力进步不等于 AI 产品成功；关键在于人是否形成正确心�
 
 学习目标
 
-- 理解人-AL 交互的基础
+- 理解人-AI 交互的基础
 - 后续 3 个 Lec 会集成 AI-powered 特性到你项目中（chat、agents 等）
 - 后续使用 AI 写代码
 
+## TL;DR
+
+- AI 能力进步不等于产品成功；设计者必须让用户理解系统能做什么、依据什么行动，以及出错后如何纠正或退出。
+- 生成式 AI 更适合允许多个可接受答案的“钝边”任务；面对高风险的“锐边”任务，应把生成与执行分开，并保留核验、确认和撤销机制。
+- 人机协作的主要风险常出现在交接缝：输出类型、未完成项、不确定性和下一步必须在界面中显式呈现。
+- Prompt 原型可在完整开发前验证核心能力，但真正的产品价值来自增强人的判断，而不是仅以自动化替代人。
+
 ## AI 产品：技术进步 ≠ 产品成功
 
-![长期创造用户价值的产品增长远慢于 AI 能力的增长](/Users/mac/Library/Application Support/typora-user-images/image-20260831162259809.png)
+![长期创造用户价值的产品增长远慢于 AI 能力的增长](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260831162259809.png)
 
 AI 能力快速进步，也催生了大量 AI 产品和服务，但真正成功、长期创造用户价值的产品增长远慢于前两者。
 
@@ -34,7 +41,7 @@ AI 能力快速进步，也催生了大量 AI 产品和服务，但真正成功�
 - **人工智能（*Artificial Intelligence，AI*）**：让机器自动完成那些我们通常认为需要人类认知能力才能完成的任务，例如识别图像、理解语言、在复杂环境中规划行动。
 - **深度学习（*Deep Learning*）**：过去十多年推动 AI 能力大幅进步的一类模型。所谓 “deep”，主要指神经网络具有许多层。
 
-![深度学习模型](/Users/mac/Library/Application Support/typora-user-images/image-20260831163019355.png)
+![深度学习模型](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260831163019355.png)
 
 在过去的 10 年里， Deep Learning 快速进步 → AI 能力快速进步。
 
@@ -47,13 +54,13 @@ AI 能力快速进步，也催生了大量 AI 产品和服务，但真正成功�
 
 3. 训练模型遵从指令
 
-![提示词、Chatgpt 实例](/Users/mac/Library/Application Support/typora-user-images/image-20260831165027642.png)
+![提示词与 ChatGPT 交互实例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260831165027642.png)
 
 因此还需要进一步训练模型遵循指令，让模型从单纯的“续写文本”变成能够根据 Prompt 完成任务的系统。
 
-你可以开箱试用的它： 大语言模型（large language models，LLMs）
+经过预训练和指令训练后，大语言模型（large language models，LLMs）可以作为通用能力直接使用。
 
-![LLM model](/Users/mac/Library/Application Support/typora-user-images/image-20260831165555155.png)
+![LLM model](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260831165555155.png)
 
 LLM 经过预训练 + 指令训练后，已经成为一个通用模型。你不一定需要针对每个任务重新训练模型，只需要给它 Prompt，就可以直接让它完成很多不同任务。
 
@@ -61,7 +68,7 @@ LLM 经过预训练 + 指令训练后，已经成为一个通用模型。你不�
 
 如果希望进一步塑造模型，使它更适合某个特定任务，则可以使用**微调 （*Fine-tuning*）**：提供大量特定任务的输入，以及每个输入对应的期望输出，让模型进一步学习应该怎样回应。
 
-![image-20260831165945580](/Users/mac/Library/Application Support/typora-user-images/image-20260831165945580.png)
+![Prompt 与微调在模型定制方式上的区别](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260831165945580.png)
 
 两者可以这样区分：
 
@@ -166,6 +173,10 @@ Fine-tuning
 ## 快速验证：Prompt Prototyping
 
 课件建议在写完整系统前做 prompt 原型：拿一个真实输入样本，直接告诉通用聊天模型希望它完成的任务，观察它是否已经能“大致做对”。若接近目标，说明值得继续设计界面、上下文和验证机制；若连核心转换都做不到，应先缩小任务、改变目标或评估是否需要微调，而不是立刻投入大量工程实现。
+
+::: insight
+区分锐边与钝边，不是在给任务永久分类，而是在确定当前版本的失误预算。即使模型最终能承担更多自动化，产品也应先通过草稿、确认和撤销把失败限制在可恢复范围内；能力证据积累后，再逐步减少人工检查点，而不是一开始就把最高权限交给模型。
+:::
 
 ## 配套工作
 
