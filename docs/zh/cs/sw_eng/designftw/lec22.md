@@ -62,7 +62,7 @@ https://designftw.mit.edu/lectures/animation/videos/hierarchy-parentchild.mp4
 >
 > — NNGroup (“Animation for Attention and Comprehension”)
 
-![86926325541](/Users/mac/Downloads/gif/6.4500/86926325541.gif)
+![86926325541](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/86926325541.gif)
 
 > [!IMPORTANT]
 >
@@ -164,7 +164,7 @@ button:hover {
 
 ![image-20260515133602401](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260515133602401.png)
 
-![74864443654068](/Users/mac/Downloads/gif/6.4500/74864443654068.gif)
+![74864443654068](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/74864443654068.gif)
 
 这里并没有真正发生动画，因为自定义属性默认是不能被动画化的。不过，我们可以通过 `@property` 规则来“教会”浏览器如何对它们进行动画处理。
 

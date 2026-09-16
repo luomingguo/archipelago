@@ -40,9 +40,10 @@ import {
 export async function getStaticPaths() {
   const notes = await getCollection('notes');
   const selected = selectComplexNote(notes);
+  const catalog = buildCatalog(notes);
   console.info(`[migration] ${notes.length} Markdown entries; QA sample ${selected.id}: ${JSON.stringify(complexityOf(selected))}`);
 
-  return notes.flatMap((entry) => {
+  const notePaths = notes.flatMap((entry) => {
     const canonical = idToUrlPath(entry.id);
     const paths = [{ slug: canonical || 'index', alias: !canonical }];
     if (entry.id.endsWith('/index') && canonical) paths.push({ slug: `${canonical}/index`, alias: true });
@@ -51,41 +52,62 @@ export async function getStaticPaths() {
       props: { entryId: entry.id, selectedId: selected.id, alias },
     }));
   });
+
+  const inferredDomainPaths = catalog.domains
+    .filter((domain) => !domain.indexEntry)
+    .flatMap((domain) => {
+      const canonical = idToUrlPath(`${domain.key}/index`);
+      return [canonical, `${canonical}/index`].map((slug, index) => ({
+        params: { slug },
+        props: { domainKey: domain.key, selectedId: selected.id, alias: index > 0 },
+      }));
+    });
+
+  return [...notePaths, ...inferredDomainPaths];
 }
 
-const { entryId, selectedId, alias } = Astro.props as { entryId: string; selectedId: string; alias: boolean };
+const { entryId, domainKey, selectedId, alias } = Astro.props as {
+  entryId?: string;
+  domainKey?: string;
+  selectedId: string;
+  alias: boolean;
+};
 const allNotes = await getCollection('notes');
 const catalog = buildCatalog(allNotes);
-const entry = allNotes.find((note) => note.id === entryId);
-if (!entry) throw new Error(`找不到内容：${entryId}`);
+const entry = entryId ? allNotes.find((note) => note.id === entryId) : undefined;
+if (!entry && !domainKey) throw new Error(`找不到内容：${entryId ?? '未知路由'}`);
 
-await render(entry);
-const headings = sourceHeadings(entry.body ?? '');
-const renderedHtml = (entry as typeof entry & { rendered?: { html?: string } }).rendered?.html ?? '';
-const contentHtml = rewriteRenderedInternalLinks(renderedHtml, entry.id);
-const domain = domainForEntry(catalog, entry);
-const course = courseForEntry(catalog, entry);
-const courseEntries = course?.entries ?? courseEntriesOf(allNotes, entry.id);
+if (entry) await render(entry);
+const headings = entry ? sourceHeadings(entry.body ?? '') : [];
+const renderedHtml = entry
+  ? (entry as typeof entry & { rendered?: { html?: string } }).rendered?.html ?? ''
+  : '';
+const contentHtml = entry ? rewriteRenderedInternalLinks(renderedHtml, entry.id) : '';
+const domain = domainKey
+  ? catalog.domains.find((candidate) => candidate.key === domainKey) ?? null
+  : entry ? domainForEntry(catalog, entry) : null;
+const course = entry ? courseForEntry(catalog, entry) : null;
+const courseEntries = entry ? course?.entries ?? courseEntriesOf(allNotes, entry.id) : [];
 const contentEntries = courseEntries.filter((note) => !isCourseIndex(note));
-const contentPosition = Math.max(0, contentEntries.findIndex((note) => note.id === entry.id)) + 1;
-const { prev, next } = findPrevNext(entry, courseEntries);
-const title = titleOf(entry);
-const courseName = course?.title ?? courseOf(entry);
-const courseId = course?.courseId ?? courseIdOf(entry);
-const lecture = lectureOf(entry);
-const summary = plainExcerpt(entry.body ?? '');
-const hasTldr = Boolean(extractTldr(entry.body ?? ''));
-const navLectures = buildNavLectures(courseEntries, entry.id);
-const tags = tagsOf(entry);
-const backlinks = findBacklinks(entry, allNotes);
-const lastUpdated = lastUpdatedOf(entry);
+const contentPosition = entry ? Math.max(0, contentEntries.findIndex((note) => note.id === entry.id)) + 1 : 0;
+const { prev, next } = entry ? findPrevNext(entry, courseEntries) : { prev: null, next: null };
+const title = entry ? titleOf(entry) : domain?.label ?? '领域';
+const courseName = entry ? course?.title ?? courseOf(entry) : '';
+const courseId = entry ? course?.courseId ?? courseIdOf(entry) : '';
+const lecture = entry ? lectureOf(entry) : undefined;
+const summary = entry ? plainExcerpt(entry.body ?? '') : domain?.description ?? '';
+const hasTldr = entry ? Boolean(extractTldr(entry.body ?? '')) : false;
+const navLectures = entry ? buildNavLectures(courseEntries, entry.id) : [];
+const tags = entry ? tagsOf(entry) : [];
+const backlinks = entry ? findBacklinks(entry, allNotes) : [];
+const lastUpdated = entry ? lastUpdatedOf(entry) : null;
 const statusLabels: Record<string, string> = { complete: '完成', draft: '草稿', stub: '占位' };
-const entryData = dataOf(entry);
-const noteType = typeLabelOf(typeOf(entry));
+const entryData = entry ? dataOf(entry) : {};
+const noteType = entry ? typeLabelOf(typeOf(entry)) : '';
 const status = statusLabels[String(entryData.status ?? '')] ?? String(entryData.status ?? '状态未知');
 const searchIndexUrl = withBasePath('/search-index.json');
 const courseHref = course?.href ?? withBasePath('/zh/');
-const isContentPage = !isRootIndex(entry) && !isDomainIndex(entry) && !isCourseIndex(entry);
+const isContentPage = Boolean(entry && !isRootIndex(entry) && !isDomainIndex(entry) && !isCourseIndex(entry));
 const learningPathOpening = contentHtml.match(/<learningpath(?:\s[^>]*)?>/i);
 const hasLearningPath = Boolean(learningPathOpening?.index !== undefined);
 const learningPathSegments = hasLearningPath && learningPathOpening?.index !== undefined ? [
@@ -104,13 +126,15 @@ const learningPaths = sourceLearningPaths ? {
   }])),
 } : null;
 ---
-{isRootIndex(entry) ? (
+{domainKey && domain ? (
+  <DomainView catalog={catalog} domain={domain} contentHtml="" />
+) : entry && isRootIndex(entry) ? (
   <HomeView catalog={catalog} />
-) : isDomainIndex(entry) && domain ? (
+) : entry && isDomainIndex(entry) && domain ? (
   <DomainView catalog={catalog} domain={domain} contentHtml={contentHtml} />
-) : isCourseIndex(entry) && domain && course ? (
+) : entry && isCourseIndex(entry) && domain && course ? (
   <CourseView catalog={catalog} domain={domain} course={course} contentHtml={contentHtml} />
-) : isContentPage ? (
+) : entry && isContentPage ? (
   <LectureLayout
     title={title}
     description={summary}
