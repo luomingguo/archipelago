@@ -2,8 +2,9 @@
 title: 价值敏感设计
 type: lecture
 lecture: 18
-tags: []
+tags: [value-sensitive-design, stakeholder-analysis, responsible-innovation, accessibility, technology-ethics]
 status: complete
+source: 'https://61040-fa25.github.io/assets/lecture-notes/vsd.pdf'
 ---
 # Lec 18 价值敏感设计
 
@@ -15,6 +16,14 @@ status: complete
 - **掌握框架** 学会用价值敏感设计（*Value Sensitive Design*，VSD）的四个标准分析一个产品的社会影响
 - **识别风险** 熟悉 Ethical OS Toolkit 提出的八大风险区，能在设计早期主动排查
 - **建立责任感** 理解"负责任的创新"包含"不造成伤害"与"创造正面影响"两个层面，而不仅是避免法律风险
+
+## TL;DR
+
+- 技术并不中立：默认值、排序、权限和商业指标都会分配利益与风险，设计者必须在开发早期说明优先保障的价值。
+- 价值敏感设计从利益相关者、时间、普及性和价值冲突四个维度检查影响，尤其关注未直接使用产品却承担外部成本的人。
+- 无障碍设计的“路缘坡效应”说明，为边缘群体消除障碍常能扩大整体价值；反之，未经目标群体参与的辅助技术容易变成表面创新。
+- 单个用户层面的效率提升在大规模普及后可能产生相反的系统效果，因此评估不能停留在一次交互或短期指标。
+- 负责任创新既包括防止隐私侵犯、偏见与滥用，也包括主动创造公平、尊严和社会福祉；风险清单是提问工具，不是免责证明。
 
 ## 技术从不是中立的
 
@@ -89,6 +98,10 @@ status: complete
 8. **仇恨与犯罪行为者**：个人或群体利用技术实施或煽动有害、非法行为
 
 ## 相关阅读与资源
+
+::: insight
+VSD 最有价值的产物不是一份“伦理风险已检查”的文档，而是进入产品规格的可执行约束：哪些群体需要参与研究、哪些数据不得收集、什么默认值必须可撤销、哪些伤害指标会阻止发布。只有价值判断能够改变需求、权限或成功标准时，它才真正参与了设计。
+:::
 
 **深度探讨的主题**：负责任的人工智能（Responsible AI）、算法偏见（Algorithmic Bias）、内容审核（Content Moderation）、道德供应链（Ethical Supply Chains）、数据隐私与安全（Data Privacy + Security）。
 

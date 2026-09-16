@@ -2,8 +2,9 @@
 title: 设计经验总结
 type: lecture
 lecture: 19
-tags: []
+tags: [software-architecture, modularity, event-driven-architecture, formal-methods, pattern-language]
 status: complete
+source: 'https://61040-fa25.github.io/assets/lecture-notes/lessons-compressed.pdf'
 ---
 # Lec 19 设计经验总结
 
@@ -14,7 +15,14 @@ status: complete
 - **知识定位** 将课程中学到的各种思想放入更大的背景中理解——它们从哪里来，行业里其他人怎么使用
 - **思想解耦** 课程教的是一套完整方法，但这些思想可以独立应用——即使你的公司不采用完整的概念设计
 
-##  行业架构术语与概念设计的关联
+## TL;DR
+
+- 概念设计与行业中的无头架构、模块化单体和事件驱动架构共享目标：让状态边界清晰、组合显式，并控制跨模块依赖。
+- 反腐层把外部事件或模型翻译成服务自己的动作，是 Sync 在常见架构语言中的对应模式；它解耦实现，却不能消除 schema 与一致性成本。
+- 视图分离、无界多态和抽象状态/动作可以独立使用：分别按目的拆分状态、避免对外部类型作结构假设，并以实现无关的状态转移描述行为。
+- 概念是一种软件模式语言；命名、全局标识和命名空间解决不同问题，组合它们比寻找一个万能“名称字段”更可靠。
+
+## 行业架构术语与概念设计的关联
 
 我们所学的很多思想，在工作中用这些词可能没人听得懂。但这些想法其实在行业中有对应的 流行语（*buzz phrases*），下面
 
@@ -22,7 +30,7 @@ status: complete
 
 ### 无头架构（*headless architecture*）
 
-![image-20260610105655769](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260610105655769.png)
+![无头架构将多个前端与结构化数据后端分离](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260610105655769.png)
 
 - 动机：希望将后端服务与多种前端配对——不同设备、平台、工具
 
@@ -34,7 +42,7 @@ status: complete
 
 ### 模块化单体（***Modular Monolith***）
 
-![image-20260610110026158](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260610110026158.png)
+![模块化单体在一个部署单元内保持服务边界](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260610110026158.png)
 
 - 动机：希望后端具有模块化，将其拆分为独立服务
 - 做法：服务只通过 API 访问；每个服务拥有自己的数据
@@ -43,7 +51,7 @@ status: complete
 
 有问题的组合方式
 
-![image-20260610110120246](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260610110120246.png)
+![客户端编排与依赖微服务造成的跨服务耦合](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260610110120246.png)
 
 客户端编排（*Client-side orchestration*）和依赖微服务（*Dependent microservices*）都存在耦合问题。
 
@@ -51,7 +59,7 @@ status: complete
 
 ### 事件驱动架构（*event driven architecture*）
 
-![image-20260610110219732](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260610110219732.png)
+![服务通过事件总线发布和订阅事件的架构](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260610110219732.png)
 
 动机：将服务之间彻底解耦
 
@@ -65,7 +73,7 @@ status: complete
 
 **事件驱动中的状态传递问题**
 
-![image-20260610110610527](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260610110610527.png)
+![事件携带状态与消费者回查生产者的两种数据传递方式](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260610110610527.png)
 
 事件携带状态（*Event-Carried State*）
 
@@ -184,3 +192,7 @@ def set_profile(e, display_name, bio):
   - 与全局标识相比，命名空间保留了"名称仍然助记、可读"的优点，用层级结构而不是完全放弃可读性来解决冲突问题
 
 课件最后用 **Dropbox** 的文件同步机制做整合案例：一个文件的完整标识其实同时依赖三种命名概念协作——`GlobalId` 保证每个文件对象在系统内部有唯一、稳定的引用（即使文件被改名或移动，这个 id 不变）；`Namespacing` 让文件路径（文件夹层级）提供人类可理解的组织结构；`SimpleNaming` 则是用户在某一层级目录下看到、编辑的那个具体文件名。三者组合，才同时满足了"系统内部精确追踪"和"用户体验上易于理解"这两个经常互相冲突的目标——这正是"概念是可复用模式语言"这一说法的具体体现：同一组命名概念，几乎可以原样搬进任何需要"组织与识别条目"的产品里。
+
+::: insight
+把课程术语翻译成行业术语时，最重要的是比较约束而不是名称：谁拥有状态、依赖是否单向、组合逻辑放在哪里、失败时能否独立恢复。两个架构即使都自称“模块化”，只要共享数据库结构或依赖隐式调用，就可能与概念设计追求的表示独立性完全不同。
+:::

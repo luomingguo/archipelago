@@ -1,24 +1,31 @@
 ---
-title: 设计 AI-Power 交互· 软件设计
+title: 设计 AI 驱动的交互 I
 type: lecture
 lecture: 7
-tags: [software-design, prd, prototyping, vibe-coding]
+tags: [human-ai-interaction, mental-model, llm-reasoning, wireframing]
 status: complete
 source: 'https://61040-fa25.github.io/assets/lecture-notes/designing_ai_powered_interactions_part_1.pdf'
 ---
-# Lec 7 设计 AI-Power 交互 I
+# Lec 7 设计 AI 驱动的交互 I
 
 官方课件：[Designing AI-powered Interactions, Part 1](https://61040-fa25.github.io/assets/lecture-notes/designing_ai_powered_interactions_part_1.pdf)。
 
 本节 Lec 的目标是：
 
 - **掌握** 与聊天模型和推理模型交互的基本知识，以便在项目中设计 AI 功能
-- **理解 ** 与 LLM 有效交互的障碍：幻觉、心智模型不匹配等
+- **理解** 与 LLM 有效交互的障碍：幻觉、心智模型不匹配等
 - **下节课—— 在聊天之上交互**： UI 抽象掉 LLM 的推理
 
 LLM 使 AI 功能开发变得前所未有地容易——但设计出真正好用的 AI 功能仍然极具挑战性。
 
-## 背景
+## TL;DR
+
+- Prompt + Completion 把表达需求、补足上下文和判断答案的负担都交给用户，因此只是 AI 产品交互的起点，而不是完整方案。
+- 幻觉、上下文不透明和心智模型错配不能仅靠“更强模型”解决；界面必须提供来源、局部修正、撤销和人工接管等可供性。
+- 推理模型可能提升复杂任务质量，但展示完整推理并不天然可信；应按用户行动需要提供简短理由、来源或可编辑中间结果。
+- 线框图把抽象概念变成可测试的用户旅程；概念之间即使有外部依赖，也只有满足单向、非对称和可独立复用等条件时才应形成内部依赖。
+
+## AI 产品落地的背景
 
 2025 关于 AI 工具的 MIT 报告指出，
 
@@ -59,7 +66,7 @@ LLM 使 AI 功能开发变得前所未有地容易——但设计出真正好用
 
 Prompt → Completion 的一个重要问题是：模型第一次生成错了以后，用户不一定知道该怎么修正它。例如让模型生成 MIT 6.1040 的课堂图片，结果生成成了卡通风格。
 
-![让模型生成 MIT 6.1040 的课堂图片](/Users/mac/Library/Application Support/typora-user-images/image-20260901052454741.png)
+![让模型生成 MIT 6.1040 的课堂图片](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260901052454741.png)
 
 用户只能再次用自然语言解释：“我们的课程根本不是这样，为什么是卡通？”模型再追问真实课堂、建筑、风格等信息。问题不是「不能修改」，而是：**系统缺少明确的 可供性（*Affordance*），告诉用户“你可以改什么、应该怎么改”**。用户必须自己摸索 Prompt，承担大量交互成本。
 
@@ -69,7 +76,7 @@ Prompt → Completion 的一个重要问题是：模型第一次生成错了以�
 
 ### 人-AI 对交互鸿沟
 
-![交互鸿沟](/Users/mac/Library/Application Support/typora-user-images/image-20260901053203039.png)
+![交互鸿沟](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260901053203039.png)
 
 交互鸿沟并非单向存在，而是用户与 LLM 双向映射的系统性问题：
 
@@ -80,7 +87,7 @@ Prompt → Completion 的一个重要问题是：模型第一次生成错了以�
 
 ### 用户建模与价值对齐
 
-![LLM 也有用户模型](/Users/mac/Library/Application Support/typora-user-images/image-20260901053337969.png)
+![LLM 也有用户模型](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260901053337969.png)
 
 AI 的最终输出并非纯客观结果，而是对用户的推断，即用户模型（*User Model*） + 模型内化价值（Aligned Values） 的复合体现。
 
@@ -229,6 +236,10 @@ Reasoning 还有一个看起来很诱人的优势：
 4. 默认的推荐、排序、语气和安全边界是否反映了可被用户调整的价值选择？
 5. 若采用推理模型，额外质量是否值得其等待、成本与认知负担？
 
-## 本讲小结
+## 从模型能力到可协作界面的结论
 
 prompt + completion 是很有力的起点，但不是完整产品。Lec 7 的核心是：用准确的心智模型、可修正的界面、清晰的上下文和价值可控性，把不可预测的模型能力变成用户能安全协作的功能。下一讲会进一步讨论如何用结构化输入输出和 agent 模式超越纯聊天。
+
+::: insight
+AI 交互设计的最小单位不应是“一次回答”，而应是一个可恢复的协作回合：用户能看见系统采用了什么输入、修改局部结果，并在模型越界前收回控制权。以这个标准看，解释文本只有在帮助核验或下一步行动时才有价值；单纯增加篇幅反而可能制造新的自动化偏差。
+:::

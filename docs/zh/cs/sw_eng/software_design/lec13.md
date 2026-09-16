@@ -2,12 +2,20 @@
 title: 前端框架：响应式编程与 Vue
 type: lecture
 lecture: 13
-tags: []
+tags: [reactive-programming, vue, frontend-state, component-design]
 status: complete
+source: 'https://61040-fa25.github.io/assets/lecture-notes/reactive-programming-10-20.pdf'
 ---
 # Lec 13 前端框架：响应式编程与 Vue
 
 官方课件：[Front-End Frameworks with Vue](https://61040-fa25.github.io/assets/lecture-notes/reactive-programming-10-20.pdf)。前端的本质是：状态变化后，界面自动保持一致；不要把所有事件都写成手工修改 DOM 的分支。
+
+## TL;DR
+
+- 响应式编程把界面视为状态的函数；事件只修改状态，框架沿依赖关系更新视图，从而避免手工 DOM 操作形成互相覆盖的隐式状态。
+- Vue 用 `ref` / `reactive`、模板、事件和组件划分职责；props 向下传数据，emits 向上表达意图，组件边界不应被跨层隐式共享状态破坏。
+- 派生数据应由计算关系得到，而不是复制为另一份可变状态；异步请求还必须显式呈现 loading、success 和 error 状态。
+- 浏览器状态只负责交互体验，服务端仍是身份、权限和持久业务状态的权威来源。
 
 ## 从命令式事件到响应式状态
 
@@ -30,6 +38,10 @@ status: complete
 ## 设计检查
 
 每个页面先写出它需要的状态和允许的事件；派生数据用计算属性表达，不复制成第二份可变状态；列表为每项提供稳定 key；服务端仍是权限与真实状态的权威，客户端状态不可被信任。
+
+::: insight
+响应式系统与概念设计共享同一条原则：先定义可观察状态和允许的动作，再让界面成为状态的投影。若一个视觉变化只能通过回忆某串事件处理器来解释，说明事实来源已经分裂；把它还原为单一状态和显式派生关系，通常比继续增加监听器更可靠。
+:::
 
 ## 配套作业：Assignment 4b — Front End Checkin / Complete
 

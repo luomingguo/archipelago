@@ -1,10 +1,9 @@
 ---
-title: LLM代码架构· 软件设计
+title: LLM 代码架构
 type: lecture
 lecture: 9
-tags: [software-design, prd, prototyping, vibe-coding]
+tags: [llm-application, prompt-engineering, model-evaluation, ai-safety]
 status: complete
-source: 'https://61040-fa25.github.io/assets/lecture-notes/modularity-case-studies.pdf'
 ---
 # Lec 9 LLM 代码架构
 
@@ -13,6 +12,13 @@ source: 'https://61040-fa25.github.io/assets/lecture-notes/modularity-case-studi
 - **技术路径** 掌握 LLM 推理的基本技术方法，为项目构建 AI 功能（*AI-powered*）
 - **提示与评估** 理解如何设计和迭代高效提示词
 - **实际考量** 比如安全、成本等等，这样你不容易犯错
+
+## TL;DR
+
+- LLM 调用应放在服务端，并把鉴权、输入验证、模型选择、结构化输出校验和真实业务动作分成清晰边界；模型输出始终按不可信输入处理。
+- Prompt 是需要版本化和回归测试的接口规格，而不是一次性的自然语言咒语；质量判断依赖代表性样例、边界案例和明确评分标准。
+- 采样参数、few-shot、best-of-N 与自动提示优化都只是在质量、稳定性、成本和延迟之间取舍，不能替代任务定义与评估。
+- 自托管、统一网关或闭源 API 的选择应同时比较能力、隐私、运维、可用性和总成本；关键工具调用仍需权限限制与用户确认。
 
 ## 推理调用的基本结构
 
@@ -95,6 +101,10 @@ source: 'https://61040-fa25.github.io/assets/lecture-notes/modularity-case-studi
 3. 采样参数、模型版本、prompt 与上下文版本是否被记录？
 4. 是否把密钥、权限校验、schema 验证和工具调用限制在服务端？
 5. 用户能否理解等待/费用，并在超时、限流或低质量输出时继续完成任务？
+
+::: insight
+LLM 架构最重要的分界不是“用了哪一个模型”，而是系统是否把概率性推理隔离在可评估、可替换的边界内。只要 prompt、模型输出和工具请求都经过显式契约，换模型只是实现选择；若业务权限和状态更新直接依赖自由文本，任何模型升级都会成为系统级风险。
+:::
 
 ## 配套工作
 

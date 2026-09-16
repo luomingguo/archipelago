@@ -2,8 +2,9 @@
 title: 视觉设计
 type: lecture
 lecture: 14
-tags: []
+tags: [visual-design, layout, typography, color-theory, design-critique]
 status: complete
+source: 'https://61040-fa25.github.io/assets/lecture-notes/visual-design-lec-export.pdf'
 ---
 # Lec 14 视觉设计
 
@@ -13,6 +14,13 @@ status: complete
 
 - **理解** 视觉设计的核心要素——如何通过**布局**让界面易于理解； 如何运用**字体**排版，让界面兼具美感和逻辑清晰； 色彩如何影响界面的可用性和审美体验
 - **实践** 学会在视觉设计中识别并综合运用这三大要素
+
+## TL;DR
+
+- 视觉设计首先承担引导和节奏功能：布局、尺寸、对齐与留白应让层级和下一步行动能够被快速扫描，而不只是装饰界面。
+- 字体排印通过字号、x 高度、字重、对齐和行间关系建立信息层级；大段正文应优先保证稳定起点和连续阅读。
+- 颜色同时受媒介、周边颜色和人眼感知影响；调色不能只操作 RGB 数值，还要检查对比度、语义一致性与使用情境。
+- 设计批评应描述目标、观察和影响，再提出可执行改进；组件库能提高一致性与速度，但不能替代有意图的视觉判断。
 
 ## 理论篇
 
@@ -27,7 +35,7 @@ status: complete
 
 🎯 **核心目标：**使界面自解释（*self-explanatory*）——在设计所用元素的前提下，清晰传达用户如何最好地实现他们的目标。
 
-![截屏 2024-06-12 15.56.56](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6669550493fd5.png)
+![缺少清晰操作线索的自动门示例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6669550493fd5.png)
 
 上图又是自动门，都是拉门的、但是又没有拉环的设计，让人有点摸不着头脑。
 
@@ -35,7 +43,7 @@ status: complete
 
 布局的核心原则：
 
-- 对于网格系统，将元素对齐到网格，常用 12 列网格，配合留白（*Margin*）和兼具（*Guttter/Alley*）保证结构一致
+- 对于网格系统，将元素对齐到网格，常用 12 列网格，配合页边距（*margin*）和列间距（*gutter/alley*）保证结构一致
 - 尺寸= 层级： 元素大小传达重要性。大区域 = 主要操作（如搜索栏）；小区域 = 同等级的次要内容（如浏览网格）。
 - 空白区分组： 留白可在视觉上区分不同的内容组，无需边框或分隔线，减少视觉噪音。
 
@@ -45,13 +53,13 @@ status: complete
 <p>标准 12 列：可灵活组合（1+11、4+8、6+6 等），适配多种布局需求</p>
 </div>
 
-![image-20260603073758091](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603073758091.png)
+![十二列网格中的边距与列间距](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603073758091.png)
 
 -----
 
 **用留白区分内容组**
 
-![image-20260603073901170](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603073901170.png)
+![通过留白区分两组内容的布局对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603073901170.png)
 
 不加留白：两组内容视觉上融合，用户难以区分边界，认知负担增加。
 
@@ -88,9 +96,9 @@ F 型扫描模式（*F-Pattern*）： 用户不会逐字阅读页面，而是**�
 
 举几个例子：
 
-![截屏 2024-06-12 17.36.24](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66696c2f7eea9.png)
+![页面内容的 F 型扫描布局示例一](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66696c2f7eea9.png)
 
-![截屏 2024-06-12 17.37.40](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66696c7236734.png)
+![页面内容的 F 型扫描布局示例二](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66696c7236734.png)
 
 ### 字体排印
 
@@ -103,7 +111,7 @@ F 型扫描模式（*F-Pattern*）： 用户不会逐字阅读页面，而是**�
 | 字重（*Weight*）                 | 字体笔画的粗细                                               | light / regular / semi-bold / bold / extra-bold / black，通过字重建立层级 |
 | 衬线 vs 无衬线                   | Serif（如 Baskerville）有装饰性笔画；Sans-serif（如 Gill Sans）无装饰 | 两者可读性差异极小，选择主要影响**风格和调性**               |
 
-![image-20260603083032112](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083032112.png)
+![字号、字重与 x 高度形成的字体排印差异](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083032112.png)
 
 ----
 
@@ -117,24 +125,24 @@ F 型扫描模式（*F-Pattern*）： 用户不会逐字阅读页面，而是**�
 
 第一种，无层级， 课程号 + 课程名 + 教授名全部挤在一行，难以扫描
 
-<img src="https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083248922.png" alt="image-20260603083248922" style="zoom:200%;" />
+<img src="https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083248922.png" alt="课程信息缺少视觉层级的排版示例" style="zoom:200%;" />
 
 第二种， 教授名换行，但课程号和名称仍混在一起
 
-![image-20260603083143005](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083143005.png)
+![只通过换行区分课程信息的排版示例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083143005.png)
 
 第三种， 课程号加大加粗，课程名用正常字重，教授名用浅色字重，三层信息一目了然
 
-![image-20260603083343052](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083343052.png)
+![用字号、字重和颜色建立课程信息层级](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083343052.png)
 
 ### 色彩
 
 #### 加色混合 vs 减色混合
 
 - 加色混合（*Additive*）：用于数字显示屏。使用红、绿、蓝（RGB）三原色叠加，颜色相加变亮。 例：红 + 蓝 = 紫
-- 见色混合（*Subtractive*）：用于印刷、电子纸。使用 CMYK 颜料，颜色相加变暗（吸收光线）
+- 减色混合（*Subtractive*）：用于印刷、电子纸。使用 CMYK 颜料，颜色相加变暗（吸收光线）
 
-![image-20260603083537751](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083537751.png)
+![RGB 加色混合与 CMYK 减色混合对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083537751.png)
 
 <div style="background:#fff5f5;border:1px solid #f2a0a0;border-radius:16px;padding:20px 28px;color:#c00;font-size:20px;line-height:1.8;margin:16px 0;"> ✕ RGB 有两大缺陷： ① 不符合我们自然表达颜色的方式； ② 并非感知均匀（perceptually uniform）——数值变化相同，但人眼感受到的变化不一致。 </div>
 
@@ -142,11 +150,11 @@ F 型扫描模式（*F-Pattern*）： 用户不会逐字阅读页面，而是**�
 
 同步对比（*Simultaneous Contrast*）： 两种颜色并排时会相互影响感知。Josef Albers 实验证明：同一颜色在不同背景下看起来完全不同。设计时需考虑颜色的**上下文环境**。
 
-![image-20260603083842817](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083842817.png)
+![相同颜色在不同背景下产生的同步对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083842817.png)
 
 贝佐德效应（*Bezold Effect*）： 在颜色周围加深色边框，会使该颜色看起来更深。相同的颜色值，因边框不同而产生不同的视觉感受。
 
-![image-20260603083947455](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083947455.png)
+![边框改变中心颜色感知的贝佐德效应](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083947455.png)
 
 #### 颜色三属性
 
@@ -156,9 +164,9 @@ F 型扫描模式（*F-Pattern*）： 用户不会逐字阅读页面，而是**�
 
 ##### 色温：暖色 vs 冷色
 
-![image-20260603084142901](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603084142901.png)
+![暖色与冷色的色温对比示例一](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603084142901.png)
 
-![image-20260603084222389](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603084222389.png)
+![暖色与冷色的色温对比示例二](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603084222389.png)
 
 ##### 色彩和谐
 
@@ -231,6 +239,10 @@ F 型扫描模式（*F-Pattern*）： 用户不会逐字阅读页面，而是**�
   </div></div>
 
 ## 实践篇
+
+::: insight
+视觉层级本质上是把产品的优先级编码进空间：尺寸、位置、留白和对比度都在替用户决定先看什么。因而“看起来统一”不是终点；如果最显眼的元素与用户的首要任务不一致，再精致的组件库也只是在稳定地放大错误优先级。
+:::
 
 ### Vue 进阶
 
