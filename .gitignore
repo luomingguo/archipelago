@@ -12,3 +12,4 @@ cache
 # Design Canvas preview caches and source uploads copied into design/assets.
 design/**/.thumbnail
 design/uploads/
+.agent
