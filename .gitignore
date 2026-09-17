@@ -13,3 +13,4 @@ cache
 design/**/.thumbnail
 design/uploads/
 .agent
+*.pdf

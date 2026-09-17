@@ -2,7 +2,7 @@
 title: 产品开发的通用流程与课程框架
 type: lecture
 lecture: 1
-tags: [product-development-process, stage-gate, phase-review, r&d-vs-pd, project-scoping]
+tags: [product-development-process, stage-gate, phase-review, rd-vs-pd, project-scoping]
 status: complete
 source: 'https://ocw.mit.edu/courses/15-783j-product-design-and-development-spring-2006/resources/clas1_int_crse_6/'
 ---
