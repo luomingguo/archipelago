@@ -2,14 +2,21 @@
 title: 编译器概览（Overview of Compilation）
 type: lecture
 lecture: 1
-tags: []
+tags: [compiler-pipeline, intermediate-representation, optimization]
 status: complete
+source: https://6110-sp25.github.io/assets/documents/lectures/L01-Introduction.pdf
 ---
 # Lec 01 编译器概览（Overview of Compilation）
 
 > 对应课程：MIT 6.1100 / 6.035 Computer Language Engineering
 > 配套复习课：R1（课程信息）、R2（递归下降分析器，主体在 L3）
 > 参考：Cooper et al., *Engineering a Compiler*, Ch.1
+
+## TL;DR
+
+- 编译器把源语言中命名且结构化的计算，逐层降级为目标机器的寄存器、内存和跳转。
+- 词法 / 语法、语义分析、IR、代码生成和优化构成一条连续流水线，每层都为下一层建立明确不变式。
+- 优化不只追求速度，还要在代码体积、功耗、编译时间、可调试性与可靠性之间取舍。
 
 ---
 
@@ -194,7 +201,11 @@ int sumcalc(int a, int b, int N) {
 
 ---
 
-## 6. 本讲小结
+::: insight
+编译流水线中最难取代的资产不是某个 pass，而是各层 IR 之间的契约。契约越清楚，新分析和优化越容易插入；契约模糊，正确性问题就会跨阶段渗透。
+:::
+
+## 6. 编译流水线与优化目标小结
 
 - 编译器 = 把"高级语言的抽象状态与计算"忠实降级为"机器的寄存器、内存与跳转"。
 - 标准流程：词法/语法 → 语义 → 代码生成 → 数据流分析 → 优化/寄存器分配。

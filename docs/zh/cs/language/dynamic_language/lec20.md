@@ -2,12 +2,18 @@
 title: 代码生成 II（Code Generation II）——汇编代码生成与机器模型
 type: lecture
 lecture: 20
-tags: []
+tags: [x86-64, code-generation, calling-convention, threaded-code]
 status: complete
 ---
 # Lec 20 代码生成 II（Code Generation II）——汇编代码生成与机器模型
 
 > 本讲"把机器摸熟"：x86-64 的内存组织、寄存器与调用约定、栈帧布局、ALU 与指令；如何用**内存汇编器 (in-memory assembler)** 在运行时把字节码翻译成机器码；**线索化代码 (threaded code)** 与逐指令的**未优化代码生成**实战；最后给出写代码生成器的工程准则。
+
+## TL;DR
+
+- x86-64 代码生成必须同时遵守寄存器用途、System V AMD64 调用约定、栈帧布局与内存寻址规则。
+- 内存汇编器在运行时把机器指令编码到可执行页，使 JIT 可从字节码直接生成可跳入执行的代码。
+- 未优化生成器应优先建立一对一、可验证的指令模板；线索化代码、尾分派和后续分析再逐步消除分派与搬运成本。
 
 ---
 

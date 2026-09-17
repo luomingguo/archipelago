@@ -2,11 +2,18 @@
 title: 安全系统架构（Architecting a Secure System）
 type: lecture
 lecture: 12
-tags: []
+tags: [secure-architecture, isolation, access-control, delegation, audit]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec14.pdf'
 ---
 # Lec 12 安全系统架构（Architecting a Secure System）
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- 安全架构不假设所有组件都正确，而是用隔离限制错误与恶意行为，再通过受控共享开放最小必要交互。
+- 授权策略定义主体对资源的操作，审计保存可追责证据；委托必须保留原始主体与调用链，避免中间服务成为权限放大器。
+- Capabilities 把权限表示为可传递的不可伪造引用，适合细粒度委托，但撤销、传播追踪和接口设计仍是系统问题。
 
 ## 1. 两类核心威胁
 
@@ -149,6 +156,8 @@ $$\sigma = \text{Sign}(sk_A,\ \text{"Alice delegates to Gmail"},\ t_\text{start}
 
 ### 8.1 Web 应用标准架构
 
+这个例子把互联网入口与保存敏感状态的后端服务分开。前端只负责终止连接和路由请求；登录、资料与图片服务分别持有最小数据库权限，因此单个服务失陷不必然暴露全部数据。
+
 ```text
 Client --TLS--> [前端服务器]
                     |---> [Login 服务] <--> [密码 DB]
@@ -161,12 +170,16 @@ Client --TLS--> [前端服务器]
 
 ### 8.2 日志系统架构
 
+日志接收端只暴露追加能力，不向业务进程提供删除历史记录的接口。这样即使业务进程被攻破，攻击者也难以同时清除审计证据。
+
 ```text
 应用 ---[只追加]---> 日志服务器
         （无删除 API）
 ```
 
 ### 8.3 密钥管理架构
+
+密钥管理器暴露“使用密钥”的窄接口，而不暴露“读取密钥”的能力。调用者可以请求签名，却无法把私钥复制到更大的应用进程中。
 
 ```text
 应用 ---[sign(msg)]---> 密钥管理器（含 sk）
@@ -182,3 +195,7 @@ $$\text{攻击面} \propto \text{权限数量} \times \text{代码规模}$$
 **纵深防御（Defense in Depth）**：多层安全机制，单层失效不导致系统完全沦陷。
 
 **默认拒绝（Default Deny）**：未明确授权的操作默认禁止。
+
+::: insight
+安全架构的核心工作，是把抽象信任假设落实为可审计的边界、最小接口和默认拒绝策略。
+:::

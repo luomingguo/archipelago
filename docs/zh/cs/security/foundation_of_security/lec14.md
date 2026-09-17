@@ -2,11 +2,18 @@
 title: 软件信任（Software Trust）
 type: lecture
 lecture: 14
-tags: []
+tags: [software-supply-chain, code-signing, reproducible-builds, secure-boot]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec16.pdf'
 ---
 # Lec 14 软件信任（Software Trust）
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- 软件信任是一条从源码、依赖、构建工具、分发渠道到启动固件的供应链；任一环节被替换都会使最终签名失去预期含义。
+- 代码签名证明“谁授权了这些字节”，不证明代码无漏洞；版本锁定、可重现构建与透明日志用于缩小并审计信任基础。
+- Secure Boot 验证启动链，Measured Boot 记录实际加载内容；两者都依赖根密钥、更新策略与恢复路径正确实现。
 
 ## 1. 核心问题
 
@@ -176,3 +183,7 @@ $$k_\text{disk} = \text{KDF}(\text{hardware\_secret},\ H(\text{bootloader}) \| H
 | **Secure Boot** | 确保启动链每一层都是被信任的代码 |
 | **度量启动** | 度量实际运行的代码，绑定密钥 |
 | **首次信任+锁定** | 初次接受公钥后验证后续更新的一致性 |
+
+::: insight
+签名证明的是来源和完整性，不证明软件质量；供应链仍需可复现构建、审计与安全发布流程。
+:::

@@ -8,7 +8,7 @@ source: 'https://61040-fa25.github.io/assets/lecture-notes/vsd.pdf'
 ---
 # Lec 18 价值敏感设计
 
-官方课件：[Value Sensitive Design](https://61040-fa25.github.io/assets/lecture-notes/vsd.pdf)。本讲的核心不是在开发末期"加上伦理"，而是承认每一个设计取舍都在编码优先级；技术被采用之后，又会规模化地反过来塑造人的价值与行为。
+本讲的核心不是在开发末期"加上伦理"，而是承认每一个设计取舍都在编码优先级；技术被采用之后，又会规模化地反过来塑造人的价值与行为。
 
 本节目标：
 

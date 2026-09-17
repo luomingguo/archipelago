@@ -2,12 +2,18 @@
 title: 垃圾回收 III（GC III）——分代与增量回收
 type: lecture
 lecture: 14
-tags: []
+tags: [garbage-collection, generational-gc, incremental-gc, write-barrier]
 status: complete
 ---
 # Lec 14 垃圾回收 III（GC III）——分代与增量回收
 
 > 接 L13。用**分代回收**降低回收成本、用**增量回收**降低停顿，并比较各方案、看实践
+
+## TL;DR
+
+- 分代 GC 利用「大多数对象很快死亡」的弱分代假设，频繁回收小而多垃圾的新生代，少量处理老年代。
+- 老年代到新生代的指针会破坏「只扫新生代」的完整性，需要用写屏障和记忆集记录跨代引用。
+- 增量 GC 把长时间标记或搬迁拆成小步与程序交替执行，降低最长停顿，但需要维护更复杂的三色不变式和屏障。
 
 ---
 

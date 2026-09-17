@@ -2,13 +2,19 @@
 title: 语义（堆与记录）——带堆的操作语义
 type: lecture
 lecture: 8
-tags: []
+tags: [heap, operational-semantics, reference-semantics, records]
 status: complete
 ---
 # Lec 8 语义（堆与记录）——带堆的操作语义
 
 > 接 L7。把值从"帧里的整数"搬到**堆 (heap)** 上：表达式求值返回**地址**，并把堆**线程化**穿过每一步求值
 > 记号：<span>$\langle e, f, h\rangle \Downarrow \langle a, h'\rangle$</span>——在帧 f、堆 h 下，表达式 e 求值得到地址 a 与更新后的堆 h'
+
+## TL;DR
+
+- 引入堆后，帧从「变量 → 值」改为「变量 → 地址」，堆再将地址映射到整数、布尔值或记录。
+- 表达式现在可能分配并更新堆，因此求值规则必须把堆从一个子表达式线程化到下一个，从而显式固化求值顺序。
+- 记录采用引用语义时，多个变量可指向同一堆对象；别名和持续分配也直接引出垃圾回收问题。
 
 ---
 

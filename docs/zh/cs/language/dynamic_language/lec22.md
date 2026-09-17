@@ -2,12 +2,18 @@
 title: 寄存器分配 II（Register Allocation II）——线性扫描与图着色
 type: lecture
 lecture: 22
-tags: []
+tags: [register-allocation, linear-scan, graph-coloring, spilling]
 status: complete
 ---
 # Lec 22 寄存器分配 II（Register Allocation II）——线性扫描与图着色
 
 > 与 L21 共用同一份 slides（《Register Allocation (+ Liveness, Dead Code Elimination)》，分配算法部分 credit Stanford CS143）。L21 打好了地基（活跃性分析、活跃区间、寄存器分配问题形式化），本讲落实 slides "Goal" 提出的**两种分配算法**：**线性扫描 (Linear Scan)** 与 **图着色 (Graph Coloring)**。结合 index.md 推荐的经典论文（Chaitin 1982、Poletto–Sarkar 线性扫描、George–Appel 1996）补充算法细节。
+
+## TL;DR
+
+- 图着色分配从活跃性构造干涉图，用简化、选择、溢出与 move coalescing 寻找高质量分配，但编译成本较高。
+- 线性扫描按活跃区间起点排序，维护 active 集并回收到期寄存器；它接近线性时间，更适合受编译延迟约束的 JIT。
+- 两种算法都必须正确插入溢出 load / store，遵守固定寄存器与 caller / callee-saved 约定，并保证每个程序点上值的位置一致。
 
 ---
 

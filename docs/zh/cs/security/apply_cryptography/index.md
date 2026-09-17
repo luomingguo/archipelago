@@ -3,159 +3,81 @@ title: 6.5610 应用密码学与安全（Spring 2026）
 type: course
 course: 6.5610 应用密码学与安全（Spring 2026）
 course_id: '6.5610'
-tags: []
-status: complete
+tags: [applied-cryptography, provable-security, privacy-enhancing-technologies, zero-knowledge]
+status: draft
+source: 'https://65610.csail.mit.edu/2026/'
 ---
 # 6.5610 应用密码学与安全（Spring 2026）
 
-Applied Cryptography
+> 课程主页：[MIT 6.5610 Applied Cryptography and Security](https://65610.csail.mit.edu/2026/)
 
-https://65610.csail.mit.edu/2026/
+## TL;DR
 
-本课定位为**研究生应用密码学**：先快速回顾基础原语，随后进入实践中正在使用、或有潜力被使用的高级密码原语。先修建议为入门密码学（如 6.1600）。
+- 课程从安全定义与对称原语出发，推进到格密码、PIR、FHE、MPC、可验证计算和 ORAM。
+- 本目录整合了官网提供 lecture notes 的 18 个核心主题；本地文件名为保持既有 URL 未因客座课插入而重排。
+- 2026 Panopto 录像需要 MIT 登录，本次无法取得 transcript，因此没有把未核验的口头内容写进笔记。
 
-## 课程地图（全部 21 讲 · 5 个主题模块）
+## 先修与阅读方法
 
-### 模块 I · 对称密码学基础（Symmetric-key foundations）
+建议先掌握概率、线性代数、有限域和基础密码学；没有系统安全背景时，可先读 [6.1600](../foundation_of_security/)。阅读每讲时先看安全目标和攻击者能力，再看构造与归约，最后检查“工程视角”中的假设是否能在真实部署中成立。
 
-| #    | 日期 | 主题                                                         | 状态 |
-| ---- | ---- | ------------------------------------------------------------ | ---- |
-| L1   | 2/2  | 加密哈希函数 / 单向哈希（*Cryptographic Hashing*）           | ✅    |
-| L2   | 2/4  | 对称加密：从 PRF 构造（*Symmetric Encryption from PRF*）     | ✅    |
-| L3   | 2/9  | 对称原语 I（*Symmetric-key primitives I* · PRF / 计数器模式 / ChaCha20） | ✅    |
-| L4   | 2/11 | 对称原语 II（*Symmetric-key primitives II* · PRP / Feistel / AES） | ✅    |
+## 课程地图
 
-### 模块 II · 公钥与格密码（Public-key & Lattices）
+### 一、对称密码学基础
 
-| #    | 日期 | 主题                                                         | 状态 |
-| ---- | ---- | ------------------------------------------------------------ | ---- |
-| L5   | 2/17 | Diffie–Hellman 密钥交换与公钥加密（*DH & PKE*）              | ✅    |
-| L6   | 2/18 | Rabin、RSA、为何需要后量子（*Rabin / RSA / why post-quantum*） | ✅    |
-| L7   | 2/25 | 公钥加密：从 LWE 构造（*PKE from LWE · Regev*）              | ✅    |
+| 讲次 | 笔记 | 核心连接 |
+| --- | --- | --- |
+| L1 | [密码学哈希](./lec1.md) | 单向性、抗碰撞性、随机预言机 |
+| L2 | [从 PRF 构造对称加密](./lec2.md) | 安全游戏、随机化加密、IND-CPA |
+| L3 | [PRF、计数器模式与 ChaCha20](./lec3.md) | 具体安全、nonce、流密码 |
+| L4 | [PRP、Feistel 与 AES](./lec4.md) | 分组密码、模式与实现侧信道 |
 
-### 模块 III · 隐私计算原语（PIR & Homomorphic Encryption）
+### 二、公钥与格密码
 
-| #    | 日期 | 主题                                                 | 状态 |
-| ---- | ---- | ---------------------------------------------------- | ---- |
-| L8   | 3/2  | 私有信息检索（*Private Information Retrieval, PIR*） | ✅    |
-| L9   | 3/4  | 全同态加密 I（*Fully Homomorphic Encryption, FHE*）  | ✅    |
-| L10  | 3/9  | 全同态加密 II                                        | ✅    |
+| 讲次 | 笔记 | 核心连接 |
+| --- | --- | --- |
+| L5 | [Diffie–Hellman 与公钥加密](./lec5.md) | 密钥交换、混合加密、身份绑定 |
+| L6 | [Rabin、RSA 与后量子动机](./lec6.md) | 陷门函数、填充、Shor 算法 |
+| L7 | [从 LWE 构造公钥加密](./lec7.md) | Regev 加密、格困难性、噪声预算 |
 
-### 模块 IV · 证明系统与多方计算（Proofs & MPC）
+### 三、私密检索与密文计算
 
-| #    | 日期 | 主题                                                        | 状态 |
-| ---- | ---- | ----------------------------------------------------------- | ---- |
-| L11  | 3/11 | 交互式证明与零知识（*Interactive Proofs & Zero-Knowledge*） | ✅    |
-| L12  | 3/16 | 秘密共享（*Secret Sharing*）                                | ✅    |
-| L13  | 3/18 | 安全多方计算（*Secure Multiparty Computation, MPC*）        | ✅    |
-| L14  | 3/30 | MPC：应用（*MPC Applications*）                             | ✅    |
+| 讲次 | 笔记 | 核心连接 |
+| --- | --- | --- |
+| L8 | [私有信息检索](./lec8.md) | 查询隐私、多服务器与计算 PIR |
+| L9 | [全同态加密 I](./lec9.md) | 密文运算、噪声增长、GSW |
+| L10 | [全同态加密 II](./lec10.md) | 自举、模数切换、密钥切换 |
 
-### 模块 V · 简洁证明与 oblivious 技术（Succinct Proofs & ORAM）
+### 四、零知识与多方计算
 
-| #    | 日期 | 主题                                 | 状态       |
-| ---- | ---- | ------------------------------------ | ---------- |
-| L15  | 4/1  | Sumcheck 协议（*Sumcheck Protocol*） | ✅          |
-| L16  | 4/6  | 客座讲座 · Jim Bidzos（无讲义）      | —          |
-| L17  | 4/8  | 客座讲座 · Ron Rivest                | ⚠️ 背景说明 |
-| L18  | 4/13 | GKR 协议（*GKR Protocol*）           | ✅          |
-| L19  | 4/22 | zk-SNARKs                            | ✅          |
-| L20  | 4/27 | Oblivious RAM（*ORAM*）              | ✅          |
-| L21  | 4/29 | TA 研究展示（无讲义）                | —          |
+| 讲次 | 笔记 | 核心连接 |
+| --- | --- | --- |
+| L11 | [交互式证明与零知识](./lec11.md) | 模拟、知识提取、Fiat–Shamir |
+| L12 | [秘密共享](./lec12.md) | Shamir、多项式插值、阈值信任 |
+| L13 | [安全多方计算](./lec13.md) | 理想/现实范式、Yao、BGW |
+| L14 | [MPC 应用](./lec14.md) | PSI、阈值密码、SPDZ |
 
-> 状态：✅ 已完成 · ⏳ 待补（按本批模板逐讲滚动补完）
+### 五、简洁证明与访问模式隐私
 
----
+| 官网讲次 | 本地笔记 | 核心连接 |
+| --- | --- | --- |
+| L15 | [Sumcheck 协议](./lec15.md) | 多项式求和、随机挑战、Schwartz–Zippel |
+| L18 | [GKR 协议](./lec16.md) | 分层电路、逐层归约、可验证计算 |
+| L19 | [zk-SNARKs](./lec17.md) | 算术化、承诺、简洁验证 |
+| L20 | [Oblivious RAM](./lec18.md) | 访问模式、重洗、Path ORAM |
 
-## 与 SaaS / 系统设计的关联（工程视角索引）
+> L16（Jim Bidzos）、L17（Ron Rivest）是客座讲座，L21 是 TA 研究展示；官网未提供与其他讲次同形态的 lecture notes，本目录没有用推测内容补位。由于这三讲也没有可用 transcript，课程状态标为 `draft`。
 
-> 作为后端 / 分布式 SaaS 方向，可重点关注以下"可落地"原语：
+## 文件编号说明
 
-- **哈希 / MAC（L1–L3）**：口令存储、文件完整性、API 签名、JWT 完整性校验。
-- **对称加密 / AEAD（L2–L4）**：传输层与静态数据加密；ChaCha20-Poly1305 在 TLS 中的角色。
-- **PKE / KEM（L5–L7）**：密钥协商、混合加密；后量子迁移（PQC）对长期密钥的影响。
-- **PIR / FHE（L8–L10）**：隐私检索、密文计算——隐私优先产品（如"不泄露查询内容"的检索服务）。
-- **ZK / SNARK（L11, L19）**：隐私凭证、可验证计算、审计而不泄露数据。
-- **MPC / 秘密共享（L12–L14）**：分布式密钥管理（如门限签名）、跨机构联合计算。
-- **ORAM（L20）**：隐藏访问模式，防止通过元数据侧信道泄露。
+本目录原有 `lec16.md`、`lec17.md`、`lec18.md` 分别对应官网 L18、L19、L20。为避免破坏既有链接，文件名保持不变；文件 frontmatter 的 `lecture` 与标题则采用官网实际讲次。
 
----
+## 延伸阅读
 
-## 参考资料
+- [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/book.pdf)
+- [6.1600 课程讲义仓库](https://github.com/mit-pdos/6.1600-notes)
+- [Ron Rivest 的密码学与安全参考资料](https://courses.csail.mit.edu/6.857/2022/references)
 
-- 课程未指定教材；[《A Graduate Course in Applied Cryptography》](<https://toc.cryptobook.us/book.pdf)：
-- 6.1600 入门讲义（背景补强）：<https://github.com/mit-pdos/6.1600-notes>
-- Ron Rivest 整理的密码学/安全阅读清单：<https://courses.csail.mit.edu/6.857/2022/references>
-
-- [spring 2026](https://65610.csail.mit.edu/2026/)
-
-# Lec 1 单向哈希函数
-
-[lec1.md](./lec1.md)
-
-# Lec 2 对称加密——从 PRF 构造
-
-[lec2.md](./lec2.md)
-
-# Lec 3 对称原语 I-PRF 计数器模式
-
-[lec3.md](./lec3.md)
-
-# L04-对称原语 II-PRP-Feistel-AES
-
-[lec4.md](./lec4.md)
-
-# L05-DiffieHellman 与公钥加密
-
-[lec5.md](./lec5.md)
-
-# L06-Rabin-RSA-后量子
-
-[lec6.md](./lec6.md)
-
-# L07-LWE-Regev 公钥加密
-
-[lec7.md](./lec7.md)
-
-# L08-私有信息检索 PIR
-
-[lec8.md](./lec8.md)
-
-# L09-全同态加密 FHE-I
-
-[lec9.md](./lec9.md)
-
-# L10-全同态加密 FHE-II-Bootstrapping
-
-[lec10.md](./lec10.md)
-
-# L11-交互式证明与零知识
-
-[lec11.md](./lec11.md)
-
-# L12-秘密共享
-
-[lec12.md](./lec12.md)
-
-# L13-安全多方计算 MPC
-
-[lec13.md](./lec13.md)
-
-# L14-MPC 应用
-
-[lec14.md](./lec14.md)
-
-# L15-Sumcheck 协议
-
-[lec15.md](./lec15.md)
-
-# L16-GKR 协议
-
-[lec16.md](./lec16.md)
-
-# L17-zk-SNARKs
-
-[lec17.md](./lec17.md)
-
-# L18-ObliviousRAM
-
-[lec18.md](./lec18.md)
+::: insight
+高级密码学的共同方法，是把复杂安全主张转化为清晰游戏，再把攻击逐步归约到更小的概率事件或已知困难问题；构造只是这条证明链中的一个环节。
+:::

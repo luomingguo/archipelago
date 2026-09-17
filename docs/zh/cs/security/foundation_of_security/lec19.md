@@ -2,13 +2,20 @@
 title: 运行时防御（Runtime Defenses）
 type: lecture
 lecture: 19
-tags: []
+tags: [runtime-defense, memory-safety, aslr, control-flow-integrity, taint-tracking]
 status: complete
+source: 'https://mit-pdos.github.io/6.1600-notes/lec20.pdf'
 ---
 # Lec 19 运行时防御（Runtime Defenses）
 > MIT 6.1600 · Introduction to Computer Security
 
-## 1. 背景
+## TL;DR
+
+- NX、栈金丝雀与 ASLR 分别限制代码注入、检测返回地址附近覆写和随机化目标地址，但信息泄露与代码复用可逐层绕过它们。
+- 边界检查和胖指针直接约束内存访问，CFI 约束间接跳转目标，taint tracking 则追踪不可信数据是否进入危险解释器。
+- 运行时防御以性能、兼容性和假阳性换取利用难度；它们适合纵深防御，不能替代内存安全语言、漏洞修复或特权分离。
+
+## 1. 运行时防御的背景
 
 特权分离（Lec 18）从架构上减小 bug 的影响范围；Bug 发现技术（Fuzzing 等）在开发期消除 bug。
 
@@ -144,6 +151,8 @@ SQL 注入、XSS 等漏洞来自**系统性地**未能净化用户输入——�
 
 库框架对来自用户输入的数据标记为 **Tainted（污染）**：
 
+示例中，污染标记会随字符串拼接传播，直到数据进入数据库查询这一敏感汇点。只有经过框架认可的转义函数后，数据才被转换为允许进入汇点的类型；重点是追踪数据流，而不是检查某一个变量名。
+
 ```python
 name = read_from_user()       # name 被标记为 tainted
 query = "SELECT ... WHERE name = '" + name + "'"  # query 也 tainted
@@ -207,3 +216,7 @@ $$P[\text{攻击成功}] = P[\text{猜中 canary}] \leq \frac{1}{2^\lambda}$$
 $$\text{成功率} = \frac{1}{2^b} \quad b = \text{随机化 bits 数}$$
 
 $b = 40$（64 位系统）→ $2^{40} \approx 10^{12}$ 次猜测。
+
+::: insight
+运行时防御通常只是增加利用成本，并不修复越界或生命周期错误；它不能替代内存安全与正确性验证。
+:::

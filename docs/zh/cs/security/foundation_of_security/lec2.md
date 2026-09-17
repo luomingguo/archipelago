@@ -2,10 +2,17 @@
 title: 身份认证
 type: lecture
 lecture: 2
-tags: []
+tags: [authentication, passwords, multi-factor-authentication, challenge-response]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec02.pdf'
 ---
 # Lec 2 身份认证
+
+## TL;DR
+
+- 认证确认请求主体，授权决定其能否操作，审计记录决策；三者分离才能清楚定位信任与失败边界。
+- 密码安全取决于攻击者眼中的熵、尝试速率和存储方式；服务器应使用独立盐值与慢 KDF，而不是明文或快速哈希。
+- Challenge-response 与 TOTP 可限制重放，却不能自动抵御实时钓鱼；把服务器身份和具体请求绑定进签名，才能对抗更强的主动攻击。
 
 ## 1. 认证的基本框架
 
@@ -196,3 +203,7 @@ $$\sigma = \text{Sign}(sk,\ \text{nonce} \| \text{server\_name})$$
 **挑战-响应（防窃听）**：
 
 $$t = \text{MAC}(k,\ c \| \text{request}) \quad \text{绑定请求防篡改}$$
+
+::: insight
+账户恢复不是认证系统的附属流程，而往往是最弱的认证因子；整体安全性取决于攻击者最容易绕过的那条路径。
+:::

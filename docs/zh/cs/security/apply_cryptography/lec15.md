@@ -2,8 +2,9 @@
 title: Sumcheck 协议
 type: lecture
 lecture: 15
-tags: []
+tags: [sumcheck, interactive-proof, polynomial, verifiable-computation]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l15-sumcheck.pdf'
 ---
 # Lec 15 Sumcheck 协议
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：以标准处理撰写（LFKN 1992），要点与本课"Sumcheck Protocol"一致。*
 
 ---
+
+## TL;DR
+
+- Sumcheck 把多元多项式在布尔超立方体上的大规模求和，逐轮归约为一个随机点上的求值。
+- 可靠性来自低度多项式在随机点碰巧相等的概率很低，即 Schwartz–Zippel 引理。
+- 验证者工作量很小，但最终仍需获得或验证目标多项式在随机点的值。
 
 ## 0. 目标
 
@@ -65,9 +72,13 @@ $$g_i(X_i) = \sum_{b_{i+1},\dots,b_n\in\{0,1\}} g(r_1,\dots,r_{i-1}, X_i, b_{i+1
 
 ---
 
-## 5. 本讲小结
+## 5. Sumcheck 协议小结
 
 - Sumcheck 验证 $2^n$ 项求和，仅需 $O(n)$ 轮、验证者 $O(nd)$。
 - 每轮"剥"一个变量：$P$ 发单变量多项式，$V$ 查一致性并随机降维。
 - 可靠性靠 Schwartz–Zippel：错误多项式在随机点几乎必露馅。
 - 是 GKR / SNARK 的核心引擎。
+
+::: insight
+Sumcheck 压缩了巨大求和声明，但不会免费解决最终求值；验证者如何获得最后一个点值决定协议如何继续组合。
+:::

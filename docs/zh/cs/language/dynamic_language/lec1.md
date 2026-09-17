@@ -2,7 +2,7 @@
 title: 课程概览（Course Overview）
 type: lecture
 lecture: 1
-tags: []
+tags: [dynamic-language, interpreter, virtual-machine, jit-compilation]
 status: complete
 ---
 # Lec 1 课程概览（Course Overview）
@@ -10,6 +10,12 @@ status: complete
 > 课程：MIT 6.1120 Dynamic Computer Language Engineering（Prof. Michael Carbin）
 > 项目：MITScript（一门 Python 风格的动态语言）→ x86
 > 网站：6112-fa25.github.io
+
+## TL;DR
+
+- 动态语言把更多类型与行为决策留到运行时，换来表达力，也把检查、分派与表示成本交给语言实现。
+- MITScript 项目从解析、语义解释、垃圾回收和字节码 VM 逐步进入 x86-64 代码生成与优化。
+- 课程的核心问题是如何在不改变语言语义的前提下，用更低层的表示固化已知信息并减少运行时工作。
 
 ---
 

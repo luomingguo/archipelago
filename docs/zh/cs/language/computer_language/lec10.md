@@ -2,13 +2,20 @@
 title: 寄存器分配（Register Allocation）
 type: lecture
 lecture: 10
-tags: []
+tags: [register-allocation, interference-graph, graph-coloring, spilling, peephole-optimization]
 status: complete
+source: https://6110-sp25.github.io/assets/documents/lectures/L10-RegisterAllocation.pdf
 ---
 # Lec 10 寄存器分配（Register Allocation）
 
 > 配套复习课：R10 寄存器分配 + 窥孔优化（第 8–9 节）——这是项目 Phase 5 的核心
 > 关键概念：webs、干涉图、图着色、溢出、拆分
+
+## TL;DR
+
+- 寄存器分配根据 def-use 链和活跃区间构造干涉图，将「不能同时共用寄存器」编码为边。
+- 将变量分配到 N 个寄存器等价于 N-着色；实用算法用简化、回弹着色和启发式溢出处理 NP 难问题。
+- 溢出、活跃区间拆分、合并、预着色与窥孔优化共同决定最终代码质量，不能只把分配看成孤立图算法。
 
 ---
 
@@ -166,7 +173,11 @@ Martin 的幻灯片覆盖**非 SSA IR** 的技术。若用 SSA：可先 de-SSA �
 
 ---
 
-## 9. 本讲小结
+::: insight
+高质量分配器处理的是带有调用约定、指令限制和移动代价的资源问题，而不是纯粹图着色。因此溢出代价、coalescing 与窥孔优化应在同一个性能目标下协同设计。
+:::
+
+## 9. 寄存器分配与窥孔优化小结
 
 - 核心：把 def 到 use 之间的值尽量放寄存器；同时活跃者不能共用，死后可复用。
 - Web（用 union-find 由 def-use 链构造）→ 干涉图（活跃区间重叠连边）→ 图着色（NP 难，用"移除度<N 入栈、回弹着色"启发式）。

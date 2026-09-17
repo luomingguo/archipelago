@@ -2,12 +2,19 @@
 title: 程序分析与优化（基本块内）
 type: lecture
 lecture: 7
-tags: []
+tags: [value-numbering, common-subexpression-elimination, copy-propagation, dead-code-elimination]
 status: complete
+source: https://6110-sp25.github.io/assets/documents/lectures/L07-ProgramAnalysisOptimization.pdf
 ---
 # Lec 07 程序分析与优化（基本块内）
 
 > 参考：本讲聚焦**基本块内 (intra-basic-block)** 的分析与变换，是 L8 全过程数据流分析的基础
+
+## TL;DR
+
+- 基本块内没有控制流汇合，可以用符号执行跟踪值号、常量、拷贝和最后一次使用。
+- 值编号 / CSE、拷贝传播、常量传播和死代码消除会相互创造新机会，通常需要按组合反复执行。
+- 代数化简不是无条件的等式改写；浮点、溢出、除零和副作用都会改变「看似等价」变换的合法性。
 
 ---
 
@@ -131,7 +138,11 @@ a^2 ⟹ a*a    a*2 ⟹ a+a    a*8 ⟹ a<<3
 
 ---
 
-## 7. 本讲小结
+::: insight
+优化规则的核心不是「看起来更快」，而是一个可说清的证明义务：在哪些语义假设下，改写前后的可观察行为相同。把除零、溢出和浮点特例写进规则边界，比多收集几个模式更重要。
+:::
+
+## 7. 块内程序分析与优化小结
 
 ::: theorem 定理（基本块优化的共性）
 - 分析与变换都**符号化模拟程序执行**：CSE、复制传播、常量传播**前向**；死代码消除**逆向**。

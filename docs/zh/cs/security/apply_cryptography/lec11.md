@@ -2,8 +2,9 @@
 title: 交互式证明与零知识
 type: lecture
 lecture: 11
-tags: []
+tags: [interactive-proof, zero-knowledge, schnorr-protocol, fiat-shamir]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l11-zk.pdf'
 ---
 # Lec 11 交互式证明与零知识
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：以标准处理撰写（GMR 1985），要点与本课"Interactive Proofs & Zero-Knowledge"一致。*
 
 ---
+
+## TL;DR
+
+- 交互式证明以完备性和可靠性区分“真命题可证”与“假命题难骗过验证者”。
+- 零知识要求存在模拟器：验证者看到的交互不泄露证明内容之外的信息。
+- Schnorr 协议展示知识证明；Fiat–Shamir 可把公开随机挑战改为哈希挑战以消除交互。
 
 ## 0. 主线
 
@@ -91,9 +98,13 @@ $$c = H(\text{statement} \,\|\, a).$$
 
 ---
 
-## 7. 本讲小结
+## 7. 交互式证明与零知识小结
 
 - 交互式证明 = 完备性 + 可靠性，靠随机+交互超越 NP。
 - 零知识 = 存在不知见证的模拟器能伪造不可区分的对话。
 - Σ 协议（commit-challenge-response）：Schnorr 是模板，含知识抽取。
 - Fiat–Shamir（RO 模型）去交互 → NIZK / 签名 / SNARK 基石。
+
+::: insight
+零知识不是“把证明加密”，而是要求整段交互可被模拟；验证者因而没有获得命题之外的新知识。
+:::

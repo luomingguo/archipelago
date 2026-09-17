@@ -1,9 +1,10 @@
 ---
 title: GKR 协议
 type: lecture
-lecture: 16
-tags: []
+lecture: 18
+tags: [gkr-protocol, sumcheck, interactive-proof, verifiable-computation]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l18-gkr.pdf'
 ---
 # Lec 18 GKR 协议
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：以标准处理撰写（Goldwasser–Kalai–Rothblum 2008），要点与本课"GKR Protocol"一致。*
 
 ---
+
+## TL;DR
+
+- GKR 把分层算术电路的输出正确性，逐层归约为输入层上的少量随机点求值。
+- 每一层借助 Sumcheck 与布线多项式压缩声明，避免验证者重做整个计算。
+- 它改善验证复杂度，但是否零知识、是否需要预处理仍取决于具体协议组合。
 
 ## 0. 目标
 
@@ -64,9 +71,13 @@ $$\widetilde{W}_i(z) = \sum_{u,v\in\{0,1\}^{k_{i+1}}} \Big(\widetilde{\mathrm{ad
 
 ---
 
-## 5. 本讲小结
+## 5. GKR 协议小结
 
 - GKR 验证分层算术电路求值，验证者代价 ~ 深度而非规模。
 - 每层一条 add/mult 布线恒等式 → 一次 sumcheck，把"信任本层"下推为"信任下一层随机点"。
 - 推到输入层时验证者自行求值收尾；信息论安全。
 - 现代 sumcheck 系 SNARK 的核心。
+
+::: insight
+GKR 的关键不是一次证明整个电路，而是递归压缩“这一层算对了”的声明，直到验证者能自行检查输入层。
+:::

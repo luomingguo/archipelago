@@ -2,8 +2,9 @@
 title: 私有信息检索（PIR）
 type: lecture
 lecture: 8
-tags: []
+tags: [private-information-retrieval, learning-with-errors, privacy]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l08-pir.pdf'
 ---
 # Lec 8 私有信息检索（PIR）
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：以标准 PIR 处理撰写，要点与本课"Private Information Retrieval"一致。*
 
 ---
+
+## TL;DR
+
+- 私有信息检索（PIR）让服务器不知道用户读取了数据库中的哪一项。
+- 多服务器 PIR 依赖服务器不串通；单服务器 PIR 可建立在 LWE 等计算假设上。
+- PIR 只隐藏查询索引，不自动隐藏用户身份、访问时间、流量大小等系统元数据。
 
 ## 0. 问题
 
@@ -64,9 +71,13 @@ status: complete
 
 ---
 
-## 4. 本讲小结
+## 4. 私有信息检索小结
 
 - PIR：隐藏查询索引，通信 $\ll N$。
 - 信息论 PIR 需多服务器（不共谋）；单服务器必须靠计算假设。
 - 计算 PIR 用（LWE）同态：加密选择向量 → 服务器密文内积 → 回单密文。
 - 难点在通信与服务器计算的平衡，现代方案靠预处理。
+
+::: insight
+PIR 只给出查询隐私，不等于系统匿名；网络标识、时间和响应大小仍需由其他机制处理。
+:::

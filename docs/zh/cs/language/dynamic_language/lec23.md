@@ -2,12 +2,18 @@
 title: 静态分析 I（Static Analysis I）——数据流分析框架与格
 type: lecture
 lecture: 23
-tags: []
+tags: [static-analysis, dataflow-analysis, abstract-interpretation, lattice]
 status: complete
 ---
 # Lec 23 静态分析 I（Static Analysis I）——数据流分析框架与格
 
 > 把前面零散用过的分析（类型分析、值分析/常量传播、活跃性）统一到一个**通用静态分析框架**。本讲讲清楚五个关键概念：**事实 (Facts)、合并 (Merging)、转移函数 (Transfer Functions)、算法 (Chaotic Iteration)、终止 (Fixpoints)**，并引入**格 (lattice)** 来刻画分析的精度与合并操作。
+
+## TL;DR
+
+- 数据流分析与抽象解释把类型、常量、活跃性等问题统一为 CFG 上的事实、转移函数、合并、迭代与不动点。
+- 事实空间可以跟踪常量、符号表达式、区间或值集；追踪能力越强，精度越高，但时间和空间成本也越大。
+- 控制流汇合点需要安全地合并不同路径事实，格用精度偏序与 join / meet 定义这种过近似。
 
 ---
 

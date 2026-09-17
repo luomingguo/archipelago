@@ -2,8 +2,9 @@
 title: 对称原语 I：PRF、计数器模式与 ChaCha20
 type: lecture
 lecture: 3
-tags: []
+tags: [pseudorandom-function, counter-mode, chacha20, symmetric-cryptography]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l03-prf.pdf'
 ---
 # Lec 3 对称原语 I：PRF、计数器模式与 ChaCha20
 
@@ -11,6 +12,12 @@ status: complete
 > *来源：2025 版讲义（Henry Corrigan-Gibbs），2026 同主题"Symmetric-key primitives I"，内容一致。*
 
 ---
+
+## TL;DR
+
+- PRF 安全用真实函数与随机函数之间的区分优势给出具体界；调用次数和输出长度都会进入安全损失，而不只是“算法尚未被攻破”。
+- Counter Mode 用唯一 nonce 与计数器生成密钥流；nonce 重用会复用同一掩码并泄露明文异或，因此唯一性是协议级约束。
+- ChaCha20 以加法、旋转、异或构成 ARX 轮函数，适合软件与常数时间实现，但密钥管理、nonce 和实现侧信道仍决定系统安全。
 
 ## 0. 为何研究对称原语
 
@@ -102,9 +109,13 @@ quarterRound(a,b,c,d):
 
 ---
 
-## 5. 本讲小结
+## 5. PRF 与 ChaCha20 小结
 
 - PRF 安全用**优势游戏**刻画；安全 PRF 存在 ⟹ $P\ne NP$。
 - CTR 模式把定长 PRF 扩成长消息加密，安全界含 PRF 优势 + nonce 生日项，**nonce 绝不可重用**。
 - ChaCha20 = pad ⊕ 公开置换，ARX 结构、常时实现防侧信道，TLS 实战首选之一。
 - CPA 安全只是"够用的构件"，实战请用 AEAD（认证加密）。
+
+::: insight
+Nonce 是密码 API 的状态契约；如果部署环境无法可靠保证唯一性，就应更换为能容忍误用的构造。
+:::

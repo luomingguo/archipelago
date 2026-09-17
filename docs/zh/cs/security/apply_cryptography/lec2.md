@@ -2,8 +2,9 @@
 title: 对称加密：从 PRF 构造
 type: lecture
 lecture: 2
-tags: []
+tags: [symmetric-encryption, pseudorandom-function, cpa-security, one-time-pad]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l02-symenc.pdf'
 ---
 # Lec 2 对称加密：从 PRF 构造
 
@@ -11,6 +12,12 @@ status: complete
 > 关键词：加密语法、完美保密、一次性密码本、计算不可区分性、CPA 安全、伪随机函数、ChaCha20、MAC
 
 ---
+
+## TL;DR
+
+- 一次性密码本实现单消息完美保密，却要求与消息等长且绝不复用的密钥；多消息场景必须转向计算安全而非分布完全相同。
+- CPA 安全允许攻击者自适应查询加密并选择挑战消息，仍要求其不能显著优于随机猜测；这也迫使加密算法使用随机 nonce。
+- PRF 将短密钥扩展为随机函数外观，构造 $(r,m\oplus F_k(r))$；它只提供机密性，完整性仍需 MAC 或 AEAD。
 
 ## 0. 一句话主线
 
@@ -182,3 +189,7 @@ $$\text{tag} = F(k, c).$$
 - 安全的关键放宽是 **$\equiv \to \approx$**（信息论 → 计算论）。
 - 归约证明 = "理想替换 + 不可区分吸收误差"。
 - 落地务必用 AEAD 同时保机密性与完整性。
+
+::: insight
+先写安全游戏再选构造，能迫使设计者明确对手能查询什么、成功事件是什么，以及系统究竟承诺了什么。
+:::

@@ -2,12 +2,19 @@
 title: 并行化（Parallelization）
 type: lecture
 lecture: 11
-tags: []
+tags: [parallelization, dependence-analysis, loop-transformation, amdahls-law]
 status: complete
+source: https://6110-sp25.github.io/assets/documents/lectures/L11-Parallelization.pdf
 ---
 # Lec 11 并行化（Parallelization）
 
 > 内容：为何并行、并行执行、并行化编译器、依赖分析、提升并行机会
+
+## TL;DR
+
+- 自动并行化首先是合法性问题：循环迭代间的真依赖、反依赖和输出依赖决定执行顺序能否改变。
+- 距离向量与整数约束用于判断循环携带依赖；私有化、归约识别和幺模循环变换可以暴露新的并行维度。
+- 合法不等于有利可图：Amdahl 定律、负载均衡、并行区启停与同步开销共同决定应在内层还是外层循环并行。
 
 ---
 
@@ -126,7 +133,11 @@ $$\text{交换 } \begin{bmatrix}0&1\\1&0\end{bmatrix},\quad \text{反转 } \begi
 
 ---
 
-## 6. 本讲小结
+::: insight
+并行化要连续回答两个问题：变换后是否仍与串行程序等价，以及额外管理成本是否小于并行收益。依赖分析只回答第一个，剖析与成本模型才能回答第二个。
+:::
+
+## 6. 依赖分析与循环并行化小结
 
 - 多核时代需并行；Amdahl 定律限制加速比，需顾及负载均衡与粒度；循环是主战场。
 - 仿射循环嵌套 → 迭代空间（线性不等式）与数据空间；依赖分三种（真/反/输出），用距离向量刻画。

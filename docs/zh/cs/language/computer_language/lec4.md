@@ -2,13 +2,20 @@
 title: 中间表示（OPP）
 type: lecture
 lecture: 4
-tags: []
+tags: [intermediate-representation, symbol-table, object-layout, dynamic-dispatch]
 status: complete
+source: https://6110-sp25.github.io/assets/documents/lectures/L04-IntermediateFormats.pdf
 ---
 # Lec 04 中间表示（OPP）
 
 > 配套复习课：R3 解析器生成器（ANTLR4，见末节）；本讲为 Phase 2 项目（IR + 语义检查）的核心
 > 参考：Cooper et al., Ch.5 中间表示；§ 名字空间 / 命名环境
+
+## TL;DR
+
+- 高层 IR 保留语言结构以便分析，低层 IR 逐步显式化内存、控制流和机器操作，两者承担不同的工程职责。
+- 符号表将标识符映射到类型、作用域、偏移、签名和代码位置，是从 AST 进入语义分析与代码生成的桥梁。
+- 对象布局、活动记录和方法表把面向对象抽象固化为运行时数据，从而支持继承与动态分派。
 
 ---
 
@@ -246,7 +253,11 @@ L2–L3 讲的是**手写递归下降（自顶向下）**；与之对偶的工�
 
 ---
 
-## 8. 本讲小结
+::: insight
+IR 和符号表一起决定编译器后半程能问什么问题。若过早丢掉类型、作用域或对象布局信息，后续 pass 只能用更昂贵且更不精确的分析重建它们。
+:::
+
+## 8. IR、符号表与运行时表示小结
 
 - IR 的两大目标：支持分析/变换、结构化降级；高层 IR 留结构（分析友好），低层 IR 扁平化（后端友好）。
 - 运行期对象 = `[类信息][字段…]`，数组首字存长度；调用建活动记录（this、参数、局部）。

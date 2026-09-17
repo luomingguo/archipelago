@@ -1,12 +1,19 @@
 ---
-title: 隐私与零信任证明
+title: 隐私与零知识证明
 type: lecture
 lecture: 20
-tags: []
+tags: [zero-knowledge, schnorr-protocol, fiat-shamir, anonymous-credentials]
 status: complete
+source: 'https://mit-pdos.github.io/6.1600-notes/lec24.pdf'
 ---
-# Lec 20 隐私与零信任证明
+# Lec 20 隐私与零知识证明
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- 零知识证明同时要求完备性、可靠性与零知识性：真命题可被接受，假证明难以通过，验证者视图又能在不知道见证时被模拟。
+- Schnorr 协议用离散对数见证演示这三项性质；从两个相同承诺、不同挑战的有效响应可提取秘密，模拟器则能生成无信息增量的对话。
+- Fiat–Shamir 在随机预言机模型中用哈希挑战消除交互，支撑 Schnorr 签名与部分非交互证明，但其保证依赖所用模型与具体协议。
 
 ## 1. 超越"全有或全无"的加密
 
@@ -15,11 +22,11 @@ status: complete
 - 持有密钥 $k$ → 完全解密消息
 - 不持有密钥 → 无法获取任何信息
 
-**零信任证明（Zero-Knowledge Proof）** 提供更精细的语义：
+**零知识证明（Zero-Knowledge Proof）** 提供更精细的语义：
 
 > 证明者（Prover）可以向验证者（Verifier）证明其"知道"某个秘密，而不泄露关于该秘密的任何其他信息。
 
-## 2. 零信任证明的形式化定义
+## 2. 零知识证明的形式化定义
 
 **设定**：双方共同持有函数 $f$ 和值 $y = f(x)$。证明者知道 $x$，想向验证者证明这一点，但不透露 $x$ 本身。
 
@@ -39,7 +46,7 @@ $$P[\text{诚实证明者} \Rightarrow \text{验证者接受}] = 1$$
 
 $$\forall\ \text{作弊证明者}:\ P[\text{验证者接受}] \leq \mathrm{negl}(\lambda)$$
 
-**零信任性（Zero-Knowledge）**：  
+**零知识性（Zero-Knowledge）**：
 验证者除了"$y = f(x)$ 有解"这一事实外，什么都没学到。  
 形式化：验证者可以在不与真正证明者交互的情况下，模拟（Simulate）出与真实交互**计算上不可区分**的记录（Transcript）。
 
@@ -55,7 +62,7 @@ $$\forall\ \text{作弊证明者}:\ P[\text{验证者接受}] \leq \mathrm{negl}
 
 实践中 $q \approx 2^{256}$，最优算法时间 $\approx 2^{128}$。
 
-## 4. Schnorr 协议：离散对数的零信任证明
+## 4. Schnorr 协议：离散对数的零知识证明
 
 ### 4.1 协议设置
 
@@ -87,7 +94,7 @@ $$g^z = g^{r+cx} = g^r \cdot (g^x)^c = R \cdot y^c \quad \checkmark$$
 
 $$\text{可靠性误差} \approx 1/q \approx 2^{-256} \quad \text{一轮即安全}$$
 
-代价：只满足**诚实验证者零信任（Honest-Verifier ZK）**，不满足完整零信任性。
+代价：只满足**诚实验证者零知识（Honest-Verifier ZK）**，不满足完整零知识性。
 
 ## 5. Schnorr 协议的安全性分析
 
@@ -105,7 +112,7 @@ $$g^z = R,\quad g^{z'} = Ry \Rightarrow g^{z'-z} = y \Rightarrow x = z' - z \bmo
 
 证明了**若 $P^*$ 能以概率 1 说服验证者，则提取器能提取 $x$**。
 
-### 5.2 零信任性（通过 Simulator）
+### 5.2 零知识性（通过 Simulator）
 
 构造模拟器，无需知道 $x$，生成与真实交互**计算上不可区分**的 Transcript：
 
@@ -138,7 +145,7 @@ $$c = H(R \| m) \quad \text{（加入消息 $m$，形成签名方案）}$$
 
 这就是 **Schnorr 签名方案**！椭圆曲线版本（Ed25519）是现代最重要的签名方案之一。
 
-## 7. 零信任证明的应用
+## 7. 零知识证明的应用
 
 ### 7.1 认证（Authentication）
 
@@ -177,3 +184,7 @@ $$\sigma = (R, z),\quad \text{验证：}\ g^z \stackrel{?}{=} R \cdot y^{H(R \| 
 **提取器输出**（两轮倒带）：
 
 $$x = z' - z \bmod q \quad \text{（由 } g^z = R,\ g^{z'} = Ry \text{ 推导）}$$
+
+::: insight
+模拟器与提取器把“没有额外泄露”和“确实知道见证”转化为可检验的构造，是理解零知识证明的两把钥匙。
+:::

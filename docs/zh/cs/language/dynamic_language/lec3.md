@@ -2,12 +2,18 @@
 title: 语法分析 I — 基本概念（Parsing：Basic Concepts）
 type: lecture
 lecture: 3
-tags: []
+tags: [context-free-grammar, parsing, abstract-syntax-tree, ambiguity]
 status: complete
 ---
 # Lec 3 语法分析 I — 基本概念（Parsing：Basic Concepts）
 
 > 从词法（token 序列）到语法（语法树）。本讲：CFG、推导、歧义、优先级、抽象 vs 具体语法
+
+## TL;DR
+
+- 正则语言无法表达任意嵌套，程序的括号、表达式和语句结构需要上下文无关文法与语法树。
+- 一个字符串对应多棵语法树时就有歧义，结合性和优先级需要通过分层非终结符等文法改造明确表达。
+- 具体语法为可解析性服务，AST 则删除分隔符和消歧辅助层，保留后续语义与翻译真正需要的结构。
 
 ---
 

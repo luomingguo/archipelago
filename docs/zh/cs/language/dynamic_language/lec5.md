@@ -2,12 +2,18 @@
 title: 语法分析 III — First 集与建树（Parsing：Systematic Predictive Parsing）
 type: lecture
 lecture: 5
-tags: []
+tags: [first-set, left-factoring, abstract-syntax-tree, recursive-descent]
 status: complete
 ---
 # Lec 5 语法分析 III — First 集与建树（Parsing：Systematic Predictive Parsing）
 
 > 本讲：系统化预测分析——derives-ε、First 集、左因子分解、构建语法树/AST
+
+## TL;DR
+
+- derives-ε 和 First 集用不动点 / 约束传播系统计算，让解析器能在产生式以非终结符开头时做出正确选择。
+- 共享前缀会让一个 token 的前看无法区分分支，左因子分解通过提取前缀恢复可预测性。
+- 递归下降过程可以在匹配时直接构造 AST，并将为消左递归而引入的右递归具体树还原成正确的结合性。
 
 ---
 

@@ -2,11 +2,18 @@
 title: 数字签名：基于哈希
 type: lecture
 lecture: 5
-tags: []
+tags: [digital-signature, hash-based-signature, merkle-tree, post-quantum-cryptography]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec05.pdf'
 ---
 # Lec 5 数字签名：基于哈希
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- 数字签名把秘密签名密钥与公开验证密钥分开，使任何人都能验证而只有签名者能产生新签名，安全目标仍是 EUF-CMA。
+- Lamport 一次签名以公开哈希原像实现量子攻击下仍可信的签名，但密钥和签名体积大，且同一密钥不能重复使用。
+- Winternitz 用计算换取更短签名，Merkle 树把大量一次性公钥压缩为单个根；现代 XMSS、LMS 与 SPHINCS+ 延续这条设计路线。
 
 ## 1. 为什么需要数字签名
 
@@ -141,3 +148,7 @@ $$\sigma_i = x_{i, m_i}, \quad \text{验证：} H(\sigma_i) \stackrel{?}{=} y_{i
 
 $$h_0 = H(vk_j),\quad h_{k+1} = H(h_k \| \pi_{k+1}) \text{ 或 } H(\pi_{k+1} \| h_k)$$
 $$\text{接受当且仅当 } h_h = \text{root}$$
+
+::: insight
+一次性签名的难点不仅是数学构造，更是状态管理；一旦重复使用密钥，证明中的安全前提就被实现层破坏。
+:::

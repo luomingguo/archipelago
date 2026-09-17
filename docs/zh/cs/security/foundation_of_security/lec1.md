@@ -2,10 +2,17 @@
 title: 什么是计算机安全？
 type: lecture
 lecture: 1
-tags: []
+tags: [security-model, threat-model, confidentiality, integrity, availability]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec01.pdf'
 ---
 # Lec 1 什么是计算机安全？
+
+## TL;DR
+
+- 安全结论只在明确的系统模型与威胁模型内成立；设计必须分别说明攻击者能力、安全目标和实现机制。
+- 机密性、完整性与可用性描述不同保护目标，而现实系统不可能同时抵御所有物理、软件与社会工程攻击。
+- 失败通常来自目标定义错误、威胁模型遗漏或实现漏洞；公开设计、最小权限和纵深防御用于降低单点假设失效的代价。
 
 ## 1. 安全的核心框架
 
@@ -125,3 +132,7 @@ $$\Pr[\text{事件}] < 2^{-128} \Rightarrow \text{可认为永远不会发生（
 - 若对手无法以不可忽略概率违反安全目标，则称系统是安全的
 
 公开漏洞数据库， 如https://www.cve.org/
+
+::: insight
+安全结论永远附着在威胁模型上；不先说明资产、对手能力和失败边界，“安全”就只是无法验证的形容词。
+:::

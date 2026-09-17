@@ -2,12 +2,18 @@
 title: 静态分析 II（Static Analysis II）——格、转移函数、不动点与终止
 type: lecture
 lecture: 24
-tags: []
+tags: [lattice, fixed-point, dataflow-analysis, abstract-interpretation, widening]
 status: complete
 ---
 # Lec 24 静态分析 II（Static Analysis II）——格、转移函数、不动点与终止
 
 > 接 L23。本讲把数据流框架补完整：用**偏序/格 (lattice)** 形式化"事实空间"，定义 **top/bottom**、**join/meet**；写出**转移函数**与 CFG 上的**方程组**；用**混沌迭代**求解，并证明它**终止**（单调性 + 完备格 + 有限上升链，Knaster–Tarski）。最后把整个框架套到课程里所有具体分析上（常量/类型/栈缓存/逃逸/到达定义）。
+
+## TL;DR
+
+- 格用偏序描述事实的精度，⊑ 表示无信息，⊒ 表示最不精确的安全事实，控制流汇合通过 join 组合路径。
+- 语句的单调转移函数把 CFG 变成方程组，混沌迭代 / 工作表从初始事实出发反复传播，直到达到最小不动点。
+- 完备格与单调性保证不动点存在，有限升链保证有限步终止；无限域则需有限抽象或 widening 在精度与收敛之间取舍。
 
 ---
 

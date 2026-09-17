@@ -2,11 +2,18 @@
 title: 认证加密（Authenticated Encryption）
 type: lecture
 lecture: 9
-tags: []
+tags: [authenticated-encryption, aead, aes-gcm, chacha20-poly1305]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/lec09.pdf'
 ---
 # Lec 9 认证加密（Authenticated Encryption）
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- IND-CPA 加密仍可能被定向修改；认证加密把机密性与密文完整性结合，使篡改密文以高概率被拒绝。
+- Encrypt-then-MAC 先加密再认证密文，避免解密未认证数据；AES-GCM 与 ChaCha20-Poly1305 是常见 AEAD 实例。
+- Nonce 重用会破坏 GCM 或流密码安全，关联数据只被认证不被加密；协议仍需序列号或状态来抵御合法密文重放。
 
 ## 1. 问题：加密 ≠ 完整性
 
@@ -156,3 +163,7 @@ $$\text{验证时先检查 } t \text{，再解密 } c$$
 **AES-GCM 标签**：
 
 $$T = \text{AES}(k, \text{nonce} \| 0) \oplus \text{GHASH}_H(\text{ad} \| c)$$
+
+::: insight
+Nonce 唯一性应被当作跨重启、并发和故障恢复都成立的系统不变量，而不是调用者尽量遵守的建议。
+:::

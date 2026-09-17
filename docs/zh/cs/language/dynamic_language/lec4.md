@@ -2,12 +2,18 @@
 title: 语法分析 II — 自顶向下解析（Top-Down Parsing）
 type: lecture
 lecture: 4
-tags: []
+tags: [recursive-descent, predictive-parsing, left-recursion]
 status: complete
 ---
 # Lec 4 语法分析 II — 自顶向下解析（Top-Down Parsing）
 
 > 本讲：递归下降解析器——把解析器写成一组相互递归的过程，结构与文法同构
+
+## TL;DR
+
+- 自顶向下解析从开始符号构造最左推导，反复执行展开非终结符、匹配终结符与接受输入三个动作。
+- 朴素回溯成本高，左递归还会导致无限递归；实现前必须先改造文法。
+- 预测分析用当前 token 选择产生式，递归下降则把这个策略实现为「每个非终结符一个函数」的可调试代码。
 
 ---
 

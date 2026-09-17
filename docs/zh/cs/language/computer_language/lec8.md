@@ -2,13 +2,20 @@
 title: 数据流分析（Dataflow Analysis）
 type: lecture
 lecture: 8
-tags: []
+tags: [dataflow-analysis, reaching-definitions, available-expressions, liveness-analysis]
 status: complete
+source: https://6110-sp25.github.io/assets/documents/lectures/L08-DataflowAnalysis.pdf
 ---
 # Lec 08 数据流分析（Dataflow Analysis）
 
 > 配套复习课：R9 Phase 4 + GDB 速成（见末节）——数据流分析正是 Phase 4 项目
 > 参考：把 L7 基本块内分析推广到**跨基本块、全过程 (global)**
+
+## TL;DR
+
+- 数据流分析在 CFG 上为每个程序点求事实，用 IN / OUT / GEN / KILL 方程和工作表算法迭代到不动点。
+- 到达定义是前向、并集问题；可用表达式是前向、交集问题；活跃性是后向、并集问题。
+- 分析结果为常量传播、CSE、死代码消除和寄存器分配提供合法性与收益判断所需的跨块信息。
 
 ---
 
@@ -169,7 +176,11 @@ $$\text{OUT}[b] = \bigcup_{s \in \text{succ}(b)} \text{IN}[s], \qquad \text{IN}[
 
 ---
 
-## 7. 本讲小结
+::: insight
+分析的方向和汇合算子不应靠背诵。先问「事实是由前驱还是后继决定」，再问「所有路径成立还是任一路径成立」，就能推出前 / 后向以及交 / 并集。
+:::
+
+## 7. 经典数据流问题小结
 
 - 把基本块分析推广到全过程：CFG 上每块的 IN/OUT，由 GEN/KILL（或 USE/DEF）经转移函数与汇合算子联立成方程组，工作表迭代到不动点（转移单调保证终止）。
 - 三大问题对偶：到达定义（前向、∪、∅）/可用表达式（前向、∩、全集）/活跃性（逆向、∪、∅）。

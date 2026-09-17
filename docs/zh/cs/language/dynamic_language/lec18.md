@@ -2,12 +2,18 @@
 title: 代码生成 I（Code Generation I）——为什么要编译到机器码
 type: lecture
 lecture: 18
-tags: []
+tags: [code-generation, jit-compilation, partial-evaluation, machine-code]
 status: complete
 ---
 # Lec 18 代码生成 I（Code Generation I）——为什么要编译到机器码
 
 > 进入 Phase 5。本讲讲**动机**：解释字节码到底慢在哪、性能问题的三类来源、以及把字节码"部分求值/特化"为机器码能省下多少（指令数从上千降到 9）。并梳理**何时编译**（静态 / AOT / JIT / 自适应）。
+
+## TL;DR
+
+- 字节码解释的成本来自指令分派、通用栈操作以及动态类型 / 边界检查，这些工作会在热路径上反复发生。
+- 机器码生成可视为对解释器和给定字节码的部分求值：把已知指令、常量和路径预先特化，仅保留运行时输入相关的工作。
+- AOT、JIT 与自适应编译在编译开销、可用运行时信息和代码质量之间作不同取舍，没有对所有工作载都最优的统一时机。
 
 ---
 

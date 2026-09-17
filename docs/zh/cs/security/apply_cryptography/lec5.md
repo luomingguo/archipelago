@@ -2,8 +2,9 @@
 title: Diffie–Hellman 密钥交换与公钥加密
 type: lecture
 lecture: 5
-tags: []
+tags: [diffie-hellman, public-key-encryption, discrete-logarithm, elgamal]
 status: complete
+source: 'https://65610.csail.mit.edu/2026/lec/l05-pke.pdf'
 ---
 # Lec 5 Diffie–Hellman 密钥交换与公钥加密
 
@@ -11,6 +12,12 @@ status: complete
 > *说明：本课原版讲义未检索到，以与本课一致的标准处理撰写（Diffie–Hellman 1976、ElGamal 1985）。*
 
 ---
+
+## TL;DR
+
+- Diffie–Hellman 在离散对数群上让双方从公开值导出同一秘密；CDH/DDH 分别形式化“算不出”与“看不出”共享值的假设。
+- 裸 DH 不认证身份，主动攻击者可分别与两端协商密钥；实际协议必须把临时公钥与证书、签名或预共享身份绑定。
+- ElGamal 由 DH 思想得到随机化公钥加密并可达 IND-CPA，但密文具有可塑性；工程上通常用 KEM/DEM 混合加密并追求前向安全。
 
 ## 0. 一句话动机
 
@@ -84,10 +91,14 @@ status: complete
 
 ---
 
-## 5. 本讲小结
+## 5. Diffie–Hellman 与公钥加密小结
 
 - 公钥密码解决"无预共享密钥的陌生双方协商"问题。
 - DH 协商 $g^{ab}$；安全建立在 CDH/DDH（蕴含于 DL 困难）。
 - ElGamal = "DH 共享秘密作群上一次性掩码"，IND-CPA ⟺ DDH。
 - PKE 必须随机化；实战用混合加密 + 认证（防中间人）+ 临时密钥（前向保密）。
 - ⚠️ **DL/因子分解类假设会被 Shor 算法在量子计算机上攻破** → 引出后量子密码（L6–L7）。
+
+::: insight
+未经认证的 Diffie–Hellman 只能抵抗被动窃听，无法抵抗主动中间人；密钥交换必须绑定身份与会话上下文。
+:::

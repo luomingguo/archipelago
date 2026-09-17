@@ -2,13 +2,20 @@
 title: 语义分析（Semantic Analysis）
 type: lecture
 lecture: 5
-tags: []
+tags: [semantic-analysis, type-system, symbol-table, type-checking]
 status: complete
+source: https://6110-sp25.github.io/assets/documents/lectures/L05-SemanticAnalysis.pdf
 ---
 # Lec 05 语义分析（Semantic Analysis）
 
 > 配套复习课：R4 Phase 2（IR + 语义检查项目，与 L4/L5 同属一个项目阶段）
 > 参考：Cooper et al., Ch.4 §4.2 类型系统导论 / Ch.5 §5.5 类型信息
+
+## TL;DR
+
+- 语义分析处理文法无法表达的约束：名称是否声明、类型是否兼容、方法参数是否匹配、重写是否遵守签名。
+- 符号表驱动查找与类型判定，语义检查通常与 IR 构建在同一趟 AST 遍历中交织进行。
+- 类型推断、强制转换与子类可替换性必须有清楚的语言规则，否则后端无法假定 IR 已经合法。
 
 ---
 
@@ -149,7 +156,11 @@ Point p; PolarPoint o; o = p;            // ✗（父类不能赋给子类）
 
 ---
 
-## 7. 本讲小结
+::: insight
+语义分析不只是「多报一些错」，它实际上为后端建立了可信的前置条件。每一个被漏掉的语义约束，都会在代码生成阶段变成更难定位的不可达状态。
+:::
+
+## 7. 语义检查与类型兼容性小结
 
 ::: theorem 定理（语义检查总览）
 - 语义检查在**构建 IR 时**进行，符号表驱动；

@@ -1,12 +1,19 @@
 ---
-title: '案例研究：iOS 安全（Case Study: iOS Security）'
+title: 案例研究：iOS 安全
 type: lecture
 lecture: 16
-tags: []
+tags: [ios-security, sandboxing, secure-boot, secure-enclave, data-encryption]
 status: complete
+source: 'https://61600.csail.mit.edu/2026/lec/l17-ios-case-study.pdf'
 ---
 # Lec 16 案例研究：iOS 安全（Case Study: iOS Security）
 > MIT 6.1600 · Introduction to Computer Security
+
+## TL;DR
+
+- iOS 用审核、代码签名、应用沙箱与权限 API 限制恶意 App，再用安全启动保证从 Boot ROM 到内核的信任链。
+- Data Protection 将文件密钥与设备密钥、用户口令和 Secure Enclave 组合，使设备被盗时的离线攻击成本可控。
+- XcodeGhost 与 checkra1n 表明审核和启动链都可能失效；分层防御的价值在于一层被突破后，其他边界仍能限制数据暴露。
 
 ## 1. iOS 的安全威胁模型
 
@@ -91,6 +98,8 @@ iPhone 内含一颗独立的 **Secure Enclave** 芯片，运行独立 OS，自�
 
 **关键流程**：
 
+这条流程的关键不是 AES 本身，而是把 PIN 尝试、设备唯一秘密与数据密钥都限制在独立硬件边界内。主处理器只能提交一次认证尝试，不能导出 UID 或根密钥后离线暴力破解。
+
 ```text
 用户输入 PIN
     ↓
@@ -152,3 +161,7 @@ Secure Enclave 使用**真正可擦除存储（Effaceable Storage）**：擦除�
 $$\text{PIN} \xrightarrow{\text{Secure Enclave}} \text{AES Key} \xrightarrow{\text{AES Engine}} \text{解密数据}$$
 
 攻击者必须同时攻破 Secure Enclave 的物理保护和暴力破解限制，方可访问数据。
+
+::: insight
+移动系统的现实安全来自多层机制共同抬高攻击成本，而不是假设其中某一层永远不会失陷。
+:::

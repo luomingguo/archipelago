@@ -2,12 +2,18 @@
 title: 低级虚拟机 I（Low-Level Virtual Machines I）——从 AST 解释器到字节码 VM
 type: lecture
 lecture: 15
-tags: []
+tags: [bytecode, virtual-machine, interpreter, stack-machine]
 status: complete
 ---
 # Lec 15 低级虚拟机 I（Low-Level Virtual Machines I）——从 AST 解释器到字节码 VM
 
 > 进入 Phase 4。本讲回答两个问题：**为什么**要用虚拟机（而不是直接解释 AST），以及 VM 的**组织结构**（代码 / 栈 / 堆）。以 MITScript 的字节码 VM 为主线，对照 Crafting Interpreters 第 14~15 章。
+
+## TL;DR
+
+- AST 树遍历解释器简单但会重复执行节点分派、递归与通用数据结构操作，字节码 VM 先将这些结构工作编码为紧凑指令流。
+- VM 的代码区保存指令与常量，操作数栈承载临时值和调用状态，堆保存记录、闭包与长寿命对象。
+- 栈机指令集编码紧凑、解释器简单，但会产生较多 push / pop；这个表示权衡也决定后续优化与机器码生成的难度。
 
 ---
 

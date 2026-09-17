@@ -2,13 +2,20 @@
 title: 代码生成
 type: lecture
 lecture: 6
-tags: []
+tags: [code-generation, control-flow-graph, x86-64, static-single-assignment]
 status: complete
+source: https://6110-sp25.github.io/assets/documents/lectures/L06-CodeGeneration.pdf
 ---
 # Lec 6 代码生成
 
 > 配套复习课：R5 SSA（第 9 节）、R6 控制流图、R7 x86 汇编——后两者内容已大量融入本讲正文
 > 参考：Cooper et al., Ch.6 过程抽象 / 实现过程；Ch.7 代码形态（Code Shape）
+
+## TL;DR
+
+- 代码生成把结构化 IR 降级为基本块和 CFG，再线性化为符合 x86-64 ABI 的汇编。
+- 短路条件、过程调用、栈帧、数组边界检查等都应通过小而可验证的降级模式实现，先保证正确性再优化。
+- SSA 通过单次定义和 φ 节点显式化 def-use 关系，为后续优化与寄存器分配提供更直接的表示。
 
 ---
 
@@ -373,7 +380,11 @@ SSA 让程序分析更简单更快——把 def-use 链这一关键环节**一�
 
 ---
 
-## 10. 本讲小结
+::: insight
+可靠的 lowering 应每次只显式化一类约束：先把控制流变成 CFG，再把值变成三地址操作，最后适配 ABI 和 ISA。一次跨越太多语义层，就会让验证和调试同时失去落点。
+:::
+
+## 10. CFG、x86-64 与 SSA 小结
 
 - 流程：结构化 IR → CFG → 线性化汇编；强调先做未优化的最简单版本。
 - CFG = 基本块（极大、无中途跳入跳出）+ 控制流边；合并相邻单入单出节点构造。
