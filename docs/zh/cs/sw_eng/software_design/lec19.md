@@ -56,8 +56,6 @@ source: 'https://61040-fa25.github.io/assets/lecture-notes/lessons-compressed.pd
 
 客户端编排（*Client-side orchestration*）和依赖微服务（*Dependent microservices*）都存在耦合问题。
 
-
-
 ### 事件驱动架构
 
 ![服务通过事件总线发布和订阅事件的架构](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260610110219732.png)
@@ -83,7 +81,7 @@ source: 'https://61040-fa25.github.io/assets/lecture-notes/lessons-compressed.pd
 
 #### 反腐层
 
-![反腐层](/Users/mac/Library/Application Support/typora-user-images/image-20260916163934108.png)
+![反腐层](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260916163934108.png)
 
 反腐层（*Anti-Corruption Layer，ACL*）介于事件总线与下游业务服务的之间的中介/翻译官，它负责将底层事件总线上的事件细节“隐藏”起来，不让外部的事件结构直接污染核心业务服务的代码。
 
@@ -93,8 +91,6 @@ source: 'https://61040-fa25.github.io/assets/lecture-notes/lessons-compressed.pd
 2. **接收通知**：当 `order-placed` 事件发生时，ACL 收到带有订单、商品、数量等基础信息的通知。
 3. **转换与调用**：ACL 将这些事件数据进行清洗和转换，随后向内部的 `Fulfillment`（履约服务）发起标准的 `fulfill` API 调用。
 
-
-
 ## 探究概念设计的思想
 
 > 如果公司不允许我完整地、从头到尾应用“概念设计”这一套理论，那我学习它还有什么意义？
@@ -103,11 +99,11 @@ Sol：可以借鉴部分价值观。
 
 ### 视图分离
 
-![示例：User 对象的视图分离](/Users/mac/Library/Application Support/typora-user-images/image-20260916164703151.png)
+![示例：User 对象的视图分离](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260916164703151.png)
 
 视图分离（*View Separation*）核心思想： 将功能目的划分，而非按对象归组（如上图所示）。
 
-**如何帮助？** 它能做到分离关注点的作用，更多代码复用的机会；概念不与具体应用绑定。 
+**如何帮助？** 它能做到分离关注点的作用，更多代码复用的机会；概念不与具体应用绑定。
 
 **如何做到？** 避免 OOP 的对象归组方式； 对同一实体建立多个视图
 
@@ -115,16 +111,12 @@ Sol：可以借鉴部分价值观。
 
 **谁在用？** RDB 的标准实践； OOP 中少见，但有 Mixin、实体-组件系统等补救方案
 
-
-
 传统 OOP 把所有属性堆在一个 `UserAccount` 对象里，视图分离将其按目的拆分：
 
 - PasswordAuth： 目的是认证用户，状态是 password
 - UserNaming： 目的是用户命名，状态是 username
 - Notification： 目的是通知用户，状态是 email、phone
 - Profile： 目的是分享用户信息， 状态：displayName, image
-
-
 
 **Python Mixin 写法**
 
@@ -187,13 +179,9 @@ register_user(e, "dnj", “hash123");
 set_profile(e, "Daniel", "Daniel works at MIT")
 ```
 
-
-
-
-
 ### 无界多态
 
-![无界多态](/Users/mac/Library/Application Support/typora-user-images/image-20260916165948313.png)
+![无界多态](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260916165948313.png)
 
 无界多态（*unbounded polymorphism*）核心思想：概念的类型参数应当是**完全泛型**的，例如 `concept Upvoting [User, Item]`，这里的 `User` 和 `Item` 。
 
@@ -207,19 +195,13 @@ set_profile(e, "Daniel", "Daniel works at MIT")
 
 **领域驱动设计（*Domain-Driven Design*）**里的"限界上下文"（*bounded context*）也是同一思想的工程实践：每个上下文（如 Catalog、Order、Billing、Fulfillment）独立开发、不共享假设或 schema，彼此之间只通过翻译层（如反腐层 ACL）通信。
 
-![领域驱动设计的界限上下文例子](/Users/mac/Library/Application Support/typora-user-images/image-20260916172819236.png)
+![领域驱动设计的界限上下文例子](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260916172819236.png)
 
 :::insight
 概念设计 vs 领域驱动设计的区别在于，概念设计是**微观层面**的，对某个通用、可复用的机制建模；而领域驱动设计是比较宏观一些，界定业务边界，然后不同业务实体之间通过某种方式聚合。DDD 解决的是“怎么把大业务切成合理的模块并让团队分工协作”，而概念设计解决的是“怎么把单个模块内部的逻辑抽象得最纯粹、最严密”。
 :::
 
-
-
-
-
 ### 抽象状态与动作
-
-
 
 抽象状态与动作（*abstract state & actions*）的核心思想：把系统行为建模成一个**自动机**（*automaton*）——用抽象的状态（state）和作用在状态上的关系（actions）来描述系统会做什么，
 
@@ -228,8 +210,6 @@ set_profile(e, "Daniel", "Daniel works at MIT")
 **如何做到？** 需要一种能声明状态的语言（本课程用的是自己的 SSF 记号），并且为每个动作显式写出前置条件与后置条件。
 
 **谁在用？** 这是是形式化方法领域几十年的标准实践——状态型规格语言（VDM、Z、B、Alloy）、软件建模语言（UML）、以及模型检验器（TLA+、Alloy、NuSMV）都建立在同样的思想上。
-
-
 
 ## LLM 编码的思想
 
@@ -251,22 +231,18 @@ set_profile(e, "Daniel", "Daniel works at MIT")
 
 **防范策略**：在使用 AI 代理（如 Cursor 或 Claude Code）时，必须严格约束其可操作的上下文和修改权限，不能盲目放任其乱改核心架构。
 
-
-
 ### 驾驭 AI 编码工具的最佳实践
 
 1. **建立工具的心智模型**：清楚了解所用 AI 工具或代理的优势、盲区以及容易犯错的类型。
 2. **代码不脱离掌控**：绝不能完全托管，工程师必须能够看得懂、解释得了 AI 生成的每一段核心逻辑。
 3. **小步快跑、逐步推进**：不要让 AI 一次性实现宏大的功能，而是通过一次一个极小的指令稳步构建。
 
-![软件开发的完全具体化/物化](/Users/mac/Library/Application Support/typora-user-images/image-20260916204302114.png)
+![软件开发的完全具体化/物化](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260916204302114.png)
 
 这张图揭示了在 AI 时代，人类的隐性知识（Know-how）是如何被系统化沉淀的：
 
 - **多条独立的流水线**：软件开发不能只靠一套万能 Prompt，而是需要针对不同环节（如规格说明 `spec`、代码实现 `code`、模块同步 `sync`）分别沉淀出各司其职的专属提示词（Prompts）。
 - **全流程物化**：人类脑子里的工程经验（Know-how） $\rightarrow$ 转化为结构化的提示词（Prompt） $\rightarrow$ 最终由 AI 驱动生成具体的规范、同步机制与实现代码。
-
-
 
 ## 设计模式及其起源
 
