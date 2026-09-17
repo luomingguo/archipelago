@@ -1,8 +1,8 @@
 ---
-title: 6.006 算法导论
+title: 6.1210 算法导论
 type: course
-course: 6.006 算法导论
-course_id: '6.006'
+course: 6.1210 算法导论
+course_id: '6.1210'
 tags: [algorithms, data-structures, graph-algorithms, dynamic-programming, computational-complexity]
 status: complete
 source: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/

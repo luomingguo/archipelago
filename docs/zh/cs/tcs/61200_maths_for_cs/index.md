@@ -1,8 +1,8 @@
 ---
-title: 6.1200J 计算机科学的数学
+title: 6.1200 计算机科学的数学
 type: course
-course: 6.1200J 计算机科学的数学
-course_id: '6.1200J'
+course: 6.1200 计算机科学的数学
+course_id: '6.1200'
 tags: [discrete-mathematics, proof, graph-theory, combinatorics, probability]
 status: complete
 source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/
@@ -29,7 +29,7 @@ source: https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spr
 
 ## 前置知识
 
-课程从证明基础起步，不要求预先学过高级离散数学。需要熟悉中学代数，并愿意阅读和书写形式化推理。若将本课作为 [6.006 算法导论](../introduction_to_algorithms/) 的前置，建议至少完成第 1–7 讲与图论单元。
+课程从证明基础起步，不要求预先学过高级离散数学。需要熟悉中学代数，并愿意阅读和书写形式化推理。若将本课作为 [6.006 算法导论](../61210_introduction_to_algorithms/) 的前置，建议至少完成第 1–7 讲与图论单元。
 
 ## 讲义目录
 
