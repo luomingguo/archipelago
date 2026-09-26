@@ -1,5 +1,5 @@
 ---
-title: 产品领导力
+title: 产品领导力 ｜ 产品设计与实现
 type: lecture
 lecture: 17
 tags: [product-leadership, cross-functional-teams, product-management, prioritization-frameworks, team-dynamics]
@@ -7,18 +7,20 @@ status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 
-# Lec 17 产品领导力（Product Leadership）
+# Lec 17 产品领导力
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
 > 核心教材：*Product Design and Development* (8th Edition) Chapter 19  
-> 拓展参考：Productboard, *The Ultimate Guide to Product Management*; Marty Cagan, *Inspired*; Teresa Torres, *Continuous Discovery Habits*
+> 拓展参考：
+> Productboard, *The Ultimate Guide to Product Management*; 
+> Marty Cagan, *Inspired*; 
+> Teresa Torres, *Continuous Discovery Habits*
 
 ## TL;DR
 
-- 产品领导力的精髓是“无职权的领导力”（Leading without Authority），依靠共同愿景、事实证据与严密的优先序框架，而非行政命令驱动跨学科团队。
-- 产品经理（PM）是商业价值、技术可行性与用户体验交汇处的总枢纽，首要职责是确保团队“始终在解决最值得解决的问题”。
+- 产品领导力的精髓是“无职权的领导力”，依靠共同愿景、事实证据与严密的优先序框架，而非行政命令驱动跨学科团队。
+- 产品经理 是商业价值、技术可行性与用户体验交汇处的总枢纽，首要职责是确保团队“始终在解决最值得解决的问题”。
 - 运用北极星指标（North Star Metric）与 RICE 优先级模型，刺破主观偏好，在有限的冲刺预算内实现资源产出的最大化。
-- 全学期项目复盘（Postmortem）不仅是总结一款原型的成败，更在于将试错经验提炼为组织级的方法论资产，完成从 0 到 1 的认知闭环。
 
 ## 一、产品领导力的本质：无职权的领导力
 
@@ -131,7 +133,15 @@ flowchart LR
 
 ---
 
-## 五、全学期项目复盘（Postmortem Evaluation）与全景认知闭环
+
+
+## 持续发现习惯
+
+Teresa Torres 的《持续发现习惯》（*Continuous Discovery Habits*）是现代产品管理与 UX 设计领域极具推崇的实战圣经。它彻底改变了产品团队理解用户需求、定义解决方案以及与设计紧密协同的方式。
+
+
+
+## 五、全学期项目复盘与全景认知闭环
 
 在 MIT 15.783 课程的终点，团队完成 Alpha 原型展示后，必须进行长达半天的正式项目复盘（Postmortem Evaluation）：
 

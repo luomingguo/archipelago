@@ -7,15 +7,15 @@ status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 
-# Lec 6 用生成式AI支持创新（Generative AI for Innovation）
+# Lec 6 用生成式AI支持创新
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
 > 核心参考：MIT 15.783 Class 7 Syllabus; Harvard Business Review (2025), *Eight Prompts for Creativity*; Christian Terwiesch & Karl Ulrich, *Research on LLMs in Innovation*
 
 ## TL;DR
 
-- 生成式 AI（LLM 与视觉扩散模型）是产品创新团队的“认知副驾驶”，能以极低边际成本拓宽机会与概念解空间的变异度（Variance）。
-- 有效的 AI 创新依赖结构化提示工程（Prompt Engineering），通过角色注入、反事实假设和多轮链式推理打破人类设计者的局部认知偏见。
+- 生成式 AI（LLM 与视觉扩散模型）是产品创新团队的“认知副驾驶”，能以极低边际成本拓宽机会与概念解空间的变异度。
+- 有效的 AI 创新依赖结构化提示工程，通过角色注入、反事实假设和多轮链式推理打破人类设计者的局部认知偏见。
 - AI 的核心局限在于缺乏对物理定律（重力、公差、热膨胀、摩擦力）与真实人体尺寸的接地感知，极易生成看似惊艳但工程不可行的“幻觉概念”。
 - 严密的可审查性（Auditability）是团队的核心责任：所有 AI 产出必须接入严谨的工程第一性原理与真实客户测试构成的双重证据链。
 

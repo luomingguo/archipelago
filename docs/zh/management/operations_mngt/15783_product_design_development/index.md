@@ -15,7 +15,6 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ## TL;DR
 
 - 课程整合商业管理（Sloan）、工程实现（MIT MechE）与工业设计（RISD），以跨学科团队为载体，完整演练从市场机会挖掘到 Alpha 原型落地的端到端产品创新流程。
-- 教学架构由传统的阶段门（Phase-Gate）瀑布流程全面演进为 **6 个双周冲刺（Sprint 0–5）的敏捷硬件与数字产品开发模式**，并将生成式 AI 工具链深度融入概念探索与提示词推演。
 - 全学期 24 次教学研讨采用“理论方法讲授”与“敏捷工坊评审（Demo & Retro）”双轨制，以量化需求权衡、系统级模块化架构与严谨的经济学模型支撑关键设计决策。
 - 知识体系以 Ulrich、Eppinger 与 Yang 合著的《Product Design and Development》（第 8 版，2026）为理论基石，辅以 Stripe 支付架构、Airbnb 战略转向等当代商业与硬科技案例。
 
@@ -45,7 +44,7 @@ Spring 2026 教学大纲由 6 个敏捷冲刺阶段驱动，共 24 次正式课�
 | | **Class 2**<br>2月5日 | **系统化创新与 R-W-W 评估法**<br>(Systematic Innovation & R-W-W) | • PDD Ch. 3 (Real-Win-Worth-it 章节)<br>• Day: *Is It Real? Can We Win? Is It Worth Doing?* (HBR)<br>• *(选读)* Tim Brown: *Design Thinking* (HBR) | 对全班 50 个机会完成盲审打分 |
 | | **Class 3**<br>2月10日 | **客户需求分析与待办任务**<br>(Customer Needs Analysis & JTBD) | • PDD Ch. 5: Identifying Customer Needs<br>• Parallel (2026): *What Are Jobs-To-Be-Done (JTBD)*<br>• Patnaik: *Needfinding: The Why and How* | 小组深入调研排名前列的潜在机会 |
 | | **Class 4**<br>2月12日 | **项目路演与跨学科组队**<br>(Project Selection & Pitching) | • 课堂提案路演与导师评审 | 中午提交 Pitch 演示，确定跨学科团队构成 |
-| **Sprint 1**<br>田野研究<br>(Field Research) | **Class 5**<br>2月19日 | **敏捷开发与硬件 Scrum 流程**<br>(Agile Development Process) | • PDD Ch. 19: Agile Project Management<br>• Scrum Alliance: *The Essence of Scrum*<br>• CoLab / Eppinger: *Agile for Hardware Development* | 建立冲刺 Backlog 与团队看板 |
+| **Sprint 1**<br>领域研究<br>(Field Research) | **Class 5**<br>2月19日 | **敏捷开发与硬件 Scrum 流程**<br>(Agile Development Process) | • PDD Ch. 19: Agile Project Management<br>• Scrum Alliance: *The Essence of Scrum*<br>• CoLab / Eppinger: *Agile for Hardware Development* | 建立冲刺 Backlog 与团队看板 |
 | | **Class 6**<br>2月24日 | **创造力激荡与概念生成**<br>(Creativity & Concept Generation) | • PDD Ch. 7: Concept Generation<br>• TED: *The Creative Spark Playlist*<br>• Square Sequel: *Design Thinking Ideation Techniques* | 发散探索多种工作原理与解决方案草图 |
 | | **Class 7**<br>2月26日 | **生成式 AI 赋能产品创新**<br>(Generative AI for Innovation) | • HBR (2025): *To Jumpstart Creativity, Try These 8 Prompts*<br>• 随堂 AI 提示工程实践（LLM + 扩散模型多模态推演） | **Sprint 1 成果演示与复盘**<br>(Demo, Review, Retro) |
 | **Sprint 2**<br>概念模型<br>(Concept Model) | **Class 8**<br>3月3日 | **产品规格定义与参数矩阵**<br>(Product Specifications) | • PDD Ch. 6: Product Specifications<br>• 练习：需求矩阵向工程指标的映射转化 | 确立目标规格矩阵（Target Specs） |
