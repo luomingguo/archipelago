@@ -3,16 +3,23 @@ title: 6.1904 C 语言的底层汇编
 type: course
 course: 6.1904 C语言的底层汇编
 course_id: '6.1904'
-tags: []
+tags: [c-programming, riscv-assembly, memory-layout, calling-convention]
 status: complete
 ---
 # 6.1904 C 语言的底层汇编
+
+## TL;DR
+
+- 本课程作为高级语言通向底层体系架构的桥梁，以 C 语言内存模型与 RISC-V 汇编为主线。
+- 重点解剖指针运算、结构体对齐、进程虚拟地址空间（代码段/静态段/堆/栈）的物理本质。
+- 完整推演过程调用约定（Calling Convention）、活动记录（栈帧）与寄存器保存划分（Caller/Callee-saved）。
+- 配套提供 6 周实践体系与历年 Quiz 考核解析，无先修门槛，是系统级底层编程的基础。
 
 ## 先行条件
 
 无
 
-## 课程描述
+## 课程定位与知识体系
 
 | 周次    | 主题                                                         |
 | ------- | ------------------------------------------------------------ |
@@ -37,7 +44,7 @@ status: complete
 - [Computation Structures Online Materials](http://computationstructures.org/)
   - 对于 6.004 课程，部分内容已经过时
 
-![截屏 2024-07-03 01.19.42](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/668436b408331.png)
+![6.1904 课程推荐教材与参考资料概览](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/668436b408331.png)
 
 ## 测验
 

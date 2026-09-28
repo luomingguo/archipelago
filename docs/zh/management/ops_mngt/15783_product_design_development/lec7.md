@@ -1,5 +1,5 @@
 ---
-title: 产品规格
+title: '产品规格'
 type: lecture
 lecture: 7
 tags: [product-specifications, target-specifications, qfd-matrix, engineering-metrics]
@@ -20,19 +20,11 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 - 目标规格采用“理想目标值”与“边际可接受值”的双区间界定，为后续概念发散保留必要的工程弹性与权衡空间。
 - 竞品基准测试必须基于实验室物理实测数据，绝不可轻信竞品宣发彩页；目标成本法（Target Costing）必须作为不可逾越的经济规格前置确立。
 
-
-
-
-
-
-
 ## 一、产品规格的本质与两阶段确立逻辑
 
 **背景目标**：公司希望为休闲骑行者开发更高价值的前减震叉。
 **面临挑战**：如何将主观需求转化为精确的开发目标；如何就设计成败标准与管理层达成共识；如何确保产品能赢得市场份额；如何权衡成本与重量等矛盾特性。
 **解决方案**：本章将介绍一种利用常规电子表格软件制定产品规格的方法。
-
-
 
 在产品开发前端，客户需求 通常是用客户朴素、主观的自然语言表达的（例如“悬挂前叉骑行时感觉很柔软”、“手机充满电后耐用”）。这种定性表述无法直接指导机械工程师计算弹簧刚度，也无法指导电气工程师选择电池容量。
 
@@ -42,13 +34,11 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 单项产品规格严格由一个精确的度量**指标（Metric）**和一个带有物理量纲的**数值（Value）**构成。例如，“整机自重（Metric）小于 1.4 千克（Value）”。一套完整的产品规格构成了产品开发团队对市场与企业的正式技术承诺。
 :::
 
-![用户需求清单实例](/Users/mac/Library/Application Support/typora-user-images/image-20260919173247163.png)
+![用户需求清单实例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260919173247163.png)
 
 **何时完成产品规格？** 在理想情况下，团队会在开发初期确定一次产品规格，然后直接进行产品的设计和工程开发；然而，对于技术密集型产品，这几乎是不可能的。对于这类产品，规格至少要确立两次。在明确客户需求后，团队立即设定目标规格（*Target Specifications*），这些规格代表了团队的愿望和期望。在特定产品概念被选定之后确立。此时团队根据所选概念的真实物理限制、制造公差、供应商报价和硬性工程权衡，对目标指标进行约束调和并正式锁定 最终规格（*Final Specifications*）
 
-![概念开发流程](/Users/mac/Library/Application Support/typora-user-images/image-20260919175505465.png)
-
-
+![概念开发流程](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260919175505465.png)
 
 ```mermaid
 flowchart LR
@@ -60,10 +50,6 @@ flowchart LR
     style S1 fill:#dbeafe,stroke:#2563eb,stroke-width:2px
     style S2 fill:#fef3c7,stroke:#d97706,stroke-width:2px
 ```
-
-
-
-
 
 ---
 
@@ -85,11 +71,11 @@ flowchart TD
 
 ### 1. 步骤 1：编制度量指标清单
 
-![减震器的需求列表](/Users/mac/Library/Application Support/typora-user-images/image-20260921094131672.png)
+![减震器的需求列表](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260921094131672.png)
 
 合格的工程指标必须能够直接量化特定客户需求的满足程度。
 
-![需求-功能矩阵](/Users/mac/Library/Application Support/typora-user-images/image-20260921094213401.png)
+![需求-功能矩阵](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260921094213401.png)
 
 在构建需求-指标关联矩阵（即质量功能展开 QFD 的核心矩阵）时，必须遵守五大准则：
 
@@ -114,7 +100,6 @@ flowchart TD
 团队不能只设定一个孤立的数字，因为前端探索充满技术不确定性。Ulrich & Eppinger 建议为每个指标设定一个容忍区间：
 - **理想值（Ideal Target Value）：** 团队在所有技术与供应链条件处于完美状态下所能达到的极致性能（通常大幅超越当前市场最强竞品）。
 - **边际可接受值（Marginally Acceptable Value）：** 产品在商业上能够存活、不被客户唾弃的最低底线（通常持平或略高于主流平均水准）。低于该数值，产品将完全丧失市场竞争力。
-
 
 下表展示了团队将模糊的骑行需求，转化为工程目标规格的实操样例
 
@@ -159,7 +144,7 @@ $$\text{Target Cost} = \text{Target Selling Price} \times (1 - \text{Target Gros
 $$49 \times (1 - 0.40) \times (1 - 0.50) = 14.7 \text{ 美元}$$​
 在后续的所有概念细化中，凡是导致成本突破 14.7 美元的奢华设计，均属于违反产品规格的“工程不合格”。
 
-![用于评估技术可行性的模型。技术模型可以是产品概念的分析性模型或物理近似模型。](/Users/mac/Library/Application Support/typora-user-images/image-20260921100216640.png)
+![用于评估技术可行性的模型。技术模型可以是产品概念的分析性模型或物理近似模型。](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260921100216640.png)
 
 ::: pitfall [将主观形容词当成技术指标，导致下游工程师无法验证]
 如果在规格书中出现“手柄按压阻尼感极佳”、“外壳接缝严密”或“屏幕清晰”等主观描述，下游制造厂与质检部门将完全无法执行验收。必须全部量化为物理语言：“按键行程 $2.0 \pm 0.2\text{ mm}$，按压力度 $1.8 \pm 0.2\text{ N}$”、“外壳拼接面断差（Flushness） $< 0.15\text{ mm}$，间隙（Gap） $< 0.25\text{ mm}$”。

@@ -1,11 +1,11 @@
 ---
-title: 高速缓存与存储缓冲区
+title: 缓存与存储缓冲区
 type: lecture
 lecture: 7
 tags: [cache, memory-hierarchy, locality]
 status: complete
 ---
-# Lec 07 高速缓存与存储缓冲区
+# Lec 07 缓存与存储缓冲区
 > MIT 6.1920 · Constructive Computer Architecture
 > 讲师：Arvind / Thomas Bourgeat · 日期：2024-03-07
 
@@ -47,9 +47,11 @@ function CacheTag   getTag(Addr addr)   = truncateLSB(addr);
 
 ## 3. 阻塞缓存 BSV 实现
 
-阻塞缓存把缺失拆成状态转换：保存请求，按需写回旧行、请求新行并等待填充；回到 `Ready` 前不接收下一次缺失。
+阻塞缓存将复杂的存储器缺失处理过程显式建模为离散状态机的迁移序列：当检测到缓存缺失时，缓存暂停接受来自 CPU 核心的新请求，按序将旧的脏行写回主存，接着向 DRAM 发送新行填充请求，并在数据返回后完成行装填，最终返回 `Ready` 稳态恢复服务。
 
 ### 3.1 状态元素
+
+阻塞缓存内部的硬件存储与控制寄存器配置如下：
 
 ```bsv
 BRAM2Port#(...)     dataArray;    // 数据
@@ -62,9 +64,19 @@ FIFO#(MemReq)       memReqQ <- mkFIFO;
 FIFO#(Line)         memRespQ <- mkFIFO;
 ```
 
+**状态原语架构职责**：
+- **`dataArray` 与 `tagArray`**：分别例化片上 BRAM 存储实际数据行与匹配标签。双端口 BRAM 允许 CPU 访问与缺失填充之间的流水化交错。
+- **`dirtyArray`**：采用通用寄存器堆维护每行的修改状态。只有当某行被写指令修改过（Dirty），在被置换淘汰时才需要执行主存写回。
+- **`hitQ`**：使用具有 $enq < deq$ 优先级的 `mkBypassFIFO`。当读请求命中时，数据能在同一周期内无延迟旁路穿透给流水线执行阶段。
+- **`mshr` 与 `missReq`**：缺失状态保持寄存器（MSHR）记录状态机当前阶段（`Ready`、`StartMiss`、`SendFillReq`、`WaitFillResp`），`missReq` 锁存触发本次缺失的原始 CPU 请求。
+
 ### 3.2 缺失状态机
 
+阻塞缓存的缺失处理状态流转遵循严格的单向拓扑环：
+
 $$\text{Ready} \to \text{StartMiss} \to \text{SendFillReq} \to \text{WaitFillResp} \to \text{Ready}$$
+
+在 BSV 中，状态转移通过互斥保护的规则集群精确表达：
 
 ```bsv
 rule startMiss (mshr == StartMiss);
@@ -84,6 +96,11 @@ rule waitFillResp (mshr == WaitFillResp);
     mshr <= Ready;
 endrule
 ```
+
+**各迁移步骤的微架构行为拆解**：
+- **`startMiss`（旧行驱逐与脏行回写）**：检查待替换 Cache Line 的有效位与脏位。若该行包含未同步的修改数据，则将该行封装为写请求送入 `memReqQ` 队列排队写入主存；若为干净数据则直接跳过写回。
+- **`sendFillReq`（新行请求发射）**：向主存总线发送缺失行地址的读取请求（Line Fill Request），并将控制器状态迁移到等待响应态 `WaitFillResp`。
+- **`waitFillResp`（数据行填充与核心唤醒）**：当 DRAM 响应数据抵达 `memRespQ` 时，规则触发读取完整行数据，同步写入 `dataArray` 并更新 `tagArray`；若触发缺失的是 Load 指令，直接截取对应偏移字压入 `hitQ` 返回核心，并将 MSHR 恢复为 `Ready` 稳态。
 
 ::: theorem 推论 — 阻塞 vs. 非阻塞缓存
 阻塞缓存（*blocking cache*）一次只处理一个缺失；非阻塞缓存（*non-blocking cache*）可在等待缺失响应时继续处理命中，显著提升内存并发度，但 BSV 实现更复杂（需 MSHR 队列）。

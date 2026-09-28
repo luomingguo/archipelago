@@ -1,5 +1,5 @@
 ---
-title: 创造力与概念生成
+title: '创造力与概念生成'
 type: lecture
 lecture: 5
 tags: [concept-generation, functional-decomposition, morphological-analysis, structured-creativity]

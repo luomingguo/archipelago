@@ -1,12 +1,22 @@
-# 15.070[J] Discrete Probability and Stochastic Processes
+---
+title: '15.070J 高级随机过程与离散概率'
+type: course
+course: '15.070J 高级随机过程与离散概率'
+course_id: '15.070J'
+tags: [stochastic-processes, markov-chains, poisson-processes, martingales]
+status: stub
+source: 'https://ocw.mit.edu/courses/15-070j-advanced-stochastic-processes-fall-2013/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Fall 2013
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. David Gamarnik
-- **主题标签 / Topics**: Mathematics / Probability and Statistics
-- **说明**: MIT 现行课程目录中 15.070[J] 目前的课程名为 *Discrete Probability and Stochastic Processes*；此处收录的是 MIT OpenCourseWare 上 公开发布的 **Fall 2013** 学期讲义（当时课程名为 *Advanced Stochastic Processes*）， 内容仅供参考，不代表当前开课内容一定完全相同。
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/15-070j-advanced-stochastic-processes-fall-2013/)
+# 15.070J 高级随机过程与离散概率
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.070J
+
+## TL;DR
+
+- 严谨测度论视角的随机过程，深入离散/连续时间马尔可夫链、泊松点过程与鞅论。
+- 稳态分布存在性、遍历性定理与首达时分析量化动态随机系统的长期极限行为。
+- 随机微分方程与更新理论为金融工程、通信排队与可靠性物理学提供数学公理底座。
 
 ## 课程简介 / Description
 

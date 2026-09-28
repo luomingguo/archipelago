@@ -1,12 +1,22 @@
-# 15.062[J] Data Mining: Finding the Models and Predictions that Create Value
+---
+title: '15.062J 数据挖掘：发现创造价值的模型与预测'
+type: course
+course: '15.062J 数据挖掘：发现创造价值的模型与预测'
+course_id: '15.062J'
+tags: [data-mining, predictive-modeling, classification-trees, cluster-analysis]
+status: stub
+source: 'https://ocw.mit.edu/courses/15-062-data-mining-spring-2003/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Spring 2003
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. Nitin Patel
-- **主题标签 / Topics**: Business / Information Technology / Management / Engineering / Computer Science / Data Mining
-- **说明**: MIT 现行课程目录中 15.062[J] 目前的课程名为 *Data Mining: Finding the Models and Predictions that Create Value*；此处收录的是 MIT OpenCourseWare 上 公开发布的 **Spring 2003** 学期讲义（当时课程名为 *Data Mining*）， 内容仅供参考，不代表当前开课内容一定完全相同。
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/15-062-data-mining-spring-2003/)
+# 15.062J 数据挖掘：发现创造价值的模型与预测
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.062J
+
+## TL;DR
+
+- 数据挖掘从海量商业数据中提取高价值模式，覆盖有监督分类回归与无监督聚类。
+- 决策树（CART）、逻辑回归与最近邻算法（KNN）构成客户流失与信用评估的基石。
+- 关联规则挖掘与主成分分析（PCA）为商品推荐与市场细分提供低维特征洞察。
 
 ## 课程简介 / Description
 

@@ -1,5 +1,5 @@
 ---
-title: 产品架构
+title: '产品架构'
 type: lecture
 lecture: 12
 tags: [product-architecture, modularity, platform-planning, delayed-differentiation, chunks]

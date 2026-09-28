@@ -1,5 +1,5 @@
 ---
-title: 产品开发经济学
+title: '产品开发经济学'
 type: lecture
 lecture: 14
 tags: [product-development-economics, npv-analysis, sensitivity-analysis, cost-of-delay, financial-modeling]

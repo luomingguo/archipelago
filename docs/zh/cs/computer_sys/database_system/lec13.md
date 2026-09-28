@@ -1,23 +1,31 @@
 ---
-title: 乐观并发控制与快照隔离
+title: '乐观并发控制与多版本并发控制'
 type: lecture
 lecture: 13
-tags: []
+tags: [optimistic-concurrency-control, multi-version-concurrency-control, snapshot-isolation, write-skew]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 13 乐观并发控制与快照隔离
 
-> 阅读资料：
->
-> [On Optimistic Methods for Concurrency Control. TODS‘1981](https://www.eecs.harvard.edu/~htk/publication/1981-tods-kung-robinson.pdf)
+# Lec 13 乐观并发控制与多版本并发控制（OCC and Multi-Version Concurrency Control）
 
-前面我们学习以两阶段锁（2PL）和基于时间戳顺序的并发控制，它们都属于悲观的并发控制。而这节 Lec 将学习另外一种隔离事务的方法——乐观并发控制（Opitimistic Concurrency Control， OCC）
+> MIT 6.5830 / 6.5831 · Database Systems · 第 13 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
 
-思考题：
+## TL;DR
 
-- 你认为在什么情况下，乐观并发控制会比基于锁的并发控制表现更好？
-- 乐观并发控制会导致死锁吗？
-- 你会如何在 SimpleDB 中实现乐观并发控制？
+- 乐观并发控制（OCC）适用于低冲突负载，分为读取阶段、验证阶段（Validation Phase）与写入阶段。
+- 多版本并发控制（MVCC）通过保留数据元组的多历史版本，实现“读写互不阻塞，读不加锁”。
+- 快照隔离级别（Snapshot Isolation）消除了脏读、不可重复读与幻读，但面临写倾斜（Write Skew）异常。
+
+## 架构演进与核心洞察
+
+::: insight 快照隔离下的写倾斜（Write Skew）反直觉陷阱
+快照隔离虽然在绝大多数场景下表现得像串行化，但无法完全消除写倾斜。经典案例是“两名医生值班，要求至少一人在岗”。两名医生并发发起请假事务，均在各自快照中读到“当前有两人在岗，满足条件”，随后各自将自己的状态更新为休假并提交。最终系统变成零人值班！解决办法是显式加共享写锁（`SELECT FOR UPDATE`）或引入依赖声明。
+:::
+
+## 核心机制与讲义正文
 
 ## 本讲导览
 

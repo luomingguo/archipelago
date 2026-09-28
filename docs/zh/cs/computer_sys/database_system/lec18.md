@@ -1,26 +1,31 @@
 ---
-title: 集群计算：Spark
+title: '大规模集群计算：MapReduce 与 Spark RDD'
 type: lecture
 lecture: 18
-tags: []
+tags: [mapreduce, spark-rdd, lineage-graph, distributed-shuffle]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 18 集群计算：Spark
 
-> 阅读资料
->
-> Resilient Distributed Datasets: **A Fault-Tolerant Abstraction for In-Memory Cluster Computing**. nsdi‘2012 [[PDF](https://cs.stanford.edu/~matei/papers/2012/nsdi_spark.pdf)]
+# Lec 18 大规模集群计算：MapReduce 与 Spark RDD（Cluster Computing: MapReduce and Spark）
 
-这节 Lecture，我们讨论 Spark，一种集群计算语言，与 MapReduce 有类似的设计目标，但是在性能、缓存、可编程性上有所提升。我们已经学习了各种各样的 DB，数据分析为主的 C-store 数据库、事务处理为主的 H-store 数据库、高可用的 DynamoDB、云化的 AuraraDB 等等，本节我们将学习一个新的，针对数据科学（data science）而生的数据系统 Spark
+> MIT 6.5830 / 6.5831 · Database Systems · 第 18 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
 
-边阅读边思考一下问题：
+## TL;DR
 
-- Spark 计算模型和 MapReduce 相比有什么相似的？有什么区别？
-- 什么是弹性分布式数据集（RDD）？ 如何帮助程序员写出容错的程序？
+- 大规模离线数据批处理经历了从 Google MapReduce 两阶段文件落盘到 Spark 全内存计算的架构飞跃。
+- 弹性分布式数据集（RDD）通过只读分区的血统图谱（Lineage Graph）实现无需物化全量检查点的轻量级容错。
+- 宽依赖与窄依赖的划分决定了集群网络洗牌（Shuffle）的开销边界与并行执行阶段（Stages）的划分。
 
-数据科学包括从数据中提取有用信息的任务，尤其是对大量的数据进行处理和分析。需要高效的并行处理一次性执行（One-Off）的任务，区别于持续执行的，典型的包括，特征化是指将原始数据转化为机器学习算法可以使用的特征；对数据进行索引；从原始数据中提取有用的信息，这可能包括数据的聚合、统计或数据清洗等。
+## 架构演进与核心洞察
 
-大多数数据科学任务涉及 从非结构化数据（unstructured data）转化为结构化数据（structured data） 的过程。数据处理操作并不完全是传统的 SQL 查询操作，但它们的模式和 SQL 中的过滤（filter）和连接（join）操作有相似之处。MapReduce、Hadoop 和 Spark，都是处理大规模数据的并行计算框架。
+::: insight Lineage 粗粒度容错对细粒度日志的超越
+传统分布式系统依靠频繁刷盘或在内存中记录每条更新日志来实现容错。Spark RDD 最核心的洞察在于：它放弃了细粒度状态更新，仅支持粗粒度转换操作（Map, Filter, Join）。因此容错只需记录构建数据集的算子血统（Lineage）。当某个集群节点故障丢失分区时，只需沿图谱重新计算该分区，完全避免了分布式写入检查点的网络 I/O 拥塞。
+:::
+
+## 核心机制与讲义正文
 
 ## Mapreduce
 

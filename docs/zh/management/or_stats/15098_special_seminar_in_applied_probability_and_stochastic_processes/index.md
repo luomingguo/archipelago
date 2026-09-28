@@ -1,12 +1,22 @@
-# 15.098 Seminar in Applied Probability and Stochastic Processes
+---
+title: '15.098 应用概率与随机过程前沿研讨'
+type: course
+course: '15.098 应用概率与随机过程前沿研讨'
+course_id: '15.098'
+tags: [applied-probability, queueing-networks, mixing-times, random-graphs]
+status: stub
+source: 'https://ocw.mit.edu/courses/15-098-special-seminar-in-applied-probability-and-stochastic-processes-spring-2006/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Spring 2006
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. David Gamarnik、Prof. Devavrat Shah
-- **主题标签 / Topics**: （未标注）
-- **说明**: MIT 现行课程目录中 15.098 目前的课程名为 *Seminar in Applied Probability and Stochastic Processes*；此处收录的是 MIT OpenCourseWare 上 公开发布的 **Spring 2006** 学期讲义（当时课程名为 *Special Seminar in Applied Probability and Stochastic Processes*）， 内容仅供参考，不代表当前开课内容一定完全相同。
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/15-098-special-seminar-in-applied-probability-and-stochastic-processes-spring-2006/)
+# 15.098 应用概率与随机过程前沿研讨
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.098
+
+## TL;DR
+
+- 应用概率专题前沿，聚焦大规模网络排队、随机图与马尔可夫链混合时间（Mixing time）。
+- 利用谱隙（Spectral gap）与电网络类比解析高维离散状态空间的快速采样动力学。
+- 大偏差理论（Large deviations）为极端罕见事件风险度量提供渐近指数衰减估计。
 
 ## 课程简介 / Description
 

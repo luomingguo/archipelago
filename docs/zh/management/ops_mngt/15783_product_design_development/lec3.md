@@ -1,5 +1,5 @@
 ---
-title: 客户需求分析
+title: '客户需求分析'
 type: lecture
 lecture: 3
 tags: [customer-needs, needfinding, voice-of-customer, jobs-to-be-done]

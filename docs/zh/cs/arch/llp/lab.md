@@ -1,10 +1,19 @@
 ---
 title: 实验部分
 type: assignment
-tags: []
+tags: [riscv-assembly, calling-convention, embedded-systems, gpio-programming, bit-manipulation]
 status: complete
 ---
 # 实验部分
+
+## TL;DR
+
+- 实验基于 ESP32-C3（RISC-V 核心）与 8×32 LED 点阵，将内存中的二进制位直接映射为物理发光点。
+- 从内存映射 I/O（MMIO）读写 GPIO 开始，脱离 Arduino 库抽象，理解硬件寄存器的指针本质。
+- 经由 C 语言数组、字符串、结构体设计（如 8-bit 打包贪吃蛇坐标），步入纯手动 RISC-V 汇编翻译。
+- 最终在 Conway 生命游戏与快速排序中完整实践调用约定（Calling Convention）、栈帧分配与嵌套递归调用。
+
+## 实验平台与硬件环境
 
 课程的实验基于一个物理嵌入式系统，核心硬件是 Espressif ESP32-C3 开发板（搭载 RISC-V 微处理器），配合一块含 6 个按钮和 8 个开关的定制 PCB，以及一个 8×32 的 LED 点阵显示屏。LED 显示屏被用来可视化内存中的数据：一个包含 8 个 unsigned 32-bit int 元素的数组，每个元素对应显示屏的一行，每个 bit 对应一行中的一个像素，最左边的 LED 是 MSB，最右边是 LSB。
 
@@ -99,3 +108,11 @@ status: complete
 核心概念：递归 procedure 的调用约定、栈的策略性使用
 
 把快速排序翻译成 RISC-V 汇编。与 Postlab 4 不同的是：学生需要分别实现 partition procedure 和调用它的 quicksort procedure；快速排序是递归的，所以必须策略性地使用栈来保存和恢复寄存器；学生需要自己编写调用可视化函数的代码（包括 procedure call 本身和 calling convention 所需的所有指令），不再由课程提供。这是对第 5 周所学内容（调用约定、栈）的综合考察。
+
+## 核心机制思考与工程见解
+
+::: insight 嵌入式系统与底层汇编的硬件映射心智模型
+1. **内存即外设（MMIO 的物理直觉）**：初学者常以为 GPIO 是某种特殊的系统调用，但通过 `*(volatile uint32_t *)0x6000403C` 读写引脚状态时，能直观理解“外设与普通内存无异，都挂在系统总线的一个物理地址上”。这是后续理解操作系统设备驱动与 MMU 映射的底层基石。
+2. **位级压缩的工程雅量**：Lab 3 贪吃蛇中用单个 `uint8_t`（高 5 位为 x 列 0–31，低 3 位为 y 行 0–7）天然避免了边界溢出判断——当坐标越界时，无符号加减的自然溢出回绕正好契合点阵循环边界。
+3. **调用约定是保护上下文的契约**：在 Lab 5 中亲手在汇编中插入 `sw ra, 12(sp)` 与 `lw ra, 12(sp)`，直面不保存 `ra` 导致被子函数覆盖返回地址而陷入死循环的场景，才能真正理解 ABI 规范中 Caller-saved 与 Callee-saved 的工程权衡。
+:::

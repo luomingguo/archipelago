@@ -1,28 +1,31 @@
 ---
-title: Schema 设计
+title: '模式设计与范式理论'
 type: lecture
 lecture: 3
-tags: []
+tags: [schema-design, functional-dependency, boyce-codd-normal-form, er-diagram]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 3 Schema 设计
 
-阅读资料：
+# Lec 3 模式设计与范式理论（Schema Design and Normalization）
 
-1、 [Section 3.2 and 3.3 of "A Practical Introduction to Databases“](https://runestone.academy/ns/books/published/practical_db/PART3_RELATIONAL_DATABASE_THEORY/index.html)
+> MIT 6.5830 / 6.5831 · Database Systems · 第 3 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
 
- 2、 [Section 2 of of "A Practical Introduction to Databases"](https://runestone.academy/ns/books/published/practical_db/PART2_DATA_MODELING/index.html)
+## TL;DR
 
-第一篇阐述了 Ted Codd 提出的“关系代数”，我们将在讲座开始时讨论这一内容，以及基于函数依赖概念的形式化模型，该模型可以用来推理关于模式是否存在导致数据库系统执行中操作问题的异常。您应专注于理解 BCNF 和 3NF；我们不会讨论更高的范式
+- 模式设计的核心目标是在消除数据冗余更新异常与维持高频读取性能之间取得系统工程平衡。
+- 函数依赖（Functional Dependency）定量描述属性间的决定关系，是评估模式规范化程度的数学依据。
+- 第一范式到 BCNF 逐步消除部分函数依赖与传递依赖，而反范式化（Denormalization）则是面向 OLAP 的工程妥协。
 
-第二篇讲述了 ER 建模，这是一种实际的方法，可以用来建模数据库并生成关系数据库模式。这些阅读的关系在于，ER 建模通常会生成符合 3NF/BCNF 的关系模式，尽管这并非绝对
+## 架构演进与核心洞察
 
-请考虑并准备在讲座中回答以下问题：
+::: insight 范式理论在现代硬件下的工程逆向
+教科书普遍推崇将模式严格推导至 BCNF 或 3NF，但在实际的高并发 OLTP 和实时分析系统中，极度规范化的表结构意味着极高昂的跨表 JOIN 开销。随着现代分布式数据库和列存系统的普及，“适度反范式化（允许局部冗余、宽表设计）”已成为提升吞吐的通行工程手段。关键在于：必须有机制保证冗余数据的一致性回写。
+:::
 
-- 模式归一化解决了哪些问题？您认为这些问题重要吗？
-- BCNF 和 3NF 之间有什么区别？是否有理由更偏好其中之一？
-- 想象您最近处理过的数据集，并尝试推导出相应的函数依赖关系集合。在以这种方式对数据建模时，您需要做出什么假设？
-- ER 建模通常如何导致 BCNF/3NF 模式？
+## 核心机制与讲义正文
 
 ## 本讲导览
 

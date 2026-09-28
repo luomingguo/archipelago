@@ -1,37 +1,31 @@
 ---
-title: 索引和访问方法
+title: '索引机制与访问路径'
 type: lecture
 lecture: 7
-tags: []
+tags: [b-plus-tree, hash-index, clustered-index, access-methods]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 7 索引和访问方法
 
->  阅读资料：
->
-> [B-Tree Basics](https://mit.primo.exlibrisgroup.com/discovery/openurl?institution=01MIT_INST&rfr_id=info:sid%2Fprimo.exlibrisgroup.com-safari&rft.au=Alex Petrov&rft.btitle=Database Internals&rft.date=2019-10-02&rft.eisbn=9781492040347&rft.genre=book&rft.isbn=1492040339&rft.pub=O'Reilly Media, Inc&rft_dat=9781492040330<%2Fsafari>&rft_val_fmt=info:ofi%2Ffmt:kev:mtx:book&svc_dat=viewit&url_ctx_fmt=info:ofi%2Ffmt:kev:mtx:ctx&url_ver=Z39.88-2004&vid=01MIT_INST:MIT).  阅读第 2 章
->
-> [The R*-Tree: An Efficient and Robust Access Method for Points and Rectangles pdf](https://infolab.usc.edu/csci599/Fall2001/paper/rstar-tree.pdf)
+# Lec 7 索引机制与访问路径（Indexes and Access Methods）
 
-索引（index）和（数据）访问方法（Access Method）
+> MIT 6.5830 / 6.5831 · Database Systems · 第 7 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
 
-DBMS 使用多种数据结构实现系统的内部功能，主要包括以下类型：
+## TL;DR
 
-- 内部元数据。记录数据库状态以及系统运行信息。比如页表，页目录
-- 核心数据存储。作为元组的基础存储结构。典型实现：堆文件（Heap Files）、行存储（Row Stores）或列存储（Column Stores）
-- 临时数据结构。查询执行过程中动态构建的**瞬时数据结构**以加速处理。示例，哈希表用于哈希连接（Hash Join）
-- 表索引。辅助快速定位特定元组。示例 B+树索引、哈希索引、位图索引等
+- 索引通过牺牲额外存储空间与写入开销，将无序表扫描的线性复杂度降为点查与范围查的对数复杂度。
+- B+ Tree 凭借超高分支因子（Fan-out）、极低树高与叶子节点双向链表，成为外存通用索引无可争议的标准。
+- 聚集索引（Clustered Index）决定数据的物理存放顺序，覆盖索引（Covering Index）完全消除回表开销。
 
-**数据结构设计的两大关键决策**
+## 架构演进与核心洞察
 
-- 数据组织：如何布局内存及存储信息以支持高效访问。考虑因素，行存 vs 列存；数据对齐；
-- 并发控制：确保多线程安全访问，维持数据一致性。
+::: insight 为什么外存索引选 B+ Tree 而不是二叉平衡树
+二叉搜索树（红黑树、AVL 树）每个节点仅保存一个键和两个指针，分支因子只有 2，树高度为 $\log_2 N$。存储千万级记录时树高可达 25 层，意味着一次点查需要 25 次随机 I/O，在外存上是灾难。B+ Tree 将分支因子扩展至页面容量（如 4KB 页面可容纳 100~200 个键），树高骤降到 3~4 层，前两层常驻内存，磁盘点查仅需 1~2 次 I/O，且叶子链表完美支持范围扫描。
+:::
 
-**思考题**
-
-- 在什么情况下，二级索引优于堆文件的顺序（按顺序）扫描？在什么情况下，二级索引扫描更可取？
-- 在 B+树中邻居指针的目的是什么，什么情况下他们有用？
-- 为什么 B+树不足以存储和索引由 R\*树存储的数据类型。
+## 核心机制与讲义正文
 
 ## 本讲导览
 

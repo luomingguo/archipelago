@@ -2,10 +2,18 @@
 title: 向量机与 SIMD
 type: lecture
 lecture: 14
-tags: []
+tags: [simd, vector-processors, predication, scatter-gather, vector-lane]
 status: complete
 ---
 # Lec 14 向量机与 SIMD
+
+## TL;DR
+
+- SIMD（单指令多数据流）通过单条指令驱动多组执行通道（Lanes），实现数据级并行度（DLP）的大规模释放。
+- 传统寄存器复用（如 MMX 借用浮点寄存器）通过进位切断技巧支持子字并行，现代架构已演进为专用宽向量寄存器堆。
+- 高级向量内存寻址支持跨行跨步长（Strided）与离散聚集（Scatter-Gather），适配不规则稀疏负载。
+- 谓词掩码（Predication）通过位掩码消除条件分支控制流，配合洗牌指令（Shuffle）完成跨通道归约。
+
 > MIT 6.1920 · Constructive Computer Architecture
 > 讲师：Arvind · 日期：2024-04-04
 
@@ -132,8 +140,15 @@ vadd.p   vr1, vr0, vr2, pr0  # vr1[i] = (pr0[i]) ? vr0[i]+vr2[i] : vr1[i]
 
 Sol：Shuffle 指令提供元素重排（<em>permutation</em>）能力，是 SIMD 实现归约（reduce）和矩阵转置的关键。Intel SSE 的 `PSHUFD`、AVX2 的 `VPERMPS` 均属此类。
 
----
-
-## 本讲小结
+## 核心机制小结与数据级并行权衡
 
 SIMD 通过一条指令处理多个数据元素，吞吐量随通道数线性扩展；MMX/SSE/AVX 是 Intel 的渐进式向量扩展，宽度从 64 位增至 512 位（AVX-512）；步长访问和 Scatter-Gather 支持不规则内存访问；谓词寄存器消除向量代码中的分支；Shuffle 指令完成元素重排，是实现高性能矩阵和信号处理算法的关键原语。
+
+## 核心机制思考与底层洞察
+
+::: insight 打包 SIMD 与可变长向量架构的范式分野
+回顾数据级并行（Data-Level Parallelism, DLP）的发展脉络，x86 的“打包 SIMD”与经典 Cray / RISC-V Vector 的“真实向量架构”展现了两种截然不同的架构视野：
+
+1. **打包 SIMD（Packed SIMD）的指令集膨胀包袱**：从 MMX（64 位）、SSE（128 位）、AVX2（256 位）到 AVX-512（512 位），x86 路线本质上是将向量长度硬编码进指令操作码中。每当芯片工艺进步允许加宽数据通路时，架构师就必须发明一套全新的指令前缀和成百上千条新指令。旧二进制代码无法直接享用新硬件的翻倍位宽，软件生态陷入反复重编译与适配的泥潭。
+2. **定长解耦与动态分段（Vector-Length Agnostic, VLA）**：以 RISC-V Vector（RVV）为代表的现代向量规范继承了经典向量超级计算机的设计精髓。指令中不再绑定物理寄存器位宽，而是通过 `vsetvl` 指令由硬件在运行时动态告知软件当前核心的物理向量长度（VLEN）。配合硬件维度的条带化挖掘（Stripmining），同一套编译生成的向量机器码既可以在嵌入式 128 位 IoT 处理器上正确回退循环，也可以在服务器 2048 位超级计算阵列上以惊人吞吐全宽并发，真正达成了“二进制层面的跨代性能可移植性”。
+:::

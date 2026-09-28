@@ -1,5 +1,5 @@
 ---
-title: 产品领导力 ｜ 产品设计与实现
+title: '产品领导力 ｜ 产品设计与实现'
 type: lecture
 lecture: 17
 tags: [product-leadership, cross-functional-teams, product-management, prioritization-frameworks, team-dynamics]
@@ -133,13 +133,9 @@ flowchart LR
 
 ---
 
-
-
 ## 持续发现习惯
 
 Teresa Torres 的《持续发现习惯》（*Continuous Discovery Habits*）是现代产品管理与 UX 设计领域极具推崇的实战圣经。它彻底改变了产品团队理解用户需求、定义解决方案以及与设计紧密协同的方式。
-
-
 
 ## 五、全学期项目复盘与全景认知闭环
 

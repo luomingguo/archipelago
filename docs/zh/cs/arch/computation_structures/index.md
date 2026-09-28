@@ -3,7 +3,7 @@ title: 6.1910 计算结构（Fall 25）
 type: course
 course: 6.1910 计算结构（Fall 25）
 course_id: '6.1910'
-tags: []
+tags: [digital-abstraction, combinational-logic, sequential-circuits, riscv-processor, cache-hierarchy]
 status: complete
 ---
 #  6.1910 计算结构（Fall 25）
@@ -14,11 +14,19 @@ https://6191.mit.edu/spring26
 
 Computation Structure
 
-## 先行条件
+## TL;DR
+
+- **分层硬件抽象**：系统化建立从模拟物理量到数字逻辑抽象、布尔代数门级网表、微体系结构流水线及 ISA 的跨层次软硬件协同。
+- **Bluespec/Minispec 建构驱动**：基于高级硬件描述语言与形式受卫规则，实现单周期处理器、冒险旁路检测、两级分支预测与经典缓存控制。
+- **系统栈端到端闭环**：纵向打通虚存转换（TLB/页表）、中断与特权态异常、操作系统上下文切换、原子同步原语及多核总线监听一致性协议。
+
+---
+
+## 前置课程与知识准备
 
 （无）
 
-## 课程描述
+## 课程核心目标与模块大纲
 
 本课程介绍数字系统与计算机体系结构的设计方法，重点强调使用高级硬件描述语言（HDL）表达硬件设计并完成综合（synthesizing）。主要内容包括：
 
@@ -87,7 +95,7 @@ Computation Structure
 - 流水线和折叠电路
 
 - 实现非流水线 RISC-V 计算机
-- Cache
+- 缓存
 - 实现流水线 RISC-V 计算机
   - 控制冒险和数据冒险，旁路技术
 - 分支预测
@@ -123,7 +131,7 @@ Computation Structure
 4. 深入理解中等复杂度数字系统（基于简易 RISC 架构的计算机）的运作机制，直至门级实现，具备其组件的综合、实现与调试能力。
 5. 掌握数字系统工程师所需的核心技术能力。
 
-## Labs
+## 课程实验与工程实践（Labs）
 
 https://github.com/bonbon-on-fire/computation_structures_class_2026
 
@@ -131,17 +139,17 @@ https://github.com/bonbon-on-fire/computation_structures_class_2026
 2. ALU 设计
 3. 时序电路
 4. 处理器实现
-5. 设计 Cache
+5. 设计缓存
 6. Pipelined 处理器
 7. OS
 
-## 相关课程
+## 姊妹与后续进阶课程
 
 UC 伯克利： [Home | CS 61C Spring 2024](https://cs61c.org/sp24/)
 
 CMU： [CMU  18-447 Introduction to Computer Architecture – Spring 2015\] (cmu.edu)](https://course.ece.cmu.edu/~ece447/s15/doku.php?id=labs)
 
-## 参考资料
+## Minispec 与 RISC-V 语言参考
 
 - Minispec
   - Minispec tutorials
@@ -199,7 +207,7 @@ CMU： [CMU  18-447 Introduction to Computer Architecture – Spring 2015\] (cmu
 
 上述四个标准统称为**静态准则**，是所有组合逻辑器件必须满足的基本要要求。
 
-![image-20250423160210914](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6809686d658e1.png)
+![组合逻辑器件静态准则与传播延迟示意图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6809686d658e1.png)
 
 功能规范，有不少方法用于详述组合逻辑设备的功能规范。我们将使用两种系统性方法：真值表和布尔表达式（boolean expression）
 
@@ -338,7 +346,7 @@ ISA 抽象、RISC-V 汇编、编译高级语言、过程调用与栈、内存布
 
 **权衡**：是否启用 bypassing 取决于软件/程序运行时使用模式，必须通过实际综合（synthesis）去评估性能收益 vs. 成本。
 
-![image-20250422064445680](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6806ca6952f5d.png)
+![处理器流水线执行阶段向译码阶段的数据旁路通路](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6806ca6952f5d.png)
 
 EHR（Explicitly Handled Registers）是 Bluespec 中一种机制，用于精确控制寄存器的写入和读取，搭配 bypassing 使用时，可以实现更灵活的控制路径数据传递和调度。
 
@@ -361,7 +369,7 @@ EHR（Explicitly Handled Registers）是 Bluespec 中一种机制，用于精确
 
 缓存一致性（Cache coherence），在现代微处理器中，往往会有多个核心，每个核心都有一个私有缓存（以提高加载/存储性能），但是，主存是所有核心共享的。因此核心经常通过与主内存的交互来进行通信。因此，我们需要确保操作看起来像是在一个共享内存上进行。
 
-![image-20250419151459671](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68044c354bb11.png)
+![多核私有缓存共享主存导致的数据过期与一致性冲突示意图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68044c354bb11.png)
 
 问题出现在，如下示例。0 号核心通过加载指令获取 0xA 地址上的值为 2，接着 2 号核心向 0xA 地址设置值为 3，此时 0 号核心上私有缓存的 0xA 的值是过时的。 解决办法就是，通过一个缓存一致性协议来控制缓存的内容，避免出现过期缓存行，比如，核心 2 在写入 3 之前将核心 0 的副本无效化（invalidate）。
 

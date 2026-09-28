@@ -2,12 +2,18 @@
 title: 向量计算机（Vector Computers）
 type: lecture
 lecture: 20
-tags: []
+tags: [vector-processors, simd-execution, memory-banking, data-parallelism]
 status: complete
 ---
 # Lec 20 向量计算机（*Vector Computers*）
 
 > MIT 6.5900 Fall 2024 · Joel Emer 主题：超级计算机、向量处理器（*Vector Processor*）、多媒体 SIMD 扩展
+
+## TL;DR
+
+- **向量体系结构精髓**：通过单条短指令编码包含数十甚至数百个独立元素的操作，在指令级极大压缩取指与译码带宽，直接规避标量超标量处理器的复杂发射队列与重命名开销。
+- **访存与硬件交错**：向量处理高度依赖分体内存（Memory Banking）与流水化访存通道，结合步长（Stride）与分散/聚集（Scatter/Gather）机制高效支持稀疏与多维数据并行。
+- **向量链与演进**：通过流水线链接（Chaining）允许后继向量指令在操作数生成阶段直接重叠执行；现代通用处理器的多媒体与 SIMD 扩展逐步吸收完整向量机制以提升能效比。
 
 ------
 

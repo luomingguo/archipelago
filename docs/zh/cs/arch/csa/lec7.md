@@ -2,12 +2,18 @@
 title: '复杂流水线——乱序执行、寄存器重命名与异常（Out-of-Order Execution, Register Renaming, and Exceptions）'
 type: lecture
 lecture: 7
-tags: []
+tags: [out-of-order-execution, register-renaming, reorder-buffer, precise-exceptions]
 status: complete
 ---
-# Lec 07 复杂流水线——乱序执行、寄存器重命名与异常（*Out-of-Order Execution, Register Renaming, and Exceptions*）
+# Lec 7 复杂流水线——乱序执行、寄存器重命名与异常（Out-of-Order Execution, Register Renaming, and Exceptions）
 
 > MIT 6.5900 Fall 2024 · Joel Emer 主题：记分牌回顾、按序发射的限制、乱序发射、Little's Law 与寄存器数、Tomasulo 重命名、重排序缓冲（*ROB*）、精确异常
+
+## TL;DR
+
+- **乱序发射与重命名**：按序发射受限于命名依赖（WAR/WAW）与架构寄存器数量；Tomasulo 寄存器重命名将逻辑寄存器映射到物理位置，从根本上消除了虚假依赖。
+- **重排序缓冲（ROB）**：指令按序取指译码、乱序分派执行、按序提交（In-order Commit），使乱序流水线对外部呈现严格的顺序语义并支持精确异常。
+- **物理寄存器文件演进**：将真实数据集中存于物理寄存器堆（PRF），ROB 仅维护操作状态与物理寄存器 Tag，大幅缩减了控制队列的硬件硅片开销。
 
 ------
 
@@ -125,7 +131,7 @@ ROB 每项：`Ins# | use | exec | op | p1 src1 | p2 src2`。指令槽成为执�
 
 指令执行的四个阶段：
 
-- **取指**（Fetch）：从 Cache 取指令位 —— 按序；
+- **取指**（Fetch）：从指令缓存（I-Cache）取指令位 —— 按序；
 - **译码**（Decode）：放入相应发射缓冲 —— 按序；
 - **执行**（Execute）：指令与操作数送执行单元，完成时结果与异常标志可用 —— 乱序；
 - **提交**（Commit / graduation）：指令**不可逆地**更新体系结构状态 —— 按序。
@@ -158,11 +164,17 @@ ROB 空间低效——一个数据值可能存于 ROB 多处。
 
 ------
 
-## 本讲小结
+## 乱序执行与精确异常机制全景总结
 
 - 按序发射受 WAR/WAW 与寄存器数限制；**乱序发射**仅靠自身提升有限，**寄存器重命名**（Tomasulo）消除 WAR/WAW 才是关键；
 - **Little's Law** 说明寄存器数限制在飞指令数从而限制吞吐；重命名提供额外存储以容纳更多在飞指令；
 - **ROB** 支持按序取指/译码、乱序执行、**按序提交**，从而在乱序核中实现**精确异常**；物理寄存器文件方案让 ROB 只存 tag、更省空间；
 - Tomasulo 早期受限于内存延迟、不精确异常与分支代价——后两者由 ROB 与分支预测解决。
+
+::: insight 寄存器重命名的两种范式：ROB 携带数据 vs 统一物理寄存器堆（PRF）
+在早期的 Tomasulo + ROB 架构中，操作数计算完成后会直接写回到 ROB 条目或保留站中，体系结构寄存器堆（ARF）仅在指令退休（Commit）时才被写回更新。这种设计的致命缺陷在于「数据搬移过于频繁且存储高度冗余」——同一个 64 位值在广播给保留站、写入 ROB 后，最终还要写回 ARF，且 ROB 条目宽度膨胀，极大地耗费了比较器与多路复用器的布线面积。
+
+以 MIPS R10000 和现代 Intel/AMD 架构为代表的 PRF（Physical Register File）统一物理寄存器方案则实现了控制与数据的彻底解耦：所有计算结果直接写入集中式的物理寄存器堆，ROB 和发射队列中只流转紧凑的物理寄存器 Tag（如 8 位索引）。重命名表本质上维护逻辑寄存器到物理寄存器的映射指针，提交时只改变架构映射表（RAT）的指针归属并释放旧物理寄存器，完全避免了在流水线深处长距离搬移宽位宽操作数。
+:::
 
 > 下一讲：分支预测与推测执行

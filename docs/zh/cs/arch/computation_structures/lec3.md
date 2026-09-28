@@ -2,10 +2,20 @@
 title: 用 Bluespec 描述组合电路
 type: lecture
 lecture: 3
-tags: []
+tags: [bluespec, combinational-circuits, ripple-carry-adder, multiplexer, barrel-shifter]
 status: complete
 ---
 # Lec 3 用 Bluespec 描述组合电路
+
+## TL;DR
+
+- **组合电路硬件表达**：Bluespec 函数在编译时完全内联展开为纯无环组合网表（DAG），代码中的所有 `?:` 条件表达式均对应真实并行的物理多路选择器。
+- **分层加法器构建**：半加器通过 XOR/AND 提取和与进位，级联构成全加器；多位行波进位加法器（RCA）串联传播进位链，关键路径延迟随位宽 $O(N)$ 线性增长。
+- **对数桶形移位器优化**：固定移位仅为零开销金属走线，动态移位若采用全交叉开关需 $O(N^2)$ 个 MUX；分级桶形移位器（Barrel Shifter）按权重阶梯分解，将面积与延迟压缩至 $O(N \log N)$ 与 $O(\log N)$。
+
+---
+
+## 算术计算与布尔组合映射
 
 算术计算和布尔算术有很强的联系。数字可以用二进制（base 2）来表示，并且能对其进行算术运算。更进一步，二进制的算术运算和布尔代数中的逻辑运算之间存在一一对应关系，比如，二进制加法可以用 XOR 和 AND 实现（比如半加器、全加器）
 
@@ -19,7 +29,7 @@ status: complete
 
 ## 加法器实现
 
-![image-20250424131138468](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250424131138468.png)
+![加法器层次化设计：从半加器到全加器及多位级联加法器架构](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250424131138468.png)
 
 加法器的组合逻辑：
 
@@ -28,7 +38,7 @@ status: complete
   - 可以由两个半加器组合成
 - 级联全加器可以执行二进制加法
 
-![image-20250424145134116](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250424145134116.png)
+![32 位加法器级联全加器数据通路结构示意图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250424145134116.png)
 
 **描述一个 32 位的加法器**
 
@@ -40,13 +50,12 @@ status: complete
 | 0    | 1    | 1    | 0    |
 | 1    | 0    | 1    | 0    |
 | 1    | 1    | 0    | 1    |
-|      |      |      |      |
 
 布尔表达式为， `s = ~a·b + a·(~b) = a ⊕ b`（异或），`c = a · b`
 
 电路组合逻辑为
 
-![image-20250424180319629](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250424180319629.png)
+![半加器门级逻辑结构图（包含异或门产生和值与与门产生进位）](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250424180319629.png)
 
 ```verilog
 function Bit#(2) ha(Bit#(1) a, Bit#(1) b);
@@ -58,18 +67,23 @@ endfunction
 Bit#(2) t = ha(1, 0);
 %%eval t[0]
 %%eval t[1]
-
 ```
 
 其中 {c, s} 表示比特的连接。注意输出`t[0] = 'h1`，`t[0] = 'h0`
 
 ### 全加器
 
-![image-20250424182240093](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250424182240093.png)
+全加器（Full Adder）是处理包含低位进位运算的基础单元。在微架构上，一个全加器可以由两个半加器和一个或门级联构成：
+
+1. **第一级半加器**：接收两个操作数位 $a$ 和 $b$，计算本位局部和 $S_1 = a \oplus b$ 及进位 $C_1 = a \cdot b$。
+2. **第二级半加器**：接收 $S_1$ 与来自低位的输入进位 $c_{in}$，计算最终求和输出 $S = S_1 \oplus c_{in}$ 及中间进位 $C_2 = S_1 \cdot c_{in}$。
+3. **输出进位合并**：由于 $C_1$ 与 $C_2$ 在物理上互斥（若 $a=b=1$，则 $S_1=0$，第二级不可能再产生进位），最终进位输出可直接通过一个或门合并：$c_{out} = C_1 \lor C_2$。
+
+![由两个半加器和一个或门级联组成的全加器逻辑原理图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250424182240093.png)
 
 ```verilog
 // 全加器
-function Bit#(2) fa(Bit#(1) a, Bit#(1)b, Bit#(1) c_in);
+function Bit#(2) fa(Bit#(1) a, Bit#(1) b, Bit#(1) c_in);
     Bit#(2) ab = ha(a, b);
     Bit#(2) abc = ha(ab[0], c_in);
     Bit#(1) c_out = ab[1] | abc[1];
@@ -77,13 +91,13 @@ function Bit#(2) fa(Bit#(1) a, Bit#(1)b, Bit#(1) c_in);
 endfunction
 ```
 
-#### Let 语法
+#### Let 语法与类型推断
 
-强类型语言，当编译器能推断的时候，不需要指定变量类型，
+Bluespec 是强类型语言，但在局部变量声明时，当编译器能从右侧表达式推断位宽与类型时，可以使用 `let` 关键字简化代码：
 
 ```verilog
-// 全加器
-function Bit#(2) fa(Bit#(1) a, Bit#(1)b, Bit#(1) c_in);
+// 使用 let 语法简化的全加器
+function Bit#(2) fa(Bit#(1) a, Bit#(1) b, Bit#(1) c_in);
     let ab = ha(a, b);
     let abc = ha(ab[0], c_in);
     let c_out = ab[1] | abc[1];
@@ -93,29 +107,32 @@ endfunction
 
 ### 2-bit 行波进位加法器
 
-2 位行波进位加法器（2-bit Ripple-Carry Adder），实现两个 2 位二进制数的加法，输出 2 位和可能的进位。通过级联两个 FA 构建，利用行波进位（Ripple-Carry）传递机制。
+2 位行波进位加法器（2-bit Ripple-Carry Adder）实现两个 2 位二进制数的加法，输出 2 位和与进位。微架构通过将两个全加器串联构成进位链：低位全加器的进位输出直接驱动高位全加器的进位输入，进位信号像波浪一样在各级全加器之间向高位传递。
 
-![image-20250424231017383](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680a546b298ab.png)
+行波进位加法器具有简洁规整的版图结构，但其关键路径延迟与操作数位宽 $N$ 呈严格的线性正比关系（$O(N)$），每一级的求和都必须等待前级的进位信号完全稳定。
+
+![2 位行波进位加法器（RCA）级联全加器信号连线图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680a546b298ab.png)
 
 ```verilog
-// 级联FA, 自己的实现
+// 级联 FA 实现：紧凑写法
 function Bit#(3) add2(Bit#(2) x, Bit#(2) y);
     let t = fa(x[0], y[0], 'h0);
     let t2 = fa(x[1], y[1], t[1]);
     return {t2[1], t2[0], t[0]};
 endfunction
-// 完全根据图上的话
+
+// 级联 FA 实现：显式位切片与连线映射
 function Bit#(3) add2(Bit#(2) x, Bit#(2) y);
-  Bit#(2) s = 0;
-  Bit#(3) c = 0;
-  c[0] = 0;
-  let cs0 = fa(x[0], y[0], c[0]);
-  s[0] = cs0[0];
-  c[1] = cs0[1];
-  let cs1 = fa(x[1], y[1], c[1]);
-  s[1] = cs1[0];
-  c[2] = cs1[1];
-  return {c[2], s};
+    Bit#(2) s = 0;
+    Bit#(3) c = 0;
+    c[0] = 0;
+    let cs0 = fa(x[0], y[0], c[0]);
+    s[0] = cs0[0];
+    c[1] = cs0[1];
+    let cs1 = fa(x[1], y[1], c[1]);
+    s[1] = cs1[0];
+    c[2] = cs1[1];
+    return {c[2], s};
 endfunction
 ```
 
@@ -144,7 +161,7 @@ c[0] = c0;
 
 假设`x`是 4-bit 宽，若使用常量选择器（如 `x[2]`）这仅仅是引用了一个具体的线网，并不生成额外的硬件；当使用变量选择器（如 `x[i]`）时，生成的硬件通常是一个多路选择器（例如 4 位宽的 `x` 就会生成一个 4 路 mux），因为它需要在运行时动态决定选哪一位。
 
-![image-20250425001218478](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250425001218478.png)
+![位选择操作在硬件中的连线与多路复用器映射对比示意图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250425001218478.png)
 
 ### 2 路多用复用器
 
@@ -160,7 +177,7 @@ c[0] = c0;
 a if s == 0 else b
 ```
 
-![image-20250425001404767](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c2ed5d84e9.png)
+![2 选 1 多路选择器（2:1 MUX）逻辑符号与内部门级实现图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c2ed5d84e9.png)
 
 > *踩坑：硬件没有“条件执行”*。软件里 `s ? foo(x) : bar(y)` 会**先**算 `s`，再**只**执行其中一个分支（以避免做无用的昂贵计算）。但在组合硬件里做不到这一点——`foo(x)` 和 `bar(y)` 两个电路都会被**实例化并并行求值**，mux 只是最后在两个已经算好的结果中**选一个**。因此 `?:`、`if`、`case` 在组合逻辑里统统综合成 mux，**所有分支的硬件都真实存在**。（真正的“条件执行”要到时序逻辑才有，见 [lec6](lec6.md)。）
 
@@ -197,7 +214,7 @@ case ({s1, s0})
 endcase
 ```
 
-![image-20250426090345432](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c30f3e19cf.png)
+![由 2 选 1 MUX 树状级联构成的 4 选 1 多路选择器结构图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c30f3e19cf.png)
 
 ```python
 def mux(a, b, s):
@@ -217,17 +234,17 @@ n 路多路复用器可以用 n-1 个两路多路复用器实现。
 
  固定长度的移位操作在硬件中非常廉价，只需完成接线操作（纯布线操作）
 
-![image-20250426091522007](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c33b0de0c6.png)
+![固定逻辑右移与左移在硬件中的纯金属走线无损实现示意图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c33b0de0c6.png)
 
 循环移位和算术移位也差不多。循环移位就是把最高位接回最低位即可，仍然是接线；算术右移为例，保留符号位，最左边补原来的符号位，其他仍然通过布线完成。算术移位对于，乘除$2^n$的操作非常方便。
 
-![image-20250426091537653](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c33bc85f92.png)
+![算术右移符号位扩展与循环移位接线逻辑图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c33bc85f92.png)
 
 ### 逻辑右移 n 位
 
 **暴力法**
 
-![image-20250426093648656](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c38b449578.png)
+![动态移位器暴力解法：全交叉大 MUX 选择所有可能移位结果示意图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c38b449578.png)
 
 假设我们想要实现一个把 x 左移 n 位（$0 \le n \le 31$）的动态移位器，该怎么做？
 
@@ -241,12 +258,12 @@ Solution： n * (n-1)。 意思是把所有可能的移位结果（不需要 mux
 
 我们把 "移 k 位" 拆成几个固定移位的“步骤”，每个步骤只处理一种移位大小（比如移 1 位、移 2 位、移 4 位……），为什么可行？ 任何整数 `k` 都可以分解为 2 的幂的和（，例如移位 `x` 5 位 ，5 的二进制是`101`，所以先左移 4 位，再左移 1 位。
 
-![image-20250426131430571](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c6bbd79e8d.png)
+![分级桶形移位器（Barrel Shifter）按 2 的幂阶梯分级结构图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c6bbd79e8d.png)
 
 结构上来说，假如我们处理 8 位数据：
 
 1. **shift by 1**：通过 2:1 mux 决定是否左移 1 位
-2. **shift by 2：再通过一层 mux 决定是否左移 2 位
+2. **shift by 2**：再通过一层 mux 决定是否左移 2 位
 3. **shift by 4**：再通过一层 mux 决定是否左移 4 位
 
 这样就可以组合出 0～7 的任何移位值 。一般地，对 $N$ 位输入，移位量 $s$ 用 $\log_2 N$ 个比特编码，每一位 $s[i]$ 控制“是否移 $2^i$ 位”的一层 mux。
@@ -267,3 +284,18 @@ Solution： n * (n-1)。 意思是把所有可能的移位结果（不需要 mux
 >   return r0;
 > endfunction
 > ```
+
+---
+
+## 核心机制思考与底层洞察
+
+::: insight 硬件描述语言中的内联展开与物理资源实体化
+在通用软件编程中，函数调用是在时间维度上复用 CPU 算力，而条件控制流（`if-else`）通过跳转分支绕过不必要的计算；然而在组合逻辑硬件描述语言（如 Bluespec / Minispec）中，语义机制发生根本性颠覆：
+
+1. **函数是编译期的物理空间宏内联（Spatial Inlining）**：
+   - 组合逻辑函数没有调用栈、没有程序计数器（PC）。调用一次 `fa(...)`，编译器便在物理网表中直接例化生成一组真实的逻辑门与连线；在多处调用，硬件便在硅片不同坐标重复复制生成对应门电路。
+2. **条件分支对应全并发求值与物理 MUX 选择**：
+   - 三元表达式 `(s == 0) ? a : b` 在硬件中绝不意味着“先测 $s$，再求 $a$ 或 $b$”。输入信号 $a$ 和 $b$ 的整个上游逻辑锥（Logic Cone）在每个时钟周期均在并发翻转并消耗动态功耗；多路选择器仅在最末级根据控制电压 $s$ 选择通路。
+3. **空间复用与对数降维的架构美学**：
+   - 习惯于软件的工程师极易写出 32 路平铺的暴力选择逻辑，在硅片上直接引爆 $O(N^2)$ 的多路复用器面积开销。桶形移位器（Barrel Shifter）利用二进制权重的幂次分解性质，将二维空间交叉网络转化为 $\log_2 N$ 级阶梯级联，在仅付出 $O(\log N)$ 门延迟的前提下将面积压低至 $O(N \log N)$，这正是计算机体系结构“将数学性质投影为物理空间拓扑”的典范设计。
+:::

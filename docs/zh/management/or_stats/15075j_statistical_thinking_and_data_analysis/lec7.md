@@ -1,5 +1,5 @@
 ---
-title: 双样本比较与实验设计
+title: '双样本比较与实验设计'
 type: lecture
 lecture: 7
 tags: [two-sample-inference, matched-pairs, independent-samples, pooled-variance, welch-t-test]

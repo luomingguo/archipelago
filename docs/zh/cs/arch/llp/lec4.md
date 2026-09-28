@@ -2,10 +2,18 @@
 title: RISC-V 汇编：寄存器与指令
 type: lecture
 lecture: 4
-tags: []
+tags: [riscv-isa, instruction-encoding, register-file, addressing-modes, datapath]
 status: complete
 ---
 # Lec 4 RISC-V 汇编：寄存器与指令
+
+## TL;DR
+
+- RISC-V 遵循“简单源于规整”、“越小越快”与“优秀折中”三原则，采用 32 个通用寄存器与固定 32 位指令字长。
+- 架构为纯正的 Load/Store 模型：ALU 仅在寄存器与立即数间运算，内存访问必须显式经由基址偏移寻址的加载与存储指令。
+- 32 位机器码划分 6 种规整格式（R/I/S/B/U/J），固定源寄存器与符号位物理位置以大幅简化硬件组合译码通路。
+- 条件分支采用 PC 相对寻址（$\pm 4\text{KB}$），与 `jal`/`jalr` 共同构成过程调用与任意跨度长跳转的跳转机制。
+- 硬件固定 `x0` 为零常数，通过与 `addi`/`jal` 组合优雅衍生出 `mv`、`li`、`j` 等无额外硬件开销的丰富伪指令。
 
 **本节内容**
 
@@ -17,7 +25,7 @@ status: complete
 
 ## 一、处理器组成与设计原则
 
-![image-20260613023554932](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613023554932.png)
+![RISC-V 处理器核心架构组成简图（PC、寄存器堆与ALU）](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613023554932.png)
 
 上图是 RISC-V 处理器的组成结构（简易版，更完整的数据通路见本节末尾的扩展阅读）。核心部件有：**PC（程序计数器）** 跟踪当前指令地址、**寄存器堆**保存 32 个通用寄存器、**ALU** 执行运算、**指令存储器/数据存储器**分别存放代码和数据，上图未画出。
 
@@ -88,7 +96,7 @@ RV64 中每个通用寄存器宽 **64 位**（一个 doubleword）。一共有 *
   - 寄存器-立即数：`oper rd, rs1, constant(12-bit)`，或 `lui rd, luiConstant(20-bit)`
 - **存取指令（load/store）**
   - `ld rd, offset(rs1)` / `sd rs2, offset(rs1)`（doubleword）；`lw`/`sw`（word）等
-  - 内存地址 ＝ `reg[rs1] + 符号扩展(offset)`
+  - 内存地址 ＝ `reg[rs1] + 符号扩展（offset）`
 - **控制流指令**
   - 条件型：`comp rs1, rs2, label`
   - 非条件型：`jal rd, label` 和 `jalr rd, offset(rs1)`
@@ -124,7 +132,7 @@ I-type 的立即数字段只有 12 位，但要参与 64 位运算，必须先�
 - `sd rs2, offset(rs1)`：把 `rs2` 写到地址 `rs1 + offset`。
 - 同族还有 `lw`/`sw`（word，4 字节）、`lh`/`sh`（half）、`lb`/`sb`（byte）；load 的窄宽度版本还分符号扩展（`lw`）和零扩展（`lwu`）。
 
-**地址计算**：`内存地址 = reg[rs1] + 符号扩展(offset)`。`rs1` 是基地址寄存器，`offset` 是 12 位有符号偏移——这就是"基址偏移寻址"。
+**地址计算**：`内存地址 = reg[rs1] + 符号扩展（offset）`。`rs1` 是基地址寄存器，`offset` 是 12 位有符号偏移——这就是"基址偏移寻址"。
 
 ::: definition 字节寻址与对齐
 内存按**字节**编址，相邻字节地址相差 1。因此一个 doubleword 占 8 个字节，数组中相邻 doubleword 的地址相差 **8**，相邻 int（word）相差 **4**。这就是为什么数组下标 `i` 要先乘以元素大小（左移 3 位＝×8，左移 2 位＝×4）再加基地址——这是汇编里最常见的易错点。例如长度 10 的 int 数组占 40 字节。
@@ -170,9 +178,9 @@ I-type 的立即数字段只有 12 位，但要参与 64 位运算，必须先�
 | `j label`           | `jal x0, label`                    | 无条件跳转，不保存返回地址                                   |
 | `ble x1, x2, label` | `bge x2, x1, label`                | 若 x1 ≤ x2 跳转（交换操作数实现）                            |
 
-![image-20260613025727077](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613025727077.png)
+![RISC-V 汇编常用指令集与操作数分类汇总表](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613025727077.png)
 
-![image-20260622195336533](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260622195336533.png)
+![RISC-V 算术、逻辑与存取指令对照详解图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260622195336533.png)
 
 *图：RISC-V 操作数与操作指令类型汇总*
 
@@ -247,7 +255,7 @@ L2:
 
 ---
 
-## 例题
+## 控制流与循环汇编实战例题
 
 ::: example 例题：编译 if-then-else
 f、g、h、i、j 分别对应寄存器 x19 到 x23，编译 `if (i == j) f = g + h; else f = g - h;`
@@ -285,7 +293,7 @@ Exit:
 假设有一个数组 arr 含 10 个整数，起始内存地址 0x700，分析其汇编代码。
 :::
 
-![image-20260613032157368](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613032157368.png)
+![整数数组遍历求和汇编程序与内存地址映射图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613032157368.png)
 
 回顾要点：数据内存和指令内存是不同区段，PC 指向处默认是指令、不要覆写；相邻内存位置相隔 1 个字节，长度 10 的 int 数组占 40 字节，遍历时每步地址 +4。
 
@@ -313,3 +321,11 @@ Exit:
 - **Load**（`ld x9, 40(x10)`）：读 rs1 → ALU 算地址 → 数据存储器读 → 写回 rd。
 - **Store**（`sd x9, 40(x10)`）：读 rs1（基址）和 rs2（数据）→ ALU 算地址 → 写入数据存储器。不写回寄存器堆。
 - **Branch**（`beq x5, x6, label`）：读 rs1、rs2 → ALU 做减法比较 → 若为零则 PC 选分支目标，否则选 PC+4。
+
+## 核心机制思考与底层洞察
+
+::: insight 硬件译码视角下的 RISC-V 极简美学
+1. **立即数被“打散”的硬件代价交换**：初学者在手写汇编二进制编码时，常对 S-type 和 B-type 立即数字段被拆成 `imm[11:5]` 和 `imm[4:0]` 感到困惑甚至反感。但如果站在硅片门电路的视角：所有指令的 `rs1`（19:15）、`rs2`（24:20）和符号位 `imm[31]` 在物理位置上是**完全锁定不变**的。这意味着无论后续译码器识别出什么 opcode，指令寄存器的这几根连线已经可以毫无延迟地并驱进入寄存器堆读端口与符号扩展电路。RISC-V 用软件工具链的一丁点复杂性，换取了硬件关键路径（Critical Path）时钟频率的极致提升。
+2. **x0 寄存器的“硬件级零成本”**：很多 CISC 架构（如 x86）花费宝贵的指令操作码（Opcode）来定义 `CLR`（清零）、`NOP`（空操作）、`MOV`（传输）、`JMP`（无条件跳转）。而 RISC-V 仅用一个物理硬连线接地的 `x0`，就将上述所有语义退化为普通的 `add` 或 `jal`。这种设计不仅压缩了指令集状态机的复杂度，更为流水线冒险处理提供了天然的“写弃”通道。
+3. **PC 相对寻址与位置无关代码（PIC）的现代意义**：分支与跳转采用相对于 PC 的偏移量，而非绝对物理地址。这一设计使得编译出的二进制程序可以被操作系统加载器随意放置在虚拟地址空间的任意基地址（ASLR 地址随机化），无需在加载时对代码段进行耗时的重定位（Relocation）修补。
+:::

@@ -2,10 +2,18 @@
 title: '时序电路与模块设计（Sequential Circuits & Module Design）'
 type: lecture
 lecture: 2
-tags: []
+tags: [sequential-circuits, bsv-rules, atomic-transactions, fifo-design, multiplier-tradeoffs]
 status: complete
 ---
 # Lec 02 时序电路与模块设计（*Sequential Circuits & Module Design*）
+
+## TL;DR
+
+- 时序电路将状态寄存器与组合逻辑相结合，在时钟上升沿同步更新内部状态。
+- BSV 的规则（Rule）具备原子性（One-Rule-at-a-Time 语义），由守护条件（Guard）保护执行时机。
+- 弹性流水线依赖 Guarded Interface 与双元素 FIFO，解决单元素 FIFO 入队与出队的调度冲突（Conflict Free）。
+- 比较组合、折叠与流水线乘法器，展示了在时钟频率、计算延迟、吞吐量和硅片面积之间的经典体系结构权衡。
+
 > MIT 6.1920 · Constructive Computer Architecture
 > 讲师：Arvind · 日期：2024-02-08
 
@@ -145,6 +153,15 @@ BSV 中 `interface` 定义模块的外部可见 API（方法集合），与模�
 
 ---
 
-## 本讲小结
+## 核心机制小结与设计权衡
 
 时序电路通过寄存器保持状态，BSV 的规则语义保证每个规则原子执行；GCD、FIFO 和迭代乘法器是时序电路的典型案例，三种乘法器设计揭示了面积—延迟—吞吐量之间的经典权衡。
+
+## 核心机制思考与底层洞察
+
+::: insight 规则原子语义（ORAAT）与硬件并行的张力调和
+BSV 规则最迷人的特质在于其 **One-Rule-at-a-Time (ORAAT)** 形式化语义与物理硬件高并发之间的对立统一：
+
+1. **认知抽象层：串行原子事务**：在设计者的概念世界中，每个 Rule 都是不可分割的原子事务。你只需要证明：当系统处于一致性状态 $S$ 时，任一激活的规则 $R_i$ 单独触发后，产生的新状态 $S'$ 仍然合法。这从根本上消除了经典 Verilog 中多进程竞争冒险、时钟跨域和隐式时序冒险等令人头疼的心智负担。
+2. **硬件综合层：自动并行调度**：真实芯片不可能每个周期只执行一个规则。BSV 编译器充当了硬件事务调度器：它对所有规则的读写集合进行精细的形式化依赖分析（Read/Write Sets）。如果两条规则 $R_1$ 与 $R_2$ 互不干扰（Conflict-Free），硬件调度逻辑会在同一周期内同时发射执行它们；如果存在前向读写关系，编译器自动生成穿透旁路或定序逻辑（$R_1 < R_2$）；只有存在双向写冲突时才强制互斥仲裁。这种将复杂的并发正确性证明交给编译器算法的能力，正是建构式硬件设计能驾驭乱序多核芯片的核心基石。
+:::

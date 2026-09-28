@@ -1,5 +1,5 @@
 ---
-title: 敏捷开发过程
+title: '敏捷开发过程'
 type: lecture
 lecture: 4
 tags: [agile-development, scrum-framework, hardware-agility, sprint-planning]

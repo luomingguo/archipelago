@@ -1,11 +1,31 @@
 ---
-title: '介绍数据库 & 关系模型 & SQL'
+title: '关系模型与 SQL 基础'
 type: lecture
 lecture: 1
-tags: []
+tags: [relational-model, relational-algebra, sql-basics, declarative-query]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 1 介绍数据库 & 关系模型 & SQL
+
+# Lec 1 关系模型与 SQL 基础（Relational Model and SQL）
+
+> MIT 6.5830 / 6.5831 · Database Systems · 第 1 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
+
+## TL;DR
+
+- 关系模型建立在一阶谓词逻辑之上，通过二维关系（表）和元组（行）实现物理存储与逻辑数据的完全解耦。
+- 关系代数（选择、投影、笛卡尔积、集合差、重命名）构成了声明式查询优化的理论数学基石。
+- SQL 作为声明式语言只描述“想要什么”而非“怎么去取”，由数据库内核负责计划生成与物理执行。
+
+## 架构演进与核心洞察
+
+::: insight 声明式语言的数据独立性价值
+Codd 提出关系模型的最伟大贡献不仅在于表格，而在于确立了“物理数据独立性（Physical Data Independence）”。在关系模型诞生之前，网状模型（CODASYL）和层次模型（IMS）迫使程序员在代码里硬编码指针遍历逻辑。一旦磁盘物理布局变动，所有上层业务代码全部报废。SQL 的声明式本质把性能优化的沉重包袱从应用开发者肩上卸下，交给了内核查询优化器。
+:::
+
+## 核心机制与讲义正文
 
 ## 基本概念
 
@@ -109,8 +129,6 @@ graph TD
     C[Sally] --> E[cage1]
     D[Sam] --> F[cage2]
     
-
-
 
 ```
 

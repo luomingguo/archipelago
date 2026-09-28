@@ -1,12 +1,22 @@
-# 15.083 Integer Optimization
+---
+title: '15.083 整数规划与组合优化'
+type: course
+course: '15.083 整数规划与组合优化'
+course_id: '15.083'
+tags: [integer-programming, combinatorial-optimization, cutting-planes, branch-and-bound]
+status: stub
+source: 'https://ocw.mit.edu/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Fall 2009
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. Dimitris Bertsimas、Prof. Andreas Schulz
-- **主题标签 / Topics**: Engineering / Systems Engineering / Systems Optimization / Mathematics / Applied Mathematics / Computation
-- **说明**: MIT 现行课程目录中 15.083 目前的课程名为 *Integer Optimization*；此处收录的是 MIT OpenCourseWare 上 公开发布的 **Fall 2009** 学期讲义（当时课程名为 *Integer Programming and Combinatorial Optimization*）， 内容仅供参考，不代表当前开课内容一定完全相同。
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/)
+# 15.083 整数规划与组合优化
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.083
+
+## TL;DR
+
+- NP 难离散优化问题的精确与近似求解，聚焦多面体组合学与有效不等式。
+- Chvátal-Gomory 割平面、Benders 分解与列生成（Column generation）技术大幅提升求解边界。
+- 完全单模矩阵（Totally unimodular）性质建立了整数规划与线性松弛完全等价的充分条件。
 
 ## 课程简介 / Description
 

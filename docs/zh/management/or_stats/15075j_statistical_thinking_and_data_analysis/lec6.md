@@ -1,5 +1,5 @@
 ---
-title: 单样本推断与功效分析
+title: '单样本推断与功效分析'
 type: lecture
 lecture: 6
 tags: [confidence-interval, hypothesis-testing, t-test, statistical-power, sample-size-determination]

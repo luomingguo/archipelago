@@ -1,5 +1,5 @@
 ---
-title: 用生成式AI支持创新
+title: '用生成式AI支持创新'
 type: lecture
 lecture: 6
 tags: [generative-ai, prompt-engineering, concept-generation, ai-assisted-design]

@@ -72,7 +72,7 @@ https://github.com/6192-sp24
 
 [lec6.md](./lec6.md)
 
-# Lec 7 高速缓存与存储缓冲区
+# Lec 7 缓存与存储缓冲区
 
 [lec7.md](./lec7.md)
 

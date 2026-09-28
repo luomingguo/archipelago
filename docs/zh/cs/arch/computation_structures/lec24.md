@@ -2,18 +2,25 @@
 title: 并发与同步
 type: lecture
 lecture: 24
-tags: []
+tags: [concurrency, synchronization, semaphores, deadlock, mutual-exclusion]
 status: complete
 ---
 # Lec 24 并发与同步
 
-[[toc]]
+## TL;DR
+- **并发与同步动因**：多核共享内存通过 load/store 隐式通信，若无同步约束将引发数据竞争、未定义时序与脏写覆盖。
+- **信号量统一原语**：Dijkstra 计数信号量同时满足先后依赖（Precedence）与临界区互斥（Mutual Exclusion），构建生产者-消费者双变量不变量。
+- **死锁防范准则**：死锁源于互斥、持有并等待、不可抢占与循环等待四大条件；打破循环等待最有效的方法是建立全局锁偏序获取协议。
 
-我们已经学习 OS 通过时间片轮转让多个进程共享 CPU，现在进一步.在单个进程内，划分多个线程，由于现代 CPU 是多核的，我们系统尽可能并行执行多个线程，为了能够正确地配合执行任务，**必须同步（Synchronization）通信**
+---
+
+## 并发多线程与系统同步模型
+
+我们已经学习 OS 通过时间片轮转让多个进程共享 CPU，现在进一步在单个进程内划分多个线程。由于现代 CPU 是多核的，系统尽可能并行执行多个线程。为了能够正确地配合执行任务，**必须通过同步（Synchronization）机制协调通信**。
 
 ## 同步
 
-我们可以将计算任务分配给多线程执行。
+我们可以将计算任务分配给多线程执行：
 
 - 多个**独立（independent）**的顺序线程，它们竞争共享资源
 - 多个**协作（cooperating）**的顺序线程，他们相互通信
@@ -22,18 +29,18 @@ status: complete
 
 - 基于**共享内存模型（shared memory）**，所有线程**共享同一地址空间**，通过写入某个内存地址，另外一个线程读取该地址即可通信
   - 优点是实现简单，就是 load/store 操作
-  - 缺点是容易踩脚，数据竞争或冲突。
+  - 缺点是容易踩脚，产生数据竞争或冲突。
 - 基于**消息传递模型（Message Passing）**，各线程**地址空间不同**，需发送/接收显式消息。
-  - 优点：不容易踩脚
-  - 缺点：通信开销大，实现复杂。
+  - 优点：内存隔离强，不易踩脚
+  - 缺点：通信开销大，协议实现复杂。
 
-每当系统中存在并行进程时，就需要同步，
+每当系统中存在并行进程时，就需要同步：
 
 - fork-join ：并行进程可能需要等待多个事件发生
 - 生产者-消费者：消费者进程必须等到生产者进程生成数据
 - 互斥：操作系统必须确保资源在给定时间内仅由一个进程使用
 
-![image-20250420112250569](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68046895026b3.png)
+![多线程协作执行中的同步与资源互斥模型](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68046895026b3.png)
 
 > [!IMPORTANT]
 >
@@ -43,7 +50,7 @@ status: complete
 
 Solution: 大致有几种：
 
-- 共享内存。
+- 共享内存
 - 同步指令（需要硬件支持）。比如锁、信号量、原子操作
 - 系统调用
 
@@ -53,22 +60,22 @@ Solution: 大致有几种：
 
 有两个线程：Producer（生产者）：执行一系列操作，生成一个字符 `c`，然后发送给消费者；Consumer（消费者）：接收字符 `c`，然后执行一系列操作。
 
-![image-20250421165957035](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68060a59402b2.png)
+![单字符缓冲区生产者消费者无同步时序冲突](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68060a59402b2.png)
 
 每个线程内部是顺序执行的，但跨线程之间没有同步机制，可能出现以下问题：消费者在数据还没被生产时就尝试读取；生产者在数据还没被消费完就覆盖已有数据。
 
-我们使用符号 `≺`（"precede"）来表示先后约束
+我们使用符号 `≺`（"precede"）来表示先后约束：
 
 - 约束 1：先生产再消费：`Send(i) ≺ Receive(i)`，即生产者必须先发送第 `i` 个字符，消费者才能接收。
 - 约束 2：不能覆盖未消费的旧数据：`Receive(i) ≺ Send(i+1)`，即生产者在发送第 `i+1` 个字符前，消费者必须完成对第 `i` 个字符的接收。
 
 ### FIFO 缓冲区
 
-![image-20250421170648653](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68060aace0d6a.png)
+![定长环形FIFO缓冲区的前驱后继约束放宽](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68060aace0d6a.png)
 
-使用 FIFO 缓冲区放松约束。使用大小为 `n` 的 FIFO 缓冲区：允许生产者**最多领先消费者 `n` 步**；新约束变为`Receive(i) ≺ Send(i+n)` 。在生产者发送第 `i+n` 个字符前，消费者必须接收完第 `i` 个字符。
+使用 FIFO 缓冲区放松约束。使用大小为 `n` 的 FIFO 缓冲区：允许生产者**最多领先消费者 `n` 步**；新约束变为 `Receive(i) ≺ Send(i+n)`。在生产者发送第 `i+n` 个字符前，消费者必须接收完第 `i` 个字符。
 
-通常来说，会把这个 buffer 实现成**环形缓冲区（Ring buffer）**，原理缓冲区收尾相连，写满后从头写，用两个指针：`in`：生产者写的位置； `out`：消费者读的位置。
+通常来说，会把这个 buffer 实现成**环形缓冲区（Ring buffer）**，原理缓冲区首尾相连，写满后从头写，用两个指针：`in`：生产者写的位置； `out`：消费者读的位置。
 
 **示例**：
 
@@ -80,7 +87,8 @@ Solution: 大致有几种：
 4. 缓冲区满了，必须等待消费者读取至少一个；
 5. 消费者读取 `c0` → `out = 1`，此时缓冲区腾出一个位置；
 6. 生产者继续写入下一个字符到位置 `0`。
-7. ![image-20250904004010029](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250904004010029.png)
+
+![环形缓冲区读写指针回绕与满空状态判定](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250904004010029.png)
 
 ```c
 // Shared memory
@@ -129,15 +137,17 @@ signal(semaphore s):
 
 $signal(s)_i \prec wait(s)_{i+K}$
 
-#### 抽象
+#### 信号量资源池抽象与双变量不变量
 
-信号量做资源分配，我们可以抽象地理解这个场景。由 K 个资源组成的资源池，必须保证最多有 K 个资源被使用。 主要思想就是， 将信号量看成是**资源池的剩余资源数**，将其作为不变量。生产者消费者的代码改动如下，可以至多有 K 个消费者占用资源，生产者负责
+信号量不仅用于控制并发线程数量，更是在抽象层面上对有限物理资源池状态的守卫。设资源池容量为 $N$，信号量的当前整数值在数学上严格代表“当前可用的空闲资源项数”。
+
+在有界缓冲队列（Bounded Buffer）中，单纯使用一个信号量只能约束单向依赖。例如仅用 `chars` 跟踪可用字符：
 
 ```c
 // shared memory
 char buf[N];
 int in = 0, out = 0;
-samaphore chars = 0; // 当前最多可以有0个消息可以被访问
+samaphore chars = 0; // 当前队列中已就绪待读的字符数量
 
 // producer
 void send(char c) {
@@ -156,34 +166,41 @@ char recv() {
 }
 ```
 
-> 代码有什么问题？
+> **设计缺陷剖析**：上述朴素实现虽然保证了“先生产后消费”（$Send(i) \prec Receive(i)$），但完全丧失了对写指针溢出的保护！当生产者速度远高于消费者时，生产者会无限制推进 `in` 指针，覆盖尚未被消费的数据，破坏了 $Receive(i) \prec Send(i+N)$ 约束。
 
-能保证$send(i) \prec recv(i)$，但是不能保证数据被覆盖即$recv(i) \prec send(i+K)$
+为了同时双向约束生产与消费，必须引入**成对的双计数信号量**：
+- `chars`：跟踪有效数据项个数，初始为 $0$，由生产者的 `signal` 增加、消费者的 `wait` 消耗；
+- `spaces`：跟踪剩余空槽位个数，初始为 $N$，由生产者的 `wait` 申请、消费者的 `signal` 归还。
 
-正确的实现如下
+系统在任意时刻均维持严格的不变量（Invariant）：
+$$\text{chars} + \text{spaces} = N$$
+
+这种对称结构将先后约束映射为计数守卫：生产者受限于可用空间（`spaces`），消费者受限于可用数据（`chars`），双方在各自的信号量上阻塞等待，消除了缓冲区上溢与下溢风险。
+
+正确的完整双信号量实现如下：
 
 ```c
 // shared memory
 char buf[N];
 int in = 0, out = 0;
-samaphore chars = 0; // 当前最多可以有0个消息可以被访问
-samaphore spaces = N; // 当前最多可以有K个空间可以防止消息
+samaphore chars = 0;  // 初始有效数据为 0
+samaphore spaces = N; // 初始可用空间为 N
 
 // producer
 void send(char c) {
-  wait(spaces);
+  wait(spaces);       // 申请空槽位：若无空间则阻塞
   buf[in] = c;
   in = (in + 1) % N;
-  signal(chars);	// 
+  signal(chars);      // 生产完毕，唤醒等待数据的消费者
 }
 
 // consumer
 char recv() {
   char c;
-  wait(chars);
+  wait(chars);        // 申请有效数据：若队列空则阻塞
   c = buf[out];
   out = (out + 1) % N;
-  singal(spaces);
+  signal(spaces);     // 读取完毕，腾出一个空槽位
   return c;
 }
 ```
@@ -274,34 +291,56 @@ void release_lock() {
 }
 ```
 
-同步的阴暗面： 死锁
+同步的阴暗面：死锁。
 
-## 死锁问题
+## 死锁问题与打破循环等待
 
-示例，A 给 B 转账，但 B 又同时给 A 转账。
+并发系统中最棘手的故障模式是死锁（Deadlock）——两个或多个线程无限期地互相等待对方持有的锁释放，导致整个流水线永久停摆。典型案例如多账户间的并发交叉转账：
 
 ```c
 void transfer(int account1, int account2, int amount) {
-	wait(lock[account1]);
+  wait(lock[account1]);
   wait(lock[account2]);
   balance[account1] = balance[account1] - amount;
   balance[account2] = balance[account2] + amount;
   signal(lock[account2]);
   signal(lock[account1]);
 }
-
-Thread 1: wait(lock[6031]);
-Thread 2: wait(lock[6004]);
-Thread 1: wait(lock[6004]); // cannot complete
-// until thread 2 signals
-Thread 2: wait(lock[6031]); // cannot complete
-// until thread 1 signals
-No thread can make progress a Deadloc
 ```
 
-**死锁的四个必要条件**
+考虑以下交错时序：
+- 线程 1 执行 `transfer(6031, 6004, 100)`：已成功获取 `lock[6031]`，进而申请 `lock[6004]`；
+- 线程 2 执行 `transfer(6004, 6031, 200)`：已成功获取 `lock[6004]`，进而申请 `lock[6031]`；
+- 此时线程 1 等待线程 2 释放 `lock[6004]`，而线程 2 等待线程 1 释放 `lock[6031]`，两个线程均无法继续推进，形成死锁（Deadlock）。
 
-1. 互斥（Mutual Exclusion），每个资源（如筷子）一次只能由一个线程（哲学家）占有。
-2. 保持并等待（Hold and Wait），线程持有一部分资源，同时等待另一部分。
-3. 非抢占（No Preemption），资源不能被强行回收， 只能由占有者显式释放
-4. 循环等待（Circular Wait）
+### 死锁的四个必要条件（Coffman 条件）
+
+根据 Coffman 定理，死锁发生必须同时满足以下四个充分必要条件：
+
+1. **互斥（Mutual Exclusion）**：每个临界资源（如账户锁、打印机）在任意时刻至多被一个线程独占持有。
+2. **保持并等待（Hold and Wait）**：线程在持有至少一个资源的同时，又申请被其他线程独占持有的新资源。
+3. **不可抢占（No Preemption）**：资源不能被强制剥夺，只能由持有它的线程在完成任务后主动释放。
+4. **循环等待（Circular Wait）**：存在一组处于等待状态的线程 $\{T_0, T_1, \dots, T_n\}$，其中 $T_0$ 等待 $T_1$ 持有的资源，$T_1$ 等待 $T_2$ 持有的资源，$\dots$，$T_n$ 等待 $T_0$ 持有的资源，形成环路。
+
+### 打破死锁：全局锁偏序获取协议
+
+在工程实践中，预防死锁最鲁棒且开销最小的方法是**破坏循环等待条件**。系统设计者为所有互斥资源定义一个严格的**全局全序关系（Total Order）**（例如按照账户 ID 从小到大的顺序获取锁）：
+
+```c
+void transfer_safe(int account1, int account2, int amount) {
+  int first = (account1 < account2) ? account1 : account2;
+  int second = (account1 < account2) ? account2 : account1;
+  wait(lock[first]);
+  wait(lock[second]);
+  balance[account1] -= amount;
+  balance[account2] += amount;
+  signal(lock[second]);
+  signal(lock[first]);
+}
+```
+
+通过强制规定“无论谁向谁转账，一律先锁较小 ID、再锁较大 ID”，使得资源分配图（Resource Allocation Graph）永远保持有向无环（DAG），从微架构与算法层面彻底杜绝了循环等待。
+
+::: insight
+并发同步的本质是对“时钟偏斜（Clock Skew）”与“乱序内存访问（Weak Memory Ordering）”在软件语义上的强制拉齐。单靠软件内存读写无法跨核构建正确的互斥协议（如 Dekker/Peterson 算法在现代乱序弱一致性多核上因 store buffer 重排而失效），必须依赖底层硬件提供的原子指令（如 RISC-V 的 LR/SC 或 TAS）以及内存屏障（FENCE）。从体系结构视角看，锁与信号量是用微架构的原子总线锁定与缓存行失效传播，换取上层应用可推理的因果串行化保证。
+:::

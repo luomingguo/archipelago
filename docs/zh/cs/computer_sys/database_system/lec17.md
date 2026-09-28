@@ -1,11 +1,31 @@
 ---
-title: 最终一致性
+title: '最终一致性与向量数据库检索'
 type: lecture
 lecture: 17
-tags: []
+tags: [eventual-consistency, dynamo-architecture, vector-search, embedding-index]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 17 最终一致性
+
+# Lec 17 最终一致性与向量数据库检索（Eventual Consistency and Vector Databases）
+
+> MIT 6.5830 / 6.5831 · Database Systems · 第 17 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
+
+## TL;DR
+
+- NoSQL 与 Dynamo 架构打破严格强一致性，通过一致性哈希、矢量时钟与读取修复实现高可用最终一致性。
+- AI 大模型时代催生了面向高维非结构化数据的专用向量数据库系统（Vector DB）。
+- 近似最近邻搜索（ANN）算法（如 HNSW 图索引、IVF-PQ 倒排量化）突破高维向量检索的维度灾难。
+
+## 架构演进与核心洞察
+
+::: insight 向量数据库是不是独立数据库品类？
+近年来行业对向量数据库的形态有很大争论。专用向量数据库（如 Milvus, Pinecone）针对高维浮点数 SIMD 计算和图遍历做了极深特化；而传统关系数据库（如 PostgreSQL pgvector）则在成熟 ACID 和元数据混合过滤上有天然优势。未来真正的胜负手在于“混合搜索（Hybrid Search）”能力——即能否在同一个事务内同时优雅完成标量结构化过滤与高维语义向量相似度匹配。
+:::
+
+## 核心机制与讲义正文
 
 ## 阅读材料
 

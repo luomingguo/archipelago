@@ -1,12 +1,22 @@
-# 15.097 Seminar in Statistics and Data Analysis
+---
+title: '15.097 统计与机器学习前沿研讨'
+type: course
+course: '15.097 统计与机器学习前沿研讨'
+course_id: '15.097'
+tags: [machine-learning, statistical-learning, high-dimensional-stats, regularization]
+status: stub
+source: 'https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Spring 2012
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. Cynthia Rudin
-- **主题标签 / Topics**: Engineering / Computer Science / Algorithms and Data Structures / Artificial Intelligence / Mathematics / Applied Mathematics / Probability and Statistics
-- **说明**: MIT 现行课程目录中 15.097 目前的课程名为 *Seminar in Statistics and Data Analysis*；此处收录的是 MIT OpenCourseWare 上 公开发布的 **Spring 2012** 学期讲义（当时课程名为 *Prediction: Machine Learning and Statistics*）， 内容仅供参考，不代表当前开课内容一定完全相同。
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/15-097-prediction-machine-learning-and-statistics-spring-2012/)
+# 15.097 统计与机器学习前沿研讨
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.097
+
+## TL;DR
+
+- 统计学习理论与现代高维数据分析交叉前沿，探究过拟合、泛化误差界与正则化。
+- Lasso、岭回归与弹性网（Elastic net）揭示 L1/L2 惩罚项在特征选择与稀疏恢复中的几何意义。
+- 核方法、支持向量机（SVM）与集成学习算法为复杂非线性高维流形分类提供坚实统计保证。
 
 ## 课程简介 / Description
 

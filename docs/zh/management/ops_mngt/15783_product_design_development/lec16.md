@@ -1,5 +1,5 @@
 ---
-title: 产品测试与战略转向
+title: '产品测试与战略转向'
 type: lecture
 lecture: 16
 tags: [concept-testing, product-testing, market-validation, lean-startup, pivot]

@@ -1,5 +1,5 @@
 ---
-title: 体验与服务设计
+title: '体验与服务设计'
 type: lecture
 lecture: 9
 tags: [service-design, service-blueprint, customer-experience, product-service-systems]

@@ -2,20 +2,25 @@
 title: 旁路技术和 EHR
 type: lecture
 lecture: 23
-tags: []
+tags: [bypassing, forwarding, ehr, bluespec, elastic-pipeline]
 status: complete
 ---
 # Lec 23 旁路技术和 EHR
 
+## TL;DR
+- **旁路消除停顿**：通过在生产者与消费者之间建立组合旁路通路，使最新计算结果直接进入后续阶段，削减 RAW 数据冒险气泡。
+- **普通寄存器瓶颈**：标准时钟边沿触发寄存器输出滞后一个周期，无法支持同周期内规则/方法间“先写后读”的原子通信。
+- **EHR 虚时序原语**：瞬时历史寄存器（EHR）通过内部多路选择器链，在一个物理时钟周期内构建虚拟子周期时序，支持并发规则调度。
+
+---
+
+## 旁路技术与同周期通信困境
+
 旁路技术（bypassing， 又叫 forwarding）是一种为了减少 stall，在数据的生产-消费者之间的提供额外的数据通路的技术。常规途经而言，一个值会被写回寄存器文件（register file），然后由 decode 阶段读取。而 Bypassing 允许值被计算出来的同时，就直接被 decode 阶段使用，而不等写回。旁路技术的**副作用**：Bypassing 会引入新的组合逻辑路径，可能导致组合延迟增加，从而延长时钟周期，也会增加芯片面积。bypass 的效率取决于它被使用的频率。
 
-![image-20250422064445680](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68354a192fba3.png)
+![流水线阶段间旁路与前递数据通路结构](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68354a192fba3.png)
 
 EHR（Ephemeral History Registers）是 Bluespec 中一种机制，用于精确控制寄存器的写入和读取，搭配 bypassing 使用时，可以实现更灵活的控制路径数据传递和调度。
-
-## 本讲导览
-
-- Bluespec 中的旁路技术
 
 ## Bluespec 中旁路技术
 
@@ -57,7 +62,7 @@ EHR（Ephemeral History Register） 是为了解决普通寄存器无法在同�
 
 我们可以看到有一个触发器
 
-![image-20250528085401338](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68365eb79f0ef.png)
+![EHR内部多端口多路选择器与触发器硬件结构](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68365eb79f0ef.png)
 
 `r[1]`返回：
 
@@ -102,3 +107,7 @@ C：冲突，不能同时调用
 1. 无冲突 FIFO。 当 FIFO 不满也不空的时候，enq 和 deq 可以同时进行，但是当前周期入队的值不会被同一个周期的出队看到。**入队和出队是解耦的**，互相看不到对方的“当前操作”。
 2. 流水线型 FIFO。正常来说：向满的 FIFO 入队是不允许的。但如果在同一个周期中同时执行一个 `deq`，那就允许 `enq`，因为 `deq` 腾出空间，`enq` 正好填补进去。
 3. 旁路 FIFO。正常来说：从空的 FIFO 出队是不允许的；但如果你在同一个周期中同时执行 enq，则允许出队；这个新入队的数据会直接送给出队口，好像绕过 FIFO 存储一样
+
+::: insight
+EHR（Ephemeral History Register）的精妙之处在于用组合逻辑在单个时钟周期内构造出多个“逻辑子周期（Micro-steps）”。通过严格定义端口间的序关系（$r_0 \prec w_0 \prec r_1 \prec w_1$），编译器能够在维持 ORAAT（One-Rule-At-A-Time）串行化语义的同时，将具有生产-消费依赖的规则调度到同一个物理周期并行触发。这种能力正是用高级综合设计单周期旁路 FIFO 与无停顿流水线的核心基石。
+:::

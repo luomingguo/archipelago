@@ -2,10 +2,18 @@
 title: 二进制计算
 type: lecture
 lecture: 4
-tags: []
+tags: [twos-complement, ripple-carry-adder, carry-select-adder, carry-lookahead-adder, prefix-tree]
 status: complete
 ---
 # Lec 4 二进制计算
+
+## TL;DR
+
+- **补码算术统一性**：通过取模模数环绕将减法统一为加负数（取反加一），使加减法共享相同的硬件数据通路而无需维护正负零符号分支。
+- **加法器关键路径瓶颈**：行波进位加法器（RCA）具有 $O(N)$ 的串行延迟；选择进位加法器（CSelA）通过冗余投机预先计算进位为 0/1 的高位结果，以面积换取延迟折半。
+- **超前进位与前缀树优化**：抽象出进位生成（Generate）与传播（Propagate）算子，利用算子结合律构建 $O(\log N)$ 深度前缀计算树（CLA / Kogge-Stone），实现进位链对数级收敛。
+
+---
 
 ## 本讲导览
 
@@ -18,17 +26,17 @@ status: complete
 
 > 看一下例子
 >
-> ![image-20250426132139309](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c6eb9e95a8.png)
+> ![4 位无符号数与有符号数二进制加法溢出示例对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c6eb9e95a8.png)
 
 当发送 overflow 时候，通用的做法就是忽略额外 bit。可以看成是环绕的，如下图，
 
-![image-20250426132933523](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c6f4018ddd.png)
+![模数运算钟表盘式环绕与溢出截断几何示意图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c6f4018ddd.png)
 
 如果只是用最高位作为符号位，其他用无符号的方式表示数字大小，将会导致（+0, -0）都表示为 0，电路在对 0 进行加减法时候就会发现这相当不一样，也会变的很复杂。因此没有采用。
 
 补码表示法（Two's Complement Encoding），环绕图中获取编码灵感。
 
-![image-20250426133656332](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c70fba9d4d.png)
+![4 位补码数轴环绕分布与最高位负权值编码图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680c70fba9d4d.png)
 
 #### 补码表示的算术
 
@@ -47,7 +55,7 @@ status: complete
 
 示例
 
- ![image-20250426175552399](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680cadab4e8fa.png)
+ ![补码减法转换为加负数（A 加取反加一）手算与硬件对齐示例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680cadab4e8fa.png)
 
 第二个例子中发生了 overflow， 这意味着发生了， zero crossing 导致的高位变化（符号变化）， 这是没有意义的，需要忽略，只用剩下的低位来表示结果。
 
@@ -57,7 +65,7 @@ status: complete
 
 ### 行波加法器
 
-![image-20250426181810966](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680cb2ec118f8.png)
+![行波进位加法器最坏进位传播关键路径分析图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680cb2ec118f8.png)
 
 在加法器中，最坏情况下的路径是从最低位（LSB）一路向最高位（MSB）传播进位，比如在将 11...111 和 00...001 相加时。此时的总延迟 $t_{PD}$ 是 $(n-1) \times t_{PD,\ C1\text{-}C0} + t_{PD,\ C1\text{-}S} $，其中 $t_{PD,\ C1\text{-}C0}$ 是一个进位到下一个进位的延迟，而 $t_{PD,\ C1\text{-}S}$ 是进位到求和位的延迟。整体延迟是 $O(n)$ 量级，也就是说，加法器的延迟随着操作数的位数 n **线性增长**。
 
@@ -65,7 +73,7 @@ status: complete
 
 选择进位加法器（Carry-Select Adder）权衡面积和速度
 
- ![image-20250426182224689](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680cb3ea2300b.png)
+![选择进位加法器（CSelA）双路径投机与多路选择器数据通路图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680cb3ea2300b.png)
 
 可以将高半部分的加法器复制两份，一份假设进位输入为 0，另一份假设进位输入为 1。然后根据低半部分的加法器产生的进位输出来选择正确的高半部分结果。其传播延迟为$t_{PD,32} = t_{PD,16} + t_{PD,\text{MUX}}$。如果使用 16 位的串行进位加法器，这种方法大约可以将 32 位串行进位加法器的延迟减少一半。如果继续递归应用这种策略（例如，用 8 位的 carry-select 加法器来构建 16 位加法器，以此类推），则最终加法器的延迟可以$t_{PD,n}$达到 O($\log{n}$)的量级
 
@@ -75,7 +83,7 @@ status: complete
 
 加速进位加法器（Carry-Lookahead Adder ，CLA）
 
-![image-20250427191644780](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680e122c4d9de.png)
+![超前进位加法器（CLA）树状 GP 递归合并与进位分发拓扑图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/680e122c4d9de.png)
 
 Carry-Lookahead Adders (CLAs) 通过把串行的进位计算链变成树状结构，在 $O(\log n)$延迟内计算所有进位。核心思路：先把“进位如何产生”抽象成两个可结合的信号，再用树结构并行求出所有进位。
 
@@ -115,3 +123,19 @@ $$G_{block} = G_H + P_H\cdot G_L \qquad P_{block} = P_H\cdot P_L$$
 向上算 GP、向下分发进位各 $\Theta(\log N)$，最后每位再做一次 $S=P\oplus C_{in}$（一个 XOR 延迟）。因此整个加法器延迟为 $\Theta(\log N)$，相比行波加法器的 $\Theta(N)$ 是巨大提升。此时全加器内部的 $C_{out}$ 电路已不再需要，可删去。
 
 > 这种 generate-propagate 策略是目前最快加法器的基础，进一步可了解 **Kogge-Stone 加法器**。
+
+---
+
+## 核心机制思考与底层洞察
+
+::: insight 进位链前缀图论与硬件并行度的本质代价
+加法运算在形式逻辑上看似简单，但在 VLSI 物理实现中，它是理解硬件并发与拓扑权衡的终极试金石：
+
+1. **线性递归向并行前缀算子的数学跃迁**：
+   - 行波进位本质上是一阶线性差分方程 $C_i = G_i + P_i C_{i-1}$，串行求解必然导致 $O(N)$ 延迟。
+   - 超前进位（CLA）与其工业进阶版（Brent-Kung、Kogge-Stone、Han-Carlson）的核心思想，是将进位传递抽象为半群代数系统上的**前缀扫描（Parallel Prefix Scan）**。通过定义满足结合律的算子 $(G_H, P_H) \circ (G_L, P_L) = (G_H \lor (P_H \land G_L), P_H \land P_L)$，进位求解被彻底重构为平衡二叉树，使逻辑门级深度压缩至 $\Theta(\log N)$。
+2. **硅片物理实体的三维权衡（PPA 与布线拥塞）**：
+   - **RCA（行波）**：逻辑级数最多（$O(N)$），但版图面积最小（$O(N)$），且仅需最近邻单轨金属连线，在 8 位或低频嵌入式场景中仍然最具性价比。
+   - **CSelA（选择进位）**：利用典型的空间换时间（Spatial Speculation）冗余复制高位加法器，以几乎翻倍的静态面积换取延迟减半。
+   - **Kogge-Stone / CLA（超前与并行前缀）**：虽然理论上具有最优的对数逻辑级数，但在深亚微米工艺下，树状网络引入了密集的跨位长导线与极高的扇出负载（Fan-out），导致线网寄生电阻电容（RC Delay）反超逻辑门延迟，甚至引发严重的布线拥塞（Routing Congestion）。现代高性能体系结构设计从来没有单纯的“算法胜出”，而是必须在逻辑层数、门单元面积与物理布线密度三者构成的帕累托前沿面上寻找动态折中。
+:::

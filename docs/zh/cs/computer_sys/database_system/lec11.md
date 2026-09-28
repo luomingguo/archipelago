@@ -1,28 +1,31 @@
 ---
-title: 分析数据库的布局
+title: '分析型数据库：列式存储与轻量级压缩'
 type: lecture
 lecture: 11
-tags: []
+tags: [columnar-storage, run-length-encoding, dictionary-compression, c-store]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 11 分析数据库的布局
 
-> 阅读材料
->
-> [C-Store: A Column Oriented DBMS, 2005](https://web.stanford.edu/class/cs345d-01/rl/cstore.pdf)
->
-> [Column-Stores vs. Row-Stores: How Different Are They Really?, SIGMOD'08](https://www.cs.umd.edu/~abadi/papers/abadi-sigmod08.pdf)
+# Lec 11 分析型数据库：列式存储与轻量级压缩（Column Stores and Database Compression）
 
-我们将讨论面向列的数据库，它代表了构建关系数据库的不同方式，该数据库针对大规模的读密集型操作进行了优化，而非对事务处理的优化。
+> MIT 6.5830 / 6.5831 · Database Systems · 第 11 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
 
-数据库的工作负载可以分为以下 3 种类型：
+## TL;DR
 
-- OLTP, Online Transactional Processing，联机事务处理。OLTP 负载的特点是操作快速、运行时间短、重复性高，查询通常很简单，并且每次只作用于一个实体。
-   这类负载通常**写多读少**，每次只读取或更新数据库中的少量数据。
-  - 一个 OLTP 负载的例子是 亚马逊的前台商店系统：用户可以将商品加入购物车并进行购买，但这些操作只影响他们自己的账户。
+- 分析型负载（OLAP）通常只访问宽表的少数几列但需全表聚合扫描，行存架构造成极大的无用 I/O 浪费。
+- 列式存储（C-Store / Parquet）将同列数据连续存放，极大提升了压缩比与矢量化扫描效率。
+- 轻量级压缩技术（RLE 游程编码、字典编码、Bit-packing）允许算子直接在压缩数据上执行谓词过滤。
 
-- OLAP, Online Analytical Processing，连接分析处理。OLAP 负载的特点是运行时间长、查询复杂，通常会读取数据库中很大一部分数据。这类负载通常用于分析或从 OLTP 系统收集的数据中推导出新信息。一个 OLAP 负载的例子是：亚马逊统计某个下雨天，匹兹堡地区最畅销的商品是什么。
-- HTAP , Hybrid Transactional and Analytical Processing(HTAP)，混合事务与事务处理。HTAP 是一种新型的数据库负载模式（近年来越来越流行），它将 OLTP 和 OLAP 的负载**整合在同一个数据库系统中**。
+## 架构演进与核心洞察
+
+::: insight 延迟物化（Late Materialization）的高效秘密
+列存系统最核心的性能技巧之一是延迟物化。传统的做法是在扫描完单列后立即将整行数据拼接（物化）出来传递给下游；而高级列存优化引擎在整个过滤、聚合甚至 Join 阶段始终传递虚拟列向量与位置位图（Bitmaps），只有在最终向客户端返回字段的最后一刻才进行跨列物化拼装，避免了成百万次无意义的内存复制。
+:::
+
+## 核心机制与讲义正文
 
 ## 1. 回顾优化器
 

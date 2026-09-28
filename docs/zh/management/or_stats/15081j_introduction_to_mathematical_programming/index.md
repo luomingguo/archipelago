@@ -1,11 +1,22 @@
-# 15.081[J] Introduction to Mathematical Programming
+---
+title: '15.081J 数学规划导论'
+type: course
+course: '15.081J 数学规划导论'
+course_id: '15.081J'
+tags: [mathematical-programming, linear-programming, duality-theory, polyhedral-combinatorics]
+status: stub
+source: 'https://ocw.mit.edu/courses/6-251j-introduction-to-mathematical-programming-fall-2009/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Fall 2009
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. Dimitris Bertsimas
-- **主题标签 / Topics**: Engineering / Computer Science / Algorithms and Data Structures / Software Design and Engineering / Systems Engineering / Mathematics / Applied Mathematics / Discrete Mathematics
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/6-251j-introduction-to-mathematical-programming-fall-2009/)
+# 15.081J 数学规划导论
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.081J
+
+## TL;DR
+
+- 研究生级数学规划理论基石，系统建立凸集、多面体几何与线性规划对偶理论。
+- 严格证明强对偶性定理、互补松弛条件与 Farkas 引理，解构单纯形几何退化性。
+- 内点法与多项式时间算法复杂度分析，奠定了现代凸优化的大规模计算理论基础。
 
 ## 课程简介 / Description
 

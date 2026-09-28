@@ -1,12 +1,24 @@
-# 15.071 The Analytics Edge
+---
+title: '15.071 数据分析优势（The Analytics Edge）'
+type: course
+course: '15.071 数据分析优势（The Analytics Edge）'
+course_id: '15.071'
+tags: [analytics-edge, machine-learning, linear-regression, integer-optimization]
+status: stub
+source: 'https://ocw.mit.edu/courses/15-071-the-analytics-edge-spring-2017/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Spring 2017
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. Dimitris Bertsimas
-- **主题标签 / Topics**: Business / Management / Operations Management / Mathematics / Probability and Statistics
+# 15.071 数据分析优势（The Analytics Edge）
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.071
+
+## TL;DR
+
+- 以真实产业案例（最高法院判决预测、推特情感、Netflix 推荐）驱动的数据分析核心课。
+- 融会贯通线性回归、逻辑回归、分类回归树（CART）、随机森林与聚类算法。
+- 将预测模型无缝接入整数规划与线性优化，实现从预测洞察向可落地决策的端到端跃迁。
+
 - **同一课程的其他编号 / Also listed as**: 15.0711、15.727（MIT 目录中同一门课程的不同班级/项目编号）
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/15-071-the-analytics-edge-spring-2017/)
 
 ## 课程简介 / Description
 

@@ -2,14 +2,21 @@
 title: 引言
 type: lecture
 lecture: 1
-tags: []
+tags: [bsv, hardware-description-language, combinational-circuits, alu-design, static-elaboration]
 status: complete
 ---
 # Lec 1 引言
 
+## TL;DR
+
+- 建构式计算机架构采用可执行的 BSV 描述，所有代码兼具周期精确仿真与门级综合为实际硬件的能力。
+- 组合电路在数学上等价于无状态的纯函数，ALU 本质上是由操作码控制的多路选择器（MUX）网络。
+- BSV 引入类似现代函数式语言的强类型系统（结构体、枚举、类型别名），在编译期拦截非法信号互联。
+- 硬件描述语言中的 `for` 循环属于编译期静态展开（Static Elaboration），用于例化空间并联硬件，绝非软件的运行时循环。
+
 ## 什么是计算机架构？
 
-![image-20260613120530699](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613120530699.png)
+![EDSAC 早期计算机与现代微芯片对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613120530699.png)
 
 通过对比 EDSAC（1949 年，英国剑桥大学制造的早期计算机）与现代计算设备，可以直观感受到计算机在体积、速度、成本、可靠性等方面的巨大进步。
 
@@ -33,7 +40,7 @@ status: complete
 
 ## BSV 设计流程
 
-![截屏 2024-07-02 21.01.34](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6683fa3615da7.png)
+![BSV 从高级设计到周期仿真与 ASIC/FPGA 综合流程](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6683fa3615da7.png)
 
 BSV 源代码经 Bluespec 编译器处理后可以走两条路径：一条是直接在 Bluespec Simulator 中进行周期精确（*cycle-accurate*）的仿真；另一条是先生成 Verilog RTL，再交给 Xilinx Vivado 做仿真或综合（*synthesis*），综合结果可进一步生成 gate 级电路，用于功耗分析（*power analysis*），并最终可制成专用集成电路（ASIC）。
 
@@ -45,7 +52,7 @@ BSV 源代码经 Bluespec 编译器处理后可以走两条路径：一条是直
 
 算术逻辑单元（Arithmetic-Logic Unit，ALU）是组合电路的典型例子：它接收两个数据输入 a、b 和一个操作码函数（如 Add、Sub、And、Or 等），输出结果；ALU 内部本质上是若干个分别实现某种运算的组合电路，再通过一个由 函数控制的多路选择器（*mux*）将它们组合起来，选出对应的输出。
 
-![image-20260613122427603](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613122427603.png)
+![基于多路选择器 MUX 的组合 ALU 结构框图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613122427603.png)
 
 ## BSV 类型系统
 
@@ -137,11 +144,11 @@ endinstance
 
 全加器（*full adder*，简写 fa）可以作为黑盒（*black box*）使用：它接收`x[i]`、`y[i]`和进位`c[i]`，输出本位结果`s[i]`和进位输出`c[i+1]`。将多个 fa 级联（*cascade*），就构成 **行波进位加法器**（*ripple-carry adder*）；例如一个 2 位行波进位加法器就是把两个 fa 按位串联，前一位的进位输出作为后一位的进位输入。
 
-![image-20260613124928251](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613124928251.png)
+![基于全加器级联的 2 位行波进位加法器电路](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613124928251.png)
 
 如果要构建 w 位的行波进位加法器，按照同样模式逐位手写`c[1],s[0]=fa(...)、c[2],s[1]=fa(...)`直到`c[w],s[w-1]=fa(...)`，会非常繁琐且重复。
 
-![image-20260613125004390](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613125004390.png)
+![w 位行波进位加法器的硬件串联展开结构](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260613125004390.png)
 
 解决方法是使用 for 循环，并依靠编译器在编译期把循环完全展开（*unfold*）：
 
@@ -152,8 +159,6 @@ return {c[w], s}
 ```
 
 写成上面这样，最终效果等价于把`c[1],s[0]=fa(...)`一直到`c[w],s[w-1]=fa(...)`这一长串等式手写出来。需要特别注意的是，这里的 for 并不是 Python 等语言中真正的运行时循环，而只是编译器在编译期用来减少重复代码的一种简写，它必须在 w 的值编译期已知的前提下被完全展开。
-
-## 组合 ALU 的整体结构
 
 ## 1. 课程概述
 
@@ -183,7 +188,7 @@ BSV 源代码 → Bluespec 编译器 → Verilog RTL → Xilinx Vivado 综合 �
 
 ### 2.1 算术逻辑单元（*ALU*）
 
-BSV 中的组合 ALU：
+在 BSV 中，组合 ALU 作为一个高阶纯函数实现：
 
 ```bsv
 function Data alu(Data a, Data b, AluFunc func);
@@ -201,7 +206,11 @@ function Data alu(Data a, Data b, AluFunc func);
 endfunction
 ```
 
-本质上是由 `func` 信号控制的多路选择器（*MUX*）。
+**底层硬件结构与时序分析**：
+
+- **并发物理计算**：在真实物理芯片中，ALU 内部的加法器（`addN`）、位逻辑门阵列（`andN`, `orN`）以及移位器全部是并发运行的。一旦操作数输入线 `a` 和 `b` 产生电平跳变，所有底层硬件算子均会同时开始电路充放电并计算出中间电平。
+- **MUX 选通机制**：`case(func)` 结构在综合后直接映射为一个大规模多路复用器（Multiplexer, MUX）。控制信号 `func` 作为 MUX 的选择线，根据当前指令的操作码选择将哪一条已经计算好的结果总线连接到输出引脚 `res`。
+- **功耗与关键路径取舍**：这种全组合 ALU 结构的吞吐率为每周期一次，但所有未被选中的运算分支仍会产生动态翻转功耗。移位与带符号算术右移通常具备更长的逻辑级联延迟，因此在高速流水线设计中，往往需要将 ALU 的输出路径作为主时钟频率约束的关键路径进行优化。
 
 ---
 
@@ -295,6 +304,15 @@ BSV 支持参数化电路（如 n 位加法器），编译时确定 n 后自动�
 
 ---
 
-## 本讲小结
+## 核心机制小结与体系结构权衡
 
 BSV 通过强类型系统和静态展开，将函数式高级描述编译为可综合的门级 Verilog；组合电路以纯函数定义，所有循环在编译期展开，设计者获得「写高级代码、得硬件电路」的体验。
+
+## 核心机制思考与底层洞察
+
+::: insight 硬件构造的心智模型转换：空间展开与时间复用
+从高级软件语言（如 C/Python）转向硬件描述语言（HDL）时，工程师面临的最大认知挑战在于对控制流与循环的理解：
+
+1. **循环的本质对立**：在软件程序中，`for` 循环是**时间复用（Time Multiplexing）**——同一套 CPU 运算资源在连续的多个时钟周期内反复执行；而在 BSV 等硬件描述语言中，组合逻辑中的 `for` 循环是**空间例化（Spatial Replication）**——编译器在硅片平面上一次性生成 $N$ 份独立的物理加法器和布线。如果软件工程师在 HDL 里误用了包含大循环的复杂计算，会在编译期瞬间引爆芯片面积。
+2. **纯函数与硬件组合逻辑的数学同构**：BSV 将组合电路严格建模为数学意义上的纯函数（无时钟、无状态翻转、无副作用）。输入电平的连续改变即刻沿物理导线传导，最终输出仅取决于当前输入。这种高阶函数式抽象让形式化验证与高级编译器重构成为可能，彻底打破了传统手写 Verilog 寄存器级互联容易引入锁存器（Latch）或未定义悬空状态的顽疾。
+:::

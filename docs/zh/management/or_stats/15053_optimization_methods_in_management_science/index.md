@@ -1,12 +1,22 @@
-# 15.053 Optimization Methods in Business Analytics
+---
+title: '15.053 商业分析中的优化方法'
+type: course
+course: '15.053 商业分析中的优化方法'
+course_id: '15.053'
+tags: [linear-programming, integer-programming, simplex-method, network-optimization]
+status: stub
+source: 'https://ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Spring 2013
-- **课程级别 / Level**: Undergraduate
-- **授课教师 / Instructors**: Prof. James Orlin、Dr. Ebrahim Nasrabadi
-- **主题标签 / Topics**: Business / Operations Management / Project Management / Engineering / Systems Engineering / Systems Optimization / Mathematics / Applied Mathematics / Probability and Statistics / Social Science / Game Theory
-- **说明**: MIT 现行课程目录中 15.053 目前的课程名为 *Optimization Methods in Business Analytics*；此处收录的是 MIT OpenCourseWare 上 公开发布的 **Spring 2013** 学期讲义（当时课程名为 *Optimization Methods in Management Science*）， 内容仅供参考，不代表当前开课内容一定完全相同。
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/)
+# 15.053 商业分析中的优化方法
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.053
+
+## TL;DR
+
+- 优化建模是管理决策的核心，涵盖线性规划、整数规划、网络流与决策树分析。
+- 单纯形算法、对偶理论与影子价格量化了资源约束变化对总体经济收益的边际影响。
+- 分支定界与割平面法为离散变量组合优化提供了通用精确求解框架。
 
 ## 课程简介 / Description
 

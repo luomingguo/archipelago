@@ -1,12 +1,22 @@
-# 15.084[J] Nonlinear Optimization
+---
+title: '15.084J 非线性规划'
+type: course
+course: '15.084J 非线性规划'
+course_id: '15.084J'
+tags: [nonlinear-programming, convex-analysis, kkt-conditions, gradient-methods]
+status: stub
+source: 'https://ocw.mit.edu/courses/15-084j-nonlinear-programming-spring-2004/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Spring 2004
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. Robert Freund
-- **主题标签 / Topics**: Engineering / Systems Engineering / Systems Optimization / Mathematics / Applied Mathematics
-- **说明**: MIT 现行课程目录中 15.084[J] 目前的课程名为 *Nonlinear Optimization*；此处收录的是 MIT OpenCourseWare 上 公开发布的 **Spring 2004** 学期讲义（当时课程名为 *Nonlinear Programming*）， 内容仅供参考，不代表当前开课内容一定完全相同。
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/15-084j-nonlinear-programming-spring-2004/)
+# 15.084J 非线性规划
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.084J
+
+## TL;DR
+
+- 连续优化中的非线性理论，涵盖凸函数、凸集几何与广义一阶/二阶最优化极值条件。
+- KKT（Karush-Kuhn-Tucker）条件系统刻画含不等式约束优化的一阶必要与充分条件。
+- 牛顿法、拟牛顿法（BFGS）、共轭梯度法与增广拉格朗日乘子法支撑算法求解。
 
 ## 课程简介 / Description
 

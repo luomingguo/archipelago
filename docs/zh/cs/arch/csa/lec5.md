@@ -2,10 +2,17 @@
 title: '指令流水线——冒险消解与时序约束（Instruction Pipelining: Hazard Resolution, Timing Constraints）'
 type: lecture
 lecture: 5
-tags: []
+tags: [pipelining, hazards, forwarding, branch-delay-slot, precise-exceptions]
 status: complete
 ---
-# Lec 05 指令流水线——冒险消解与时序约束（*Instruction Pipelining: Hazard Resolution, Timing Constraints*）
+# Lec 5 指令流水线——冒险消解与时序约束（Instruction Pipelining: Hazard Resolution, Timing Constraints）
+
+## TL;DR
+- **流水线吞吐与三大冒险**：流水线通过时钟频率切分提升吞吐，但结构冒险、RAW 数据依赖与控制流转移共同推高 CPI。
+- **数据冒险消解范式**：通过硬件检测比较器触发流水线停顿（Stall），引入前递旁路（Forwarding）消解 ALU-ALU 气泡，仅留 Load-Use 延迟单周期停顿。
+- **分支与精确异常仲裁**：遵循“老指令优先”原则，执行级分支误预测与后级异常处理拥有最高仲裁权，原子刷动作废年轻指令并重定向取指。
+
+---
 
 > MIT 6.5900 Fall 2024 · Daniel Sanchez 主题：理想流水线与 CPI、三类冒险、数据冒险消解（停顿/旁路/推测）、控制冒险与跳转/分支、异常处理
 
@@ -103,11 +110,16 @@ $$ \text{IRSrcD} = \begin{cases} \text{nop} & opcode_D \in {JAL, JALR} \ \text{I
 
 > JAL/JALR 跳转后需 kill 紧随的一条指令（一个气泡）。
 
-### 流水化条件分支
+### 流水化条件分支与多级控制方程
 
-分支条件直到**执行级**才知道。译码级该怎么办？**继续推测**——译码 I3、取指 I4。若分支 taken：kill 后续两条指令，且译码级指令无效（故 stall 信号无效，taken 时不停顿）。
+在五级流水线中，条件分支的比较结果与目标地址计算默认直到**执行级（E）**结束时才能完全决出。而在执行级解析完成之前，取指级（F）和译码级（D）已经按照顺序预测 `PC+4` 分别取入了后续的两条指令（如 $I_3$ 与 $I_4$）。
 
-控制方程（PC 与 IR 的多路选择，**优先较老的指令**即执行级优先于译码级）：
+如果分支最终判定为 **Taken（跳转成立）**，那么这两个在飞的推测执行指令就是错误的，硬件必须在下一个时钟上升沿将它们**强制消解（Kill）**：
+1. 将译码级寄存器（`IR_D`）与执行级寄存器（`IR_E`）的内容清零或替换为 `NOP`（空操作）；
+2. 此时，即使译码级检测到了与更早指令的数据冒险依赖，其发出的 `stall` 信号也必须被**抑制**，因为这批指令本身就已被废弃，决不能因为假停顿而冻结流水线；
+3. 将 PC 重定向到分支目标地址（$PC_{\text{branch}} = PC_E + \text{imm}_E$）。
+
+控制通路的硬件多路选择逻辑严格遵循**“老指令优先”原则**（执行级老指令的控制决策无条件覆盖译码级新指令）：
 
 ```text
 IRSrcD = case opcodeE: Taken branch → nop
@@ -118,7 +130,10 @@ PCSrc  = case opcodeE: Taken branch → pc+imm (来自 E)
                        else → (case opcodeD: JAL → pc+imm(D); JALR → rs1+imm(D); else → pc+4)
 ```
 
-> nop ⇒ kill；pc+imm/rs1+imm ⇒ restart；pc+4 ⇒ speculate（推测）。
+上述控制方程中：
+- `nop` 代表将控制信号置零，实现无副作用的指令作废（Kill）；
+- `pc+imm` 与 `rs1+imm` 代表跳转重定向（Restart）；
+- `pc+4` 代表最基础的静态顺序推测（Speculate）。
 
 ### 减少分支代价
 
@@ -145,7 +160,7 @@ PCSrc  = case opcodeE: Taken branch → pc+imm (来自 E)
 
 ------
 
-## 本讲小结
+## 流水线冒险消解与时序约束总结
 
 - 流水线靠提高时钟频率提速，但三类冒险（结构/数据/控制）会增大 CPI；
 - 数据冒险用**停顿、旁路、推测**消解：全旁路后只剩 **Load-use** 的一周期停顿；
@@ -153,3 +168,7 @@ PCSrc  = case opcodeE: Taken branch → pc+imm (来自 E)
 - 异常作为控制冒险，用**提交点统一处理 + 优先较早指令**保证精确性。
 
 > 下一讲：超标量与记分牌流水线
+
+::: insight
+五级经典流水线的设计精髓在于“优先级驱动的控制通路仲裁”。控制逻辑必须严格遵循“老指令优先（Older Instruction Priority）”原则：当执行级（E）分支误预测触发时，它必须原子覆盖译码级（D）产生的任何停顿或自旋请求，并强制作废年轻指令。任何硬件旁路网络与推测机制的引入，都在实质上以组合逻辑延迟（$t_{\text{combo}}$）和连线拥塞为代价去缩减 CPI；当临界路径受制于旁路 MUX 扇入时，盲目增加旁路反而会拖慢整机工作频率。
+:::

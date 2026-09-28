@@ -1,5 +1,5 @@
 ---
-title: 一元线性回归与相关性
+title: '一元线性回归与相关性'
 type: lecture
 lecture: 9
 tags: [linear-regression, ordinary-least-squares, r-squared, gauss-markov-assumptions, coefficient-inference]

@@ -1,27 +1,31 @@
 ---
-title: 内存管理
+title: '内存管理与缓冲池置换策略'
 type: lecture
 lecture: 6
-tags: []
+tags: [buffer-pool, replacement-policy, clock-sweep, dirty-page-flushing]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 6 内存管理
 
-数据库管理系统（DBMS）负责管理内存并协调数据在磁盘与内存之间的双向传输。由于在绝大多数情况下，数据无法直接在磁盘上被操作，因此任何数据库都必须具备高效迁移数据的能力——即将以文件形式存储于磁盘中的数据加载至内存以供使用。图 1 展示了这一交互过程的示意图。
+# Lec 6 内存管理与缓冲池置换策略（Memory Management and Buffer Pool）
 
-![截屏 2024-08-13 07.12.59](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66ba9702cbbf4.png)
+> MIT 6.5830 / 6.5831 · Database Systems · 第 6 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
 
-（上图中，执行引擎获取页号为 2 的页面，如果在缓存池中不存在，则需要通过磁盘中找到相应的页面读入磁盘）
+## TL;DR
 
-从执行引擎（execution engine）的角度来看，理想情况下应实现**"数据全内存化"的透明访问**，即引擎无需关心数据如何被载入内存，所有数据应如同始终存在于内存中一般可被直接操作。
+- 缓冲池（Buffer Pool）是数据库在内存中开辟的定长帧（Frame）数组，缓存磁盘高频页面。
+- 页表（Page Table）记录内存帧与磁盘页面 ID 的实时映射，页钉（Pin/Pin Count）防止活跃页面被换出。
+- 页面置换算法从经典 LRU 演化为时钟算法（Clock Sweep）与 LRU-K，有效免疫大规模全表扫描的缓存污染。
 
-另一种理解该问题的视角是通过空间控制（Spatial Control）和时间控制（Temporal Control）来分析：
+## 架构演进与核心洞察
 
-- 空间控制角度涉及将页面写入磁盘的哪个位置。
-  - 其目标是将经常一起使用的页面尽可能靠近地存储在磁盘上。这样的话可以减少随机访问，相对增加顺序访问
+::: insight 缓冲池锁（Latch）与事务锁（Lock）的本质区别
+技术读者必须严格区分 Latch 与 Lock。Lock 是事务维度的概念，保护的是逻辑数据项（行、表、范围），生命周期长达整个事务期间，由锁管理器维护并记录在等待图里检测死锁。而 Latch 是线程维度的底层轻量级同步原语（互斥体/读写锁），保护的是缓冲池内存帧中的物理数据结构，生命周期仅有几微秒，操作结束立即释放。
+:::
 
-- 时间控制角度涉及何时将页面读入内存，以及何时将页面写入磁盘
-  - 目标是最小化由于需要从磁盘读取数据而导致的停顿次数
+## 核心机制与讲义正文
 
 ## 本讲导览
 
