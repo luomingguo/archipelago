@@ -1,5 +1,5 @@
 ---
-title: 比例与计数数据推断
+title: '比例与计数数据推断'
 type: lecture
 lecture: 8
 tags: [proportions, chi-square-test, contingency-table, goodness-of-fit, multinomial-distribution]

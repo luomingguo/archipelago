@@ -1,5 +1,5 @@
 ---
-title: 导论与设计思维
+title: '导论与设计思维'
 type: lecture
 lecture: 1
 tags: [design-thinking, product-development-process, opportunity-identification, cross-functional-teams]

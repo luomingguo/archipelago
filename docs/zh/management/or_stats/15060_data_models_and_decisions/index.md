@@ -1,12 +1,24 @@
-# 15.060 Data, Models, and Decisions
+---
+title: '15.060 数据、模型与决策'
+type: course
+course: '15.060 数据、模型与决策'
+course_id: '15.060'
+tags: [decision-analysis, probability-trees, linear-optimization, regression-models]
+status: stub
+source: 'https://ocw.mit.edu/courses/15-060-data-models-and-decisions-fall-2014/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Fall 2014
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. Robert Freund、Prof. Cynthia Rudin、Juan Pablo Vielma Centeno
-- **主题标签 / Topics**: Business / Management / Operations Management / Supply Chain Management / Engineering / Computer Science / Data Mining / Systems Engineering / Systems Optimization / Mathematics / Probability and Statistics
+# 15.060 数据、模型与决策
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.060
+
+## TL;DR
+
+- 课程构筑管理科学基础，将不确定性下的概率决策树与确定性线性优化深度融合。
+- 利用正态分布、离散概率与期望货币价值评估商业风险与信息价值（EVPI）。
+- 多元线性回归模型量化变量协变关系，支撑供应链、财务与运营管理中的科学预测。
+
 - **同一课程的其他编号 / Also listed as**: 15.730（MIT 目录中同一门课程的不同班级/项目编号）
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/15-060-data-models-and-decisions-fall-2014/)
 
 ## 课程简介 / Description
 

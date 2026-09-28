@@ -1,5 +1,5 @@
 ---
-title: 数据探索与特征汇总
+title: '数据探索与特征汇总'
 type: lecture
 lecture: 3
 tags: [summary-statistics, robust-statistics, simpsons-paradox, pearson-correlation, time-series-smoothing]

@@ -1,7 +1,7 @@
 ---
-title: 15.C57 优化方法
+title: '15.C57 优化方法'
 type: course
-course: 15.C57 优化方法
+course: '15.C57 优化方法'
 course_id: '15.C57'
 tags: [optimization, linear-programming, integer-programming, duality, robust-optimization]
 status: draft

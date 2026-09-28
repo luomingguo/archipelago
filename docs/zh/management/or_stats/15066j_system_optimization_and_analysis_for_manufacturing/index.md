@@ -1,12 +1,22 @@
-# 15.066[J] System Optimization and Analysis for Operations
+---
+title: '15.066J 制造与运营系统优化分析'
+type: course
+course: '15.066J 制造与运营系统优化分析'
+course_id: '15.066J'
+tags: [manufacturing-systems, queueing-theory, inventory-control, production-planning]
+status: stub
+source: 'https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Summer 2003
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. Stephen Graves、Prof. Jérémie Gallien
-- **主题标签 / Topics**: Business / Operations Management / Engineering / Systems Engineering / Computational Modeling and Simulation / Systems Optimization / Mathematics / Probability and Statistics
-- **说明**: MIT 现行课程目录中 15.066[J] 目前的课程名为 *System Optimization and Analysis for Operations*；此处收录的是 MIT OpenCourseWare 上 公开发布的 **Summer 2003** 学期讲义（当时课程名为 *System Optimization and Analysis for Manufacturing*）， 内容仅供参考，不代表当前开课内容一定完全相同。
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/15-066j-system-optimization-and-analysis-for-manufacturing-summer-2003/)
+# 15.066J 制造与运营系统优化分析
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.066J
+
+## TL;DR
+
+- 系统级制造与服务运营优化，以排队论、库存控制理论与生产能力规划为核心工具。
+- 利特尔法则（Little's Law）与马尔可夫排队网络量化在制品库存与客户等待时间。
+- 报童模型与动态安全库存策略平衡服务水平与缺货/积压风险成本。
 
 ## 课程简介 / Description
 

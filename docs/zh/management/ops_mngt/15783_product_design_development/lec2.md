@@ -1,5 +1,5 @@
 ---
-title: 系统化创新与R-W-W
+title: '系统化创新与R-W-W'
 type: lecture
 lecture: 2
 tags: [systematic-innovation, rww-framework, opportunity-evaluation, opportunity-tournament]

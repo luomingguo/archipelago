@@ -1,5 +1,5 @@
 ---
-title: 15.783产品设计与开发课程大纲（2026年春季）
+title: '15.783产品设计与开发课程大纲（2026年春季）'
 type: lecture
 tags: [product-development-process, agile-development, project-based-learning]
 status: complete

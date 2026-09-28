@@ -1,5 +1,5 @@
 ---
-title: 用户体验设计 | 产品设计与实现
+title: '用户体验设计 | 产品设计与实现'
 type: lecture
 lecture: 13
 tags: [user-experience, interaction-design, usability-heuristics, affordance, mental-models]
@@ -93,8 +93,6 @@ flowchart TD
 ## 十大可用性原则
 
 Jakob Nielsen（雅各布·尼尔森）提出的 **10 大可用性原则（*10 Usability Heuristics for User Interface Design*）**是人机交互和用户界面（UI/UX）设计中最经典、最具指导意义的法则
-
-
 
 由可用性先驱雅各布·尼尔森（Jakob Nielsen）总结的启发式原则，不仅适用于软件，更是软硬件混合界面审查的黄金标尺：
 

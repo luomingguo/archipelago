@@ -1,5 +1,5 @@
 ---
-title: 非参数统计方法
+title: '非参数统计方法'
 type: lecture
 lecture: 11
 tags: [nonparametric-statistics, sign-test, wilcoxon-rank-sum, distribution-free, rank-statistics]

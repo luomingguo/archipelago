@@ -1,5 +1,5 @@
 ---
-title: 面向环境可持续性的设计
+title: '面向环境可持续性的设计'
 type: lecture
 lecture: 11
 tags: [design-for-environment, sustainable-design, life-cycle-assessment, circular-economy, dfe-process]

@@ -1,5 +1,5 @@
 ---
-title: 数据收集与抽样策略
+title: '数据收集与抽样策略'
 type: lecture
 lecture: 2
 tags: [sampling-methods, simple-random-sample, stratified-sampling, selection-bias, experimental-design]

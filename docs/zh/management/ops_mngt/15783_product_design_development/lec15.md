@@ -1,5 +1,5 @@
 ---
-title: 产品成本与商业模式
+title: '产品成本与商业模式'
 type: lecture
 lecture: 15
 tags: [product-costing, business-model-canvas, target-costing, dfma, unit-economics]

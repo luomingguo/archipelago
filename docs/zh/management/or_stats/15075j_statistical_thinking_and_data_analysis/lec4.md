@@ -1,5 +1,5 @@
 ---
-title: 统计量的抽样分布与三大推导分布
+title: '统计量的抽样分布与三大推导分布'
 type: lecture
 lecture: 4
 tags: [sampling-distribution, central-limit-theorem, chi-square-distribution, student-t-distribution, f-distribution]

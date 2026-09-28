@@ -1,5 +1,5 @@
 ---
-title: 概率论核心回顾
+title: '概率论核心回顾'
 type: lecture
 lecture: 1
 tags: [probability-space, conditional-probability, bayes-theorem, weak-law-of-large-numbers, random-variables]

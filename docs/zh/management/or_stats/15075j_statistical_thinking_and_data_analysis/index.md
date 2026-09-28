@@ -1,7 +1,7 @@
 ---
-title: 15.075J 统计思维与数据分析
+title: '15.075J 统计思维与数据分析'
 type: course
-course: 15.075J 统计思维与数据分析
+course: '15.075J 统计思维与数据分析'
 course_id: '15.075J'
 tags: [statistics, probability, data-analysis, statistical-inference, regression-analysis]
 status: complete

@@ -1,5 +1,5 @@
 ---
-title: 工业设计
+title: '工业设计'
 type: lecture
 lecture: 10
 tags: [industrial-design, ergonomics, human-factors, aesthetics, form-language]

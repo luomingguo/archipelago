@@ -1,5 +1,5 @@
 ---
-title: 统计推断基本概念与假设检验
+title: '统计推断基本概念与假设检验'
 type: lecture
 lecture: 5
 tags: [statistical-inference, point-estimation, bias-variance-tradeoff, hypothesis-testing, p-value]

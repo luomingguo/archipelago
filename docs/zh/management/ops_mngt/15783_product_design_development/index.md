@@ -1,7 +1,7 @@
 ---
-title: 15.783 产品设计与开发
+title: '15.783 产品设计与开发'
 type: course
-course: 15.783 产品设计与开发
+course: '15.783 产品设计与开发'
 course_id: '15.783'
 tags: [product-development-process, agile-development, design-thinking, prototyping, customer-needs]
 status: complete

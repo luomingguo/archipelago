@@ -1,11 +1,22 @@
-# 15.085[J] Fundamentals of Probability
+---
+title: '15.085J 概率论基础'
+type: course
+course: '15.085J 概率论基础'
+course_id: '15.085J'
+tags: [probability-theory, measure-theory, convergence-concepts, central-limit-theorem]
+status: stub
+source: 'https://ocw.mit.edu/courses/6-436j-fundamentals-of-probability-fall-2018/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Fall 2018
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. Yury Polyanskiy
-- **主题标签 / Topics**: Mathematics / Probability and Statistics
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/6-436j-fundamentals-of-probability-fall-2018/)
+# 15.085J 概率论基础
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.085J
+
+## TL;DR
+
+- 基于测度论（Measure-theoretic）的严谨概率论，覆盖 sigma 代数、测度与积分。
+- 依概率收敛、几乎处处收敛、Lp 收敛与依分布弱收敛四大收敛性层级关系的严格证明。
+- 特征函数、大数定律、中心极限定理与条件期望作为正交投影的代数几何解析。
 
 ## 课程简介 / Description
 

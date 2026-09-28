@@ -1,12 +1,22 @@
-# 15.099 Seminar in Operations Research
+---
+title: '15.099 优化理论文献前沿研讨'
+type: course
+course: '15.099 优化理论文献前沿研讨'
+course_id: '15.099'
+tags: [optimization-theory, conic-optimization, first-order-methods, complexity-theory]
+status: stub
+source: 'https://ocw.mit.edu/courses/15-099-readings-in-optimization-fall-2003/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Fall 2003
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. Robert Freund
-- **主题标签 / Topics**: Engineering / Systems Engineering / Systems Optimization / Mathematics / Applied Mathematics
-- **说明**: MIT 现行课程目录中 15.099 目前的课程名为 *Seminar in Operations Research*；此处收录的是 MIT OpenCourseWare 上 公开发布的 **Fall 2003** 学期讲义（当时课程名为 *Readings in Optimization*）， 内容仅供参考，不代表当前开课内容一定完全相同。
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/15-099-readings-in-optimization-fall-2003/)
+# 15.099 优化理论文献前沿研讨
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.099
+
+## TL;DR
+
+- 精读优化领域近现代经典与里程碑文献，研讨凸优化、非凸优化与锥优化的前沿突破。
+- 内斯捷罗夫加速梯度法（Nesterov accelerated gradient）与一阶算法理论复杂度下界推导。
+- 大规模分布式优化（ADMM）在数据驱动与分布式机器学习系统中的收敛性证明与应用。
 
 ## 课程简介 / Description
 

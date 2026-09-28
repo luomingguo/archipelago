@@ -1,12 +1,22 @@
-# 15.094[J] Robust Modeling, Optimization, and Computation
+---
+title: '15.094J 鲁棒系统优化建模与计算'
+type: course
+course: '15.094J 鲁棒系统优化建模与计算'
+course_id: '15.094J'
+tags: [robust-optimization, convex-optimization, semidefinite-programming, uncertainty-sets]
+status: stub
+source: 'https://ocw.mit.edu/courses/15-094j-systems-optimization-models-and-computation-sma-5223-spring-2004/'
+---
 
-- **分类 / Category**: 运筹学与统计学 (Operations Research/Statistics)
-- **开课学期 / Term**: Spring 2004
-- **课程级别 / Level**: Graduate
-- **授课教师 / Instructors**: Prof. Jie Sun、Prof. Robert Freund、Prof. Thomas Magnanti
-- **主题标签 / Topics**: Engineering / Computer Science / Data Mining / Systems Engineering / Computational Modeling and Simulation / Systems Optimization / Mathematics / Computation
-- **说明**: MIT 现行课程目录中 15.094[J] 目前的课程名为 *Robust Modeling, Optimization, and Computation*；此处收录的是 MIT OpenCourseWare 上 公开发布的 **Spring 2004** 学期讲义（当时课程名为 *Systems Optimization: Models and Computation (SMA 5223)*）， 内容仅供参考，不代表当前开课内容一定完全相同。
-- **资料来源 / Source**: [MIT OpenCourseWare](https://ocw.mit.edu/courses/15-094j-systems-optimization-models-and-computation-sma-5223-spring-2004/)
+# 15.094J 鲁棒系统优化建模与计算
+
+> MIT Course 15 · Operations Research/Statistics · 课号 15.094J
+
+## TL;DR
+
+- 参数不确定性下的现代鲁棒优化（Robust Optimization），将不确定集映射为可处理凸锥规划。
+- 椭球不确定集导向二阶锥规划（SOCP），多面体不确定集保持线性对偶易解性。
+- 半正定规划（SDP）与对偶极小极大定理为金融组合风险对冲与工程设计提供抗震荡保障。
 
 ## 课程简介 / Description
 
