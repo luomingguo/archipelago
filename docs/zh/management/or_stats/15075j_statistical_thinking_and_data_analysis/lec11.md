@@ -54,10 +54,12 @@ source: 'https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analy
 设从任意未知的连续总体中随机抽取样本 $x_1, x_2, \dots, x_n$，总体真实中位数记为 $\tilde{\mu}$。
 
 我们要检验该总体中位数是否超过某一基准阈值 $\tilde{\mu}_0$（例如检验某城市家庭年收入中位数是否超过 25 万元）：
-$$\begin{cases}
+$$
+\begin{cases}
 H_0: \tilde{\mu} = \tilde{\mu}_0 \\
 H_1: \tilde{\mu} > \tilde{\mu}_0
-\end{cases}$$
+\end{cases}
+$$
 
 ### 1. 检验统计量的构造机制
 

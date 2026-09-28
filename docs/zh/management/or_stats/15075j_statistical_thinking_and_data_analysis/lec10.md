@@ -30,7 +30,8 @@ $$Y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \dots + \beta_k x_{ik} + \ep
 ### 1. 矩阵形式统一表述
 
 将所有观测与参数矢量化：
-$$\mathbf{Y} = \begin{bmatrix} Y_1 \\ Y_2 \\ \vdots \\ Y_n \end{bmatrix}, \quad
+$$
+\mathbf{Y} = \begin{bmatrix} Y_1 \\ Y_2 \\ \vdots \\ Y_n \end{bmatrix}, \quad
 \mathbf{X} = \begin{bmatrix}
 1 & x_{11} & x_{12} & \cdots & x_{1k} \\
 1 & x_{21} & x_{22} & \cdots & x_{2k} \\
@@ -38,7 +39,8 @@ $$\mathbf{Y} = \begin{bmatrix} Y_1 \\ Y_2 \\ \vdots \\ Y_n \end{bmatrix}, \quad
 1 & x_{n1} & x_{n2} & \cdots & x_{nk}
 \end{bmatrix}, \quad
 \boldsymbol{\beta} = \begin{bmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_k \end{bmatrix}, \quad
-\boldsymbol{\epsilon} = \begin{bmatrix} \epsilon_1 \\ \epsilon_2 \\ \vdots \\ \epsilon_n \end{bmatrix}$$
+\boldsymbol{\epsilon} = \begin{bmatrix} \epsilon_1 \\ \epsilon_2 \\ \vdots \\ \epsilon_n \end{bmatrix}
+$$
 
 紧凑模型形式为：
 $$\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$$
@@ -79,10 +81,12 @@ $$R^2_{\text{adj}} := 1 - \frac{\operatorname{SSE}/(n - k - 1)}{\operatorname{SS
 ### 2. 全模型总体显著性 F 检验
 
 在解读具体特征之前，必须首先验证整个特征集合在宏观上是否蕴含任何真实预测能力：
-$$\begin{cases}
+$$
+\begin{cases}
 H_0: \beta_1 = \beta_2 = \dots = \beta_k = 0 \quad (\text{所有特征均无解释力，仅截距起作用}) \\
 H_1: \text{至少存在一个 } j \in \{1, \dots, k\} \text{ 使得 } \beta_j \ne 0
-\end{cases}$$
+\end{cases}
+$$
 
 构造基于方差分析的检验统计量：
 $$F = \frac{\operatorname{SSR} / k}{\operatorname{SSE} / (n - k - 1)} = \frac{R^2 / k}{(1 - R^2) / (n - k - 1)} \sim \mathcal{F}_{k, n - k - 1}$$

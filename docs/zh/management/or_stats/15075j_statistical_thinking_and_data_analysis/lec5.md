@@ -45,10 +45,12 @@ $$\operatorname{MSE}(\hat{\theta}) := E[(\hat{\theta} - \theta)^2] = \operatorna
 
 **数学推导过程：**
 在平方项内部巧妙添加并减去估计量的数学期望 $E[\hat{\theta}]$：
-$$\begin{aligned}
+$$
+\begin{aligned}
 \operatorname{MSE}(\hat{\theta}) &= E\big[ \big( (\hat{\theta} - E[\hat{\theta}]) + (E[\hat{\theta}] - \theta) \big)^2 \big] \\
 &= E\big[ (\hat{\theta} - E[\hat{\theta}])^2 \big] + E\big[ (E[\hat{\theta}] - \theta)^2 \big] + 2 E\big[ (\hat{\theta} - E[\hat{\theta}])(E[\hat{\theta}] - \theta) \big]
-\end{aligned}$$
+\end{aligned}
+$$
 1. 第一项根据定义即为估计量的方差 $\operatorname{Var}(\hat{\theta})$；
 2. 第二项中，$E[\hat{\theta}] - \theta$ 已经是一个非随机的确定常数，因此外层期望不改变其值，直接化简为偏差的平方 $\operatorname{Bias}(\hat{\theta})^2$；
 3. 第三项中，将非随机常数项 $(E[\hat{\theta}] - \theta)$ 提取到期望算子外部：
@@ -68,12 +70,14 @@ $$\begin{aligned}
 设 $X_1, X_2, \dots, X_n \overset{\text{i.i.d.}}{\sim} (\mu, \sigma^2)$。考察代数恒等式：
 $$x_i - \bar{x} = (x_i - \mu) - (\bar{x} - \mu)$$
 两边平方并对所有 $i=1, \dots, n$ 求和：
-$$\begin{aligned}
+$$
+\begin{aligned}
 \sum_{i=1}^n (x_i - \bar{x})^2 &= \sum_{i=1}^n \Big( (x_i - \mu) - (\bar{x} - \mu) \Big)^2 \\
 &= \sum_{i=1}^n (x_i - \mu)^2 - 2(\bar{x} - \mu)\sum_{i=1}^n (x_i - \mu) + \sum_{i=1}^n (\bar{x} - \mu)^2 \\
 &= \sum_{i=1}^n (x_i - \mu)^2 - 2(\bar{x} - \mu) \cdot n(\bar{x} - \mu) + n(\bar{x} - \mu)^2 \\
 &= \sum_{i=1}^n (x_i - \mu)^2 - n(\bar{x} - \mu)^2
-\end{aligned}$$
+\end{aligned}
+$$
 
 两边同时取数学期望：
 $$E\left[\sum_{i=1}^n (x_i - \bar{x})^2\right] = \sum_{i=1}^n E[(x_i - \mu)^2] - n E[(\bar{x} - \mu)^2] = \sum_{i=1}^n \operatorname{Var}(X_i) - n \operatorname{Var}(\bar{X})$$

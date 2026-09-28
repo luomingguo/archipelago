@@ -54,10 +54,12 @@ $$\hat{p} \pm z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
 设有 $c$ 个类别，每个类别的真实发生概率为 $p_1, p_2, \dots, p_c$（满足 $\sum p_i = 1$）。抽样 $n$ 个样本，各类别实际观测计数记为 $n_1, n_2, \dots, n_c$（满足 $\sum n_i = n$）。
 
 我们要检验总体各类别发生概率是否符合某个特定的理论基准分布 $\mathbf{p}_0 = (p_{10}, p_{20}, \dots, p_{c0})$：
-$$\begin{cases}
+$$
+\begin{cases}
 H_0: p_1 = p_{10}, \; p_2 = p_{20}, \; \dots, \; p_c = p_{c0} \\
 H_1: \text{至少存在一个 } i \text{ 使得 } p_i \ne p_{i0}
-\end{cases}$$
+\end{cases}
+$$
 
 ### 1. 皮尔逊卡方检验统计量的构造
 
@@ -94,10 +96,12 @@ $$\chi^2 \sim \chi^2_{c-1}$$
 ### 1. 独立性零假设下的期望频数推导
 
 检验假设设定为：
-$$\begin{cases}
+$$
+\begin{cases}
 H_0: \text{行变量与列变量相互独立} \quad (P(A_i \cap B_j) = P(A_i)P(B_j)) \\
 H_1: \text{两变量存在某种统计关联}
-\end{cases}$$
+\end{cases}
+$$
 
 在零假设下，事件 $A_i$（属于第 $i$ 行）的边缘概率估计为 $\hat{P}(A_i) = \frac{R_i}{n}$，事件 $B_j$（属于第 $j$ 列）的边缘概率估计为 $\hat{P}(B_j) = \frac{C_j}{n}$。
 
