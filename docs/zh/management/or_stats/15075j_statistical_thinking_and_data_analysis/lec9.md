@@ -46,10 +46,12 @@ $$Q(\beta_0, \beta_1) = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n \big(y_i - (\beta_0 + 
 ### 1. 一阶极值条件（Normal Equations）
 
 对目标函数分别关于 $\beta_0$ 和 $\beta_1$ 求偏导数，并令其等于 0：
-$$\begin{aligned}
+$$
+\begin{aligned}
 \frac{\partial Q}{\partial \beta_0} &= -2\sum_{i=1}^n \big(y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i)\big) = 0 \quad \implies \quad \sum_{i=1}^n y_i = n\hat{\beta}_0 + \hat{\beta}_1\sum_{i=1}^n x_i \\
 \frac{\partial Q}{\partial \beta_1} &= -2\sum_{i=1}^n x_i \big(y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i)\big) = 0 \quad \implies \quad \sum_{i=1}^n x_i y_i = \hat{\beta}_0\sum_{i=1}^n x_i + \hat{\beta}_1\sum_{i=1}^n x_i^2
-\end{aligned}$$
+\end{aligned}
+$$
 
 ### 2. 闭式解的推导与均值穿透性
 
@@ -61,10 +63,12 @@ $$\bar{y} = \hat{\beta}_0 + \hat{\beta}_1 \bar{x} \implies \hat{\beta}_0 = \bar{
 :::
 
 将 $\hat{\beta}_0$ 代入第二个正规方程消元整理：
-$$\begin{aligned}
+$$
+\begin{aligned}
 \sum_{i=1}^n x_i y_i &= (\bar{y} - \hat{\beta}_1 \bar{x})\sum_{i=1}^n x_i + \hat{\beta}_1\sum_{i=1}^n x_i^2 = n\bar{x}\bar{y} - \hat{\beta}_1 n\bar{x}^2 + \hat{\beta}_1\sum_{i=1}^n x_i^2 \\
 \sum_{i=1}^n x_i y_i - n\bar{x}\bar{y} &= \hat{\beta}_1 \left(\sum_{i=1}^n x_i^2 - n\bar{x}^2\right)
-\end{aligned}$$
+\end{aligned}
+$$
 
 引入经典离差平方和记号：
 $$S_{xx} := \sum_{i=1}^n (x_i - \bar{x})^2 = \sum_{i=1}^n x_i^2 - n\bar{x}^2$$
@@ -120,10 +124,12 @@ $R^2 \in [0, 1]$ 表达了响应变量 $Y$ 的总方差变异中，被自变量 
 ### 2. 斜率显著性 t 检验
 
 检验预测变量 $X$ 与因变量 $Y$ 之间是否存在统计显著的线性关系：
-$$\begin{cases}
+$$
+\begin{cases}
 H_0: \beta_1 = 0 \quad (\text{线性不相关}) \\
 H_1: \beta_1 \ne 0
-\end{cases}$$
+\end{cases}
+$$
 
 构建检验统计量：
 若计算出的 $|t| \ge t_{n-2, \alpha/2}$（或对应 $p \le \alpha$），则在 $\alpha$ 水平下拒绝 $H_0$，断定变量间存在显著的线性依存关系。
