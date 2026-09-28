@@ -2,10 +2,18 @@
 title: '调度约束与瞬态历史寄存器（Scheduling & EHRs）'
 type: lecture
 lecture: 4
-tags: []
+tags: [ehr, ephemeral-history-register, elastic-pipeline, fifo-variants, hardware-scheduling]
 status: complete
 ---
 # Lec 4 调度约束与瞬态历史寄存器（*Scheduling & EHRs*）
+
+## TL;DR
+
+- 弹性流水线通过 FIFO 隔离级间速率差异，其全局吞吐量取决于接口的并发调度关系（CF / SC / C）。
+- 三种高性能 FIFO（CF FIFO、Pipeline FIFO、Bypass FIFO）分别支持独立无冲突并发、先出后入满容填补、以及同周期直通零延迟。
+- 瞬态历史寄存器（EHR）通过索引化多端口（Port 0 到 $N-1$）实现周期内有序状态旁路（Bypass MUX），化解单端口寄存器的写入冲突。
+- 通过将 `enq` 与 `deq` 映射到 EHR 的不同优先级端口，可形式化构造具备任意目标调度约束的高性能硬件队列。
+
 > MIT 6.1920 · Constructive Computer Architecture
 > 讲师：Martin Chan / Arvind · 日期：2024-02-15
 
@@ -133,6 +141,15 @@ CF FIFO 的关键：`deq`（端口 0）和 `enq`（端口 1）不冲突且顺序
 
 ---
 
-## 本讲小结
+## 核心机制小结与并发原语映射
 
 高性能 FIFO 通过不同的 enq/deq 调度关系（CF、SC）实现不同的并发语义；EHR 以多端口有序写入机制，使原本冲突的状态更新可以并发执行；三种 FIFO 均可用 EHR 实现，是构建弹性流水线处理器的基础组件。
+
+## 核心机制思考与底层洞察
+
+::: insight 瞬态历史寄存器（EHR）的物理本质与关键路径代价
+EHR（Ephemeral History Register）是 BSV 中最具工程智慧的抽象原语，但理解其物理代价是避免时序劣化的关键：
+
+1. **组合多路复用链的物理真实**：EHR 并不是一种全新的芯片级晶体管存储原语，其物理结构由**一个标准的 D 触发器加上前置级联多路选择器（Multiplexer）网络**构成。当端口 0 写入时，其写入数据通过组合逻辑线立即旁路（Bypass）连通到端口 1 的读端口。如果端口 1 也有写入，则通过控制使能信号串联到下一级 MUX。最终在时钟边沿，只有有效写入的最高编号端口值会被真正打入底层的触发器中。
+2. **零周期穿透与频率瓶颈的权衡**：Bypass FIFO 借助 EHR 实现“同周期先进即出（$enq < deq$）”，使缓存命中或寄存器转发无需经历打拍延迟；但这直接在硬件中构筑了一条跨越模块边界的长组合逻辑路径（$Data_{in} \to EHR_{MUX} \to Data_{out}$）。若过度滥用多端口 EHR，组合路径的级联延迟将成倍增加，严重挤压处理器的关键路径时序裕量（Slack），导致最高工作频率（$F_{max}$）大幅下跌。体系结构设计的精髓正是精准把控 EHR 的使用广度，仅在流水线气泡对 IPC 构成致命损害的命脉节点才引入此类旁路。
+:::

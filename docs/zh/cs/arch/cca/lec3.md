@@ -2,10 +2,18 @@
 title: '存储器与多规则系统（Memory, BRAM & Multi-Rule Systems）'
 type: lecture
 lecture: 3
-tags: []
+tags: [register-file, block-ram, read-write-sets, rule-scheduling, conflict-analysis]
 status: complete
 ---
 # Lec 03 存储器与多规则系统（*Memory, BRAM & Multi-Rule Systems*）
+
+## TL;DR
+
+- 寄存器文件提供组合读与同步写，而片上 BRAM 引入严格的 1 周期同步读延迟，需要显式 FIFO 维护请求响应流水线。
+- BSV 调度器以 Read Set（RS）与 Write Set（WS）交叉集合分析规则间的并发关系：无冲突（CF）、顺序可组合（SC）与互斥冲突（C）。
+- 调度器为每条规则综合出 `CAN_FIRE`（Guard 为真）与 `WILL_FIRE`（无冲突仲裁选通）控制信号。
+- 贪婪调度算法按规则声明的优先级拓扑排序，在单周期内并发执行满足等价串行序的最大规则子集。
+
 > MIT 6.1920 · Constructive Computer Architecture
 > 讲师：Arvind · 日期：2024-02-13
 
@@ -129,6 +137,15 @@ BSV 调度粒度是一个时钟周期内的规则集合，而非单个规则；�
 
 ---
 
-## 本讲小结
+## 核心机制小结与调度模型分析
 
 BRAM 提供大容量片上存储但有读延迟；多规则系统通过 RS/WS 分析确定并发关系——CF 可自由并发、SC 有顺序约束、C 互斥；调度器在编译期静态生成 CAN_FIRE/WILL_FIRE 逻辑，自动最大化并发度。
+
+## 核心机制思考与底层洞察
+
+::: insight 寄存器的物理读写特性与 SC 并发语义的天然契合
+在理解多规则系统的调度约束时，为什么“先读后写（Read-Before-Write）”能够被编译器判定为同周期可并发（Sequentially Composable, $r_{read} < r_{write}$）？
+
+1. **D 触发器的物理工作机制**：在物理 CMOS 电路中，D 触发器在当前时钟周期内的稳态期间，其输出引脚 $Q$ 恒定输出前一个时钟周期锁存的旧值。这个值以组合逻辑形式直接驱动读规则 $r_{read}$；与此同时，写规则 $r_{write}$ 将计算得到的新值送达触发器的输入引脚 $D$。在时钟上升沿到来之前，输入引脚 $D$ 的电平跳变绝不会穿透到引脚 $Q$。因此，读操作读取的是旧值，而写操作在时钟沿更新新值。
+2. **硬件时序对并发等价序的无偿赠送**：从逻辑形式化角度看，这恰好等价于“$r_{read}$ 率先执行并读取了当前状态，紧随其后 $r_{write}$ 执行并覆盖了状态”。物理寄存器的内部隔离结构使得这两个原本串行先后执行的规则，无需任何额外的旁路逻辑即可在同一个时钟周期内无损并发。相反，若要求“先写后读（$r_{write} < r_{read}$）”，则要求在同一个周期内将写规则的新值旁路穿透给读规则，普通寄存器无法支持此行为，必须引入带有内部旁路 MUX 的 EHR（Ephemeral History Register）状态原语。
+:::

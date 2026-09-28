@@ -1,17 +1,31 @@
 ---
-title: 数据库存储管理
+title: '存储管理与页面物理布局'
 type: lecture
 lecture: 5
-tags: []
+tags: [slotted-pages, tuple-layout, storage-manager, direct-io]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 5 数据库存储管理
 
-我们专注于面向磁盘的 DBMS 架构，至顶向下存储层次中，离 CPU 越近速度越快，但是空间更小， 且单位成本更高。
+# Lec 5 存储管理与页面物理布局（Storage Management and Page Layout）
 
-先总览面向磁盘的 DBMS。数据库完全在磁盘上，数据库文件的数据被组织成页（pages），第一页为目录页。为了操作数据，DBMS 需要将数据搬到内存，它通过缓冲池（buffer pool）来管理数据从磁盘到内存的来回搬动。DBMS 有一个执行引擎用来执行查询（queries），执行引擎会询问缓冲池特定页面，缓冲池会小心地将页数据带过来，并给到执行引擎指向内存中该页的指针。缓冲池管理器会确保执行引擎在这部分内存操作时，页仍然保持在那。
+> MIT 6.5830 / 6.5831 · Database Systems · 第 5 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
 
-存储管理上，OS vs DBMS
+## TL;DR
+
+- 存储管理器负责将逻辑表和元组抽象映射到底层操作系统的定长页面（通常为 4KB~16KB）。
+- 插槽页（Slotted Page）架构通过页头槽目录数组支持变长元组的高效存储与原地移动更新。
+- 日志结构追加存储（Log-Structured）以顺序写提升写入吞吐，但牺牲了随机点查与需要后台合并压缩（Compaction）。
+
+## 架构演进与核心洞察
+
+::: insight Slotted Page 对变长元组的精巧抽象
+插槽页（Slotted Page）是现代行存数据库的标配。它的精妙之处在于插槽目录从页面起始处向前生长，而实际 Tuple 数据从页面末尾向后生长，二者在中间汇合。外部通过 `(PageID, SlotID)` 构成的 RID 寻址。即便 Tuple 因为定长字段修改而在页内发生移动，只需调整页头 Slot 的偏移量，外部索引指向的 RID 永不失效，彻底解耦了索引与物理字节位置。
+:::
+
+## 核心机制与讲义正文
 
 ## 本讲导览
 

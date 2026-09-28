@@ -2,10 +2,20 @@
 title: 处理器流水线： 数据和控制冒险
 type: lecture
 lecture: 16
-tags: []
+tags: [pipeline-hazards, data-hazard, control-hazard, branch-prediction]
 status: complete
 ---
 # Lec 16 处理器流水线： 数据和控制冒险
+
+## TL;DR
+
+- **数据冒险与消解机制**：写后读（RAW）依赖通过停顿（Stall）、旁路转发（Bypassing）与编译器指令重排化解，其中 Load-Use 冒险仍需强制单周期停顿。
+- **控制冒险与推测执行**：跳转与分支指令由预测（如 Predict-Not-Taken）驱动执行，条件误测时通过流水线冲刷（Branch Annulment）注入 NOP 恢复正确 PC。
+- **控制信号优先级仲裁**：当同一周期发生控制取消（ANNUL）与数据停顿（STALL）冲突时，更早指令的取消信号严格优先，确保非法推测路径不阻碍正确流转。
+
+---
+
+## 流水线并行与指令间依赖挑战
 
 ## 本讲导览
 
@@ -26,7 +36,7 @@ status: complete
 
 回顾一下经典的 5 阶段 RISC 流水线
 
-![image-20250526163541500](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683427dfe0535.png)
+![经典五级流水线架构与流水寄存器隔离图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683427dfe0535.png)
 
 - 每两个相邻的流水段之间都会插入一组称为**流水寄存器**的寄存器
 - 每个时钟周期内，每个阶段服务一条指令
@@ -37,13 +47,11 @@ status: complete
 
 组合逻辑读存储器（Combinational Read Memory）的行为是，你给一个地址，他理解返回对应的数据：无需时钟，读取逻辑是组合逻辑，通常用在寄存器堆读取。
 
-![image-20250526164713063](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68342a99d98ee.png)
-
--
+![组合逻辑只读存储器（如寄存器堆）的单周期无时钟读取模型](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68342a99d98ee.png)
 
 时钟触发读存储器（ Clocked Read Memory）的行为是，你给出地址后，必须等到下一个时钟沿（如上升沿），数据才会被“输出”。使用的是同步存储器（SRAM、主存）
 
-![image-20250526165014215](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68342b4e15d0a.png)
+![时钟触发同步读存储器（SRAM/主存）的边沿采样时序模型](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68342b4e15d0a.png)
 
 ### 流水线执行
 
@@ -56,7 +64,7 @@ add X22, X23, X24
 addi x25, x26, 1
 ```
 
-![image-20250526165613181](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68342caf97e20.png)
+![连续无冒险指令序列在五级流水线中的理想推进时空图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68342caf97e20.png)
 
 > 寄存器的读写发生在什么时候？
 
@@ -79,19 +87,17 @@ sub x17, x15, x16
 xori x19, x18, 0xF
 ```
 
-![image-20250526182733749](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683442184da56.png)
+![写后读（RAW）数据依赖导致读取旧值的冒险时序图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683442184da56.png)
 
 `xor`在时钟周期 3 时候读取了寄存器`x11`，但是`addi`在周期 5 结束前还没更新，此时`x11`读取的是旧数据。
 
--
-
 ### 数据冒险策略：停顿
 
-![image-20250526182733749](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683465a711d39.png)
+![通过在译码阶段插入停顿（Stall）解决 RAW 数据冒险](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683465a711d39.png)
 
 在`addi`执行`WB`后（即寄存器`x11`更新后），紧接着`xor`才能执行`DEC`阶段（读取`x11`。
 
-![image-20250526205830581](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6834657913456.png)
+![停顿插入导致的气泡传播与周期吞吐量损失时空图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6834657913456.png)
 
 因此停顿会增加 CPI 。
 
@@ -99,7 +105,7 @@ xori x19, x18, 0xF
 
 从硬件角度来说，需要在流水线中添加什么。
 
-![image-20250526211825594](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68346a2437128.png)
+![流水线停顿控制硬件逻辑：PC冻结与NOP指令注入网表](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68346a2437128.png)
 
 - 在处理器控制逻辑中增加一个新信号：STALL，用于判断是否需要停顿流水线。
 - 当 STALL 等于 1 时，代表当前周期需要“阻塞”流水线，防止错误的数据传递。
@@ -128,11 +134,11 @@ sub x13, x15, x16
 xori x19, x18, 0xF
 ```
 
-![image-20250526222648145](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68347a2a9a9ed.png)
+![数据旁路转发网络：将 ALU 计算结果直接跨阶段送入后续指令操作数端](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68347a2a9a9ed.png)
 
 #### 原理
 
-![image-20250526222722291](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68347a4cc9611.png)
+![带优先级仲裁的译码级旁路多路复用器硬件拓扑图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68347a4cc9611.png)
 
 - 在 DEC 阶段的输出加入旁路多路选择器（bypass muxes）
 - 将 EXE、MEM、WB 阶段的输出连接到这些 mux 的输入
@@ -171,17 +177,17 @@ xori x19, x18, 0xF
 
 从 WB 阶段进行旁路（bypass）仍然能节省一个周期。解释：如果你 **没有** WB → EX 的 bypass，那么你必须等 `lw` 完整写回之后，下一条指令再解码。如果你 **有** WB 旁路 ，那么只需 stall 一拍，下一条指令就能直接从 WB 拿到数据，不用再等一个周期读寄存器。
 
-![image-20250526225803097](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6834817d967a0.png)
+![加载-使用型（Load-Use）数据冒险下无法完全避免单拍停顿的时序图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6834817d967a0.png)
 
 ### 编译器也能帮忙
 
 实际编译器也能帮点忙，如果编译器知道不相关的指令，那么他会将前后依赖的指令隔离远一些。
 
-![image-20250526230132678](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6834824f2ace8.png)
+![编译器指令调度重排消除 Load 停顿周期的优化对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6834824f2ace8.png)
 
 ## 控制冒险
 
-![image-20250527102420364](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683522618a036.png)
+![控制冒险下不同跳转与分支指令计算下周期 PC 的时序阶段分析](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683522618a036.png)
 
 要计算下一条指令地址（nextPC），我们需要什么信息？
 
@@ -200,7 +206,7 @@ sub x14, x15, x16
 bne x13, x0, loop
 ```
 
- ![image-20250527103058435](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683523e502f05.png)
+![全停顿策略应对分支控制冒险引起的严重性能退化](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683523e502f05.png)
 
 CPI  =  7 cycles / 3 instructions !!!
 
@@ -217,17 +223,17 @@ xor x19, x20, x21
 
 假设`bne`没有采纳
 
-![image-20250527105741896](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68352a2867a5a.png)
+![推测分支未采纳（Predict-Not-Taken）成功时的零周期额外开销时空图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68352a2867a5a.png)
 
 假设`bne`被采纳
 
-![image-20250527110031125](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68352ad3c3301.png)
+![分支预测失败时流水线冲刷与重新取指的时空图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68352ad3c3301.png)
 
 #### 原理
 
 分支取消（branch annulment）
 
-![image-20250527110250382](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68352b5cce12e.png)
+![分支取消（Annul）硬件控制机制：冲刷流水线寄存器并重定向 PC](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68352b5cce12e.png)
 
 当 EXE 阶段检测到当前指令是跳转指令或分支条件成立时，此时流水线才真正知道应该跳转到案例，所以 EXE 阶段会计算出正确的 nextPC，同时发出一个控制信号`ANNUL=1`，表示之前的 IF 和 DEC 阶段的指令无效。向 IF/DEC 和 DEC/EXE 的流水线寄存器写入 NOP（空操作），取消当前处于 IF 和 DEC 阶段的指令。将正确的跳转目标地址（nextPC）写入程序计数器 PC， 流水线就重新“对齐”到正确的执行路径。
 
@@ -244,17 +250,17 @@ and x16, x14, x18
 xor x19, x20, x21
 ```
 
-![image-20250527112511984](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6835309a7c9a0.png)
+![分支取消信号与数据停顿信号同时触发时的优先级仲裁时空图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6835309a7c9a0.png)
 
 `and`想要停顿，而`bne`想要取消；那么谁的优先级高？ ANNUL 还是 STALL？
 
 答案是：ANNUL，因为`bne`是更早的指令。
 
-## 本讲小结
+## 流水线冒险协同消解总结
 
 我们将所有的策略放在一起的例子
 
-![image-20250527112912452](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6835318b8ce76.png)
+![综合处理数据冒险与控制冒险的完整流水线数据通路与控制逻辑图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6835318b8ce76.png)
 
 在流水线处理器中，暂停（stalling） 是一种通用的方法，可以应对所有类型的流水线冒险（data/control hazards），虽然实现简单，但会降低每条指令的平均周期数（CPI）。为提升性能，我们通常采用更高效的机制：
 
@@ -263,4 +269,15 @@ xor x19, x20, x21
 
 不过，推测只有在预测准确时才有效。掌握暂停、旁路和推测三种机制，基本就能分析一般的流水线处理器的冒险处理策略了。
 
-![image-20250527112943437](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683531a9f249b.png)
+![流水线冒险处理综合策略决策树与硬件开销性能权衡全景](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/683531a9f249b.png)
+
+## 我的理解
+
+::: insight
+### 冒险消解关键路径与 Annul/Stall 嵌套仲裁的硬件哲学
+
+五级流水线的设计表面上优雅规整，但在真实硅片中，冒险处理控制逻辑是全芯片最脆弱、最容易限制时钟频率的关键瓶颈：
+1. **旁路多路选择器的时钟惩罚**：为了在 EXE 阶段立即使用刚刚算出的结果，旁路网络必须将 EXE/MEM 和 MEM/WB 流水线寄存器的输出直接拉回 EXE 输入端的多路复用器。随着旁路源的增加，Mux 输入端口急剧膨胀，且该组合路径串联在 ALU 的进位链之前。这导致数据通路的 $t_{\text{ALU}}$ 关键路径被严重拉长，若过度追求“全旁路”，反而可能因主频下降抵消掉 CPI 提升带来的全部收益。
+2. **Annul 优于 Stall 的因果不可逆性**：在硬件仲裁中，“Annul > Stall”绝非主观约定，而是逻辑因果性的硬约束。若分支预测错误，后续处于 DEC 阶段的指令本就属于被错误执行的“幻影指令”（Phantom Instruction）；此时如果该指令因为需要上一条幻影指令的寄存器而发出 STALL，该停顿本身也是无意义的虚假停顿。硬件必须果断执行 ANNUL，直接将处于错误路径上的所有流水线寄存器置零（注入 NOP），让正确的跳转目标指令无缝接管流水线。
+3. **软件协同与静态调度**：硬件并非孤军奋战。聪明的编译器通过基本块内的指令调度（Instruction Scheduling），将不相关的独立指令填充进 `lw` 之后的槽位或分支延迟槽（Branch Delay Slot），以零硬件代价抚平微架构的潜在停顿，展现了软硬件协同设计的最高境界。
+:::

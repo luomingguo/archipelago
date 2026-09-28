@@ -2,6 +2,7 @@
 layout: home
 title: 计算机架构
 titleTemplate: MIT 架构课程笔记
+status: draft
 
 hero:
   name: 计算机架构
@@ -48,6 +49,8 @@ features:
     title: 6.5950 硬件安全设计（施工中）
     details: 硬件层面的安全机制、侧信道攻击与防御，待整理。
 ---
+
+# 计算机架构
 
 ## 推荐学习路线
 

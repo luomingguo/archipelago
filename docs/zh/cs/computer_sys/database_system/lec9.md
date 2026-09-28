@@ -1,19 +1,31 @@
 ---
-title: 查询执行器
+title: '查询执行引擎与向量化处理'
 type: lecture
 lecture: 9
-tags: []
+tags: [volcano-iterator, vectorized-execution, compilation-engine, push-vs-pull]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 9 查询执行器
 
-> 阅读资料：
->
-> - 《Database System Concepts, 7th edition》 Chapter 15.1-15.3, 15.7, 16
->
->
+# Lec 9 查询执行引擎与向量化处理（Query Execution and Vectorization）
 
-DBMS 将 SQL 语句转换为查询计划（query plan）。查询计划中的操作符以树状结构组织，数据从这棵树的叶子节点流向根节点。树的根节点的输出即为查询的结果。通常，操作符是二元的（1-2 个子操作符）。
+> MIT 6.5830 / 6.5831 · Database Systems · 第 9 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
+
+## TL;DR
+
+- 经典火山模型（Volcano Iterator）基于 Pull 模式与 `next()` 接口解耦算子，但虚函数调用与解释开销巨大。
+- 向量化执行（Block/Batch Processing）单次传递数据块（如 1024 行），极大发挥 CPU L1/L2 缓存与 SIMD 指令集优势。
+- 代码生成引擎（JIT / LLVM）通过动态编译将整个查询树内联压平为紧凑循环，消除所有中间解释层。
+
+## 架构演进与核心洞察
+
+::: insight 内存墙时代下算子执行模型的进化
+在磁盘时代，I/O 是绝对瓶颈，火山模型每行一次虚拟调用的 CPU 开销无足轻重。但在全内存与高速 NVMe 时代，“内存墙（Memory Wall）”凸显，CPU 指令周期与分支预测失败率成为新瓶颈。向量化（Vectorwise 模式）和动态代码生成（Hyper 编译模式）是现代数据库执行引擎的两大主流巅峰，前者优化了指令级并行与跨平台灵活性，后者压榨了寄存器与内存局部性的极致性能。
+:::
+
+## 核心机制与讲义正文
 
 ## 处理模型
 

@@ -1,11 +1,31 @@
 ---
-title: 云数据仓库——Snowflake
+title: '云原生数据仓库：Snowflake 存算分离架构'
 type: lecture
 lecture: 20
-tags: []
+tags: [snowflake, storage-compute-separation, virtual-warehouses, micro-partitions]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# 云数据仓库——Snowflake
+
+# Lec 20 云原生数据仓库：Snowflake 存算分离架构（Cloud Data Warehouse: Snowflake Architecture）
+
+> MIT 6.5830 / 6.5831 · Database Systems · 第 20 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
+
+## TL;DR
+
+- 云原生数据库彻底颠覆了无共享架构（Shared-Nothing），确立了计算与存储完全解耦的三层设计模式。
+- 底层利用高吞吐低成本云对象存储（S3/GCS）作为持久化单一真理源，中间层弹性编排无状态虚拟仓库。
+- 元数据与全局目录服务统一协调并发事务、微分区（Micro-partitions）列存修剪与安全时间旅行（Time Travel）。
+
+## 架构演进与核心洞察
+
+::: insight 存算分离如何改变数据工程商业模型
+在传统 Shared-Nothing 时代，扩容算力必须连带购买硬盘；扩容存储又必须连带购买服务器，且节点重平衡（Rebalance）动辄搬迁数十 TB 数据。Snowflake 的突破性在于：存储层有弹性，计算层随时秒级创建和销毁。数据分析师跑大型报表只需启动 10 分钟超大虚拟仓库，跑完立即释放，实现了技术架构与商业计费颗粒度的完美对齐。
+:::
+
+## 核心机制与讲义正文
 
 ## 阅读材料
 

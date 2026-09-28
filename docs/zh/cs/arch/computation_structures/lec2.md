@@ -2,10 +2,20 @@
 title: 组合逻辑设备和布尔算术
 type: lecture
 lecture: 2
-tags: []
+tags: [combinational-logic, boolean-algebra, propagation-delay, static-discipline, logic-synthesis]
 status: complete
 ---
 # Lec 2 组合逻辑设备和布尔算术
+
+## TL;DR
+
+- **组合逻辑静态准则**：具备明确功能与时序规范，由无反馈环路的合法组合子器件级联构成，关键路径 $t_{PD}$ 之和决定最小采样周期。
+- **代数范式与完备功能集**：任何真值表均可唯一映射为主析取范式（SOP），通过约简律与卡诺图化简；NAND/NOR 具备逻辑完备性，可单门类构造任意逻辑。
+- **多级逻辑与综合权衡**：两级 SOP 速度快但门输入扇入大、面积开销高；多级因式分解以增加级联延迟为代价换取面积收敛，现代设计依赖逻辑综合工具自动平衡 PPA。
+
+---
+
+## 组合逻辑器件定义与静态准则
 
 组合逻辑设备（combinational device）是一种电路器件满足：
 
@@ -16,7 +26,7 @@ status: complete
 
 上述四个标准统称为**静态准则**，是所有组合逻辑器件必须满足的基本要要求。
 
-![image-20250423160210914](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68089e9016a15.png)
+![组合逻辑器件静态准则与传播延迟功能时序规范示意图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/68089e9016a15.png)
 
 ### 由小器件组合成大器件
 
@@ -61,7 +71,7 @@ status: complete
 
 给定一个真值表，很容易派生一个等价的布尔表达式：写出一个乘数项求和形式，其中每一项覆盖到真值表输出中的 1
 
-![image-20250423170748779](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6808b21ed1230.png)
+![真值表输出为 1 的最小项行映射为标准乘积项之和（SOP）示意图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6808b21ed1230.png)
 
 这是**唯一**的，但可能存在更加简单的表达式
 
@@ -71,7 +81,7 @@ status: complete
 
 基本的逻辑门： 与或非
 
-![image-20250423172446745](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6808b1e54580d.png)
+![基本逻辑门与门、或门、非门的符号与真值表对照图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6808b1e54580d.png)
 
 注意，与或非是通用的，可以实现任何组合逻辑函数。为什么？
 
@@ -93,11 +103,11 @@ status: complete
 
 逻辑优化是指将高层次的电路功能描述（如布尔代数表达式或 Bluespec 代码），结合标准门电路库中的物理门（如 AND、OR、MUX 等）以及优化目标（如面积、延迟、功耗），通过综合工具自动合成出一个满足特定的电路实现。最终的输出是一个由这些标准门构成、经过优化的电路设计。
 
-![image-20250423174541145](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250423174541145.png)
+![逻辑综合将高级 HDL 代码与标准门单元库映射为网表流程图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250423174541145.png)
 
 ### 其他通用门电路
 
-![image-20250423174936174](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250423174936174.png)
+![通用逻辑门异或门、与非门、或非门的电气符号与逻辑真值表](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250423174936174.png)
 
 异或门（XOR）、与非门（NAND）、或非门（NOR）是**唯一**的。
 
@@ -109,18 +119,34 @@ status: complete
 
 NOR 同理（对偶）。所以芯片可以只用一种门搭出任意逻辑。
 
-![image-20250423181334708](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250423181334708.png)
+![仅使用与非门（NAND）构建非门、与门和或门的等效替换电路](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250423181334708.png)
 
 ### 标准单元库
 
 每个门电路有其物理特性，比如
 
-![image-20250423181855433](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250423181855433.png)  
+![CMOS 标准单元库典型门电路传播延迟与硅片面积对照表](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250423181855433.png)  
 
 一些发现，当前技术（CMOS），反相器更快更小；时延和面积随着输入数量的增加而增加。
 
-## 本讲小结
+## 核心机制小结与逻辑综合权衡
 
 **逻辑优化**是一项非常复杂的任务，涉及布尔表达式简化、在包含多种逻辑门的标准单元库中进行映射，并在面积、延迟和功耗等多个维度之间进行权衡（如最小化面积-延迟-功耗乘积）。由于对非微小电路手工完成这些优化几乎不可行，硬件设计人员通常使用硬件描述语言编写电路，并依赖综合工具自动生成经过优化的电路实现。
 
 任何组合（布尔）函数都可以通过真值表或布尔表达式（由二进制常量以及 AND、OR、NOT 组成的布尔代数）来描述。任何组合逻辑函数都可以表示为“与或和”（Sum-of-Products, SOP）形式，并用三层逻辑门（非门、与门、或门）实现。通过布尔简化（如求最小的 SOP 或进行多层优化）可以得到更简单的电路。在将布尔函数映射为逻辑门时存在大量设计权衡，因此我们通常使用综合工具来寻找优化后的电路实现。
+
+---
+
+## 核心机制思考与底层洞察
+
+::: insight 逻辑完备性与物理 CMOS 拓扑的不对称性
+在抽象布尔代数中，AND 与 OR 根据德摩根对偶原理表现出完全的形式对称；但在半导体物理与 CMOS 电路级实现中，这种对称性被载流子物理性质彻底打破：
+
+1. **反相逻辑的天然物理优势**：
+   - CMOS 基础结构由上拉网络（PMOS）与下拉网络（NMOS）互补构成。输入高电平使 NMOS 导通将输出拉向地，输入低电平使 PMOS 导通将输出拉向电源。因此，CMOS 天然实现的是**反相逻辑**（Inverting Gates，即 NOT、NAND、NOR）。
+   - 在硅片上并不存在单级的“非反相”AND 门或 OR 门；一个物理 AND 门必须由一个 NAND 门后级联一个反相器（Inverter）构成，必然引入两级门延迟与更多晶体管开销。
+2. **载流子迁移率与 NAND vs NOR 的拓扑差异**：
+   - 硅材料中电子迁移率 $\mu_n$ 约为空穴迁移率 $\mu_p$ 的 2 到 3 倍。为获得相同的导通电阻，PMOS 晶体管的沟道宽度必须设计为 NMOS 的 2~3 倍。
+   - 2 输入 NAND 门的上拉为 PMOS 并联、下拉为 NMOS 串联；而 2 输入 NOR 门的上拉为 PMOS 串联、下拉为 NMOS 并联。串联高阻值的 PMOS 会使 NOR 门的上升时间显著恶化，必须将 PMOS 尺寸做得极为巨大，进而大幅增加栅极输入电容。
+   - 因此，在 CMOS 工艺下，**NAND 在速度和硅片面积上全面优于 NOR**。现代逻辑综合工具（Logic Synthesizer）在进行技术映射（Technology Mapping）时，会极力通过布尔变换将两级 SOP 逻辑重构为基于 NAND/AOI（And-Or-Invert）树形网络，这是抽象代数向半导体物理妥协的经典范例。
+:::

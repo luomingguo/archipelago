@@ -1,25 +1,31 @@
 ---
-title: '查询计划 & 优化'
+title: '查询优化器：规则推导与代价模型'
 type: lecture
 lecture: 10
-tags: []
+tags: [query-optimizer, join-ordering, selinger-algorithm, cost-estimation]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 10 查询计划 & 优化
 
-Query Planning & Optimization
+# Lec 10 查询优化器：规则推导与代价模型（Query Optimization and Cost Models）
 
-> 阅读资料
->
-> - 《Database System Concepts, 7th edition》 Chapter 16
-> - 参考书小红本
->   [Access Path Selection in a Relational Database Management System. SIGMOD'1979](https://courses.cs.duke.edu/compsci516/cps216/spring03/papers/selinger-etal-1979.pdf))
->   第 22-34 页内容
-> - （可选） [Statistical Profile Estimation in Database Systems, 1988](
+> MIT 6.5830 / 6.5831 · Database Systems · 第 10 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
 
-当数据库接收到一个查询时，**查询优化器（Query optimizator）**会尝试从众多策略中选择最高效的的**查询执行计划（Query-evaluation plan，QEP）**。优化的一个方面发生在代数关系级别，系统尝试找到与给定表达式等价但执行效率更高的表达式。另一个方面是选择处理查询的具体策略，例如选择用于执行操作的算法、选择要使用的特定索引等等。
+## TL;DR
 
-查询执行计划（QEP）的好坏直接影响到查询的执行效率。为了选择最优的执行计划，优化器需要估算每个步骤（如表扫描、连接、过滤等）的结果集大小，也就是“基数”。基数估计不准确会导致次优甚至糟糕的执行计划，从而影响性能。
+- 查询优化器是关系型系统最复杂的软件组件，负责在庞大的等价逻辑计划空间中寻找代价最低的物理执行计划。
+- 基于规则的优化（RBO）利用关系代数等价公理进行确定性启发式重写（如谓词下推、投影剪枝）。
+- 基于代价的优化（CBO）利用统计信息与动态规划（System-R / Selinger 算法）解决多表连接顺序爆炸难题。
+
+## 架构演进与核心洞察
+
+::: insight 优化器中的“测不准原理”
+查询优化器绝非全知全能的数学神祇。它的致命弱点在于基数估计（Cardinality Estimation）的误差传播。由于多列之间普遍存在真实世界的数据相关性（如“车型=保时捷”与“价格>100万”），经典独立性假设（Attribute Value Independence）会导致连接基数估计出现几个数量级的偏差。代价模型在错误的基数输入下，极易选出一个极慢的笛卡尔积式计划。
+:::
+
+## 核心机制与讲义正文
 
 ## 本讲导览
 

@@ -3,18 +3,25 @@ title: 6.590 计算机系统架构
 type: course
 course: 6.590 计算机系统架构
 course_id: '6.590'
-tags: []
+tags: [computer-architecture, out-of-order, cache-coherence, memory-consistency, superscalar]
 status: complete
 ---
 # 6.590 计算机系统架构
+
+## TL;DR
+- **高级体系结构范式**：从经典单发射顺序流水线扩展至超标量乱序执行、显式数据并行（SIMD/向量）与片上多核。
+- **存储与互连分层**：深入多级非阻塞缓存微架构、分布式目录一致性协议、弱内存一致性模型与片上网络（NoC）路由机制。
+- **软硬件边界探索**：系统剖析分支推测、事务内存、硬件加速器接口以及微架构侧信道安全脆弱性与防御边界。
+
+---
 
 [6.5900/6.823 Computer System Architecture - Fall24](https://csg.csail.mit.edu/6.5900/lecnotes.html)
 
 ## 先行条件
 
-6.1910/6.004  Computating Structures
+6.1910/6.004 Computating Structures
 
-## 课程描述
+## 课程定位与核心架构主题
 
 介绍现代计算机架构的基本原理。强调在计算机架构演进过程中，技术、硬件组织和编程系统之间的关系。主题包括流水线、乱序执行和推测执行；缓存、虚拟内存和异常处理，超标量、超长指令字（VLIW）、向量和多线程处理器；片上网络、内存模型、同步以及多处理器的缓存一致性协议。
 
@@ -25,8 +32,8 @@ status: complete
 **L-01**: Introduction & History of Calculation and Computer Architecture ([handout pdf](http://csg.csail.mit.edu/6.5900/Lectures/L01handout.pdf)) ([split pdf](http://csg.csail.mit.edu/6.5900/Lectures/L01split.pdf)) ([pdf](http://csg.csail.mit.edu/6.5900/Lectures/L01.pdf))
 
 - **L-01**: Introduction & History of Calculation and Computer Architecture ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L01handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L01split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L01.pdf))
-- **L-02**: Instruction Set Architecture and Caches ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L02handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L02split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L02.pdf))
-- **L-03**: Cache Organization and Memory Management ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L03handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L03split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L03.pdf))
+- **L-02**: Instruction Set Architecture and `Caches` ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L02handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L02split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L02.pdf))
+- **L-03**: `Cache` Organization and Memory Management ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L03handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L03split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L03.pdf))
 - **L-04**: Modern Virtual Memory Systems ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L04handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L04split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L04.pdf))
 - **L-05**: Instruction Pipelining: Hazard Resolution, Timing Constraints ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L05handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L05split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L05.pdf))
 - **L-06**: Complex Pipelining ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L06handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L06split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L06.pdf))
@@ -35,8 +42,8 @@ status: complete
 - **L-09**: Speculative Execution ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L09handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L09split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L09.pdf))
 - **L-10**: Advanced Memory Operations ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L10handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L10split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L10.pdf))
 - **L-11**: Multithreading Architectures ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L11handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L11split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L11.pdf))
-- **L-12**: Cache Coherence ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L12handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L12split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L12.pdf))
-- **L-13**: Directory-Based Cache Coherence ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L13handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L13split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L13.pdf))
+- **L-12**: `Cache Coherence` ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L12handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L12split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L12.pdf))
+- **L-13**: `Directory-Based Cache Coherence` ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L13handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L13split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L13.pdf))
 - **L-14**: Memory Consistency ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L14handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L14split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L14.pdf))
 - **L-15**: On-chip Networks I: Topology and Flow Control ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L15-handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L15-split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L15.pdf))
 - **L-16**: On-chip networks II: Router Microarchitecture and Routing ([handout pdf](https://csg.csail.mit.edu/6.5900/Lectures/L16-handout.pdf)) ([split pdf](https://csg.csail.mit.edu/6.5900/Lectures/L16-split.pdf)) ([pdf](https://csg.csail.mit.edu/6.5900/Lectures/L16.pdf))
@@ -55,9 +62,9 @@ status: complete
 - **P&H:** *Computer Organization & Design, by Patterson and Hennessy*
 - **D&T:** *Principles and practices of interconnection networks* by Dally and Towles
 
-![截屏 2024-06-23 23.15.58](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66783c47a6265.png)
+![计算机系统架构参考教材与知识图谱](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66783c47a6265.png)
 
-![截屏 2024-06-23 23.16.41](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66783c6142f22.png)
+![计算机系统架构核心教学模块全景](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66783c6142f22.png)
 
 - -
 
@@ -73,8 +80,8 @@ Prerequisite Self-Assessment Test ([pdf](http://csg.csail.mit.edu/6.5900/StudyMa
   - [Handout 1 - EDSACjr](http://csg.csail.mit.edu/6.5900/StudyMaterials/quiz1/handouts/handout1-edsac.pdf)
   - [Handout 2 - CISC x86](http://csg.csail.mit.edu/6.5900/StudyMaterials/quiz1/handouts/handout2-x86.pdf)
   - [Handout 3 - RISC MIPS](http://csg.csail.mit.edu/6.5900/StudyMaterials/quiz1/handouts/handout3-mips.pdf)
-  - [Handout 4 - Cache](http://csg.csail.mit.edu/6.5900/StudyMaterials/quiz1/handouts/handout4-cache.pdf)
-  - [Handout 5 - Victim Cache](http://csg.csail.mit.edu/6.5900/StudyMaterials/quiz1/handouts/handout5-victim-cache.pdf)
+  - [Handout 4 - `Cache`](http://csg.csail.mit.edu/6.5900/StudyMaterials/quiz1/handouts/handout4-cache.pdf)
+  - [Handout 5 - `Victim Cache`](http://csg.csail.mit.edu/6.5900/StudyMaterials/quiz1/handouts/handout5-victim-cache.pdf)
   - [Handout 6 - Virtual Memory](http://csg.csail.mit.edu/6.5900/StudyMaterials/quiz1/handouts/handout6-virtual-memory.pdf)
   - [Handout 7 - Nested Paging](http://csg.csail.mit.edu/6.5900/StudyMaterials/quiz1/handouts/handout7-nested-paging.pdf)
   - [Handout 8 - L-MIPS ISA](http://csg.csail.mit.edu/6.5900/StudyMaterials/quiz1/handouts/handout8-lmips.pdf)
@@ -160,7 +167,7 @@ Prerequisite Self-Assessment Test ([pdf](http://csg.csail.mit.edu/6.5900/StudyMa
 - **Tutorial 3**: Complex Pipelines ([pdf](http://csg.csail.mit.edu/6.5900/Recitations/R03-ComplexPipelines.pdf))
 - **Tutorial 4**: Branch Prediction ([pdf](http://csg.csail.mit.edu/6.5900/Recitations/R04-BranchPrediction.pdf))
 - **Review 1**: [Quiz 1 Review](http://csg.csail.mit.edu/6.5900/Recitations/Review1-Quiz1.pdf)
-- **Tutorial 6**: [Cache Coherence](http://csg.csail.mit.edu/6.5900/Recitations/R06-CacheCoherence.pdf)
+- **Tutorial 6**: [`Cache Coherence`](http://csg.csail.mit.edu/6.5900/Recitations/R06-CacheCoherence.pdf)
 - **Tutorial 7**: [Memory Consistency](http://csg.csail.mit.edu/6.5900/Recitations/R07-MemoryConsistency.pdf)
 - **Tutorial 8**: [Networks Problem Set Solutions](http://csg.csail.mit.edu/6.5900/Recitations/R08-solutions.pdf)
 - **Review 2**: [Quiz 2 Review](http://csg.csail.mit.edu/6.5900/Recitations/Review2-Quiz2.pdf)

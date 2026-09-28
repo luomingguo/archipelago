@@ -2,15 +2,21 @@
 title: '片上网络（二）：路由器微架构与路由（On-Chip Networks II: Router Microarchitecture & Routing）'
 type: lecture
 lecture: 16
-tags: []
+tags: [on-chip-networks, router-microarchitecture, deadlock-freedom, turn-model]
 status: complete
 ---
-# Lec 16 片上网络（二）：路由器微架构与路由（*On-Chip Networks II: Router Microarchitecture & Routing*）
+# Lec 16 片上网络（二）：路由器微架构与路由（On-Chip Networks II: Router Microarchitecture & Routing）
 
 > MIT 6.5900 Fall 2024 · Daniel Sanchez
 > 主题：路由器微架构与流水线、分配器（*allocator*）、流水线优化、路由算法、死锁与转向模型（*Turn Model*）
 
----
+## TL;DR
+
+- **路由器微架构与流水线**：片上路由器包含缓冲、分配逻辑与 Crossbar 开关；经典流水线划分为写缓冲（BW）、路由计算（RC）、虚通道分配（VA）、交换分配（SA）、交换穿越（ST）与链路穿越（LT）。
+- **流水线压缩技术**：通过前瞻路由（Lookahead Routing）将 RC 转移至上一跳重叠执行，结合推测交换分配（Speculative SA）在低载下并发进行 VA 与 SA，大幅削减路由器单跳延迟。
+- **死锁防范与转向模型**：基于信道依赖图（CDG）禁止特定转向（如 West-First、North-Last）或按维序分配虚通道（DOR/VC Partitioning），系统化破除循环依赖环。
+
+------
 
 ## 一、回顾：虫孔 vs 虚通道流量控制
 
@@ -137,11 +143,19 @@ BW  RC  VA
 
 ---
 
-## 本讲小结
+## 路由器微架构与无死锁路由算法总结
 
 - 路由器是含逻辑（分配器/仲裁器）、存储（缓冲）、通信（crossbar）的小系统，流水线分 BW/RC/VA/SA/ST/LT；
 - 前瞻路由与推测交换分配可缩短流水线关键路径；
 - 维序路由（XY/YX）简单无死锁但混用会死锁；**转向模型**与**无环 CDG**是系统化保证无死锁的工具；虚通道可通过限制分配打破依赖环；
 - 随机化路由（Valiant/ROMM）以局部性换取负载均衡与更好的最坏情况性能。
+
+::: insight 路由无死锁的拓扑数学本质：信道依赖图（CDG）与转向限制的取舍
+初学者在设计 NoC 路由算法时，往往直觉地认为「只要每个节点公平仲裁，网络就不会卡死」。然而网络死锁（Routing Deadlock）本质上是一个关于缓冲资源循环等待的图论问题：当一组数据包分别持有一条链路的缓冲并请求下一条链路，且请求路径在拓扑上闭合成环时，任何仲裁策略都无能为力。
+
+经典维序路由（如 XY Routing）通过强制「必须完全走完 X 轴才能转入 Y 轴」，粗暴地消除了 8 种可能转向中的 4 种（严禁 Y 到 X 的转向），从而在信道依赖图（CDG）中彻底截断了形成有向环的可能性。然而，这种严格的维序限制完全抹杀了网络动态规避热点拥塞的自适应能力。
+
+Glass 与 Ni 提出的**转向模型（Turn Model）** 揭示了无死锁的最小充分条件：在一个 2D Mesh 中，只需禁止 2 种（而非 4 种）特定转向（如 West-First 模型禁止所有东转南、东转北等进入西向的转向），就能恰好破坏所有顺时针与逆时针环路，同时为其余 6 种转向保留丰富的自适应路由路径。如果必须支持全向完全自适应，则必须引入虚通道（VC），将一个物理环路拆分映射到递增的独立虚拟层（如 VC 0 走 X、VC 1 走 Y），通过虚通道维度的偏序关系在数学上杜绝环路闭合。这种在拓扑约束、逻辑信道层与硬件调度复杂度之间的权衡，是片上互连架构最优雅的理论结晶。
+:::
 
 > 下一讲：事务内存（Transactional Memory）

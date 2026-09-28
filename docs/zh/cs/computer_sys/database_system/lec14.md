@@ -1,24 +1,31 @@
 ---
-title: 故障恢复（Part I)
+title: '故障恢复与 ARIES 算法'
 type: lecture
 lecture: 14
-tags: []
+tags: [write-ahead-logging, aries-recovery, compensation-log-record, checkpointing]
 status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 14 故障恢复（Part I)
 
-> 阅读资料
->
-> [ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging, 1992](https://web.stanford.edu/class/cs345d-01/rl/aries.pdf) ，读 1-7 节，泛读 12 和 13 节
+# Lec 14 故障恢复与 ARIES 算法（Crash Recovery and ARIES）
 
-恢复算法（Recovery algorithm）是保证数据库一致性、事务原子性和持久性的技术，当 crash 发生时，所有存在于内存但未提交到磁盘的数据将会丢失。恢复算法发挥崩溃后组织信息丢失的作用，每个恢复算法包含两个部分：
+> MIT 6.5830 / 6.5831 · Database Systems · 第 14 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
 
-- 在正常事务处理期间保证 DBMS 能从故障中恢复的动作
-- 在故障发生后，将数据库恢复到能够保证原子性、一致性和持久性的状态。
+## TL;DR
 
-在恢复算法中最关键的两个原语是 UNDO 和 REDO。
+- 故障恢复子系统确保在系统突然断电或进程崩溃重启后，已提交事务不丢（持久性）且未提交事务彻底回滚（原子性）。
+- 预写日志规则（WAL）：任何脏页刷盘前，其对应的日志记录必须先行持久化至稳定存储。
+- ARIES 经典三阶段恢复算法：分析阶段确定崩溃时活跃事务、重做阶段（Redo）恢复系统状态、撤销阶段（Undo）回滚未提交修改。
 
-这是一篇冗长且难度较高的论文，我们将在两次讲座的大部分时间里探讨它。重点理解 ARIES 恢复算法的核心。
+## 架构演进与核心洞察
+
+::: insight 补偿日志（CLR）与幂等恢复
+ARIES 算法中最天才的设计是补偿日志记录（Compensation Log Record, CLR）。当系统在崩溃恢复的 Undo 阶段执行回滚操作时，如果恢复过程再次发生崩溃，没有 CLR 的系统可能会重复执行回滚导致数据被双重破坏。CLR 记录了 Undo 操作本身，并在页头更新 PageLSN。任何重做或撤销操作均是严格幂等的，保证系统无论在恢复的哪一毫秒再次断电都能最终收敛到正确状态。
+:::
+
+## 核心机制与讲义正文
 
 ## 存储类型
 

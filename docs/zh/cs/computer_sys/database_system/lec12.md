@@ -1,17 +1,31 @@
 ---
-title: 事务和锁
+title: '事务处理与并发控制：冲突可串行化与两阶段锁'
 type: lecture
 lecture: 12
-tags: []
-status: stub
+tags: [serializability, conflict-serializability, two-phase-locking, deadlock-detection]
+status: complete
+source: 'https://dsg.csail.mit.edu/6.5830/'
 ---
-# Lec 12 事务和锁
 
-> 阅读资料
->
-> [Concurrency Control and Recovery, franklin97](https://courses.cs.washington.edu/courses/cse544/11wi/papers/franklin97.pdf)
+# Lec 12 事务处理与并发控制：冲突可串行化与两阶段锁（Transactions and Two-Phase Locking）
 
-本章开始我们讨论下并发控制和恢复，如何保证更新和数据库故障时保持正确性
+> MIT 6.5830 / 6.5831 · Database Systems · 第 12 讲  
+> 核心教材：*Readings in Database Systems* (5th Edition, Red Book)  
+> 配套实验：GoDB (Go-based Database Engine)
+
+## TL;DR
+
+- 事务通过 ACID 四大属性为并发数据修改提供了不可分割与系统一致性的安全语义保证。
+- 冲突可串行化（Conflict Serializability）利用优先图（Precedence Graph）无环判定并发调度的正确性。
+- 严格两阶段锁（Strict 2PL）分为增长阶段（加锁）与收缩阶段（提交时统一释放），杜绝级联回滚。
+
+## 架构演进与核心洞察
+
+::: insight 2PL 的保守性与死锁的必然代价
+两阶段锁（2PL）是一种悲观并发控制协议。它保证了可串行化调度，但也必然带来死锁（Deadlock）的风险。死锁并非系统的 Bug，而是互斥锁依赖环在资源争抢时的自然数学结果。DBMS 必须配备死锁检测（有向图周期检测算法）或死锁预防策略（Wait-Die / Wound-Wait 基于事务时间戳的主动抢占）。
+:::
+
+## 核心机制与讲义正文
 
 ## 事务
 
