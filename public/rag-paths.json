@@ -113,11 +113,11 @@
           "notes": [
             {
               "title": "PostgreSQL 中的 WAL — 2. 预写式日志（Write-Ahead Log）",
-              "url": "/zh/postgresql/wal-02-write-ahead-log"
+              "url": "/zh/db/postgresql/wal-02-write-ahead-log"
             },
             {
               "title": "PostgreSQL 中的 MVCC — 4. 快照",
-              "url": "/zh/postgresql/mvcc-04-snapshots"
+              "url": "/zh/db/postgresql/mvcc-04-snapshots"
             }
           ]
         },

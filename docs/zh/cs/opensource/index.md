@@ -13,7 +13,7 @@ title: 开源项目研读
 
 ## 开源项目笔记
 
-- [PostgreSQL 内核原理](/zh/postgresql/index.md)
+- [PostgreSQL 内核原理](./db/postgresql/index.md)
 - [Go 语言与运行时内核深度剖析](./golang/index.md)
 - [redis]()
 - [k8s]()

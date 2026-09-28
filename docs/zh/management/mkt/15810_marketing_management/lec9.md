@@ -90,7 +90,7 @@ status: complete
 ## 延伸材料
 
 - [产品设计讲义](./15-810-fall-2015/15-810-fall-2015/contents/lecture-notes/MIT15_810F15_L8_ProdDesn.pdf)
-- [原始创新笔记](./source-notes/lec12.md)
+- 原始创新笔记尚未纳入当前知识库。
 - [Bass 扩散工具](./15-810-fall-2015/15-810-fall-2015/contents/tools/MIT15_810F15_Diffusion.xlsx)
 
 ::: insight 创新扩散与跨越鸿沟

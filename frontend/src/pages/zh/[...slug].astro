@@ -47,6 +47,13 @@ export async function getStaticPaths() {
     const canonical = idToUrlPath(entry.id);
     const paths = [{ slug: canonical || 'index', alias: !canonical }];
     if (entry.id.endsWith('/index') && canonical) paths.push({ slug: `${canonical}/index`, alias: true });
+    // PostgreSQL moved under opensource/db. Keep its established public URLs
+    // alive so bookmarks and external links do not break after the source move.
+    if (entry.id.startsWith('cs/opensource/db/postgresql/')) {
+      const legacy = canonical.replace(/^db\//, '');
+      paths.push({ slug: legacy, alias: true });
+      if (entry.id.endsWith('/index')) paths.push({ slug: `${legacy}/index`, alias: true });
+    }
     return paths.map(({ slug, alias }) => ({
       params: { slug },
       props: { entryId: entry.id, selectedId: selected.id, alias },

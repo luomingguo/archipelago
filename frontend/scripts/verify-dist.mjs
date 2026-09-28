@@ -41,6 +41,7 @@ function idToPublicPath(id) {
 
 const routeContracts = new Map([
   ['cs/computer_sys/os/lec5', 'os/lec5'],
+  ['cs/opensource/db/postgresql/index', 'db/postgresql'],
   ['cs/tcs/index', 'tcs'],
   ['psy/core/intro/lec1', 'psy/intro/lec1'],
   ['mgnt/org/leadership/index', 'mgnt/leadership'],

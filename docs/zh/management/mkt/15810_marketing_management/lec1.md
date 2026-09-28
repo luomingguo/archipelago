@@ -100,7 +100,7 @@ $$
 
 ## 延伸材料
 
-- [原始课程导论笔记](./source-notes/lec1.md)
+- 原始课程导论笔记尚未纳入当前知识库。
 - [营销框架讲义](./15-810-fall-2015/15-810-fall-2015/contents/lecture-notes/MIT15_810F15_L1_Stratgic.pdf)
 
 ::: insight 营销的本体论反转

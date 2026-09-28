@@ -105,7 +105,7 @@ $$
 - [定价讲义](./15-810-fall-2015/15-810-fall-2015/contents/lecture-notes/MIT15_810F15_L10_Pricing.pdf)
 - [联合分析阅读](./15-810-fall-2015/15-810-fall-2015/contents/readings/MIT15_810F15_Conjoint.pdf)
 - [联合分析工具](./15-810-fall-2015/15-810-fall-2015/contents/tools/MIT15_810F15_Conjoint.xlsx)
-- [原始价值与 CLV 笔记](./source-notes/lec4.md)
+- 原始价值与 CLV 笔记尚未纳入当前知识库。
 
 ::: insight 价格是价值捕获的终极刻度
 价格绝不是成本加上固定利润率的算术公式，价格是顾客在综合权衡替代品后所感知的经济价值（EVC）的变现载体。定价决策是企业所有营销努力的试金石：如果在产品、品牌与定位上未能创造无可替代的独特价值，企业就只能在价格战的血腥泥潭中退化为平庸的成本奴隶。

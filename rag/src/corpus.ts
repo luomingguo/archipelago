@@ -161,7 +161,7 @@ export function extractHeadings(body: string): Heading[] {
  *
  * 已用 Astro 的实际产物验证：
  *   zh/cs/computer_sys/os/lec5.md        -> /zh/os/lec5
- *   zh/cs/opensource/postgresql/index.md -> /zh/postgresql/
+ *   zh/cs/opensource/db/postgresql/index.md -> /zh/db/postgresql/
  *   zh/cs/tcs/index.md                   -> /zh/tcs/
  *   zh/psy/core/intro/lec1.md            -> /zh/psy/intro/lec1
  */
