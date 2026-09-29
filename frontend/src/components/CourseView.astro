@@ -16,9 +16,9 @@ const statusLabel = (value: unknown) => value === 'complete' ? '完成' : value 
 ---
 <AtlasLayout title={course.title} description={course.excerpt}>
   <div class="atlas-shell">
-    <CatalogSidebar catalog={catalog} activeDomain={domain.key} />
+    <CatalogSidebar catalog={catalog} activeDiscipline={domain.disciplineSlug} activeDomain={domain.key} />
     <div class="atlas-main">
-      <nav class="atlas-breadcrumb" aria-label="面包屑"><a href={withBasePath('/')}>Home</a><span>/</span><a href={domain.href}>{domain.label}</a><span>/</span><span aria-current="page">{course.courseId || course.slug}</span></nav>
+      <nav class="atlas-breadcrumb" aria-label="面包屑"><a href={withBasePath('/zh/')}>首页</a><span>/</span><a href={withBasePath(`/zh/subjects/${domain.disciplineSlug}/`)}>{catalog.disciplines.find((item) => item.slug === domain.disciplineSlug)?.label}</a><span>/</span><a href={domain.href}>{domain.label}</a><span>/</span><span aria-current="page">{course.courseId || course.slug}</span></nav>
       <header class="course-hero">
         <div>
           <p class="atlas-kicker">COURSE · {course.courseId || course.slug}</p>

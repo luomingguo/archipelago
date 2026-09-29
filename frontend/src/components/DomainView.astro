@@ -13,12 +13,12 @@ const { catalog, domain, contentHtml } = Astro.props;
 ---
 <AtlasLayout title={domain.label} description={domain.description}>
   <div class="atlas-shell">
-    <CatalogSidebar catalog={catalog} activeDomain={domain.key} />
+    <CatalogSidebar catalog={catalog} activeDiscipline={domain.disciplineSlug} activeDomain={domain.key} />
     <div class="atlas-main">
-      <nav class="atlas-breadcrumb" aria-label="面包屑"><a href={withBasePath('/')}>Home</a><span>/</span><span aria-current="page">{domain.label}</span></nav>
+      <nav class="atlas-breadcrumb" aria-label="面包屑"><a href={withBasePath('/zh/')}>首页</a><span>/</span><a href={withBasePath(`/zh/subjects/${domain.disciplineSlug}/`)}>{catalog.disciplines.find((item) => item.slug === domain.disciplineSlug)?.label}</a><span>/</span><span aria-current="page">{domain.label}</span></nav>
       <header class:list={['atlas-hero', 'domain-hero', { 'has-hero-image': domain.heroImage }]}>
         <div class="domain-hero-copy">
-          <p class="atlas-kicker">DOMAIN · {domain.courseCount} COURSES</p>
+          <p class="atlas-kicker">领域 · {domain.courseCount} 门课程</p>
           <h1>{domain.label}</h1>
           <p>{domain.description}</p>
           <div class="atlas-stats">{domain.courseCount} 门课程 · {domain.noteCount} 篇真实笔记 · {domain.tags.length} 个已标注 tags</div>

@@ -2,13 +2,19 @@
 title: 加速器（二）（Accelerators II）
 type: lecture
 lecture: 24
-tags: []
+tags: [sparse-tensors, fibertree-abstraction, sparse-accelerators, tensor-compression, hardware-gating]
 status: complete
 ---
 # Lec 24 加速器（二）（*Accelerators II*）
 
 > MIT 6.5900 Fall 2024 · Joel Emer
 > 主题：稀疏张量（*Sparse Tensors*）、纤维树抽象（*Fibertree*）、张量表示与遍历、稀疏加速三特性（Format / Gating / Skipping）、稀疏卷积数据流、FuseMax
+
+## TL;DR
+
+- **稀疏加速三特性**：利用张量稀疏性实现能效突破的核心手段为表示格式（Format 节省存储）、时钟门控（Gating 消除无效计算功耗）与周期跳过（Skipping 压缩计算周期）。
+- **纤维树（Fibertree）抽象**：将多维稀疏张量统一建模为分层纤维树，通过坐标列表与段指针表示稀疏数据，将张量代数自然规约为坐标投影、纤维求交（&）与归约原语。
+- **数据流与算子融合演进**：稀疏卷积利用空间切分（Split Equal）与双边跳零消除无效访存；注意力机制通过在线 Softmax 融合（FuseMax）将多次访存合并为单趟（1-pass）流式计算。
 
 ---
 
@@ -108,24 +114,30 @@ for (h, t_h) in t:
 
 ### CSR：压缩稀疏行（*Compressed Sparse Row*）
 
-*CSR* 是纤维树抽象的一种具体实现，由三部分组成：
+*CSR* 是纤维树抽象在二维矩阵上的经典具体实现。它将外层行维度保持为未压缩的密集结构，而将内层列维度压缩为仅存放非零项的连续序列。数据由三部分紧凑数组组成：
 
-- **段数组**（*Segment Array*）：每行在坐标/值数组中的起止；
-- **坐标数组**（*Coordinate Array*）；
-- **值数组**（*Value Array*）。
+- **段数组**（*Segment Array, `t_segs`*）：大小为 $H + 1$，充当行纤维的偏移指针表，记录每行在底层数组中的起始与结束边界；
+- **坐标数组**（*Coordinate Array, `t_coords`*）：记录所有非零元素的列坐标（Column Index）；
+- **值数组**（*Value Array, `t_vals`*）：记录与列坐标严格一一对应的非零有效载荷（Payload）。
 
-CSR 风格的遍历：
+**CSR 遍历实现与执行原语**：
+
+在硬件遍历中，外层行循环以连续的行号直接索引段数组，内层循环仅在当前行非零区间内连续扫描，彻底跳过了所有零值：
 
 ```python
 for t_h_pos in [0, H):
     h = t_h_pos                                   # 未压缩 rank：坐标=位置
     t_w_start = t_segs[t_h_pos]
-    t_w_len   = t_segs[t_h_pos + 1] - t_w_start
+    t_w_len   = t_segs[t_h_pos + 1] - t_w_start   # 相邻指针相减得出本行非零元素个数
     for t_w_pos in [t_w_start, t_w_start + t_w_len):
-        w     = t_coords[t_w_pos]
-        t_val = t_vals[t_w_pos]
+        w     = t_coords[t_w_pos]                 # 仅读取非零元素的列坐标
+        t_val = t_vals[t_w_pos]                   # 提取对应数值
         sum  += t_val
 ```
+
+**开销与效率权衡**：
+- **访存跳过与带宽压缩**：遍历总次数从密集矩阵的 $H \times W$ 骤降至非零元素总数（$NNZ$），有效规避了海量无意义的零值读取；
+- **间接访问代价**：通过 `t_segs` 进行二级指针解引用会引入间接寻址开销，若矩阵密度较高，额外的元数据开销（Segment 与 Coordinate）在容量与能耗上甚至可能超过未压缩的原生数组。
 
 ---
 
@@ -200,19 +212,27 @@ for q in [0, Q):
 
 ### 纤维在位置空间上的等分（*Split Equal*）
 
-把一个纤维按**位置**等分（如每 2 个一组）成多个子纤维 $W_0, W_1, \ldots$，用于并行处理。
+在密集计算中，循环平铺通常简单地在**坐标空间**均匀切片（如按固定步长划分索引）。但稀疏张量在坐标轴上的非零元分布具有高度不规则性；若按坐标切片，不同处理单元（PE）分得的非零计算量差异极大，极易造成木桶效应与硬件闲置。
 
-并行的权重固定稀疏卷积：
+为了实现硬件负载均衡，纤维树引入了**位置空间等分**（`splitEqual`）：直接在底层物理存储序列上将非零元等额切分（例如每 2 个非零元素组成一个子纤维 $W_0, W_1, \ldots$），确保每个并行处理通道分得绝对相等的有效工作量。
+
+**并行的权重固定（WS）稀疏卷积映射**：
+
+在此映射中，外层按位置等分抽取非零权重，内层结合输出维度的空间展开构建并行计算网格：
 
 ```python
-for (s1, f_split) in f.splitEqual(2):       # 每次取两个权重
+for (s1, f_split) in f.splitEqual(2):       # 每次取两个非零权重分块
     for q1 in [0, Q/4):
-        parallel-for (s0, f_val) in f_split:    # 两个权重并行
-            parallel-for q0 in [0, 4):          # 四个输出并行
+        parallel-for (s0, f_val) in f_split:    # 2 个权重通道并行发射
+            parallel-for q0 in [0, 4):          # 4 个输出空间点并行累加
                 q = q1*4 + q0
                 w = q + s
-                o[q] += i[w] * f_val            # 各输出空间上分别累加
+                o[q] += i[w] * f_val            # 广播激活并累加至各个输出点
 ```
+
+**并行度与硬件复用**：
+- **负载均衡保障**：`f_split` 内部的元素数目恒定，使得参与并行的乘法单元时钟完全对齐；
+- **二维空间映射**：硬件上形成了 $2 \times 4$ 的处理单元阵列，权重在本地 PE 寄存器常驻，输入激活跨输出通道广播，兼顾了并行度与本地数据复用。
 
 ---
 
@@ -269,10 +289,14 @@ $$
 
 ---
 
-## 本讲小结
+## 稀疏张量加速架构与纤维树抽象总结
 
 - 稀疏性可同时省**空间、能量、时间**，但收益受任务误差容忍约束；
 - 三大硬件特性：**Format**（表示选择）、**Gating**（空闲省能）、**Skipping**（跳过省能省时）；
 - **纤维树**抽象统一了张量表示（含 CSR 等），其遍历可映射为**投影、交集、归约、填充输出**等原语；
 - 稀疏卷积/注意力的关键是用**坐标投影 + 纤维交集**只处理双方都非零的点，并用 split/parallel 引入并行；
 - 在线 softmax 融合（FuseMax）用更少的"趟"完成注意力，降低数据移动。
+
+::: insight 稀疏加速的终极权衡：元数据开销与控制复杂度的博弈
+在密集计算架构中，数据地址由连续嵌套循环规则推导，硬件流控极为简单规整。然而一旦引入稀疏性，虽然表面上消除了大量乘零无效运算，硬件却必须引入坐标元数据（如 CSR 的指针与索引数组）并部署动态求交与分发网络（Intersection & Distribution Logic）。当张量稀疏度不够高（例如低于 50%）时，解压缩元数据的存储与搬运功耗、以及非规则访问导致的内存 Bank 冲突与负载不均（Load Imbalance），往往会完全抵消跳过乘法所节省的能耗。因此，真正的现代稀疏硬件设计从不孤立追求无结构稀疏（Unstructured Sparsity），而是通过算法-硬件协同定义半结构化稀疏（如 NVIDIA 2:4 稀疏）或统一纤维树抽象，在「控制逻辑的确定性」与「数据跳跃的稀疏收益」之间找到最优雅的帕累托平衡点。
+:::

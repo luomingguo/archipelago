@@ -1,0 +1,35 @@
+---
+import AtlasLayout from '@/layouts/AtlasLayout.astro';
+import CatalogSidebar from '@/components/CatalogSidebar.astro';
+import type { DisciplineSummary, LibraryCatalog } from '@/lib/catalog';
+import { withBasePath } from '@/lib/notes';
+
+interface Props { catalog: LibraryCatalog; discipline: DisciplineSummary }
+const { catalog, discipline } = Astro.props;
+---
+<AtlasLayout title={discipline.label} description={discipline.description}>
+  <div class="atlas-shell">
+    <CatalogSidebar catalog={catalog} activeDiscipline={discipline.slug} />
+    <main class="atlas-main">
+      <nav class="atlas-breadcrumb" aria-label="面包屑"><a href={withBasePath('/zh/')}>首页</a><span>/</span><span aria-current="page">{discipline.label}</span></nav>
+      <header class="atlas-hero discipline-hero">
+        <p class="atlas-kicker">SUBJECT · {discipline.domains.length} 个领域</p>
+        <h1>{discipline.label}</h1>
+        <p>{discipline.description}</p>
+        <div class="atlas-stats">{discipline.domains.length} 个领域 · {discipline.courseCount} 门课程 · {discipline.noteCount} 篇笔记</div>
+      </header>
+      <section class="atlas-section" aria-labelledby="discipline-domains">
+        <div class="atlas-section-head"><h2 id="discipline-domains">知识领域</h2><span>选择一个方向继续探索</span></div>
+        <div class="domain-grid">
+          {discipline.domains.map((domain, index) => (
+            <a class="domain-card" href={domain.href}>
+              <div class="domain-title"><span>{String(index + 1).padStart(2, '0')}</span><h3>{domain.label}</h3></div>
+              <p>{domain.description}</p>
+              <small>{domain.courseCount} 门课程 · {domain.noteCount} 篇笔记</small>
+            </a>
+          ))}
+        </div>
+      </section>
+    </main>
+  </div>
+</AtlasLayout>

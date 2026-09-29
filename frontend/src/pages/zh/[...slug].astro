@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import CourseView from '@/components/CourseView.astro';
 import DomainView from '@/components/DomainView.astro';
+import DisciplineView from '@/components/DisciplineView.astro';
 import HomeView from '@/components/HomeView.astro';
 import { LearningPath } from '@/components/LearningPath';
 import LectureLayout from '@/layouts/LectureLayout.astro';
@@ -70,19 +71,25 @@ export async function getStaticPaths() {
       }));
     });
 
-  return [...notePaths, ...inferredDomainPaths];
+  const disciplinePaths = catalog.disciplines.map((discipline) => ({
+    params: { slug: `subjects/${discipline.slug}` },
+    props: { disciplineSlug: discipline.slug, selectedId: selected.id, alias: false },
+  }));
+
+  return [...notePaths, ...inferredDomainPaths, ...disciplinePaths];
 }
 
-const { entryId, domainKey, selectedId, alias } = Astro.props as {
+const { entryId, domainKey, disciplineSlug, selectedId, alias } = Astro.props as {
   entryId?: string;
   domainKey?: string;
+  disciplineSlug?: string;
   selectedId: string;
   alias: boolean;
 };
 const allNotes = await getCollection('notes');
 const catalog = buildCatalog(allNotes);
 const entry = entryId ? allNotes.find((note) => note.id === entryId) : undefined;
-if (!entry && !domainKey) throw new Error(`找不到内容：${entryId ?? '未知路由'}`);
+if (!entry && !domainKey && !disciplineSlug) throw new Error(`找不到内容：${entryId ?? '未知路由'}`);
 
 if (entry) await render(entry);
 const headings = entry ? sourceHeadings(entry.body ?? '') : [];
@@ -93,6 +100,7 @@ const contentHtml = entry ? rewriteRenderedInternalLinks(renderedHtml, entry.id)
 const domain = domainKey
   ? catalog.domains.find((candidate) => candidate.key === domainKey) ?? null
   : entry ? domainForEntry(catalog, entry) : null;
+const discipline = disciplineSlug ? catalog.disciplines.find((candidate) => candidate.slug === disciplineSlug) ?? null : null;
 const course = entry ? courseForEntry(catalog, entry) : null;
 const courseEntries = entry ? course?.entries ?? courseEntriesOf(allNotes, entry.id) : [];
 const contentEntries = courseEntries.filter((note) => !isCourseIndex(note));
@@ -133,7 +141,9 @@ const learningPaths = sourceLearningPaths ? {
   }])),
 } : null;
 ---
-{domainKey && domain ? (
+{disciplineSlug && discipline ? (
+  <DisciplineView catalog={catalog} discipline={discipline} />
+) : domainKey && domain ? (
   <DomainView catalog={catalog} domain={domain} contentHtml="" />
 ) : entry && isRootIndex(entry) ? (
   <HomeView catalog={catalog} />
