@@ -3,6 +3,7 @@ import { execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { categoryLabel } from '@/lib/taxonomy';
 
 export type NoteEntry = CollectionEntry<'notes'>;
 export type NoteType = 'course' | 'lecture' | 'paper' | 'concept' | 'assignment' | 'project';
@@ -68,21 +69,9 @@ export interface Backlink {
   context: string;
 }
 
-const DOMAIN_LABELS: Record<string, string> = {
-  arch: '计算机架构',
-  computer_sys: '计算机系统',
-  language: '编程语言',
-  opensource: '开源项目',
-  opensrc: '开源项目',
-  security: '计算机安全',
-  sw_eng: '软件工程',
-  tcs: '理论计算机科学',
-  index: '知识索引',
-};
-
 const SITE_BASE = normalizeBase(process.env.DOCS_BASE ?? '/');
 const SOURCE_CATEGORIES = new Set(['arch', 'computer_sys', 'index', 'language', 'opensource', 'opensrc', 'security', 'sw_eng', 'tcs']);
-const DISCIPLINE_SLUGS = new Set(['cs', 'psy', 'mgnt']);
+const DISCIPLINE_SLUGS = new Set(['cs', 'psy', 'economics', 'management', 'mgnt']);
 let gitUpdatedCache: Map<string, string> | null = null;
 
 function projectRoot(): string {
@@ -192,7 +181,7 @@ export function domainKeyOf(id: string): string {
 
 export function domainLabelOf(id: string): string {
   const category = canonicalDomainSlug(categoryOf(id));
-  return DOMAIN_LABELS[category] ?? category.replaceAll('_', ' ');
+  return categoryLabel(disciplineOf(id), category);
 }
 
 export function isRootIndex(entry: NoteEntry): boolean {
@@ -401,7 +390,7 @@ export function buildTaxonomy(entries: NoteEntry[], currentId: string): NavDomai
       const [discipline, slug] = key.split('/');
       return {
         slug: key,
-        label: DOMAIN_LABELS[slug] ?? slug.replaceAll('_', ' '),
+        label: categoryLabel(discipline, slug),
         href: idToHref(`${discipline}/${slug}/index`),
         noteCount: value.notes,
         courseCount: value.courses.size,

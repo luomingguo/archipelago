@@ -19,6 +19,7 @@ import {
   titleOf,
   withBasePath,
 } from '@/lib/notes';
+import { categoryDescription, disciplineDescription, disciplineLabel } from '@/lib/taxonomy';
 
 export interface CourseSummary {
   key: string;
@@ -54,6 +55,16 @@ export interface DomainSummary {
   indexEntry: NoteEntry | null;
 }
 
+export interface DisciplineSummary {
+  slug: string;
+  label: string;
+  href: string;
+  description: string;
+  noteCount: number;
+  courseCount: number;
+  domains: DomainSummary[];
+}
+
 export interface RecentNote {
   title: string;
   href: string;
@@ -63,6 +74,7 @@ export interface RecentNote {
 }
 
 export interface LibraryCatalog {
+  disciplines: DisciplineSummary[];
   domains: DomainSummary[];
   courses: CourseSummary[];
   totalNotes: number;
@@ -79,7 +91,9 @@ function domainDescription(entry: NoteEntry | null, courses: CourseSummary[]): s
     const names = courses.slice(0, 5).map((course) => course.title);
     return `收录 ${names.join('、')}${courses.length > names.length ? '等课程' : '课程'}的中文技术笔记。`;
   }
-  return entry ? plainExcerpt(entry.body ?? '', 150) : '该领域暂无结构化简介。';
+  if (entry) return plainExcerpt(entry.body ?? '', 150);
+  const first = courses[0];
+  return first ? categoryDescription(first.disciplineSlug, first.domainSlug) : '该领域暂无结构化简介。';
 }
 
 function domainHeroImage(entry: NoteEntry | null, label: string): DomainSummary['heroImage'] {
@@ -195,7 +209,23 @@ export function buildCatalog(entries: NoteEntry[]): LibraryCatalog {
     .sort((a, b) => b.updated.localeCompare(a.updated) || a.title.localeCompare(b.title, 'zh'))
     .slice(0, 8);
 
+  const disciplines: DisciplineSummary[] = [...new Set(domains.map((domain) => domain.disciplineSlug))]
+    .map((slug) => {
+      const disciplineDomains = domains.filter((domain) => domain.disciplineSlug === slug);
+      return {
+        slug,
+        label: disciplineLabel(slug),
+        href: withBasePath(`/zh/subjects/${slug}/`),
+        description: disciplineDescription(slug),
+        noteCount: disciplineDomains.reduce((sum, domain) => sum + domain.noteCount, 0),
+        courseCount: disciplineDomains.reduce((sum, domain) => sum + domain.courseCount, 0),
+        domains: disciplineDomains,
+      };
+    })
+    .sort((a, b) => b.noteCount - a.noteCount || a.label.localeCompare(b.label, 'zh'));
+
   return {
+    disciplines,
     domains,
     courses,
     totalNotes: entries.filter((entry) => !entry.id.endsWith('/index')).length,

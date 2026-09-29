@@ -272,6 +272,18 @@ button { color: inherit; }
 .atlas-section-head h2, .domain-facts h2 { margin: 0; color: var(--text-muted); font-family: var(--font-sans); font-size: 10px; font-weight: 600; letter-spacing: var(--tracking-label); }
 .atlas-section-head span { color: var(--faint); font-size: 11px; }
 .domain-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; border: 0; background: transparent; }
+.discipline-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.discipline-card { display: flex; min-width: 0; flex-direction: column; gap: 12px; border: 1px solid var(--border-hairline); border-top: 2px solid var(--accent); border-radius: var(--radius-md); background: var(--surface-card); padding: 26px; box-shadow: var(--shadow-1); transition: var(--transition-lift); }
+.discipline-card:hover { border-color: var(--border-focus); box-shadow: var(--shadow-2); transform: translateY(-2px); }
+.discipline-card p { margin: 0; color: var(--text-muted); font-family: var(--font-serif); font-size: 14px; line-height: 1.7; }
+.discipline-card small { margin-top: auto; border-top: 1px dashed var(--route-line); padding-top: 12px; color: var(--text-faint); font-size: 11px; }
+.discipline-categories { display: flex; flex-wrap: wrap; gap: 6px 12px; color: var(--primary); font-size: 11px; }
+.discipline-categories span + span::before { margin-right: 12px; color: var(--route-line); content: "/"; }
+.taxonomy-group + .taxonomy-group { margin-top: 3px; }
+.taxonomy-nav .discipline-link { font-weight: 600; }
+.taxonomy-children { display: flex; flex-direction: column; margin: 2px 0 8px 10px; border-left: 1px solid var(--border-hairline); padding-left: 8px; }
+.taxonomy-children a { font-size: 11.5px; }
+.taxonomy-children a[aria-current="page"] { background: var(--surface-ghost-press); box-shadow: inset 2px 0 0 var(--accent); color: var(--text-heading); }
 .domain-card { display: flex; min-width: 0; flex-direction: column; gap: 10px; border: 1px solid rgb(143 198 223 / 16%); border-radius: var(--radius-md); background: var(--gradient-abyss); background-image: var(--gradient-abyss), var(--texture-chart); padding: 24px; color: var(--text-inverse-muted); box-shadow: var(--shadow-1); transition: var(--transition-lift); }
 .domain-card:hover { border-color: rgb(143 198 223 / 34%); box-shadow: var(--shadow-2); transform: translateY(-2px); }
 .domain-title { display: flex; align-items: baseline; gap: 10px; }
@@ -429,7 +441,7 @@ button { color: inherit; }
   .atlas-links a { font-size: 9px; }
   .atlas-main { padding: 32px 18px 72px; }
   .atlas-hero-home { margin: -32px -18px 0; padding: 44px 22px 42px; }
-  .domain-grid, .atlas-lower-grid { grid-template-columns: 1fr; }
+  .domain-grid, .discipline-grid, .atlas-lower-grid { grid-template-columns: 1fr; }
   .domain-hero.has-hero-image { grid-template-columns: minmax(0, 1fr) 112px; gap: 14px; }
   .domain-hero-image { max-height: 120px; }
   .domain-hero-image img { max-width: 120px; max-height: 120px; }
