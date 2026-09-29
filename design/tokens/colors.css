@@ -13,8 +13,8 @@
   /* Warm horizon — sunset gradient in the badge */
   --sunset-400:#f0b265;--sunset-300:#f9cf90;
   /* Semantic hues */
-  --kelp-700:#245445;--kelp-600:#2f6b57;--kelp-200:#cfe2d8;
-  --coral-700:#933d2b;--coral-600:#b4503a;--coral-200:#f2d6cd;
+  --kelp-700:#245445;--kelp-600:#2f6b57;--kelp-400:#7bc4a5;--kelp-200:#cfe2d8;
+  --coral-700:#933d2b;--coral-600:#b4503a;--coral-400:#e88670;--coral-200:#f2d6cd;
 
   /* ---- Semantic aliases: text ---- */
   --text-strong:var(--navy-950);
@@ -42,7 +42,7 @@
   --surface-scrim:rgba(4,16,31,.55);
 
   /* ---- Semantic aliases: lines ---- */
-  --border-hairline:rgba(0,26,61,.12);
+  --border-hairline:rgba(0,26,61,.09);
   --border-subtle:rgba(0,26,61,.18);
   --border-strong:rgba(0,26,61,.32);
   --border-inverse:rgba(226,236,245,.22);

@@ -142,11 +142,14 @@ button { color: inherit; }
 .note-insight, .note-warning { --note-accent: var(--gold-600); --note-bg: color-mix(in srgb, var(--gold-200) 38%, transparent); }
 .note-pitfall, .note-danger { --note-accent: var(--coral-600); --note-bg: color-mix(in srgb, var(--coral-200) 42%, transparent); }
 .dark .note-block { --note-bg: rgb(255 255 255 / 4%); }
-.dark .note-definition, .dark .note-tip, .dark .note-info, .dark .note-details { --note-accent: var(--ocean-300); }
-.dark .note-theorem { --note-accent: var(--kelp-200); }
-.dark .note-example { --note-accent: var(--text-inverse-muted); }
-.dark .note-insight, .dark .note-warning { --note-accent: var(--gold-400); }
-.dark .note-pitfall, .dark .note-danger { --note-accent: var(--coral-200); }
+.dark .note-definition, .dark .note-tip, .dark .note-info, .dark .note-details { --note-accent: var(--ocean-300); --note-bg: rgb(79 163 206 / 7%); }
+.dark .note-theorem { --note-accent: var(--kelp-400); --note-bg: rgb(123 196 165 / 7%); }
+.dark .note-example { --note-accent: var(--sand-400); --note-bg: rgb(216 196 165 / 5%); }
+.dark .note-insight, .dark .note-warning { --note-accent: var(--gold-400); --note-bg: rgb(224 187 106 / 7%); }
+.dark .note-pitfall, .dark .note-danger { --note-accent: var(--coral-400); --note-bg: rgb(232 134 112 / 7%); }
+.dark .learning-path-prerequisite { border-top-color: var(--gold-400); background: rgb(224 187 106 / 7%); }
+.dark .sequence-item:first-child { border-top-color: color-mix(in srgb, var(--gold-400) 65%, var(--border-hairline)); }
+.dark .sequence-item:last-child { border-top-color: color-mix(in srgb, var(--ocean-400) 65%, var(--border-hairline)); }
 
 .learning-path { display: flex; width: 100%; min-width: 0; flex-direction: column; gap: 20px; margin: 10px 0; border-top: 1px solid var(--rule-gold); padding-top: 22px; font-family: var(--font-sans); }
 .learning-path-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; }

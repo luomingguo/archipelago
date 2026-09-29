@@ -28,9 +28,11 @@
   --sunset-300: #f9cf90;
   --kelp-700: #245445;
   --kelp-600: #2f6b57;
+  --kelp-400: #7bc4a5;
   --kelp-200: #cfe2d8;
   --coral-700: #933d2b;
   --coral-600: #b4503a;
+  --coral-400: #e88670;
   --coral-200: #f2d6cd;
 
   --text-strong: var(--navy-950);
@@ -56,7 +58,7 @@
   --surface-ghost-press: rgb(0 26 61 / 9%);
   --surface-scrim: rgb(4 16 31 / 55%);
 
-  --border-hairline: rgb(0 26 61 / 12%);
+  --border-hairline: rgb(0 26 61 / 9%);
   --border-subtle: rgb(0 26 61 / 18%);
   --border-strong-design: rgb(0 26 61 / 32%);
   --border-inverse: rgb(226 236 245 / 22%);
@@ -188,6 +190,9 @@
   --accent-press: var(--ocean-100);
   --route-line: var(--route-line-inverse);
   --primary-foreground: var(--navy-950);
+  --shadow-1: 0 1px 3px rgb(0 0 0 / 35%), 0 4px 12px -2px rgb(0 0 0 / 45%);
+  --shadow-2: 0 2px 6px rgb(0 0 0 / 40%), 0 16px 32px -8px rgb(0 0 0 / 55%);
+  --shadow-3: 0 4px 12px rgb(0 0 0 / 45%), 0 32px 64px -16px rgb(0 0 0 / 65%);
   color-scheme: dark;
 }
 
