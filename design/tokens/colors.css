@@ -20,8 +20,8 @@
   --text-strong:var(--navy-950);
   --text-heading:var(--navy-900);
   --text-body:#1c3049;
-  --text-muted:#5a6e85;
-  --text-faint:#8a9aab;
+  --text-muted:#485c73;
+  --text-faint:#5b7189;
   --text-inverse:var(--paper-100);
   --text-inverse-muted:#9db4cd;
   --text-link:var(--ocean-600);
@@ -68,7 +68,7 @@
   --text-heading:var(--paper-50);
   --text-body:#dfe8f1;
   --text-muted:#9db4cd;
-  --text-faint:#7590ad;
+  --text-faint:#829ebf;
   --text-inverse:var(--navy-900);
   --text-link:var(--ocean-300);
   --text-link-hover:#ffffff;

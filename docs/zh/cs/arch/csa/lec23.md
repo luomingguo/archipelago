@@ -2,12 +2,18 @@
 title: 加速器（一）（Accelerators I）
 type: lecture
 lecture: 23
-tags: []
+tags: [domain-specific-accelerators, systolic-arrays, roofline-model, dataflow-architecture, energy-efficiency]
 status: complete
 ---
 # Lec 23 加速器（一）（*Accelerators I*）
 
 > MIT 6.5900 Fall 2024 · Joel Emer "Compute has been the oxygen of deep learning." — Ilya Sutskever 主题：算力需求、技术趋势（*Moore's / Dennard*）、Einsum 表示、卷积与张量计算、数据流（*dataflow*）与 Roofline 模型
+
+## TL;DR
+
+- **后摩尔时代的专用化转向**：Dennard 缩放终结与功耗墙迫使计算范式从通用乱序超标量转向领域专用加速器（DSA），通过裁剪非必要硬件抽象换取数倍能效比提升。
+- **张量形式化与关注点分离**：Einsum 为多维张量代数与卷积提供了脱离底层硬件绑定的统一数学表达，确立了算法规约、循环变换与硬件映射三层解耦的分析基准。
+- **数据流与访存能耗优化**：访存功耗远超算术计算，空间架构通过权重固定（WS）、输出固定（OS）与行固定（RS）等数据流在本地寄存器复用数据，Roofline 模型定量刻画了带宽受限与计算受限的运行边界。
 
 ------
 
@@ -263,11 +269,15 @@ for q in [0, Q):
 
 ------
 
-## 本讲小结
+## 领域专用加速器与数据流架构总结
 
 - 算力需求指数增长，而 Dennard 缩放终结、撞上功耗墙，迫使转向**并行 + 专门化**的加速器；
 - **Einsum** 提供精确简洁的张量算法表示，是"关注点分离"金字塔的顶端，并支持界限分析与代数优化；
 - 加速器设计核心是**减少数据移动**：通过空间架构、数据复用、数据流（OS/WS/IS/RS）与映射选择来优化；
 - **Roofline** 模型刻画性能受计算还是受带宽限制。
+
+::: insight 专用加速器的底层本质：将控制流固化为空间数据流
+通用 CPU 为应对不可预测的控制分支与任意访存，必须投入 80% 以上的面积与功耗用于指令译码、乱序调度、缓存一致性与分支预测，导致执行一个 32 位浮点加法的控制能耗数十倍于算术本身。而后摩尔时代专用硬件加速器（如 Google TPU、MIT Eyeriss）的成功，其根源并非发现某种魔法运算单元，而是**彻底扬弃了控制流驱动模型**。通过对张量算子进行嵌套循环平铺（Loop Tiling）与展开，加速器将确定的时间迭代关系直接映射为空间二维网格（如脉动阵列）。在此类架构中，数据在相邻处理单元（PE）间以极低能耗直接穿梭，将 DRAM 访存次数降至理论极小值。真正的加速器架构创新，实质上是一场「以极简固定数据流置换动态通用控制逻辑」的能效革命。
+:::
 
 > 下一讲：Accelerators (II)
