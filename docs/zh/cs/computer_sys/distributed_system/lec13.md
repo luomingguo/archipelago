@@ -2,10 +2,19 @@
 title: 乐观并发控制：FaRM
 type: lecture
 lecture: 13
-tags: []
+tags: [optimistic-concurrency-control, rdma, distributed-transaction, nvram, two-phase-commit]
 status: complete
 ---
 # Lec 13 乐观并发控制：FaRM
+
+## TL;DR
+- FaRM 用 **NVRAM**（电池+SSD 保证非易失）消灭磁盘写，用**单边 RDMA + 内核旁路**消灭网络/CPU 开销，使分布式事务延迟降至 **58µs**。
+- **OCC（乐观并发控制）** 让读操作无锁、直接通过单边 RDMA 读取，提交时才进入 LOCK → VALIDATE → COMMIT-BACKUP → COMMIT-PRIMARY 四阶段。
+- LOCK 阶段用原子 CAS 在对象头（版本号最高位为锁标志）完成"检查版本 + 检查锁 + 置锁"，保证可串行化；VALIDATE 阶段只需一次单边重读，速度更快。
+- 提交点为写下第一个 COMMIT-PRIMARY 之时；崩溃恢复依赖 LOCK+COMMIT-BACKUP 已覆盖所有副本这一不变量。
+- 局限：OCC 在高冲突负载下会大量中止重试；数据必须全装 RAM；仅限单数据中心。
+
+## 阅读材料与概述
 
 > **阅读材料**
 >

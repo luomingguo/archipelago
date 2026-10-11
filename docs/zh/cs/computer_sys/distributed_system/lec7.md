@@ -2,14 +2,23 @@
 title: 容错复制：Raft
 type: lecture
 lecture: 7
-tags: []
+tags: [consensus, fault-tolerance, leader-election, log-replication, replicated-state-machine]
 status: complete
 ---
 # Lec 7 容错复制：Raft
 
 > 课件：[Raft (1) (l-raft.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-raft.txt)、[Raft (2) (l-raft2.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-raft2.txt)；论文：[Raft extended (2014)](https://pdos.csail.mit.edu/6.5840/papers/raft-extended.pdf)；FAQ：[part1](https://pdos.csail.mit.edu/6.5840/papers/raft-faq.txt)、[part2](https://pdos.csail.mit.edu/6.5840/papers/raft2-faq.txt)
 
+## TL;DR
+
+- Raft 将共识问题分解为三个子问题：Leader 选举、日志复制、安全性；强 leader 是唯一写入来源，日志条目只从 leader 流向 follower。
+- Leader 选举：follower 在选举超时内未收到心跳则发起选举；candidate 须赢得多数派选票，每个任期至多一个 leader；随机化超时（150–300 ms）打破分裂选票。
+- 日志复制：leader 将命令追加本地日志后并行发 AppendEntries；多数派确认后条目提交，leader 通过 commitIndex 通知 follower 执行；日志不一致通过递减 nextIndex 强制覆盖。
+- 安全性保证：候选人日志须不比投票者"旧"（最后条目任期更大或同任期下更长）；leader 只能通过提交当前任期条目来间接提交旧任期条目，防止已提交条目被覆盖。
+- 快照机制：服务层定期将状态持久化为快照并截断日志，通过 InstallSnapshot RPC 帮助落后副本快速追赶，避免日志无限增长。
+
 ## 一、背景：复制状态机与主备模式
+
 
 **复制状态机（*Replicated State Machine, RSM*）** 思想：客户端把操作发给主，主对操作**定序**后发给各备份；所有副本按相同初态、相同顺序、执行相同的确定性操作 → 得到相同的最终状态。GFS 的主备就是一个典型例子。
 

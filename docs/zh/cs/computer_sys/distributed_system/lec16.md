@@ -2,10 +2,19 @@
 title: 缓存一致性
 type: lecture
 lecture: 16
-tags: []
+tags: [caching, cache-consistency, lease, look-aside-cache, invalidation]
 status: complete
 ---
 # Lec 16 缓存一致性
+
+## TL;DR
+- Facebook 将 Memcached 作为**旁路缓存（look-aside cache）**：读 miss 时由 Web 服务器从 DB 拉取后填充，写时只发 `delete` 而非 `put`（幂等，避免并发乱序导致缓存永久脏）。
+- **租约（lease）** 解决两类问题：惊群效应（只允许第一个 miss 的客户端去 DB，其余等待重试）和过期集（delete 操作使租约 token 失效，防止旧值被写回）。
+- 区域内多个前端集群各自独立缓存，共享 **Region Pool** 存放低频大对象；**Gutter 池**（~1% 机器）在 MC 节点故障时临时承接请求，防止雪崩压垮 DB。
+- 跨区域一致性：写操作仅发送至主区域 DB；备份 DB 经 MySQL 异步复制后，由 **mcsqueal** 守护进程解析提交日志并广播 invalidate，保证最终一致。
+- 系统整体提供**最终一致性**（而非线性化）：读可能看到秒级内的旧值，写-自读通过本地集群 invalidate 保证。
+
+## 论文与思考题
 
 阅读论文
 

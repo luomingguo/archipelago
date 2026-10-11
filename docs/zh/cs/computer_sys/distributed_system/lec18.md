@@ -2,10 +2,19 @@
 title: Ray
 type: lecture
 lecture: 18
-tags: []
+tags: [distributed-computing, actor-model, futures, ownership, fault-tolerance]
 status: complete
 ---
 # Lec 18 Ray
+
+## TL;DR
+
+- Ray 面向动态、有状态与低延迟的分布式 AI/通用计算，融合了无状态 Task 与有状态 Actor 两种编程抽象。
+- Ownership 架构模型：将分布式 Future 的元数据管理（血缘 Lineage、分布式引用计数与调度）去中心化分散到各 Object 的 Owner 节点。
+- 高性能分布式对象存储：小对象直接内联在 RPC 消息中，大对象写入本地共享内存 Plasma Store 并经由点对点传输。
+- 细粒度容错：无状态 Task 依赖 Lineage 重新执行恢复；有状态 Actor 借助 Checkpoint 与消息日志重放重建状态。
+
+## 背景与定位
 
 > 阅读资料
 >

@@ -2,7 +2,7 @@
 title: 链式复制（Chain Replication）
 type: lecture
 lecture: 4
-tags: []
+tags: [chain-replication, primary-backup, fault-tolerance, linearizability, state-machine-replication]
 status: complete
 ---
 # Lec 4 链式复制（Chain Replication）
@@ -11,7 +11,16 @@ status: complete
 >
 > 本讲两条线：① **链式复制**（本讲正题，强一致 + 负载分摊的主备变体）；② **VMware FT**（一个机器指令级的主备复制案例，见文末「附」）。
 
+## TL;DR
+
+- 链式复制将节点排成线性链：写请求经 head 定序后逐跳转发，仅由 tail 提交并回复客户端；读请求直接打 tail，天然实现线性一致。
+- 负载分摊优于主备：head 只需转发给下一个节点而非广播，tail 专职处理读，中间节点分担转发；写延迟随链长线性增加。
+- 故障恢复依赖外部配置服务（Paxos/Raft）：配置服务是唯一可授权新 head/tail 的实体，防止网络分区下脑裂；服务器须保留已转发历史以备重发。
+- VMware FT 在机器指令级实现主备：通过日志通道将所有非确定性事件（中断、网络包、磁盘读）同步给备机，Output Rule 要求主机在备机确认日志后才对外发送输出。
+- 脑裂防御：VMware FT 用共享存储上的原子 test-and-set 保证仅一台 VM 上线；链式复制靠配置服务租约防止双 tail。
+
 ## 课件精讲：链式复制
+
 
 要做**强一致（线性一致）+ 容错**的复制存储，有两条路：① 把所有操作过共识（Raft/Paxos，自洽但复杂）；② **分离「配置服务」+「数据复制协议」**——配置服务（用 Paxos/Raft）只存成员关系（谁是 head/tail、分片在哪），数据复制协议可以做得**简单**，不必自己处理脑裂。链式复制走第二条路。
 
@@ -225,4 +234,10 @@ FT 中的第二个性能优化手段：减少发送数据包的延迟，要想�
 
 ## 4. 备选设计
 
+> [!NOTE]
+> 论文讨论了在不同抽象层级实现 FT 的权衡（应用层协议、OS 层或 Hypervisor 虚拟硬件层），虚拟化层的优势在于对上层 OS 与应用完全透明。
+
 ## 5. 性能评估
+
+> [!NOTE]
+> 论文评估了 FT 对网络密集型与计算密集型应用的额外开销，网络输出延迟与日志重放吞吐是核心性能瓶颈。

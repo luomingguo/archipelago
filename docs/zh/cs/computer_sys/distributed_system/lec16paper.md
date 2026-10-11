@@ -1,10 +1,17 @@
 ---
 title: 论文阅读： Facebook 扩展 Memcached 之路
 type: paper
-tags: []
+tags: [caching, look-aside-cache, replication, invalidation, eventual-consistency]
 status: complete
 ---
 # 论文阅读： Facebook 扩展 Memcached 之路
+
+## TL;DR
+
+- Facebook 将 Memcached 构建为旁路缓存（look-aside cache），写操作走数据库后发 delete 保证幂等失效。
+- 单集群优化：通过 UDP 降延迟、滑动窗口控拥塞，利用 Lease 机制解决惊群效应（thundering herd）与陈旧值覆写。
+- 多集群扩展：设立跨集群共享的 Region Pool 降低内存占用，用 Gutter 备用池缓冲节点失效带来的雪崩冲击。
+- 跨区域一致性：依靠 mcsqueal 守护进程监听主库 MySQL 复制流并广播失效事件，在最终一致性模型下保障低延迟读。
 
 [Scaling Memcache at Facebook, NSDI'13](https://pdos.csail.mit.edu/6.824/papers/memcache-fb.pdf)
 

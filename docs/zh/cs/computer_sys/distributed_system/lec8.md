@@ -2,10 +2,17 @@
 title: 一致性
 type: lecture
 lecture: 8
-tags: []
+tags: [linearizability, consistency-model, distributed-systems, concurrency, fault-tolerance]
 status: complete
 ---
 # Lec 8 一致性
+
+## TL;DR
+- **历史（history）** 是带 start/finish 时间的操作迹，线性一致性通过为每个操作在其时间窗内指定**线性化点**并验证串行等效来判定。
+- 核心约束：**一旦某读看到某写，之后所有读必须看到它**；并发写可任选顺序，但**所有客户端必须看到同一顺序**；禁止陈旧读。
+- 线性一致排除脑裂、崩溃后忘记已完成写、读滞后副本/过期缓存、重传导致重复执行等异常。
+- 线性一致 vs 顺序一致：线性一致要求顺序尊重真实墙时；顺序一致只要求看起来串行，不要求实时序。
+- 高可用与强一致根本折中：最终一致（Dynamo/Cassandra）任意副本读写、吞吐高但有陈旧；线性一致（Spanner/S3）须等副本、可用性受限。
 
 > 课件：[Consistency and Linearizability (l-linearizability.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-linearizability.txt)；论文：[Linearizability (Herlihy & Wing)](https://pdos.csail.mit.edu/6.5840/papers/p463-herlihy.pdf)（读到 §3.1）；[FAQ](https://pdos.csail.mit.edu/6.5840/papers/linearizability-faq.txt)
 

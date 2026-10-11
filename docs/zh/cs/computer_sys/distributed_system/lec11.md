@@ -2,10 +2,19 @@
 title: 分布式事务
 type: lecture
 lecture: 11
-tags: []
+tags: [distributed-transactions, two-phase-commit, two-phase-locking, atomicity, concurrency-control]
 status: complete
 ---
-# Lec 10 分布式事务
+# Lec 11 分布式事务
+
+## TL;DR
+- 分布式事务 = **并发控制**（隔离性/可串行化）+ **原子提交**（原子性），ACID 是目标规约。
+- **两阶段锁（2PL）**：事务使用记录前加锁、提交/中止后才释放，保证可串行化；强严格 2PL 持锁直至 COMMIT，防止不一致读。
+- **两阶段提交（2PC）**：PREPARE 阶段收集所有参与者 YES/NO，全 YES 则广播 COMMIT，任一 NO 则广播 ABORT；提交点是 TC 将 COMMIT 强制写盘的时刻。
+- 2PC 缺陷：TC 崩溃会导致参与者持锁**无限阻塞**（为一致性牺牲可用性）；破局方案是用 Raft/Paxos 复制 TC，如 Spanner。
+- 2PC ≠ 2PL：前者跨节点保原子性，后者单节点内保隔离性，两者独立正交。
+
+## 背景与参考资料
 
 [toc]
 

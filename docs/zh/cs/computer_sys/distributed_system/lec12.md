@@ -2,10 +2,19 @@
 title: Spanner
 type: lecture
 lecture: 12
-tags: []
+tags: [spanner, truetime, external-consistency, distributed-transactions, snapshot-isolation]
 status: complete
 ---
 # Lec 12 Spanner
+
+## TL;DR
+- Spanner 通过**多 Paxos 组分片复制 + 跨组 2PC** 实现全球分布式事务，每个分片一个 Paxos 组，TC 自身也被 Paxos 复制，解决 2PC 的阻塞问题。
+- **TrueTime API** 暴露时钟不确定区间 `[earliest, latest]`；Start 规则要求提交时间戳 ≥ TT.now().latest，Commit Wait 规则要求等到 TT.after(s) 为真才返回客户端，以此保证**外部一致性**（等价于线性化）。
+- 读写事务：使用 2PL 加锁 + 2PC 提交，跨美国约 100ms；只读事务：无锁、从本地足够新的副本读、无需 2PC，延迟低 10 倍。
+- **快照隔离**：每条记录存多版本时间戳，只读事务按其开始时间戳读取对应版本，保证串行化同时不阻塞写事务。
+- 99.9% 的事务是只读的（F1 负载），设计大量优化为只读路径提速是 Spanner 的核心取舍。
+
+## 论文概述与目标
 
 >  阅读资料
 >

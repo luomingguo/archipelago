@@ -2,10 +2,19 @@
 title: 案例学习：Zookeeper
 type: lecture
 lecture: 9
-tags: []
+tags: [zookeeper, coordination, consensus, replication, fault-tolerance]
 status: complete
 ---
 # Lec 9 案例学习：Zookeeper
+
+## TL;DR
+- ZooKeeper 是**wait-free 协调内核**：暴露 znode 树形 API（常规/临时/顺序节点 + watch 机制），让应用自行构建锁、选主等原语，而非内置阻塞原语。
+- 一致性语义：**写操作线性一致（通过 ZAB 原子广播）+ FIFO client order**；读由 follower 本地服务，可能陈旧，以此换取高读吞吐。
+- **ephemeral znode + session 超时**天然实现选主与 fencing：持有者崩溃 → session 过期 → znode 自动删除 → 锁释放，废黜的旧 leader 后续请求被拒（防双主）。
+- **模糊快照（fuzzy snapshot）**：快照期间不停写，依赖事务幂等性在重放日志时纠正，避免暂停服务。
+- 读操作不是线性一致的；需要最新数据时，客户端先调用 `sync()` 再读取。
+
+## 参考资料与思考题
 
 > 阅读资料：
 >

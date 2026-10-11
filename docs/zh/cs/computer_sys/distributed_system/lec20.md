@@ -2,10 +2,19 @@
 title: 比特币
 type: lecture
 lecture: 20
-tags: []
+tags: [proof-of-work, blockchain, decentralized-consensus, double-spending, utxo]
 status: complete
 ---
 # Lec 20 比特币
+
+## TL;DR
+
+- 比特币在无许可、无信任中心的开放网络中，通过工作量证明（PoW）实现纳什均衡下的去中心化拜占庭共识。
+- UTXO 交易模型：系统不维护账户余额，仅记录包含数字签名与前序交易哈希的不可篡改交易输出链。
+- 双花（Double-Spending）防范：以最长链规则作为全网规范账本，交易需等待后续若干区块（如 6 个确认）以指数级降低被重组篡改概率。
+- 经济博弈激励：通过区块奖励（Coinbase）与交易手续费激励矿工贡献算力，确保诚实算力占优成为自利理性的最优策略。
+
+## 背景与问题定义
 
 > 阅读资料
 >

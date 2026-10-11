@@ -2,14 +2,23 @@
 title: Paxos
 type: lecture
 lecture: 6
-tags: []
+tags: [consensus, fault-tolerance, quorum, distributed-agreement, leader-election]
 status: complete
 ---
 # Lec 6 Paxos
 
 问题的背景： 容错地"达成一致"——要用复制做高可用、表现得像单台机一样强一致。难点是脑裂：主备在网络分区时，两边都以为对方挂了、都自封 primary，破坏一致性。根因——机器无法区分"对方崩了"与"网络断了"，只能观察到"请求没回应"。在 ~1989 年前，自动容错切换被认为不可能（只能人工介入，而人又成了单点）。
 
+## TL;DR
+
+- 多数派（quorum）是防脑裂的核心：任意两个多数派必相交，分区时只有含多数的一侧能推进；2f+1 台容忍 f 台故障。
+- 两阶段协议：Phase 1（Prepare/Promise）proposer 广播提案号 n，收集多数 acceptor 的已接受值；Phase 2（Accept/Accepted）proposer 用 n_a 最高的 v_a 发起 accept，多数确认后值被 chosen。
+- 三条安全规则保证一旦值被 chosen 不可更改：proposer 必须沿用最高 n_a 的值；accept 要求 n ≥ n_p；accept 时同步更新 n_p。
+- 活性问题：两个 proposer 交替用更高 n 打断对方导致活锁（dueling proposers）；解法是选出单一 leader 作为唯一活跃 proposer。
+- 多值 Paxos（RSM）：对每个日志槽位独立跑一轮 Paxos，全体副本按日志顺序执行，掉队副本靠重放追平；Raft 是其可实现性更强的后继。
+
 ## Paxos 协议
+
 
 ::: example Paxos 如何防止脑裂？
 

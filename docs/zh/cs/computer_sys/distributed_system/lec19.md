@@ -2,10 +2,19 @@
 title: Fork 一致性
 type: lecture
 lecture: 19
-tags: []
+tags: [integrity, digital-signature, fork-consistency, content-addressed-storage, untrusted-server]
 status: complete
 ---
-# Lec 22 Fork 一致性
+# Lec 19 Fork 一致性
+
+## TL;DR
+
+- SUNDR 研究在完全不可信（可能拜占庭恶意或被攻破）的中心化服务器上实现可验证的文件存储完整性。
+- 核心局限与安全边界：无法阻止服务器隐瞒最新更新，但保证只要发生分叉（Fork 攻击），客户端间一旦通信必能立即检测。
+- Fork 线性一致性（Fork Linearizability）：若服务器向两个客户端展示了不同历史，它们此后将永远无法看到彼此的后续写操作。
+- 实现机制：客户端对操作记录（VSL/VSX）进行数字签名与版本向量链式哈希，使得任何重排序或内容篡改在密码学上不可伪造。
+
+## 背景与问题定义
 
 阅读资料： [SUNDR (2004)](https://pdos.csail.mit.edu/6.5840/papers/li-sundr.pdf)
 

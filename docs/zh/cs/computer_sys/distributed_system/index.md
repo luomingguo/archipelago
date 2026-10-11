@@ -3,12 +3,19 @@ title: 6.5840 分布式系统（Spring 2026）
 type: course
 course: 6.5840 分布式系统（Spring 2026）
 course_id: '6.5840'
-tags: []
+tags: [fault-tolerance, consistency, replication, distributed-storage, consensus]
 status: complete
 ---
 # 6.5840 分布式系统（Spring 2026）
 
 [6.5840 Home Page: Spring 2026 (mit.edu)](https://pdos.csail.mit.edu/6.5840/schedule.html)
+
+## TL;DR
+
+- **容错（fault-tolerance）**：通过复制（replication）实现高可用与自动恢复，是贯穿全课的核心手段，从 MapReduce 到 Raft 均适用
+- **一致性（consistency）**：从弱到强（最终一致 → 线性一致），强一致需要协调通信代价，多数系统在一致性与性能间权衡取舍
+- **可扩展性（scalability）**：理想 N 倍机器得 N 倍吞吐，实际受负载不均、网络瓶颈等约束，需精心设计分片与调度策略
+- 三大主题互为张力：容错要复制与协调，一致性要同步，而通信本身是性能瓶颈，系统设计即在这条折中曲线上选点
 
 ## 前置课程
 

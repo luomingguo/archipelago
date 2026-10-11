@@ -2,10 +2,19 @@
 title: 安全性：拜占庭容错（BFT）
 type: lecture
 lecture: 21
-tags: []
+tags: [byzantine-fault-tolerance, state-machine-replication, quorum, safety, liveness]
 status: complete
 ---
 # Lec 21 安全性：拜占庭容错（BFT）
+
+## TL;DR
+
+- PBFT 在异步网络中实现了首个实用的拜占庭容错状态机复制，复杂度从指数级降至多项式级。
+- 节点阈值约束：总节点数须满足 $3f+1$ 才能容忍最多 $f$ 个任意恶意或串通的拜占庭节点，法定多数 Quorum 大小为 $2f+1$。
+- 三阶段协议流程：通过 Pre-prepare、Prepare 与 Commit 三阶段广播与消息认证码（MAC）证明，保证在视图变更中全局全序不被篡改。
+- 安全性与活性权衡：在异步网络中始终保证安全性（Safety）；活性（Liveness）依赖弱同步假设（如指数退避视图超时）避免死锁。
+
+## 背景与问题定义
 
 > 阅读资料：
 >

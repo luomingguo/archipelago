@@ -2,10 +2,19 @@
 title: DynamoDB
 type: lecture
 lecture: 15
-tags: []
+tags: [nosql, admission-control, multi-paxos, partition, predictable-latency]
 status: complete
 ---
 # Lec 15 DynamoDB
+
+## TL;DR
+- DynamoDB 由 Dynamo（高可用 KV）与 SimpleDB（托管弹性）合并演进而来，目标是在任意规模下保持**单数字毫秒**可预测延迟。
+- 数据按分区键哈希分片，每个分区由 Multi-Paxos 复制组（跨 AZ 三副本）保证一致性；写入需多数副本持久化 WAL 后才确认。
+- **全局准入控制（GAC）** 在请求路由器层集中管理令牌桶，配合分区级令牌桶，防止热点分区和吞吐量稀释，取代了早期的自适应容量机制。
+- 持久性通过校验和、静默数据错误检测、WAL 归档至 S3（11个9耐久性）和 TLA+ 形式化证明多层保障。
+- 按需模式下 DynamoDB 根据流量峰值自动分配容量，通过基于消耗的分区拆分处理热点，无需用户手动预置吞吐量。
+
+## 背景与思考题
 
 在数据库系统课程中，学习了它的前身 Dynamo，实现了服务的高可用性，但是为了弹性的需求，出现了 SimpleDB（Amazon S3），当时由于其限制，结合两个数据库的优先设计和实践，推出了 Amazon DynamoDB。
 

@@ -2,12 +2,19 @@
 title: '介绍 & MapReduce'
 type: lecture
 lecture: 1
-tags: []
+tags: [mapreduce, data-locality, fault-tolerance, parallel-computing, batch-processing]
 status: complete
 ---
 # Lec 1 介绍 & MapReduce
 
 > 课件：[Introduction (l01.txt)](https://pdos.csail.mit.edu/6.5840/notes/l01.txt)；论文：[MapReduce (2004)](https://pdos.csail.mit.edu/6.5840/papers/mapreduce.pdf)
+
+## TL;DR
+
+- Map/Reduce 两函数将大规模计算抽象为四阶段：输入分片 → Map（产中间 KV）→ Shuffle（`hash(key) mod R` 分桶）→ Reduce（产最终输出），Map 间与 Reduce 间互不依赖故可线性扩展
+- 2004 年网络是瓶颈（~55 Mb/s/机器）：通过**数据局部性**将 Map 调度到 GFS 数据所在机器消除输入网络传输，中间数据只跨网一次
+- **容错 = 重新执行**：worker 崩溃时只重跑失败任务，前提是 Map/Reduce 必须纯确定性；Reduce 输出依赖 GFS 原子 rename 保证幂等
+- 对慢节点（straggler）启动备份任务，谁先完成用谁，可将完成时间减少约 44%
 
 ## 本课主线
 

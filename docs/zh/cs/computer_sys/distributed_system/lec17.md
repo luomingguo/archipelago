@@ -2,17 +2,26 @@
 title: AWS Lambda：按需容器加载
 type: lecture
 lecture: 17
-tags: []
+tags: [serverless, content-addressed-storage, deduplication, erasure-coding, lazy-loading]
 status: complete
 ---
 # Lec 17 AWS Lambda：按需容器加载
+
+## TL;DR
+
+- AWS Lambda 针对 10GiB 大容器镜像冷启动（<50ms），利用镜像的可缓存性、共性与稀疏性设计了块级按需加载系统。
+- 稀疏按需加载：容器启动时仅拉取实际访问的块（启动仅需 ~6.4% 数据），配合预取优化后续 I/O。
+- 内容寻址与跨租户去重：切分为固定大小 Chunk 并通过收敛加密（convergent encryption）计算哈希，实现安全的跨用户块去重。
+- 分层确定性缓存与纠删码：微服务节点与本地缓存结合两层确定性路由，后端采用纠删码保障高耐久性与尾延迟平滑。
+
+## 阅读材料与概述
 
 **阅读材料**
 
 - 论文：[On-demand Container Loading in AWS Lambda (USENIX ATC 2023)](https://pdos.csail.mit.edu/6.5840/papers/atc23-brooker.pdf)
 - 课程材料：Marc Brooker 客座讲座 slides（`mbrooker_cs_slides_2026.pdf`）
 
-**一句话总览**：Lambda 在 2020 年要支持把最大 10GiB 的容器镜像当函数运行，同时保住**冷启动（*cold start*）低至 50ms**。难点纯粹是数据搬运：单客户每秒可起 15,000 个容器，若每个都搬运并解包 10GiB，需要 150 Pb/s 带宽——不可能。解法是利用容器镜像的**可缓存性、共性、稀疏性**三大特性，组合出一套：**块级按需加载 + 内容寻址去重（收敛加密）+ 分层缓存 + 纠删码**的存储系统。它已可靠服务了数千亿次调用、上百万客户。   ddd
+**一句话总览**：Lambda 在 2020 年要支持把最大 10GiB 的容器镜像当函数运行，同时保住**冷启动（*cold start*）低至 50ms**。难点纯粹是数据搬运：单客户每秒可起 15,000 个容器，若每个都搬运并解包 10GiB，需要 150 Pb/s 带宽——不可能。解法是利用容器镜像的**可缓存性、共性、稀疏性**三大特性，组合出一套：**块级按需加载 + 内容寻址去重（收敛加密）+ 分层缓存 + 纠删码**的存储系统。它已可靠服务了数千亿次调用、上百万客户。
 
 ## 1. 问题：让冷启动扛得住 10GiB 镜像
 

@@ -2,10 +2,16 @@
 title: Lab 实验答疑（Raft Lab 3A + 3B）
 type: lecture
 lecture: 10
-tags: []
+tags: [raft, concurrency, locking, safety-liveness, debugging]
 status: complete
 ---
 # Lec 10 Lab 实验答疑（Raft Lab 3A + 3B）
+
+## TL;DR
+- **Safety vs Liveness** 是两类正确性：safety 永不返回错误结果（如双 leader、日志分歧），liveness 最终能返回结果（如永远选不出 leader）。
+- 两种实现结构：**多线程 + 单把大锁**（RPC handler goroutine + applier + 条件变量）；**单线程事件循环**（无锁状态更新，输出时先持久化再发 RPC）。
+- 核心纪律：**绝不在持锁时发 RPC**；并发发 AppendEntries/RequestVote，收到回复后重检 term/state 是否已变。
+- 调试方法：开 `-race`，统一格式日志（源/目的/opcode/term/role），对失败用例反复重跑，对照论文 Figure 2 分析。
 
 > 课件：[Q&A Lab 3A+B (l-raft-QA.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-raft-QA.txt)
 
