@@ -65,7 +65,7 @@
   --border-focus: var(--ocean-500);
   --rule-gold: var(--gold-500);
   --route-line: rgb(0 26 61 / 28%);
-  --route-line-inverse: rgb(240 246 251 / 50%);
+  --route-line-inverse: rgb(226 236 245 / 26%);
   --accent: var(--ocean-600);
   --accent-hover: var(--ocean-700);
   --accent-press: var(--navy-800);
@@ -193,6 +193,8 @@
   --shadow-1: 0 1px 3px rgb(0 0 0 / 35%), 0 4px 12px -2px rgb(0 0 0 / 45%);
   --shadow-2: 0 2px 6px rgb(0 0 0 / 40%), 0 16px 32px -8px rgb(0 0 0 / 55%);
   --shadow-3: 0 4px 12px rgb(0 0 0 / 45%), 0 32px 64px -16px rgb(0 0 0 / 65%);
+  --border-focus: var(--ocean-400);
+  --shadow-focus: 0 0 0 3px rgb(79 163 206 / 35%);
   color-scheme: dark;
 }
 

@@ -49,7 +49,7 @@
   --border-focus:var(--ocean-500);
   --rule-gold:var(--gold-500);
   --route-line:rgba(0,26,61,.28);
-  --route-line-inverse:rgba(240,246,251,.5);
+  --route-line-inverse:rgba(226,236,245,.26);
 
   /* ---- Semantic aliases: states ---- */
   --accent:var(--ocean-600);
@@ -86,5 +86,6 @@
   --accent:var(--ocean-400);
   --accent-hover:var(--ocean-300);
   --accent-press:var(--ocean-200);
+  --border-focus:var(--ocean-400);
   --route-line:var(--route-line-inverse);
 }
