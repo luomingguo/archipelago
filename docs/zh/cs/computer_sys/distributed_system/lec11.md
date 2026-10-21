@@ -152,6 +152,24 @@ SImple Locking 的行为： T1 在开始时会锁住所有账户记录，因为�
 - 增长阶段（Growing Phase）：在食物到达锁点之前，事务可以不断获取锁，但不能释放任何锁。
 - 收缩阶段（Shrinking Phase）：在事务到达锁点之后，事务可以释放已持有的锁，但不能再获取新锁
 
+### 2.4 死锁处理
+
+2PL 会产生死锁，例如：
+
+```text
+T1          T2
+get(x)      get(y)
+get(y)      get(x)   ← 循环等待
+```
+
+常见的死锁检测与解除方法：
+
+| 方法 | 原理 | 适用性 |
+|------|------|--------|
+| **等待图（Wait-for Graph）** | 维护事务依赖图，检测环 → 中止一个事务 | 单机有效，分布式开销大 |
+| **超时（Timeout）** | 等待超时则 abort | 简单，可能误杀 |
+| **Wound-Wait** | 给事务分配优先级（启动时间），旧事务"伤害"（abort）新事务；新事务等待旧事务 | 无饥饿，分布式中常用 |
+
 ## 3. 两阶段提交
 
 下面我们介绍一个分布式事务如何处理失败的情况。
@@ -406,13 +424,13 @@ if (all_prepared):
   logger.log(tid, "COMMIT")   # FW
 else:
   logger.log(tid, "ABORT")
-  
+
 for worker in workers:
   if (all_prepared):
     logger.commit(worker, tid)
   else:
     logger.abort(worker, tid)
-    
+
 logger.log(tid, "DONE")   # FW(W?)
 ```
 

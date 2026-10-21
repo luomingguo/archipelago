@@ -19,7 +19,6 @@ status: complete
 
 ## 一、背景：复制状态机与主备模式
 
-
 **复制状态机（*Replicated State Machine, RSM*）** 思想：客户端把操作发给主，主对操作**定序**后发给各备份；所有副本按相同初态、相同顺序、执行相同的确定性操作 → 得到相同的最终状态。GFS 的主备就是一个典型例子。
 
 ::: definition
@@ -169,6 +168,197 @@ Solution：
 - 但少数服务器可能会接受旧服务器的 AppendEntries， 因此日志可能会在旧任期结束时出现分歧
 
 ## Raft 日志
+
+## 四、日志分叉修复
+
+### 新 Leader 如何修复分叉日志
+
+上一节展示了选主结束后可能出现的日志分叉情形：
+
+```text
+       10 11 12 13   <- 日志槽位号
+S1:    3
+S2:    3  3  4
+S3:    3  3  5
+```
+
+新 leader（如 S3，任期 5）需要让所有 follower 的日志与自己**完全一致**。修复机制是 `AppendEntries` 一致性检查 + `nextIndex` 回退：
+
+**修复步骤**：
+
+1. **Leader 为每个 follower 维护 `nextIndex`**，初始化为 `len(leader.log)+1`（即 leader 日志末尾的下一槽）；
+2. Leader 发送 `AppendEntries` 时，在 RPC 中附带 `prevLogIndex` 和 `prevLogTerm`（要发送条目的前一项）；
+3. Follower 检查自己 `prevLogIndex` 处的条目是否与 `prevLogTerm` 匹配：
+   - **匹配** → 追加 leader 发来的条目，成功；
+   - **不匹配** → 拒绝，leader 将 `nextIndex--` 后重试；
+4. 最终 `nextIndex` 回退到 leader 与 follower 的**最后公共匹配点**，此后 follower 接受 leader 的条目，覆盖（删除）后续冲突部分。
+
+::: insight 关键结论：为什么覆盖 follower 尾部是安全的
+被覆盖的条目一定是**未提交**的：若它们已被提交，则代表多数派曾有它们，而多数派中必有一员拥有足以赢得选举的日志，从而新 leader 自己也拥有该条目——矛盾。因此覆盖未提交条目不违反任何对客户端的承诺。
+:::
+
+**选举限制（"至少一样新"规则）**：修复能成功的前提是新 leader 拥有所有已提交条目。Raft 通过 `RequestVote` 强制该不变量：
+
+> Follower 只给日志"至少和自己一样新"的 candidate 投票。
+> "更新"的判断：先比最后条目的 **term**，term 大者更新；term 相同则比 **log 长度**，更长者更新。
+
+⇒ 获得多数票的 leader，其日志必然覆盖了已提交条目所在的多数派中至少一员的日志 ⇒ **Leader 完整性**成立。
+
+::: insight 快速回退优化（Fast Rollback）
+朴素方案每次 `nextIndex--` 一格，冲突条目多时 RTT 开销大。优化方案：Follower 拒绝时返回
+
+`conflictTerm`（冲突槽位的任期号）和 `conflictIndex`（该 term 在 follower 日志中的首个 index）。
+
+Leader 据此一次跳过该任期的全部冲突条目，每个冲突任期只需一次 RPC 来回。
+:::
+
+**例子：修复上面的分叉**（S3 为任期 5 的 leader）：
+
+- S3 初始化 `nextIndex[S1]=13`，发 `prevLogIndex=12, prevLogTerm=5`；S1 在 12 处无条目 → 拒绝，S3 递减；
+- 最终退到 `nextIndex[S1]=11`，`prevLogIndex=10, prevLogTerm=3` 匹配 → S1 接受 S3 在槽 11、12 的条目；
+- 对 S2 同理，S2 的槽 12（term=4）被 S3 的槽 12（term=5）覆盖。
+
+**为什么新 leader 上任时不需要"修复过渡期"？** 它只需正常开始工作，AppendEntries 的一致性检查会自动驱动各 follower 向 leader 对齐——日志最终收敛，无需额外 RPC。
+
+> [!TIP]
+> **新 leader 任期开始时要提交一个 no-op 条目**（论文 §8）。原因：新 leader 无法从自身日志判断哪些旧任期条目已被提交（`commitIndex` 是易失的），提交一个当前任期的新条目后，所有在它之前的日志项都将随之被间接提交（日志匹配性质），从而明确边界。
+
+### 只读操作
+
+**问题**：Leader 能否直接读本地 KV 表，跳过日志，立刻回复 `Get(key)`？
+
+**不行**。Leader 可能已被分区、不知道新 leader 已当选，其 KV 表里的值可能过时。直接返回过时数据违反线性一致性——本质上是一种读侧的脑裂。
+
+**基本解法（图 2）**：把 `Get()` 当作写操作走一遍日志，leader 能提交说明它仍是 leader，此时读到的值一定是最新的。代价：每次读都要一次 AppendEntries 往返。
+
+**优化：租约（Lease）**：读密集型系统中，每次读走日志代价太高。租约方案：
+
+- Leader 每次收到 AppendEntries 多数回复后，**持有租约 T 秒**（如 5 s）；
+- 租约期内可直接响应只读请求，无需再发 AppendEntries；
+- 新 leader 在上一任的租约到期前，**不得执行写操作**（follower 在 RequestVote 回复中告知上次回复 AppendEntries 的时间，新 leader 据此计算安全等待时长）。
+
+结果：读操作延迟大幅降低，仍保持线性一致性。代价：安全性依赖时钟偏差有界（bounded clock skew）。
+
+## 五、持久化日志
+
+服务器重启后需要**重新加入集群并继续参与共识**，因此必须把部分状态持久化到非易失存储（磁盘/SSD）。
+
+### 必须持久化的三项（图 2）
+
+| 字段 | 必须持久化的原因 |
+|------|----------------|
+| `log[]` | 已提交条目不能丢；重启后须重放日志恢复状态机；若不持久化，重启后提供错误的 `prevLogTerm` 将破坏一致性检查 |
+| `currentTerm` | 防止重启后"时光倒流"：若重启后 term 归零，可能给旧的过时 leader 投票，或接受过时的 AppendEntries，破坏 Leader 唯一性 |
+| `votedFor` | 防止同一 term 内两次投票：若不持久化，重启后可能再给另一 candidate 投票 → 同一 term 出现两个 leader |
+
+::: insight 为什么 currentTerm 和 votedFor 缺一不可？
+考虑 5 节点集群，term=5，S1 给 S2 投票后崩溃重启。若 `currentTerm` 丢失回到 0，S1 会接受任何 term 的 AppendEntries（以为自己落后），可能被旧 leader 操控；若 `votedFor` 丢失，S1 在同一 term 5 重启后可再给 S3 投票，可能造成 S2 和 S3 同时获得多数票——双 leader。
+:::
+
+::: insight 服务器的role是否需要持久化？
+
+:::
+
+服务器重启后以 Follower 身份加入集群，原因有：
+
+- Leader / Candidate 是动态角色，由选举决定，不是静态配置。
+- 即使记住了，也无法直接恢复领导权——集群可能已经选出新的 leader，冒然以 leader 身份加入会造成双leader
+- 安全性由 currentTerm 和 votedFor 保证。 role 丢失不会破坏任何承诺
+
+### 不需要持久化的状态（可重建）
+
+| 字段 | 重建方式 |
+|------|---------|
+| `commitIndex` | 重启后从 0 开始；leader 的下一次心跳/AppendEntries 会携带 `leaderCommit`，follower 据此更新 |
+| `lastApplied` | 从 0 开始重放整个日志（或从快照恢复，见下节）；状态机也随之重建 |
+| `nextIndex[]` / `matchIndex[]` | leader 当选时重新初始化；follower 通过 AppendEntries 失败回退快速纠正 |
+
+### 持久化时机
+
+每次修改 `log`、`currentTerm`、`votedFor` 之后，必须在**回复任何 RPC 之前**写盘。若先回复再写盘，崩溃可能导致对方认为已成功而实际数据丢失。
+
+> [!TIP]
+> **写盘代价很高**（HDD 约 10ms，SSD 约 0.1ms），是 Raft 延迟的主要来源。批量写（batching）是主要优化手段——先攒多条条目再一次 `fsync`，可大幅提升吞吐。
+
+### 重启后的恢复流程
+
+1. 从磁盘读取 `currentTerm`、`votedFor`、`log[]`；
+2. 将 `commitIndex` 和 `lastApplied` 置为 0（或快照的 `lastIncludedIndex`）；
+3. 以 follower 状态加入集群，等待 leader 的 AppendEntries 来驱动日志对齐；
+4. 从头（或快照点）重放日志，重建状态机状态。
+
+::: insight 结论：持久化 + 多数派 = 持久提交
+提交要求多数派写盘确认；持久化保证重启后这些确认仍然有效。两者结合，使"已提交"真正意味着永不丢失。
+:::
+
+## 六、压缩日志
+
+### 为什么需要日志压缩
+
+Raft 日志随运行时间线性增长。不压缩将导致：
+- 磁盘空间耗尽；
+- 重启时重放整个日志耗时过长（慢启动）；
+- 滞后副本追赶时需传输大量历史日志条目。
+
+解决方案：周期性地将状态机状态固化为**快照（snapshot）**，然后删除快照覆盖的那段日志。
+
+### 快照机制
+
+```text
+日志:  [1][2][3][4][5] | [6][7][8]...
+                       ↑
+                   快照覆盖到此（lastIncludedIndex=5, lastIncludedTerm=3）
+快照: {x=10, y=3}  ← 状态机在 index=5 时的完整状态
+```
+
+每台服务器**独立**决定快照时机（无需 leader 协调）：
+
+1. 上层服务（K/V 层）在某个已应用的 `index` 处将状态机完整内存序列化；
+2. 快照元数据包含：`lastIncludedIndex`（快照替换的最后一条日志的 index）、`lastIncludedTerm`（该条目的 term）；
+3. 快照写盘后，删除 `log[1..lastIncludedIndex]`；
+4. 后续 AppendEntries 的 `prevLogIndex/prevLogTerm` 若落在快照内，直接用 `lastIncludedIndex/lastIncludedTerm` 应答。
+
+::: definition 快照时机
+：当日志字节数超过某阈值（如 `maxraftstate`）时触发。阈值应远大于单个快照的预期体积，以摊薄快照 I/O 开销。
+:::
+
+### InstallSnapshot RPC
+
+当 follower 落后太多（leader 已删除 follower 所需的日志段），AppendEntries 无法修复——leader 改发 **InstallSnapshot**：
+
+```text
+Leader → Follower:
+  term, leaderId
+  lastIncludedIndex, lastIncludedTerm
+  data[]  ← 快照字节流（可分块）
+```
+
+Follower 收到后：
+- 若快照比自己的日志还新（`lastIncludedIndex > lastApplied`）：**丢弃整个现有日志**，以快照重置状态机；
+- 若快照只覆盖日志前缀：只删除被覆盖部分，保留后续条目（避免重传）；
+- 更新 `lastApplied = lastIncludedIndex`，通过 `applyCh` 把快照交给上层服务安装。
+
+::: insight 为什么快照由各自服务器独立生成而非 Leader 统一分发？
+若统一由 leader 生成再广播，leader 需同时处理快照传输和新日志复制，实现复杂；而且每个 follower 已有生成快照所需的全部信息（本地状态机），本地生成比网络传输便宜得多。仅在 follower 落后到 leader 已删除其所需日志时才必须走 InstallSnapshot。
+:::
+
+### 写时复制（Copy-on-Write）
+
+快照序列化可能耗时数秒；阻塞日志复制是不可接受的。利用操作系统 **fork** 的写时复制语义：
+
+1. `fork()` 子进程——内存页被标记 CoW，父子共享；
+2. 子进程负责序列化状态机到磁盘，父进程继续服务请求；
+3. 只有被修改的页才发生实际复制，大多数页无额外开销。
+
+或使用函数式（不可变）数据结构的状态机，也能天然支持并发快照。
+
+### 快照与 Raft 强 Leader 原则的关系
+
+普通日志复制严格从 leader 流向 follower，但快照生成是各自独立的——这打破了"数据只从 leader 流出"的常规。论文认为此例外合理：快照时共识已达成（条目已提交），没有竞争，不会产生冲突；而快照只是对已提交状态的一种压缩表示。
+
+::: insight 小结：持久化 + 快照协同工作
+持久化保证崩溃重启不丢已提交数据；快照保证日志不会无限增长、重启恢复速度快。两者共同支撑 Raft 在实际系统中长期运行的可行性。
+:::
 
 ## 只读操作
 
