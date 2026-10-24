@@ -1,12 +1,11 @@
 ---
-title: '非参数统计方法'
+title: 非参数统计方法
 type: lecture
 lecture: 11
 tags: [nonparametric-statistics, sign-test, wilcoxon-rank-sum, distribution-free, rank-statistics]
 status: complete
 source: 'https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/resources/mit15_075jf11_chpt14/'
 ---
-
 # Lec 11 非参数统计方法（Nonparametric Statistical Methods）
 
 > MIT 15.075J / ESD.07J · Statistical Thinking and Data Analysis · Fall 2011

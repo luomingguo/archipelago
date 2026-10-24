@@ -1,0 +1,43 @@
+This article is about the last section that wraps up a paper &#8211; it’s often called the “Discussion” in electrical engineering and “Conclusion” in computer science. We will use “Discussion” to refer to both of these, but the article applies to both.
+Criteria for Success
+A strong Discussion section:
+recaps the main conclusion of the paper in one or two sentences.
+relates the paper’s results to the big questions posed in the Introduction.
+describes how (and why) this work agrees or disagrees with other similar work.
+analyzes how the limitations of this study leave the big questions unanswered.
+puts the work in context &#8211; how does it relate to the rest of the literature?
+looks forward at how extensions of this paper’s results will be useful for answering the big questions.
+Structure Diagram
+Below is one possible structure for a Discussion section.
+Identify Your Purpose
+The Discussion explains how your work addresses the big questions you posed in your Introduction. The  Introduction  and Discussion are natural partners. The Introduction tells the reader what question you are working on and your specific approach (e.g. why you did a particular experiment to investigate it, what techniques you used, etc.); the Discussion tells the reader how the results of that approach contribute to answering the bigger question. That is, the Discussion explains how your results address the main questions you set out to answer in the Introduction.
+Analyze Your Audience
+Different kinds of readers will expect different things from your Discussion. Readers who are not experts in your field might skip your Results and read your Discussion for a high-level description of your results and their importance. They might also be interested to know what you think the future of your field is. Readers who are more familiar with your field will generally understand your results, but they will be curious about how you interpreted confusing, conflicting, or complicated results.
+As you write your Discussion, decide    who    will find each paragraph interesting and what you want them to take away from it. Successful Discussions can simultaneously provide the specific, nuanced information that experts want to read    and    the broader, more general statements that non-experts can appreciate.
+The balance between expert and non-expert readers will depend on the journal or conference you submit to. High-profile, general-readership conferences and journals will have more non-expert readers, while more technical, field-specific conferences and journals can have almost exclusively expert readers.
+Skills
+Recap paper objectives and motivation
+In the Introduction, you laid out the objectives of your work and motivated why those objectives solve an important problem. To recap, the Discussion might include a short summary of why the problem this paper addresses is impactful and how solving it with your methodology advances the field.
+Set your paper apart from previous work
+Weak Discussions begin with a summary of the results or a repetition of the main points of the Introduction. Strong Discussions immediately carve out a place for themselves in the large universe of papers by saying what makes this one interesting or special. For example, the Discussion might describe how the methodology in the paper is unique and useful or how the questions the paper addresses are important and have not yet been directly addressed by other papers. One way to do this is to start the Discussion with one or two sentences that relate the results to the existing literature.
+Relate your results to existing results
+In the Introduction, you probably helped motivate your study by citing previous results in your field. Now that you’ve laid out your results, you should tell whether your results agree or disagree with prior work and why. You might have extended previous work, showed how apparently conflicting results are actually harmonious, or exposed a contradiction that currently has no explanation. Another strategy is to bring up additional related work in the conclusion and explain how your results might fit into their broader context.
+Tell how your study&#8217;s limitations leave open the big questions
+Every study is finite—you did some things and not others, and you used methods that can explain some phenomena but not others. What bigger questions does your study bring up, and how might those get resolved? Do you just need to do more of the same kind of work? Have you shown that current methods are inadequate to answer the big question, and what more is needed to answer it?
+Every paper is a contribution to a larger scientific conversation. To explain this contribution, many Discussions end by placing the paper in an expected future of research in that field. Depending on how much there is to say about future work, this forward-looking description of future work might be a statement or even its own subsection. The discussion of future work might relate the new experiments or techniques in the paper to other problems in the field.
+Content adapted by the  MIT Electrical Engineering and Computer Science Communication Lab  from an article originally created by the  MIT Biological Engineering Communication Lab .
+Resources and Annotated Examples
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_pdf.gif"
+alt="Annotated Example 1" />
+Annotated Example 1
+Liu et al  Nature  2013
+760 KB
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_pdf.gif"
+alt="Annotated Example 2" />
+Annotated Example 2
+Schardl et al,  ACM SIGPLAN  2017
+46 KB
+Contributors
+Joel Jean
+Peter Lindahl
+Helen Xu

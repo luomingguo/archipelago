@@ -2,12 +2,21 @@
 title: Golang
 type: lecture
 lecture: 5
-tags: []
+tags: [goroutine, concurrency, interface, channel, synchronization]
 status: stub
 ---
 # Lec 5 Golang
 
+## TL;DR
+
+- Go 无类型层次结构、无继承：类型通过实现方法隐式满足接口（无需显式声明），接口通常只有 1–2 个方法，便于事后抽象与解耦。
+- goroutine 是轻量并发单元，channel 是 goroutine 间通信与同步的首选原语；`select` 实现多路复用，带缓冲 channel 可用作并发阻塞队列。
+- `sync.Mutex` 保护共享状态，`sync.WaitGroup` 等待多个 goroutine 完成；当 goroutine + channel 能让代码更清晰时，可替代 mutex。
+- 四大并发模式：状态机 goroutine、发布订阅服务器、工作调度、协议复用——均通过独立 goroutine 隔离关注点，避免直接共享状态。
+- 关键实践：用竞态检测器（`-race`）发现数据竞争；慢 goroutine 会阻塞 channel 发送，需设计背压或丢弃策略；`defer` 配合 `panic/recover` 处理异常清理。
+
 ## Go 编程的思维
+
 
 ### Go 是什么 & 不是什么
 

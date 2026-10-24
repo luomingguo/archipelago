@@ -1,0 +1,856 @@
+Revised October 21, 2025
+
+
+
+
+14.03/003 Micro Theory & Public Policy, Fall 2025
+
+Lecture slides 13. The power of general equilibrium: Fish markets
+in Kerala, India
+
+David Autor (Prof), MIT Economics and NBER
+Reminder: The First and Second Welfare Theorems
+
+
+
+
+1. First Welfare Theorem
+     □   A free market in competitive equilibrium is Pareto efcient
+
+2. Second Welfare Theorem
+     □   Any Pareto efcient allocation can be maintained as a competitive equilibrium
+
+
+
+
+                                                                                  1/40
+When do welfare theorems hold?
+
+
+
+ 1. No transaction costs
+
+ 2. No market power
+
+ 3. No externalities
+
+ 4. Full information
+
+ 5. Plus consumer axioms A1-A5
+
+
+
+
+                                 2/40
+        The digital provide: Information
+(technology), market performance, and welfare
+      in the South Indian fsheries sector
+         Robert Jensen, QJE, 2007
+
+
+
+                                                3/40
+   Indian States and Territories
+
+
+
+
+                               Kerala
+
+
+© Compare Infobase Pvt Ltd. All rights
+reserved. This content is excluded from
+our Creative Commons license. For more
+information, see
+https://ocw.mit.edu/help/faq-fair-use/
+
+                                          4/40
+                                         The Case of Kerala
+                 • 590 km coastline (+rivers/backwaters)
+                 • Hundreds of fishing villages, 1million+ fishermen
+                 • 600 K tons annual fish production
+                 • 70+% eat fish daily. Primary source protein.
+                 • Sardines (small, cheap), mackerel, prawns, seer
+
+
+
+
+                                                                                        5/40
+Courtesy of Robert Jensen. Used with permission.              Rob Jensen ’07 (slides)
+                                     The Case of Kerala
+           Fishing
+              • Wooden canoes, plywood or fiber glass boats
+              • Mostly outboard motors, 9-40HP.
+              • Gill net fishing, ring seine units
+              • 1-30 person crew, most 5 - 15. Joint ownership.
+
+           Marketing
+             • ~100-150 beach landings where sell fish, ~10km apart.
+             • Markets run largely from 5-8AM.
+             • Pre, Most fish sold via beach auction (English).
+             • Said to be competitive (buyers not collude (TN)).
+             • Little in way of interlinked transactions
+
+                                                                                            6/40
+Courtesy of Robert Jensen. Used with permission.                  Rob Jensen ’07 (slides)
+                                        Ring Seine Fishing in Kerala
+
+
+
+
+© Nirmala Group. All rights reserved. This content is excluded from our Creative Commons license. For more information, see
+https://ocw.mit.edu/help/faq-fair-use/
+                                                   Beach Market
+
+
+
+
+© Source unknown. All rights reserved. This content is excluded from our Creative Commons license. For more information, see
+https://ocw.mit.edu/help/faq-fair-use/
+                                              This Project
+              • In Kerala, state in south India, fishing is:
+                    – A huge industry (1 million+ directly employed)
+                    – Important component of diet (70+% consume daily)
+
+
+              • 1997, cell phones available--big take-up by
+                fishermen, traders. Market information.
+
+              • What is the impact on market functioning, LOP,
+                profits and consumer prices/welfare.
+                                                                                            9/40
+Courtesy of Robert Jensen. Used with permission.                  Rob Jensen ’07 (slides)
+Characteristics of Kerala fshing markets before 1997
+
+
+
+
+ 1. Isolated beach markets along the coast, far apart
+
+ 2. Large price variation across beaches each morning
+
+ 3. Some beaches have buyers but no sellers
+ 4. Some beaches have sellers but no buyers – resulting in wastage
+
+
+
+
+                                                                     10/40
+                         Why is there waste and price variation
+                              in Kerala’s fish markets?
+
+           • Why not go to other markets when have high catch?
+           • High transport costs and uncertainty.
+           • Plus, constraints:
+                – Market open only a few hours (supply chain)
+                – Can visit 1 market per day (distance)
+                – fish can’t be resold on land (distance, roads, cost)
+                – can’t store overnight
+                – no contracting or futures market
+
+
+
+
+Courtesy of Robert Jensen. Used with permission.                         Rob Jensen ’07 (slides)
+                                                                                                   11/40
+       The mobile phone rollout —
+One of the world’s great quasi-experiments
+
+
+
+
+                                             12/40
+Spread of mobile coverage: Kasaragod, Kannur, and Kozhikode districts
+
+
+
+
+© Oxford University Press. All rights reserved. This content is excluded from our Creative Commons license. For more information, see   13/40
+https://ocw.mit.edu/help/faq-fair-use/
+   A mobile phone tower
+
+
+
+
+Courtesy of Robert
+Jensen. Used with
+permission.                                         14/40
+
+                          Rob Jensen ’07 (slides)
+                      Large Changes in Fish Marketing
+                                   1996            2001
+
+
+
+
+                                                                                    15/40
+Courtesy of Robert Jensen. Used with permission.          Rob Jensen ’07 (slides)
+Spread of mobile coverage by date
+
+
+
+
+                                    16/40
+Plicker #1
+  Fish price dispersion across beaches by date
+                                       10 12
+
+
+
+
+                      Price (Rs./kg)
+                                       8
+                                       6
+                                       4
+                                       2
+                                       0
+
+                                               0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230   240   250
+                                                                                                            Time
+
+
+
+                                       10 12
+
+
+
+
+                      Price (Rs./kg)
+                                       8
+                                       6
+                                       4
+                                       2
+                                       0
+
+
+                                               0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230   240   250
+                                                                                                            Time
+
+
+                                       10 12
+
+
+
+
+                      Price (Rs./kg)
+                                       8
+                                       6
+                                       4
+                                       2
+                                       0
+
+                                               0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230   240   250
+                                                                                                            Time
+                                                                                                                                                                                                                    18/40
+Courtesy of Robert Jensen. Used with permission.
+                                                                                                                                                                                          Rob Jensen ’07 (slides)
+   Fish price dispersion across beaches by date
+                                          10 12
+
+
+
+
+                         Price (Rs./kg)
+                                          8
+                                          6
+                                          4
+                                          2
+                                          0
+
+                                                  0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230   240   250
+                                                                                                               Time
+
+
+
+                                          10 12
+
+
+
+
+                         Price (Rs./kg)
+                                          8
+                                          6
+                                          4
+                                          2
+                                          0
+
+
+                                                  0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230   240   250
+                                                                                                               Time
+
+
+                                          10 12
+
+
+
+
+                         Price (Rs./kg)
+                                          8
+                                          6
+                                          4
+                                          2
+                                          0
+
+                                                  0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230   240   250
+                                                                                                               Time
+
+
+                                                                                                                                                                                                   Rob Jensen ’07 (slides) 19/40
+Courtesy of Robert Jensen. Used with permission.
+Fish price dispersion across beaches by date
+                                       10 12
+
+
+
+
+                      Price (Rs./kg)
+                                       8
+                                       6
+                                       4
+                                       2
+                                       0
+
+                                               0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230   240   250
+                                                                                                            Time
+
+
+
+                                       10 12
+
+
+
+
+                      Price (Rs./kg)
+                                       8
+                                       6
+                                       4
+                                       2
+                                       0
+
+
+                                               0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230   240   250
+                                                                                                            Time
+
+
+                                       10 12
+
+
+
+
+                      Price (Rs./kg)
+                                       8
+                                       6
+                                       4
+                                       2
+                                       0
+
+                                               0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230   240   250
+                                                                                                            Time
+
+
+                                                                                                                                                                                                Rob Jensen ’07 (slides) 20/40
+Courtesy of Robert Jensen. Used with permission.
+Fish price dispersion across beaches by date
+                                        10 12
+
+
+
+
+                       Price (Rs./kg)
+                                        8
+                                        6
+                                        4
+                                        2
+                                        0
+
+                                                0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230   240   250
+                                                                                                             Time
+
+
+
+                                        10 12
+
+
+
+
+                       Price (Rs./kg)
+                                        8
+                                        6
+                                        4
+                                        2
+                                        0
+
+
+                                                0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230   240   250
+                                                                                                             Time
+
+
+                                        10 12
+
+
+
+
+                       Price (Rs./kg)
+                                        8
+                                        6
+                                        4
+                                        2
+                                        0
+
+                                                0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230   240   250
+                                                                                                             Time
+
+
+
+Courtesy of Robert Jensen. Used with permission.                                                                                                                                                 Rob Jensen ’07 (slides) 21/40
+Decline in price spread across beaches
+                                                   10 12
+
+
+
+
+                       Price (Rs./kg)
+                                        1 spread
+                                                   8
+                                                   6
+                                                   4
+                                                   2
+                                                   0
+
+                                                           0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230 240   250
+                                                                                                                        Time
+
+
+
+                                                   10 12
+
+
+
+
+                       Price (Rs./kg)
+                                        2 spread
+                                                   8
+                                                   6
+                                                   4
+                                                   2
+                                                   0
+
+
+                                                           0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230 240   250
+                                                                                                                        Time
+
+
+                                                   10 12
+
+
+
+
+                       Price (Rs./kg)
+                                        3 spread
+                                                   8
+                                                   6
+                                                   4
+                                                   2
+                                                   0
+
+                                                           0   10   20   30   40   50   60   70   80   90   100   110   120   130   140   150   160   170   180   190   200   210   220   230 240   250
+                                                                                                                        Time
+
+
+
+Courtesy of Robert Jensen. Used with permission.                                                                                                                                                          Rob Jensen ’07 (slides) 22/40
+ Decline in wastage across beaches
+
+
+
+
+                        % fishermen with waste % fishermen with waste % fishermen with waste
+                                                                                                                 .25
+
+
+
+
+                                                                                               1 pct_has_waste
+                                                                                                                 .2
+
+                                                                                                                 .15
+
+                                                                                                                 .1
+
+                                                                                                                 .05
+
+                                                                                                                 0
+
+                                                                                                                          0   10   20   30   40   50   60   70   80   90   100   110   Time
+                                                                                                                                                                                       120130   140   150   160   170   180   190   200   210   220   230 240   250
+
+
+
+
+                                                                                                                 .25
+
+
+
+
+                                                                                               2 pct_has_waste
+                                                                                                                 .2
+
+                                                                                                                 .15
+
+                                                                                                                 .1
+
+                                                                                                                 .05
+
+                                                                                                                 0
+
+                                                                                                                          0   10   20   30   40   50   60   70   80   90   100   110   Time
+                                                                                                                                                                                       120130   140   150   160   170   180   190   200   210   220   230 240   250
+
+
+
+
+                                                                                                                 .25
+
+
+
+
+                                                                                               3 pct_has_waste
+                                                                                                                 .2
+
+                                                                                                                 .15
+
+
+
+                                                                                                                 .05 .1
+
+                                                                                                                 0
+
+                                                                                                                          0   10   20   30   40   50   60   70   80   90   100   110   Time
+                                                                                                                                                                                       120130   140   150   160   170   180   190   200   210   220   230 240   250
+
+
+
+
+Courtesy of Robert Jensen. Used with permission.                                                                                                                                                                                                                      Rob Jensen ’07 (slides) 23/40
+              896
+              Max–min spread QUARTERLY JOURNAL OF ECONOMICS
+Price dispersion  and waste in Kerala sardine markets
+                 (Rs/kg)
+                Region I                     7.60           TABLE 1.86III              1.32                    1.22
+                                            (0.50) AND WASTE
+                             PRICE DISPERSION                    (0.22)               (0.10)
+                                                                    IN KERALA SARDINE MARKETS
+                                                                                                              (0.44)
+                 Region II                   8.19                 7.30                 1.79                    1.57
+                                            (0.44)               (0.29) 1
+                                                               Period                 (0.19) 2
+                                                                                     Period                   (0.16) 3
+                                                                                                           Period
+                 Region III                  8.24 0
+                                          Period                  7.27 I
+                                                               (region                 7.60 II
+                                                                                    (region                    2.56 III
+                                                                                                          (region
+                                            (0.47)
+                                        (pre-phone)         adds(0.27)
+                                                                   phones) adds(0.25)    phones) adds(0.34)     phones)
+              Coefficient of
+                    variation
+              Max–min       spread
+                    (percent)
+                    (Rs/kg)
+                 Region I                      .68
+                                             7.60                  .14
+                                                                  1.86                   .08
+                                                                                       1.32                     .07
+                                                                                                               1.22
+                                            (0.07)
+                                            (0.50)               (0.01)
+                                                                 (0.22)               (0.01)
+                                                                                      (0.10)                  (0.01)
+                                                                                                              (0.44)
+                 Region II                     .62
+                                             8.19                  .55
+                                                                  7.30                   .12
+                                                                                       1.79                     .08
+                                                                                                               1.57
+                                            (0.44)
+                                            (0.04)               (0.29)
+                                                                 (0.04)               (0.19)
+                                                                                      (0.01)                  (0.16)
+                                                                                                              (0.01)
+                 Region III                  8.24
+                                               .69                7.27
+                                                                   .57                 7.60
+                                                                                         .54                   2.56
+                                                                                                                .14
+                                            (0.47)
+                                            (0.09)               (0.27)
+                                                                 (0.04)               (0.25)
+                                                                                      (0.03)                  (0.34)
+                                                                                                              (0.02)
+              Coefficient
+              Waste          of
+                        (percent)
+                    variation
+                 Region    I                 0.08                 0.00                 0.00                    0.00
+                    (percent)               (0.01)               (0.00)               (0.00)                  (0.00)
+                 Region II                     .68
+                                             0.05                  .14
+                                                                  0.04                   .08
+                                                                                       0.00                     .07
+                                                                                                               0.00
+                                            (0.07)
+                                            (0.01)               (0.01)               (0.01)
+                                                                                      (0.00)                  (0.01)
+                                                                                                              (0.00)
+                 Region III                    .62
+                                             0.07                  .55
+                                                                  0.06                   .12
+                                                                                       0.06                     .08
+                                                                                                               0.00
+                                            (0.04)
+                                            (0.01)               (0.04)
+                                                                 (0.01)               (0.01)                  (0.01)
+                                                                                                              (0.00)
+                 Region III                    .69                 .57                   .54                    .14
+                                                                                                                             24/40
+                                            (0.09)Survey conducted
+                   Data from the Kerala Fisherman                (0.04)               (0.03)
+                                                                      by the author. Period and regions are as(0.02)
+                                                                                                                defined in
+              the text. The max–min spread is the difference between the highest and lowest 7:30 – 8:00 A.M. average price
+              Waste (percent)
+Causal efects of mobile phone rollout on price dispersion
+
+
+
+
+                                                            25/40
+Plicker #2
+Arbitrage and price convergence
+
+
+
+
+                                  27/40
+Defnition: arbitrage
+
+
+
+
+ 1. Taking advantage of a price diference between two or more markets
+
+
+ 2. Striking a combination of matching deals that capitalize upon the
+
+   imbalance between prices
+
+
+
+
+                                                                        28/40
+Mobile phone rollout and market arbitrage
+
+
+
+
+                                            29/40
+Testing law of one price: Is price diference between markets greater than
+transport cost?
+
+
+
+
+                                                                      30/40
+Consumer benefts from trade
+Bundle adjustment
+
+
+
+
+                              31/40
+Consumer benefts from trade
+Consumption smoothing
+                                       Willingness to Pay for Fish
+                 WTP                    S=Low    S=(L+H)/2       S=High
+                60
+
+
+
+
+                         Area a               Area b    Area c
+
+
+
+                         WTP for            WTP for         WTP for
+                       first 20 fish      fish 21-30        fish 31-
+                                                               40
+
+                 0                                                               Q   32/40
+                                         20            30              40   60
+Efects of market integration on welfare
+
+
+
+
+                                          33/40
+How does market integration afect prices, buyers & seller surplus,
+welfare?
+
+
+
+
+                                                                     34/40
+Equilibrium in market 1
+
+
+
+Market-clearing price and quantity
+ − D1 (P1 ) = 200 × (12 − P1 ), S1 (P1 ) = 400 × (P1 − 1.5)
+ − P1∗ = 5, Q∗1 = 1, 400
+
+
+
+
+                                                              35/40
+Equilibrium in market 1
+
+
+
+Market-clearing price and quantity
+ − D1 (P1 ) = 200 × (12 − P1 ), S1 (P1 ) = 400 × (P1 − 1.5)
+ − P1∗ = 5, Q∗1 = 1, 400
+
+Consumer + producer surplus [note: area = (base × height)/2]
+
+
+
+
+                                                               35/40
+Equilibrium in market 1
+
+
+
+Market-clearing price and quantity
+ − D1 (P1 ) = 200 × (12 − P1 ), S1 (P1 ) = 400 × (P1 − 1.5)
+ − P1∗ = 5, Q∗1 = 1, 400
+
+Consumer + producer surplus [note: area = (base × height)/2]
+ − D1 (P1 = 12) = 0, S1 (P1 = 1.5) = 0
+ − Surplus = (12 − 1.5) × 1, 400 × 0.5 = 7, 350
+
+
+
+
+                                                               35/40
+Equilibrium in market 2
+
+
+
+Market-clearing price and quantity
+ − D2 (P2 ) = 300 × (15 − P2 ), S2 (P2 ) = 300 × (P2 − 3)
+
+ − P2∗ = 9, Q∗2 = 1, 800
+
+
+
+
+                                                            36/40
+Equilibrium in market 2
+
+
+
+Market-clearing price and quantity
+ − D2 (P2 ) = 300 × (15 − P2 ), S2 (P2 ) = 300 × (P2 − 3)
+
+ − P2∗ = 9, Q∗2 = 1, 800
+
+Consumer + producer surplus [note: area = (base × height)/2]
+ − D2 (P2 = 15) = 0, S2 (P2 = 3) = 0
+
+ − Surplus = (15 − 3) × 1, 800 × 0.5 = 10, 800
+
+
+
+
+                                                               36/40
+Equilibrium in the integrated market
+
+
+Market-clearing price and quantity
+ − D0 (P0 ) = 200 × (12 − P0 ) + 300 × (15 − P0 ) = 6, 900 − 500P
+
+ − S0 (P0 ) = 400 × (P0 − 1.5) + 300 × (P0 − 3) = 700P − 1, 400
+
+
+
+
+                                                                    37/40
+Equilibrium in the integrated market
+
+
+Market-clearing price and quantity
+ − D0 (P0 ) = 200 × (12 − P0 ) + 300 × (15 − P0 ) = 6, 900 − 500P
+
+ − S0 (P0 ) = 400 × (P0 − 1.5) + 300 × (P0 − 3) = 700P − 1, 400
+
+ − P0∗ = 7, Q∗0 = 3, 400
+
+
+
+
+                                                                    37/40
+Equilibrium in the integrated market
+
+
+Market-clearing price and quantity
+ − D0 (P0 ) = 200 × (12 − P0 ) + 300 × (15 − P0 ) = 6, 900 − 500P
+
+ − S0 (P0 ) = 400 × (P0 − 1.5) + 300 × (P0 − 3) = 700P − 1, 400
+
+ − P0∗ = 7, Q∗0 = 3, 400
+
+Consumer + producer surplus
+
+
+
+
+                                                                    37/40
+Equilibrium in the integrated market
+
+
+Market-clearing price and quantity
+ − D0 (P0 ) = 200 × (12 − P0 ) + 300 × (15 − P0 ) = 6, 900 − 500P
+
+ − S0 (P0 ) = 400 × (P0 − 1.5) + 300 × (P0 − 3) = 700P − 1, 400
+
+ − P0∗ = 7, Q∗0 = 3, 400
+
+Consumer + producer surplus
+ − D0 (P0 = 13.8) = 0, S0 (P0 = 2.14) = 0
+ − Surplus = (13.8 − 2.14) × 3, 400 × 0.5 = 19, 822
+
+
+
+
+                                                                    37/40
+Efects of market integration on welfare
+
+
+
+
+                                          38/40
+Plicker #3
+Plicker #4
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

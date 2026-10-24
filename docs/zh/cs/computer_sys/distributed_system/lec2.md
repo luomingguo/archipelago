@@ -2,10 +2,17 @@
 title: 'RPC & 线程'
 type: lecture
 lecture: 2
-tags: []
+tags: [rpc, concurrency, goroutine, mutual-exclusion, go]
 status: complete
 ---
 # Lec 2 RPC & 线程
+
+## TL;DR
+
+- 分布式编程依赖线程（Goroutine）管理 I/O 并发与多核并行，协调方式分为共享内存加锁（Mutex）与消息通信（Channel）。
+- 并发编程三大风险：数据竞争（通过 `-race` 检测与锁防御）、协调失步（利用 Channel/Cond/WaitGroup 同步）、死锁成环。
+- RPC 掩盖网络通信细节，核心难点在网络不可靠下的故障语义：区分 at-least-once（重复执行风险）、at-most-once（去重机制）与 exactly-once。
+- Go RPC 服务端并发处理请求，Handler 内部访问共享状态必须加锁保护。
 
 **为什么用 Go**：线程支持好 + RPC 方便 + 类型/内存安全 + GC（消除 use-after-free）+ 业界广用。
 

@@ -1,0 +1,1079 @@
+--- PAGE 1 ---
+14.462
+Spring, 2020
+e-Money, Infrastructure and Liquidity 
+Shortages, Financial and Trader 
+Centrality, and Optimized Liquidity 
+Injections as Monetary Policy
+(Lecture 3)
+Robert M. Townsend
+Elizabeth & James Killian Professor of Economics, MIT
+
+
+--- PAGE 2 ---
+e-Messages and e-
+Value Transfer
+Second component of distributed ledgers
+2
+
+
+--- PAGE 3 ---
+Outline: From Cash Flow Accounts in 
+Thailand
+0
+10
+20
+30
+40
+normalized cash
+0
+12
+24
+36
+48
+60
+72
+84
+96 108 120 132 144 156 168 180 192 204
+month
+rural HH A, Chachoengsao
+3
+Money in Terms of Monthly Consumption
+mean
+sd
+p25
+p50
+p75
+N
+Total
+45
+37
+21
+32
+57
+531
+
+
+--- PAGE 4 ---
+To Sweden as virtual e-world, with e-money
+to Kenya In between, with welfare gains
+Sweden, almost no 
+currency left 
+Kenya: Phone credits and 
+e-transfers 
+cash in and out through 
+agents
+Coexistence of payments 
+devices: e-money and 
+shillings as token
+Remittances, e-transfers 
+from migrants, lead to  
+better insurance, welfare        
+gains
+4
+The Demand for Cash in Sweden (Ingves 2016)
+
+
+--- PAGE 5 ---
+Limitations: The Issue of Trust
+Safaricom as trusted third party
+Token transfer systems rely on distributed ledgers, with immutable records and 
+some kind of consensus validation 
+Taking into account the larger financial system, banks hold 
+Safaricom accounts, and hence customer shilling accounts, and are 
+subject to runs. Again, the issue of trust
+5
+
+
+--- PAGE 6 ---
+Missing Infrastructure and Liquidity Policy
+Liquidity issues in practice: common problems span a range of 
+economies
+Kenya
+o Shortages among the agents: running out of e-money and/or fiat
+Indonesia, agents acting on behalf of banks- complain about  liquidity
+US financial markets, broker shortages, liquidity as insurance
+Infrastructure currently in pieces: Cryptocurrency exchanges are 
+largely built as traditional systems with (trusted) brokers or 
+centralized exchanges, in contrast to the tokens themselves
+Begs consideration of  overall market design
+Begs issue of crypto and monetary policy
+6
+
+
+--- PAGE 7 ---
+Cash Management in Village 
+Thailand: Positive and 
+Normative Implications
+Fernando Alvarez 
+University of Chicago
+Anan Pawasutipaisit
+Thammasat University
+Robert M. Townsend
+Elizabeth & James Killian Professor of Economics, MIT
+2015 Bank of Canada Annual Conference
+“Electronic Money and Payments”
+Ottawa, Ontario
+November 20, 2015
+
+
+--- PAGE 8 ---
+Existing Models of Cash Management: 
+Baumol-Tobin and Miller-Orr
+Let c be a given level of expenditure that agent has to spend within a year
+Let n be total number of trips to withdraw cash at bank within a year
+Let M be average cash holding
+Let W be amount of withdrawal
+Let R be interest
+Let b be transaction cost per trip
+Given this setup, if cash holding is for transaction purpose, then its pattern would 
+be sawtooth where each withdraw,
+𝑊𝑊= 𝑐𝑐
+𝑛𝑛
+and the average cash holding will be
+𝑀𝑀= 𝑊𝑊
+2 = 𝑐𝑐
+2𝑛𝑛
+To determine optimal cash holding: We compute the forgone interest and the 
+transaction cost. The forgone interest would be 𝑅𝑅𝑅𝑅= 𝑅𝑅
+𝑐𝑐
+2𝑛𝑛while the transaction 
+cost for all  trips is bn.  The total  cost of  cash management is thus 𝑅𝑅
+𝑐𝑐
+2𝑛𝑛+ 𝑏𝑏𝑏𝑏.
+So 𝑛𝑛=
+𝑅𝑅𝑅𝑅
+2𝑏𝑏
+1/2
+𝑀𝑀=
+𝑐𝑐𝑐𝑐
+2𝑅𝑅
+1/2
+8
+
+
+--- PAGE 9 ---
+Miller-Orr
+Baumol-Tobin model should apply reasonably well to the household sector, 
+particularly to salary-earning households.
+Miller and Orr (1966) proposed a model of the demand for cash for firms.
+For many business firms, the typical pattern of cash management is not 
+simple, regular and predictable.
+The cash balance fluctuates irregularly (and to some extent unpredictably) 
+over time in both directions (up and down), building up when operating 
+receipts exceed expenditures and falling off when the reverse is true.
+If the build-up is at all prolonged, a point is eventually reached at which the 
+owner/manager/financial officer decides that cash holdings are excessive, 
+and transfers a sizable quantity of funds to some other source.
+In the other direction, in the face of a prolonged net drain, a level will be 
+reached at which the owner/manager/financial officer will do something to 
+restore the cash balance to an “adequate working level”.
+9
+
+
+--- PAGE 10 ---
+Model
+The basic ingredients of the model are as follows:
+Let 𝑒𝑒= 𝑐𝑐−𝑦𝑦be net expenditures. So 𝑒𝑒(𝑡𝑡) > 0 means an expenditure paid in 
+cash at time t and 𝑒𝑒(𝑡𝑡) < 0 means an income received in cash.
+We assume that the net expenditures in cash are iid through time and that 
+during a period of length ∆ they are distributed as follows:
+𝑒𝑒𝑡𝑡=
+𝑧𝑧𝑝𝑝with probability 𝜅𝜅𝑝𝑝Δ
+Δ𝑐𝑐+ 𝜎𝜎Δ1/2 with probability 1 −(𝜅𝜅𝑝𝑝+ 𝜅𝜅𝑛𝑛)Δ
+2
+Δ𝑐𝑐−𝜎𝜎Δ1/2 with probability 1 −(𝜅𝜅𝑝𝑝+ 𝜅𝜅𝑛𝑛)Δ
+2
+−𝑧𝑧𝑛𝑛with probability 𝜅𝜅𝑛𝑛Δ
+10
+
+
+--- PAGE 11 ---
+Model (cont.)
+That is, net expenditures are the sum of two components, one is small recurrent net 
+expenditures and one is infrequent lumpy ones. The small recurrent expenditures 
+have mean c and variance σ2 per unit of time. We will take κ𝑖𝑖to be a small 
+number, so most of the time or with probability 1 −(𝜅𝜅𝑝𝑝+ 𝜅𝜅𝑛𝑛)∆, there are only 
+small recurrent expenditures. But when a large net expenditure occurs, which 
+happens with small probability κ𝑖𝑖per unit of time, half of the time are purchases 
+(or outflows of cash) and half of the time incomes (inflows of cash). 
+As ∆ → 0, the cumulative value of net expenditures is the sum of Brownian motion 
+with drift c and volatility σ, and two independent Jump process, with Poisson 
+arrival rates 𝜅𝜅𝑝𝑝𝜅𝜅𝑛𝑛and jump size zp and −𝑧𝑧𝑛𝑛.
+The evolution of cash will be as follows:
+𝑚𝑚(𝑡𝑡+ ∆) = 𝑚𝑚(𝑡𝑡) −𝑒𝑒(𝑡𝑡+ ∆) + 𝑤𝑤(𝑡𝑡+ ∆) −𝑑𝑑(𝑡𝑡+ ∆)
+where w is withdrawal and d is deposit which is action that households can take. In 
+case of inaction, w = d = 0 and thus cash will either go up or go down, depending 
+on whether net expenditure is negative or positive.
+11
+
+
+--- PAGE 12 ---
+Model (cont.)
+Household wants to minimize the expected discounted value of the 
+sum of two costs
+Flow opportunity cost
+Adjustment cost
+We assume that costs are discounted at a real rate r per unit of time, 
+and cash holdings have opportunity cost R per period. Given iid
+assumption, the state of the problem is given by cash holdings m. Let 
+V(m) be the value function right before the agent makes the decision 
+of whether or not to take action, i.e., withdraw or deposit. And 
+assume that cash cannot be negative, or non-negativity constraint, 
+household will thus be forced to take action when m ≤  0.
+12
+
+
+--- PAGE 13 ---
+Value Function
+The value function will satisfy the following Bellman equation:
+where
+i.e., if cash right before the agent makes the decision is negative, households must take an 
+action, and when they do, that will incur transaction cost b and households will choose to 
+have cash such that the value function is minimized; there is no discounting because it 
+happens right away.  But if cash right before the agent makes the decision is positive, 
+household will choose to either take action or take no action, by comparing the value of 
+adjusting with the value of inaction, and choose the one that gives lower cost.
+13
+
+
+--- PAGE 14 ---
+Data
+14
+
+
+--- PAGE 15 ---
+Net Cash Variables
+Net cash outflow is defined as exogenous cash outflow minus 
+exogenous cash inflow.
+Net cash outflow can be defined two ways, depending on whether 
+we consider only formal endogenous variables or both formal and 
+informal ones
+With only formal endogenous variables, net cash contains the 
+following variables that we treat as exogenous
+The actions that households choose are
+15
+Exogenous cash outflow
+Exogenous cash inflow
+c
+y
+assets purchase
+assets sold new 
+repayment in borrowing new
+borrowing
+lending
+repayment in lending
+gift outflow
+gift inflow
+ROSCA outflow
+ROSCA inflow
+Exogenous cash outflow
+Exogenous cash inflow
+ndD
+nwW
+
+
+--- PAGE 16 ---
+Including Informal
+With both formal and informal endogenous variables, net cash 
+contains the following variables that we treat as exogenous
+The actions that households choose are
+16
+Exogenous cash outflow
+Exogenous cash inflow
+c
+y
+assets purchase 
+assets sold ROSCA
+ROSCA outflow
+inflow
+Exogenous cash outflow
+Exogenous cash inflow
+ndD
+nwW
+repayment in borrowing 
+new borrowing
+new lending
+repayment in lending
+gift outflow
+gift inflow
+
+
+--- PAGE 17 ---
+Treatment of the Data
+Basically, the idea is making sure that data is in cash. The following 
+variables contain some data issue
+Other variables such as consumption expenditure, gift, and lending 
+are relatively easy to make sure that they are in cash.
+17
+Cash inflow
+Cash outflow
+y
+ndD
+new borrowing
+
+
+--- PAGE 18 ---
+ndD or Actual Deposit
+The monthly survey does not have withdrawal and deposit per transaction. 
+It does not have frequency of withdrawal and deposit and its average size 
+per month. It has total amount of deposit, and withdrawal since the past 
+interview (approximately 1 month).
+But there is some confusion in recording the values. From the survey data, 
+we often see that households make deposits and withdrawals at the same 
+month, an observation which is not consistent with the idea that it is costly 
+for households to adjust cash holding by going to the bank.
+This is because the survey team will record when money goes into savings 
+accounts as a deposit, regardless of whether households made deposits by 
+themselves. For instance, if households receive direct deposit, or money 
+transfer from some organization, they will be treated as deposits in the 
+survey.
+But for our purpose, this distinction is crucial. So we have to fix this and 
+make sure that deposit is in cash and it is done by household itself.
+18
+
+
+--- PAGE 19 ---
+y or Income in Cash
+There are two types of income that households may receive as direct 
+deposit but somehow they are recorded as cash in the survey
+Salary from employer
+Revenue from selling milk to milk cooperatives for dairy farmers in Lopburi
+For salary from employer, we isolate wages received as direct 
+deposit using variables in job form (to get information about type of 
+worker and type of payment) and job module (to get payment each 
+month)
+We focus on employees with monthly wages, or government workers 
+with monthly wage/salary, then using this condition from the job 
+form and match it at individual-job level to get monthly wage.
+Then we check it with deposit from savings module when source of 
+deposit is "from salary or wages", and use the code from the Thai 
+survey team that indicates whether household made deposit by itself 
+or else.
+19
+
+
+--- PAGE 20 ---
+y or Income in Cash (cont.)
+We merge this file with the one that contains livestock revenue, but 
+livestock revenue might be something else (besides dairy cow)
+Then we merge it with the file from the Thai survey team which 
+indicates whether household made deposit by itself or else.
+So the condition used finally are
+Source of deposit is from selling agricultural product
+Household did not make deposit by itself (because in this case, milk 
+cooperative made it)
+Having revenue from livestock from Lopburi (province that has milk 
+cooperative)
+We checked the difference between revenue livestock and deposit for 
+these households, about 85% match perfectly
+20
+
+
+--- PAGE 21 ---
+21
+We use this simple statistical model to back up c and σ from equations (36) and 
+(37) given 𝔼𝔼𝑒𝑒, 𝔼𝔼𝑒𝑒2 , 𝜅𝜅𝑝𝑝, 𝑧𝑧𝑝𝑝, 𝜅𝜅𝑛𝑛, and 𝑧𝑧𝑛𝑛.
+
+
+--- PAGE 22 ---
+Cash Holding
+22
+From the 
+model
+
+
+--- PAGE 23 ---
+Measuring Cash
+All transactions in the monthly data are recorded as in cash or in 
+kind.
+We do not know initial cash balance (decided not to ask). But we do 
+see measured cash transactions, so we guess initial stock is zero 
+(most conservative estimate).  And if balance goes negative in some 
+month, we add to initial stock so balance would be positive.
+We still see trends in the data and it seems cash is a store of value for 
+year to year, even life cycle. The is an even bigger Anomaly! 
+To study transaction demand, we “detrend” as best we can.  Cash 
+consumption number is adjusted so that on average, net cash of 
+household inflow of those who have inflow more than outflow now 
+will be zero (or as close as possible).
+Then, use this adjusted cash consumption to compute new net_cash, 
+and the statistics are based on active user only. 
+23
+
+
+--- PAGE 24 ---
+Money Holding, Frequency and Size of Adjustments: Data 
+vs. Model at Plausible Values
+24
+Money in Terms of Monthly Consumption
+mean
+sd
+p25
+p50
+p75
+N
+Total
+45
+37
+21
+32
+57
+531
+
+
+--- PAGE 25 ---
+Cash as a Function of Fixed Cost
+25
+Figure 1: Avg. cash balances M and agv. size of withdrawals W and deposits D
+0.08
+0.4
+
+
+--- PAGE 26 ---
+A Model That Matches National, Rural or Even Monthly Data 
+(But At Implausible Parameter Values)
+We set parameters as in Thai data as before in the benchmark 
+Then to match the frequency of transactions we allow free 
+withdrawals (or deposits) at the observed frequency, 16 per year 
+Finally we raise the cost b for all trips, quite high
+26
+
+
+--- PAGE 27 ---
+Modify Benchmark Model
+The case where discount rates are the same
+compares cases that have free adjustment opportunities with cases without free adjustment opportunities. 
+Cash balances as well as the frequency of total adjustment are the same, as long as κf + κn + κp 
+stays constants. 
+Only difference is on 
+the average size of deposits and withdrawals
+and potentially on the ratio of the number of deposits to withdrawals.
+The mechanism of free adjustment opportunities and the one of large net cash purchases are 
+substitutes to explain the size of cash balances and frequency of adjustments.
+Consider the following two setting of the parameters: θ and θ′ with θ0 and θ′0 and with:
+Assume that for θ the optimal policy is such that large net cash expenditure shocks trigger an 
+adjustment, i.e. that
+Then, the optimal policy thresholds are the same for θ and θ′ and the value functions diﬀer from a 
+constant, i.e.:
+Moreover, the distribution of cash holdings, the average cash balances, and the average number of 
+adjustments per unit of time (i.e. sum of deposits and withdrawals) are the same for the two set of 
+parameters, i.e.:
+27
+
+
+--- PAGE 28 ---
+Predicted Model Behavior
+In the limit households wait for free withdrawals which come at random times.
+When they do the withdraw the return point m*
+If money drifts up and up, there will be an upper bound for deposits 
+this happens rarely, 
+quite expensive when it happens
+Overall average money balances in steady state will in fact be m* if all shocks are symmetric
+as intuition suggests and numerical calculations confirm 
+28
+
+
+--- PAGE 29 ---
+Predicted Money
+To get to M = 8, b > 1 day
+To get to M = 30, b is ≈ 2 years
+29
+
+
+--- PAGE 30 ---
+Welfare Costs
+The costs, discounted expected present value
+The current value function as a function of current money holdings, in particular m*, can be calculated
+o Accounting costs at 8% 
+o Behavioral model at 9.5% of consumption
+If off by a factor of 4
+o Costs are 2 – 2.5% of monthly consumption
+30
+
+
+--- PAGE 31 ---
+Statistics of Normalized Cash in Urban 
+Survey
+Computing mean of normalized cash, we have about 600 numbers, 
+one for each household. Then look at some key statistics of this 
+distribution.
+From mean, cash is highest at Lopburi (5.53), then Sisaket (4.78), 
+Chachoengsao (2.79) and Buriram (1.92). This is quite lower than 
+when we don't adjust consumption, or using just cash holding in the 
+household financial account.
+Overall, cash is about 3.80 times of average monthly consumption.
+This ranking (between these 4 provinces) also holds for other 
+statistics (median, standard deviation, max, p25, p75).
+31
+
+
+--- PAGE 32 ---
+Measurement in the Rural Data of 
+Transactions
+In the basic monthly data, much work was done with enumerators to try to 
+distinguish own direct deposit vs deposits made for the household by someone else, 
+which they  previously reported as own deposit, the language and concepts, not 
+being clear. 
+Since month 174, there is a measure to distinguish between own and direct deposit 
+in the  same rural survey. (due to doubts we have been having).  If anything, it 
+appears for the data we are using, the fraction of own deposit that we infer is 
+actually greater than might have been the case for two of the four provinces, 
+judging from what happens afterward, when arguably we have better measurement, 
+from month l74. This means cash holding  would have been even larger, so 
+measurement of deposits may be accurate or biased  in direction of rural household 
+holding even more cash than we are estimating. 
+In particular, comparing the retrospective measure (month 1-160) with the actual 
+measure (month 174-208), they are quite different for Chachoengsao and Buriram
+where a fraction of own deposit during month 1-160 is greater than a fraction of 
+own deposit during month 174-208. 
+The post month 174 also appears reasonable and accurate by another standard. If 
+we distinguish down deposit at large institutions (such as BAAC and commercial 
+bank) vs own deposit at small institutions (within village fund), the former are 
+larger and less frequent, consistent with it being more costly to deal with the larger 
+ones.  (however overall rural household behavior begs for an explanation as in the 
+next slide)
+
+
+--- PAGE 33 ---
+Household Transactions and Behavior, Rural 
+vs. Urban
+Basic questions, hypotheses: As cash holding is lower in the urban survey than the rural survey, is it because  
+households in the urban survey deposit more often, and/or larger amounts. And is it because they withdraw 
+less, and/or smaller amounts than households in the rural survey? The answers are mixed but the picture of 
+behavior is  becoming clear. 
+Deposits: 
+Households in the rural survey make (own) deposit, more frequently than households in the urban survey.
+In terms of size of deposit (relative to average monthly household consumption), own deposit in the rural survey is bigger 
+than own deposit in the urban survey except at Sisaket. 
+Thus the evidence goes against the hypothesis for deposits. 
+Withdrawals: 
+Households in the rural survey withdraw more often than households in the urban survey.
+In terms of size of withdrawal (relative to average monthly household consumption), withdrawal in the rural survey are at 
+a larger size than withdrawal in the urban survey.
+Thus the evidence is consistent with the initial hypothesis. 
+Behavior: 
+In the urban survey, the ratio of the direct deposit to withdrawal is about 1 on average. Thus it is possible that in the 
+urban survey, withdrawal is mainly from direct deposit, and households use that to finance monthly consumption. They 
+seem to behave as Baumol Tobin type households with respect to direct deposits, put into the financial institution on their 
+behalf. 
+there is in addition  for urban some own deposits. so it seems they  leave an equivalent amount  in the bank, hence  not 
+used for consumption, consistent with this, total deposit from any source is greater in urban than in rural. 
+In this sense urban households seem to be managing their money well. In contrast,  for rural households, withdrawal is 
+greater than consumption , so this is in part where the cash is coming from. Its hard to reconcile  deposit behavior in the 
+rural  sample, with their withdrawal behavior, or in short, why put it in a financial institution only to take too much out. 
+Pending: fraction of extreme events in urban and relatedly, what is the source of direct deposit for urban 
+households, relative to their occupation. 
+
+
+--- PAGE 34 ---
+Remedies
+Pro-active training and apps for better currency management
+Conversion to M-Pesa type with means of payment in the 'bank“
+Earning interest
+Virtually costless transfers
+
+
+--- PAGE 35 ---
+Swish and a Virtual e-World
+https://en.wikipedia.org/wiki/Swish_(payment)
+
+
+--- PAGE 36 ---
+Ingves (2017) “Do we need an e-krona?”
+
+
+--- PAGE 37 ---
+Liquidity Shortages and (Missing) 
+Infrastructure 
+A Survey of 250 M-PESA agents as broker dealer in Kenya in late 
+2008
+How often do agents run out? 
+Solution: inter-dealer market—it exists but not well documented
+37
+e-Money
+Fractio
+n
+Cash
+Fraction
+More than once a day
+3.2 %
+More than once a day
+3.2%
+Once a day
+6.4%
+Once a day
+8.4%
+Once a week
+14%
+Once a week
+10%
+Once a month
+5.6%
+Once a month
+4.8%
+Once every 3 months
+1.2%
+Once every 3 months
+1.2%
+Once every 6 months
+0.4%
+Once every 6 months
+0.4%
+Less often than that
+12%
+Less often than that
+22.4%
+Never
+57.2%
+Never
+49.6%
+
+
+--- PAGE 38 ---
+Ownership of DFS Business
+Exclusivity****
+Dedication****
+Owner
+Operator
+Exclusive
+Non-exclusive
+Dedicated
+Non-dedicated
+1,219
+81
+1,246
+54
+52
+1,248
+94%
+6%
+96%
+4%
+4%
+96%
+A total of 15 provinces were covered nationally as part of the study, as shown in the map 
+below. Interviews were conducted in August and September 2017. The provinces covered 
+in the research account for more than 90%** of the Indonesian agent population.
+Survey Sample*
+*The scope of the research was limited to individual DFS agents only. Institutional DFS agents, such as Indomaret and Alfamart, were not included in the research sample. 
+Moreover, only agents who conduct at least one transaction per month (active agents) were interviewed as part of the survey (30% of individual agents encountered were 
+dormant).
+**As per the publicly available data on service provider (BRI, BTPN, BNI) website, accessed on 19th June, 2017. For Bank Mandiri, the agent data was shared by the bank 
+with MicroSave for the purpose of this study. BRI (http://bri.co.id/other?id=37); BTPN (https://www.btpn.com/id/tentang-kami/segmen-usaha/btpn-wow-/informasi-agen); 
+BNI (http://bni.co.id/id-id/locator/agen46locator.aspx)
+***See Appendix 1 for further detail.
+****See Appendix 2 for further detail.
+*****Jakarta, Bogor, Depok, Tangerang, Bekasi (Cities under Greater Jakarta Area)
+Aceh
+2%
+North Sumatera
+8%
+South
+Sumatera
+2%
+South
+Kalimantan
+7%
+South Sulawesi
+3%
+West Sumatera
+1%
+DKI Jakarta
+5%
+Central Java
+17%
+Lampung
+2%
+Banten
+2%
+West Java
+18%
+D.I. Yogyakarta
+4%
+East Java
+18%
+West Nusa Tenggara
+6%
+Riau
+6%
+Sample Distribution
+Sample Profile***
+Sample Geographic Distribution
+Non-Jabodetabek 
+Urban
+63%
+Rural
+26%
+Jabodetabek*****
+11%
+Laku Pandai & LKD
+Laku Pandai
+91%
+LKD
+9%
+Total Sample Size
+1,300
+8
+Agent Network Accelerator Research: Indonesia Country Report
+
+
+--- PAGE 39 ---
+Liquidity Management Attributes
+The Majority of Indonesian 
+Agents Travel to the Nearest 
+Bank Branch to Re-Balance
+Agents who travel to rebalance mostly (83%) use the nearest 
+bank branch. 
+For the agents who have liquidity delivered, 52% get the liquidity via 
+regular support staff visits while 41% avail of the on-demand facility 
+provided by their service provider.
+The majority of agents (51%) generally require more e-float 
+while 23% generally need cash. High e-float requirements are 
+associated with higher numbers of money transfer, deposit and bill 
+payment transactions. 
+The average Indonesian agent does not deny any 
+transaction due to lack of liquidity. 
+Agents who travel 
+to rebalance
+Agents who have 
+liquidity delivered
+Median frequency of 
+rebalancing e-float 
+by the agents
+(per month)
+Median frequency of 
+rebalancing cash by 
+agents (per month)
+3
+41%
+63%
+2
+0.38
+Median cost of a 
+rebalancing trip
+(in US$)
+10
+Median travel 
+time to preferred 
+rebalancing point
+(in mins)
+The majority of Indonesian agents (63%) have 
+to travel outside their shops to rebalance unlike 
+in Bangladesh and Pakistan where over 95% 
+have liquidity delivered to them by a service 
+provider, distributor or third party. 
+Given the relatively low transaction volumes, 
+Indonesian agents rebalance less frequently 
+than in Pakistan and Bangladesh, where a 
+median agent rebalances 15 times a month for 
+e-float and 10 times for cash.
+32
+Agent Network Accelerator Research: Indonesia Country Report
+
+
+--- PAGE 40 ---
+*Agents were asked to select the top three barriers they face from a list of 13 options, including the option to pick ‘Other’. The taller bars imply a higher relative 
+ranking, which is a weighted average of the barriers ranked by agents.
+Agent Satisfaction with Liquidity 
+Management Systems
+Close to two-thirds of agents (63%) stated that they face barriers in managing liquidity.
+Relative ranking* of barriers agents 
+encounter in managing liquidity 
+Lack of resources to buy 
+a sufficient amount of 
+cash or float
+Unpredictable 
+fluctuations in client 
+demand
+Time taken at 
+rebalancing point is 
+too long
+This provides an opportunity to offer e-float 
+on credit. Providers in Kenya, Zambia, 
+Tanzania and India have successfully offered 
+such a facility to the agents.
+Providers can conduct transaction trend 
+analysis and incorporate it into agent training 
+curriculum. They may also consider setting up 
+on-demand third-party rebalancing channels.
+Priority banking facility and dedicated lines 
+for agents can reduce their rebalancing 
+time at the bank branches.
+33
+Agent Network Accelerator Research: Indonesia Country Report
+
+
+--- PAGE 41 ---
+Chandrasekhar, Townsend and Xandri (2019) 
+“Financial Centrality and The Value of Key Players”
+Our paper is about liquidity and the value of key traders. We model settings in 
+which disruptions to markets take the form of shocks to market participation, 
+referred to for short as blackout periods Existing  literature embraces this notion for 
+assets For example  U.S. treasuries as safe assets trade with a liquidity premium 
+while others assets bear a illiquidity discount, That is, the market for Treasuries 
+stays active  even in rough periods. Existing literature also  studies dealers in this 
+context, as providing  liquidIty to the market, leaning against the wind. We adopt a 
+generalized notion of shocks to market participation which can vary over traders, 
+rather than assets. This includes both  exogenous and endogenously determined 
+participation. We study liquidity  and the value of key traders in this content as  key 
+issues. For us the most valued  players  are those that provide liquidity when it is 
+most needed, when markets are thin and risk is otherwise high and detrimental.
+Our paper is closely related to existing literature but makes a new contribution. In 
+Duffie, Garlineau, Pederson there is  a single underlying consumption good  and 
+two types of assets, a safe  liquid asset such as  a  bank account  which can be 
+traded instantaneously and a  consol that requires finding a trading parter, in a 
+search environment.  Traders buy and sell  these assets with themselves and with 
+market makers. The motive for trade has to do with costs of holding the consol,  
+which is stochastic and trader specific. Some traders have high holding costs, 
+interpreted as having a need for cash or having hedging reasons to sell.  Again, 
+search frictions make the markets imperfect.  Liquidity premia arise in these 
+settings and increase with the  costs of finding trading partners.
+
+
+--- PAGE 42 ---
+Chandrasekhar, Townsend and Xandri (2019) 
+(cont.)
+For us here in this paper, we feature risk averse traders who would like to hedge the 
+risk they face, but who suffer from market participation risk. Further, as the number 
+of market participants is limited and can be small,  even iid portfolio returns do not 
+net to zero. Thus both idiosyncratic shocks and market participation shocks create 
+aggregate risk.  Traders who provide liquidity to such markets  bring  their 
+exogenous risky endowment plus their liquid asset holdings  to the market and are 
+especially valuable. We study asset pricing in the context, focusing on the value of  
+each trader i in the provision of liquidity, specifically by pricing  an Debreu asset 
+that pays off only when trader i is in the market. 
+Longstaff studies value of   liquidity and the distinction between on-the-run   vs 
+off-the-run treasuries.   He is also  featuring liquidity that can vary across assets.  
+He incorporates   market  runs and  features the idea, with a leading quote from 
+Alan Greenspan,  that individuals who were moving (in the crisis) from,  illiquid 
+U.S. Treasuries to the liquid on-the-run liquid issues, are basically saying, “I want 
+out. I don’t want to know anything about whether a particular investment is risky or 
+not. I just want to disengage.” And the reason you go into these liquid instruments 
+is that that is the vehicle which enables one to disengage as quickly as possible. 
+(Alan Greenspan, October 7, 1998). Duffie characterizes Longstaff as studying 
+empirically the impact of blackout periods, which again we adopt in our model as 
+stochastic and  varying across traders. 
+
+
+--- PAGE 43 ---
+Chandrasekhar, Townsend and Xandri (2019) 
+(cont.)
+P A Weil's studies  the role of market makers in providing liquidity when 
+there is large and temporary pressure as well as order execution delays.  He 
+refers to market makers  as leaning against the wind. They buy when the 
+pressure is large, accumulate inventories, and sell when the pressure 
+alleviates. The paper studies optimal dynamic liquidity provision in a 
+theoretical market    Weil solves, as we do, for   Pareto optimal allocations 
+and shows that competitive market makers offer the socially optimal 
+amount of liquidity, provided they have access to sufficient capital. If 
+raising capital is costly, this suggests a policy role for a  lenient central-
+bank lending during financial disruptions.
+For us here in our  paper,  key traders look like market makers in the sense 
+that they provide liquidity to a subset of traders. However, unlike Weil, we 
+focus on  quantifying the value of such market maker  and potential 
+heterogeneity among them. Like Weil, we also  move beyond marginal 
+movements in liquidity and study optimal central bank provision liquidity, 
+which should identify key traders as those to whom liquidity should be 
+targeted, as they have maximally  valued market participation in the 
+economic sense of our model.
+
+
+--- PAGE 44 ---
+Chandrasekhar, Townsend and Xandri (2019) 
+(cont.)
+Lagos and Zhang feature the role  of Central Banks in the provision 
+of liquidity. Tight money increases the opportunity cost of holding  
+bank reserves and money balances  that are used to make payments . 
+They term this a turnover-liquidity (transmission) mechanism . The 
+model features Lagos and Wright 2005 REF model of limited market 
+participation, with a decentralized OTC markets, coupled  with 
+subsequent   trade in a centralized Walrasian market.  Assets are trees 
+with dividends which can become unproductive with positive 
+probability and equities are traded on these trees. There is a second 
+financial instrument, money, that is intrinsically useless.   A monetary 
+authority injects or withdraws money via lump-sum transfers or taxes 
+to investors in the second subperiod, in the Walrasian market. We 
+adopt an extreme version of this, liquidity can only be injected via 
+traders carrying it into markets and not when agents are in autarky. 
+
+
+--- PAGE 45 ---
+Risk Sharing Program
+Classical Risk Sharing problem: A social planner (with weights λ)
+chooses allocation c = (ci (y))i∈I to solve
+V (λ) :=
+max
+c=(ci(y))i∈I
+Ey
+(
+N
+∑
+i=1
+λiu [ci (y)]
+)
+subject to
+∑
+i∈I
+ci (y) ≤∑
+i∈I
+yi for all y ∈Y
+Arun Chandrasekhar, Robert M. Townsend, and Juan Xandri
+(Princeton)
+Financial Centrality and The Value of Key Players October 15, 2019
+13 / 77
+
+
+--- PAGE 46 ---
+Stochastic Financial Networks
+Market participation shock: only a random subset of agents can trade.
+Formally, let ζ ∈M = {0,1}n be the description of which agents can
+trade, so
+If ζi = 0 =⇒ci = yi
+If ζi = 1 =⇒ci may be ̸= yi
+Agents that can trade can pool resources:
+∑
+i∈I
+ζici ≤∑ζiyi for all y ∈Y ,ζ ∈M
+The process ζ is what we refer to as a Stochastic Financial Network
+Arun Chandrasekhar, Robert M. Townsend, and Juan Xandri
+(Princeton)
+Financial Centrality and The Value of Key Players October 15, 2019
+14 / 77
+
+
+--- PAGE 47 ---
+Financial Centrality
+Let Vi,ε (λ) be the value of program 1 under a liquidity injection to
+agent i
+Deﬁnition (Financial Centrality of i)
+FCi := ∂Vi,ε (λ)
+∂ε
+|ε=0
+i.e. the marginal social beneﬁt of giving a small unit of extra income to
+agent i every time i is in the market, and trades with it as per contracts
+and markets.
+Price theoretic version of “derivative w.r.t agent i”
+Arun Chandrasekhar, Robert M. Townsend, and Juan Xandri
+(Princeton)
+Financial Centrality and The Value of Key Players October 15, 2019
+24 / 77
+
+
+--- PAGE 48 ---
+Financial Centrality as guide to Policy
+Policy experiment: give income injections (i.e. liquidity) εi ≥0 to a
+subset J ⊆I
+Limited resources: ∑i∈J ti ≤T
+Objective: choose ε∗= (ε∗
+i )i∈J to maximize Vε (λ) s.t ∑i εi ≤T and
+εi ≥0
+Proposition
+For any J ⊆I, ∃ˆT : if T ≤ˆT then ε∗
+i = ˆT for i = argmax
+i∈J
+FCi and ε∗
+j = 0
+for j ̸= i
+Large Transfers
+Arun Chandrasekhar, Robert M. Townsend, and Juan Xandri
+(Princeton)
+Financial Centrality and The Value of Key Players October 15, 2019
+25 / 77
+
+
+--- PAGE 49 ---
+Responsiveness of Stochastic Financial Networks
+A marginal liquidity injection has 2 possible eﬀects:
+1 Risk Sharing eﬀect: an additional dollar given to agent i propagates
+through the risk sharing contract
+2 Participation Eﬀect: injection works as a subsidy for participation.
+Risk sharing eﬀect is the marginal eﬀect on the reduction of
+consumption volatility
+The participation eﬀect may appear in models of endogenous market
+entry. Typically, market participation decisions are strategic
+complements.
+Arun Chandrasekhar, Robert M. Townsend, and Juan Xandri
+(Princeton)
+Financial Centrality and The Value of Key Players October 15, 2019
+26 / 77
+
+
+--- PAGE 50 ---
+Responsiveness of Stochastic Financial Networks
+Endogenous entry:
+Pr(s) = Pr(y)
+| {z }
+exogenous
+× Pr(ζ | y)
+|
+{z
+}
+endogenous
+We need to model the entry decisions through Pr(ζ | y)
+Let
+Si (ζ | y) := ∂ln(Pr(ζ | y))
+∂εi
+|εi=0
+be the score of the likelihood of market ζ with respect to a marginal
+injection to agent i
+Arun Chandrasekhar, Robert M. Townsend, and Juan Xandri
+(Princeton)
+Financial Centrality and The Value of Key Players October 15, 2019
+27 / 77
+
+
+--- PAGE 51 ---
+Financial Centrality for Inert Environments
+For most of this talk, we will assume the environment is inert.
+This will help with the characterization, and to separate both risk
+sharing and participation eﬀects.
+Write the Lagrangian of (1) as
+L = Es
+(
+∑
+i
+λiui [ci (s)]+q (s)
+"
+∑
+i
+ζi (yi −ci)
+#)
+where q (s) = q (ζ,y) is the Lagrange multiplier of constraint 2.
+Proposition
+If Pr(ζ,y) is inert to marginal liquidity injections to agent i, then
+FCi = Es [ζiq (s)]
+Arun Chandrasekhar, Robert M. Townsend, and Juan Xandri
+(Princeton)
+Financial Centrality and The Value of Key Players October 15, 2019
+29 / 77
+
+
+--- PAGE 52 ---
+Financial Centrality for Responsive Environments
+Proposition
+If Pr(ζ,y) is responsive to marginal liquidity injections to agent i, then
+FCi = Es [ζiq (s)]
+|
+{z
+}
+risk sharing eﬀ.
++Es
+(
+∑
+j∈I
+λjuj (cj (s))×Si (ζ | y)
+)
+|
+{z
+}
+participation eﬀ.
+The ﬁrst term measures the value of relaxing the resource constraints
+2 where agent i is trading, taking the market participation process as
+given
+The second term measures the change in the value from marginally
+changing the market participation process.
+Arun Chandrasekhar, Robert M. Townsend, and Juan Xandri
+(Princeton)
+Financial Centrality and The Value of Key Players October 15, 2019
+30 / 77

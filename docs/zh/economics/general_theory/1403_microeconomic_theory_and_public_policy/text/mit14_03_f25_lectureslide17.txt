@@ -1,0 +1,425 @@
+Revised November 5, 2025
+
+
+
+
+14.03/003 Microeconomic Theory & Public Policy Fall 2025
+
+
+Lecture slides 17: Externalities part I – The Coase theorem,
+property rights, and social interactions
+
+David Autor (Prof), MIT Economics and NBER
+Externalities: Defnition
+
+
+An indirect cost or beneft to an uninvolved third party that arises as an efect of
+another party’s (or parties’) activity (source: Wikipedia, 2022/11/01)
+
+ − Externalities arise when an economic actor does not face the “correct price”
+
+ − Economic efciency demands that social cost of marginal unit be equal to its social
+   beneft
+
+ − If there are externalities, the private cost (beneft) of the marginal unit
+   produced/consumed will not equal the marginal social cost (beneft)
+
+
+
+                                                                                        1/30
+Externalities: Examples
+
+ − CO2 emissions
+ − Water, air, noise pollution
+ − Fishing, grazing, logging in shared seas, pastures, forest land
+ − Speeding
+
+Externalities?
+
+ − Getting a COVID (or measles, or polio, etc.) vaccination?
+ − Developing a valuable idea?
+ − Being polite?
+ − Carrying a licensed frearm?
+ − Joining/participating in a social media platform?
+
+                                                                     2/30
+Four perspectives on externalities
+
+
+
+ 1. Today: Property rights perspective: The Coase Theorem
+
+ 2. Today: Collective choice externalities
+
+ 3. Next week: Classic pricing problem
+ 4. Next week: Empirical applications
+      □   Mass transit
+      □   Regulating pollution
+
+
+
+
+                                                            3/30
+Externalities – The Coase Theorem
+
+
+
+
+                                    4/30
+The Coase Theorem
+
+
+
+
+Are externalities such as those above never internalized by the market?
+
+ − Until Ronald Coase’s 1960 paper, “The Problem of Social Cost,” most economists would
+   have said yes
+
+ − Coase made them reconsider that view
+
+
+
+
+                                                                                    5/30
+“The Problem of Social Cost” Ronald Coase, 1960
+
+
+
+
+     Let us frst reconsider the case of Sturges v. Bridgman... In this case, a confectioner
+     (in Wigmore Street) used two mortars and pestles in connection with his business
+     (one had been in operation in the same position for more than 60 years and the other
+     for more than 26 years).
+
+
+
+
+© University of Chicago Press. All rights reserved. This content is excluded from our Creative Commons license. For more
+information, see https://ocw.mit.edu/help/faq-fair-use/
+                                                                                                                           6/30
+“The Problem of Social Cost” Ronald Coase, 1960
+
+
+    A doctor then came to occupy neighbouring premises (in Wimpole Street). The
+    confectioner’s machinery caused the doctor no harm until, eight years after he had
+    frst occupied the premises, he built a consulting room at the end of his garden right
+    against the confectioner’s kitchen. It was then found that the noise and vibration
+    caused by the confectioner’s machinery made it difcult for the doctor to use his
+    new consulting room. “In particular . . . the noise prevented him from examining his
+    patients by auscultations for diseases of the chest. He also found it impossible to
+    engage with efect in any occupation which required thought and attention.”
+
+© University of Chicago Press. All rights reserved. This content is excluded from our Creative Commons license. For more
+information, see https://ocw.mit.edu/help/faq-fair-use/                                                                    7/30
+“The Problem of Social Cost” Ronald Coase, 1960
+
+
+
+
+    The doctor therefore brought a legal action to force the confectioner to stop using
+    his machinery. The courts had little difculty in granting the doctor the injunction he
+    sought. (Coase, 1960, pp 8-9)
+
+
+
+
+© University of Chicago Press. All rights reserved. This content is excluded from our Creative Commons license. For more
+                                                                                                                           8/30
+information, see https://ocw.mit.edu/help/faq-fair-use/
+Is this reasoning complete?
+
+
+
+ − Baker’s machinery disturbed the doctor’s medical practice
+ − Doctor could not treat patients while the baker’s machinery was running.
+ − The standard economic reasoning at the time, voiced by the court was
+      □   Baker should have to compensate the doctor for the harm his machinery was doing
+      □   Why? Baker’s equipment was causing the externality
+
+ − Having the baker provide compensation would correct the externality imposed on the
+   doctor
+
+
+
+
+                                                                                            9/30
+Coase’s example revisited
+
+
+ − You and your roommate share a room in an MIT dormroom
+     □   You’d like to study for your 14.03/003 exam
+     □   Your roommate, not in 14.03, wants to warm up for the MIT Annual Heavy Metal Festival
+
+ − Suppose
+     □   Your value to study in a quiet room is VQ .
+     □   Your roommate’s value of “making the rubble bounce” is VM .
+
+
+ − What’s the “efcient” thing to do?
+
+
+
+                                                                                           10/30
+Suppose MIT gives you the right to a quiet room
+
+
+
+
+ − If VQ > VM , you use that right and force your roommate to stop the music
+
+ − If VM > VQ , you should trade the right with your roommate: Any price p ∈ (VQ , VM )
+   will make you both strictly better of
+
+ − Outcome is efcient
+
+
+
+
+                                                                                      11/30
+Suppose MIT gives your roommate the right to a loud room
+
+
+
+
+ − If VM > VQ , your roommate uses that right (and you are in trouble for your 14.03
+   exam...)
+
+ − If VQ > VM , your roommate should trade the right with you: any price p ∈ (VM , VQ ) will
+   make you both strictly better of
+
+ − Outcome is efcient
+
+
+
+
+                                                                                        12/30
+Coase’s example revisited
+
+
+
+
+ − Suppose you and your roommate can trade the rights to noise/quiet
+
+     1. Does it matter what MIT decides, from the viewpoint of economic efciency?
+
+     2. Does it matter in any other way?
+
+
+
+
+                                                                                    13/30
+The essence of the Coase theorem
+
+ − From the standpoint of fairness/equity, what matters is to whom the rights are allocated
+
+ − But from the economic efciency standpoint, what matters is that the social
+   cost-minimizing action is taken C ∗ = min {VM , VQ }
+
+ − As long as the property right is clearly allocated and enforceable, and the economic
+   actors can bargain over this right at negligible cost, the allocation that results is
+   economically efcient
+
+ − The social planner does not need to know the private costs or benefts of the economic
+   actors – does not have to measure the externality!
+
+ − Of course, the allocation of property rights still afects who bears the cost. So, it matters
+   to whom we assign the property rights
+
+                                                                                           14/30
+The Coase Theorem
+
+The Coase theorem says that externalities get resolved if:
+
+ 1. Property rights are complete
+
+ 2. Negotiating is costless
+
+To “solve” the externality, create a market where property rights are traded
+ − This market “internalizes” the externality
+
+ − Example: Rights for CO2 emissions traded among countries
+
+ − Coasean solutions can be decentralized: there is no need for a social planner to know the
+   details of each frm. Parties transact to price and resolve the externality
+
+                                                                                        15/30
+The Coase Theorem
+
+− The Coase theorem is often misinterpreted to mean that the market will solve all
+  externalities
+
+− The Coase Theorem does not imply that
+
+− The Coase theorem implies that the market can potentially solve externalities if property
+  rights are clearly assigned and negotiation is feasible
+
+− In some cases, negotiation is clearly infeasible
+     □   Airlines cannot realistically negotiate with individual homeowners for overfight rights to
+         their houses
+     □   You cannot negotiate with all other drivers on the Mass Pike to get out of your way if
+         you’re in a hurry, even if you’d gladly pay them each $10 to pull over for a second
+
+                                                                                                      16/30
+The Coase Theorem
+
+− The problem of remedying externalities can be thought of as two separate problems
+     1. What should be done (sound insulation, quiet machines)?
+     2. Who should pay for it (doctor, baker)?
+
+− The answer to the second question is independent of the the frst. The frst is about
+  efciency, the second about distribution (similar to shifting the endowment)
+
+− As per the Second Welfare Theorem, the questions of how to maximize the economic pie
+  and how to divide the pie are separable
+
+− Both questions matter – but there is not a tradeof between them
+
+− Key insight: Resolving an externality may not require regulating the externality out of
+  existence (or even at all) but rather assigning property rights so that afected parties can
+  achieve an efcient resolution
+                                                                                         17/30
+The smoky Edgeworth box —
+A Coase Theorem application
+from the lecture notes of Ted Bergstrom
+
+
+
+
+                                          18/30
+The smoky Edgeworth box
+
+
+
+
+− Externalities are naturally a general equilibrium (GE) problem because – they are about
+  agents facing the “wrong” prices for their actions
+
+− It is therefore useful to view to the subject of externalities through the lens of the GE
+  model
+
+
+
+
+                                                                                          19/30
+The smoky Edgeworth box
+− Ed and Fiona’s whose utility is defned over two goods: beans and tobacco smoke
+      □ Both Ed and Fiona like beans
+      □ Ed likes to smoke and has an unlimited supply of free tobacco
+      □ Fiona hates smoke. Ed’s smoking poses an externality on Fiona
+      □ So, tobacco is a ‘good’ for Ed and a ‘bad’ for Fiona
+
+
+
+− Write their utility functions as
+
+                                     U E (S, BE ) , U F (S, BF ) .
+
+ − The set of feasible allocations (S, BE , BF ) satisfes
+
+                                      BE + BF = WE + WF ,
+
+    where Wi is the wealth of i measured in terms of the numeraire good
+
+− In this case, there is only one such good, Beans. We can normalize its price at 1   20/30
+The smoky Edgeworth box
+
+
+
+
+− To represent the exchange possibilities for Ed and Fiona, Bergstrom proposes an
+    Edgeworth Box where the x−axis represents beans and the y−axis represents smoking
+
+ − This special Edgeworth box lacks a roof because Ed has an inexhaustible supply of
+    tobacco
+
+
+
+
+                                                                                       21/30
+Four perspectives on externalities
+
+
+
+ 1. Property rights perspective: The Coase Theorem
+
+ 2. Collective choice externalities
+
+ 3. Classic pricing problem
+ 4. Empirical applications
+      □   Mass transit
+      □   Regulating pollution
+
+
+
+
+                                                     23/30
+Externalities, social interactions, and collective choice
+  Thomas Schelling, Micromotives and Macrobehavior, 1978
+
+
+
+
+                                                           24/30
+Who will wear a hockey helmet?
+
+
+
+
+                                 25/30
+Tragedy of the commons: Graze the common or the hills?
+
+
+
+
+                                                         26/30
+Should you wear a ski helmet?
+
+
+
+
+                                27/30
+Who will get vaccinated?
+
+
+
+
+                           28/30
+    FOMO as a social externality —
+“When product markets become collective traps:
+         The case of social media”
+ by Bursztyn, Handel, Jimenez-Duran, and Roth, 2024
+
+
+
+
+                                                      29/30
+Summary
+
+Externalities are ubiquitous
+
+ − Arise when an economic actor does not face the “correct price” for her actions
+
+ − Externalities are not limited to traditional side efects of production and consumption,
+   e.g., pollution, noise, congestion, speeding, carrying a frearm
+
+ − Can also occur in social interactions where groups of rational actors ends up at an
+   undesirable equilibrium due to mis-coordination, social spillovers, FOMO
+
+ − Law and policy has a crucial role in “internalizing” externalities
+
+ − Taxing externalities can potentially reduce distortions
+
+ − Nevertheless, these remedies are always contentious
+                                                                                         30/30
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

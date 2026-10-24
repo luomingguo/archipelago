@@ -1,0 +1,1437 @@
+Financial Conditions Guidance: The Recruitment E˙ect
+14.454
+Ricardo J. Caballero
+MIT
+Economic Crises
+
+Monetary policy transmits through fnancial conditions
+
+Chair Powell on Policy Transmission (2022)
+“Our policy decisions a˙ect fnancial conditions immediately... Then, changes in fnancial conditions
+begin to a˙ect economic activity within a few months.”
+
+Keynes (1936)
+“...there are not many people who will alter their way of living because the rate of interest has fallen
+from 5% to 4% (...) Perhaps the most important infuence (...) depends on the e˙ect of these
+changes on the appreciation or depreciation in the prices of securities”
+
+Caballero
+
+Financial Conditions Guidance
+
+2 / 41
+
+What are Financial Conditions Indices?
+FCIs weight interest rates and asset prices according to their impact on aggregate demand.
+FFR
+10Y Rate
+Mortgage Rate
+
+BBB
+Equity
+Housing
+
+Dollar
+Total
+
+Source: Ajello et al. (2024). FCI-G measure for the U.S.
+Caballero
+
+Financial Conditions Guidance
+
+3 / 41
+
+FCI Composition (G10)
+Equity and FX dominate FCI fuctuations, because they are much more volatile than rates and spreads
+(Weight × Volatility).
+
+Caballero
+
+Financial Conditions Guidance
+
+4 / 41
+
+“Noise” Drives Asset Prices
+
+Finance: Asset prices are a˙ected by noise due to limits to arbitrage
+I Asset prices move with non-fundamental noise because arbitrageurs face risk and constraints
+I Financial noise: non-fundamental asset demand or supply
+I Limits to arbitrage: risks & constraints of sophisticated investors
+
+Evidence: noisy fows move markets
+I Gabaix & Koijen (2021): noisy fows have large and persistent e˙ects on the stock market
+I Similar literature for FX: Evans & Lyons (2002), Love & Payne (2008)
+
+Caballero
+
+Financial Conditions Guidance
+
+5 / 41
+
+“Noise” Drives Business Cycles
+Caballero, Caravello, and Simšek (2025): Use GK instrument to identify macro e˙ects of FCI shocks
+
+Caballero
+
+Financial Conditions Guidance
+
+6 / 41
+
+The Central Question
+
+How should monetary policy be designed and communicated once we recognize
+that its main transmission channel is a noisy set of fnancial markets?
+
+I Central banks cannot control fnancial conditions on their own
+I E˙ective stabilization requires cooperation of market participants
+
+Caballero
+
+Financial Conditions Guidance
+
+7 / 41
+
+Main Message: The Recruitment E˙ect
+
+When the central bank communicates (and commits to) a soft target for fnancial
+conditions, it “recruits” market participants to lean against noise-driven
+fuctuations.
+Key features:
+I Target depends only on macro fundamentals, not on fnancial variables directly
+I Creates a virtuous cycle: lower volatility ) stronger arbitrage ) lower volatility
+I Strengthens the transmission mechanism of monetary policy, with possibly lower interest
+rate volatility
+Note: This lecture is about monetary policy, not market interventions
+
+Caballero
+
+Financial Conditions Guidance
+
+8 / 41
+
+Presentation Roadmap
+
+1. Motivation: FCIs, noise, and propagation (done)
+2. Simple model: FCI targeting and recruitment
+3. Communication: FCI guidance and scenario communication
+4. Measurement: The FCI* benchmark
+
+Caballero
+
+Financial Conditions Guidance
+
+9 / 41
+
+2. Simple Model
+FCI Targeting and the Recruitment E˙ect
+
+Simple Model: Setup
+New Keynesian economy with noisy fnancial conditions. Assume ˇ 1; all variables in logs; fully
+sticky prices; single asset p (fnancial conditions in price rather than yield)
+Potential output: random walk
+yt = yt−1 + zt ,
+
+zt ˘ N(0, ˙z2 )
+
+Output depends on fnancial conditions
+yt = pt + t ;
+
+pt 6= pt = yt − t ,
+
+Financial conditions: asset pricing with limits to arbitrage
+�
+
+˙p2
+pt = Et [pt+1 ] − rtf + 12 ˙p2 + µt
+,
+µt : noise trader demand
+Caballero
+
+µt ˘ N(0, ˙µ2 )
+
+˙p2 / : price impact of noise (endogenous to mp)
+Financial Conditions Guidance
+
+11 / 41
+
+Simple Model: Central Bank Objective
+
+Central bank minimizes:
+Lt = ỹt2 +
+
+2
+1� f
+rt − Et−1 [rtf ] + ˜Et [Lt+1 ]
+
+
+where ỹt = yt − yt is the output gap.
+I 1/ > 0: weight on interest rate smoothing (gradualism)
+I Trade-o˙: stabilize output gap vs. avoid excessive rate volatility
+Key friction: Central bank cannot perfectly stabilize fnancial conditions without generating excessive
+interest rate volatility.
+
+Caballero
+
+Financial Conditions Guidance
+
+12 / 41
+
+Discretionary Policy
+Under discretion, the central bank follows a Taylor-type rule:
+rtf = Et−1 [rtf ] + ỹt
+Substituting into the FCI equation and solving forward:
+!
+
+
+˙p2
+˙p2
+1
+
+1
+
+pt = yt −1 + zt − t +
+ t + µt
+= yt−1 + zt −
+t +
+µt
+1+
+1+
+|
+{z
+} 1+
+|
+{z
+} | {z }
+pt
+macro
+
+noise
+
+Equilibrium FCI volatility satisfes a fxed-point equation:
+2
+˙p2 = ˙macro
++ µ
+
+˙p2
+
+!2
+;
+
+µ 
+
+˙µ2
+(1 + )2
+
+Volatility feedback: Higher ˙p2 ) larger price impact (˙p2 / ) ) more noise in pt ) higher ˙p2 . . .
+Caballero
+
+Financial Conditions Guidance
+
+13 / 41
+
+FCI Targeting: The Policy
+FCI targeting: Central bank announces target p̄t+1 for next period’s FCI.
+Modifed operational loss function:
+= ỹt2 +
+LFCI
+t
+
+2
+
+
+1� f
+2
+r − Et−1 [rtf ] + (pt − p̄t ) + ˜ Et LFCI
+t+1
+ t
+
+
+Three key points:
+1
+
+True objective unchanged—Central bank does not intrinsically care about FCI stability.
+
+2
+
+Commitment is soft: targets revised as fundamentals change.
+
+3
+
+Optimal target: p̄t = Et−1 [pt ], where pt = yt − t (closes output gap).
+
+Target depends on macro fundamentals only—not on where Central bank thinks asset prices are going
+based on noise.
+
+Caballero
+
+Financial Conditions Guidance
+
+14 / 41
+
+FCI Targeting: The Recruitment E˙ect
+Modifed policy rule:
+pt = yt−1 +
+
+
+|
+
+1+
+1++
+
+rtf = Et−1 [rtf ] + ỹt + (pt − Et−1 [pt ])
+
+zt −
+1++
+{z
+macro
+
+2
+˙p2 ( ) = ˙macro
+( ) + µ ( )
+
+˙p2
+
+
+t
+
++
+}
+
+˙p2
+1
+µt
+1++
+|
+{z
+}
+noise
+
+!2
+;
+
+0
+˙macro
+< 0, µ0 < 0.
+
+Recruitment E˙ect:
+1
+
+Central bank commits to lean against unexpected FCI changes ) lower ˙p2
+
+2
+
+Lower ˙p2 ) smaller price impact ) arbitrageurs face less risk
+
+3
+
+) Arbitrageurs trade more aggressively against noise (“recruited”)
+
+4
+
+) Volatility falls further ) virtuous cycle
+
+Caballero
+
+Financial Conditions Guidance
+
+15 / 41
+
+FCI Targeting: Numerical Results
+(a) Var(output gap)
+0.0005
+
+0.0004
+
+• • • • • Macro
+
+..
+
+0.0003
+
+0.0002
+
+... .... .......·
+.· ..., ..... .... .... _
+
+..
+
+0.0001
+
+0.0000
+
+(b) Var(p-gap)
+
+.
+
+- Total
+--· Noise
+
+... ....
+0.00
+
+0.25
+
+0.50
+
+.....
+
+0.75
+
+.
+
+.
+
+0.0004
+
+1.25
+
+- Total
+Noise
+• • • • • Macro
+
+. .·•
+
+:...� 0.0003
+I
+
+-...,,....
+�
+
+---------
+
+1.00
+
+0.0005
+
+1.50
+
+.
+
+..
+
+0.0002
+
+0.0001
+----.:
+
+1.75
+
+0.0000
+
+. ......
+0.00
+
+2.00
+
+0.25
+
+0.50
+
+0.75
+
+1.00
+
+1.25
+
+1.50
+
+(II
+
+(II
+
+(c) Var(interest-rate gap)
+
+(d) Expected loss L e(IJI)
+
+0.0016
+
+- Total
+
+0.12
+
+0.0014
+
+--· Noise
+• .. • • Macro
+
+0.10
+
+1.75
+
+2.00
+
+0.0012
+0.08
+
+0.0010
+
+.9 0.06
+VI
+
+0.0008
+"t.,�
+
+...
+
+>"' 0.0006
+
+. ..
+. .... . ..
+... ... . .
+.. ... -· ....
+.. .... ..
+
+0.0004
+0.0002
+0.0000
+
+.
+. ..... ....
+
+. ....... ' .. .
+0.00
+
+0.25
+
+0.50
+
+0.75
+
+1.00
+
+1.25
+
+1.50
+
+0.04
+0.02
+0.00
+
+1.75
+
+2.00
+
+. ...
+. ......... .. ....
+0.00
+
+0.25
+
+0.50
+
+,. - Total
+Noise
+.. ... Macro
+0.75
+
+1.00
+
+1.25
+
+1.50
+
+1.75
+
+2.00
+
+(II
+
+(II
+
+As increases: FCI variance #, output gap loss #, interest rate variance #.
+Most reduction comes from the noise component (dashed orange).
+Caballero
+
+Financial Conditions Guidance
+
+16 / 41
+
+Semi-Structural Policy Counterfactuals: Setup
+
+We extend policy counterfactual methods by McKay and Wolf (2023); Caravello, McKay, and Wolf (2024)
+1
+
+Start with a VAR estimated under the prevailing policy rule
+
+2
+
+Add policy shock impulse responses to ft alternative rule ex ante
+
+Restrictions: Linearity + Policy works via current or expected rates
+Our model features a nonlinearity: volatility reducing feedback. We add:
+3
+
+˙
+˜2
+
+Scale noise shock IRF with ˙r2 where ˙
+˜r2 is solved as in the model
+r
+
+Caballero
+
+Financial Conditions Guidance
+
+17 / 41
+
+Impulse Response Counterfactual: Noise Has Smaller Impact
+Consider policies that minimize an objective with one-period lag:
+1
+X
+
+ 2
+t
+L=
+ˇt + ỹt2 + i (it − it−1 )2 + (FCI t − FCIt )2
+t=0
+
+Counterfactual impulse response with optimal FCI targeting
+
+Caballero
+
+Financial Conditions Guidance
+
+
+
+(blue)
+
+18 / 41
+
+Section 3
+
+Communication
+FCI vs rates communication
+
+Communication model: three objects, three information assumptions
+
+Output and the FCI target
+yt = m + pt + t
+p̄t  yt − m,
+
+pt = p̄t − t .
+
+Shock structure
+0 = 0,
+t = 1 ,
+
+1 ˘ N(0, ! 2 ),
+t  1,
+
+
++ at ,
+yt = yt−1
+
+at ˘ N(0, ˙a2 ),
+I pt : fnancial condition.
+
+µt ˘ N(0, ˙µ2 ).
+
+I t : persistent demand component.
+I pt : full-information FCI target.
+
+Information timing: productivity shocks at are observed through yt ; fnancial-noise shocks µt are
+observed at the begining of period-t; the demand component 1 is observed at the begining of period
+2.
+Caballero
+
+Financial Conditions Guidance
+
+20 / 41
+
+Timing and information at the policy-relevant date
+Date 0: communication
+The Fed sends M0 ; the market forms a posterior over the Fed’s date-1 target assessment.
+
+Date 2 onward
+
+Date 1: before pricing/policy
+I Everyone observes y1 , hence a1 and p̄1 .
+
+I 1 is revealed to everyone.
+
+I Everyone observes fnancial noise µ1 .
+
+I The continuation target is common
+knowledge:
+
+I Neither the Fed nor the market observes 1 .
+
+pt = p
+¯t − 1 ,
+
+I Scenario extension: everyone observes public
+statistic x1 .
+
+t  2.
+
+I Date-1 disagreement is about the Fed’s
+target assessment before 1 is revealed.
+The announcement matters because assets are priced before the latent demand component is revealed and
+Fed’s beliefs a˙ect the policy rate.
+Caballero
+
+Financial Conditions Guidance
+
+21 / 41
+
+Fed assessment and market uncertainty
+
+Fed target
+
+Market prior
+A
+
+F  E0,F [1 | C0F ]
+
+2
+F ˘ N(0, ˙
+),
+
+1 ? F .
+
+M  E0,A [F | M0 ]
+
+p1,F = p¯1 − F
+The Fed’s assessment of latent demand determines the fnancial condition it wants at date 1.
+
+The message M0 changes the market’s posterior mean and variance of the Fed’s target.
+
+The communication ranking is driven by how much M0 reduces Var0,A (F | M0 ).
+
+Caballero
+
+Financial Conditions Guidance
+
+22 / 41
+
+Continuation value and irreducible risk
+
+At date 1, the market still does not observe 1 , but it observes y1 and therefore knows p̄1 = y1 − m.
+Continuation mean
+p2 = p̄2 − 1
+
+ė2  Var1,A (p2 | I1A )
+
+E1,A [1 | M0 , y1 , µ1 ] = 0
+
+ė2 = ˙
+¯ 2 + !2
+
+E1,A [p̄2 | y1 ] = p̄1
+E1,A [p2 ] = p̄1
+
+Caballero
+
+Continuation risk
+
+The variance includes permanent fnancial payo˙
+risk ˙
+¯ 2 (due to productivity and noise shocks)
+and unresolved demand uncertainty ! 2 .
+
+Financial Conditions Guidance
+
+23 / 41
+
+Date-1 equilibrium
+
+Pricing and policy
+�
+
+p1 = ˆ + p̄1 − i1 + 12 ė2 + ė2 µ1
+�
+
+i1 = î1A +  p1 − p1,F ,
+î1A  E0,A [i1 | M0 ].
+
+î1A = ˆ − 12 ė2 + M
+
+p1 = p1,F +
+
+ė2 µ1 + F − M
+1+
+
+Expected rates respond to the market’s posterior mean M (about Fed’s belief); realized fnancial conditions also
+refect the Fed’s belief F and realized fnancial noise µ1 .
+
+Caballero
+
+Financial Conditions Guidance
+
+24 / 41
+
+Why communication matters: date-0 variance of date-1 FCs
+
+Since p̄1 = p̄0 + a1 , substituting the date-1 equilibrium into the market’s date-0 distribution gives
+p1 − E0,A [p1 | M0 ] = a1 −
+
+˙12 = ˙a2 +
+
+
+
+
+1+
+
+2
+
+
+ė2
+(F − M ) +
+µ1 .
+1+
+1+
+
+Var0,A (F | M0 ) +
+
+
+
+ė2
+1+
+
+2
+
+˙µ2
+
+Communication works through the middle term: residual uncertainty about the Fed’s target wedge F .
+
+Caballero
+
+Financial Conditions Guidance
+
+25 / 41
+
+Direct FCI communication
+
+Message in FCI space
+:
+MFCI
+0
+)
+
+p1,F = p̄1 − F
+
+M = F ,
+
+Var0,A (F | MFCI
+0 ) = 0.
+
+2
+˙1,FCI
+= ˙a2 +
+
+
+
+ė2
+1+
+
+2
+
+˙µ2
+
+Direct FCI communication removes the target-uncertainty component of fnancial-condition risk.
+
+Caballero
+
+Financial Conditions Guidance
+
+26 / 41
+
+Rate communication: the rate is an equilibrium object
+A date-0 rate announcement has to translate the intended date-1 fnancial condition into a policy rate
+before the date-1 fnancial-noise realization is publicly observed.
+m1F  E0,F [µ1 | C0F ],
+
+A
+
+2
+m1F ˘ N(0, ˙m
+).
+
+Lost-in-translation risk
+i1ann = ˆ − 12 ė2 + F + ė2 m1F
+�
+
+s R  i1ann − ˆ − 12 ė2 = F + ė2 m1F
+The realized date-1 condition responds to actual µ1 ; m1F matters because it contaminates the date-0 rate signal
+about F .
+
+Caballero
+
+Financial Conditions Guidance
+
+27 / 41
+
+Rate communication leaves residual target uncertainty
+
+With Gaussian priors,
+A
+
+A
+
+2
+F ˘ N(0, ˙
+),
+
+E0,A [F | s R ] =
+
+2
+˙
+sR
+2
+2
+˙ + ė4 ˙m
+
+2
+˙1,R
+= ˙a2 +
+
+Caballero
+
+2
+m1F ˘ N(0, ˙m
+),
+
+
+
+
+1+
+
+s R = F + ė2 m1F .
+2
+Var0,A (F | s R ) = ˙
+
+2
+
+2
+˙
+
+2
+ė4 ˙m
+2 + ė 4 ˙ 2 +
+˙
+m
+
+
+
+Financial Conditions Guidance
+
+ė2
+1+
+
+2
+
+2
+ė4 ˙m
+2
+2
+˙ + ė4 ˙m
+
+˙µ2
+
+28 / 41
+
+Communication ranking
+
+Main result: FCI guidance removes the translation wedge
+2
+2
+ ˙1,R
+˙1,FCI
+
+2
+2
+˙1,R
+− ˙1,FCI
+=
+
+
+
+Direct FCI message
+
+
+1+
+
+2
+
+Var0,A (F | MR0 )  0.
+
+Rate message
+
+I Reveals the Fed’s target wedge directly.
+
+I Reveals a contaminated equilibrium object.
+
+I Eliminates residual target uncertainty.
+
+I Leaves residual uncertainty unless the Fed’s
+noise assessment is known.
+
+Caballero
+
+Financial Conditions Guidance
+
+29 / 41
+
+Section 4
+
+FCI*
+The neutral benchmark for fnancial conditions
+
+FCI-G index: How is it constructed?
+
+I Consider seven macro asset prices or rates denoted by j. Then:
+FCIt
+
+=
+
+X
+
+FCItj
+
+j
+
+where
+FCItj
+
+=
+
+T
+−1
+X
+`=0
+
+−ptj −`
+| {z }
+
+price change ` quarters ago
+
+!`j
+
+×
+
+|{z}
+
+impact on output growth next year
+
+I Calculate weights via impulse responses to unanticipated shocks to p j
+I Consider T = 12 quarters (three years) to incorporate lagged e˙ects
+I Sign and units: FCI = 1 means asset price changes will reduce output growth by 1pp
+
+Caballero
+
+Financial Conditions Guidance
+
+31 / 41
+
+FCI maps to the model and disciplines output gaps
+
+Model mapping
+
+Neutral benchmark
+
+Inertial IS curve
+
+Defne FCIt as the fnancial condition consistent
+with output at potential. Let
+
+yt = yt−1 + (1 − )(m + pt−1 ) + t .
+
+yet = yt − yt .
+
+Taking frst di˙erences and iterating:
+yt+1 = −a()FCIt +
+
+1
+X
+`
+
+ t+1−` ,
+
+`=0
+
+X `
+
+ pt−` .
+
+`=0
+
+a() =
+
+yet − yet−1
+
+| {z }
+
+output-gap change
+
+1
+
+FCIt = −(1 −  4 )
+
+Then the model implies
+
+1
+.
+1 +  + 2 + 3
+
+= −a()(FCIt−1 − FCIt−1 ).
+
+|
+
+{z
+
+FCI gap
+
+}
+
+Thus the FCI gap is the fnancial-conditions analog
+of rt − rt in a standard IS equation.
+
+Estimation strategy: invert output-gap dynamics to infer FCIt − FCIt , and hence FCIt .
+Caballero
+
+Financial Conditions Guidance
+
+32 / 41
+
+FCI* is driven by macro
+
+Defne FCI  as the FCI ensuring Et [yt+1 ] = Et [ytn+1 ], where potential output follows
+Laubach-Williams:
+yn
+n
+yt+1
+= ytn + gt + t+1
+,
+gt+1 = gt + gt+1
+This gives:
+FCIt = a()−1
+
+n
+−gt − ty + (Et [t+1 ] − Et−1 [t ]) + 
+
+"1
+X
+
+#!
+`
+
+ t−`
+
+`=0
+
+I Supply growth and level shocks loosen FCI* to raise spending in line with supply
+I Demand shocks (past and present) tighten FCI* to keep spending aligned with supply
+I Everything is macro—no fnancial terms appear
+
+Caballero
+
+Financial Conditions Guidance
+
+33 / 41
+
+r* is driven by fnancial shocks as well as macro
+
+I What is the r  that implements p  and FCI  ?
+I Need to specify how pt depends on rt , expected cash fows, risk premia, etc. Under more
+assumptions:
+
+n
+  
+1
+t − yt +
+st − rp
+rt = ˆ + g +
+1−
+1−
+2
+I st captures “sentiment”: excess optimism or pessimism about future supply (cash fows)
+I Unlike FCI*, r* does depend on sentiment shocks and the risk premium
+
+Caballero
+
+Financial Conditions Guidance
+
+34 / 41
+
+We adapt Laubach & Williams to estimate FCI*
+
+I Observation equations follow the model and LW (with i.i.d. shocks)
+ỹt
+ˇt
+
+=
+=
+
+ỹt−1 − a()(FCIt−1 − FCIt−1 ) + ỹ ,t
+bˇ ˇt−1 + (1 − bˇ )ˇt−2:4 + by ỹt−1 + ˇ,t
+
+I Law of motion for hidden state FCIt as described before
+I Processes for hidden states ytn , gt as described before and t follows AR(1)
+I Covid-19 adjustments for ytn,COVID-19-adj. mostly following LW
+I Few calibrated parameters (for comparison with LW). Rest estimated with ML over 1990Q2–2024Q4
+A key fnding: IS curve fts better with FCI than with interest rates ) more stable FCI  estimates
+
+Caballero
+
+Financial Conditions Guidance
+
+35 / 41
+
+FCI* is not correlated with risk premium; r* is
+
+1
+
+4
+
+0
+
+0
+
+3
+5
+
+-1
+2
+
+Dependent variable
+FCI 
+
+r
+
+ERP
+
+0.017
+(0.016)
+
+−0.292
+(0.011)
+
+Output Gap
+
+0.17
+(0.026)
+
+0.028
+(0.018)
+
+R2
+Obs.
+
+0.347
+132
+
+0.883
+132
+
+10
+
+-2
+1
+
+-3
+0
+1990q1
+
+2000q1
+
+2010q1
+
+2020q1
+
+quarter
+FCI-star (left axis)
+
+15
+
+ERP: equity risk premium (Duarte & Rosa, 2015).
+Output gap: CBO. Sample: 1990Q2–2023Q1.
+
+r-star from HLW (right axis)
+
+Equity risk premium (inverted scale) (second right axis)
+
+Caballero
+
+Financial Conditions Guidance
+
+36 / 41
+
+FCI gaps provide useful guidance on the e˙ective policy stance
+
+I Post-GFC: Tight FCI despite low rates—policy was not as loose as rates suggested
+I 2022: FCI gaps capture tightening early (asset prices moved ahead of rates)
+I 2023–24: FCI gaps capture loosening from stock boom despite high rates
+Caballero
+
+Financial Conditions Guidance
+
+37 / 41
+
+FCI* as the fnancial-conditions analog of r*
+
+The website
+
+Message
+
+Public estimates and updates:
+
+Central banks already use r  as a benchmark for the policy-rate stance.
+
+https://fcistar.org/
+
+But policy works through fnancial conditions, not the short rate alone.
+
+Website output:
+I FCI-G and estimated FCI  .
+I Financial-conditions gap: FCIt − FCIt .
+
+FCI  is the neutral level of the FCI consistent with output at potential.
+Estimated from output gaps, infation,
+and FCI gaps using a Laubach-Williamsstyle state-space model.
+
+I Output-gap estimate implied by the
+framework.
+I Downloadable CSV and backend code.
+
+Source: Caballero, Caravello, and Simsek, FCI-star; website data updated 2026-04-26, sample through 2025Q4.
+
+Caballero
+
+Financial Conditions Guidance
+
+38 / 41
+
+The communication object: the FCI gap
+
+Levels: observed FCI vs. neutral FCI*
+
+Gap: e˙ective stance of fnancial conditions
+
+FCI 
+
+FCI gap
+
+neutral
+
+1
+0.5
+
+1
+FCI − FCI 
+
+pp of next-year GDP growth
+
+FCI
+
+0
+−0.5
+−1
+
+0
+−1
+
+−1.5
+−2
+21
+
+20
+
+22
+
+20
+
+23
+
+20
+
+24
+
+20
+
+25
+
+20
+
+21
+
+20
+
+22
+
+20
+
+23
+
+20
+
+24
+
+20
+
+25
+
+20
+
+Interpretation. Positive gap: fnancial conditions are tighter than neutral. Negative gap: fnancial conditions
+are looser than neutral. FCI guidance should anchor the expected path of this gap.
+
+Caballero
+
+Financial Conditions Guidance
+
+39 / 41
+
+What about today?
+
+Sources: For 2026Q1, GDP is from the BEA advance estimate and core PCE infation from oÿcial FRED releases. For 2026Q2, GDP growth uses the Blue Chip Fed
+consensus and quarterly core PCE infation uses the Cleveland Fed Infation Nowcasting model.
+
+I Last measured gap: −0.22, equivalent to roughly a 10% equity correction if equities alone
+were to close it.
+I Since then: FCI has fallen by about 0.12—growth forecasts have softened while infation
+feeds into FCI* more gradually. But FCI-G (April) has loosened by 0.12 as well... so we are still
+a bit loose.
+Caballero
+
+Financial Conditions Guidance
+
+40 / 41
+
+An FC-centric framework: two gains
+Interest Rate
+&
+Communication
+Policy
+
+Financial
+Conditions
+
+Aggregate
+Demand
+
+Noisy & Opinionated
+
+Lost in translation risk
+
+Noise-driven fuctuations
+
+Communicating in FC space addresses both:
+I Reduces lost-in-translation risk — no longer requires markets to translate intended rates into intended FCI
+I Clarity recruits markets to o˙set noise — so the Fed bears a smaller
+stabilization burden
+
+Caballero
+
+Financial Conditions Guidance
+
+41 / 41
+
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+14.454 Economic Crises
+Spring 2026
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+
+

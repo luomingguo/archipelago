@@ -1,0 +1,694 @@
+Revised November 17, 2025
+
+
+
+
+14.03/003 Microeconomic Theory & Public Policy Fall 2024
+
+
+Lecture slides 18: Externalities part II – Pricing, trafc
+congestion, and pollution permits
+
+David Autor (Prof), MIT Economics and NBER
+Four perspectives on externalities
+
+
+
+ 1. Property rights perspective: The Coase Theorem
+
+ 2. Collective choice externalities
+
+ 3. Classic pricing problem
+ 4. Empirical applications
+      □   Mass transit
+      □   Regulating pollution
+
+
+
+
+                                                     1/37
+Externalities – Classic pricing problem
+Externalities: A simple example
+
+
+
+
+Suppose 400,000 commuters must take one of two routes between home and work
+
+ − Commute time bridge: tB (nB ) = 30 + nB /20, 000 minutes
+
+ − Commute time tunnel: tT (nT ) = 40 + nT /5, 000 minutes
+
+
+
+
+                                                                          3/37
+Externalities: A simple example
+
+Suppose 400,000 commuters must take one of two routes between home and work
+
+ − Commute time bridge: tB (nB ) = 30 + nB /20, 000 minutes
+ − Commute time tunnel: tT (nT ) = 40 + nT /5, 000 minutes
+
+ 1. What is the free market equilibrium of this problem—and is it likely to be socially
+    efcient?
+
+ 2. How would the benevolent social planner (BSP) allocate commuters between these two
+    venues?
+
+ 3. Lets say that commuters value their time at $60/hr. Should there be a toll, on which
+    route, and for how much?
+
+                                                                                           4/37
+1. Free market equilibrium (no intervention)
+
+
+
+Suppose 400,000 commuters must take one of two routes between home and work
+
+ − Commute time bridge: tB (nB ) = 30 + nB /20, 000 minutes
+ − Commute time tunnel: tT (nT ) = 40 + nT /5, 000 minutes
+
+
+What is the equilibrium condition that determines the number of commuters on
+Bridge vs. Tunnel in this setting? (plicker)
+
+
+
+
+                                                                               5/37
+1. Free market equilibrium (no intervention)
+
+Suppose 400,000 commuters must take one of two routes between home and work
+
+ − Commute time bridge: tB (nB ) = 30 + nB /20, 000 minutes
+ − Commute time tunnel: tT (nT ) = 40 + nT /5, 000 minutes
+
+ − What is the equilibrium condition that determines the number of commuters on
+   Bridge vs. Tunnel in this setting?
+
+ − Commuters will choose the fastest route → Arbitrage will equate bridge and tunnel
+   commute times
+
+ − In eq’m, consumers must be indiferent between bridge and tunnel
+
+ − Is this likely to be socially efcient?
+
+                                                                                  6/37
+340,000
+3. Should BSP impose a toll?
+ − Suppose commuters value their time at $60/hour ($1/min). A toll can be charged on
+   the bridge or tunnel, what toll implements the (socially optimal) outcome?
+
+
+
+
+                                                                                   8/37
+From http://www.wsdot.wa.gov/Tolling/520/520tollrates.htm
+Seattle’s SR 520 toll rates for cars and motorbikes (as of Nov 2020):
+
+
+
+
+                                                                        9/37
+Measuring externalities from mass transit
+           Anderson, 2014 AER
+Mass transit is expensive
+
+
+ − Mass transit attracts a disproportionate share of public funds but carries a negligible
+   fraction of commuters
+
+ − In Washington, DC—which, until recently, had the second-busiest metro system in the
+   United States—transit accounts for only 5 percent of passenger miles traveled
+
+ − In 2010, public transit received 23% of federal highway and transit outlays but accounted
+   for 1% percent of passenger miles traveled
+
+ − In 2010, state, local, and federal subsidies exceed $40 billion per year and covered 63%of
+   operating costs and 100% of capital costs
+
+
+
+                                                                                             11/37
+Measuring the external benefts of public transit by studying a public
+transit strike
+
+ − October 2003 strike by Los Angeles County Metropolitan Transportation Authority
+   (MTA) workers income commuters
+
+ − Strike lasted 35 days and shut down MTA bus and rail lines. Using hourly data on trafc
+   speeds for all major Los Angeles freeways
+
+ − Study efects on congestion on highways that public transit users would counterfactually
+   have taken
+
+ − Research design: Regression Discontinuity (RD) in date of strike start/stop
+
+ − Question: How do we know what highways transit riders would counterfactually
+   have taken?
+                                                                                       12/37
+            VOL. 104 NO. 9          ANDERSON: SUBWAYS, STRIKES, AND SLOWDOWNS                       2775
+
+Los Angeles major public transit routes and freeways
+                                                170
+                                                               5
+                             101
+                                                                               2
+                                                           101
+
+                                      405              Red
+                                                                            110
+
+
+                                                                                         10
+                                                      10                                       60
+
+
+                                                                         Blue             5
+                                                                   110             710
+
+
+                                                       Green
+                                                                                         105
+
+
+                                                                                          91
+
+
+                                                                         405
+
+
+
+
+                                                                                                           13/37
+                             Figure 1. Los Angeles Freeways and Rail Lines, 2003
+Which highways would transit riders have counterfactually driven?
+
+
+ − One theory: They are evenly distributed across roadways
+
+ − Alternative theories?
+
+ − Perhaps people ride mass transit to avoid driving on the most congested roads!
+
+ − From an externalities perspective, does it matter?
+
+
+
+
+                                                                                    14/37
+         2778                                           THE AMERICAN ECONOMIC REVIEW               SEPTEMBER 2014
+Key Regression Discontinuity evidence
+                                                                 Average delay by week
+                                                                         All highways
+
+                                       0.8
+
+
+
+
+                                       0.6
+
+
+
+
+                 Delay (minutes per mile)
+                                       0.4
+
+
+
+
+                                       0.2
+
+
+
+
+                                            0
+                                                0   4       8       12            16     20   24        28
+                                                                          Week
+                                                                                                                    15/37
+                Figure 2. Weekly Peak Hour Delay on Major Los Angeles Freeways, 7/14/2003 to 1/30/2004
+               VOL. 104 NO. 9                                      ANDERSON: SUBWAYS, STRIKES, AND SLOWDOWNS                                         2779
+Results for major freeways
+                 Panel A. Red line freeway (US-101)                                       Panel B. Green line freeway (I-105)
+                                       1                                                                       0.6
+
+
+
+
+            Delay (minutes per mile)                                                Delay (minutes per mile)
+                                                                                                               0.5
+                                   0.8
+                                                                                                               0.4
+                                   0.6
+                                                                                                               0.3
+                                   0.4
+                                                                                                               0.2
+
+                                   0.2                                                                         0.1
+                                           0   4   8   12     16     20   24   28                                    0   4   8   12   16   20   24     28
+                                                       Week                                                                       Week
+
+                 Panel C. Blue line freeways (I-110 and I-710)                           Panel D. Rapid 720 freeway (I-10)
+                                   0.8                                                                         1.5
+
+
+
+
+            Delay (minutes per mile)                                                Delay (minutes per mile)
+                                   0.6
+                                                                                                                1
+
+                                   0.4
+
+                                                                                                               0.5
+                                   0.2
+
+
+                                       0                                                                        0
+                                           0   4   8   12     16     20   24   28                                    0   4   8   12   16   20   24     28
+                                                       Week                                                                       Week
+                                                                                                                                                            16/37
+                       Figure 3. Average Weekly Peak Hour Delay on Specific Los Angeles Freeways, 7/14/2003 to 1/30/2004
+           VOL. 104 NO. 9                                    ANDERSON: SUBWAYS, STRIKES, AND SLOWDOWNS        2785
+Falsifcation exercise: Efects on highways not in LA MTA service area
+                                                                       Average delay by week
+                                                                         Control highways
+                                               0.8
+
+
+
+
+                    Delay (minutes per mile)
+                                               0.6
+
+
+
+
+                                               0.4
+
+
+
+
+                                               0.2
+
+
+
+
+                                                0
+                                                     0   4         8       12          16      20   24   28
+                                                                                Week
+                                                                                                                     17/37
+             Figure 5. Weekly Peak Hour Delay on Orange/Ventura County Freeways, 7/14/2003 to 1/30/2004
+            2780                                  THE AMERICAN ECONOMIC REVIEW                                 SEPTEMBER 2014
+Delays per minute during peak hours
+                                      Table 4—Effect of Strike on Delays during All Peak Hours
+
+            Average delay
+              (in minutes per mile)                 (1)            (2)           (3)            (4)            (5)         (6)
+            Strike                                  0.194         0.332          0.218         0.190          0.357        0.125
+                                                   (0.041)       (0.076)        (0.052)       (0.051)        (0.128)      (0.042)
+            Date                                 −0.004         −0.003         −0.002        −0.003         −0.005       −0.005
+                                                  (0.002)        (0.003)        (0.002)       (0.002)        (0.004)      (0.002)
+            Date × strike                          0.007          0.006        −0.001          0.007          0.012        0.007
+                                                  (0.002)        (0.003)        (0.002)       (0.003)        (0.007)      (0.002)
+            Average delay prestrike                0.409          0.369          0.264         0.357          0.600        0.434
+
+            Freeways                                All           101           105     110 and 710  10                   Other
+            Parallel transit line                               Red line     Green line Blue line Rapid 720
+
+            Sample size                          178,549         15,854        31,058         19,152         15,357      97,128
+
+            Notes: Each column represents a separate VMT-weighted regression, with weights equal to (length of highway
+            covered by detector i ) × (average prestrike traffic flow over detector i ). The observation is the detector-hour, and
+            the sample is limited to weekdays from 7–10 am and 2–8 pm within 28 days of the strike’s beginning. Parentheses
+            contain clustered standard errors that are robust to within-day and within-detector serial correlation. All regressions   18/37
+            include day-of-week and detector fixed effects.
+            include day-of-week and detector fixed effects.
+Delays per minute during peak morning hours
+                                    Table 5—Effect of Strike on Delays during Peak Morning Hours
+
+            Average delay
+              (in minutes per mile)                 (1)            (2)           (3)            (4)            (5)         (6)
+            Strike                                  0.314         0.482          0.283         0.189          0.619        0.258
+                                                   (0.075)       (0.148)        (0.090)       (0.073)        (0.179)      (0.079)
+            Date                                 −0.003         −0.003           0.003       −0.002         −0.013       −0.003
+                                                  (0.003)        (0.005)        (0.002)       (0.004)        (0.009)      (0.004)
+            Date × strike                          0.000        −0.005         −0.012          0.008          0.010        0.001
+                                                  (0.005)        (0.007)        (0.004)       (0.006)        (0.012)      (0.005)
+            Average delay prestrike                0.472          0.392          0.268         0.485          0.953        0.464
+
+            Freeways                                All           101           105     110 and 710  10                   Other
+            Parallel transit line                               Red line     Green line Blue line Rapid 720
+
+            Sample size                           58,380         5,210         10,136          6,214         5,074       31,746
+
+            Notes: Each column represents a separate VMT-weighted regression, with weights equal to (length of highway cov-
+            ered by detector i ) × (average prestrike traffic flow over detector i ). The observation is the detector-hour, and the
+            sample is limited to weekdays from 7–10 am within 28 days of the strike’s beginning. Parentheses contain clus-
+            tered standard errors that are robust to within-day and within-detector serial correlation. All regressions include       19/37
+            day-of-week and detector fixed effects.
+           VOL. 104 NO. 9                       ANDERSON: SUBWAYS, STRIKES, AND SLOWDOWNS                                  2781
+Delays per minute during peak evening hours
+                                   Table 6—Effect of Strike on Delays during Peak Afternoon Hours
+
+           Average delay
+             (in minutes per mile)                 (1)           (2)            (3)           (4)            (5)         (6)
+           Strike                                 0.157          0.266         0.213          0.197         0.279        0.085
+                                                 (0.040)        (0.064)       (0.061)        (0.056)       (0.132)      (0.049)
+           Date                                 −0.005         −0.004        −0.005         −0.004        −0.004       −0.006
+                                                 (0.002)        (0.003)       (0.002)        (0.002)       (0.005)      (0.002)
+           Date × strike                          0.010          0.011         0.005          0.007         0.017        0.011
+                                                 (0.002)        (0.004)       (0.002)        (0.002)       (0.008)      (0.002)
+           Average delay prestrike                0.384          0.361         0.274          0.300         0.401        0.431
+
+           Freeways                                All          101            105     110 and 710  10                  Other
+           Parallel transit line                              Red line      Green line Blue line Rapid 720
+
+           Sample size                          120,007        10,575         20,922        12,938         10,283      65,289
+
+           Notes: Each column represents a separate VMT-weighted regression, with weights equal to (length of highway
+           covered by detector i ) × (average prestrike traffic flow over detector i ). The observation is the detector-hour, and
+           the sample is limited to weekdays from 2–8 pm within 28 days of the strike’s beginning. Parentheses contain clus-
+           tered standard errors that are robust to within-day and within-detector serial correlation. All regressions include      20/37
+           day-of-week and detector fixed effects.
+Efects on road occupancy—vehicle directly over sensor
+                                          Table 7—Effect of Strike on Freeway Occupancy
+
+           Average share of time
+             detector is occcupied                 (1)            (2)           (3)            (4)            (5)         (6)
+           Strike                                 0.013          0.023         0.019          0.016         0.022        0.008
+                                                 (0.003)        (0.006)       (0.004)        (0.004)       (0.009)      (0.003)
+           Date                                   0.000          0.000         0.000          0.000         0.000        0.000
+                                                 (0.000)        (0.000)       (0.000)        (0.000)       (0.000)      (0.000)
+           Date × strike                          0.000          0.000         0.000          0.000         0.001        0.000
+                                                 (0.000)        (0.000)       (0.000)        (0.000)       (0.000)      (0.000)
+           Average share of time detector         0.112          0.121         0.097          0.115         0.129        0.110
+             is occupied prestrike
+
+           Freeways                                All           101           105     110 and 710  10                   Other
+           Parallel transit line                               Red line     Green line Blue line Rapid 720
+
+           Sample size                          179,680         16,222        31,112         19,152         15,668      97,526
+
+           Notes: Each column represents a separate VMT-weighted regression, with weights equal to (length of highway cov-
+           ered by detector i ) × (lanes at detector i ). The observation is the detector-hour, and the sample is limited to week-
+           days from 7–10 am and 2–8 pm within 28 days of the strike’s beginning. Parentheses contain clustered standard
+           errors that are robust to within-day and within-detector serial correlation. All regressions include day-of-week and      21/37
+           detector fixed effects.
+Efects on trafc fow—throughput of roadways
+                                             Table 8—Effect of Strike on Traffic Flows
+
+           Hourly traffic flow per lane            (1)            (2)           (3)            (4)           (5)          (6)
+           Strike                              −31.3          −68.2           −9.4          −1.4          −61.1         −29.4
+                                                 (9.7)         (17.3)         (11.7)        (18.1)         (19.6)         (9.0)
+           Date                                   0.81           0.79           0.91          0.46           1.14          0.83
+                                                 (0.40)         (0.58)         (0.62)        (0.94)         (0.88)        (0.33)
+           Date × strike                        −1.85          −2.50          −1.29         −2.46          −2.45         −1.53
+                                                 (0.61)         (0.85)         (0.73)        (1.07)         (1.06)        (0.60)
+
+           Average hourly flow prestrike          1,399         1,576         1,349       1,403    1,455                 1,353
+           Freeways                                All           101           105     110 and 710   10                  Other
+           Parallel transit line                               Red line     Green line Blue line Rapid 720
+
+           Sample size                          179,680         16,222        31,112         19,152        15,668       97,526
+
+           Notes: Each column represents a separate VMT-weighted regression, with weights equal to (length of highway cov-
+           ered by detector i ) × (lanes at detector i ). The observation is the detector-hour, and the sample is limited to week-
+           days from 7–10 am and 2–8 pm within 28 days of the strike’s beginning. Parentheses contain clustered standard
+           errors that are robust to within-day and within-detector serial correlation. All regressions include day-of-week and      22/37
+           detector fixed effects.
+            2784                                                            THE AMERICAN ECONOMIC REVIEW                                                                                    SEPTEMBER 2014
+Trafc time-shifting in response to delays
+             Panel A. Red line freeway (US-101)                                                                                  Panel B. Green line freeway (I-105)
+
+
+
+              Change in traffic flow
+                                       150                                                      1.5                                                         90                                          1
+
+
+
+
+                                                                                                          Delay (minutes per mile)                                                                            Delay (minutes per mile)
+                                                                                                                                   Change in traffic flow
+                                       100                                                      1                                                           60
+                                                                                                                                                                                                        0.5
+
+
+
+
+            (vehicles per lane–hour)                                                                                             (vehicles per lane–hour)
+                                        50                                                      0.5                                                         30
+                                            0                                                   0                                                           0                                           0
+
+                                   −50                                                          −0.5                                                −30
+                                                                                                                                                                                                        −0.5
+                               −100                                                             −1                                                  −60
+
+                               −150                                                             −1.5                                                −90                                                 −1
+                                                0        4       8    12    16    20                                                                             0      4     8     12    16       20
+                                                    Hour of day (0 = midnight)                                                                                        Hour of day (0 = midnight)
+
+             Panel C. Blue line freeways (I-110 and I-710)                                                                      Panel D. Rapid 720 freeway (I-10)
+                                       90                                                   1.2                                                           120                                           1.5
+
+
+
+
+                                                                                                    Delay (minutes per mile)                                                                                  Delay (minutes per mile)
+              Change in traffic flow                                                                                             Change in traffic flow
+                                       60                                                   0.8                                                             80                                          1
+
+
+
+
+            (vehicles per lane–hour)                                                                                           (vehicles per lane–hour)
+                                       30                                                   0.4                                                             40                                          0.5
+                                       0                                                    0                                                                0                                          0
+
+                               −30                                                          −0.4                                                      −40                                               −0.5
+                               −60                                                          −0.8                                                      −80                                               −1
+
+                               −90                                                          −1.2                                                  −120                                                  −1.5
+                                            0        4       8       12    16    20                                                                              0      4     8     12     16      20
+                                                    Hour of day (0 = midnight)                                                                                        Hour of day (0 = midnight)
+
+                                                                                      Change in traffic flow                                                Average delay
+
+
+                                                                                                                                                                                                                                         23/37
+                                                Figure 4. Changes in Traffic Flows by Hour of Day on Specific Los Angeles Freeways
+A tiny fraction of commuters use public transmit: Is it worth the cost?
+Benefts in dollars
+ − An increase of 0.19 minutes per mile in trafc delays in Los Angeles implies an aggregate
+   increase of 114 million hours of delay per year
+
+ − Conservatively assumes that transit has no efect on arterial road congestion
+
+ − Valuing commuter time at half the average hourly wage ($10.30), an annual congestion
+   relief beneft from Public transit of $1.2 billion per year (in 2014$)
+
+ − Motorists hate driving in trafc. Using delay multiplier of 1.8, beneft is $2.1 billion
+
+Benefts per public transmit Passenger Mile (PM)
+ − LA MTA carried approximately 1 billion PM during peak hours in 2003
+ − Congestion relief beneft per peak-hour transit PM is $1.20 – $2.16 per PM
+                                                                                            24/37
+             VOL. 104 NO. 9                      ANDERSON: SUBWAYS, STRIKES, AND SLOWDOWNS                                 2791
+
+Cost-beneft analysis of public transit investments
+                                                 Table 11—Capital Investment Benefits
+
+                                                                                        Low            High       “Extreme”
+                                                                    Baseline      ridership growth bus ridership VMT elasticity
+             Fixed parameters
+               2001 ridership (Red, Green, Blue lines)            69 million            —               —              —
+               2010 ridership (Red, Green, Blue lines)            85 million            —               —              —
+               Share of ridership that is peak hour               57 percent            —               —              —
+               2010 rail operating subsidy ($2003)               $115 million           —               —              —
+               Annual real wage growth                            1 percent             —               —              —
+               Real discount rate                                 5 percent             —               —              —
+               Short-run congestion relief benefit per peak mile    $2.50               —               —              —
+
+             Varying parameters
+               Annual ridership growth (to max of 175 million) 1.7 million          0.9 million         —             —
+               Share riders retained if replacing rail with bus   26 percent            —           50 percent        —
+               2010 operating subsidy if replacing rail with bus $126 million           —          $215 million       —
+               VMT elasticity w.r.t. total travel costs             −1.5                —               —            −2.0
+               Long-run congestion relief benefit per peak mile     $1.61               —               —            $1.50
+
+             Total costs and benefits
+               Capital cost of rail system                         $7.1 billion     $7.1 billion    $7.1 billion $7.1 billion
+               Present value of gross benefits                    $13.7 billion    $11.8 billion   $12.3 billion $12.7 billion
+               Present value of net benefits                      $6.6 billion     $4.8 billion    $5.2 billion $5.7 billion
+
+             Notes: Cell entry of “—” indicates cell contains same value as baseline column. All dollar figures are expressed in
+             2003 US$ for comparability. Ridership figures and operating subsidies come from LACMTA reports. Real wage
+             growth comes from BLS (2006), and real discount rate comes from US Department of Transportation (2003).
+                                                                                                                                   25/37
+The U.S. Sulfur Dioxide Cap
+    and Trade Program
+Coal deposits in the United States
+
+
+
+
+ Image is in the public domain.      27/37
+SO2 quotas and output, 1988 – 2010
+
+
+
+
+                                     28/37
+Regulatory history and SO2 permit pricing
+          Figure 2
+          SO2 Allowance Prices and the Regulatory Environment, 1994 –2012
+          (1995 dollars per ton)
+
+          1,400
+                                                                                 EPA announces it will
+                                                            Hurricane Rita       re-examine CAIR
+          1,200
+                                                Hurricane Katrina              North Carolina sues EPA
+          1,000
+                                       Train derailments reduce               CAIR
+                                       PRB coal deliveries                    vacated
+           800
+                                               CAIR !nalized                             CAIR remanded
+                                                                                         to EPA
+           600
+                                                                                             CATR
+                                              Clear skies
+                                                                                             proposed
+                            Phase II begins   announced
+           400                                                                                    CSAPR
+                                                                                                  announced
+                                                                                                         CSAPR
+           200
+                                                                                                         invalidated
+
+              0
+               8/94     8/96      8/98        8/00     8/02         8/04     8/06       8/08     8/10     8/12
+
+          Source: Data on spot prices compiled by Power & Energy Analytic Resources (PEAR) Inc. from Cantor
+          Fitzgerald until September 11, 2001, and from ICAP United thereafter.
+          Notes: CAIR is “Clean Air Interstate Rule.” CATR is “Clean Air Transport Rule.” CSAPR is “Cross-State        29/37
+          Air Pollution Rule.”
+Oh, the ironies
+
+
+
+ 1. The goal of reducing SO2 emissions was met and exceeded
+      □   But ecological benefts have been relatively minor because it takes much longer than
+          thought to reverse the acidifcation of ecosystems
+ 2. The completely unanticipated benefts of the program have been massive
+      □   More than 95% of benefts are associated with human health impacts of reduced levels of
+          airborne fne sulfate particles less than 2.5 micrometers in diameter
+
+
+
+
+                                                                                                30/37
+Estimated benefts of SO2 reductions
+                   Table 1
+                   Estimated Annual US Benefits and Costs of
+                   the SO2 Allowance Trading Program; Title IV,
+                   Clean Air Amendments of 1990
+                   (billions of US 2000 Dollars)
+
+                   Benefits
+                     Mortality                                   50 –100
+                     Morbidity                                     3 –7
+                     Recreational visibility                       2– 3
+                     Residential visibility                        2– 3
+                     Ecosystem effects                             0.5
+                     Total                                       59 –116
+
+                   Costs                                         0.5 – 2.0
+
+                   Net benefits                                  58 –114
+
+                   Source: Burtraw, Krupnick, Mansur, Austin, and Farrell
+                   (1998); Burtraw (1999); Chestnut and Mills (2005);
+                   Banzhaf, Burtraw, Evans, and Krupnick (2006).
+                                                                             31/37
+Oh, the ironies
+
+
+
+ 1. The goal of reducing SO2 emissions was met and exceeded
+ 2. The completely unanticipated benefts of the program have been massive
+ 3. Realized costs of the SO2 allowance trading program were substantially less than
+    forecast
+      □ The cause was railroad deregulation
+      □ Cost of bringing sub-bituminous coal from the Powder River Basin to centers of high
+        demand east of the Mississippi River fell dramatically
+      □ Much of that cost reduction was due to railroad deregulation
+
+
+
+
+                                                                                              32/37
+Sub-bituminous coal
+
+
+
+
+Image courtesy of Wikipedia. License: CC BY-SA. This content is excluded from our Creative Commons license. For more   33/37
+information, see https://ocw.mit.edu/help/faq-fair-use.
+The Powder River Basin
+
+
+
+
+© WildEarth Guardians. All rights reserved. This content is excluded from our Creative Commons license. For more information,
+                                                                                                                          34/37
+see https://ocw.mit.edu/help/faq-fair-use/
+Oh, the ironies
+
+ 1. The goal of reducing SO2 emissions was met and exceeded
+ 2. The completely unanticipated benefts of the program have been massive
+ 3. Realized costs of the SO2 allowance trading program were substantially less than
+    forecast
+ 4. Sub-bituminous goal is bad news for greenhouse gas emissions
+      □   It’s particularly high in C – releases more CO2 when burned than higher grades of coal
+      □   This concern was barely on the radar in 1990
+ 5. Cap and trade passed in 1990 with overwhelming bipartisan support — a market-based
+    solution, applauded by economists and conservative policy makers
+      □ Twenty years later (and continuing to present), ‘free market’ conservatives reject
+        market-based solutions for addressing pollution and other externalities
+      □ One major political party generally rejects most environmental and climate science
+
+                                                                                                   35/37
+Conclusions
+Summary
+
+Externalities are ubiquitous
+
+ − Arise when an economic actor does not face the “correct price” for her actions
+
+ − Externalities are not limited to traditional side efects of production and consumption,
+   e.g., pollution, noise, congestion, speeding, carrying a frearm
+
+ − Can also occur in social interactions where groups of rational actors ends up at an
+   undesirable equilibrium due to mis-coordination, social spillovers, FOMO
+
+ − Law and policy has a crucial role in “internalizing” externalities
+
+ − Taxing externalities can potentially reduce distortions
+
+ − Nevertheless, these remedies are always contentious
+                                                                                         37/37
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

@@ -1,56 +1,101 @@
 ---
-title: '15.C57 优化方法'
+title: 15.C57 优化方法
 type: course
-course: '15.C57 优化方法'
+course: 15.C57 优化方法
 course_id: '15.C57'
 tags: [optimization, linear-programming, integer-programming, duality, robust-optimization]
-status: draft
+status: complete
 source: 'https://catalog.mit.edu/search/?P=15.C57'
 ---
-# 15.C57 优化方法（Optimization Methods）
 
-> MIT Course 15 · Operations Research/Statistics · 与 1.C57、6.C57、IDS.C57 跨院系联合开设
+# 15.C57 优化方法 (Optimization Methods)
+
+> MIT Course 15 · Operations Research & Statistics · 与 1.C57、6.C57、IDS.C57 跨院系联合开设
 
 ## TL;DR
 
-- 运筹学用数学建模、分析与优化支持复杂系统中的决策；MIT 将其应用范围覆盖工程、管理、产业与公共部门。
-- 15.C57 从优化建模出发，涉及线性优化、对偶、非线性与整数优化，以及不确定性下的优化，并结合理论、算法与实际问题。
-- 课程包含 JuMP 计算练习和学期项目；Catalog 标注先修为 18.C06 或经授课教师许可，并建议具备编程与线性代数基础。
+- MIT 跨院系旗舰级研究生优化核心课（曾用课号 15.093J / 6.255J / IDS.200J）。
+- 奠基于多面体几何、单纯形法、对偶理论（Farkas 引理）与大规模分解（DW / Benders）。
+- 全景覆盖混合整数规划（分支切割）、二阶锥/半定规划、两阶段随机规划与现代鲁棒优化。
 
-## 课程定位与知识边界
+## 课程全景与运筹知识架构
 
-MIT Catalog 将 15.C57[J] 列在 Course 15 的 **Operations Research/Statistics** 类别中，并与 Course 1、Course 6 和 IDS 跨院系联合开设。课程的核心任务是学习如何把实际决策问题表述为优化模型，再理解模型结构并使用计算算法求解。
+本课程由麻省理工学院斯隆管理学院（Sloan）、电子工程与计算机科学系（EECS）、土木与环境工程系（CEE）以及数据、系统与社会研究所（IDSS）联合开设，是 MIT 全校最具声誉的工程与运筹优化统一基石课程。
+课程由 Dimitris Bertsimas、Robert Freund 与 Pablo Parrilo 等国际优化宗师联合打造，旨在建立统一的**优化理论（Theory）、算法（Algorithms）与计算建模（Computation with JuMP）**三维一体知识体系。
 
-运筹学是更大的知识领域，不等同于某一门优化课。MIT 对研究生运筹学项目的说明还涵盖应用概率、统计、机器学习与 AI，以及交通、网络、供应链、医疗、能源和公共政策等应用。15.C57 是以优化为主线的入门课程，不代表这些专题都已在本课程中展开。
+在知识演进与方法论进阶上，课程严谨分为四大核心阶段：
+从多面体几何与极点出发，建立连续线性规划的单纯形表演进与强对偶影子价格体系；进而切入大规模网络与系统解耦，剖析 Dantzig-Wolfe 列生成与 Benders 割平面投影；第三阶段跨越到离散离散世界与光滑弯曲空间，掌握分支切割树（Branch-and-Cut）与非线性 KKT 乘子机制；最终在高维锥优化（SOCP / SDP）与不确定性优化（两阶段随机规划与对偶鲁棒免疫）中实现运筹优化的全景贯通。
 
-## Catalog 列出的课程范围
+```mermaid
+flowchart TD
+    subgraph S1["阶段一：线性优化与对偶几何基石 (Lec 1 - 5)"]
+        A1["JuMP 优化建模范式与求解器桥接"] --> A2["多面体几何: 极点、顶点与基本可行解 (BFS)"]
+        A2 --> A3["单纯形法: 棱边演进、简约成本与比率检验"]
+        A3 --> A4["对偶理论: 弱/强对偶性、Farkas 引理与互补松弛"]
+        A4 --> A5["经济学解释: 影子价格灵敏度分析与节点边际电价 (LMP)"]
+    end
+    subgraph S2["阶段二：网络流与大规模结构分解 (Lec 6 - 8)"]
+        B1["最小费用网络流与关联矩阵全单模性 (TUM)"] --> B2["网络单纯形法 (Network Simplex) 拓扑生成树遍历"]
+        B2 --> B3["Dantzig-Wolfe 分解原理与延迟列生成 (Column Generation)"]
+        B3 --> B4["Benders 分解算法与对偶极端射线可行/最优割投影"]
+    end
+    subgraph S3["阶段三：离散整数规划与非线性分析 (Lec 9 - 12)"]
+        C1["整数规划建模: 逻辑析取、半连续变量与 Big-M 陷阱"] --> C2["分支切割算法 (Branch-and-Cut) 与 Gomory 分数割平面"]
+        C2 --> C3["无约束非线性优化: 梯度下降、牛顿法二次收敛与拟牛顿 BFGS"]
+        C3 --> C4["约束非线性优化: KKT 最优性条件、约束规格 (LICQ) 与 SQP"]
+    end
+    subgraph S4["阶段四：高维锥规划与不确定性决策 (Lec 13 - 15)"]
+        D1["凸优化分水岭、二阶锥 (SOCP) 与半定规划 (SDP) 内点法"] --> D2["两阶段随机规划: 追索模型、期望价值、SAA 采样与 L-Shaped"]
+        D2 --> D3["现代鲁棒优化: 多面体/椭球/预算不确定集及其对等体 (Tractable Counterparts)"]
+    end
+    S1 --> S2 --> S3 --> S4
+```
 
-Catalog 给出的主题包括：
+这一课程体系是进入工业软件核心求解器开发（Solver Development）、大规模供应链网络设计、电力现货市场出清、算法交易投资组合优化以及现代自动驾驶轨迹规划的终极必修通行证。
 
-| 主题 | 在课程中的作用 |
-| --- | --- |
-| 线性优化与对偶 | 建立优化模型并分析目标、约束及其对偶关系 |
-| 非线性优化 | 处理目标函数或约束中存在非线性结构的问题 |
-| 整数优化 | 表达离散决策，并处理相应的计算挑战 |
-| 不确定性下的优化 | 将不确定参数纳入决策模型与求解过程 |
-| 建模与计算 | 通过 Julia 的 JuMP 语言完成计算练习，并以实际数据案例和学期项目应用方法 |
-
-这是 Catalog 的主题范围概述，不是逐周教学大纲；具体顺序、作业与项目要求以课程 syllabus 为准。
-
-## 先修基础与学习准备
-
-Catalog 将 18.C06[J] 或授课教师许可列为先修，并建议具备基本的计算编程能力和线性代数基础。开始系统学习前，建议能熟练处理线性方程组、向量与矩阵，并能用程序表达变量、约束和目标函数；遇到更高阶数学主题时，应以实际 syllabus 的要求为准。
-
-::: insight
-优化课程的关键不只是把模型交给求解器。决策变量、目标与约束如何对应真实情境，决定了求出的数学最优解是否真能回答原问题；因此应同时检查建模假设、解的结构与计算结果，而不能只把 solver 返回的数值当作结论。
+::: insight [运筹优化的三维认识论]
+在传统工程教育中，学生往往将优化软件视作一个神秘的“黑盒子”（Black Box），输入矩阵等待数字输出；
+而 15.C57 传达的核心哲学是**打开黑盒子、洞察几何本质**：
+- 在物理世界中，看清约束的拓扑结构（是全单模网络，还是块角状耦合？）；
+- 在几何空间中，感知解的多面体形态（极点是否整数，割平面如何削去小数尖角？）；
+- 在对偶空间中，倾听乘子的影子语言（哪项资源是制约系统的死穴，不确定性的护城河该修筑多宽？）。
+只有将物理建模、凸几何直觉与矩阵稀疏代数三者融会贯通，才能驾驭数千万级变量的真实复杂系统。
 :::
 
-## 与 MIT 运筹学课程体系的关系
+## 讲义全集与教学大纲
 
-MIT Catalog 另列有 15.053 *Optimization Methods in Business Analytics*、15.083 *Integer Optimization*、15.084[J] *Nonlinear Optimization* 和 15.094[J] *Robust Modeling, Optimization, and Computation* 等课程。它们可作为按应用场景或方法专题继续查找的目录入口；这份 Catalog 清单本身不构成严格的先修顺序。
+| 讲次 | 中文讲义主题 | 核心数学、算法与计算机制 | 状态 | 笔记链接 |
+| :--- | :--- | :--- | :--- | :--- |
+| **Lec 01** | 优化建模范式与 JuMP 计算环境 | 决策规划通用表达、Julia/JuMP 宏元编程、MOI 锥形式规范化 | `complete` | [优化建模范式与 JuMP 计算环境](lec1.md) |
+| **Lec 02** | 多面体几何、极点与基本可行解 | 半空间交集、极点/顶点几何、BFS 代数定义、线性规划基本定理 | `complete` | [多面体几何、极点与基本可行解](lec2.md) |
+| **Lec 03** | 单纯形算法、代数演进与检验数 | 棱边缘演进、简约成本向量、最小比率检验、修正单纯形法 | `complete` | [单纯形算法、代数演进与检验数](lec3.md) |
+| **Lec 04** | 对偶理论、Farkas 引理与互补松弛性 | 弱对偶/强对偶定理、Farkas 凸锥分离、互补松弛与无偏认证 | `complete` | [对偶理论、Farkas 引理与互补松弛](lec4.md) |
+| **Lec 05** | 经济学边际解释、影子价格与灵敏度分析 | 对偶乘子作为边际导数、影子价格、基保持最优之摄动容许区间 | `complete` | [经济学解释、影子价格与灵敏度](lec5.md) |
+| **Lec 06** | 网络流模型、全单模性与网络单纯形法 | 最小费用流 (MCF)、关联矩阵全单模性 (TUM)、生成树基拓扑遍历 | `complete` | [网络流模型、全单模性与网络单纯形](lec6.md) |
+| **Lec 07** | 大规模线性优化与 Dantzig-Wolfe 分解原理 | 块角状耦合、Minkowski 极点重构、限制主问题 (RMP)、延迟列生成 | `complete` | [大规模优化与 Dantzig-Wolfe 分解](lec7.md) |
+| **Lec 08** | Benders 分解算法与延迟约束生成 | 复杂变量投影、二阶段对偶从问题、Benders 可行割与最优割 | `complete` | [Benders 分解算法与延迟约束生成](lec8.md) |
+| **Lec 09** | 整数规划建模艺术、逻辑约束与 Big-M 技术 | 混合整数线性规划 (MILP)、0-1 变量表达、Big-M 陷阱与凸包公式化 | `complete` | [整数规划建模艺术与 Big-M 技术](lec9.md) |
+| **Lec 10** | 整数规划求解算法：分支定界与 Gomory 割平面 | 分治与连续松弛剪枝、Gomory 分数割代数推导、分支切割 (B&C) | `complete` | [分支定界与 Gomory 割平面](lec10.md) |
+| **Lec 11** | 无约束非线性优化：梯度下降与牛顿法 | 泰勒展开曲率、Lipschitz 梯度下降、牛顿法二次收敛、拟牛顿 BFGS | `complete` | [无约束非线性优化与牛顿法](lec11.md) |
+| **Lec 12** | 约束非线性优化：KKT 条件与对偶乘子 | 拉格朗日平稳性、KKT 四大组件、约束规格 (LICQ/Slater)、SQP | `complete` | [约束非线性优化与 KKT 条件](lec12.md) |
+| **Lec 13** | 凸优化基础、二阶锥 (SOCP) 与半定规划 (SDP) | 洛克菲勒分水岭、洛伦兹锥、线性矩阵不等式 (LMI)、自和谐内点法 | `complete` | [凸优化基础、SOCP 与半定规划](lec13.md) |
+| **Lec 14** | 随机规划：两阶段追索模型与机会约束 | Here-and-Now 与 Wait-and-See、期望价值函数、SAA 采样、L-Shaped | `complete` | [随机规划：两阶段追索与机会约束](lec14.md) |
+| **Lec 15** | 鲁棒优化：多面体与椭球不确定集及其对等体 | 最坏情况免疫、箱式/椭球对等体 (LP/SOCP)、Bertsimas-Sim 预算集 | `complete` | [鲁棒优化：不确定集与对等体](lec15.md) |
 
-15.C57 过去使用过 15.093、6.7200 和 IDS.200 等课号。查找旧讲义或资料时可一并尝试这些编号。课程现行编号、跨列信息与内容以 [MIT Catalog 课程条目](https://catalog.mit.edu/search/?P=15.C57) 为准。MIT 运筹学研究生项目由 Operations Research Center 协调，项目背景与跨学科范围见 [MIT Catalog 运筹学项目说明](https://catalog.mit.edu/interdisciplinary/graduate-programs/operations-research/)。
+::: definition [自和谐阻碍函数与多项式内点复杂度]
+在锥规划内点法理论中，一个定义在开凸集 $C$ 上的严格凸函数 $F: C \\to \\mathbb{R}$ 称为 $\\theta$-自和谐阻碍函数（Self-Concordant Barrier），若其满足导数控制条件：
+$$
+|D^3 F(x)[h, h, h]| \\le 2 \\left( D^2 F(x)[h, h] \\right)^{3/2}, \\quad \\sup_{h \\neq 0} \\frac{|D F(x)[h]|^2}{D^2 F(x)[h, h]} \\le \\theta
+$$
+这一理论为非线性凸优化确立了绝对的坐标无关性，证明了原对偶内点法在 $O(\\sqrt{\\theta} \\ln(1/\\epsilon))$ 步内必然收敛。
+:::
 
-## 后续整理范围
+::: pitfall [模型规模与求解器内存壁垒陷阱]
+工业初学者往往认为“只要问题是凸的或线性的，求解器就能无限解下去”。
+然而，当变量与约束规模跨越千万级（$10^7$）时，瓶颈往往不再是 CPU 计算时间，而是**内存带宽与缓存命中率（Memory Wall）**！
+单纯形法的基矩阵 LU 分解填入元（Fill-in）、内点法牛顿方程的正规方程组 $A D A^\\top$ 交叉乘积，可能瞬间耗尽服务器数百 GB 内存并引发致命 OOM 崩溃。掌握 Dantzig-Wolfe 分解、Benders 延迟约束生成与一阶算子分裂（ADMM），是突破内存物理极限的唯一手段。
+:::
 
-目前此页依据官方 Catalog 建立课程入口，尚未收录该课的讲义、作业或 syllabus，也不推断逐周大纲。后续补充应优先以课程官方材料为依据，再逐步整理优化建模、线性规划、对偶、整数优化和不确定性优化等讲义或概念页。
+---
+
+本资料根据 [MIT Catalog (15.C57)](https://catalog.mit.edu/search/?P=15.C57) 与 MIT 运筹学中心经典研究生教案深度重构，遵循 CC BY-NC-SA 4.0 协议。

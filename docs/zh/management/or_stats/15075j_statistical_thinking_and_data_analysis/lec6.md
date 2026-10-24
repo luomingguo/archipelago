@@ -1,12 +1,11 @@
 ---
-title: '单样本推断与功效分析'
+title: 单样本推断与功效分析
 type: lecture
 lecture: 6
 tags: [confidence-interval, hypothesis-testing, t-test, statistical-power, sample-size-determination]
 status: complete
 source: 'https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/resources/mit15_075jf11_chpt07/'
 ---
-
 # Lec 6 单样本推断与功效分析（Inference for Single Samples）
 
 > MIT 15.075J / ESD.07J · Statistical Thinking and Data Analysis · Fall 2011

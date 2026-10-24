@@ -1,12 +1,11 @@
 ---
-title: '原型制作'
+title: 原型制作
 type: lecture
 lecture: 8
 tags: [prototyping, physical-prototypes, rapid-prototyping, risk-retirement]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 8 原型制作（Prototyping）
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  

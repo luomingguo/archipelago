@@ -1,12 +1,11 @@
 ---
-title: '机器学习导论——算法分类与模型质量'
+title: 机器学习导论——算法分类与模型质量
 type: lecture
 lecture: 6
 tags: [machine-learning, supervised-learning, model-evaluation, train-test-split]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 6 机器学习导论——算法分类与模型质量（Introduction to Machine Learning）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 6 讲  

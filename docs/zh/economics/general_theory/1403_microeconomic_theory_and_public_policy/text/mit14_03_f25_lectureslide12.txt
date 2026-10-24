@@ -1,0 +1,369 @@
+Revised October 20, 2025
+
+
+
+
+14.03/003 Micro Theory & Public Policy, Fall 2025
+
+Lecture slides 12. General equilibrium in a pure exchange
+economy
+
+David Autor (Prof), MIT Economics and NBER
+Motivation for general equilibrium
+
+
+ − So far we talked about one market at a time: fast-food workers, real estate brokers, rice
+ − In reality, all markets interact through substitution efects, income efects, and
+   complementarities
+      □ Substitution efects—If the price of Ramen rises, I might buy more peanut butter, jelly,
+        and bread
+      □ Income efects—If my rent rises, I might eat out less often and cut down on cold brew
+
+      □ Complementarity—If the price of peanut butter falls, I might buy both more peanut butter
+        and more jelly
+      □ Similar processes operate on the supply side of the market: If everyone buys more jelly
+        when the price of peanut butter falls, then the price of jelly will rise
+
+
+
+                                                                                             1/24
+Motivation for general equilibrium
+
+
+
+ − All changes in quantities or prices ultimately feed back into the demand and/or supply
+   for other goods through several channels.
+
+ − We need a model that can accommodate the interactions of all markets simultaneously
+   and allows us to determine the properties of the grand equilibrium.
+
+ − This is the goal of the General Equilibrium (GE) model.
+
+
+
+
+                                                                                        2/24
+The Edgeworth box
+
+
+
+ − To make the general equilibrium problem tractable, we want to reduce the dimensionality
+   of the “all markets” problem to something manageable
+
+ − The Edgeworth Box provides the tool we need
+
+ − Focus here on two goods and two people
+ − Edgeworth box depicts the gains in welfare that may accrue from pure exchange of goods
+
+ − Intuitively demonstrates two fundamental results in economics: the First and Second
+   Welfare Theorems
+
+
+
+                                                                                         3/24
+From (1) Consumer Choice to (2) Partial Eq’m to (3) General Eq’m
+
+
+
+                         Consumer’s     Partial      General
+                          Problem     Equilibrium   Equilibrium
+
+           Preferences   Exogenous    Exogenous     Exogenous
+           Budget set    Exogenous    Exogenous     Endogenous
+           Prices        Exogenous    Endogenous    Endogenous
+           Consumption   Endogenous   Endogenous    Endogenous
+
+
+
+
+                                                                   4/24
+Edgeworth notation
+ − There are two goods: call them food F and shelter S. There are two agents: call them A and B. The
+   initial endowment is:
+                                                         F    S
+                                           EA = (EA        , EA )
+                                                          F    S
+                                              EB    =   (EB , EB )
+
+ − The consumption of A and B are denoted as:
+                                                          F    S
+                                         XA         =   (XA , XA )
+                                                          F    S
+                                             XB     =   (XB , XB )
+
+ − Without trade between agents A and B, their consumption bundles will equal their endowments:
+                                              X A = EA
+                                                  XB    =   EB
+
+ − With trade, many exchanges between A and B become feasible, but the following equalities must always
+   hold:                                F     F        F       F
+                                      XA  + XB    = EA    + EB
+                                            S    S           S    S
+                                           XA + XB      =   EA + EB
+
+ − This is a model of exchange without production, but that’s merely for simplicity. Adding production does
+   not change the problem (though it adds to the fun)                                                   5/24
+The Edgeworth box: Endowments and preferences
+A Graphical Example
+
+
+
+
+                                                6/24
+Market conditions for trading
+
+
+
+We will assume that trade between A and B satisfes these four conditions
+
+ 1. No transaction costs
+
+ 2. No market power
+
+ 3. No externalities
+
+ 4. Full information
+
+
+
+
+                                                                           7/24
+What constraints must general equilibrium satisfy?
+
+
+ 1. Preferences respected—freedom of choice
+    No one prefers initial endowment to market equilibrium
+
+ 2. All gains from trade exhausted
+    No Pareto-improving trades remain (allocative efciency)
+
+ 3. All markets clear
+    No excess demand or supply of any good
+
+ − Note that although we are discussing markets clearing, there are no prices in this model
+   (yet). Prices are endogenous
+
+                                                                                         8/24
+What happens when A and B trade
+Pareto improvements
+
+
+
+
+                                  9/24
+Pareto efcient allocations
+The contract curve
+
+
+
+
+                             10/24
+Pareto efcient allocations
+The contract curve
+
+
+
+
+                             11/24
+How to get from E to a point on the contract curve?
+Walrasian auctioneer
+
+
+ 1. In the initial endowment: Market clears (that is, all goods consumed) but the allocation
+    is not Pareto efcient
+
+ 2. An auctioneer could announce new prices, then both parties could trade what they have
+    for what they preferred at these prices
+
+ 3. Problem:Choices would then be Pareto efcient but would not necessarily clear the
+    market
+
+ 4. It’s possible there would be extra F and not enough S or vice versa
+
+ 5. So, must re-auction at new prices...
+
+
+                                                                                         12/24
+Walrasian auctioneer
+Prices with infeasible consumption plans
+
+
+
+
+                                           13/24
+Walrasian equilibrium
+
+
+ − What should auctioneer do? Raise PF /PS (=decrease PS /PF )
+
+ − When the auctioneer gets the price ratio correct, the market clears
+      □   This is a market equilibrium or competitive equilibrium or Walrasian equilibrium.
+
+ − In equilibrium
+      1. Each consumer chooses his most preferred bundle given prices and his initial endowment
+      2. All choices are compatible so that demand equals supply
+                                                                 ∂U/∂S           ∂U/∂S
+      3. Pareto efcient consumption (‘Allocative Efciency’)      ∂U/∂F       =   ∂U/∂F
+                                                                         A               B
+
+
+
+
+                                                                                              14/24
+Walrasian equilibrium
+Pareto efciency
+
+
+
+
+ − How do we know Pareto Efciency will be satisfed?
+
+      □   Because both A, B face the same prices
+
+      □   Each person’s optimal choice will therefore be the highest indiference curve that is tangent
+          to her budget set given by the line with the slope PS /PF that intersects E
+
+      □   These choice sets (for A, B) are separated by the price ratio, so we know they will be
+          tangent but not intersect
+
+
+
+
+                                                                                                   15/24
+How do we reach the equilibrium?
+
+
+
+ − Leon Walras loosely proved that the market can reach this equilibrium without assistance
+   from a central planner
+
+ − This result—the existence of general equilibrium as a self-organizing outcome of the
+   market—is fundamental
+
+ − The description that Walras used was that the economy would reach equilibrium through
+   a process of Tattonment (trial and error).
+
+
+
+
+                                                                                          16/24
+First welfare theorem: A free market, in equilibrium, is Pareto efcient
+All gains from trade exhausted
+ 1. There is no excess demand or supply for any good—no wasted resources
+ 2. No consumer wishes to sell a good at the market price but cannot fnd a buyer
+ 3. No consumer wishes to buy a good at the market price but cannot fnd a seller
+ 4. Every consumer is weakly better of than at their initial endowment
+ 5. The equilibrium is Pareto efcient
+
+Reminder: Result rests on the following conditions
+ 1. No externalities
+ 2. Perfect competition
+ 3. No transaction costs
+ 4. Full information
+                                                                                   17/24
+ 5. And we are continuing to invoke Axioms A1–A5 of consumer theory
+It is not from the benevolence of the butcher, the brewer, or the baker, that
+we expect our dinner, but from their regard to their own interest. We address
+ourselves, not to their humanity but to their self-love, and never talk to them
+of our necessities but of their advantages.
+
+– Adam Smith, The Wealth of Nations, 1776
+Every individual necessarily labors to render the annual revenue of the society
+as great as he can.... He intends only his own gain, and he is in this, as in
+many other cases, led by an invisible hand to promote an end which was no
+part of his intention...
+
+– Adam Smith, The Wealth of Nations, 1776
+First welfare theorem: Another perspective
+
+
+
+
+Can think of General Equilibrium as an optimal resource allocation problem
+subject to three constraints
+
+   (C1) No actor is worse of in the market equilibrium than in the initial allocation
+   (C2) At the eq’m, no party can be made better of without making another party worse of
+   (C3) No more goods can be demanded/consumed than the economy is endowed with
+
+
+
+
+                                                                                            20/24
+First welfare theorem: Another perspective
+
+
+
+ − The First Welfare Theorem says that the free market equilibrium is the decentralized,
+   self-solving solution to this problem
+
+ − Simply by allowing trade among small market actors, the market solution—that is, the
+   price vector and resulting equilibrium choices—will satisfy the three constraints above
+
+ − An important result: implies that the decentralized market continually “solves” a
+   complex problem that would be difcult for any individual (or large government agency)
+   to solve by itself
+
+
+
+                                                                                           21/24
+Second welfare theorem
+
+
+
+Does the 1st Welfare Thm guarantee that market eq’m will be fair or equitable?
+
+      □   No – not at all
+
+      □   There are many alternative Pareto efcient allocations of resources difering in allocations
+          among parties
+
+      □   Some Pareto efcient allocations are pretty unattractive — e.g., give everything to one
+          person
+
+
+
+
+                                                                                                   22/24
+Second welfare theorem
+
+
+ − Is there a trade-of between between efciency and equity in equilibrium?
+      □   Second Welfare Theorem says the answer is no
+
+ − Restated: Given a Pareto efcient allocation of resources, must there exist prices and
+   an initial endowment so that this allocation is supported as a competitive equilibrium?
+      □   The Second Welfare Theorem says that the answer is yes
+
+ − In other words, there is no trade-of between equity and efciency
+      □   But this is true only if lump-sum transfers are feasible
+
+
+
+                                                                                       23/24
+Second welfare theorem
+
+
+
+
+ − Providing that preferences are convex and conditions C1-C4 are satisfed, any
+    Pareto efcient allocation can be supported as a market equilibrium
+
+ − Question: If we don’t like the distribution of wealth in the market equilibrium, how do
+   we change it?
+
+
+
+
+                                                                                        24/24
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

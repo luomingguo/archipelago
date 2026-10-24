@@ -1,0 +1,990 @@
+Revised October 29, 2025
+
+
+
+
+14.03/003 Microeconomic Theory and Public Policy, Fall 2025
+
+
+Lecture slides 15. Does trade raise national incomes? Measuring
+the gains from trade using the method of instrumental variables
+
+David Autor (Prof), MIT Economics and NBER
+Does trade raise national income?
+
+
+
+
+                                    1/41
+Trade and national income
+
+
+
+
+ − Theory clearly predicts that trade increases national income—that is, the bundle of
+   goods and services a country can purchase
+
+ − Is the theory right?
+
+ − Hard to conduct an experiment: cannot readily manipulate the trade fows of various
+   countries to study efect on national incomes
+
+
+
+
+                                                                                         2/41
+Trade and national income growth: What does this fgure tell about the
+efect of rising trade on income per capita?
+           Figure 5: Average Per Capita GDP Growth versus Trade Growth 1960-1995
+                                                                                                                                          SGP
+                                                                                                                                                       KOR
+                                                                   6
+
+
+
+
+                         Average per capita GDP growth 1960-1995
+                                                                                                                                                 THA
+                                                                                                              CYP                     JPN
+                                                                                                               ROM
+                                                                   4                         BRB                          MYSIDN      CHN
+                                                                                                               MUS               PRT
+                                                                                                                                 IRL            ESP
+                                                                                                PAK SYC           BRA GRC ITAISR
+                                                                                                                 NOR
+                                                                                                MAR SYR      ISL FIN      FRA
+                                                                                        LKA     INDEGY
+                                                                                                     DOM      CHL CANUSA  PAN
+                                                                                                                      NLD TUR
+                                                                                                        COL  DNK
+                                                                                                           AUS
+                                                                                                           SWE
+                                                                   2                              FJIGNB GBR       ECU
+                                                                                                                                     MEX
+                                                                                           KEN NZL      JOR
+                                                                                                         GTM       PNG
+                                                                            GHA                  URY             PHL CRI
+                                                                              GUY         JAM PERZAF
+                                                                                                  ARG NAM BGD
+                                                                                    TZA GMB        SLVCIV
+                                                                                                       MRT        HND
+                                                                                               CMR
+                                                                   0                           GINBEN TGO
+                                                                        SEN
+                                                                        MDG             NIC
+                                                                   -2         MOZ
+
+                                                                                                              GNQ
+
+                                                                   -4
+                                                                        0                2                4              6            8                 10
+                                                                                                   Average trade growth 1960-1995
+
+
+    source: Penn World Tables 6.2, IMF Direction of Trade database.                                                                                          3/41
+Trade and national income
+Cross country comparisons
+
+
+What does this fgure tell us about the causal efect of trade on national income? Probably
+not much
+
+ − The extent to which a country trades is endogenous
+
+ − Countries that are rich for other reasons might trade more because they can aford to
+   import more goods from overseas
+
+ − Countries that pursue sound economic policies (i.e., that raise income) may also choose
+   to pursue trade (another sound economic policy)
+
+ − Countries that are rich in natural resources may trade because there is high world
+   demand for their goods. But it may be their rich endowments that account for their
+   wealth, not trade per se.
+                                                                                          4/41
+Trade and growth
+Back to causal inference
+
+ − We would like to measure the causal efect of trade on country j as follows:
+
+                                        γj = YjT − YjA ,
+
+    where Y is income per capita, γj is the causal efect of trade on Y in country j (γ
+    stands for Gains from trade), and the superscripts A and T signify Autarky and Trade
+
+ − Fundamental Problem of Causal Inference says that we cannot observe income per
+   capita for country j both under both Autarky and free trade simultaneously
+
+ − Can readily calculate
+                             γ̂ = E Y T |T = 1 − E Y A |T = 0 ,
+
+    where T ∈ {0, 1} indicates whether a country is open to free trade
+ − But γ̂ is probably not a good estimate of γ ∗
+                                                                                           5/41
+Trade and growth
+What can we do instead?
+
+
+
+We need an “experiment” that exogenously raises or lowers trade in some group of countries
+
+ − In the case of free trade, such experiments are difcult to fnd
+
+ − What about unexpected events that suddenly open or close a country to trade (for
+   example, war, natural disaster, revolutionary overthrow)?
+
+ − Are these good quasi-experiments for this causal question?
+
+ − Problem: they are likely to cause other economic and policy shocks in addition to trade
+   that also directly raise or lower real income
+
+
+
+                                                                                        6/41
+Instrumental Variables (IV) —
+        The big idea
+
+
+
+
+                                7/41
+Instrumental variables
+ − The difculty of running an RCT or quasi-experiment motivates a subtle and powerful
+   approach to identify causal efects: the method of Instrumental Variables (IV)
+
+ − Here’s the idea: we are interested in measuring the efect of trade on income. Since
+   trade is endogenous, we are reluctant to draw any causal inferences from the observed
+   correlation
+      1. Imagine hypothetically that there is some third variable Z ∈ {0, 1} that afects the extent to
+         which countries trade
+      2. And this variable is as good as randomly assigned to countries. That is, ‘treated’ and
+         ‘untreated’ countries are comparable/ exchangeable
+      3. Finally, we suspect that Z afects national income—if it afects it at all—only through its
+         efect on trade
+
+ − Under these assumptions, Z can serve as an “instrument” that exogenously manipulates
+   trade, allowing us to study trade’s causal efect on income
+                                                                                                  8/41
+Instrumental variables: Core idea
+
+
+
+                    The world has randomized something —
+
+                   but it’s not exactly the thing you want
+
+
+
+           Under an exclusion restriction, you may be able to “exploit”
+
+     that available randomness and get (approximately) what you want anyway
+
+
+                                                                              9/41
+IV: Core idea
+
+
+
+
+ − D is the treatment, Y is the outcome of interest, U is the unmeasured confounder (the
+   source of endogeneity), and Z is the ‘instrument’
+
+ − We would like to know the causal efect of D on Y . But U makes this a hard problem
+ − The instrumental variable setup is as follows
+      1. We have a frst-stage relationship: Z causally afects D
+      2. We need an exclusion restriction: There is no efect of Z on Y that does not run through D
+      3. Measure the reduced form relationship: the causal efect of Z on Y
+      4. Estimate the causal efect of D on Y by comparing the causal efects of Z on D and Z on Y
+                                                                                               10/41
+ Feyer 2019 — An Instrumental Variables Approach to
+Measuring the Causal Efect of Trade on National Income
+
+
+
+
+                                                         11/41
+Feyrer 2019
+An Instrument for trade
+
+ − James Feyrer’s 2019 paper, “Trade and Income—Exploiting Time Series in Geography”
+
+ − Proposes an ingenious Instrumental Variables (AKA, IV or 2SLS) approach for
+   analyzing the causal efect of trade on national per capita income
+
+ − Insight: Historically, most trade between non-contiguous countries occurred by sea
+
+ − As the cost of air freight fell over the last four decades, countries began shipping (some)
+   goods by airplane rather than ship
+
+ − This cost decline diferentially reduced the cost of trade for countries whose trading
+   routes involved circumnavigating large land masses (i.e., continents)
+
+
+
+                                                                                           12/41
+                               Major world shipping routes
+
+
+
+
+                       Distance from Shenzen, China to Boston, U.S.
+                           By sea: 11,321 nautical miles
+                            By air: 7,943 nautical miles
+                                                                                   13/41
+Courtesy of Elsevier, Inc., https://www.sciencedirect.com. Used with permission.
+Transport costs have plummeted: sea freight, air travel, telecoms
+
+
+
+
+ Courtesy of Our World in Data. License CC-BY.                      14/41
+          VOL. 11 NO. 4                             FEYRER: TRADE AND INCOME                        7
+U.S. air freight volumes as a share of U.S. trade value, 1965 – 2005
+                    60
+                                   Imports
+                                   Exports
+
+                    50
+
+
+
+
+                    40
+
+
+
+
+                    30
+
+
+
+
+                    20
+
+
+
+
+                    10
+
+
+
+                          1960               1970         1980            1990            2000
+
+                          Figure 1. Air Freight Share of US Trade Value (Excluding North America)
+
+          Source: Hummels (2007, 133)
+8                      AMERICAN ECONOMIC JOURNAL: APPLIED ECONOMICS                            OCTOBER 2019
+What gets shipped by air: Top 20 commodities
+                             Table 1—Top 20 HS2 Trade Categories by Air
+
+                                                                           Air import value
+HS code                             Description                            (billion dollars)    Percent by air
+85           Electrical machinery and equip. and parts, telecommunica-          64.97              42.0%
+                  tions equip., sound recorders, television recorders
+84             Machinery and mechanical appliances, including parts             64.26              39.8%
+71               Pearls, stones, prec. metals, imitation jewelry, coins         23.03              88.1%
+90          Optical, photographic, cinematographic, measuring, checking,        20.63              59.2%
+             precision, medical or surgical instruments and accessories
+29                                 Organic chemicals                            20.28              63.9%
+98                Agric., construction, trans., electric/gas/sanitary,          18.23              51.5%
+                      eng. and mgmt. and envir. quality services
+30                              Pharmaceutical products                         12.37              77.6%
+62               Articles of apparel, accessories, not knit or crochet           5.32              16.8%
+97                   Works of art, collectors pieces, and antiques               4.45              81.7%
+61                  Articles of apparel, accessories, knit or crochet            3.75              13.9%
+88                       Aircraft, spacecraft, and parts thereof                 3.45              16.3%
+95                  Toys, games, and sports equip., parts & acces.               2.22              11.0%
+91                       Clocks and watches and parts thereof                    2.07              68.0%
+64                    Footwear, gaiters and the like, parts thereof              1.61              10.6%
+38                         Miscellaneous chemical products                       1.53              33.5%
+42               Articles of leather, animal gut, harness, travel good           1.48              20.7%
+87               Vechicles other than railway, parts and accessories             1.29               0.8%
+39                            Plastics and articles thereof                      1.20               6.3%
+82                  Tools, implements, cutlery, spoons, and forks,               1.11              25.8%
+                                 of base metal and parts
+3                 Fish, crustaceans, mollusks, aquatic invertebrates             0.93              11.8%
+
+Source: US Census Bureau—US Imports of Merchandise (2001)
+Trade fows     have become increasingly
+      VOL. 11 NO. 4
+                                          sensitive to cost of air freight
+                                FEYRER: TRADE AND INCOME                17
+They used to be very sensitive to cost of sea freight. Why is this relevant?
+                −1.5
+                               Sea         Air
+
+
+
+
+                 −1
+
+
+
+
+               −0.5
+
+
+
+                       1940     1950        1960         1970        1980        1990         2000
+                  0
+
+
+
+
+                 0.5
+
+            Figure 3. The Change in Elasticity of Trade with Respect to Sea and Air Distance over Time
+                              from a Gravity Regression with Country-Fixed Effects                       17/41
+Key measure: The Air-Sea Distance Diference (ASDD)
+ − Air-Sea Distance Diference ASDD: diference between the distance of a country to its
+   trading partners by air versus by sea
+               S
+      □   Let Djk be the sea distance between countries j and k
+               A
+      □   Let Djk be their air distance
+                        S     A
+      □   Let ASDDjk = Djk − Djk
+      □   If country j and k have nothing between them but water, then ASDDjk = 0
+      □   If separated by land masses that a cargo ship must circumnavigate, then ASDDjk > 0
+      □   Let Tjk is the trade volume between j and k in dollars in 1960
+ − Then
+                                                    S −D A ×T
+                                 ASDDj =           Djk  jk    jk /       Tjk
+                                               k                     k
+
+
+
+ − It’s easiest to think of this as binary variable: ASDDj ∈ {0, 1}, where ASDDj = 1
+   implies country j has a large diferential diference and ASDDj = 0 implies the opposite
+                                                                                               18/41
+Key instrumental variables construct: The exclusion restriction
+The exclusion restriction says
+ − Instrument ASDD afects the outcome variable of interest only through its efect on the
+   intermediating endogenous variable, ∆T
+
+ − This implies that conditional on ∆Tj , the value of Aj is irrelevant
+
+ − Can be expressed formally as follows, where c is some constant:
+
+                     E [∆Yj |∆Tj = c, Aj = 1] = E [∆Yj |∆Tj = c, Aj = 0] ,
+This postulate is untestable
+ − Cannot manipulate ASDD for a given country, and moreover, if we could, this would
+   also afect Tj (under our hypothesis above)
+
+ − The exclusion restriction must be plausible or the IV strategy is a non-starter
+The exclusion restriction might be falsifable                                        19/41
+The ASDD idea — do we trust it?
+
+
+Potential concerns
+
+ − ASDD is not the only determinant of changing trading patterns
+
+ − U.S. began trading extensively with China in the 1990s but was trading extensively with
+   Japan decades earlier
+
+ − That cannot be explained by air freight costs!
+
+Is that a problem? Not necessarily. We require that:
+
+ 1. ASDD has a direct, measurable causal efect on trade
+
+ 2. ASDD does not plausibly afect national income through any other channel but trade
+
+                                                                                       20/41
+Putting IV to work — four steps
+
+
+
+
+                                  21/41
+Putting IV to work: Four steps
+
+
+
+ 1. Balance of treatment and control groups
+
+ 2. First stage: Causal efect of the instrument (ASDD) on the endogenous variable (∆T )
+
+ 3. Reduced form: Causal efect of the instrument on the outcome variable ∆Y
+
+ 4. IV estimate: Causal efect of ∆T on ∆Y
+
+
+
+
+                                                                                     22/41
+Step 1: Balance of treatment and control groups
+
+Treatment and control groups must be comparable—must have have balanced
+counterfactual outcomes
+
+ − Let Yjt equal the GDP of country j in time t
+ − Imagine that there are two time periods, t = {0, 1}, and that in the early period t0 ,
+   traded goods travel exclusively by sea, whereas in the latter, they can travel by air or sea
+ − Let ∆Yj equal the change in GDP in country j between t = 0 and t = 1
+ − For each country, two potential outcomes
+
+                                      ∆Yj ∈ ∆Yj1 , ∆Yj0 ,
+
+    where ∆Yj1 is change in GDP in j if Aj = 1, ∆Yj0 is change in GDP in j if Aj = 0.
+We now face our standard exchangeability challenge
+                                                                                            23/41
+Step 1: Balance of treatment and control groups
+
+
+ − Fundamental Problem of Causal Inference
+      □   Each country j is one type or the other (ASDD either High or Low, A = 1 or A = 0)
+      □   Cannot observe both ∆Yj1 and ∆Yj0
+
+ − Nevertheless, this condition must be plausible — or it’s a no-go
+
+                              E ∆Yj1 |A = 1      = E ∆Yj1 |A = 0
+
+                              E ∆Yj0 |A = 1      = E ∆Yj0 |A = 0 .
+
+ − If countries with high ASDD were ‘assigned’ low ASDD, their GDP growth would be
+   the same as the countries that actually have low ASDD, and vice versa
+
+                                                                                              24/41
+No systematicSource:
+               relationship         btwn
+                     US Census Bureau—US          Merchandise (2001) ↔ GDP/worker in 1960
+                                            airof shipments
+                                         Imports
+
+
+                                                            1
+
+                                                                                                                             IRL
+                                                                                              BWA
+
+
+
+
+                Proportion of exports to US by air, 2001
+                                                           0.8                              BEN                                ISR
+                                                                                                                 SGP
+                                                                                                   NER
+                                                                                                                                            CHE
+                                                                                                                       BRB
+                                                                                                         CAF
+                                                           0.6                                                   MYS
+                                                                                                               PHL
+                                                                                                   MLI                 IRN
+                                                                                                   MRT COM                    ZAF     GBR
+                                                                                                                                      BEL
+                                                                                                                                    FRA
+                                                           0.4                     UGA       IND         TWN                  URY
+                                                                           TZA                             KOR BOL              ITA
+                                                                                                                                 NLD
+                                                                                                           MARHKG  PRT          DNK
+                                                                                                                               SWE
+                                                                                       NPL                                AUT     AUS
+                                                                                         KENTHA CPV             JPN CRI FIN ISL
+                                                                                                               CYP
+                                                                                                ZWE
+                                                                                              MDG           SYC
+                                                                                                          TURMUS                  AUS
+                                                           0.2                                                PAN   PERESP         LUX
+                                                                                         ROM
+                                                                                        GMB                    BRA GRC      ARG
+                                                                             GNB                   LKA GIN        JOR
+                                                                                                                 COL  CHL
+                                                                                    CHN    PAKIDN          DOMPRYNIC
+                                                                                                         SYR                  NOR
+                                                                                          TGO
+                                                                                        RWA        ZMB EGY  ECU                     NZL
+                                                                               BDI                             GTM FJI
+                                                                                                      PNG HNDGUY
+                                                                                                                    SLV
+                                                                                    LSO
+                                                                                    BFA   GHA MOZ BGDSEN     JAM NAM MEX           CAN
+                                                                                  ETH               CMR AGO
+                                                            0                 MWI            NGACIV
+                                                                                                  TCD       GAB         TTO      VEN
+
+                                                                    6               7               8                  9               10
+                                                                                        ln(real GDP per worker 1960)
+                                                                                                                                                  25/41
+                                                                 Figure 2. 2001 Air Imports to the United States versus 1960 GDP Per Capita
+Step 2: Causal efect of instrument on endogenous variable
+
+ASDD must have a causal efect on a country’s trade growth between 1960 and 1995
+
+ − Write Tjt as trade volume (in dollar terms, for example) of country j in year t
+
+ − Imagine two counterfactual states for each country j, one in which it has Low ASDD
+   (A = 0) and the other if it has High ASDD (A = 1)
+
+ − Defne the counterfactual change in trade volume between 1965 and 2005 in each
+   country under ASDD ∈ {0, 1} as
+
+                                      ∆Tj ∈ ∆Tj1 , ∆Tj0
+
+ − We require the following:
+                                       ∆Tj1 ≥ ∆Tj0 ∀ j,
+ − This is partially testable
+                                                                                     26/41
+Step 2: Causal efect of instrument on endogenous variable
+
+
+Country j ′ s trade must increase by more if ASDDj = 1 than if ASDDj = 0
+
+ − Due to the Fundamental Problem of Causal Inference, this assumption is not directly
+   testable
+
+ − We see countries in only one state: ASDD ∈ {0, 1})
+
+ − We can test one necessary but not sufcient condition:
+
+                              E [∆Tj |A = 1] > E [∆Tj |A = 0] .
+ − Average growth in trade in the A = 1 countries must be greater than in the A = 0
+   countries
+
+
+                                                                                         27/41
+First Stage: ∆T
+              1 RADE 1960–1995
+                     2         3vs. Air-Sea
+                                          4 Distance 5Diference61960
+                                                      Average predicted trade growth 1960−1995
+      Panel B
+                                       10                                                  KOR
+
+
+
+
+      Average trade growth 1960−1995
+                                                                        THA
+                                                                     ESP
+                                                           SGP                          JPN
+                                       8                               MEX               CHN
+                                                                    PRT            IRL
+                                                           IDN             ISR ITA
+                                                   PAN       MYS            FRA
+                                                                              TUR
+                                       6                                       GRCNLD
+                                                      CRI
+                                                    ECU         PNG         USA
+                                                              BRA
+                                                              HND      PHL            NOR FIN CAN
+                                                      CHLMUS
+                                                       AUS         GNQ       CYP      DNK ROM
+                                                                                BGD ISL
+                                                                                  SWE
+                                       4        COL          GTM
+                                                       NAM MRT                JORGBR
+                                                         DOM SYC CIV TGO SYR
+                                                             GNB
+                                                     ZAF  FJI  SLV
+                                                             ARG
+                                                           URY         EGY
+                                                                      BEN
+                                                  NZLPER GIN MARCMR     IND      PAK
+                                                       BRBJAM              KEN
+                                       2               NIC GMBLKA
+                                                                         TZA
+                                                      GUY          MOZ
+                                                            SEN    GHA
+                                       0                      MDG
+                                            1         2             3              4             5   6
+                                                          Simple instrument—trade weights
+      Panel C                                        Air-Sea Distance Difference in 1960                 28/41
+Step 2: Estimating the causal efect of trade on GDP
+
+
+
+ 1. Let’s write the causal efect of ∆T on ∆Y as
+
+                                 E [∆Yj |∆Tj ] = α + γ∆Tj
+
+ 2. We estimated the causal efect of ASDD on ∆T between 1960 and 1995 (frst stage)
+
+                        π1 = E [∆Tj |Aj = 1] − E [∆Tj |Aj = 0] > 0
+
+
+
+
+                                                                                 29/41
+    Step 3: The reduced form
+relationship between ASDD and ∆Y
+
+
+
+
+                                   31/41
+                              −4
+Reduced form:1 ∆GDP 1960–1995
+                    2         3
+                               v. Air-Sea4Distance Diference
+                                                   5
+                                                             1960
+                                                             6
+                                             Average predicted trade growth 1960−1995
+
+                                                   SGP
+                                                                                   KOR
+                               6
+                                                                THA
+                                                                 CYP           JPN
+                                                                                  ROM
+
+
+
+     Average per capita GDP
+                               4                   MYS
+                                              BRBIDN       PRT                  CHN
+                                                MUS           ESP        IRL
+                                                   SYC
+                                                    BRAMAR        ISR  PAK
+                                                                     GRC
+                                                                   SYR   ITANOR
+                                          PAN                 EGY
+                                                               IND FRA
+                                                                   USA      ISL FIN
+                                       COL   CHLDOM
+                                              AUS   LKA             TUR NLD  DNK      CAN
+                               2           ECU FJI GNB                  SWE
+                                                                       GBR
+                                                      PNG     MEX    JOR
+                                             CRI
+                                         NZLZAF    GTM GHAPHLKEN
+                                                 URY
+                                             GUY
+                                            PER
+                                              NAM  ARG
+                                                 JAM SLVCIV           BGD
+                                                    HND
+                                                   MRT
+                                                  GMB        CMRTZA
+
+
+
+        growth 1960−1995
+                               0                    GIN      BEN
+                                                            TGO
+                                                  SEN
+                                              NIC MDG
+                              −2                          MOZ
+                                                         GNQ
+                              −4
+
+                                   1         2              3             4              5   6
+                                                   Simple instrument—trade weights
+                                             Air-Sea Distance Difference in 1960                 32/41
+
+                                                 SGP
+Step 3: Estimating the causal efect of trade on GDP
+
+ 1. Let’s write the causal efect of ∆T on ∆Y as
+
+                                 E [∆Yj |∆Tj ] = α + γ∆Tj
+
+ 2. We estimated the causal efect of ASDD on between 1960 and 1995 (frst stage)
+
+                        π1 = E [∆Tj |Aj = 1] − E [∆Tj |Aj = 0] > 0
+
+ 3. We compared change in incomes of ASDD High and Low countries (second stage)
+
+                          π2 = E [∆Yj |Aj = 1] − E [∆Yj |Aj = 0] .
+
+   Here, π2 is the causal efect of ASDD (not trade) on GDP
+
+                                                                                  33/41
+Step 4: The causal efect of trade on GDP — Instrumental
+                   Variables estimates
+
+
+
+
+                                                          34/41
+Step 4: Estimating the causal efect of trade on GDP
+
+
+
+
+We have estimated the causal efect of ∆T on ∆Y
+
+ − We’ve estimated the causal efect of ASDD on ∆Y – not quite what we are after
+
+ − We believe that causal efect operates through ASDD′ s causal efect on ∆T
+
+ − We therefore need one more step to get that causal relationship
+
+
+
+
+                                                                                  35/41
+Step 4: Estimating the causal efect of trade on GDP
+
+ 1. Let’s write the causal efect of ∆T on ∆Y as
+
+                                 E [∆Yj |∆Tj ] = α + γ∆Tj
+
+ 2. We estimated the causal efect of ASDD on between 1960 and 1995 (frst stage)
+
+                        π1 = E [∆Tj |Aj = 1] − E [∆Tj |Aj = 0] > 0
+
+ 3. We compared change in incomes of ASDD High and Low countries (second stage)
+
+                          π2 = E [∆Yj |A = 1j ] − E [∆Yj |Aj = 0] .
+
+   Here, π2 is the causal efect of ASDD (not trade) on GDP
+
+                                                                                  36/41
+Step 4: Estimating the causal efect of trade on GDP
+
+We have one more step left...
+
+ 1. We estimated the causal efect of ASDD on between 1960 and 1995 (frst stage)
+
+                          π1 = E [∆T |A = 1] − E [∆T |A = 0] > 0
+
+ 2. We compared change in incomes of ASDD High and Low countries (second stage)
+
+                           π2 = E [∆Y |A = 1] − E [∆Y |A = 0] .
+
+   Here, π2 is the causal efect of ASDD (not trade) on GDP
+
+ 3. Now, estimate γ̂ using the estimated causal relationships between (1) ASDD and ∆T,
+    and (2) ASDD and ∆Y
+                                                                                   37/41
+Step 4 Estimating the causal efect of trade on GDP: IV method
+ 1. Causal efect of ASDD on Trade
+                                          E [∆Tj |Aj = 1] = α1 + π1
+                                          E [∆Tj |Aj = 0] = α1
+                       E [∆Tj |Aj = 1] − E [∆Tj |Aj = 0] = π1
+ 2. Causal efect of ASDD on GDP growth
+                                     E [∆Yj |Aj = 1] = α2 + π2
+                                          E [∆Yj |Aj = 0] = α2
+                       E [∆Yj |Aj = 1] − E [∆Yj |Aj = 0] = π2
+ 3. Substituting gives us expression for the causal efect of ASDD on GDP
+      E [∆Yj |Aj = 1] − E [∆Yj |Aj = 0]     =    π2
+                                            =    γ (E [∆Tj |Aj = 1] − E [∆Tj |Aj = 0])
+                                            =    γ × π1
+                                          π2 = γ × π1 −→ γ = π2 /π1
+                                                                                         38/41
+IV Algebra: Closing the loop
+
+
+
+ − Combining our two causal efects estimates, π1 and π2 , we can estimate the causal efect
+   of trade on income
+
+                    E [∆Yj |Aj = 1] − E [∆Yj |Aj = 0]   π2   π1 × γ
+                                                      =    =        = γ̂
+                    E [∆Tj |Aj = 1] − E [∆Tj |Aj = 0]   π1     π1
+
+
+ − We thus estimate the causal efect of trade on income by taking the ratio of the two
+   causal efects
+
+
+
+
+                                                                                      39/41
+Instrumental Variables Estimates
+
+
+
+
+                                   40/41
+    VOL. 11 NO. 4                                             FEYRER: TRADE AND INCOME                                                                23
+       VOL. 11 NO. 4                                         FEYRER: TRADE AND INCOME                                                         23
+The causal efect of trade on income: Key results  Table 4—Panel Estimates of Trade on Per Capita GDP
+
+                                      Table 4—Panel Estimates
+                                       Table 4—Panel EstimatesofofTrade
+                                                                   Tradeonon
+                                                                           PerPer   Capita
+                                                                                Capita
+                                                                            ln(real GDP GDP
+                                                                                        perGDP
+                                                                                            capita)
+                     VOL. 11 NO. 4                              FEYRER: TRADE AND INCOME                                         23
+                                                                                              IV— Gravity instruments
+                                                                                ln(real GDP
+                                                                                  ln(real
+                                                                                  CountryGDP
+                                                                                            perper
+                                                                                               capita)
+                                                                                          dummies  capita)           Pair dummies
+                                              Table 4—Panel Estimates of Trade on Per Capita GDP
+                                                          OLS                       IV— Pop
+                                                                         Trade weight     Gravity   instrumentsTrade weight
+                                                                                                 weight                      Pop weight
+                                                          (1)                 (2)      IV—    Gravity
+                                                                                                (3)     instruments
+                                                                   Country ln(real GDP per capita)
+                                                                              dummies                         Pair (4)
+                                                                                                                  dummies         (5)
+                     ln(trade)                  OLS                  Country
+                                                         0.446Trade weight      dummies
+                                                                            0.578
+                                                                                  IV—
+                                                                                 Pop   Gravity instruments
+                                                                                      weight  0.611 Trade weight    Pair dummies
+                                                                                                                    0.459 Pop weight
+                                                                                                                                   0.716
+                                                 (1)               (2)weight
+                                                        (0.041)Trade                 (3) weight
+                                                                           (0.082) Pop                       (4)
+                                                                                             (0.131) Pair dummies  (0.097)   (5)
+                                                                                                                               Pop(0.128)
+                                                                     Country dummies
+                                                OLS  OLS        Trade weight   Pop  weight        Trade     Trade
+                                                                                                        weight     weight
+                                                                                                                 Pop weight        weight
+       ln(trade)
+                     R2
+                                                 (1) (1) 0.965 0.578
+                                               0.446                 (2)
+                                                                    (2)            (3)
+                                                                                    0.611(3)          (4)
+                                                                                                           0.459 (4)(5)     0.716 (5)
+                     ln(trade)                (0.041)
+                                                    0.446           (0.082)
+                                                                      0.578            (0.131)
+                                                                                      0.611              0.459 (0.097) 0.716
+                                                                                                            ln(trade) (0.128)         (0.128)
+                                                   (0.041)            (0.082)    (0.131)          (0.097)
+    ln(trade)
+       R 2           First stage               0.446
+                                               0.9650.965             0.578            0.611                        0.459                   0.716
+                                           (0.041)                   (0.082) 0.993 (0.131)                         (0.097)                 (0.128)
+                      2
+                     R
+                     ln(predicted trade)                                                    0.731                      1.385                 1.353
+                                                                                (0.144)           (0.187)
+                                                                                                   ln(trade)
+                                                                                              ln(trade)               (0.251)       (0.296)
+    R2 First stage First stage F-statistic 0.965
+                   Instrument                                                   47.22            15.29                30.47        20.92
+                     ln(predicted 2
+                                 trade)                               0.993            0.731              1.385        1.353
+                   First-stage R
+       ln(predicted trade)                                          0.993
+                                                                     (0.144)     0.975   0.731 0.972(0.251) 1.385 (0.296)
+                                                                                      (0.187)                          0.973 1.353 0.972
+                     Instrument-partial R2
+                  Instrument F-statistic                           (0.144)
+                                                                    47.22
+                                                                                 0.170 (0.187) 0.067
+                                                                                     15.29                     (0.251) 0.100 (0.296) 0.080
+                                                                                                       ln(trade)
+                                                                                                       30.47            20.92
+                  First-stage R2                                      0.975           0.972             0.973            0.972
+    First stage
+       Instrument F-statistic
+                  Instrument-partial R2                            47.22
+                                                                      0.170           15.29
+                                                                                      0.067        ln(real   30.47
+                                                                                                           GDP
+                                                                                                        0.100   per capita)
+                                                                                                                      0.080       20.92
+                   2
+       First-stage R
+    ln(predicted  trade)
+                    Reduced form                                     0.975
+                                                                      0.993        0.972
+                                                                                      0.731             0.973
+                                                                                                            1.385                  0.972 1.353
+                                                                     (0.144) (0.116) (0.187)                  (0.251)         (0.296)
+                           2
+       Instrument-partial R
+                  ln(predicted trade)                                0.170         0.067GDP per
+                                                                            0.573 ln(real       capita) 0.100 0.636
+                                                                                            0.446                                  0.080 0.968
+                     Reduced form
+                                                                       0.573       0.446
+                                                                                             (0.130)0.636        (0.185)
+                                                                                                                  0.968
+                                                                                                                                (0.195)
+                     ln(predicted trade)
+    Instrument F-statistic
+                   Reduced-form R2                                   47.22
+                                                                      (0.116)         15.29
+                                                                                  (0.130)
+                                                                              0.947   ln(real GDP  (0.185)
+                                                                                              0.943per        30.47
+                                                                                                        capita)  (0.195)
+                                                                                                                  0.943       20.92
+                                                                                                                                 0.945
+       Reduced R2
+    First-stage form
+                   Instrument-partial
+                   Reduced-form  R2      R2                            0.975 0.1180.943
+                                                                       0.947            0.9720.052 0.943          0.044
+                                                                                                               0.973
+                                                                                                                  0.945          0.085
+                                                                                                                                0.972
+       ln(predicted trade)2
+                   Instrument-partial R2                             0.573
+                                                                       0.118         0.446
+                                                                                   0.052            0.044  0.636  0.085   0.968
+    Instrument-partial R
+                   Observations                              774       0.170
+                                                                    (0.116)     774     0.067
+                                                                                    (0.130)     774            0.100
+                                                                                                         (0.185)    774         0.080
+                                                                                                                         (0.195) 774
+                     Observations                      774              774           774          774          774
+                     Countries                               101                  101 101      101 101           101                            101
+       Reduced-form  R2
+                  Countries
+                  Years
+                                                       101
+                                                             10      0.947
+                                                                        101
+                                                                                  10 0.943              0.943 101                     0.945
+                  Years                                10               10            10 ln(real10
+                                                                                                 GDP10per capita)1010                           10
+       Instrument-partial R2                                         0.118              0.052                   0.044                 0.085
+    Reduced formNotes:    Standard
+                   Notes:Standard     errors
+                                   errors are are  clustered
+                                              clustered        by country.
+                                                         by country.          Regressions
+                                                                     Regressions are        are on
+                                                                                     on data at 5-yeardata at 5-year
+                                                                                                       intervals       intervals
+                                                                                                                 from 1950        from 1950 to 1995.
+                                                                                                                            to 1995.
+       Observations
+    ln(predicted  Regressions
+                 trade)
+                   Regressionsinclude
+                                includecountry   774
+                                               and
+                                           country  time
+                                                      anddummies.
+                                                          time dummies.774
+                                                                       0.573               774
+                                                                                            0.446                   7740.636          774 0.968            41/41
+       Countries
+       Years
+                                                 101
+                                                 10
+                                                                      (0.116)
+                                                                       101
+                                                                        10
+                                                                                           (0.130)
+                                                                                           101
+                                                                                            10
+                                                                                                                      (0.185)
+                                                                                                                    101
+                                                                                                                     10
+                                                                                                                                      101
+                                                                                                                                       10
+                                                                                                                                          (0.195)
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

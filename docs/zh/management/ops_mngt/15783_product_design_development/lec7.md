@@ -1,12 +1,11 @@
 ---
-title: '产品规格'
+title: 产品规格
 type: lecture
 lecture: 7
 tags: [product-specifications, target-specifications, qfd-matrix, engineering-metrics]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 7 产品规格
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  

@@ -1,0 +1,574 @@
+14.03/003 Micro Theory & Public Policy, Fall 2025
+
+
+Lecture 9. Gifen G oods a nd S ubsistence Consumption
+
+David Autor (Prof), MIT Economics and NBER
+
+
+
+
+Revised October 1, 2025
+       The missing link between
+Compensated ←→ Uncompensated Demand
+
+
+
+
+                                      1/26
+Case of a normal good
+
+                 px
+                              Normal Good
+
+                        Income Efect
+                          dx/dI > 0
+
+
+
+
+                                       dx
+
+
+                                       hx
+
+
+
+
+                                            Qx
+
+                                                 2/26
+Case of an inferior good
+
+                  px
+                                 Inferior Good
+
+                           Income Efect
+                             dx/dI < 0
+
+
+
+
+                                          hx
+
+
+                                          dx
+
+
+
+
+                                               Qx
+
+                                                    3/26
+Relationship between compensated and uncompensated demand
+
+
+Start with the following identity
+
+                             hx (px , py , U ) = dx (px , py , E(px , py , U ))
+
+Diferentiate this equality
+                                       ∂hx   ∂dx ∂dx ∂E
+                                           =     +
+                                       ∂px   ∂px   ∂I ∂px
+Rearrange
+                                       ∂dx   ∂hx ∂dx ∂E
+                                           =     −
+                                       ∂px   ∂px   ∂I ∂px
+
+But what is ∂p
+            ∂E
+               x
+                 ?
+
+
+                                                                                  4/26
+Shephard’s Lemma
+
+
+
+ − Shephard’s Lemma relates dx to the expenditure function.
+ − This helps to compute the magnitude of the income efect following a price change.
+ − How does it work?
+ − Recall the expenditure minimization problem that yields E(px , py , U ) :
+
+                                   min px X + py Y s.t. U (X, Y ) ≥ U .
+                                   X,Y
+
+
+
+
+                                                                                       5/26
+Shephard’s Lemma continued: Langragian
+
+The Lagrangian for this problem:
+
+                           L = px X + py Y + γ(U − U (X, Y )).
+First order conditions:
+                                   ∂L
+                                         = px − γUx = 0,
+                                   ∂X
+                                   ∂L
+                                         = py − γUy = 0,
+                                    ∂y
+                                   ∂L
+                                         = U − U (X, Y ).
+                                   ∂γ
+
+                                              px   py
+                                         γ=      =    .
+                                              Ux   Uy
+                                                                 6/26
+Shephard’s Lemma continued: Solution
+
+             dL(X, Y, γ)               ∂X        ∂X           ∂Y        ∂Y
+                           = X + px        − γUx       + py       − γUy
+                dpx                    ∂px       ∂px          ∂px       ∂px
+
+Recall the following equations from above:
+
+                                       px = γUx
+                                       py = γUy .
+
+Substituting in:
+                             ∂X       ∂X               ∂Y       ∂Y
+                      = X + px   − px           + py       − py
+                             ∂px      ∂px              ∂px      ∂px
+                      = X +0+0
+                      = X.
+                                                                              7/26
+That’s the envelope theorem at work
+Intuition for Shephard’s Lemma
+
+
+                                  ∂E(px , py , U )
+                                                   = hx (px , py , U )
+                                      ∂px
+
+ − To hold utility constant given a small price change in px at the optimally chosen x∗ , expenditures
+   must rise by the price change × the initial level of consumption, x∗
+
+ − Concretely, if you buy 2 cups of cofee a day and the price of cofee rises by $0.01 per cup, how
+   much do we need to compensate you to hold utility constant? To a frst approximation, 2 cents
+
+ − Shephard’s lemma holds only for a small price change. For a meaningful price change, the
+   consumer would re-optimize her bundle to re-equate the MRS with the new price ratio.
+
+ − Also see Roy’s identity, which will be useful for your p-set
+
+
+                                                                                                  8/26
+For self-study: Roy’s identity
+We can apply a similar trick to the indirect utility f’n
+ 1. Diferentiating the indirect utility f’n with respect to px yields
+
+                                   ∂V (px , py , I)/∂px = −γdx (px , py , I)
+
+    What’s the intuition?
+
+ 2. And recall, the marginal utility of income from the indirect utility function
+
+                                             ∂V (px , py , I)/∂I = λ
+
+
+ 3. Taking the ratio of these two expressions gives us Roy’s identity
+
+                                        ∂V (px , py , I)/∂px
+                                    −                        = dx (px , py , I)
+                                        ∂V (px , py , I)/∂I
+
+    Roy’s Identity is also an application of the envelope theorem.
+                                                                                    9/26
+Back to relationship btwn compensated and uncompensated demand
+Start with the following identity
+
+                             hx (px , py , U ) = dx (px , py , E(px , py , U ))
+
+Diferentiate this equality
+                                       ∂hx   ∂dx ∂dx ∂E
+                                           =     +
+                                       ∂px   ∂px   ∂I ∂px
+Rearrange
+                                       ∂dx   ∂hx ∂dx ∂E
+                                           =     −
+                                       ∂px   ∂px   ∂I ∂px
+But what is ∂p
+            ∂E
+               x
+                 ? Answer: it’s hx
+
+Finally, apply Shephard’s Lemma to get the Slutsky equation
+                                        ∂dx   ∂hx ∂dx
+                                            =     −    hx
+                                        ∂px   ∂px   ∂I
+                                                                                  10/26
+Slutsky equation
+
+The uncompensated demand response to a price change, ∂dx /∂px is:
+
+                                   ∂dx        ∂hx ∂dx ∂E
+                                         =        −
+                                   ∂px        ∂px   ∂I ∂px
+                                              ∂hx ∂dx
+                                         =        −    hx
+                                              ∂px   ∂I
+
+
+ 1. ∂hx /∂px : the compensated demand response...
+
+ 2. minus the income efect ∂d
+                           ∂I
+                             x
+
+
+
+ 3. times the efective change in income due to the price change, ∂p
+                                                                 ∂E
+                                                                   x
+                                                                     = hx .
+
+
+                                                                              11/26
+Summary: efect of price increase on Marshallian (uncomp) demand
+ 1. Normal good: Substitution efect negative, income efect negative
+                               ∂dx         ∂hx           ∂dx
+                                   =                 −       × hx < 0
+                               ∂px         ∂px           ∂I
+                                       Subst efect<0 Income efect<0
+
+
+ 2. Weakly inferior good: Substitution efect negative and dominant, income efect positive
+                               ∂dx         ∂hx           ∂dx
+                                   =                 −       × hx < 0
+                               ∂px         ∂px           ∂I
+                                       Subst efect<0 Income efect>0
+
+
+ 3. Strongly inferior (Gifen) good: Substitution efect negative, income efect positive and
+    dominant
+                               ∂dx        ∂hx        ∂dx
+                                    =              −      × hx > 0
+                               ∂px        ∂px         ∂I
+                                       Subst efect<0 Income efect≫0
+                                                                                             12/26
+ y
+       Income
+        Efect                    Normal Good
+I/py
+
+
+
+                      S
+
+                          C1
+
+                C2
+                               Substitution
+                                              U1
+                     U2          Efect
+
+
+
+
+                 I/px2              I/px1          x
+ y
+                    Inferior Good
+I/py
+
+       S
+            C1
+
+
+
+
+           C2
+
+
+
+
+            I/px2    I/px1     x
+ y
+                        Gifen Good
+I/py
+       S
+           C1
+
+
+
+
+                C2
+
+
+
+
+                I/px2       I/px1 x
+The brutal economics of subsistence consumption—
+              Evidence from China
+             Jensen and Miller 2008
+
+
+
+
+                                                   16/26
+Gifen goods and subsistence consumption
+
+
+
+
+ − Economists have been looking for evidence of Gifen goods for at least nine decades
+ − But really, why should we care?
+      1. Might illustrate the fundamental power of the theory: From fve behavior axioms to a
+         strongly counterintuitive behavioral prediction that might just be correct
+
+      2. Might illuminate something important about decision-making under extreme poverty
+
+
+
+
+                                                                                               17/26
+When would income efects overwhelm substitution efects?
+That is, when does a price rise increase demand?
+
+
+
+
+ − Households are poor enough that they face subsistence nutrition concerns
+
+ − Households consume a very simple diet, including a basic (staple) and a fancy good
+
+ − The basic good is...
+
+      □   ...the cheapest source of calories available
+      □   ...comprises a large part of the diet/budget
+      □   ...has no ready substitute
+
+
+
+
+                                                                                        18/26
+Gifen goods and nutritional subsistence
+  VOL. 98 NO. 4     JENSEN AND MILLER: GIFFEN BEHAVIOR AND SUBSISTENCE CONSUMPTION                        1557
+
+
+  'BODZ                   1BOFM"                          'BODZ                  1BOFM#
+   HPPE                                                     HPPE
+  NFBU                                                     NFBU
+                                      4VCTJTUFODF[POF                                      4VCTJTUFODF[POF
+
+                                        4UBOEBSE[POF                                        4UBOEBSE[POF
+
+
+
+
+                                      4UBQMFHPPE CSFBE                                    4UBQMFHPPE CSFBE 
+            $BMPSJFEFQSJWFE[POF                                 $BMPSJFEFQSJWFE[POF
+
+
+                                     Figure 1. Zones of Consumer Preferences
+                                                                                                               19/26
+Incredible progress in poverty reduction in China, 1981–2020
+
+
+
+
+                                                               20/26
+Much of world poverty reduction since 1990 is due to China
+
+
+
+
+                                                             21/26
+Understanding subsistence poverty in China in the early 2000s
+
+
+In 2000, only 25 years ago, about 45% of Chinese lived in extreme poverty
+ − The experimental sample included 644 randomly selected urban poor households in Hunan
+   province (about 1,800 people) in the early 2000s
+
+ − Urban poor households had incomes averaging $0.41 to $0.82 per person per day
+
+ − At the time of the study, about 90 million Chinese households met this defnition of poverty
+
+ − The diet among the poor is very simple, consisting mostly of rice, plus some pork and other meat
+
+ − Most consumers in the sample obtained 70% of total calories from rice alone
+
+
+
+
+                                                                                                 22/26
+            Table 3. Daily Consumption Per Capita and Calorie Shares for Food Categories
+Poor households in Hunan province get most calories from rice
+                                                                         HUNAN                                                                    G
+                                                           Consumption (g)     Calorie Share                                        Consumption (g)
+
+            Rice                                                      330                              0.64                                    35
+                                                                   [125.4]                           [0.17]                                  [69.5]
+            Wheat                                                      42                              0.08                                   344
+                                                                    [60.2]                           [0.12]                                 [134.3]
+            Other Cereals                                              1.5                             0.00                                    4.2
+                                                                    [21.3]
+            Table 3. Daily Consumption Per Capita and Calorie Shares for Food Categories
+                                                                                                    [0.022]                                  [24.2]
+            Vegetables and fruit                                       341                             0.05                                   232
+                                                   HUNAN
+                                                                   [194.6]                   GANSU
+                                                                                                    [0.044]                                 [141.6]
+            Meat (incl. eggs)Consumption (g)                           47
+                                                           Calorie Share       Consumption (g)         0.07
+                                                                                                   Calorie Share                               13
+            Rice                            330                     [68.6]
+                                                                 0.64                 35             [0.11]
+                                                                                                        0.07                                 [30.1]
+                                         [125.4]                [0.17]              [69.5]             [0.13]
+            Pulses
+            Wheat                           42                   0.08 62             344               0.02
+                                                                                                        0.69                                   36
+            Other Cereals
+                                          [60.2]
+                                            1.5                    [102.3]
+                                                                [0.12]
+                                                                 0.00
+                                                                                   [134.3]
+                                                                                      4.2           [0.043]
+                                                                                                       [0.17]
+                                                                                                        0.01                                 [68.1]
+            Dairy
+            Vegetables and fruit
+                                          [21.3]
+                                            341
+                                                               [0.022]
+                                                                 0.05
+                                                                        1           [24.2]
+                                                                                     232
+                                                                                                       0.00
+                                                                                                      [0.050]
+                                                                                                        0.07
+                                                                                                                                               19
+                                         [194.6]                     [7.4]
+                                                               [0.044]             [141.6]         [0.0031]
+                                                                                                      [0.045]                                [56.6]
+            Meat (incl. eggs)                47                  0.07                 13                0.01
+            Fats                          [68.6]                [0.11] 26           [30.1]             0.13
+                                                                                                      [0.037]                                  23
+            Pulses                           62                  0.02                 36                0.02
+                                         [102.3]                    [20.4]
+                                                               [0.043]              [68.1]          [0.095]
+                                                                                                      [0.056]                                [16.3]
+            Calories
+            Dairy                             1
+                                           [7.4]
+                                                                 0.00
+                                                                     1805
+                                                              [0.0031]
+                                                                                      19
+                                                                                    [56.6]                --
+                                                                                                        0.01
+                                                                                                      [0.039]                                 1710
+            Fats                             26
+                                          [20.4]
+                                                                   [591.7]
+                                                                 0.13
+                                                               [0.095]
+                                                                                      23
+                                                                                    [16.3]
+                                                                                                        0.13
+                                                                                                      [0.090]
+                                                                                                                                            [517.4]
+            Calories                        1805                  --                 1710                  --
+                                           [591.7]                                  [517.4]
+            Observations                                                   644                                         644                           649
+            Observations                            644                644                    649                      649
+            Notes:
+            Notes:        Standard
+                   Standard                 deviations
+                              deviations in brackets.           in figures
+                                                                   brackets.
+                                                       All consumption     are in All  consumption
+                                                                                  grams per capita.             figures
+                                                                                                    Calorie share is the      are
+                                                                                                                         percent      in grams per capita.
+                                                                                                                                 of total                  Calor
+                                                                                                                                                        23/26
+            calories attributable to the particular food category.
+            calories attributable to the particular food category.
+Does subsidizing pr cause HH’s to eat less rice?
+ 1. Households randomly assigned to a control group or one of three treatment groups
+
+ 2. HH’s in the treatment group were given printed vouchers entitling them to price reductions of
+    0.10, 0.20 or 0.30 yuan of the price of each 500g (1 jin) of rice, the staple good. This is a price
+    subsidy
+
+ 3. Treated households received vouchers for 5 months. Vouchers distributed at the beginning of
+    each month, valid till the end of the experiment
+
+ 4. The vouchers were for large quantities, amounting to 750g (1.6Lb) per person per day for each
+    month of treatment. Households unlikely to use their full quotas
+
+ 5. As far as the household is concerned, voucher is equivalent to a price reduction in the staple good
+    with no quantity constraint
+
+ 6. How should a subsidy that reduces households’ cost of purchasing rice afect their
+    demand for rice?
+                                                                                                    24/26
+Experimental estimates of rice subsidy: Efect of ∆pr on ∆Qr
+                          Table 3—Consumption Response to the Price Subsidy: Hunan
+                      Dependent variable: %∆Rice consumption
+     ISCS = Share of Household’s Calories from Rice
+                                        Dependent         (“Initial Staple Calorie Share”)
+                                                  variable: Rice                        Dependent variabl
+                                                                                               ISCS               Initia
+                        Full sample Full sample ISCS #0.80 ISCS #0.80 ISCS .0.80 ISCS .0.80 0.60−0.80 Full sample     .
+                             (1)         (2)        (3)        (4)        (5)        (6)        (7)        (8)
+        %∆Price(rice)      0.224      0.235*    0.451***   0.466***    20.61**    20.585**      0.640*** 20.325        21
+                          (0.149)    (0.140)   (0.170)    (0.159)      (0.296)     (0.262)     (0.192)    (0.472)       (0
+        %∆ Earned                     0.043***             0.047***                 0.024       0.030       0.028        0
+                                     (0.014)              (0.016)                  (0.023)     (0.019)     (0.050)      (0
+        %∆Unearned                  20.044*              20.038                   20.058      20.053*       0.061        0
+                                     (0.025)              (0.030)                  (0.049)     (0.030)     (0.079)      (0
+        %∆People                      0.89***              0.83***                  1.16***     0.79*** 20.08            0
+                                     (0.08)               (0.09)                   (0.15)      (0.14)      (0.27)       (0
+        Constant                      4.1***               5.7***                 21.8          0.8      212.3*** 249
+                                     (1.0)                (1.1)                    (1.7)       (1.3)       (3.1)        (3
+        Observations      1,258       1,258        997     997           261         261         513        997           4
+        R2
+                                                                                                                 25/26
+                           0.08       0.19         0.09    0.20          0.15        0.33        0.24      0.09          0
+Household demand  forNO.
+             VOL. 98  rice
+                         4 in Hunan province:
+                              JENSEN AND      ∂Qr
+                                         MILLER:   /∂pr BEHAVIOR AND SUBSIS
+                                                 GIFFEN
+Notice ‘Gifen region’ ≈ (0.40, 0.75) where demand is upward sloping
+                                                                          
+
+                                                                          
+
+                                                                          
+
+
+                                                                         
+
+
+                                                                         
+                                           )6/"/
+                                                                         
+                                                                          
+                                 )PVTFIPMETUBQMFDBMPSJFTIBSF                          )PVTFI
+
+                                                            Figure 2.
+    Poorest households on left, poor household in middle, non-poor    Coefficient
+                                                                   households     Plots 26/26
+                                                                               on right
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

@@ -1,0 +1,810 @@
+Revised October 8, 2025
+
+
+
+
+14.03/003 Micro Theory & Public Policy, Fall 2025
+
+
+Lecture slides 10. Market equilibrium — A frst application
+
+David Autor (Prof), MIT Economics and NBER
+Market Equilibrium
+
+
+
+
+                     1/44
+Consumer demand vs. market demand
+
+
+ − To develop consumer theory, we’ve analyzed the choices of individuals who take prices and
+   income (or utility) as given (exogenous) when making optimizing decisions
+
+ − But where do prices come from?
+
+ − Where does income come from?
+
+ − We’re going to answer those questions in two steps
+
+      1. How do prices emerge in a market for a single good, taking incomes as given. This is partial
+         equilibrium applied competitive analysis
+      2. How are prices and incomes determined simultaneously. This is general equilibrium
+         competitive analysis
+
+
+                                                                                                  2/44
+Consumer demand and market demand
+
+
+
+
+ − The next two lectures will focus on partial equilibrium competitive analysis
+
+ − The following two lectures will take it to the next level: general equilibrium competitive
+   analysis
+
+ − Material from both topics will appear on P-Set #3
+
+
+
+
+                                                                                                3/44
+           Labor market equilibrium
+Wage
+
+
+
+
+                                        S1
+
+
+
+
+ w∗
+
+
+
+
+                                        D1
+
+
+
+
+       0                 L∗              Employment
+
+
+             w∗ : Ls (w∗ ) = Ld (w∗ )
+                                                      4/44
+Properties of the equilibrium wage
+
+ 1. The wage is the market clearing price of labor
+      □   w∗ is not the average product of the workers who are employed
+      □   w∗ is also not the average reservation wage of the workers who are employed
+      □   The wage could potentially be as high as the y-intercept of the demand curve
+      □   The wage could potentially be as low as the y-intercept of the supply curve
+
+ 2. The wage is the solution to two equivalent optimization problems
+      □ Constrained maximization (primal): maximize the wage subject to every worker who wants
+        to work is able to fnd a job
+      □ Constrained minimization (dual): minimize the wage subject to the constraint that every
+        frm that wants to fnd a worker at that wage can fnd one
+
+ 3. The competitive, decentralized equilibrium in this (idealized) labor market is Pareto efcient
+                                                                                                    5/44
+Where do prices come from?
+
+Questions that have puzzled philosophers of Coke and gasoline for millennia
+ − Why does a gallon of water cost less than a gallon of gas—even though water is surely more
+   essential?
+
+ − Why does a gallon of Coke (usually) cost more than a gallon of gas—even though Coke is mostly
+   water?
+
+The marginal revolution
+ − Prices are set at the margin: Prices refect marginal willingness to pay (AKA, marginal value to
+   consumer) not average willingness to pay
+ − The price for something that is essential to life can be very low if that thing is abundant, so
+   marginal utility value is low
+
+ − The price for something that is inessential to life can be quite high if that thing is scarce, so
+   marginal utility value is high
+                                                                                                       6/44
+Topics today
+
+
+
+ 1. The incidence of a tarif or tax
+
+ 2. Taxation and salience: Experimental evidence on how taxation afects behavior in
+   everyday life
+
+ 3. Taxation and salience: Quasi-experimental evidence from comparing the efects of
+   sales taxes versus excise taxes
+
+ 4. Taxation, compensation, and the shaping of (distorting, correcting) consumer
+   choice (theory)
+
+
+                                                                                   7/44
+Who really pays that tax or tarif?
+
+    The question of incidence
+
+
+
+
+                                     8/44
+The US-China Trade War, 2018–2023
+
+
+
+
+© PIIE. All rights reserved. This content is excluded from our Creative
+Commons license. For more information, see                                9/44
+https://ocw.mit.edu/help/faq-fair-use/
+Who should pay that tarif (tax)?
+
+
+
+Is it unfair that some taxes are placed on consumers and others on producers?
+ − Shouldn’t oil companies pay taxes on gas, not consumers?
+ − Doesn’t taxing workers for their labor income penalize work? Why not tax employers instead?
+
+To answer this question analytically, we need to ask who bears the incidence of a tax
+ − Incidence—the distribution of the economic burden of a tax
+
+ − On whom does the incidence of a tax fall, and why?
+
+
+
+
+                                                                                                 10/44
+Product market equilibrium: No tarif
+Price
+
+
+
+
+                                   S1
+
+
+
+
+  p∗
+
+
+
+
+                                   D1
+
+
+
+
+        0             Q∗                Quantity
+
+
+
+            p∗ : S(p∗ ) = D(p∗ )
+                                                   11/44
+Imposing an income tax τ on importers (sellers)
+
+
+
+ − Importers must pay a tax of τ > 0 to the government on unit imported
+
+ − We can solve for the new equilibrium with the tarif in place:
+
+                                         pτ : S(pτ − τ ) = D(pτ )
+
+
+ − (It is more realistic to assume that importers pay a proportional tax, e.g., τ % of the price. But
+   this setup makes the fgures and algebra messy—unless we transform everything into logs, which
+   most people fnd confusing. So please go with this simplifcation.)
+
+
+
+
+                                                                                                  12/44
+Product market equilibrium: Importers (sellers) pay tarif τ
+               Price
+
+                                                        S2
+
+
+
+                                                             S1
+
+
+
+                pτ                   Tax eq.
+
+
+
+           τ     p∗                            No tax eq.
+
+
+
+          (pτ − τ )
+
+
+
+                                                             D1
+
+
+
+
+                       0           Qτ     Q∗                      Quantity
+
+
+
+                           pτ : S(pτ − τ ) = D(pτ )
+                                                                             13/44
+Some questions
+
+
+
+
+ 1. Will frm raise price from p∗ to p∗ + τ ?
+
+ 2. Will consumer cost net of tarif fall from p∗ to p∗ − τ ?
+
+ 3. Will equilibrium quantity consumed fall, rise, stay the same, or is this indeterminate?
+
+ 4. What are the welfare consequences of the tarif?
+
+
+
+
+                                                                                              14/44
+Imposing tarif tax τ on consumers
+
+
+
+
+ − Instead of frms, consumers (buyers) must pay a tarif of τ > 0 in addition to price
+
+ − We can solve for the new equilibrium with the buyer-side tarif in place:
+
+                                        pτc : S(pcτ ) = D(pτc + τ )
+
+
+
+
+                                                                                        15/44
+Product market equilibrium: Consumers pay the tarif
+             Price
+
+
+
+
+                                                                 S1
+
+       (Pcτ + τ )
+
+
+
+         τ     p∗                                   No tax eq.
+
+
+
+              Pcτ                         Tax eq.
+
+
+
+                                                                      D1
+
+
+
+                                                            D2
+
+
+                     0               Qτ        Q∗                     Quantity
+
+
+
+                         pτ : S(pτc ) = D(pτc + τ )
+                                                                                 16/44
+Equivalence between placing tarifs on sellers versus buyers
+
+
+ − It must be the case that
+
+
+                                               pτc + τ =pτ
+                                               pτ − τ =pcτ
+
+
+ − Whether the tax is placed on buyers or sellers, the equilibrium price is the same
+ − The gap between what the buyer pays what the seller receives is τ , no matter who nominally pays
+   the tax
+ − Who ultimately pays the tax—the incidence of τ on buyers versus sellers—depends on the
+   interaction between the supply and demand curves
+
+                                                                                               17/44
+Reminder: The US-China Trade War, 2018–2023
+
+
+
+
+© PIIE. All rights reserved. This content is excluded from our
+Creative Commons license. For more information, see              18/44
+https://ocw.mit.edu/help/faq-fair-use/
+The Trump Administration’s 2018 washing machine tarifs
+
+
+
+
+                                                         21/44
+Substitution towards Chinese washers just before tarifs took efect
+More imports of Vietnamese, Korean, and Thai washers during the tarifs
+
+
+
+
+                                                                         23/44
+Comparing price index for all consumer prices, washers, and dryers
+
+
+
+
+                                                                     25/44
+Tarif ‘spillovers’ afected dryers, but not most household appliances
+
+
+
+
+                                                                       26/44
+“Salience and Taxation: Theory and Evidence”
+       Chetty, Looney, and Kroft (2009)
+
+       Part I: The salience experiment
+
+
+
+
+                                               27/44
+ Adding post-tax prices to shelved items
+
+
+
+
+© American Economic
+Association. All rights
+reserved. This content is
+excluded from our
+Creative Commons
+license. For more
+information, see https://
+ocw.mit.edu/help/faq-
+fair-use/
+                                           28/44
+Are Harvard students aware of sales taxes?
+
+
+
+     “We showed the students a photograph of taxable products on the shelf at
+     the grocery store similar to that in Exhibit 1. We distributed surveys asking
+     each student to choose two goods and write down “the total bill due at the
+     register for these two items.” We frst showed the photograph with the regular
+     tags displaying only the pretax prices. After collecting the survey responses, we
+     showed a second photograph of products with our tax-inclusive price tags and
+     asked students to repeat the exercise.”
+
+
+ © American Economic Association. All rights reserved. This content is excluded from our Creative Commons license. For more
+ information, see https://ocw.mit.edu/help/faq-fair-use/
+                                                                                                                         29/44
+    N = 49
+Are Panel
+     Harvard students aware
+    1152 B. Grocery store survey
+                                        of sales taxes?
+                                 THE AMERICAN ECONOMIC REVIEW                                                   SEPTEMBER 2009
+    Local sales tax rate                                            7.48           7.39                              0.80
+       (Actual rate is 7.375 percent) Table 1— Survey Evidence: Summary Statistics
+    Fraction correctly reporting tax status
+       All items                                                   0.82            1.00                                0.38
+                                                                                                                      Standard
+       Beer                                                        0.90
+                                                                    Mean           1.00
+                                                                                   Median                              0.30
+                                                                                                                      deviation
+       Cigarettes
+     Panel   A. Classroom survey                                   0.98            1.00                                0.15
+       Cookies                                                     0.65            1.00                                0.48
+     Original
+       Magazinesprice tags:                                        0.87            1.00                                0.34
+        Correct tax-inclusive price w/in $0.25
+       Milk                                                          0.18
+                                                                   0.82             0.00
+                                                                                   1.00                                 0.39
+                                                                                                                       0.38
+       Potatoes
+     Experimental price tags:                                      0.81            1.00                                0.39
+       Soda
+        Correct tax-inclusive price w/in $0.25                     0.76
+                                                                     0.75          1.00
+                                                                                    1.00                               0.43
+                                                                                                                        0.43
+       Toothpaste                                                  0.80            1.00                                0.40
+     t-test for equality of means: p < 0.001
+    NN==91
+         49
+     Panel B.
+    Notes:      Grocery
+            Panel                 summary statistics for a survey of 49 students who were shown regular (non-tax-inclusive)
+                            store survey
+                     A reports
+    price
+     Localtax   andtax
+            sales          experimental (tax-inclusive) price tags. Statistics shown
+                      therate                                                     7.48 are for an indicator
+                                                                                                     7.39 for whether 0.80
+                                                                                                                        individual
+        (Actual
+    reported   total
+                  ratebill withinpercent)
+                        is 7.375   25 cents of total tax-inclusive price. See Web Appendix Exhibit 1 for survey instrument. Panel
+    B reports summary statistics for a survey of 91 customers at the treatment grocery store. See Web Appendix Exhibit 2
+     Fraction
+    for surveycorrectly
+                 instrument.reporting tax status
+        All items                                                                 0.82               1.00              0.38
+        Beer                                                                      0.90               1.00              0.30
+    twoCigarettes
+          “control” groups. We define the treatment group as 0.98                                    1.00
+                                                                                   products that belong                0.15
+                                                                                                            to theChetty,
+                                                                                                                     cosmetics,
+                                                                                                                          Looney, Kroft 2009
+        Cookies                                                                   0.65               1.00              0.48
+    hair  care
+        Magazines accessories,       or deodorants       product   groups    in the store
+                                                                                  0.87     where   we   conducted
+                                                                                                     1.00            the  experi- 30/44
+                                                                                                                       0.34
+Are grocery store customers aware of sales taxes? Survey evidence
+
+
+
+
+                                                                    31/44
+DescriptiveVOL.statistics:
+                 99 NO. 4  Tax    salience
+                           CHETTY ET AL.: SALIENCEexperiment
+                                                   AND TAXATION: THEORY AND EVIDENCE                                                 1153
+
+                                              Table 2— Grocery Experiment: Summary Statistics
+
+                                                                    Treatment store               Control stores              Total
+                                                                Treatment     Control         Treatment     Control        All stores
+                                                                 products     products         products     products      and products
+                                                                    (1)          (2)              (3)          (4)             (5)
+               Panel A. Category-level statistics
+               Weekly quantity sold                               25.08         26.63           27.84         30.64           29.01
+                per category                                     (24.1)        (38.1)          (27.4)        (47.0)          (42.5)
+               Weekly revenue                                    $97.85      $136.05          $107.04      $154.66          $143.10
+                per category                                     (81.9)       (169.9)          (92.3)      (207.7)          (187.1)
+
+               Number of categories                                 13           95               13           95              108
+               Panel B. Product-level statistics
+               Pre-tax product price                              $4.46        $6.26            $4.52        $6.31            $6.05
+                                                                   (1.8)       (4.3)             (1.7)       (4.2)            (4.1)
+               Pre-tax product price                              $4.27        $5.61            $4.29        $5.59            $5.45
+                 (weighted by quantity sold)                       (1.7)       (3.9)             (1.6)       (3.8)            (3.7)
+               Weekly quantity sold                                 1.47         1.82             1.61         1.98             1.88
+                 per product (conditional > 0)                    (0.9)         (1.6)            (1.1)        (1.9)            (1.7)
+
+               Notes: Statistics reported are means with standard deviations in parentheses. Statistics are based on sales between 2005
+               week 1 and 2006 week 15. Data source is scanner data obtained from a grocery chain. The “treatment store” is the store
+               where the intervention took place; the “control stores” are two nearby stores in the same chain. “Treatment products”
+               are cosmetics, hair care accessories, and deodorants. “Control products” are other toiletries located in the same aisles;
+               see Web Appendix Table 2 for complete list. Product price reflects actual price paid, including any discount if product
+               is on sale. See Web Appendix A for data sources and sample definition.                                                       32/44
+Dif-in-Dif and Dif-in-Dif-in-Dif (‘Triple-Dif’) estimates
+             1154                             THE AMERICAN ECONOMIC REVIEW                                    SEPTEMBER 2009
+
+                       Table 3— Effect of Posting Tax-Inclusive Prices: DDD Analysis of Mean Quantity Sold
+
+             Period                                          Control categories      Treated categories         Difference
+             Panel A. Treatment store
+             Baseline (2005:1–2006:6)                              26.48                   25.17                  −1.31
+                                                                    (0.22)                 (0.37)                  (0.43)
+                                                                   [5,510]                  [754]                 [6,264]
+             Experiment (2006:8–2006:10)                           27.32                   23.87                 −3.45
+                                                                    (0.87)                 (1.02)                 (0.64)
+                                                                    [285]                    [39]                  [324]
+             Difference over time                                    0.84                 −1.30                DDTS = −2.14
+                                                                    (0.75)                 (0.92)                 (0.68)
+                                                                   [5,795]                  [793]                [6,588]
+             Panel B. Control stores
+             Baseline (2005:1–2006:6)                              30.57                   27.94                   -2.63
+                                                                   (0.24)                   (0.30)                 (0.32)
+                                                                  [11,020]                 [1,508]                [12,528]
+             Experiment (2006:8–2006:10)                           30.76                   28.19                −2.57
+                                                                   (0.72)                   (1.06)               (1.09)
+                                                                    [570]                    [78]                [648]
+             Difference over time                                    0.19                    0.25              DDCS = 0.06
+                                                                   (0.64)                   (0.92)                 (0.95)
+                                                                  [11,590]                 [1,586]                [13,176]
+             DDD Estimate                                                                                         −2.20
+                                                                                                                   (0.59)
+                                                                                                                  [19,764]
+
+             Notes: Each cell shows mean quantity sold per category per week, for various subsets of the sample. Standard errors
+             (clustered by week) in parentheses, number of observations in square brackets. Experimental period spans week 8 in
+             2006 to week 10 in 2006. Baseline period spans week 1 in 2005 to week 6 in 2006. Lower panel reflects averages across   33/44
+             the two control stores.
+Efect of tax1156salience on THE AMERICAN
+                           consumption:         Regression estimates
+                                         ECONOMIC REVIEW      SEPTEMBER 2009
+
+                                    Table 4—Effect of Posting Tax-Inclusive Prices: Regression Estimates
+
+                                                  Quantity per      Revenue per    Log quantity per    Quantity per    Quantity (treat.
+                                                   category         category ($)      category          category       categories only)
+               Dependent variable                     (1)                (2)              (3)              (4)                (5)
+               Treatment                           −2.20             −13.12           −0.101            −2.27              −1.55
+                                                    (0.60)             (4.89)           (0.03)           (0.60)             (0.35)
+               Average price                       −3.15              −3.24                             −3.04             −15.06
+                                                    (0.26)             (1.74)                            (0.25)             (3.55)
+               Average price squared                 0.05               0.06                              0.05               1.24
+                                                    (0.00)             (0.03)                            (0.00)             (0.34)
+               Log average price                                                        −1.59
+                                                                                         (0.11)
+               Before treatment                                                                           −0.21
+                                                                                                           (1.07)
+               After treatment                                                                              0.20
+                                                                                                           (0.78)
+               Category, store, week FEs                x                 x                x                  x                x
+
+               Sample size                           19,764            19,764            18,827           21,060             2,379
+
+               Notes: Standard errors, clustered by week, reported in parentheses. All columns report estimates of the linear regression
+               model specified in equation (4). Quantity and revenue reflect total sales of products within a given category per week in
+               each store. Average price is a weighted average of the prices of the products for sale in each category using a fixed bas-
+               ket of products (weighted by total quantity sold) over time. In column 3, observations are weighted by total revenue by
+               category-store. Specification 4 includes “placebo” treatment variables (and their interactions) for the three-week period
+               before the experiment and the three-week period after the experiment. Specification 5 reports DD estimates restricting
+               the sample to treatment product categories only (at both treatment and control stores). In this specification, the “treat-
+               ment” variable is defined as the interaction between the treatment store dummy and treatment time dummy.                     34/44
+“Salience and Taxation: Theory and Evidence”
+       Chetty, Looney, and Kroft (2009)
+
+   Part II: Sales taxes versus excise taxes
+
+
+
+
+                                               35/44
+Sales taxes versus excise taxes
+
+
+
+
+ − Sales tax: Paid at the point of sale. Not listed on the price tag
+
+ − Excise tax: Charged ahead of time to the seller and hence implicitly included in the price (and
+   hence on the price tag)
+
+
+
+
+                                                                                                36/44
+SummaryVOL. 99 NO.
+         statistics:
+                   4 Beer   consumption,
+                     CHETTY ET AL.: SALIENCE        excise
+                                             AND TAXATION:    taxes,
+                                                           THEORY       and sales 1159
+                                                                  AND EVIDENCE     taxes
+                    Table 5— Summary Statistics for State Beer Consumption, Taxes, and Regulation
+
+                   Per capita beer consumption (cans)                                                    243.2
+                                                                                                         (46.1)
+                   State beer excise tax ($/case)                                                         0.51
+                                                                                                         (0.50)
+                   State beer excise tax (percent)                                                         6.5
+                                                                                                          (8.2)
+                   Sales tax (percent)                                                                     4.3
+                                                                                                          (1.9)
+                   Drinking age is 21                                                                     0.73
+                                                                                                         (0.44)
+                   Drunk driving standard                                                                 0.65
+                                                                                                         (0.47)
+                   Any alcohol regulation change                                                          0.19
+                                                                                                         (0.39)
+
+                   N (number of state-year pairs)                                                         1,666
+
+                   Notes: Statistics reported are means with standard deviations in parentheses. Observations
+                   are by state for each year from 1970 to 2003. “Drinking age is 21” is an indicator for whether
+                   the state-year has a legal drinking age of 21. “Drunk driving standard” indicates state-year
+                   has a threshold blood alcohol content level above which one is automatically guilty of drunk
+                   driving. “Any alcohol regulation change” is a dummy variable equal to one in any year where
+                   a state has raised the drinking age or implemented a stricter drunk driving standard, an
+                   administrative license revocation law, or a zero tolerance youth drunk driving law. See Web      37/44
+                   Appendix A for data sources and sample definition.
+Regression estimates:
+            1162      BeerTHEconsumption,           excise taxes,SEPTEMBER
+                              AMERICAN ECONOMIC REVIEW              and sales
+                                                                           2009 taxes
+                                       Table 6— Effect of Excise and Sales Taxes on Beer Consumption
+
+                                                        Baseline        Business cycle          Alcohol regulations     Region trends
+                                                           (1)                (2)                       (3)                  (4)
+              Dependent variable: Change in log (per capita beer consumption)
+              ∆ log (1 + excise tax rate)                  −0.88                −0.91                 −0.89                −0.71
+                                                            (0.17)               (0.17)                (0.17)               (0.18)
+              ∆ log (1 + sales tax rate)                   −0.20                −0.01                 −0.02                −0.05
+                                                            (0.30)               (0.30)                (0.30)               (0.30)
+              ∆ log (population)                             0.03               −0.07                 −0.07                −0.09
+                                                            (0.06)               (0.07)                (0.07)               (0.08)
+              ∆ log (income per capita)                                           0.22                  0.22                 0.22
+                                                                                 (0.05)                (0.05)               (0.05)
+              ∆ log (unemployment rate)                                         −0.01                 −0.01                −0.01
+                                                                                 (0.01)                (0.01)               (0.01)
+              Alcohol regulation controls                                                                 x                    x
+              Year fixed effects                               x                    x                     x                    x
+              Region fixed effects                                                                                             x
+              F-test for equality of tax                     0.05                 0.01                  0.01                 0.06
+                elasticities (prob > F )
+
+              Sample size                                   1,607                 1,487                1,487                 1,487
+
+              Notes: Standard errors, clustered by state, in parentheses. All specifications are estimated on full sample for which data
+              are available (state unemployment rate data are unavailable in early years). Column 3 includes three indicators for whether
+              the state implemented per se drunk driving standards, administrative license revocation laws, or zero tolerance youth
+              drunk driving laws, and the change in the minimum drinking age (measured in years). Column 4 includes fixed effects for
+              each of nine census regions. F-test tests null hypothesis that coefficients on excise and sales tax rate variables are equal.   38/44
+Consumption responses to sales taxes – Visual evidence                   Figure 2A. Per Capita Beer Consumption and State Beer Excise Taxes
+
+
+
+
+                                                                 0.1
+
+
+
+
+                    Change in log per capita beer consumption
+                                                                0.05
+
+
+
+
+                                                                  0
+
+
+
+
+                                                                –0.05
+
+
+
+
+                                                                 –0.1
+                                                                       –0.02      –0.015   –0.01   –0.005       0        0.005      0.01   0.015   0.02
+
+                                                                                                   Change in log (1 + sales tax rate)
+
+
+                                                                               Figure 2B. Per Capita Beer Consumption and State Sales Taxes
+
+                                        Notes: These figures plot within-state annual changes in beer consumption against within-state
+                                        changes in gross-of-tax-prices (1 + t E and 1 + t S ). To construct Figure 2A, we round each state
+                                        excise tax change to the nearest tenth of a percent (0.1 percent), and compute the mean change in
+                                        log beer consumption for observations with the same rounded excise tax change. Figure 2A plots
+                                        the mean consumption change against the rounded excise tax rates. Figure 2B is constructed
+                                        analogously, rounding sales tax changes to the nearest 0.1 percent. See Web Appendix A for data
+                                        sources and sample definition.
+                                                                                                                                                          39/44
+             beer consumption; on average, beer consumption falls by only 0.5 percent when one of the four
+Consumption    responses
+      VOL. 99 NO. 4
+                          to excise taxes – Visual evidence
+                      CHETTY ET AL.: SALIENCE AND TAXATION: THEORY AND EVIDENCE                                                                               1161
+
+                                                               0.1
+
+
+
+
+                 Change in log per capita beer consumption
+                                                              0.05
+
+
+
+
+                                                                0
+
+
+
+
+                                                             –0.05
+
+
+
+
+                                                              –0.1
+                                                                     –0.02   –0.015   –0.01    –0.005        0       0.005      0.01   0.015   0.02
+
+                                                                                              Change in log (1 + beer excise rate)
+
+
+
+                                                                       Figure 2A. Per Capita Beer Consumption and State Beer Excise Taxes
+
+                                                                                                                                                                          40/44
+                                                                                                                                                      Chetty, Looney, Kroft 2009
+ Taxation, compensation, and shaping
+(distorting, correcting) consumer choice
+
+
+
+
+                                           41/44
+Using taxes to change behavior without making people poorer
+
+
+ − Taxes are often used intentionally to change behavior — e.g., burn less fossil fuel, drink fewer
+   sugar-sweetened beverages (SSBs), not drive during rush hour, or run their energy-intensive
+   appliances at non-peak hours
+ − E.g., gas taxes, SSB taxes, time-varying road tolls, time-of-day energy pricing
+ − But this creates a conundrum: Lower income individuals and households spend a larger share of
+   their budgets on these necessities. So these taxes are regressive—they take a larger share of
+   income of the poor than the wealthy
+ − A natural solution to this conundrum is to impose a tax while making a transfer to low-income
+   households to ofset the income loss.
+ − If the policy simply rebates the tax to low-income households, then it’s not a tax at all.
+ − So, the rebate needs to be decoupled from the tax paid
+
+                                                                                                  42/44
+What is the efect on consumer welfare of pairing a tax with a rebate to
+hold income constant?
+
+ − Consider a tax τ on each unit of good X that is fully rebated to the consumer:
+
+                                     τ × dx (Px + τ, Py , I + R) = R.                              (1)
+
+
+
+ − This tax is revenue neutral for consumer; rebated exactly the amount paid in taxes (R = τ dx (·))
+ − This tax alters the price ratio faced by the consumer but intersects the original budget set at the
+   newly chosen bundle.
+ − We assume that the consumer is not choosing X with the expectation that all tax paid will be
+   refunded
+ − (Perhaps the rebate is equal to the average tax paid, and this consumer happens to purchase the
+   average amount of X.)
+                                                                                                  43/44
+What is the efect of τ + R on consumer welfare?
+
+            y
+
+          I+R
+           py
+                       A – point chosen on original budget set
+
+             I
+            py                  B – point chosen on tax rebate budget set
+                      B
+                               A
+
+
+
+                      I     I+R        I           x
+                    px +τ   px +τ     px
+
+                                                                            44/44
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

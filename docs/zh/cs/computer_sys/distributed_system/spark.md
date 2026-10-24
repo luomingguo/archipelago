@@ -1,10 +1,19 @@
 ---
 title: Spark
 type: lecture
-tags: []
+tags: [rdd, lineage, in-memory-computing, fault-tolerance, data-parallel]
 status: complete
 ---
 # Lec 12 Spark
+
+## TL;DR
+
+- Spark 提出弹性分布式数据集（RDD），为迭代计算与交互式数据挖掘提供高效的分布式内存抽象。
+- 粗粒度变换与只读性：RDD 仅支持粗粒度转换（如 map、filter、join），通过避免细粒度可变状态降低协调开销。
+- 基于血缘（Lineage）的高效容错：记录分区级依赖图，节点失效时仅按血缘图重新计算丢失分区，避免了高昂的数据全量复制。
+- 依赖类型划分：区分窄依赖（Narrow Dependency，可在单个节点流水线执行）与宽依赖（Wide Dependency，需要跨节点 Shuffle）。
+
+## 课程资料与概述
 
 **LEC 15:** [Big Data: Spark](http://nil.csail.mit.edu/6.824/2022/notes/l-spark.txt), [video](https://youtu.be/qXb5rDGqFdc)
 **Preparation:** Read [Spark (2012)](http://nil.csail.mit.edu/6.824/2022/papers/zaharia-spark.pdf) ([FAQ](http://nil.csail.mit.edu/6.824/2022/papers/spark-faq.txt)) ([Question](http://nil.csail.mit.edu/6.824/2022/questions.html?q=q-spark&lec=15))

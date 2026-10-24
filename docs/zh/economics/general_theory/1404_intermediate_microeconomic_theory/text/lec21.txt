@@ -1,0 +1,1319 @@
+MITOCW | Lecture 21: Bubbles
+
+             [SQUEAKING] [RUSTLING] [CLICKING]
+
+
+
+ROBERT       Let me get started by asking if there are any questions from last time. You know I really like questions.
+TOWNSEND:
+
+
+AUDIENCE:    So just to be clear, I do have a question. So just to be clear, for the pollution stuff for the last time, there are a
+
+             bazillion prices, right? There's not just one price.
+
+
+ROBERT       There was one price for permits. The model is simple. So there's only one dimension of pollution.
+TOWNSEND:
+
+
+AUDIENCE:    OK.
+
+
+ROBERT       We kind of did it as a partial equilibrium problem. So the consumers would take a price as given and deciding how
+TOWNSEND:    many permits to sell. The single firm in that example would take prices as given and decide how much to
+
+             produce. But in the equilibrium, there would be a common price for permits.
+
+
+AUDIENCE:    OK. In that case, I'm a bit confused about something. If you have permits and stuff, if you have 1,000 people, if
+
+             you have one person selling a permit, if that person sells a permit to have more pollution be polluted, then that
+
+             pollution gets spread out over everyone.
+
+
+             So the price that someone would be willing to sell would be much lower than the actual price that person carried
+             out pollution or something. Or am I thinking about it wrong?
+
+
+ROBERT       No, no, no. You're absolutely right. So that part is missing from the model because we only had one consumer or
+
+TOWNSEND:    we talked about the consumer as a representative consumer and everybody wanting to do the same thing.
+
+
+             But you're right, there could be a potential conflict of interest if you're all supposed to pay-- well, there's
+
+             something called the Lindahl equilibrium that was just going to take us to far off the path of the lecture that
+
+             actually elicits from each household their willingness to pay for pollution and then adds up those numbers to get
+
+             the sum of the willingness to pay.
+
+
+             And then, that number is, quote, "compared" to what the firms are willing to pay for the input costs. So that's the
+             way the generalization would go.
+
+
+AUDIENCE:    OK, thank you.
+
+
+ROBERT       Yeah. It's a good question. Other questions. So just to remind you all, this is the last lecture 21, the last lecture
+
+TOWNSEND:    I'm giving, although I will have class on Tuesday, which is another review session focusing mainly on the material
+             that we've covered since the last time, trying as I usually do in those review sessions, to bring the pieces
+
+             together. So that's the class schedule.
+
+
+             Then, for the reading list today, for the lecture today, there are these two starred papers. And one is this Abel,
+
+             Mankiw, Summers, Zeckhauser paper and how it's like one or two slides in the lecture today.
+
+
+             We didn't spend a lot of time on it in the lecture, but it's listed there as a supplemental reading, along with my
+
+             own paper. I'll spend a little more time on my own paper.
+            Anyway, I'm kind of treating you guys as you are, as fully functioning economists. So you should be able to read
+
+            the Abel, et al, paper and understand it without me going over it this lecture.
+
+
+            And the previous one had that style to it. In fact, last time was the first time, I think, that I didn't finish the lecture
+
+            material and asked you nevertheless to go ahead and understand the lecture and to read the starred reading. So
+
+            I did not do this too, too much at the beginning of the course.
+
+
+            But now that you're truly trained, I think you're more independent. Anyway, feel free to ask me questions about
+
+            those at any time, including next time, if it comes up because it's material that we really haven't covered much in
+
+            the lectures but I started. So meaning, I do expect you to understand it.
+
+
+            And then, for the review sheets, we were doing the failures of the welfare theorems. The way these review
+
+            questions are written, they're largely review. It's kind of like telling you what you need to know. It's hard to ask
+
+            you when the answer is given, but I'll give it a try anyway.
+
+
+            It says, you should know well the formal statement of the first welfare theorem and conditions under which it
+
+            holds. So again, I think I'll just take volunteers. Can someone tell me the roughly or even more carefully the
+
+            statement of the first welfare theorem? OK. There are two welfare theorems.
+
+
+AUDIENCE:   OK. If I remember correctly, the first welfare theorem is something like assuming local nonsatiation and I don't
+
+            think it's convexity, but there's second conditions that I forget. But to mean, local nonsatiation and something
+
+            else. Then, the practical Walrasian, like, price equilibrium is pretty optimal. If I remember right.
+
+
+ROBERT      Yeah. That's right. It was local nonsatiation and a statement about rationality of consumer preferences. So very,
+
+TOWNSEND:   very weak, which is probably why they're hard to remember. Yeah. But the local nonsatiation is there.
+
+
+            And then, the pollution we've already started talking about. Pollution permits. Why did we need those permits in
+
+            the first place? What was it that we did wrong? Since the first welfare theorem is supposed to hold and even
+
+            assuming local nonsatiation, what why did it fail in the end?
+
+
+AUDIENCE:   Is it really like a market for pollution? So like, people's preferences don't get accounted for there.
+
+
+ROBERT      Yep. Exactly. So it's a missing market problem. We assume their L goods and their markets in all of them when
+
+TOWNSEND:   we do the proof of the first welfare theorem. In this case, we kind of left one out.
+
+
+            So there aren't prices there to guide the solution of the market to the situation where the marginal rates of
+
+            substitution over households are equated to the marginal rate of production across firms. So that that's the
+
+            nature of the problem.
+
+
+            And likewise, I thought I indicated one other. What about the second welfare theorem? Can anyone state it,
+
+            including some of the assumptions that are needed?
+
+
+AUDIENCE:   Sure. I can take a stab at this one. So the second welfare theorem says that basically any optimal point is
+
+            supported by some while raising equilibrium up to transfers. And some assumptions that we need for that are we
+
+            need convex open consumption sets.
+
+
+            We need convex closed production sets with this concave transformation function. We need concave and locally
+
+            nonsatiated preferences. And I think the last one is basically just like a budget constraint in some sort basically.
+ROBERT      Yeah. It's some interiority condition.
+
+TOWNSEND:
+
+
+AUDIENCE:   Yeah.
+
+
+ROBERT      Yeah. That's right. So yeah, so this one takes a bit more in terms of assumptions. And then, I showed in the
+
+TOWNSEND:   lecture two pictures of illustrative examples of where things could go wrong. One had nonconvexity in the
+
+            preferences, and the other had nonconvexity in production.
+
+
+            I don't know if it helps to give the math intuition. When we did the second welfare theorem, we were kind of
+
+            getting those shadow prices by solving the Pareto problem and then essentially using them as candidates for the
+
+            Walrasian or equilibrium or the equilibrium with transfers.
+
+
+            And those shadow prices are marginal conditions. They are derivatives having to do with differentiating the
+
+            Lagrangian with respect to constraints.
+
+
+            Another way to put that is the candidate for prices are essentially margin utilities. Weighted margin utilities, at
+
+            least in the Pareto problem, would be equated to a common Lagrange multiplier. And that's what I meant by
+
+            marginal utility pricing, that the Lagrange multiplier becomes the price.
+
+
+            It's kind of amazing because it's all teeny tiny local. Once we find the candidate we want, all we need to do is look
+
+            at the derivatives for very small movements around that point and then kind of separate the problem globally.
+
+
+            So it's not just that at those prices, households and firms are max-- I mean, that's true, but they're not only just
+
+            maximizing locally, they could, in principle, choose things that are very far away from that local point that are
+
+            global.
+
+
+            And that was the point of those two figures with the nonconvexity in preferences or, alternatively, nonconvexity
+
+            in production, you could see how locally things look fine. But if you drift pretty far away, you find another point
+
+            that either maximizes profits or maximizing utility, depending on the example.
+
+
+            So all of this stuff we're learning was kind of worked out by British economists and then formalized by Paul
+
+            Samuelson. It's called the sort of marginal analysis way of doing economics. So that's good. So that that's
+
+            essentially all I want to do in terms of reviewing from last class.
+
+
+            Well, the other thing-- yeah, question.
+
+
+AUDIENCE:   Yeah. When I mentioned the first welfare theorem, we just assumed that the preference are original and the
+            nonsatiation. And we say that the production is a nonempty.
+
+
+            And we don't consider whether the production function is convex or not. But I notice that if the production
+
+            function is nonconvex, we see there might not have any competitive equilibrium.
+
+
+            For example, when the production function is now convex, then the-- yeah, then the slide 3 showed that the point
+
+            which consumers want to be maximizing utility. But at this point, it was not at the producers to maximize their
+
+            profits. So in this situation, can we say that was at equilibrium? It looks like there was no equilibrium in this
+
+            situation.
+ROBERT      Yeah. It's a good question. And it gives me an opportunity to clarify. There are two theorems. One, if a
+
+TOWNSEND:   competitive equilibrium exists, and it's optimal, that's the first welfare theorem. That's the one that only needs
+
+            local nonsatiation and rationality.
+
+
+            And the reason-- and it's true, when there's production, and there are no assumptions about production, but the
+
+            intuition for why it works is you're given so much information already, namely this competitive equilibrium exists.
+
+
+            So what's ever going on, firms were maximizing profits, and that added up to demand and so on. So all that stuff
+
+            is kind of implicitly given in the statement of the problem, if the conditionality, if a competitive equilibrium exists,
+
+            then something else is true.
+
+
+AUDIENCE:   Oh, I get it.
+
+
+ROBERT      Yeah, yeah, yeah. And then, I slipped up too when I was going through those examples because I'd forgotten that
+
+TOWNSEND:   I'd switched to the second welfare theorem. So the second welfare theorem is the starting point is Pareto optimal.
+
+
+            And I should have, when I went over those figures, emphasized how it was the single-best point in the whole
+
+            space and could not be Pareto dominated, and then settled into the second part of the second welfare theorem,
+
+            which is then you can maybe not decentralize if you lose the convexity.
+
+
+AUDIENCE:   Thank you.
+
+
+ROBERT      OK. I'm glad. I like questions. I know it's the last class. By the way, please come ready to ask questions next time.
+
+TOWNSEND:   That's a much more fun way to review what we've done in the course than it is for me to lecture all over again.
+
+
+            All right. That said, I should lecture all over again, I guess. Here's lecture 21. And again, without exaggerating,
+
+            this one, like the last one, is kind of exciting, both for the topics that are covered and because it's building on
+
+            material that you now know that was spread out throughout the course.
+
+
+            I suppose a better title for this one would have been monetary economics or cryptocurrency. But Bubbles is a
+
+            more appealing title. And as you will see, bubbles can exist, meaning something has value that has no value. And
+
+            they can be optimal. And that also creates a scope for monetary policy.
+
+
+            So these things look really different from the welfare theorems that we just did. And essentially, the reason that
+
+            it's happening is either that we have a version of incomplete markets or we have an infinite number of
+
+            commodities.
+
+
+            But rather than reiterating those theorems, so this is the monetary economic slide. Let me tell you in words how
+
+            we can get fiat money to have value, even when it's worth much more than the paper it's printed on.
+
+
+            So you have these kinds of agents moving in opposite directions. Some are moving west, as in the top line.
+
+            Others are moving east, as in the bottom line.
+
+
+            And every period, they hit one of these trading posts. So the sequence experienced by the people traveling west,
+
+            if they start with one, then next period they're going to have 0 goods, that's their endowment.
+
+
+            Then one good and so on. And the guys going in the opposite direction have the opposite sequence. Whenever
+
+            they're able to trade at these vertical lines, which are trading posts, one agent has one and the other has 0.
+And then, the basic idea is somehow the guy with 0 goods also has these pieces of paper called fiat money. And
+
+they give them up. They have value, and they get one sum amount of the good from the person who has the real
+
+commodity.
+
+
+So there's a trade going on between goods and money. So we have to extend the commodity space to include
+
+these pieces of paper. And then, the guy that basically got the money is willing to take it because he or she is
+
+about to experience in the next period 0 real endowment. But they can spend the money to a person with one
+
+who was in turn willing to take it.
+
+
+I'll show you this model at the end of class. And we'll work some things out. But that's an example of an
+
+economy with endowments and preferences that is pretty awful if there's no money. But it's much better with it.
+
+And then, yeah, at the end, we'll even talk about optimal monetary policy in that setup of why the Fed should be
+
+controlling the interest rate.
+
+
+This is a similar model down here, if you can see it. You have people going one direction or the other. When they
+meet, though, they stay together for two periods. So this person's endowment goes a in the first period, 0
+
+endowment of the good in the second period. The opposite is true. This one has 0 and then B.
+
+
+So over these two periods, they can borrow and lend from each other. So this is just like a snapshot of a two-
+
+period intertemporal economy with borrowing and lending, which they will want to do because they have
+
+extreme endowment positions of the real good. But it doesn't end there.
+
+
+After they're paired like that, one goes to the east, the other goes to the west. And if you think like a is a very,
+
+very big number and b is a very small number, this economy starts to look like the one above it, where they're
+
+going from large number to something almost 0, large number to something almost 0. And the person below
+
+going in the other direction has the opposite pattern.
+
+
+So this economy displays both real credit, borrowing and lending and real goods, and fiat money. And of course,
+
+in the economy we live in, we arguably have both. We have fiat money, and we have borrowing and lending and
+
+credit markets.
+
+
+And then, finally, we go to this third economy, where there are two locations. Agent 1 is always residing in the
+
+first location. Agent 2 is always residing in the-- Agent 4, I'm sorry, is residing in the second location. And these
+
+other two agents labeled 2 and 3 switch locations. 2 goes from 1 to 2, then back to 1, et cetera. And 3 has the
+
+opposite pattern.
+
+
+You can kind of create this by taking this so-called turnpike and bending it around so that it meets like a merry-
+go-round. And that would create something very similar to this economy.
+
+
+So much more fun, you can see at date 1 and 3, Agents 1 and 2 are paired with each other. So you can imagine
+
+that borrowing and lending, simple two-period loans, are possible. And depending on endowments and
+
+preferences, desirable.
+
+
+So we have short-term credit, two-period debt, but also watch this. Now say 1 issues an IOU to 2, a promise to
+
+pay in the fourth period. 2 travels and passes it along to 4, 4 passes it along the 3, and 3 passes it along to 1, who
+
+was the initial issuer of the IOU.
+And there are several other network chains like that in this economy. And those would be debt. They're private
+
+IOUs. They're not fiat money. But they would facilitate exchange and act like privately issued monies.
+
+
+Now, you do have to redeem your force in the model to pay back the loan in the fourth period. But meanwhile,
+
+those IOUs circulate in the population. So this is a real economy, no fiat money. But there is a kind of money
+
+circulating private debt with high velocity.
+
+
+That IOU passes hands every single period. It has the highest single velocity in the whole economy. Velocity is the
+
+amount traded per unit time divided by the stock.
+
+
+Another implicit thing going on in this comparison is, depending how often agents meet with one another, you
+
+could evolve from a monetary economy with valued fiat money to the point that the credit markets get so good,
+
+especially with privately issued debt, that you don't need fiat money at all.
+
+
+So don't tell the Federal Reserve. They're not going to be happy about it. But that tension is there. And I think
+
+part of the issue with digital assets and cryptocurrency is that it's kind of filling in the market and can lead us to
+
+a situation where the fiat money is no longer valued.
+
+
+Well, I mean, you get the same thing in this model. a meets b for two periods, then three periods, then n periods.
+
+So they're together so much, the residual gap is not enough to create valued fiat money.
+
+
+So these slides then go back to the issue of either monetary policy or distributed ledgers. We talked about
+
+distributed ledgers throughout the class off and on. Maybe that wasn't effective because it pops up in different
+
+spots, depending on the lecture.
+
+
+But if you look at 1 passes it to 2, 2 passes it to 4, to 3, and back to 1, there's another path over here where 3
+
+issues it to 4, 4 gives it to 2, 2 gives it to 1, and 1 passes it back to 3.
+
+
+It turns out that you don't need both of them. But if the amount of short-term circulating debt is not coordinated,
+
+then you can run into troubles. Another way to say that is there are multiple equilibria, a continuum of equilibria,
+
+but you need to coordinate on the amount of the privately issued currencies that are about to circulate in the
+
+economy.
+
+
+
+And if these are informationally decentralized locations, if they're not supposed to know what's going on in the
+
+other location, then there's no way they can coordinate. So one of the advantages of distributed ledgers would
+
+be, especially if you write smart contracts on them, that you can solve this coordination problem.
+
+
+And I think that's where we're going with digital assets, except people aren't thinking about it yet. We're going to
+
+end up with financial crises, not because digital assets are bad, but because there's a coordination problem.
+
+Fortunately, we have a solution in the ledgers.
+
+
+It's not crazy to link this to central banks because I mentioned once to you IOUs that circulated in Medieval
+
+England. Those were those willow sticks. Eventually, they were issuing pieces of paper, promissory notes as IOUs,
+
+that were circulating in the population.
+And in London, those bills of exchange were-- well, all of England and especially in London, there were markets
+
+for those bills. But occasionally, they would crash. And so that's actually what gave rise to one of the first central
+
+banks in the world, the Central Bank of England, where it would buy up those bills that were falling in price.
+
+
+That's the way monetary policy used to work when the Fed buys treasuries. But they may have created the
+
+wrong institution because the problem likely was the coordination problem, not the fact that the private markets
+
+were intrinsically flawed.
+
+
+And the other aspect that we're going to cover today is that fiat money can be introduced. Even though it's worth
+
+nothing, it's going to have a positive value. And that's going to create other problems.
+
+
+It's not like it's totally stable. It could be moving around, which brings us to the other kind of money, Bitcoin,
+
+which was introduced to be a money and to replace fiat money. That's what really made the central bank so
+
+annoyed with the whole Nakamoto experiment. They were threatened by Bitcoin. So a bit historical here. I kept it
+
+in for a reason.
+
+
+When I first started teaching, I grabbed this slide, which has to do with the price of Bitcoin moving from $100 to
+
+$147 in 2013. People were already talking about how ridiculous that was. And it wasn't tied to anything. So the
+
+value was completely indeterminate. But remember, fiat money is just like that.
+
+
+When you have the head of the Federal Reserve Bank of New York, Dudley, saying the problem with Bitcoin is
+
+that it has no fundamental value, don't throw stones if you live in glass houses because fiat money has the same
+
+problem. And it's just that in the US, fiat money is respected and not unstable.
+
+
+Anyway, back to the $100 to $147, I can't see your faces very well, but you may be a bit puzzled because if you
+
+looked at what the value is now, it's $19,372. So over here, at the low end, the price was so low, it looks like it's
+
+0 now when we change the scale. And then, of course, it jumped up in '17, I guess it was, and hit about $19,000.
+
+
+And this is the most recent-- I kind of did this because I told you I was aware of the price three days ago was the
+
+highest on record. As of yesterday, it's back down about $200 below the highest point. But essentially, these are
+
+almost identical spikes.
+
+
+Where do you think it's going to go? You want to buy? Well, what determines the value of this stuff? OK. So
+
+maybe only that it's used in exchange. Would that pin down the value? The answer is no. And now you're going to
+
+see the model.
+
+
+So this is the overlapping generations model. I mentioned last time we have an infinity of goods and infinity of
+
+households. Nobody lives forever. But there's one generation after another.
+
+
+We saw last time a version of that, that we could have a competitive equilibrium where the price of the second
+
+good was 1, everyone had 2 units of wealth, and they could all end up in autarky. And there was a way to Pareto
+
+dominate the competitive equilibrium.
+
+
+So that is true here in this is more general setup. A little bit of a better-known setup because this is Samuelson's
+
+model, which he created at MIT, by the way. You have two-- let's simplify the lifetime. You're either young or old.
+
+So no middle-aged people. No people living 100 years. They just live two periods.
+How many of them? We're going to put a little population growth in the model. So there's an initial population L0
+
+at date 0. Then, L1 at date 1 is 1 plus n times L0. So there's a rate of population growth of n. L3 is 1 plus nL
+
+which is 1 plus n squared L1. So if the initial population is 1, then the total population satisfies this equation.
+
+
+It'll be interesting and annoying because we're going to have to keep track of the number of people all the time.
+
+And we are going to want to divide by the numbers. So the algebra gets to be a pain. But I'll show you, at least in
+
+one case, how to do it. And then it will be more clear.
+
+
+There's only one good period. But per period, there's an infinite number of periods. There's obviously an infinite
+
+number of people, even though no one lives more than two periods. There's a constant return to scale production
+
+technology that maps the level of the capital good, real physical savings, as it were, and the current labor supply
+
+into output of the single good.
+
+
+And because it's constant, returns to scale, we know that if we multiply the inputs by a scalar, the output gets
+
+multiplied by a scalar. We do the following trick and let the scalar be the population itself. We divide by labor. So
+
+L over L goes to 1, k over L is now termed little k. Its capital per capita.
+
+
+And output would scale by 1 over L. And that's like putting that L over here on the left-hand side. We have output
+
+per capita. So we can write basically a production function F, which maps output y, little y, from capital.
+
+
+So there are two goods here. There's labor and capital. They're both used in production. So the capital stock is
+
+brought in from the previous period and then used in production. The marginal product of capital is going to be
+
+the rental rate on capital or it looks like an interest rate. And the wage is going to be the residual of what isn't
+
+paid out in capital.
+
+
+I could have written down an explicit expression for the wage, which would be the marginal product of labor. But
+
+because we have constant returns to scale, we know there are no profits. And since there are no profits, the
+
+payments to the factors of production, labor and capital, adds up completely to output. And firms make no
+
+profits.
+
+
+So these are the expressions for the wage and for the rental rate on capital. But note, that in turn, because it's a
+
+function of k, It's output less whatever the marginal return on capital was times the total amount of capital
+
+involves k, and k involves r. So you can write this as a function of r.
+
+
+Here's a simple two-period max problem. Utility today plus beta times utility tomorrow. And how do they do that?
+
+They're endowed with 1 unit of labor today. They get the wage. And you can either eat it or save it, real physical
+
+savings, or call it capital stock.
+
+
+Likewise tomorrow, they don't have any income. They're old. They're not working. But they do have that saving,
+
+and the saving is going to earn interest at rate little r. So whatever capital is brought in to next period, when
+
+they're old, it's going to have a rate of return of rt plus 1 for the second period because they were born at t in
+
+they're old at t plus 1.
+
+
+So savings times 1 plus the interest rate would be their consumption. It kind of looks like Social Security, except
+
+here these are real physical savings, the only thing so far that they're able to do. No money, no Social Security,
+
+nothing. So we're going to get a savings function as a solution to this problem that's going to involve the prices,
+
+namely the wage, and the interest rate.
+Each household will take the prices as given, as we always do in a competitive equilibrium, and solve for s. But
+
+that s is, in turn, through the production function, going to generate the interest rate. And the level of capital will
+
+also determine the wage.
+
+
+So what is in equilibrium? If things are going to add up properly, then we take the savings function-- we just did
+
+this-- the savings function of an individual person at day t times the number of persons at day t, that's the
+
+population Lt.
+
+
+This is total savings, which is going to be the total capital stock used in production tomorrow. And that's where
+
+the interest rate came from. It's paid out, supplying a factor of production tomorrow, namely that capital.
+
+
+So this is market clearing. You might imagine from Vollrath's law, the only thing we need to worry about if we're
+
+going to clear savings equal to the capital stock, we're also going to clear the labor market and everything else.
+
+But let's just focus on the capital stock.
+
+
+Now, take this equation here and divide through by Lt. Then we have little s on the right and kt plus 1 over Lt on
+
+the left. That's kind of weird because we'd want to normalize by the actual population in t plus 1, which is Lt plus
+1. So this will be kt plus 1 over Lt multiplied by Lt plus 1 over Lt plus 1. That doesn't change anything. That's just
+
+1.
+
+
+But we take that thing in the denominator, the Lt plus 1, and stick it under the k, and that makes it a little k
+
+because that's the per capita capital stock at t plus 1.
+
+
+After you did that, with Lt plus 1 over Lt, and we know that's already going up at rate 1 plus n. So that's where
+
+this first term is coming from. And I know it's painful to hear me go over it verbally because it's all just algebra.
+
+But this little trick is going to get used four more times. So I wanted to draw your attention to it.
+
+
+The capital stock per capita needs to take into account the number of people. The number of capita, so to speak,
+
+is changing over time. That's kind of the math of this expression.
+
+
+Anyway, we have little s on the right. And we already know the wage is a function of the current capital stock.
+
+The interest rate is a function of capital stock next period. Hence, kt and kt plus 1 are in this expression.
+
+
+So we can effectively look for what happens if we start with initial capital stock in the whole economy at date 0,
+
+the genesis date, and stick that capital, what's going to be in, solve this equation, what's going to be the capital
+
+stock tomorrow? Well, it's meant to be-- the solution is meant to be along this line denoted as this curve.
+
+
+Looks like a difference equation, mapping current into future capital. If you start with current capital, tomorrow's
+
+capital at t plus 1, at 1, would be kt plus 1. Now you do this trick. Let's go back and hit the 45-degree line and
+
+start over.
+
+
+Because it's the 45-degree line, we're putting k1 down here on the x-axis. Start at k1, what capital we have in the
+
+third date, read it off the s-curve and so on. And you can see that it would evolve, if this line crosses the 45-
+
+degree line, to a steady state called k star.
+
+
+So after that, the economy isn't moving anymore. There are no more dates on anything. It's completely settled
+
+down. So this is a long-run steady state of the economy, with only real savings.
+Now, let's introduce pieces of paper that are intrinsically worthless. But imagine that they have value. And let's
+
+denote their value as the price Pt, and that is the price of money in terms of consumption. It's the opposite of
+
+what you would normally think. Normally, we think of consumption having a dollar price. This is dollars having a
+
+consumption price.
+
+
+And I'll keep pointing that out. So if that consumption price of money is changing over time, we put Pt as 1 over
+
+Pt, that would be appreciation. That's going to be a good thing. By the way, if it were a money price, a dollar price
+
+of consumption, then having the price level go up would be a bad thing because it would be depreciating-- it
+
+would be inflation.
+
+
+But here, it's a good thing because we flipped the numerator around to be the opposite. So this is a rate of
+
+return. This is a real positive rate of return if Pt plus 1 is over Pt.
+
+
+And maybe people want to hold this piece of paper. If they're going to hold these pieces of paper, they have to
+
+be indifferent to that and the other way to store value over time, which was namely physical savings carried
+
+over. They would get the interest rate, the rental rate on it next period and get the savings back.
+
+
+So if in an equilibrium, there's both real savings and money, then this equation has to hold. We can call the
+
+bubble, the title of the lecture, the value of money times its price. It's in real consumption terms. So if you just
+
+stick Pt plus 1 equals Bt plus 1 over n, then you can rewrite this equation too this way because n is constant.
+
+
+I'm not manipulating the amount of money in the economy. I'm keeping it constant, although the price is moving.
+
+So then, we have from 2 this equation about how the bubble, the real value of the bubble is changing over time.
+
+And it's related to the marginal product of capital.
+
+
+Furthermore, I could divide by the population. We'd have a bubble per capita. And I'll do the same trick I just did
+
+before, with apologies, but I'm not going to go through the algebra. Take the Lt, divide through, then you have a
+
+mismatch between t plus 1 and t.
+
+
+Then have Lt plus 1 divided by Lt plus 1, parse it out, and you get this thing, that the real per capita bubble is
+
+moving over time, according to the marginal product of capital.
+
+
+But that arithmetic, which over here created the 1 plus n hanging out there, that extra term, that 1 plus n is in
+
+this math as well. And you're just dividing by it. So that's where the n is coming from, that rate of population
+
+growth.
+
+
+This is all a big premise right now. We're just saying, if there were money, if it had value, the value of it has to be
+
+increasing at the rate that they can earn money in another way, namely by storing. And so you're getting an
+
+equation for how the value of the bubble, hence money, must be evolving over time.
+
+
+Now, savings can be done in the two ways, as I've kept saying, but here's the equation. When they're young, we
+
+have the savings function of the young people, depending on the wage and tomorrow's interest rate, times a
+
+number of young people. But they can save in two ways. They can save in the real bubble or they can save in the
+
+capital stock.
+And now, again, doing that same math as always, start solving for Kt plus 1. Subtract B off of the right-hand side.
+
+Then divide through by the appropriate labor term, and you get this expression. That's the third time we're doing
+
+the algebra. It should kind of be obvious where it's coming from because Kt plus 1 is equal to Ls minus B. And the
+
+rest of it is finding that end term and dividing through by that term.
+
+
+So now, this is just another way of saying that the amount of capital next period is what it would have been
+
+before in the real economy without money, except now we have bubbles of money that have value. So we've got
+
+to subtract off the bubble. That's kind of preventing the capital stock from being as large as it would have been.
+
+
+So 3, this thing, gets rewritten at the top of the next slide to be the bubble b So now solve this thing for b, little b,
+
+bubble per capita. It's this thing, and that's one equation. And we also know something about bubbles over time.
+
+As I was saying, we did that. That was this thing at the bottom of the slide before last.
+
+
+So we have those two equations. This has to be true in a steady state. Should emphasize. There are t's all over
+
+the place here, but in a steady state, we're not going to have any evolution. So the t's are going to disappear.
+
+
+So Kt plus 1 will equal Kt. There'll be no t on the b, Kt, blah, blah, blah. So when I rewrote 3 hurriedly just then, I
+
+rewrote it without the t's. And that's what this thing is at the top. And with the t's, we have this thing, the second
+
+term, which I've just pasted in from previously.
+
+
+So if we're going to have a steady state, then these b's can't be moving around. So bt plus 1 over bt has got to be
+
+a constant. And if the left-hand side is the same, 1, then the right-hand side has to be the same, 1.
+
+
+Hence, the marginal product of capital has to be equal to the rate of population growth. So if there is a steady
+
+state with a real bubble, then the rate of population growth has to be equal to the marginal product of capital,
+
+this thing at the bottom here.
+
+
+There's a couple of other ways to see this. One, take this equation, but let me rewrite it verbally for you. We
+
+have output coming from the production function. Take this k and put it on the right-hand side. You can always
+
+eat the capital.
+
+
+You remember that medieval village economy with seed and storage and all of that, where we talked about the
+
+evolution? So you can always eat this, the harvest, or you can save it. So it's like that. So this k can be eaten. So
+
+you have total resources available today to be f of k plus k.
+
+
+And how do you use that stuff? You can eat it or save it. Eat it today, that's c. Tomorrow, tomorrow's k, would be
+
+k, except darn it. We got that population growth again. So if we're going to keep k constant in a steady state, the
+
+resource requirements to have a constant per capita capital stock tomorrow are that you have to augment the
+
+capital per capita today by n. Same trick, fourth time.
+
+
+So anyway, writing it that way, we want to maximize consumption. So you solve consumption equals to f of k plus
+
+k minus k times then 1 plus n. And where is that object, that c maximized? It's maximized by finding the first-
+
+order condition, and that's exactly where f prime of k is equal to n.
+
+
+So that's so-called golden rule. Distressed to see this morning that this k star is not, however, the previous k star.
+
+This is a new golden rule k star. Should have called the other k autarky for the economy without money. In this
+
+case, star would be the golden rule k for the steady state bubble equilibrium.
+So it doesn't have to happen that you will be at the steady state. If k were greater than k star, everyone could be
+
+better off. Why? It's as if, if you started at k greater than the golden rule, the economy's overaccumulated the
+
+capital. And then to maintain a constant per capita capital stock, you've got to take something out of production,
+
+not eat it, and squirrel it away for tomorrow.
+
+
+You could actually do better by increasing consumption of the current generation, having less capital stock to
+maintain, and then going out to the infinite future. None of the future generations are going to be worse off.
+
+
+This experiment is exactly like what we did last time with the infinite number of goods economy, where we can
+
+engineer a one-time improvement in at least one of the agents by creating something from nowhere. Basically,
+
+we move the overaccumulation of capital into the current generation and let them eat it. And then, subsequent
+
+generations don't suffer either because they don't have to try to maintain this per capita capital stock, which was
+
+too large.
+
+
+So is it possible that the economy can overaccumulate capital? Yes. So we're going to look at two steady states,
+
+the previous one without any money and the new one with the steady state bubble. An interesting thing about
+
+the steady state bubble, this one that we've already described, is that it has the property that it achieves the
+
+golden rule.
+
+
+And that's because-- you can kind of see it here-- when the bubble is constant and not depending on time, then f
+
+prime of k must be equal to n. So the golden rule is achieved in the steady state of the bubble equilibrium.
+
+
+And that was this top line. In a steady state with bubbles, the golden rule is achieved. And that's going to be this
+
+point. So that's k star, that's the golden rule k, corresponds to a particular bubble that solves the other equation.
+
+That's called a b star. This is what we would like to get to.
+
+
+And what happens in the economy with no money? You're down here at essentially an autarky value. So this is a
+
+perfectly fine competitive equilibrium. There is no money. But in it, the economy will have overaccumulated
+
+capital.
+
+
+And a Pareto improvement can be engineered by reducing the amount of capital. How does that happen in a
+
+steady state? You give other people a way to save in worthless stuff. So instead of real physical savings, they're
+
+scrambling to get these pieces of paper.
+
+
+The rate of return on the pieces of the paper has to be the same as physical savings. It has no intrinsic value. It
+
+has an extrinsic value because the price of money is positive. So in other words, these perfectly worthless pieces
+
+of paper, fiat money, have a value in a competitive equilibrium. And the money's actually helping to recover the
+
+Pareto optimum.
+
+
+So you see the connection to the welfare theorems here. We have an infinite number of people, an infinite
+
+number of periods. The welfare theorems fail. If you start adding up the value of wealth in the autarky
+
+equilibrium, it goes to infinity like last time. That's why the first welfare theorem fails.
+
+
+And the way to recover optimality is to create these worthless pieces of paper and let them trade. It's totally
+
+amazing. But it's an intrinsic part of money. However there's a downside here, which is it's unstable. So let me
+
+just describe what's going on without expecting you to be able to reproduce all the math. You're plotting, this
+
+was the autarky value.
+This is the golden rule value that we want. Now we want to look at starting from different points with the
+
+economy evolved to one or the other of those points. And this is an equation, depending on whether you're
+
+above it or below it for the capital stock to evolve, this equation, the BB, bubble bubble equation, has to do with
+
+whether you're to the left or the right of it, whether the bubble is evolving.
+
+
+And these arrows denote all the forces in the underlying economy. And if you're lucky and you start away from
+
+the golden rule steady state, you would evolve on a knife edge and eventually converge to it.
+
+
+So this is the good news. The economies that start with an appropriate amount of bubble or capital will evolve to
+
+this optimal golden rule, so steady state. But this is the really bad news-- this economy can also evolve to real
+
+savings and no money. And money inflates away. It could start with a positive value. This is an equilibrium. And it
+
+doesn't require stupid people. This is a fully rational expectation dynamic path, where the value of money goes
+
+to 0.
+
+
+OK, well, so why did I show you that? I can replace the word fiat money with cryptocurrency and ask what value
+
+it ought to have. It's perfectly plausible to me that you could see the price moving around. Maybe it will go to
+
+some constant value if this Bitcoin is also useful in exchange, the way money is in that overlapping generation's
+
+model.
+
+
+Maybe it's going to it's going to collapse again, and the price will go to 0. All those phenomenon are perfectly
+
+consistent with Bitcoin playing a useful role in exchange but not able to find a stable value.
+
+
+But again, the point is, and actually we've been emphasizing this, starting with fiat money the way Samuelson
+
+did, it's a property of any money. It's a property of fiat money and so on. The Fed worries a lot about forward
+
+guidance. They're constantly telling people what they predict to happen in the future so people don't panic.
+
+
+If you think fiat money is not going to be worth what it is in the future, you're not going to want to hold it. Oh,
+
+that's one explanation that traders have for what's going on with Bitcoin, namely, there's just an ever-increasing
+
+amount of government debt in the economy. The Fed has bought up all those securities effectively and issued
+
+accounts at the Federal Reserve in worthless pieces of paper.
+
+
+Are you scared now? So the market may be anticipating that, in fact, there aren't enough real resources to pay
+
+off the debt. The only way that the Fed and European governments are going to pay off the debt is to inflate. And
+
+if the market starts to expect inflation, fiat money is less valued, and they're shifting into Bitcoin.
+
+
+So that's what traders think is going on. I switched the story on you a bit because now we have fiat money
+
+competing with Bitcoin and vice versa. But I think you could imagine how you could get both in the model.
+
+
+So the way you get both in the model is to set up an underlying economic environment and have gaps. Say
+
+autarky households aren't smoothing, there's a lot of fluctuations, blah, blah, blah, blah, blah, fiat money can
+
+help smooth. But maybe fiat money doesn't smooth it out entirely. And then, you're left for tokens like Bitcoin to
+
+play a role on top of fiat money.
+
+
+So you could actually have both in the model. It's not true that one has to dominate the other. They could both
+
+coexist. And partly what we're seeing in these cryptosystems is crypto coins are a way of transferring fiat money
+
+around.
+You just create tokens that get transferred around. But they're claims on the underlying fiat money. But the
+
+tokens can have value because they facilitate exchange, even if they're not backed by the fiat money. So we
+
+could get both of them in.
+
+
+Now, this is pretty abstract, this overlapping generations model. You might say it's totally unrealistic. By the way,
+
+it's another interpretation of Social Security with pay as you go, namely the young pay in to Social Security, but
+
+it's not sitting there in some fund or something.
+
+
+It's not in a lockbox. It's just flowing right out to the old generation. So people have criticized Samuelson's model
+
+as a not realistic model of money because of the extreme assumptions about finite two-period lives and so on.
+
+
+But could it be applied? Well, these guys, Abel, Mankiw, Summers, and Zeckhauser said, look, we could actually
+
+look to see whether economies are on an efficient or inefficient path. And I thought I had started this on the
+
+reading list. So anyway, you can read this. Yeah, yeah, I did. It's on the reading list. You should be able to
+
+understand it. This, you won't understand. It's just explaining what they did.
+
+
+They didn't find any inefficiency, but a subsequent person, Geerolf, did. He adjusted what those guys did to take
+
+out land rent, having profits of entrepreneurs divvied up into opportunity cost wages. And he actually finds that
+
+Korea, Taiwan, Singapore, those East Asian growth economies, with all that capital, they were actually inefficient.
+
+They were accumulating too much capital. They were beyond the golden rule. It's really fascinating. All right.
+
+
+The other part is what I was alluding to at the beginning. If you create more and more real financial claims that
+
+can be traded, then fiat money can also be vulnerable. And you could convert those economies with money to
+
+economies without them.
+
+
+So when you have Bitcoin and tokens and cryptocurrencies and especially digital assets, which are claims on real
+
+capital circulating in the economy as money, you may end up with that model where there is no valued fiat
+
+money. And again, that would threaten central banks. But it doesn't mean it's a bad thing. In our terminology, it
+
+could be going toward a new Pareto-optimal allocation.
+
+
+Other ways to get money in the model, you could require it to pay taxes. So even if there's a last period,
+
+everyone has to pay it in, otherwise it could have 0 value. So the very first monetary models were finite-period
+
+models, but in the last period, people have to pay taxes in money.
+
+
+Some governor in Ohio got a smart idea which, is I guess he liked technology. He is allowing Ohio citizens to pay
+
+their state income taxes in Bitcoin. Maybe that'll stabilize the price. And you could require that money be used
+
+for goods. We have not been writing models like that.
+
+
+This is like fiat. Literally, by law, you're required to use money. And you have to hold it and have to have
+
+acquired it earlier in some way. These are called cash in advance models. So if you have certain types of goods in
+
+the economy that require cash, and those are valued goods with a margin utility of infinite at 0, then the value of
+
+cash isn't going to fall to 0 because if it were, you'd never be able to buy those goods. So that's kind of a way of,
+
+again, a mechanical way of making sure the value of money doesn't go to 0. Like it or not, I'm exposing you to
+
+different modeling strategies.
+So let me come back to the starting point, which are these agents that go 0, 1, 0 and 1, 0, 1. This is a spatial
+
+model of money. Why is the money going to be valued here? Because they're not all together to trade with one
+
+another at some initial date over all these future paths of consumption.
+
+
+They can only trade with each other when they meet. So this is an extreme version of incomplete markets. And
+
+you know what can happen to competitive equilibria with incomplete markets. They don't have to be optimal.
+
+
+Specifically, let's write down the problem of an agent of type of I. If you can see this. It's a little bit tiny. We have
+
+discounted utility of consumption. Consumption and money are non-negative. And we have this budget equation,
+
+which reads like this-- they have some endowment, maybe positive. This is now the dollar price, by the way, of
+
+goods, the usual price.
+
+
+They have the valuation of their endowment plus the money they brought in from the previous period. They may
+
+have to pay some lump-sum taxes. But then the residual can be used either to buy consumption or to take
+
+money over to the next state. So again, this is like sources and uses.
+
+
+And what's the solution to this? Solution, by the way, by manipulating the money. The way they determine how
+
+much they're eating today or eating tomorrow is to either cash out the money or acquire it and store it and carry
+
+it over.
+
+
+So not too surprisingly, you might expect, and it's true, that the marginal-- let me write it down here-- that with
+
+one exception, the marginal rate of substitution in consumption, of consumption at t minus 1 for consumption at
+
+t, that ought to equal the price ratio.
+
+
+So remember your basic lectures, consumer theory, two periods, money is a way to carry value over from one
+
+period to the next. It's like borrowing and lending, except that it appreciates or depreciates depending on the
+
+price level.
+
+
+So you would expect this equality to hold, that the tangency involves the marginal rate of substitution and
+
+consumption on the indifference curve equal to the price ratio implicit in the budget model.
+
+
+Now, I was covering up the inequality because it could be that you're holding money. The marginal utility of
+
+consumption today is greater than the marginal utility tomorrow discounted. So you'd like to eat more today. So
+
+you start driving that money down, and the money hits 0, and you can't go negative. And still, the margin utility
+
+today is greater than the margin utility tomorrow.
+
+
+So these guys actually-- where did it go? These guys here experienced that. They start at 1. They acquire money.
+
+They're going to have 0 next period. They start dumping the money, but they run out, and they can't go
+
+negative. So for them, they're at a corner.
+
+
+Guys that come in with money and spend it, because otherwise they have no endowment at all, are nevertheless
+
+not going to have enough money. So we can look for an equilibrium where for some periods and some types of
+
+agents, this is at a strict inequality, namely the guys that are hitting 0. And the other ones 0 endowment. And the
+
+other ones, it is that equality.
+Let me draw you the picture. So even though it's an infinite horizon economy, we can reduce it to a two-period
+
+economy and guess what the steady state equilibrium is going to look like. Guys that start with 1 unit would be
+
+here. If they just ate their endowment, they would have consumption of 1 today and none tomorrow.
+
+
+And then, moving along the budget line, at constant prices, they get money today, giving up consumption good
+
+today, and get money tomorrow. If the price level of money tomorrow, price of goods tomorrow is the price of
+
+goods today, then they're moving right along this budget line. And where would they end up? Well, here's an
+
+indifference curve. Here's a tangency. It's on the budget line.
+
+
+Now, how did I know it would be there? Namely, look at this expression. This is the marginal utility at t minus 1 to
+
+t or the marginal utility at t to t plus 1. There's a beta down here. Tomorrow doesn't count so much. Beta is
+
+between 0 and 1. So the utility, margin utility tomorrow, is always less than the margin utility today. The only
+
+thing that could compensate for it is the price movement.
+
+
+But if we start with constant prices, then this expression is only going to hold if we're able to adjust consumption.
+
+We want to get the margin utility up. Consumption at t is greater than at t plus 1 in order to get the margin utility
+
+up to the point that the marginal rate of substitution is equal to the constant price ratio.
+
+
+Now, is this a good thing or a bad thing? Well, it is going to be a monetary equilibrium. The guess is good. So the
+
+path would be guys with 1 are going to go to c star and then c double star, then c star, then c double star, with
+
+money moving in the opposite direction from something positive, when they have 1 they acquire it, to 0, hitting
+
+the corner, back to positive amount again.
+
+
+So money is going to alternate over time at the individual level. Consumption is going to alternate over time. The
+
+money is going to have value at a constant price. But unlike the overlapping generations model, this one is not a
+
+Pareto-optimal allocation, even though we have money.
+
+
+You actually know the answer already. Let me remind you. How do we determine a Pareto optimum? Well, let's
+
+all the guys that start with, say, 0 be called A types, and all the guys that start with 1 unit of the consumption are
+
+going to be called B types.
+
+
+And then, maximize the weighted sums of utility. We usually have lambdas here. I apologize. Now, they're w's.
+
+This is the weight on type A. wB is the weight on type B. We maximize the weighted sums of expected-- there's
+
+nothing random-- discounted utility for both of them.
+
+
+We get a first-order condition. You remember this stuff? We've done this before. This is the Pareto problem.
+
+Weighted margin utilities are going to be equated over agents and equal to a constant Lagrange multiplier.
+
+You've seen this before.
+
+
+This is a new application, that's all. So the marginal rate, solving this equation, the marginal rates of substitution
+
+over the agents have to be the same. But does it pin down the allocation? No. We're in an Edgeworth box.
+
+There's one good in the aggregate available today, one good in the aggregate available tomorrow.
+
+
+
+We know the Pareto optimum has to give all the guys equal consumption. You can satisfy this by having type A
+
+having constant consumption, type B having constant consumption, but those consumptions don't have to be
+
+equal to each other because things are going to cancel out of the numerator or the denominator.
+So this picture, marginal rate of substitution for day t and day tau is equal to each other for agents type A and
+
+type B. But to review, right, you remember this lecture when we did the Pareto optimum and your Edgeworth
+
+box? You can be anywhere on the contract curve, and it's all Pareto optimal. Anything that's off the diagonal is
+
+not Pareto optimal in this environment. And this one is off the diagonal. So it's not Pareto optimal.
+
+
+Where do you want to go? You kind of want to go here. And how would you engineer that? You have to generate
+
+a deflation so that they're getting a positive real rate of return on money. That's going to make them want to
+
+hold more money and eat less today. And that's going to put them at a tangency up here where they have equal
+
+consumption.
+
+
+So there is a Pareto-optimal allocation. It's a monetary equilibrium, but it's an equilibrium with an activist
+
+monetary policy that's withdrawing enough currency out of the system in lump-sum taxes to create a deflation.
+
+
+Deflation isn't bad here. It means that the purchasing power of money is going up. So that's all the rest of these
+
+slides I don't have time for. You are able to achieve these Pareto optimal allocations but only with an activist
+
+monetary policy, which is deliberately manipulating the amount of currency in the system.
+
+
+Questions. So welcome to the land of monetary economics. It's a lot of fun. So now you're able to see in this last
+
+lecture how real financial markets are linked to money markets, the role of cryptocurrency, controversies
+
+involving its price, and how we as economists can think about these values, and actually how we would
+
+recommend monetary policy.
+
+
+And I will add that if there was cryptocurrency, you would want an activist amount of manipulation of the amount
+
+of cryptocurrency in the system for the same reason that I just described to you.
+

@@ -1,12 +1,11 @@
 ---
-title: '一元线性回归与相关性'
+title: 一元线性回归与相关性
 type: lecture
 lecture: 9
 tags: [linear-regression, ordinary-least-squares, r-squared, gauss-markov-assumptions, coefficient-inference]
 status: complete
 source: 'https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/resources/mit15_075jf11_chpt10/'
 ---
-
 # Lec 9 一元线性回归与相关性（Simple Linear Regression and Correlation）
 
 > MIT 15.075J / ESD.07J · Statistical Thinking and Data Analysis · Fall 2011

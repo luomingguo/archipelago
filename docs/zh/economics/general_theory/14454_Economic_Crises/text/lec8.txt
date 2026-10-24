@@ -1,0 +1,671 @@
+Capital Flows and Sudden Stops
+14.454
+Ricardo J. Caballero
+MIT
+
+Economic Crises
+
+1
+
+Introduction
+
+I Capital fows are large and a signifcant source (and amplifcation mechanism) of
+macroeconomic fuctuations and crises
+I Particularly for EM: Sudden Stops
+I Reason to present C-K: It integrates many of the mechanisms we have discussed in this
+course
+• Caballero, R.J. and A. Krishnamurthy, “Bubbles and Capital Flow Volatility: Causes
+
+and Risk Management,” Journal of Monetary Economics, 53(1), 35-53, January 2006.
+
+I Reason to present B-L: Pecuniary and AD externalities in open economy
+• Bianchi, J.. and G. Lorenzoni, “The Prudential Use of Capital Controls and Foreign
+
+Currency Reserves,” Handbook of International Economics, Ch 6, vol 6, 2022.
+
+I Extensive fnal remarks: From EM crises to the GFC
+2
+
+Capital Infows and Sudden Stops
+
+3
+
+Caballero-Krishnamurthy: Overview
+I Emerging market economies have signifcant growth potential but limited fnancial
+development.
+I Limited domestic fnancial instruments means that agents seek to store value (hoard
+liquidity) abroad.
+I These outfows are costly – would rather grow the economy. But physical assets generate
+few fnancial assets.
+I In this environment rational (real estate) bubbles are likely to arise (akin to dynamic
+ineÿciency).
+I But bubbles depend on coordination and hence are fragile. Crashes are likely to take place.
+I There is a sort of “aggregate liquidity illusion.” Too much investment in real estate and too
+little in true international collateral. Agents undervalue the aggregate fragility that such
+decision brings.
+4
+• E.g., borrowing in USD is like negative investment in international collateral
+
+The Model
+
+I OLG
+
+I All plants produce RKt
+
+I Linear preferences and only
+consume when old
+
+I Half of the agents have an investment
+opportunity a second before becoming old. Can
+produce RIt +1 units of domestic goods for an
+investment of It +1 units of international
+resources. (split between entrepreneurs and
+bankers)
+
+I Born with {Wt , Kt }
+[fexible interpretation - dual
+liquidity/collateral]
+
+I (benchmark) Wt0 = (1 + r ∗ )Wt
+
+5
+
+The Model
+Local loan market:
+
+1
+1 RKt
+lt +1 ≤ ψ
+;
+2
+2 pt +1
+
+1 0
+W
+2 t
+
+1 ≤ pt +1 ≤ R.
+Let’s assume
+ψR < 1
+and normalize W = K .
+
+With these parameters, we have:
+pt +1 = 1
+“Dynamic ineÿciency:”
+
+g > r ∗;
+
+NetOutfowt = Wt − (1 + r ∗ )Wt −1 = (g − r ∗ )Wt −1 > 0.
+
+6
+
+Real Estate Bubbles
+
+I Expand the set of assets to store value
+
+0
+
+RKt + RWt + (R − p̃t +1 )
+
+• Stochastic bubble: crashes with
+
+ψR
+Kt ;
+p̃t +1
+
+if entrepreneur.
+
+probability λ.
+0
+
+reb = {g, −1}
+
+
+W 0 = Wt 1 + r ∗ + αt (r̃ b −r ∗ )
+
+RKt + Wt p̃t +1 ;
+if lender.
+
+7
+
+Real Estate Bubbles
+
+
+
+0R
+
+max Et RKt + Wt
+
+0≤ α ≤1
+
+(1 − λ )
+
++ p̃t +1 R − p̃t +1 ψR
++
+Kt
+2
+2
+p̃t +1
+
+
+.
+
+R + ptB+1 b
+R + ptC+1
+Δr − λ(1 + r ∗ )
+2
+2
+
+(1)
+
+Δr b ≡ g − r ∗
+
+pB = 1
+
+and (credit crunch)
+eC =
+p
+
+ψRK
+ψR
+=
+(1 − α )W (1 + r ∗ )
+(1 − α)(1 + r ∗ )
+p C = min{max{p
+eC , 1 } , R }
+
+8
+
+Real Estate Bubbles
+
+9
+
+Excess Volatility
+
+Social foc (derivative w.r.t. α):
+
+(1 − λ )
+
+R + 1 Δr b
+− λR
+2 1 + r∗
+
+Private:
+R + ptC+1
+R + 1 Δr b
+(1 − λ )
+−
+λ
+2 1 + r∗
+2
+
+I ptC+1 < R: Banker does not share
+equally in the marginal product R (due
+to domestic fnancial
+underdevelopment). Thus, it
+overinvests in bubble-asset
+I Welfare maximizing choice: set αS to
+the maximum value that does not lead
+to a credit crunch if the bubble crashes.
+
+10
+
+Macroprudential Policy
+
+11
+
+Aggregate Risk Management Policies
+
+Prudential Banking Regulations (liquidity requirements)
+
+I Each generation is forced to maintain (1 − αS ) in international reserves (e.g. Argentina
+during the convertibility plan). Thus, even if the bubble bursts there is no credit crunch.
+I Problem: at ptC+1 = 1 there is a strong incentive to cheat (as in Jacklin 1987). Agent
+wants to set α = 1 (expected gain relative to investing αS ).
+W (1 − αS )(rbb − r ∗ ) > 0
+
+I If portfolio decisions are costly to observe, a liquidity requirement will be costly to impose.
+If the costs are high enough, the economy will revert to the equilibrium α = αp .
+12
+
+Aggregate Risk Management Policies
+
+I Capital Infow Sterilization
+• Less monitoring of positions but government needs to have credible taxation power.
+• Sterilization: Sell bonds in exchange for capital fows [it is called sterilization for
+
+monetary reasons, which I’ll omit here – no monetary friction]
+
+13
+
+Aggregate Risk Management Policies
+
+Capital Infow Sterilization
+
+I Issue one period debt with face value Gt at interest rate rtG . Raise taxes τs on the
+international endowment of generation t. Revenue invested at r ∗ , and returned to
+generation t. If large enough, can solve the excess volatility problem. If taxation ability is
+not large enough, then the govt can’t credibly raise interest rate and sterilization fails.
+
+
+Gt
+τs Wt +
+(1 + r ∗ ) − Gt = 0
+1 + rtG
+Gt > Gt∗ ≡ (1 − αp )Wt (1 + r ∗ )
+
+14
+
+Aggregate Risk Management Policies
+
+Capital Infow Sterilization
+
+I If it works,
+
+
+
+W 0 = Wt (1 − τs ) 1 + r G + αt (r̃ b −r G )
+
+I The private’s foc is:
+(1 − λ )
+
+R + ptB+1
+R + ptC+1
+(g − r G ) − λ (1 + r G )
+2
+2
+
+15
+
+Aggregate Risk Management Policies
+
+Capital Infow Sterilization
+
+I Evaluated at ptB+1 = ptC+1 = 1, yields
+rtG = (1 − λ)g − λ = rbb .
+
+I If the government sells debt that raises (1 − αS )Wt resources at t, agents purchase the
+debt and bubbles. Since at the margin debt crowds out the bubble, they must have the
+same expected return. Doing so requires to raise taxes of:
+τs = (1 − αS )
+
+rbb − r ∗
+1 + r∗
+
+I If the govt is limited in its ability to raise taxes, then it can only implement small
+sterilizations, which is ine˙ective since it just crowds out external (safe) bonds (rtG = r ∗ ).
+16
+
+Taking Stock
+
+I There is a fundamental tension between high productivity (growth potential) of EM capital
+and EM’s ability to produce good quality fnancial assets
+I Natural habitat for bubbly assets
+I This is worsened by low r ∗ (reach for yield by locals and foreigners)
+I Private sector is likely to undervalue the social cost of this fnancial fragility
+
+17
+
+Sudden Stop within Euro Region (Euro crisis)
+
+18
+
+The Covid-19 Sudden Stop
+
+© The Economist. All rights reserved. This content is excluded from our Creative Commons license. For more information, see
+https://ocw.mit.edu/help/faq-fair-use/
+
+19
+
+The Covid-19 Sudden Stop
+
+20
+
+The Covid-19 Sudden Stop
+
+21
+
+The Covid-19 Sudden Stop
+
+22
+
+The Covid-19 Sudden Stop (Swap Lines)
+
+I March 19, 2020: NY_Fed entered into temporary U.S. dollar liquidity arrangements (swap
+lines) with: Australia, Brazil, Denmark, Korea, Mexico, Norway, New Zealand, Singapore
+and Sweden [Add to existing lines with Canada, UK, Japan, ECB, SNB]
+I March 31, 2020: Temporary repo facility. EM can repo their holding of UST (FIMA Repo
+Facility)
+I IMF expanded and created multiple lending facilities
+
+23
+
+Prudential use of capital controls and foreign currency reserves
+
+I Bianchi-Lorenzoni (2022)
+I Pecuniary and AD externalities in open economy
+I Simple model summarizing rationale for second-best use of capital controls
+I Similar role of reserve accumulation
+
+24
+
+Simplifed model (sketch)
+
+∞
+
+E ∑ βt U (ctT , ctN )
+
+I Fixed tradable endowment:
+yT
+
+
+
+I N-technology:
+
+t =0
+
+1
+U (ctT , ctN ) =
+1−ρ
+
+  1− ρ
+  1− ρ 
+φρ ctT
++ (1 − φ)ρ ctN
+
+ytN = nt
+
+25
+
+Simplifed model (continued)
+
+I Full budget constraint for optimization but, in (the interesting) equilibrium,
+at = at∗ = 0.
+
+I Moreover, assume ptT = et , to imply:
+et ctT + ptN ctN −
+
+1
+et bt∗+1 = et y T + wt nt − et bt∗
+1 + ibt∗
+
+26
+
+Nominal rigidity
+
+I Inelastic supply of labor:
+n
+
+I Non walrasian equilibrium (with ptN = wt )
+nt ≤ n,
+
+wt ≥ w
+
+with one inequality.
+
+27
+
+Supply of loans
+
+I Two period lived international
+investors
+I Face quadratic cost Φ of taking
+dollar position in the country
+(upward sloping supply of funds)
+
+Maximize
+
+
+ ∗ 
+bt +1
+1 + it∗ ∗
+1
+∗
+bt +1 −
+Φ
+Et bt + 1 −
+∗
+b
+ωt
+1 + it
+1 + bit∗
+�
+
+bt∗+1
+= ωt bit∗ − it∗
+∗
+b
+1 + it
+
+I Shocks to ωt (and possibly it∗ )
+
+28
+
+Time line
+
+29
+
+Time t: Crisis
+
+International loan market
+
+Domestic/international loans
+indi˙erence
+
+et +1 �
+1 + bit∗ = 1 + it
+et
+
+�
+
+D (bit∗ , at∗ − bt∗ ) = ωt bit∗ − it∗
+
+Domestic demand
+nt =
+
+1−φ
+φ
+
+
+
+wt
+et
+
+− 1
+ρ
+
+C T (ibt∗ , at∗ − bt∗ )
+
+30
+
+Policy objective function
+
+I Assume policy maker’s objective is
+
+
+(1 − β) U (ctT , ctN ) − Ψ(et ) + βU (ctT+1 , ctN+1 )
+I The term Ψ(et ) captures fear of foating
+
+31
+
+Monetary policy dilemma
+
+32
+
+Prudential policy
+
+I Similar idea for reserve accumulation:
+• Allows currency intervention and prevents large depreciation
+• But there is an opportunity cost of reserves: ibt∗−1 − it∗−1
+
+33
+
+From EM to DM
+
+Asian/Russian crisis:
+
+I Fundamentally changed prudence in EMEs
+I Led to massive capital fows to US (Global Imbalances literature). Eventually people got it
+that it wasn’t expansionary policy in US, but a global equilibrium phenomenon
+I As such, the likelihood of a sudden stop to the US seemed remote.. still, substantial
+fragility built within the US fnancial system
+• Incentives to create and hoard pseudo-safe assets (regulatory weakness)
+• General equilibrium leverage
+
+I Caballero, R.J. and A. Krishnamurthy, “Global Imbalances and Financial Fragility,” AER-PP
+May 2009.
+34
+
+Main Substantive Results
+
+I During good times, external demand for AAA assets leads to:
+• An increase in the value of US risky assets
+• A drop in the real interest rate (CFG) and in the risk premium
+• A sharp rise in the leverage of US fnancial institutions
+
+I Fragility with respect to negative shocks
+• Sharp rise in risk premium and drop in riskless rate
+• Sharp drop in US wealth
+• (even if AAAs are AAA)
+
+35
+
+Model
+I There is a continuum of US fnancial institutions, with mass one, that own assets which
+generate cash fows of Xtd per unit time (payments from mortgage loans, credit card loans,
+auto loans, etc.), where,
+dXtd
+= gdt + σdZt
+Xtd
+I The external demand for US assets, from foreign central banks for example, is in particular
+a demand for high-grade debt. They allocate an exogenous stream of funds to investments
+in assets produced by the US fnancial system
+dXtf
+= gdt.
+Xtf
+
+I Foreigners withdraw and accumulate riskless (AAA) debt according to:
+ctf = ρBtf
+dBtf = (Xtf − ρBtf )dt + rt Btf dt.
+
+36
+
+Model
+
+I The fnancial institutions’ owners/equity-holders are
+local investors who maximize preferences:
+Et
+
+Z ∞
+t
+
+ctd = ρWt
+
+e −ρ(s −t ) ln ctd+s ds.
+
+Wt = Vt − Btf .
+
+37
+
+Model
+
+I In equilibrium:
+
+Xtd + Xtf = ρWt + ρBtf = ρVt
+
+I Which implies that the value of risky US asset rises with capital infows:
+Vt =
+
+Xtd + Xtf
+ρ
+
+I And so does domestic wealth early on:
+Wt =
+
+Xtd
+X f − ρBtf
++ t
+.
+ρ
+ρ
+38
+
+Real interest rate
+
+I Defne the foreign debt-to-asset ratio (leverage) and the foreign-to-total fows as:
+btf ≡
+
+Btf
+,
+Vt
+
+xtf ≡
+
+Xtf
+Xtd + Xtf
+
+I Then:
+rt = ρ + Et [dct /ct ] − Vart [dct /ct ]
+�
+�
+
+= ρ+g −σ
+
+2
+
+
+
+− ρxtf + σ2
+
+1−
+
+1 − xtf
+
+2 !
+
+1 − btf
+39
+
+Risk premium
+
+I Let us consider a hypothetical asset-i, whose return depends on innovations in the risk
+factor dZt :
+dRti = Et [dRti ]dt + σi dZt .
+Et [dRti ] − rt = Covt [dRti , dWt /Wt ]
+
+= σi σ
+
+1 − xf
+1 − bt
+
+40
+
+Fragility
+
+41
+
+Fragility
+
+42
+
+Final remarks
+
+I The point is not to argue that there were no incentive problems before the crisis, or that
+the severity of the crisis itself was not exacerbated by policy mistakes and agency problems...
+I The argument is that the same forces that shaped global imbalances, were (and are) behind
+many of the developments and patterns we have seen in terms of securitization, leverage,
+and risk premia
+
+43
+
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+14.454 Economic Crises
+Spring 2026
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+
+44
+
+

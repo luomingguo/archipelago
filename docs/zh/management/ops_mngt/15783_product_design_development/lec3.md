@@ -1,12 +1,11 @@
 ---
-title: '客户需求分析'
+title: 客户需求分析
 type: lecture
 lecture: 3
 tags: [customer-needs, needfinding, voice-of-customer, jobs-to-be-done]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 3 客户需求分析（Identifying Customer Needs）
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  

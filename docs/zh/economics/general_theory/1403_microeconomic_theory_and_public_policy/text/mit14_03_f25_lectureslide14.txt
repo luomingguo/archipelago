@@ -1,0 +1,307 @@
+14.03/003 Micro Theory and Public Policy, Fall 2024
+
+
+Lecture 14. International trade and the principle of comparative
+advantage
+
+David Autor (Prof), MIT Economics and NBER
+International trade and the principle of comparative advantage
+
+
+
+We now want to add international trade to our study of general equilibrium
+
+ − International trade is a big deal! A huge chunk of economic activity is traded across
+   borders, and this share has been rising for decades
+
+ − International trade afects well-being in poor and rich countries—perhaps even more so
+   in poor countries
+
+ − International trade is extremely controversial—perhaps even more so in rich countries
+
+
+
+
+                                                                                           1/22
+Many countries trade a large fraction of GDP, sometimes exceeding 100%
+
+
+
+
+Courtesy of Our World in Data. License CC BY.                      2/22
+World trade/GDP has been rising for 200 years
+Took a huge fall during WWI — ground not fully regained until mid 1970s!
+
+
+
+
+                                                                           3/22
+     Courtesy of Our World in Data. License CC BY.
+Historically, most trade rich ↔ rich, rich ↔ non-rich. But changing fast
+
+
+
+
+Courtesy of Our World in Data. License CC BY.                          4/22
+Transport costs have plummeted: sea freight, air travel, telecoms
+
+
+
+
+                                                                    5/22
+  Courtesy of Our World in Data. License CC BY.
+   International trade and the
+principle of comparative advantage
+
+
+
+
+                                     6/22
+International trade and the principle of comparative advantage
+Adding international trade to our study of general equilibrium
+ − International trade means trade between countries rather than between
+   consumers—opposite of autarky, meaning trade only among citizens within a country
+
+Questions we want to answer
+
+ 1. What are factors that give rise to gains from trade between nations?
+
+ 2. Are the gains from trade (international trade, that is) necessarily positive in
+    aggregate—or does it depend on which country we are trading with?
+
+ 3. Why is it only diferences in relative prices across countries that matter for trade, rather
+    than price levels?
+
+ 4. Does trade raise national incomes (this Wednesday)?
+
+ 5. Why is free trade so controversial (next Monday)?                                       7/22
+Autarky and free trade
+
+
+
+
+                         8/22
+Autarky and free trade
+
+               Food        Consumption in
+                             Free Trade
+                                                     Autarky
+                                                   Production =
+                FCT                                Consumption
+
+
+
+                                            Production in Free
+                FA                    UT
+                                                 Trade
+
+                FPT                         UA
+
+
+
+
+                                                       −(pS /pF )A
+
+
+                                            −(pS /pF )T
+
+                          TS   T                           Shelter
+                         SC A SP
+                                                                     9/22
+Trade balance
+
+ − For each good, the quantity produced difers from the quantity consumed:
+
+                                    Exports = SP − SC ,
+                                    Imports = FC − FP .
+
+ − But both points (SC , FC ) and (SP , FP ) lie on the same budget line, so they must cost
+   the same:
+                                    SP PSw + FP PFw = SC PSw + FC PFw ,
+                     PSw (SC − SP ) + PFw (FC − FP ) = 0.
+
+ − There is no trade imbalance
+
+ − Important because many policy discussions confuse trade imbalance with trade itself
+
+ − You can have trade without trade imbalance (though not vice versa)
+                                                                                         10/22
+The sources of comparative advantage
+
+
+
+
+                                       11/22
+Comparative advantage
+
+ − Not an accident which good Home is importing and which good it is exporting
+                                         PS           PS
+                                                  >            ,
+                                         PF   W       PF   A
+
+
+ − Home holds a comparative advantage in producing shelter: can produce S relative to F
+   at comparatively low cost relative to the rest of the world
+
+ − The comparison is not Home’s cost relative to the World’s cost. The comparison is
+   Home’s opportunity cost of how much F it must give up to produce more S
+ − After trade opening
+     1. Home’s total consumption of F has risen and its total production of F has fallen
+     2. Home’s total consumption of S has fallen and its total production of S has risen
+                                                                                           12/22
+Why do relative prices difer among countries?
+
+
+
+Three underlying factors afect relative prices across countries
+
+ 1. Tastes — AKA preferences
+
+ 2. Technology — Skill, profciency, expertise at producing something
+
+ 3. Endowments — Resources or initial conditions that facilitate producing some things over
+    others
+
+
+
+
+                                                                                       13/22
+How do we know there are gains from trade?
+
+
+
+
+                                             14/22
+Gains from trade
+
+
+The gains from trade
+
+ − Home still produces on the original P P F
+
+ − But Home consumes above its original P P F
+
+ − Home is better of: The gap between the autarkic indiference curve and international
+   trade indiference curve refects the gains from trade
+
+ − World is at least better of than before (otherwise it wouldn’t trade with Home)
+
+Analytically, why are we certain that trade raises welfare in both/all countries?
+
+
+
+                                                                                     15/22
+Gains from trade
+
+
+The gains from trade So, what constraint on general equilibrium problem does
+international trade relax?
+
+ A. Marginal rate of substitution equated among consumers (gains from trade exhausted)
+
+ B. No trading party (here a country) made worse of relative to the initial endowment
+
+ C. No excess demand or supply of any good
+
+ D. Consumption is bounded by the Edgeworth box (that is, the economy’s total
+    endowment)
+
+
+
+                                                                                        16/22
+Why do relative (not absolute) prices matter for gains
+                    from trade?
+
+
+
+
+                                                   17/22
+Where do gains from trade come from?
+
+
+          PF           PF
+ − If     PS       =   PS       , there are no gains from trade.
+               A            W
+
+ − Gains from trade come entirely from diferences between countries
+
+ − If there were truly “a level playing feld” among trading partners—as politicians like to
+   say—then there would be no point in trading
+
+ − Gains from trade arise because relative prices difer between Home and World
+
+ − This raises two further questions
+        1. Why do relative prices difer among countries?
+        2. Why is it relative not absolute prices that matter?
+
+
+                                                                                          18/22
+Why do only relative prices matter?
+
+ − In our diagram, it’s only the relative price of F versus S in Home versus World that
+   determines what the gains are from trade.
+
+ − Why doesn’t the absolute level of prices matter?
+      □   Easy to see why U.S. would beneft from trade with China: everyday low prices! China has
+          an “absolute advantage” in many goods that it trades with U.S.
+      □   Does this imply that China won’t beneft from trade with the U.S. since U.S. has everyday
+          high prices?
+
+ − Is free trade with China good for the U.S. but bad for the Chinese?
+
+ − This is a profoundly important question to which the answer is no
+      □   As long as relative prices difer between China and the U.S., both countries experience gains
+          from trade
+                                                                                                  19/22
+Insights and puzzles
+
+
+
+
+                       20/22
+Key insight
+
+
+
+ − The principle of comparative advantage is a fundamental economic insight —
+   analogous to the general welfare theorems
+
+      □   Welfare theorems demonstrate that allowing individuals to trade freely is Pareto-improving
+          (and leads to Pareto efcient allocations(
+
+      □   The principle of comparative advantage says that allowing countries to trade always raises
+          welfare in both countries
+
+
+
+
+                                                                                                  21/22
+If free trade is so awesome, why is it so controversial?
+
+
+
+ − Free trade among consenting nations raises GDP in all of them
+
+ − So why isn’t it free trade universally beloved?
+
+     1. Economics is hard — people don’t get it
+
+     2. There’s another Second Welfare Theorem problem lurking here
+
+ − We’ll return to this question two lectures from now
+
+
+
+
+                                                                      22/22
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

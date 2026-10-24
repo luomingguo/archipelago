@@ -1,0 +1,806 @@
+--- PAGE 1 ---
+14.462
+Spring, 2020
+Ledgers and Database Management, 
+Integrated Financial Statements, and 
+an Application to Distributional and 
+Regional Accounts
+(Lecture 2)
+Robert M. Townsend
+Elizabeth & James Killian Professor of Economics, MIT
+
+
+--- PAGE 2 ---
+Distributed Ledgers: Plan of Attack for the 
+Analysis
+Economics of what distributed ledgers can do by 
+analyzing the functions of key individual components
+Separately
+Does not have to be in combination- another pitfall
+Compare, contrast, and innovate by merging for each 
+function the economics framework with the frameworks of 
+computer science and data management disciplines
+Clarifying the technology
+Propose new designs
+Put each component in context, with examples
+Emphasizing what each component of DLT brings to the 
+table
+2
+
+
+--- PAGE 3 ---
+One Context: SEA, Townsend Thai Project--
+Financial Access, a G20 Goal
+3
+Rural Annual
+Started in rural areas in 1997 with 192 villages
+Resurvey in 64 villages every year since 1998
+Expanded to North and South in 2003 and 2004 
+Rural Monthly
+Started in 1998, 720 new households
+Survey design: 16 villages, 44 hhs in each
+230 continuous months
+Urban Annual
+Extended to urban areas in 2005
+Urban Monthly
+Started in 2013
+18 continuous months
+
+
+--- PAGE 4 ---
+
+
+--- PAGE 5 ---
+Ledgers as Accounts 
+First component
+
+
+--- PAGE 6 ---
+5
+Ledgers are Financial Accounts 
+It’s accounting, keeping the books
+Bitcoin is flow, as in statement of cash 
+flow, and stock, as in balance sheet
+
+
+--- PAGE 7 ---
+Reconciled Ledgers as a Database
+Example, Thai villages: measure currency  transactions monthly, for 
+20 years 
+Put cash flow accounts on common ledger: “just” a new integrated 
+database 
+i transacts with j, but is j in the database? if so, is j also reporting transaction 
+with i?
+Doing this uncovers discrepancies,  one of the main things DLT can 
+remedy!  (even if nothing else, one component at a time)
+Example, Australian stock exchange-no need for T+2
+Two parties A and B meet on an outside trading platform and agree to trade. 
+Information is sent by the trading platform to the clearing exchange, writes an 
+encoded message on the distributed ledgers, can be read by A and B and 
+references a contract ID, run digital asset’s DAML code on the contract to 
+verify that it does what it is expected to do      
+Analogy to double-entry bookkeeping for accurancy as a huge 
+innovation
+Luca Pacioli, 1494, the “father of accounting,”
+6
+
+
+--- PAGE 8 ---
+Raises the issue of Database Management 
+Systems: Traditional vs. Distributed Ledgers
+A ledger as a traditional database, user can Create, Read, Update, or 
+Delete (CRUD) 
+The risk: Anyone with sufficient access to it can destroy or corrupt 
+data
+so users are reliant on the security infrastructure of the database 
+operator and must trust 
+Alternative: the decentralized system of distributed ledgers, but  
+comes known database problems
+The CAP theorem: Impossible to simultaneously provide more than 
+two out of the  three
+Consistency – where every read receives the most recent write or 
+an error 
+Availability – where every request receives a (non-error) 
+response
+Partition Tolerance – in which the system continues to operate 
+and does not cease operations despite multiple versions
+7
+
+
+--- PAGE 9 ---
+Consensus and Synchronization
+Consensus Problem of Distributed Computing: 
+Impossible to guarantee that any asynchronously 
+connected set of communicating nodes can agree on 
+even a single bit value (Fischer)
+But if nodes are Synchronized, must choose, as in 
+CAP
+When a network partition occurs, one has to 
+decide to cancel the operation, which decreases 
+availability but ensures consistency, or proceed 
+with the operation but risk inconsistency. 
+Algorithms take a stand on these tradeoffs and 
+typically involve costs
+8
+
+
+--- PAGE 10 ---
+Hybrids: The Way We Should Be Thinking 
+About the Problem
+Hybrid systems emerge in practice: Between the end-points of 
+strictly hierarchical (military, command control) traditional database 
+vs. fully connected, synchronized network meshes, which do not 
+scale
+Though not necessarily as deliberate choices (Mallett 2009)
+Constrained optimal partitioning: Example of how costly 
+connections among agents can lead to subgroups
+Single vs. multiple platforms
+Fixed costs per node for each bilateral connection
+Despite ever-decreasing per capita costs and ever-increasing gains from having 
+all agents in one mutual fund, due to portfolio diversification and the law of 
+large numbers, marginal costs can exceed marginal benefits from increasing 
+group size. 
+Townsend (1978)
+
+
+--- PAGE 11 ---
+From Survey Data to Complete Financial 
+Accounts
+Well beyond paper respondent survey 
+Are households reporting bank transactions consistent with data from 
+corresponding banks? 
+Browning, Crossley, and Winter (2014) seek to integrate the collection of 
+wealth, income and spending data in the British Household Panel Survey so 
+that for each household the intertemporal budget constraint holds.
+An Office for National Statistics (ONS) Economic Expert Working Group 
+(EEWG) envisions using web surveys, mobile surveys, and phone apps to 
+scan barcodes and till receipts. 
+There is now also electronic data surrendered voluntarily by customers, as 
+with Mint, and the use of commercial bank information by information 
+aggregators.  
+Use of DLT to create complete financial accounts is not as far as away as it 
+might seem, a priori.
+Consensus categorization
+Run the code on transactions to create complete set of accounts
+o Income, balance sheet, cash flow
+
+
+--- PAGE 12 ---
+Integrated Regional 
+Accounts
+Robert M. Townsend
+Elizabeth & James Killian Professor of Economics, MIT
+Scott Schuh
+Department of Economics, West Virginia University
+Bureau of Economics Analysis
+Suitland, MD 
+November 13, 2019
+
+
+--- PAGE 13 ---
+
+
+--- PAGE 14 ---
+
+
+--- PAGE 15 ---
+The Impact of Isolationist 
+Policy: Disentangling Real and 
+Financial Factors Through the 
+Lens of Integrated Regional 
+Financial Accounts 
+Paweenawat, Archawa and Robert M. Townsend (2020) 
+
+
+--- PAGE 16 ---
+
+
+--- PAGE 17 ---
+Individual Level 
+Accounts
+
+
+--- PAGE 18 ---
+Paweenawat and Townsend (2020) “The Impact of  Isolationist Policy: 
+Disentangling Real and Financial Factors Through the Lens of 
+Integrated Regional Financial Accounts”
+2.8.1Household A
+For the first example, we consider a typical working household in Lop Buri. In 1999, this household consisted of a male household head,
+his wife, and a four-years-old daughter. The household head was 38 years old, while his wife was 34 years old. Both the household head
+and his wife only have the primary-level education (4 years and 6 years, respectively). In 2000, this household had another daughter.
+2.8 Financial Statements of Example Households
+In 1999, both adult members worked at a shoe-making factory. Later that year, the household head switched to work as a
+construction worker. In the next year, the wife moved to work at a garment company making knitted dresses. Since 2001, both adult
+members have changed their jobs several times. This pattern is quite common in Thai rural villages and suggests high job mobility among
+Thai wage workers. This household also raised a small flock of chickens and ducks. In 2001, this household branched out to cultivation
+activity and grew chili. And in 2005, this household invested in a friend’s cantaloupe farm. However, labor income is always the main
+source of this household income. Table 1 reports the statement of income and retained earnings of this household in 1999. Figure 1 shows
+the composition of household A’s income over time.
+In 1999, the average value of fixed assets of this household is 159,251 Baht (69,251 Baht excluding land). Household A is ranked at the
+24th percentile by the value of fixed assets (the 33rd percentile if land is excluded). Therefore, household A has relatively low wealth by the
+Lop Buri standard. Table 2 reports the average balance sheet of this household in 1999. Household A held most of its wealth in land and
+household assets.
+
+
+--- PAGE 19 ---
+Table 1 – Statement of income and retained earnings of household A
+Uses
+Sources
+Expenses from 
+production
+Revenues from 
+production
+Cultivation
+0
+Cultivation
+0
+Livestock
+181
+Livestock
+340
+Fish and shrimp
+0
+Fish and shrimp
+0
+Business
+0
+Business
+0
+Labor
+0
+Labor
+91,150
+Other
+730
+Other
+260
+Interest expense
+10,000
+Interest revenue
+0
+Depreciation
+3,435
+Capital gains
+0
+Insurance premium
+0
+Less: Capital losses
+0
+Property tax
+0
+Insurance indemnity
+0
+Net income before tax
+Income tax
+0
+Consumption
+54,076
+Savings
+23,329
+Charges against total 
+revenue
+91,750
+Total Revenue
+91,750
+Figure 1 – The composition of household A’s income over time
+
+
+--- PAGE 20 ---
+Table 2 – Balance sheet of household A
+Assets
+Liabilities and net wealth
+Current assets
+Current liabilities
+Financial assets
+Account payable
+0
+Cash
+22,992
+Other borrowing
+37,417
+Account 
+receivable
+0
+Household’s net 
+wealth
+Other lending
+0
+Contributed capital
+118,19
+2
+Deposits
+5,560
+Current retained 
+earnings
+50,779
+ROSCA (net 
+position)
+14,125
+Gifts (net transfer)
+–1,602
+Inventories
+1,777
+Prepaid insurance
+0
+Livestock
+1,081
+Fixed assets
+Household assets
+69,251
+Agricultural assets
+0
+Business assets
+0
+Land and other 
+fixed assets
+90,000
+Total assets
+204,78
+6
+Total liabilities and 
+net wealth
+204,78
+6
+Figure 2 – The composition of household A’s wealth
+Figure 2 shows the composition of household A’s wealth
+level over time. In early years (1999–2002), household A’s
+liability level is quite stable, and the increase in household A’s
+asset level comes from the increase in household A’s savings.
+From 2003, on the other hand, household A also uses loans to
+finance its asset accumulation. Table 3 reports the statement of
+cash flow of household A.
+
+
+--- PAGE 21 ---
+Table 3 – Statement of cash flow of household A
+Change in cash holding
+–11,479
+Cash flow from production
+84,096
+(+) Income from production
+87,447
+(+) Depreciation of assets
+3,435
+(+) Change in account payable
+0
+(–) Change in account receivable
+0
+(–) Change in inventory
+–40
+(–) Consumption of household production
+–6,746
+(–) Net capital gains from production
+–90
+Cash flow from financing, investment, & 
+consumption
+–95,575
+(+) Net capital gains from financial assets
+0
+(–) Capital expenditure on fixed assets
+–10,795
+(+) Net interest income
+–10,000
+(–) Tax expenditure
+0
+(–) Consumption expenditure
+–47,330
+(–) Insurance premium
+0
+(–) Capital expenditure on livestock
+250
+(–) Change in deposit at financial institutions
+–940
+(–) Change in ROSCA position
+–10,750
+(–) Lending
+0
+(+) Borrowing
+–14,000
+(+) Net gifts and transfer
+–2,010
+(+) Change in contributed capital
+0
+(+) Insurance indemnity
+0
+Statistical discrepancy
+0
+Change in cash holding from balance sheet
+–11,479
+
+
+--- PAGE 22 ---
+
+
+--- PAGE 23 ---
+
+
+--- PAGE 24 ---
+
+
+--- PAGE 25 ---
+
+
+--- PAGE 26 ---
+
+
+--- PAGE 27 ---
+Flow of Funds
+Traditional sectors
+Flow of funds accounts
+Featuring bank and non-bank financial intermediaries
+Underway in England and U.S.
+Flows within sector, too
+Balance sheet, income, cash
+By geography
+Impact of monetary policy at local level
+Gross Savings:
+Expenditures on Capital
+(Financial) Surplus
+Flow of Funds from Financial Corporation, National
+Flow of funds between a village in Chachoengsao and 
+the other sectors in November, 2009
+
+
+--- PAGE 28 ---
+
+
+--- PAGE 29 ---
+Additional Community Level Stylized Facts
+
+
+--- PAGE 30 ---
+
+
+--- PAGE 31 ---
+
+
+--- PAGE 32 ---
+
+
+--- PAGE 33 ---
+
+
+--- PAGE 34 ---
+
+
+--- PAGE 35 ---
+
+
+--- PAGE 36 ---
+
+
+--- PAGE 37 ---
+
+
+--- PAGE 38 ---
+
+
+--- PAGE 39 ---
+
+
+--- PAGE 40 ---
+
+
+--- PAGE 41 ---
+
+
+--- PAGE 42 ---
+
+
+--- PAGE 43 ---
+Integrated Household 
+Surveys: An Assessment 
+of U.S. Methods and an 
+Innovation
+Samphantharak, Krislert, Scott Schuh, and Robert M 
+Townsend (2018) Economic Inquiry
+
+
+--- PAGE 44 ---
+
+
+--- PAGE 45 ---
+
+
+--- PAGE 46 ---
+
+
+--- PAGE 47 ---
+Cash Flow Errors
+
+
+--- PAGE 48 ---
+DCPC Comprehensive Statement of Liquidity 
+Flows: Consisteny of Stocks and Flows
+(Samphantharak, Schuh and Townsend 2018)
+
+
+--- PAGE 49 ---
+Preexisting Steps Toward Regional 
+Integrated Financial Accounts
+A System of National Accounts 
+(SNA) for building Integrated 
+Macro Accounts of the US:
+1960-2005
+From Bureau of Economic 
+Analysis (BEA) and National 
+Income and Product accounts 
+(NIPA)
+With Federal Reserve Board 
+(FRB) and Flow of Fund 
+Accounts (FFA) 
+o Differences between NIPA and 
+SNA 
+o Differences between FFA and 
+SNA
+
+
+--- PAGE 50 ---
+Bond, Martin, Hume McIntosh, 
+and Mead (2007) 
+
+
+--- PAGE 51 ---
+Regional Accounts, BEA  
+Tell us about the geographic distribution of U.S. economic activity 
+and growth
+Estimates of gross domestic product by
+State
+State and local area personal income
+Provide a consistent framework for analyzing and comparing 
+individual state and local area economies
+For example
+Consumer Spending by State 
+Employment by State, Employment by County, Metro, and Other Areas 
+GDP by Metro Area, GDP by County, GDP by State
+Personal Income by State (Wages, proprietors' income, dividends, interest, 
+rents, and other income received by each state's residents)
+
+
+--- PAGE 52 ---
+Regional Integrated Financial Accounts
+From SCF utilizing algorithm in Schuh-Townsend
+Also for Liabilities, Income, Expenditure and Cash Flow
+Region
+Northeast
+North Central South
+West
+mean_currency
+-
+                
+-
+                     
+100
+                
+-
+                
+mean_checking
+17,500
+          
+12,400
+               
+12,300
+          
+15,300
+          
+mean_savings
+36,800
+          
+22,600
+               
+17,000
+          
+20,900
+          
+mean_other_acct
+-
+                
+-
+                     
+-
+                
+-
+                
+mean_cd
+6,400
+            
+5,800
+                 
+2,900
+            
+6,300
+            
+mean_mutualfund
+104,500
+       
+64,900
+               
+83,300
+          
+79,600
+          
+mean_stock
+88,500
+          
+34,700
+               
+55,900
+          
+67,300
+          
+mean_bond
+13,000
+          
+10,200
+               
+6,400
+            
+12,400
+          
+mean_retire
+169,100
+       
+112,100
+            
+100,700
+       
+112,200
+       
+mean_insur_life
+9,000
+            
+9,700
+                 
+6,400
+            
+5,100
+            
+mean_annuity
+7,500
+            
+6,200
+                 
+7,800
+            
+5,800
+            
+mean_trust
+22,500
+          
+14,500
+               
+15,100
+          
+26,600
+          
+mean_loan_out
+6,200
+            
+8,400
+                 
+6,200
+            
+14,800
+          
+mean_vehic
+19,100
+          
+20,700
+               
+22,300
+          
+23,200
+          
+mean_other_fin_asset
+-
+                
+-
+                     
+-
+                
+-
+                
+mean_prim_housing
+248,100
+       
+130,700
+            
+153,900
+       
+264,700
+       
+mean_other_housing
+73,800
+          
+77,200
+               
+72,500
+          
+119,400
+       
+mean_business
+112,700
+       
+168,800
+            
+133,100
+       
+200,600
+       
+mean_other_nonfin_asset
+5,800
+            
+3,800
+                 
+7,000
+            
+7,800
+            
+mean_all
+941,800
+       
+702,900
+            
+704,100
+       
+983,300
+       
+med_all
+255,400
+       
+175,700
+            
+159,500
+       
+233,800
+       
+SCF Assets
+
+
+--- PAGE 53 ---
+Inequality and Distributional Accounts
+The first national accounts in history—King's famous social tables produced in the late seventeenth century—were in 
+fact distributional national accounts, showing the distribution of England's income, consumption, and saving across 26 social classes—from 
+temporal lords and baronets down to vagrants—in 1688 (see Barnett …
+Pikkety understands this though he continues to make the distinction. The premise of this paper is that the time is ripe to address the problem 
+at a more fundamental level. 
+Otherwise the measurement of inequality in the US inevitably involves assumptions and extrapolations linking income to the balance sheet.  
+Typically, using IRS data, measures of dividends and interest income are used to infer the balance sheet of financial assets, with the same 
+formula applied uniformly across income classes and regions. Here are some recent efforts.
+SMITH, ZWICH, AND ZIDER  provide  “new estimates of top wealth that account for heterogeneity when capitalizing income 
+flows….Accounting for het- erogeneity reduces the growth in top shares since 1980 by [half], leaving the recent wealth estimates above the 
+estate tax series and closer to the SCF.2 Overall, wealth concentration when accounting for heterogeneity is still very high: the top 1% holds 
+as much wealth as the bottom 90%. However, the “P90-99” class holds more wealth than either group after accounting for heterogeneity. “
+“Our approach also alters the composition of top wealth. We find a larger role for private business wealth and a smaller role for fixed income 
+wealth, consistent with the composition of top wealth in the SCF and estate tax data. Less than half of top wealth takes the form of liquid 
+securities with clear market values. 
+“Last, we conduct a novel investigation of the geography of wealth inequality. We provide state-level estimates of wealth and explore the 
+evolution of wealth-to-income ratios between 1980 and 2014. The data reveal vast disparities in wealth across regions. For example, wealth 
+in the Northeast exceeds $450K per capita, whereas wealth in the poorest states in the South is less than $200K. The coastal states have 
+experienced substantial wealth growth since 1980, with wealth-to-income ratios increasing by between 100% and 300% of national income, 
+while inland states have seen much more modest growth. Thus, the period of aggregate wealth growth in the United States has coincided 
+with striking regional divergence. “
+
+
+--- PAGE 54 ---
+Others also make adjustments to the Piktety Saez and Zcuman estimates. Gerald Auten and David Splinter use the same IRS tax data and 
+find that the top 1 percent’s share of after-tax income rose from 8.4 percent in 1979 to 10.1 percent in 2015 — an increase less than a third 
+as large.
+US Federal agencies continue to work on the underlying data, arbitraging across the agencies and emphasize the importance of timely 
+information. 
+Moore, Eric Nielsen, Sarah Reber, Molly Shatto, Kamila Sommer, Tom Sweeney, and Alice Henriques Volz   2019
+This paper describes the construction of the Distributional Financial Accounts (DFAs), a new initiative that provides quarterly, timely 
+estimates of the wealth distribution based on a comprehensive measure of U.S. household wealth. The DFAs are constructed by 
+integrating two statistical products produced by the Federal Reserve Board: the Financial Accounts of the United States and the Survey of 
+Consumer Finances (SCF). The Financial Accounts are U.S. national accounts that provide quarterly measures of aggregate assets and 
+liabilities for various economic sectors, including households, and the SCF collects detailed measures of a representative sample of 
+household-level balance sheets (including of very wealthy house- holds) every three years. The DFAs combine the SCF’s distributional 
+information with the Financial Accounts’ quarterly national accounting framework in a manner that is consistent with both data sets.
+
+
+--- PAGE 55 ---
+Ehrlich, Fukui and Townsend (work in progress) 
+“State Risk-Sharing: Financial-Trade Linkages”
+
+
+--- PAGE 56 ---

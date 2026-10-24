@@ -1,0 +1,252 @@
+Revised November 24, 2025
+
+
+
+
+14.03/003 Microeconomic Theory & Public Policy Fall 2025
+
+
+Lecture slides 20. Adverse selection and subprime lending
+
+David Autor (Prof), MIT Economics and NBER
+ Worldwide Real Estate Bubbles, 2002 – 2008
+
+
+
+
+By Financial Crisis Inquiry Commission - http://fcic.law.stanford.edu/report/conclusions, Public Domain,
+https://commons.wikimedia.org/w/index.php?curid=47853455
+U.S. Residential Investment Surged Between 2002 and 2007
+             DJIA Index (Monthly Data) Pre/Po t GFC 2005-2010
+                $16K                                                                                         Fed75bp
+                                                 Stock• grind up                         Fed DW              Emergency Cut                   Fed TAF/TSLF
+                                                 on Gold�ocks                            Rate Cut                                            & GSE Hou•ing
+                $15K                                                 Equities fade
+                                                                     bad econ-news                                                            upport
+                $141<     Bernanke Comment:                                                                                                  ities Enter
+                          We never had a                                                                                                      arMarket
+                $13K      nationwide dedine
+                                                                                                                                              LE'H.AIG,
+                          in housing
+                                                                                                                                              WAMU,GSEs
+                $12K
+                                                                                         BSC                      ••
+                $11K                                                                     Subprime                      ••.
+                                                                                                                                                 IVPass TARP
+                                                                                         Funds                               •••
+               $10K                                                                                                 q, •..                         dlnate CBS
+                                                                               HSBC                                      .,_�        ••.              ZIRP
+                $9K                                                            Subprime                                            �a. •••                QE1
+                                                                                issues                                              -.,-
+                $BK
+
+                 $71<
+
+                $6K
+
+                $SK
+                                                2006                          2007                           2008                                   2009
+
+
+             Source: Money Momlng staff Research                                                           .••••·••. MO EY MORNING
+© Money Morning. All rights reserved. This content is excluded from our Creative Commons license. For more information, see https://ocw.mit.edu/help/faq-fair-use/
+             World GOP*
+             ¾ change on a year earlier
+             • Rich countries               Emerging mari<ets         • United States                   China           -Total
+
+                                                                                                                                   6
+
+
+
+
+             ,--,--"T----,---,--,--,---,,--.......--.--.----.--------,-,---.--,--,--"T--r---,---.--,--,--4
+                  2007         08                  09            10       11           12         13
+                                                                    •Estimate-. bned on 52 economies repre-.enting 90'4 of wortd GOP.
+             Sources: IMF; The Econom,st                                                 Weig ted by GOP at purchasing-power panty
+
+© The Economist. All rights reserved. This content is excluded from our Creative Commons license. For more information, see
+https://ocw.mit.edu/help/faq-fair-use/
+Did securitization lead to lax screening?
+     Evidence from subprime loans
+           Keys et al. (2010)
+Background: Securitization
+
+
+Defnition: A mortgage-backed security (MBS) is a type of asset-backed security which is
+secured by a mortgage or collection of mortgages. (Wikipedia)
+ − One asset is “backed” by many borrowers (risk pooling)
+ − Works essentially like a bond where the buyer of the asset receives a stream of interest
+   payments
+ − The idea behind MBS was to spread risk over many asset holders
+ − Holder of asset faces the risk that borrowers default
+ − During the fnancial crisis this default risk became an aggregate risk
+
+
+
+                                                                                          6/23
+ Freddie Mac Guidelines for Prime vs. Subprime Lending
+While not the only ingredient in market estimates of credit quality, FICO scores
+(credit scores developed by Fair Isaac and Company) provide a useful measure
+for quantifying default risk. In general, frst-trust mortgage borrowers with FICO
+scores above 660 are considered to have a good credit reputation.
+Borrowers with FICO scores between 660 and 620 are somewhat riskier
+borrowers, for whom underwriters should perform a more extensive re-
+view. Borrowers with scores below 620 should be subjected to a thor-
+ough, cautious review.
+
+                                                      — Calmoris and Mason, 1999
+Distribution of Fair-Isaac (FICO) credit scores in the US in 2004
+
+
+
+
+                                                                    8/23
+Key Idea
+ − Mortgage lending: Mortgage issuers gather both hard and soft information on
+   borrowers. An industry rule of thumb “allowed” loans above a FICO score of 620 to be
+   securitized.
+      □   Loans above 620 can get securitized, loans below 620 are harder to securitize and sell
+      □   If the additional risk is not properly priced, banks have an incentive to screen less thoroughly
+          above 620
+
+ − Types of loans
+      □   Full documentation: An exhaustive fnancial inventory of income, debt, credit, payment
+          history
+      □   Low documentation – AKA ‘liar loans’: “Designed for self-employed borrowers who
+          cannot provide tax returns as evidence of their income. They still require some form of
+          supporting evidence of the borrowers income, although some lenders will accept an
+          accountant’s declaration or bank statements” (Wikipedia)
+                                                                                                      9/23
+Subprime Mortgage Originations, 1992 – 2008
+
+
+
+
+By National Commission on the Causes of the Financial and Economic Crisis in the United States - Final Report
+of the National Commission on the Causes of the Financial and Economic Crisis in the United States, p.70
+figure 5.2, Public Domain
+Number of Loans by FICO Score: Low-Documentation Loans
+Surge in Low-documentation loans starting in 2003
+    322                QUARTERLY JOURNAL OF ECONOMICS
+
+                                        TABLE I
+                                    SUMMARY STATISTICS
+
+                       Panel A: Summary statistics by year
+                 Low documentation                  Full documentation
+           Number of         Mean         Mean   Number of       Mean        Mean
+             loans       loan-to-value    FICO     loans     loan-to-value   FICO
+
+    2001     35,427          81.4          630     101,056        85.7        604
+    2002     53,275          83.9          646     109,226        86.4        613
+    2003    124,039          85.2          657     194,827        88.1        624
+    2004    249,298          86.0          658     361,455        87.0        626
+    2005    344,308          85.5          659     449,417        86.9        623
+    2006    270,751          86.3          655     344,069        87.5        621
+
+                      Panel B: Summary statistics of key variables                  12/23
+                                  Low documentation           Full documentation
+Interest Rates: Low-Documentation Loans
+Median Household Income: Low-Doc Loans
+ 328
+Loan-to-Value  Ratio: Low-Documentation Loans
+          QUARTERLY JOURNAL OF ECONOMICS
+
+
+                2001                             2002                              2003
+ 100                               100                               100
+
+
+
+
+ 50                                50                                50
+
+
+
+
+ 0                                 0                                 0
+       500   600       700   800         500   600       700   800         500   600       700   800
+                   FICO                              FICO                              FICO
+
+
+                2004                             2005                              2006
+ 100                               100                               100
+
+
+
+
+ 50                                50                                50
+
+
+
+
+ 0                                 0                                 0
+       500   600       700   800         500   600       700   800         500   600       700   800
+                   FICO                              FICO                              FICO
+
+                                          FIGURE IV
+                        Loan-to-Value Ratio (Low-Documentation)
+        The figure presents the data for loan-to-value ratio (in %) on low-documentation
+Annual Delinquencies in 2001: Low-Doc Loans
+Annual Delinquencies in 2002: Low-Doc Loans
+Annual Delinquencies in 2003: Low-Doc Loans
+Annual Delinquencies in 2006: Low-Doc Loans
+                        DID SECURITIZATION LEAD TO LAX SCREENING?                                                   353
+Annual Delinquencies: Full-Documentation Loans
+                       2001                                     2002                                     2003
+                                            0.15                                     0.15
+   0.2
+
+
+   0.15                                     0.1                                      0.1
+
+   0.1
+                                            0.05                                     0.05
+   0.05
+
+   0                                        0                                        0
+          500   550   600 650   700   750          500   550   600 650   700   750          500   550   600 650   700   750
+                         FICO                                     FICO                                     FICO
+
+
+                       2004                                     2005                                     2006
+   0.15                                     0.15                                     0.25
+
+                                                                                     0.2
+   0.1                                      0.1
+                                                                                     0.15
+
+   0.05                                     0.05                                     0.1
+
+
+                                                                                     0.05
+   0                                        0
+          500   550   600 650   700   750          500   550   600 650   700   750          500   550   600 650   700   750
+                         FICO                                     FICO                                     FICO
+
+                                          FIGURE XII
+                      Annual Delinquencies for Full-Documentation Loans
+           The figure presents the percentage of full-documentation loans originated be-
+Cumulative Delinquencies 2001 – ‘06: Full-Doc Loans
+
+
+
+
+                          Delinquencies:
+                        Full Documentation
+                               Loans
+Cumulative Delinquencies 2001 – ‘06: Low-Doc Loans
+       Highly recommended podcast:
+“Inside Job” This American Life, April 2010
+ https://www.thisamericanlife.org/405/inside-job
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

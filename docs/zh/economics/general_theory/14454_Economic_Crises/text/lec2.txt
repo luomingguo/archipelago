@@ -1,0 +1,624 @@
+Collateral and Ampliﬁcation
+14.454
+
+Ricardo J. Caballero
+MIT
+
+Economic Crises
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+1 / 24
+
+References
+
+1
+
+2
+
+Bernanke B. and M.Gertler, “Agency Costs, Net Worth, and Business
+Fluctuations,” American Economic Review, 79(1), 14-31, March 1989.
+Kiyotaki, N. and J.Moore, “Credit Cycles,” Journal of Political Economy,
+105(2), 211-248, April 1997.
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+2 / 24
+
+Basic Idea
+
+Most models of ﬁnancial constraints have an equation of the kind:
+f 0 (K ) = r + λ;
+
+λ > 0,
+
+where λ results from some ﬁnancial friction.
+New investment: underinvestment
+Saving existing K: ineﬃ cient destruction.
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+3 / 24
+
+Basic Idea
+
+Micro: λ could take the form of credit rationing or high lending rate.
+Adverse selection: Rise in r L means bad selection, thus keep r L low.
+Moral hazard: if too leveraged, wrong incentives
+
+Macro: micro-solutions such as collateral, self-ﬁnancing, create problems
+during recessions
+Ampliﬁcation (rise in λ)
+Persistence (constrained operation limits earnings, etc. )
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+4 / 24
+
+Bernanke-Gertler
+OLG (simpler) with t : 1, ..., ∞
+η: fraction of population that have access to investment technology
+(entrepreneurs). The rest are lenders
+Entrepreneurs are heterogenous: building a project takes x (ω ) units of
+output with ω ∼ U [0, 1] and x 0 (ω ) > 0
+Project (indivisible): yields ki units of capital at t + 1 (it depreciates after
+that): E[ki ] = k independent of ω
+Output (note: L = 1): yt = θ̃ t f (kt ) with θ̃ t +i i.i.d. (aggregate shock)
+Storage technology (alternative for savings): r ≥ 1. Linear preferences:
+
+(∗) ste = wt
+R.J. Caballero (MIT)
+
+st = wt − zt
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+5 / 24
+
+Equilibrium with Perfect Information: Supply
+
+Let q be the price of capital, q̂t +1 = E[qt +1 ] and k = E[ki ]. Free entry
+implies that there is a critical ω such that
+q̂t +1 k = rx (ω t )
+Since ω ∼ U[0,1], the number of projects i (investment) and the stock of
+capital (no aggregate risk) are:
+it = ηω t ;
+
+kt +1 = kit
+
+Combining these results, the capital supply curve is:
+ 
+
+
+r
+r
+it
+r
+kt + 1
+q̂t +1 = x (ω t ) = x
+= x
+k
+k
+η
+k
+kη
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+6 / 24
+
+Equilibrium with Perfect Information: Demand
+
+Demand at t + 1 is:
+qt +1 = θ t +1 f 0 (kt +1 )
+Since shocks θ t +1 is i.i.d., expected demand (and eq) is
+q̂t +1 = b
+θf 0 (kt +1 )
+
+
+
+r
+= x
+k
+
+
+
+kt + 1
+kη
+
+
+
+thus kt +1 is a function of θb but not of θ t +1 or θ t
+
+By the same token, the shock θ t +1 aﬀects yt +1 , qt +1 , consumption and
+wages (saving) but not investment, kt +2 , or yt +2
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+7 / 24
+
+Equilibrium with Perfect Information (Ex-ante)
+
+As of t
+
+Eq(t+1)
+
+K(t+1)
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+8 / 24
+
+Equilibrium with Perfect Information (Ex-post)
+
+As of t+1
+
+q(t+1)
+
+K(t+1)
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+9 / 24
+
+Equilibrium with Asymmetric Information
+Goal: To build a model where θ t aﬀects investment and next period’s output
+(persistence)
+Townsend’s costly state veriﬁcation: ki is costlessly observed by entrepreneurs
+only. Others can learn by auditing: costs γ k-goods. If ht projects are audited
+kt +1 = (k − ht γ)it
+Two states: (1,2), k1 is bad; k2 is good
+Beneﬁt of under-reporting: More consumption. Cost of under-reporting and
+getting caught: A ﬁne (you will see the details of the contracting problem in
+rec.)
+Basic features of contract: No auditing in good state. Auditing with
+probability p in bad state.
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+10 / 24
+
+Characterization
+p = 0 if
+
+ˆqk1 ≥ r (x (ω ) − s e ),
+
+i. e. if the expected value of the low output ˆqk1 is larger than the repayment
+r (x (ω ) − s e ), where x (ω ) − s e is the size of the loan (cost of project entrepreneur’s wealth)
+If not, 0 < p < 1. p is chosen such that the entrepreneur reports honestly
+when the good state occurs.
+Characterization:
+Good project even if p = 1 (i. e. if ω ≤ ω, ω is so low that the project is built
+even if p = 1.)
+ˆqk − rx (ω ) − q̂ π 1 γ = 0
+
+Positive return only if p = 0 (i. e. if ω = ω, the project is built only if p = 0):
+ˆqk − rx (ω ) = 0
+
+The intermediate case ω ∈ [ω, ω ] is illustrated in the following ﬁgure.
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+11 / 24
+
+Equilibrium with Asymmetric Information
+w_lbar < w < w_ubar
+
+E cons
+storage
+
+s^e
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+12 / 24
+
+Equilibrium with Asymmetric Information
+
+Asymmetric info
+
+Eq(t+1)
+
+s^g
+
+s^g
+
+K(t+1)
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+13 / 24
+
+Equilibrium with Asymmetric Information
+
+An increase in θ t increases ste , so that more entrepreneurs can invest and the
+s g -curve shifts down
+Hence, we get more investment and kt +1 increases (even though θ t is
+i.i.d.)... and higher kt +1 implies higher wages tomorrow, and so on...
+We have ampliﬁcation/persistence+
+However, the multiplier is “limited” (asset price movement dampens the
+eﬀect).... next model...
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+14 / 24
+
+Kiyotaki-Moore
+One group can’t borrow as much as it wants. If it did, it would behave
+opportunistically (holdup/incomplete contracting)
+Land: factor of production and collateral (substitutes for commitment)
+
+t
+
+0
+
+1
+
+2
+
+Fall in Net
+Worth
+
+Fall in Net
+Worth
+
+…
+
+Temp decline in
+productivity
+
+Fall in Net
+Worth
+
+Fall in demand
+for land
+
+Fall in qt
+
+R.J. Caballero (MIT)
+
+Fall in demand
+for land
+
+Fall in qt+1
+
+Collateral and Ampliﬁcation
+
+Fall in demand
+for land
+
+Fall in qt+2
+
+Economic Crises
+
+15 / 24
+
+Kiyotaki-Moore
+
+t = 0, 1, 2, ....
+Two goods: A non-durable commodity (fruit), and land, with total supply K¯
+Two types of agents (both produce and consume fruit): farmers (mass of
+one) and gatherers (mass of m)
+βF < βG (linear preferences) plus other assumptions to rule out corners.
+Since farmers are more impatient, they are borrowers in equilibrium
+One period credit market: R = 1/βG .
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+16 / 24
+
+Farmers
+CRS technology: out of kt units of land, farmers produce akt units of
+tradeable fruit and ckt units of nontradeable fruit
+yt +1 = (a + c )kt ;
+
+a
+< βF
+a+c
+
+(Important) Assumption: After production starts, only speciﬁc farmer can
+complete it. Inalienability of human capital (farmer can withdraw eﬀort).
+Moreover, farmers can get the entire surplus, hence speciﬁcity/appropriability
+imply reluctance to lend. Collateral is needed for lending:
+Rbt ≤ qt +1 kt ,
+
+(1)
+
+where bt is the farmer’s debt at t and qt +1 the price of land at t + 1.
+The ﬂow of funds constraint is
+qt (kt − kt −1 ) + Rbt −1 + (xt − ckt −1 ) = akt −1 + bt ,
+
+(2)
+
+where xt is consumption. Investment in land and consumption must be ﬁnanced
+by output and net borrowing.
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+17 / 24
+
+Gatherers
+
+DRS technology: k̃t units of time t land produce G (k̃t ) units of time t + 1
+fruit
+G 0 > 0, G ” < 0.
+ỹt +1 = G (k̃t )
+No speciﬁcity / no credit constraint. The gatherers’ﬂow of funds constraint
+is
+qt (k̃t − k̃t −1 ) + Rb̃t −1 + x̃t = G (k̃t −1 ) + b̃t
+(3)
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+18 / 24
+
+Characterization of Equilibrium
+Farmers: Only consume nontradeable fruit and invest as much as they can:
+xt = ckt −1
+
+Rbt = qt +1 kt
+
+Substituting this in (2) yields:
+kt =
+
+1
+[(a + qt )kt −1 − Rbt −1 ] ,
+qt − qt +1 /R
+
+(4)
+
+where 1/(qt − qt +1 /R ) is the multiplier and [(a + qt )kt −1 − Rbt −1 ] is the
+farmers’net worth. Since everything is linear, we can aggregate (4)
+Kt =
+
+1
+[(a + qt )Kt −1 − RBt −1 ]
+ut
+
+(5)
+
+with ut ≡ qt − qt +1 /R and (1) becomes
+Bt =
+
+1
+qt +1 Kt .
+R
+
+(6)
+
+An increase in qt = qt +1 raises Kt (when collateral eﬀect dominates).
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+19 / 24
+
+Market Clearing
+The gatherers solve
+max
+k̃ t
+
+1
+1
+G (k˜t ) + qt +1 k̃t − qt k̃t
+R
+R
+
+with FOC
+1 0
+1
+G (k̃t ) = [(R − 1)qt − (qt +1 − qt )] = ut .
+R
+R
+Market clearing implies K̃t = (K̄ − Kt )/m and hence
+
+
+1 0 1
+u (Kt ) = G
+(K̄ − Kt ) .
+R
+m
+
+(7)
+
+With perfect foresight / no bubbles, we can use the deﬁnition of user cost
+u (Kt ) = qt −
+and solve forward
+
+1
+qt + 1
+R
+
+∞
+
+qt = ∑ R −s u (Kt +s ).
+
+(8)
+
+s =0
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+20 / 24
+
+Steady State
+
+In steady state, (6) implies qK = RB. Substituting in (5) yields
+R −1 ∗
+q = u ∗ = a < a + c.
+R
+(7) becomes
+1 0
+G
+R
+
+
+
+1
+(K̄ − K ∗ )
+m
+
+
+
+(9)
+
+= u∗.
+
+(10)
+
+Combining (6) with (9) yields
+B∗ =
+
+R.J. Caballero (MIT)
+
+a
+K ∗.
+R −1
+
+Collateral and Ampliﬁcation
+
+(11)
+
+Economic Crises
+
+21 / 24
+
+Steady State
+
+G’
+
+a+c
+
+Ra
+
+K*
+
+Kop
+
+K
+Y’
+(K)>0
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+22 / 24
+
+Dynamics
+Start from (K ∗ , B ∗ , q ∗ ). Temporary increase in farmers’productivity a by Δ
+(surprise, followed by perfect foresight)
+First best: ΔYt = Δ; no further action
+Kiyotaki-Moore economy: By (5),
+u (Kt )Kt = [a(1 + Δ) + qt − q ∗ ]K ∗ ,
+u (Kt +s )Kt +s = aKt +s −1 + 0.
+From eq (8) we get a positive feedback since:
+∞
+
+qt = ∑ R −s u (Kt +s ).
+s =0
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+23 / 24
+
+Final Remarks
+
+The feedback between asset prices and optimal investment/allocation is
+pervasive, especially during severe crises
+Collateral damage implies wasted opportunities
+Recoveries are retarded by collateral damage
+
+R.J. Caballero (MIT)
+
+Collateral and Ampliﬁcation
+
+Economic Crises
+
+24 / 24
+
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+14.454 Economic Crises
+Spring 2026
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+
+

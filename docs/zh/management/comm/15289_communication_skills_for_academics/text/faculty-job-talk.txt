@@ -1,0 +1,61 @@
+Note:   There may be several talks included in the faculty application and interview process, including a shorter talk during a screening interview (typically via video call) or a chalk talk. While much of the advice given here may also apply to these other parts of the process, this article is intended as guidance for the traditional job talk that is a part of most in-person faculty interviews.
+Criteria for Success
+A successful faculty job talk…
+Communicates your most exciting and relevant research
+Justifies your fit to the department and/or institution
+Shows your proven track record of research accomplishments
+Clearly presents your plans for future research
+Follows a clear and intentional structure
+Follows  best practices for slide design
+Is well-rehearsed and adaptable to potential interruptions
+Stays within the allotted time, including plenty of time for Q&amp;A
+Note:   Job talks vary in format and structure by field, institution, and department. If you’re uncertain, check with the department that invited you about what they expect to be included in a job talk.
+Identify your purpose
+A faculty job talk is a central part of the faculty interview process. Being invited to interview, and thus to give a job talk, is a signal that your application was strong and that the committee would like to hear more.
+The purpose of a job talk is to help convert an interview into a job offer. You do this by using the job talk as an opportunity to show that you are a good fit for the position. Your faculty job talk should show that you are a   good researcher   by demonstrating that your work is important, hard, and innovative. Further, it should show that you are a   good teacher   who can explain your topic to both students and experts in the field. Finally, it should also show that you are a   good colleague   who can interact with others well, especially during the Q&amp;A session.
+Analyze your audience
+Your job talk should be tailored to the audience defined by the host department. The most typical format is for the job talk to be an open seminar attended by some or all members of the search committee. Additional attendees may include other faculty, graduate students and postdocs, undergraduate students, and others. Since there is such a broad range of possible audience members, don’t be afraid to clarify what the expectations are by asking your host.
+You should also take into consideration the different research areas in the department. Researchers in a robotics department are likely to have a much more narrowly defined area of background and experience compared to those in an electrical engineering and computer science (EECS) department, which may include researchers doing applied or theoretical research in a breadth of topics from programming languages and computer vision to devices and photonics. Be sure to use accessible language and terminology for the defined audience and to avoid unfamiliar jargon. If your audience includes those less familiar with your field, you should factor that into your introduction and background.
+Skills
+1. Choose content that covers your most exciting and impressive research
+When choosing your talk content, create a narrative that serves to highlight your personal brand which helps the hiring committee remember you. Refer to  this page about faculty applications    for more about developing and articulating your brand.
+The content of your talk should demonstrate your qualifications for the position and highlight your contributions to your field. You don’t need to try to include everything you’ve ever done. Rather, capture your most important contributions which combine to tell a coherent story about what you’ve done and how it leads to what you will do as a professor. You are not limited to talking about your most recent work; however, refrain from    only    talking about work that is several years old to avoid giving the impression that you have not done anything exciting since then. In particular, if you are currently a postdoc, do not    only    talk about your graduate research.
+In addition to your past/current work, a job talk should include a discussion of what your future work as a professor will be. This should be more than just a direct extension of your current project or most recent paper. The future work you describe should cover a roughly 5-7 year time span (ie, your pre-tenure faculty years), unless otherwise defined by the committee. This content should be as concrete as possible, describing specific projects rather than vague goals.
+Figure 1.  Recommended breakdown for how to divide background and past research with future research directions in a faculty job talk
+Typically, the content of a job talk should mimic the breakdown of a  faculty application research statement   , like in Figure 1, but it does not have to cover exactly the same material.
+Reuse content ONLY if it fits your audience and goals
+Perhaps the best piece of advice we can give about preparing a job talk is to   start from scratch  . Before you pull up old slides to see what you can reuse, think about the big picture. Write an outline, draw a diagram, whatever works for you. This talk is too high stakes to look for the easy way out. It should get special attention. If you choose to reuse slides from previous talks, it should be an intentional decision because those slides fit into your narrative, not simply a matter of convenience.
+2. Choose a structure that highlights your content
+When planning your talk structure, organize the content intentionally. Your talk does not have to be ordered chronologically. It may be helpful instead to organize information topically or thematically to fit your work into a clear narrative and highlight your brand. If you are talking about multiple projects, be sure that the connections between them are clear and consider using a recurring outline slide to help your audience follow along. Further, be sure that you are highlighting your contributions while still providing enough background for those outside your field.
+We suggest using the Hourglass structure shown in Figure 2. Start general, introducing the motivation behind your work. To reinforce your brand and highlight your capabilities, you may also wish to give a brief overview of your specific contributions at the beginning of your talk. Then, gradually move into the more technical part of your talk, discussing your specific motivation and problem, your approach, and your results. Finally, broaden the discussion again to clarify how your work has had an impact on your field.
+The end of your talk should include future work. If your previous work has enabled or inspired future projects, you may consider this future work to be part of the impact section. You can also consider outlining a second hourglass for your future work, which highlights the broad motivation and goals of your future work, your specific technical approach(es), and the impact on your field if you are successful.
+Figure 2.  The hourglass is a helpful visualization for how to start broadly, narrow your focus to your specific research problem, and then open up your talk again to discuss the broader implications of your work.
+3. Practice your job talk many times, at many stages, and with many people
+A job talk should never run over time. An audience will almost always be more forgiving of a talk that is too short than one that is too long. If you run long, audience members may leave at the scheduled ending time, missing important sections of your talk, including your conclusion and future work, and the question and answer (Q&amp;A) session. To avoid this pitfall, plan and rehearse to ensure you are comfortable with the length of your talk and allow adequate time for Q&amp;A. We recommend planning for your talk to last for 75% of the time allotted. For a 1 hour job talk, plan for the talk portion to be 45 minutes.
+Find practice audiences as close to your real audience as possible
+Practice with faculty, postdocs, grad students, and (maybe) undergrads both in and outside your field. Whenever possible, practice in the format you are giving the real talk: Zoom for Zoom talks and in-person for in-person talks.
+Get as much feedback as you can and use  some  of it
+While practicing your job talk with different audiences can be a way to get a lot of helpful feedback, you will not be able to please everyone. It is likely that you will receive conflicting advice. Listen actively to those who have taken the time to give feedback, but do not try to incorporate every suggestion. Do not disregard suggestions, especially those that come from multiple people. Rather, look for themes and ideas in the feedback that resonate with you. At the end of the day, this is YOUR job talk and you make the decisions.
+4. Prepare and practice for Q&amp;A
+The question and answer (Q&amp;A) portion of a talk is often one of the most dreaded and least predictable parts of giving a job talk, but it is also one of the most important! The Q&amp;A is a great opportunity to show that you can think on your feet and that you can engage in productive research conversations, which will make you a good colleague.
+Preparing for Q&amp;A does NOT mean trying to fit everything into your slides
+It may be helpful to draft a list of questions that people are likely to ask and think about how you will answer them. Encourage your practice audiences to ask questions to help you generate this list. While you want to make sure your talk is clear, you do not need to try to preempt every question that may come up by fitting the answer into your talk. Instead, consider making backup slides for information that would be helpful to have on hand if you need it.
+Common Q&amp;A concerns
+Will questions be during or after the talk?
+Either/both are possible, and this is usually outside of your control. Every department has its own culture around asking questions during seminars and talks &#8211; some encourage a highly interactive environment, where audience members are encouraged to interrupt with questions; others typically save questions for the end. To help you prepare, you can ask your host what is expected.
+What do I do if the same person keeps asking questions?
+Your host may intervene to help you manage the Q&amp;A session. If not, view this as a chance to demonstrate your classroom management skills. If the person is asking genuine questions that are likely to be of interest to others in the room, engage their questions as you normally would. If they are dominating the conversation when others clearly have questions to ask, mention that you want to make sure everyone has a chance to speak. If their questions are very specific and not relevant to others, offer to follow up with them after the talk.
+What if someone is just being mean?
+Thankfully, this isn’t that common. Most people will ask questions out of genuine curiosity and not to try to trip you up. Ideally, your host will intervene in a problematic situation. If not, maintain your composure and a professional attitude, and try not to take it personally.
+What if someone asks a question that I don’t know the answer to?
+This is okay and normal! Do not make something up. If helpful, make a distinction between whether you don’t know or nobody knows. If you can, pivot to something related that you do know. And finally, offer to follow up offline &#8211; and then actually do it!
+Example Job talks
+Stefanie Mueller Job Talk
+This job talk was part of a successful faculty job search by Dr. Stefanie Mueller (now professor at MIT EECS). This talk shows a   clear research vision  , is   accessible   to the audience, and provides   concrete examples   that the audience can connect with.
+Fadel Adib Job Talk
+This job talk was part of a successful faculty search by Dr. Fadel Adib (now professor at MIT EECS). This talk   clearly presents the big idea   of the talk to a broad audience from the very start. The speaker clearly differentiates the   current state of the art vs. his own work  . Further, the talk is grounded in a beautiful and   helpful outline   which allows for smooth transitions.
+&nbsp;
+See also  this resource about faculty job talks  from MIT EECS.
+Contributors
+Morgan Blevins
+Deanna Montgomery

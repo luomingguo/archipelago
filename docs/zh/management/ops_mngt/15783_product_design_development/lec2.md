@@ -1,13 +1,12 @@
 ---
-title: '系统化创新与R-W-W'
+title: 系统化创新与R-W-W
 type: lecture
 lecture: 2
 tags: [systematic-innovation, rww-framework, opportunity-evaluation, opportunity-tournament]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
-# Lec 2 系统化创新与R-W-W（Systematic Innovation and Real-Win-Worth-it）
+# Lec 2 系统化创新与 R-W-W（Systematic Innovation and Real-Win-Worth-it）
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
 > 核心教材：*Product Design and Development* (8th Edition) Chapter 3, 4  

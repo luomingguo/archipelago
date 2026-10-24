@@ -5,7 +5,7 @@ import { glob } from 'astro/loaders';
 // 避免手工指定“看起来复杂”的 fixture。
 const notes = defineCollection({
   loader: glob({
-    pattern: ['**/*.md'],
+    pattern: ['**/*.md', '!**/transcripts/**'],
     base: new URL('../../docs/zh', import.meta.url),
     generateId: ({ entry }) => entry.replace(/\.md$/, ''),
   }),

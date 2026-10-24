@@ -2,10 +2,17 @@
 title: 谷歌文件系统（GFS）
 type: lecture
 lecture: 3
-tags: []
+tags: [gfs, distributed-file-system, primary-backup, fault-tolerance, chunkserver]
 status: complete
 ---
 # Lec 3 谷歌文件系统（GFS）
+
+## TL;DR
+
+- GFS 面向大规模批处理设计，采用单一 Master + 多个 Chunkserver 架构，文件切分为 64MB 大 Chunk 并三副本存储。
+- 控制流与数据流分离：客户端仅向 Master 查询元数据并缓存，数据读写直接与 Chunkserver 交互以避免 Master 成为瓶颈。
+- 采用弱一致性模型：记录追加（Record Append）保证至少一次写入，允许不同副本存在不一致与空洞，由应用层处理重复。
+- Master 状态纯内存化加速操作，通过操作日志与 Checkpoint 持久化，故障切换靠外部监控进程重启。
 
 >
 

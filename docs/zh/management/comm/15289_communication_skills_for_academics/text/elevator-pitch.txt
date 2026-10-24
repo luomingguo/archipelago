@@ -1,0 +1,44 @@
+Criteria for Success
+A successful elevator pitch&#8230;
+Gets a stranger excited about your ideas.
+Uses simple language familiar to your audience.
+Includes a concise phrase that captures the value of your work or ideas.
+Is executed in about 20-40 seconds.
+Structure Diagram
+Stick figure credited to XKCD.
+Purpose
+An “elevator pitch” can be any verbal description of who you are, what you do, and why you do it. You always have one purpose: secure the interest of the listener. A successful pitch will draw them into your story. It doesn’t matter if you&#8217;re introducing a professor to your poster at a conference or just chatting with a friend: your goal is to share your science in a way that your audience can access and get excited about.
+Analyze Your Audience
+A successful pitch prompts the listener to respond, “Interesting, tell me more!” All decisions about content and delivery should be based on what will engage your audience. When introducing yourself to another researcher at a conference you might grab attention by mentioning what’s insightful about your technical approach. For a less scientific audience (a corporate recruiter, potential business partner or investor, or even your parents), you probably want to focus more on your high-level motivation and the potential impact of your work.
+When speaking to an individual, your pitch can be tailor-made or adjusted on the fly. For a larger audience, choose an aspect of your problem and an application or advantage of your new approach or invention that will interest the majority of the audience.
+Content
+First, select pitch content by answering questions like “What aspect of my work will be most exciting to my audience?” When preparing a pitch to be delivered formally to a group, choose an aspect of your work that has an application or advantage over what exists that will interest the majority of the audience. When giving a pitch in a personal conversation, your pitch should be tailored to the specific person.
+Delivery
+The way we write is different from the way we speak. When drafting your pitch on paper, you might find that your sentences and words tend to be longer and more complicated. This structure is nearly always overly rigid for a pitch and will feel forced when you try to deliver it aloud. (Make sure to try it!) Additionally, your audience will have difficulty following your ideas. Keep the sentence structure and words simple so that your delivery feels natural and your audience can follow the ideas you&#8217;re presenting.
+Skills
+Keep it concise
+Start by drafting a pitch. Don’t overthink it. Just jot down how you might respond to someone asking, “Hi. What are you working on? And why is it important?”
+You may come up with something true and interesting, but long and involved. Listeners have a short attention span. To maximize your audience engagement, your pitch should not be longer than about 20 seconds.
+To edit your draft, cross out all the nonessential words until you feel you cannot cross out any more. Don’t worry about leaving complete sentences or phrases—push yourself to cut as much as possible. Now that you have a handful of key words, insert as few new words as possible to link them together. Keep in mind that you are free to play with the order of your key words, leave out some when you see redundancy. You may even decide that you don&#8217;t need them after all.
+Author Tip:  I find it easiest to start with a question that the person I&#8217;m talking to will understand and then discuss how my project will work to fix this.
+Have you ever noticed your cellphone getting hot? This heat decreases the lifetime and performance of the battery. To address this issue ,  better  thermal  and  electrical current microscopy techniques  are necessary to better understand the source of this heat. To do this I use an  atomic defect  within diamonds called an  NV center . The NV center is sensitive to  magnetic field  and  temperature . We can use the magnetic field to  image the electric current  in devices like your phone. And these insights could lead to  improved devices .
+Limit new terminology
+People will not understand your pitch if you try to introduce too many new things. Look back at those key nouns and verbs previously identified and assess how your audience will relate to those words. Try to limit the number of definitions and amount of jargon in your pitch.
+Definitions
+How many definitions i.e., words followed by a clarifying phrase, are in your pitch?
+You can keep one or two definitions, but for most, try to remove the defined word or phrase and just keep the clarifying phrase.
+I design algorithms for finding and throwing away less important data so that we can more quickly solve  low-rank approximation and clustering  problems , which are used all over the place  in machine learning and statistics.
+Jargon
+Are there any specific terms that you think your audience will not understand? They need to be replaced or removed.
+There is “obvious jargon,” which refers to words completely foreign to your audience, such as “AFM” or “Atomic Force Microscopy.” These terms are useful in highly specialized arenas but aren&#8217;t helpful for most audiences. Often you can substitute “obvious jargon” with a less technical description — or cut it from the pitch altogether.
+There is also “insidious jargon,” which refers to words that have a different definition in your field than they do in the general population. For example, “work” has a definition in physics that is completely different from the definition in the general population. Though the word “work” is not foreign to an audience of non-scientists/engineers, it may still confuse them if you meant to use it in the physics sense. Using these words will not only lead to miscommunication but will distract from your pitch.
+Example:
+I  use the Nitrogen Vacancy Center to  image the temperature of various devices of interest.
+Practice!
+Again, the way we write is different from the way we speak. For this reason, it is crucial to try delivering your pitch out loud to make sure it feels comfortable.
+Practice dynamics and delivery. Use a serious, concerned face when you talk about your big problem. Pick up the energy when you introduce your ideas. Smile when you share your vision for a better future.
+And lastly, practice—again!
+Content adapted by the  MIT Electrical Engineering and Computer Science Communication Lab  from an article originally created by the  MIT Biological Engineering Communication Lab .
+Contributors
+Christopher Foy
+Chris Musco

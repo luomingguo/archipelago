@@ -2,10 +2,19 @@
 title: 分布式事务
 type: lecture
 lecture: 11
-tags: []
+tags: [distributed-transactions, two-phase-commit, two-phase-locking, atomicity, concurrency-control]
 status: complete
 ---
-# Lec 10 分布式事务
+# Lec 11 分布式事务
+
+## TL;DR
+- 分布式事务 = **并发控制**（隔离性/可串行化）+ **原子提交**（原子性），ACID 是目标规约。
+- **两阶段锁（2PL）**：事务使用记录前加锁、提交/中止后才释放，保证可串行化；强严格 2PL 持锁直至 COMMIT，防止不一致读。
+- **两阶段提交（2PC）**：PREPARE 阶段收集所有参与者 YES/NO，全 YES 则广播 COMMIT，任一 NO 则广播 ABORT；提交点是 TC 将 COMMIT 强制写盘的时刻。
+- 2PC 缺陷：TC 崩溃会导致参与者持锁**无限阻塞**（为一致性牺牲可用性）；破局方案是用 Raft/Paxos 复制 TC，如 Spanner。
+- 2PC ≠ 2PL：前者跨节点保原子性，后者单节点内保隔离性，两者独立正交。
+
+## 背景与参考资料
 
 [toc]
 
@@ -142,6 +151,24 @@ SImple Locking 的行为： T1 在开始时会锁住所有账户记录，因为�
 
 - 增长阶段（Growing Phase）：在食物到达锁点之前，事务可以不断获取锁，但不能释放任何锁。
 - 收缩阶段（Shrinking Phase）：在事务到达锁点之后，事务可以释放已持有的锁，但不能再获取新锁
+
+### 2.4 死锁处理
+
+2PL 会产生死锁，例如：
+
+```text
+T1          T2
+get(x)      get(y)
+get(y)      get(x)   ← 循环等待
+```
+
+常见的死锁检测与解除方法：
+
+| 方法 | 原理 | 适用性 |
+|------|------|--------|
+| **等待图（Wait-for Graph）** | 维护事务依赖图，检测环 → 中止一个事务 | 单机有效，分布式开销大 |
+| **超时（Timeout）** | 等待超时则 abort | 简单，可能误杀 |
+| **Wound-Wait** | 给事务分配优先级（启动时间），旧事务"伤害"（abort）新事务；新事务等待旧事务 | 无饥饿，分布式中常用 |
 
 ## 3. 两阶段提交
 
@@ -397,13 +424,13 @@ if (all_prepared):
   logger.log(tid, "COMMIT")   # FW
 else:
   logger.log(tid, "ABORT")
-  
+
 for worker in workers:
   if (all_prepared):
     logger.commit(worker, tid)
   else:
     logger.abort(worker, tid)
-    
+
 logger.log(tid, "DONE")   # FW(W?)
 ```
 

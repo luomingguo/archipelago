@@ -1,12 +1,11 @@
 ---
-title: '产品架构'
+title: 产品架构
 type: lecture
 lecture: 12
 tags: [product-architecture, modularity, platform-planning, delayed-differentiation, chunks]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 12 产品架构（Product Architecture）
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  

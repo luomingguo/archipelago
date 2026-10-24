@@ -1,0 +1,307 @@
+--- Page 1 ---
+ 
+Prepared by MIT System Dynamics Group faculty. Last updated by John Sterman, September 2013. 
+Massachusetts Institute of Technology 
+Sloan School of Management 
+ 
+15.871 Introduction to System Dynamics 
+Fall 2013 
+ 
+Assignment 2 
+Problem Definition and Model Conceptualization 
+ 
+Assigned: Monday, September 16, 2013; Due: Monday, September 23, 2013 
+Please do this assignment in a team totaling three people. 
+Designing and evaluating high-leverage policies demands a long-term, dynamic perspective. The 
+analyst or manager must be able to characterize the strategic problem, including its current 
+symptoms and history. The time horizon should be explicit and must be long enough to include 
+possible side effects, delayed responses to policies, and other feedbacks. This assignment 
+cultivates your ability to develop a reference mode, a graphical characterization of the patterns of 
+problem behavior over time. The assignment also develops your skill in constructing causal loop 
+diagrams that capture the feedback structure of the system, and your ability to relate the structure 
+in a causal map to the problem behavior in the reference mode. 
+ 
+Problem definition involves both textual and graphical statements of problematic behavior. 
+Conceptualization entails identifying feedback loops that are hypothesized to underlie observed 
+patterns of system behavior. Model formulation is the process of moving from a theory of 
+underlying structure to a fully specified mathematical model so that the theory can be tested. 
+This assignment focuses on problem definition and dynamic hypothesis generation. Later 
+assignments will bring these skills together with those of formulation and analysis to focus on a 
+variety of strategic and operational problems. 
+ 
+Assignment Guidelines 
+  
+Teams 
+ Teams consist of three people. No exceptions.   
+ Members of a team may be drawn from either section A or B of the course.  
+ Do the work together, as a group.  While it is tempting to use a “divide and conquer” 
+strategy and have each person work on different parts of the assignment, doing so will take 
+longer, lower the quality of your work, and limit what you learn—and therefore your ability 
+to complete later assignments. Your dialogue with your teammates as you work through the 
+issues will deepen your understanding and improve your work.  
+In the real world, modeling is almost always done in teams including key stakeholders whose 
+participation is essential for successful implementation. In addition to mastering the technical 
+skills of modeling, you must also master the pragmatic skills of group modeling, including 
+active listening, publicly testing your assumptions, and building respect and trust for others. 
+ 
+ 
+
+--- Page 2 ---
+Introduction to system dynamics 15.871 Assignment 2 
+ 
+2 
+How much should you hand in? 
+Use your judgment.  Some words of wisdom:  
+ “Be careful that you write accurately rather than much.”  
+—Erasmus 
+ We don’t give higher grades for longer write-ups.  
+ “Often must you turn your stylus to erase, if you hope to write something worth a second 
+reading.”  
+—Horace 
+ Allow yourself time for revisions.  
+“What is written without effort is in general read without pleasure.”   —Samuel Johnson 
+ And graded without pleasure.  
+ While your graphs and diagrams should be clear and legible, DO NOT spend your time 
+creating artist-quality presentation graphics. Use your time to think about the issues and 
+develop your ideas. A legible handwritten diagram you had time to think about is preferable 
+to a beautiful computer-generated diagram that took so much time to render you didn’t have 
+time to think deeply about its content.  
+ 
+General hints 
+ Before starting, review the assigned readings covering causal-loop diagrams as noted in the 
+syllabus, particularly chapters 4 and 5 of Business Dynamics.   
+ 
+ Each of your diagrams must fit comfortably and legibly on single page in your writeup. 
+Diagrams should include the loops essential in explaining the dynamics, but be simple 
+enough to understand.  Your client will not understand a diagram that includes everything.   
+ 
+ Be sure to follow the conventions and rules for causal diagrams and reference modes 
+described in chapters 4 and 5.  These include:   
+ Show the time horizon of graphs explicitly; provide units of measure and scales for all 
+variables.   
+ Label the polarity of every link in your causal diagrams.   
+ Identify the polarity of the important loops.   
+ Give the important loops a meaningful name. 
+ Use variables with a clear sense of direction. 
+ Clearly label your graphs. 
+ 
+Operational thinking and dimensional consistency 
+ Formulate your causal diagrams so they capture operational realities—the physics and 
+decision making procedures—of the processes you seek to represent. The units of measure 
+for the variables should be obvious and conform to standard practice. In many cases, the 
+equation for a key concept should be readily inferred from the causal diagram and units. 
+For example, consider a model of a work process. A key formulation shows how the amount 
+of work completed each day is determined. The following diagram states that work 
+completion rises with resources, effort and skill: 
+ 
+
+--- Page 3 ---
+Introduction to system dynamics 15.871 Assignment 2 
+ 
+3 
+ 
+However, the definitions and units of measure for the inputs to the completion rate are 
+unclear. Are resources measured in people or dollars or dollars per month? What is “effort” 
+and how do we measure “skill”? A much better diagram is: 
+ 
+ 
+Each variable has a clear sense of direction and obvious units of measure. From this 
+information a reader can easily infer the equation for the Task Completion Rate: 
+ 
+Task Completion Rate = Workers * 
+Workweek 
+* 
+Productivity 
+ 
+          (Tasks/week)            (People)  * 
+ (Hours/Week) *    (Tasks/Hour/Person) 
+ 
+ 
+Submitting your work:  One member of your team should submit your team’s write-up 
+as a single word document.  Make sure the write-up lists the full names of all members of 
+your team. 
+ 
+Task Completion
+Rate
+Resources
+Effort
+Skill
++
++
++
+Task Completion
+Rate
+Workers
+Workweek
+Productivity
++
++
++
+
+--- Page 4 ---
+A.  Identifying Feedback Structure of Growth and its Limits (5 points: 1/2 of total)  
+ 
+ A1. Identify the reinforcing feedbacks responsible for the exponential growth of the number 
+of active Facebook users, shown below (data from Facebook).   
+ 
+Develop a causal loop diagram capturing the most important reinforcing feedbacks you 
+believe to be responsible for the astounding growth of Facebook.  Limit yourself to no 
+more than four reinforcing feedbacks.  In your writeup, provide a one-sentence 
+explanation of each loop.   
+ 
+ A2. No real quantity can grow forever. Identify some of the balancing feedbacks that might 
+eventually stop the growth of Facebook. Add them to your causal diagram. Limit yourself 
+to no more than four balancing feedbacks. Provide a one-sentence explanation of each 
+loop. 
+ A3. What is likely to happen to the number of Facebook users in the future? Specifically, use 
+your diagram to suggest what the pattern of development for active Facebook users might 
+be in the future.  Draw a graph showing possible futures for the number of active users.  
+Select an appropriate time horizon, and explain your choice briefly. Limit yourself to no 
+more than three possible future paths for subscribers. Name your scenarios.   
+Use the feedback structure and other features of your causal diagram (such as delays) 
+to assess what the likely behavior of the user base might be.  Chapter 4 discusses 
+different feedback structures and the various patterns of behavior they can generate.  
+A good answer here will explain how the structure you hypothesize generates the 
+behavior you anticipate. 
+ 
+ A4. Include in your possible futures graphs showing the likely behavior of other key variables 
+in your causal diagram.  Provide scales where appropriate. 
+The behavior of the other variables you show should be consistent with the feedback 
+loop structure in your diagram.  Further, the hypothesized behavior of the variables 
+you graph for each future should form an internally consistent scenario.  For example, 
+if you argue that Facebook will continue to grow, is it plausible to also show the 
+number of ads users are forced to endure growing, while content quality and privacy 
+drop?  
+Introduction to system dynamics 15.871 Assignment 2 
+ 
+4 
+
+--- Page 5 ---
+Introduction to system dynamics 15.871 Assignment 2 
+ 
+5 
+ 
+B. Speculative Bubbles and the Sub-prime Mortgage Crisis (5 points; 1/2 of total) 
+ 
+The US is now slowly emerging from the implosion phase of a great speculative bubble in 
+housing.  Yale economist Bob Shiller estimates that real housing prices (prices adjusted for 
+general inflation) rose about 80% between 1998 and 2006, a remarkable rate of appreciation that 
+made housing the best investment going.  Selected cities, particularly in the sunbelt, experienced 
+much faster booms (see graph below).  Such dramatic price appreciation would normally not be 
+possible, as homes would have rapidly become unaffordable for most people, eroding demand 
+and limiting prices.   
+To keep demand strong during the boom, however, financial institutions created a wide range of 
+novel mortgage instruments, including interest-only loans, nothing-down loans, balloon payment 
+schedules, exploding ARMS—adjustable rate mortgages with initial rates below market and 
+much higher payments after a few years, and others.  Standards to qualify for a mortgage were 
+relaxed as lending institutions reasoned that risk was low—if a buyer could not make the 
+payments and defaulted, the bank assumed it could foreclose and sell at a profit due to the 
+appreciation in prices that would have occurred in the meantime.    
+The result was a flood of no-doc loans, loans with self-reported and unverified income and 
+assets, and even so-called Ninja loans (“no income, no job, [no] assets”).  Industry insiders spoke 
+of “liar’s loans”—where lenders, in the words of New York Times business columnist Joseph 
+Nocera, “practically begged borrowers to fib about their income.”  Mortgage brokers and loan 
+originators chased the fees these loans generated while banks and brokers packaged and resold 
+them to investors around the world in novel forms such as CDOs (collateralized debt 
+obligations).  Appraisers and the bond rating agencies also received significant fee income, and, 
+in some cases, kickbacks, for inflating valuations.  Lured by the high profits from fee income and 
+flipping properties, the number of mortgage brokers, real estate agents, appraisers, and others in 
+the housing and securitized mortgage sector exploded. 
+But of course the bubble burst.  The inventory of unsold properties skyrocketed. Prices fell 
+rapidly (see the graph). Housing starts plummeted.  Millions of people found they had negative 
+equity, with no chance to sell.  Some just walked away from their homes, so even legitimate 
+lenders started to get “jingle mail” where the borrowers simply mailed the keys to the bank and 
+stopped paying their mortgages.  Many more, especially the working poor, struggled to pay their 
+debts in good faith, only to find that their homes were taken from them in foreclosure.  The 
+ripple effects spilled into world financial markets as hallowed names in the banking and 
+investment world like Lehman Brothers failed, while others were forced into mergers—Merrill 
+Lynch, Washington Mutual, Wachovia, many others—and pillars of finance had to be bailed out 
+at enormous cost to central banks around the world, including Fannie Mae, Freddie Mac, and 
+AIG.  Worldwide financial collapse was barely averted, despite the injection of massive funds 
+into the banking system, widespread bailouts, short-term interest rates of zero, and fiscal 
+
+--- Page 6 ---
+Introduction to system dynamics 15.871 Assignment 2 
+ 
+6 
+stimulus.  The contagion spread into the real economy, leading to the worst world economic 
+downturn since the Great Depression.  State and federal investigators launched investigations 
+into the many allegations of fraud and abuse (though essentially no one has been sent to jail).  
+During the crisis the list of defunct lending operations grew weekly (see, e.g., “the Mortgage 
+Lender Implode-O-Meter” at ml-implode.com/). 
+Housing presents a spectacular, but by no means unique, example of a speculative bubble.  Your 
+task is to identify the feedback structure of speculative bubbles and apply it to the housing crisis. 
+Read and do the challenge “Speculative Bubbles” on p. 173 of Business Dynamics.  That 
+challenge asks you to develop a reference mode (dynamic problem definition) for speculative 
+bubbles in general, then expand the basic feedback structure for markets (p. 170) with the 
+feedbacks contributing to speculative bubbles described by JS Mill.  For this assignment, you 
+should tailor your analysis to represent key features of the housing bubble.  Specifically,  
+ B1.  Make a list of the most important variables or concepts characterizing the housing 
+bubble.  Keep your list short (eight or fewer).  Aggregate similar concepts where possible (e.g., 
+do not represent different types of housing separately, or different types of mortgages: a broad 
+boundary is more important than disaggregate detail).  
+ B2.  Use the description above and your own knowledge to graph the behavior of the key 
+variables you identified.  First, identify the time horizon over which the dynamics unfold.  Select 
+a time horizon long enough to capture the dynamics of the critical variables throughout the 
+bubble, including the past development and enough of the future for the dynamics to play out.  
+Next, sketch a graph showing the behavior for each variable over the time horizon you identified.  
+If two or more variables have the same units of measure, plot them on the same scale.  For 
+example, in a model of a business one would show revenue and cost on the same graph so that 
+the difference between them (profit) can be easily seen.  Qualitative patterns are more important 
+than numerical precision in the early stages of problem definition.  You do not need to go to the 
+web or other sources to find data.  Include your reference modes in your write-up. 
+ B3. Develop a causal diagram that captures the feedbacks you believe are responsible for the 
+housing bubble.  Your diagram should have, at its core, the basic feedback structure regulating 
+demand and supply in markets (Business Dynamics, p. 170).  Then add the most important 
+feedbacks you believe are operating in the housing bubble.   
+ To get your causal diagram started it is useful to ask yourself “what is the rationale for the 
+decisions of each actor in the system?”  That is, what is the intended rationality or intended 
+outcome of the decision to buy a home?  To sell?  To build? To Lend?  For example, one 
+motivation for buyers is to provide a roof over one’s head, but a house can also be viewed as 
+an investment with the potential for capital gains.  Similarly, what factors would motivate 
+
+--- Page 7 ---
+Introduction to system dynamics 15.871 Assignment 2 
+ 
+7 
+developers to start new housing construction (see graph below of US residential 
+construction). 
+ Be sure to show important time delays, including delays in physical processes, in the 
+measurement and reporting of information, and in the change in perceptions and beliefs.  
+ Selecting an appropriate boundary is a critical skill in modeling.  You need a boundary broad 
+enough to include the key feedbacks but not so broad that your model becomes 
+overwhelming.  While the effects of the housing bubble and crash rippled out to affect world 
+financial markets, economic output and employment, do not attempt to develop a global 
+macroeconomic model.  Keep your model focused on the core dynamics responsible for the 
+housing bubble.  Remember that while the specifics of the housing market may have differed 
+in this episode compared to previous bubbles, the feedback structure underlying all 
+speculative bubbles is the same.  
+ B4. Using your diagram, briefly explain the genesis of the bubble. What caused the bubble to 
+burst? What policies might have prevented or moderated the bubble?  What policies might have 
+mitigated the harm it caused?  What policies might prevent such a bubble from happening again? 
+ 
+ 
+ 
+
+--- Page 8 ---
+Introduction to system dynamics 15.871 Assignment 2 
+ 
+8 
+ 
+Case-Shiller home price index.   
+Source:  http://www.ritholtz.com/blog/2013/04/case-shiller-home-prices-rise-in-february-2013/ 
+ 
+US Residential Construction: 
+Source: US Census Bureau.  SAAR (Seasonally Adjusted at Annual Rates) 
+
+--- Page 9 ---
+MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+ 
+15.871 Introduction to System Dynamics
+Fall 2013
+ 
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.

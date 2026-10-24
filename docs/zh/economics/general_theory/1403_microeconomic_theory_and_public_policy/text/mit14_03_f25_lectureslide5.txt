@@ -1,0 +1,844 @@
+14.03/003 Micro Theory & Public Policy, Fall 2025
+
+
+Lecture 5. Consumer Theory and the Carte Blanche Principle
+
+David Autor (Prof), MIT Economics and NBER
+
+
+
+
+Revised September 23, 2025
+The indirect utility function
+Indirect utility function
+ − For any
+      □ Budget constraint
+      □ Utility function
+
+      □ Set of prices
+
+ − We obtain a set of optimally chosen quantities:
+                                             x∗1    = x1 (p1 , p2 , ..., pn , I)
+                                                      ...
+                                             x∗n    = xn (p1 , p2 , ..., pn , I)
+
+ − These quantities solve the problem
+                                           max U (x1 , ..., xn ) s.t. P X ≤ I
+    and yield (indirect) utility
+                         U (x∗1 (p1 , ..., pn , I), ..., xn∗ (p1 , ..., pn , I)) ≡ V (p1 , ..., pn , I).
+                                                                                                           2/51
+Indirect utility function
+
+
+
+
+ − The “Indirect utility function”, V (·), is the value of maximized utility under given prices and
+   income
+
+ − Remember the distinction:
+       □   Direct utility: utility from consumption of (x1 , ..., xn )
+       □   Indirect utility: utility obtained when facing (p1 , ..., pn , I)
+
+
+
+
+                                                                                                      3/51
+Indirect utility function
+Graphical interpretation
+
+
+
+
+                            4/51
+Indirect utility function
+Graphical interpretation
+
+
+
+
+                            5/51
+Indirect utility function
+Example
+                           max U (x, y)       =    x0.5 y 0.5
+                          s.t. px x + py y    ≤    I
+                                       L = x0.5 y 0.5 + λ(I − px x − py y)
+                                      ∂L
+                                         = 0.5x−0.5 y 0.5 − λpx = 0
+                                      ∂x
+                                      ∂L
+                                         = 0.5x0.5 y −0.5 − λpy = 0
+                                      ∂y
+                                      ∂L
+                                         = I − px x − py y = 0
+                                      ∂λ
+
+ − We obtain the following:
+                                             0.5x−0.5 y 0.5   0.5x0.5 y −0.5
+                                     λ=                     =                ,
+                                                 px                py
+    which simplifes to:
+                                                            py y
+                                                       x=        .
+                                                             px                  6/51
+Indirect utility function
+ − Substituting into the budget constraint gives us
+                                          py y
+                                 I − px        − py y   =   0
+                                           px
+                                                            1               1
+                                                 py y   =     I,   px x =     I
+                                                            2               2
+
+                                                    I          I
+                                            x∗ =       , y∗ =
+                                                   2px        2py
+
+       □   Half of the budget goes to each good
+
+
+ − Thus, a consumer with U (x, y) = x0.5 y 0.5 , budget I, and facing prices px and py will choose x∗
+   and y ∗ and obtain utility:
+                                                        0.5        0.5
+                                                    I         I
+                                 U (x∗ , y ∗ ) =                       .
+                                                   2px       2py
+                                                                                                  7/51
+Indirect utility function
+
+
+ − Thus, the indirect utility for this consumer is
+                                                                                        0.5         0.5
+                                                                                   I           I
+                   V (px , py , I) = U (x∗ (px , py , I) , y ∗ (px , py , I)) =
+                                                                                  2px         2py
+
+
+ − Why bother calculating the indirect utility function?
+
+       □   Instead of recalculating the utility level for every set of prices and budget constraints, we
+           can plug in prices and income to get consumer utility
+       □   Much easier to work with indirect utility f’n (i.e., the maximized utility f’n) than direct
+           utility f’n that needs to be re-maximized in every calculation
+       □   Will be useful later for analyzing demand and consumer well-being
+
+                                                                                                           8/51
+     Individual (i.e., personal) demand curves
+
+‘Marshallian demand’ — Demand as f’n of prices and income
+
+                    dx1 (p1 , p2 , ..., pn , I)
+Individual demand
+
+
+ − Now, let’s use the indirect utility function to get demand functions
+
+ − Up to now, we have been solving for:
+       □   Utility as a function of prices and budget
+ − Implicitly we have already found demand schedules—a demand schedule is immediately implied
+   by an individual utility function
+
+ − For any utility function, we can solve for the quantity demanded of each good as a function of its
+   price, holding the price of all other goods constant and holding income constant.
+
+ − (Next, we’ll hold utility constant instead of income)
+
+
+
+                                                                                                 10/51
+Uncompensated (Marshallian) demand
+In our previous example where:
+                                       U (x, y) = x0.5 y 0.5
+we derived:
+                                                         I
+                                    x(px , py , I) = 0.5
+                                                         px
+                                                         I
+                                    y(px , py , I) = 0.5
+                                                         py
+
+In general we will write these demand functions (for individuals) as:
+
+                                  x∗1 = d1 (p1 , p2 , ..., pn , I)
+                                  x∗2 = d2 (p1 , p2 , ..., pn , I)
+                                            ...
+                                 x∗n   = dn (p1 , p2 , ..., pn , I)
+                                                                        11/51
+Marshallian (uncompensated) demand
+
+
+
+
+                                     12/51
+Marshallian (uncompensated) demand
+
+
+
+
+                                     13/51
+Income and substitution efects
+ (Normal and Inferior goods)
+
+
+
+
+                                 14/51
+What happens to demand for a good when its price increases but income
+is held constant?
+
+
+
+ − Formally, what is ∂dx (px , py , I)/∂px .
+ − Two efects:
+
+      1. It shifts the budget set inward toward the origin for the good whose price has risen. This
+         component is the ‘income efect.’
+      2. It changes the slope of the budget set so that the consumer faces a diferent set of market
+         trade-ofs. This component is the ‘substitution efect.’
+
+
+
+
+                                                                                                15/51
+Efect of a price increase on the budget set
+
+
+
+
+                                              16/51
+Efect of a price increase on the budget set
+
+                  y
+
+                 I/py
+                                              This section of budget
+                                              set becomes unfeasible
+
+
+
+
+                        −(px2 /py )                −(px1 /py )
+
+
+                                      I/px2         I/px1        x
+
+                                                                       17/51
+Substitution efect
+
+
+ − What happens to consumption of X if
+                                                   px
+                                                      ↑
+                                                   py
+    while utility is held constant?
+ − Provided that the axiom of diminishing MRS applies, we’ll have
+
+                                           ∂hx (px , py , U )
+                                                              <0
+                                                ∂px
+
+
+ − Holding utility constant, the substitution efect is always negative.
+
+
+
+                                                                          18/51
+Income efect
+
+
+ − Defned as
+                                              ∂dx (px , py , I)/∂I
+
+
+ − Can be either negative or positive.
+      □   If positive, good X is said to be a “normal” good.
+
+      □   If negative, good X is said to be an “inferior” good.
+
+      □   Inferior goods can be further subdivided in “weakly” and “strongly” inferior goods:
+            ≫   We’ll come back to this point soon
+
+
+
+                                                                                                19/51
+Income and substitution efects: Normal good
+
+
+
+
+                                              20/51
+ y
+       Income
+        Efect                    Normal Good
+I/py
+
+
+
+                      S
+
+                          C1
+
+                C2
+                               Substitution
+                                              U1
+                     U2          Efect
+
+
+
+
+                 I/px2              I/px1          x
+Income and substitution efects: Inferior good
+
+
+
+
+                                                22/51
+ y
+                    Inferior Good
+I/py
+
+       S
+            C1
+
+
+
+
+           C2
+
+
+
+
+            I/px2    I/px1     x
+Normal and Inferior goods
+Summary
+
+
+
+
+ − For a normal good ( ∂d
+                       ∂I > 0), the income and substitution efects are complementary.
+                         x
+
+
+
+
+ − For an inferior good ( ∂d
+                          ∂I < 0), the income and substitution efects are countervailing.
+                            x
+
+
+
+
+ − For a Gifen good (AKA, strongly inferior, abnormal), the income efect dominates:
+     ∂dx          ∂hx
+     ∂I · X   >   ∂px   . Note both are negative. (We’ll cover this soon—not today )
+
+
+
+
+                                                                                            24/51
+Compensated (Hicksian) demand
+
+
+
+
+                                25/51
+Compensated (Hicksian) demand
+
+
+
+
+                                26/51
+Compensated (Hicksian) demand
+
+
+
+
+                                27/51
+The Expenditure Function
+
+
+
+
+                           28/51
+Expenditure function
+Graphical interpretation
+
+
+
+
+                           29/51
+Expenditure function
+Graphical interpretation
+
+
+
+
+                           30/51
+Expenditure function
+Example
+
+
+                               min E = px x + py y
+                          s.t. x0.5 y 0.5 ≥ Up
+
+
+                       L = px x + py y + λ Up − x0.5 y 0.5
+
+
+                        ∂L
+                              = px − λ0.5x−0.5 y 0.5 = 0
+                        ∂x
+                        ∂L
+                              = py − λ0.5x0.5 y −0.5 = 0
+                        ∂y
+                        ∂L
+                              = Up − x0.5 y 0.5 = 0
+                        ∂λ
+                                                             31/51
+Expenditure function
+Example continued
+The frst two of these equations simplify to:
+
+                                                    x = ypy /px
+
+We substitute into the constraint Up = x0.5 y 0.5 to get
+                                                      0.5
+                                              py y
+                            Up =                            y 0.5
+                                              px
+                                                     0.5                     0.5
+                              ∗               py                    ∗   px
+                             x       =                     Up , y =                Up
+                                              px                        py
+These are our Hicksian (‘compensated’) demand functions
+
+                                              0.5                                            0.5
+                                         py                                             px
+              hx (px , py , Up ) =                  Up and hy (px , py , Up ) =                    Up
+                                         px                                             py
+                                                                                                        32/51
+Expenditure function
+Example continued
+
+These are our Hicksian (‘compensated’) demand functions
+
+                                              0.5                                         0.5
+                                        py                                           px
+               hx (px , py , Up ) =                 Up and hy (px , py , Up ) =                 Up
+                                        px                                           py
+
+Now calculate expenditure substituting hx , hy into the constraint Up = x0.5 y 0.5
+
+                                                     0.5                  0.5
+                                 ∗            py                     px
+                              E = px                       Up + py              Up
+                                              px                     py
+
+
+                                      = 2px0.5 py0.5 Up
+
+                                                                                                     33/51
+Expenditure function
+What is it good for?
+
+
+ − Expenditure function answers the question: “How much do we need to compensate consumer
+   (pos or negative) for a change in prices or policy to keep them on the same indiference curve?”
+
+ − We don’t know what “utils” are, but can observe what people are willing to pay, or give up, to
+   obtain specifc things
+
+ − Allows ‘monetizing’ otherwise incommensurate trade-ofs to evaluate costs and benefts
+ − Essential tool for public policy analysis
+
+       □   We are not interested in money as a measure of utility
+       □   We are interested in trade-ofs someone would make based on their preferences
+       □   Money metric enables those trade-ofs to be quantifed
+
+
+                                                                                               34/51
+Expenditure Function ↔ Indirect Utility function
+
+
+
+
+                                                   35/51
+Expenditure function ↔ Indirect utility function
+
+
+
+                                    V (px , py , I0 )   =   U0
+
+
+                                   E(px , py , U0 )     =   I0
+
+
+                       V (px , py , E(px , py , U0 )) =     U0
+
+
+                        E(px , py , V (px , py , I0 )) =    I0
+
+
+
+                                                                 36/51
+The indirect utility function and expenditure function are inverses
+Back to Cobb-Douglas example
+
+
+
+The dual problem gave us expenditures (budget requirement) as a function of utility and
+prices.
+                                                                  0.5
+                            I           I           I 0.5    I
+                     x∗p =     , yp∗ =     , U∗ =
+                           2px         2py        2px       2py
+
+Now plug these into expenditure function:
+
+                                                   0.5         0.5
+                       ∗                      I           I
+                   E       = 2Up p0.5 0.5
+                                  x py = 2                           p0.5 0.5
+                                                                      x py = I
+                                             2px         2py
+
+
+
+                                                                                          37/51
+The Carte Blanche Principle
+The Carte Blanche Principle
+
+
+
+ − Implication of consumer theory – consumers make optimal choices given
+      □   Prices, constraints, and income.
+
+
+ − Carte Blanche principle:
+      □ Consumers are always weakly better of receiving a cash transfer than an in-kind transfer of
+        identical monetary value
+      □ Why?
+
+
+
+
+                                                                                               39/51
+In-kind transfers
+ − Examples of in-kind transfers given to U.S. citizens:
+       □   Food Stamps, housing vouchers, health insurance, subsidized educational loans, child care
+           services, job training, etc.
+
+ − Economic theory suggests
+       □   Relative to equivalent cash transfer, in-kind transfers constrains consumer choice
+       □   If consumers are rational, constraints on choice cannot be benefcial
+ − Consider a consumer with income I = 2, 000/mo choosing between necessities (food, housing,
+   transportation, clothing, etc.) and health insurance at normalized prices
+                                               pN = 1, pH = 1
+     per unit:
+                                                max U (N, H)
+                                                 N,H
+                                          s.t. N + H ≤ 2, 000
+                                                                                                  40/51
+In-kind transfers
+ − The government decides to provide a health insurance subsidy of $400/mo
+      □   Consumer can now spend up to $2, 400 on health insurance but no more than $2, 000 on
+          necessities
+
+ − The consumer’s problem is:
+
+                                              max U (N, H)
+                                              N,H
+                                       s.t. N + H ≤ 2, 400
+                                                 H ≥ 400
+
+
+ − Alternatively, if the government had provided 400 dollars in cash, the problem would be:
+
+                                                        max U (N, H)
+                                                        N,H
+                                    s.t. N + H      ≤   2, 400.
+                                                                                              41/51
+In-kind transfers
+
+
+ − The government’s transfer therefore has two components:
+      1. An expansion of the budget set from I = 2, 000 to I ′ = I + 400
+      2. The imposition of the constraint that H ≥ 400.
+
+
+ − The canonical economist’s question is:
+
+      □   Why relax one constraint and impose another, when you could simply relax the constraint?
+      □   Government’s cost is the same in either case, but consumer can only be harmed by the new
+          constraint?
+
+
+
+                                                                                               42/51
+            Methodological interlude:
+
+Using discontinuities to learn about causal efects
+Using discontinuities to learn about causal efects
+
+
+
+ − Arbitrary cutofs are necessary for administration
+
+ − Why are they useful for researchers?
+ − Defne a variable X that is used to determine whether a person (or unit) i is or is not assigned to
+   treatment, depending on if they are above or below the cutof.
+       □   X could be the percentage of voters for candidate A
+       □   X could be the exact hour/minute/second of birth.
+
+ − We will refer to X as the running variable, and we’d like that variable to be continuous
+
+
+
+
+                                                                                                 44/51
+Using discontinuities to learn about causal efects
+
+
+
+ − Imagine there are two underlying relationships between potential outcomes and treatment,
+   represented by E[Yi1 |Xi ] and E[Yi0 |Xi ]
+
+ − Thus at each value of Xi , the causal efect of treatment is
+    E [T |Xi = x] = E[Yi1 |Xi = x] − E[Yi0 |Xi = x]
+
+ − Let’s say that individuals to the right of a cutof c (e.g., Xi ≥ 0.5) are exposed to treatment,
+   while those to the left (Xi < 0.5) are denied treatment
+
+ − We therefore observe E [Yi1 |Xi ] to the right of the cutof and E [Yi0 |Xi ] to the left of the cutof
+
+
+
+
+                                                                                                     45/51
+Using discontinuities to learn about causal efects
+
+
+
+
+                                                     46/51
+Relationship b/w GPA in Econ 1+2 and Econ major at UCSC in 2008-12
+               8                                 AMERICAN ECONOMIC JOURNAL: APPLIED ECONOMICS                      APRIL 2022
+
+
+                                           100
+
+
+
+
+                                           80
+
+
+
+
+                        Percent in major
+                                           60
+
+
+
+
+                                           40
+
+
+
+
+                                           20
+
+
+
+                                                                                      β = 36.1 (2.7)
+                                            0
+
+                                                    2.0          2.5         3.0          3.5             4.0
+                                                          Average GPA in Economics 1 and 2
+
+                        Figure 1. The Effect of the UCSC Economics GPA Threshold on Majoring in Economics
+
+               Notes: Each circle represents the percent of economics majors (y-axis) among 2008–2012 UCSC students who
+               earned a given EGPA in Economics 1 and 2 (x-axis). The size of each circle corresponds to the proportion of stu-
+               dents who earned that EGPA. EGPAs below 1.8 are omitted, leaving 2,839 students in the sample. Fit lines and
+               beta estimate (at the 2.8 GPA threshold) from linear RD specification; standard error (clustered by EGPA) in
+               parentheses.
+                                                                                                                                                47/51
+               Source: UC-CHP student database                                                                                    Bleemer & Mehta,2022
+Using discontinuities to learn about causal efects
+ − Consider units i that are arbitrarily close (within ε) to threshold. Plausibly:
+
+                            limE [Yi1 |Xi = c + ε] =     limE [Yi1 |Xi = c + ε] ,
+                            ε↓0                          ε↑0
+                            limE [Yi0 |Xi = c + ε] =     limE [Yi0 |Xi = c + ε] .
+                            ε↓0                          ε↑0
+
+
+ − That is, for units that are almost identical, we may be willing to assume that had both been
+   treated (or not treated), their outcomes would have been arbitrarily similar
+
+ − If this assumption is plausible, we can form a Regression Discontinuity estimate of the causal
+   efect of treatment on outcome Y using the contrast:
+
+                            T̂ = limE [Yi |Xi = c + ε] − limE [Yi |Xi = c + ε] ,
+                                  ε↓0                     ε↑0
+
+     which in the limit is equal to:
+                                         T = E [Yi1 − Yi0 |Xi = c]
+     Tada! Our regression discontinuity estimator
+                                                                                                  48/51
+GPA in Econ 1+2 in ’07/08 v. annual earnings ’17/18, UCSC ugrads
+                 10                           AMERICAN ECONOMIC JOURNAL: APPLIED ECONOMICS                             APRIL 2022
+
+
+
+                                     70,000
+
+
+
+
+                                     60,000
+
+
+
+
+                           Dollars
+
+
+
+                                     50,000
+
+
+
+
+                                                                                          β = 7,989 (1,885)
+                                                                                          IV = 22,123 (5,847)
+                                     40,000
+
+                                                     2.0           2.5              3.0             3.5              4.0
+                                                            Average GPA in Economics 1 and 2
+
+                                     Figure 2. The Effect of the UCSC Economics GPA Threshold on Annual Wages
+
+                 Notes: Each circle represents the mean 2017–2018 wages (y-axis) among 2008–2012 UCSC students who earned
+                 a given EGPA in Economics 1 and 2 (x-axis). The size of each circle corresponds to the proportion of students who
+                 earned that EGPA. 2017–2018 wages are the mean EDD-covered California wages in those years, omitting zeroes.
+                 Wages are CPI adjusted to 2018 and winsorized at 2 percent above and below. EGPAs below 1.8 are omitted, leav-
+                 ing 2,446 students with observed wages. Fit lines and beta estimate (at the 2.8 GPA threshold) from linear RD spec-
+                 ification and instrumental variable specification (with majoring in economics as the endogenous variable); standard
+                 errors (clustered by EGPA) in parentheses.                                                                                          49/51
+                 Sources: UC-CHP student database and CA Employment Development Department                                             Bleemer & Mehta,2022
+Relationship with other academic outcomes
+                 12                         AMERICAN ECONOMIC JOURNAL: APPLIED ECONOMICS                                             APRIL 2022
+
+
+                  Panel A. Degree attainment                                              Panel B. Grad. school enrollment
+                            100                                                                     25
+
+
+                            95                                                                      20
+
+
+                            90                                                                       15
+
+                  Percent                                                                 Percent
+                            85                                                                       10
+
+
+                            80                                                                        5
+
+                                                                  β = −0.4 (1.5)                                             β = −2.3 (2.2)
+                            75                                    IV = −1.0 (4.2)                     0                      IV = −5.9 (6.0)
+                                    2.0    2.5                  3.0    3.5      4.0                          2.0     2.5   3.0    3.5      4.0
+                                  Average GPA in Economics 1 and 2                                         Average GPA in Economics 1 and 2
+
+                                                  Panel C. Course-adjusted GPA
+                                                                 4.0
+
+
+                                                                 3.8
+
+
+
+
+                                                 Adjusted GPA
+                                                                 3.6
+
+
+                                                                 3.4
+
+
+                                                                 3.2
+
+
+                                                                 3.0
+                                                                                                     β = −0.03 (0.02)
+                                                                 2.8                                 IV = −0.08 (0.06)
+
+                                                                          2.0       2.5             3.0    3.5      4.0
+                                                                       Average GPA in Economics 1 and 2
+                                                                                                                                                                50/51
+                                   Figure 4. The Effect of Economics Major Access on Education and Attainment
+                                                                                                                                                  Bleemer & Mehta,2022
+Relationship with post-college outcomes
+                  14                           AMERICAN ECONOMIC JOURNAL: APPLIED ECONOMICS                                               APRIL 2022
+
+
+                  Panel A. Intend career in bus./fin.                                          Panel B. Emp. in FIRE or accounting
+                            100                                                                          30
+
+
+                                                                                                         25
+                             80
+
+                                                                                                         20
+                             60
+
+                  Percent                                                                      Percent
+                                                                                                         15
+                             40
+                                                                                                         10
+
+                             20
+                                                                                                          5
+                                                                   β = 16.1 (6.9)                                                 β = 9.1 (2.3)
+                                                                   IV = 51.8 (23)                                                 IV = 25.1 (5.8)
+                              0                                                                           0
+                                      2.0    2.5             3.0       3.5         4.0                            2.0     2.5   3.0     3.5         4.0
+                                   Average GPA in Economics 1 and 2                                            Average GPA in Economics 1 and 2
+
+                                                   Panel C. Imputed wages by industry
+
+
+
+                                                             60,000
+
+
+
+
+                                                             50,000
+
+
+                                                   Dollars
+                                                             40,000
+
+
+                                                                                                         β = 3,642 (1,196)
+                                                                                                         IV = 10,220 (3,422)
+                                                             30,000
+                                                                             2.0         2.5             3.0     3.5     4.0
+                                                                         Average GPA in Economics 1 and 2
+                                                                                                                                                                        51/51
+                                  Figure 5. Effect of Economics Major Access on Industry Preferences and Employment
+                                                                                                                                                          Bleemer & Mehta,2022
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

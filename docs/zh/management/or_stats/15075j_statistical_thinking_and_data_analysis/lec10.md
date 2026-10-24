@@ -1,12 +1,11 @@
 ---
-title: '多元线性回归与模型诊断'
+title: 多元线性回归与模型诊断
 type: lecture
 lecture: 10
 tags: [multiple-regression, multicollinearity, variance-inflation-factor, f-test, residual-diagnostics]
 status: complete
 source: 'https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/resources/mit15_075jf11_chpt11/'
 ---
-
 # Lec 10 多元线性回归与模型诊断（Multiple Linear Regression）
 
 > MIT 15.075J / ESD.07J · Statistical Thinking and Data Analysis · Fall 2011

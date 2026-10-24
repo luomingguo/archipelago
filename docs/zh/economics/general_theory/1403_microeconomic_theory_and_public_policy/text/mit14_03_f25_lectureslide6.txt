@@ -1,0 +1,586 @@
+14.03/003 Micro Theory & Public Policy, Fall 2025
+
+Lecture 6. The Carte Blanche principle and consumers’
+willingness to pay for health insurance
+
+David Autor (Prof), MIT Economics and NBER
+
+
+
+
+Revised September 24, 2025
+Families living at/near poverty spend about 75% of income on food,
+transportation, rent, utilities, cellphone service
+
+
+
+
+                                                                        1/32
+                                                                Econofact.org
+The demand for subsidized health insurance—
+
+  Finkelstein, Hendren, and Shepard, 2019
+Health insurance provision in the United States
+
+
+
+Relative to other industrialized countries, U.S. has unique institutional arrangements for
+providing healthcare and health insurance
+
+ 1. Spends a far larger share of Gross Domestic Product on healthcare than any other country
+
+ 2. Health insurance for working-age adults is primarily provided through employers as a ‘fringe
+    beneft’ rather than through either a public insurance system or a direct-to-household system
+
+ 3. A substantial fraction of U.S. adults lacks health insurance
+
+
+
+
+                                                                                                   3/32
+Annual health care expenditure as a share of GDP across OECD countries
+
+
+
+
+                                                                   4/32
+Consistent with high U.S. per capita healthcare expenditures, health
+insurance is quite expensive
+
+
+
+
+                                                                       5/32
+Estimated number of U.S. nonelderly adults without health insurance
+
+
+
+
+                                                                      6/32
+Uninsured rates in the nonelderly U.S. population
+
+
+
+
+                                                    7/32
+Who are the non-elderly U.S. uninsured?
+
+
+
+
+                                          8/32
+Stated reasons for being uninsured among U.S. nonelderly adults, 2022
+
+
+
+
+                                                                    9/32
+                Massachusetts CommCare:
+
+Generous health insurance subsidy for low-income households
+The subsidy VOL. 109
+            schedule NO. 4 for Massachusetts                Commonwealth Care
+                               FINKELSTEIN ET AL.: SUBSIDIZING HEALTH INSURANCE 1537
+The government’s cost for Mass Comm Care is $400/month per enrollee
+                 Panel A. Premiums for cheapest plan, 2009–2013 Panel B. Prices, subsidies, and premiums in 2011
+
+                               160
+                                                                                                        400
+                                                                                                                                      Insurer price
+
+                                                                         $116–118
+                               120                                                                      300
+                                                                                                                        Public subsidies
+
+
+
+                 $ per month                                                              $ per month
+                                                                                                                                              Four other plans
+                                                              $77–78
+                               80                                                                       200
+
+
+                                               $39–40
+                               40                                                                       100
+                                                                                                                                      Enrollee         CeltiCare
+                                      $0                                                                                              premium
+                                0                                                                         0
+
+                                     135 150            200            250          300                       135 150           200              250           300
+                                               Income, percent of FPL                                                    Income, percent of FPL
+
+
+                                                Figure 2. Insurer Prices and Enrollee Premiums in CommCare Market
+
+                 Notes: Panel A plots enrollee premiums for the cheapest plan by income as a percent of FPL, noting the thresholds
+                 (150 percent, 200 percent, and 250 percent of FPL) where the amount increases discretely. The black lines show
+                 the values that applied in 2009–2012; the gray lines show the (slightly higher) values for 2013. Panel B shows
+                 insurer prices (dotted lines) and enrollee premiums (solid lines) for the five plans in 2011. In this year, four insurers
+                 set prices within $3 of a $426/month price cap, while CeltiCare set a lower price ($405) and therefore had lower
+                 enrollee premiums.                                                                                                                            11/32
+                                                                                                                                  Finkelstein, Hendren, Shepard 2019
+Subsidizing health insurance premiums: Questions for discussion
+
+
+
+ 1. Why should (or why do) governments subsidize health insurance premiums?
+
+
+
+
+                                                                              12/32
+Subsidizing health insurance premiums: Questions for discussion
+
+
+
+ 1. Why should (or why do) governments subsidize health insurance premiums?
+
+ 2. Is this an in-kind transfer (like food stamps, AKA snap)?
+
+
+
+
+                                                                              12/32
+Subsidizing health insurance premiums: Questions for discussion
+
+
+
+ 1. Why should (or why do) governments subsidize health insurance premiums?
+
+ 2. Is this an in-kind transfer (like food stamps, AKA snap)?
+
+ 3. Would ‘cashing out’ the subsidy be a better policy?
+
+
+
+
+                                                                              12/32
+Subsidizing health insurance premiums: Questions for discussion
+
+
+
+ 1. Why should (or why do) governments subsidize health insurance premiums?
+
+ 2. Is this an in-kind transfer (like food stamps, AKA snap)?
+
+ 3. Would ‘cashing out’ the subsidy be a better policy?
+
+
+ 4. What information would aid your thinking/policy about (q3)?
+
+
+
+
+                                                                              12/32
+Back to Massachusetts CommCare
+Why is the jumpy subsidy schedule useful for learning about WTP for
+healthcare?
+
+
+
+
+                                                                      14/32
+                     1544                                                                  THE AMERICAN ECONOMIC REVIEW
+Sharp drops in health insurance enrollment at subsidy discontinuities
+                     Panel A. Average monthly enrollment by income                                                                     Panel B. Average monthly in
+
+                                                RD = −1,735                                                                            420
+                                                      (131)                                                                                          RD = 47.3 RD
+                     4,500                                                                                                                               (7.7)
+                                                %∆ = −37%
+                                                                                                                                                   %∆ = +15% %∆ =
+                                                                         RD = −869
+                                                                                                                                       380
+                                                                               (89)
+                  1544                                THE AMERICAN ECONOMIC REVIEW                                       APRIL 2019
+                     3,000
+                                                                        %∆ = −34%
+                  Panel A. Average monthly enrollment by income
+                                                                                                     RD = −437
+                                                                              Panel B. Average monthly insurer costs
+
+                               RD = −1,735                                     420                             (89)
+                                                                                               RD = 47.3 RD = 32.4 RD = 6.2
+                                                                                                   (7.7) = −31% (11.9)
+                                     (131)
+                  4,500
+                               %∆ = −37%                                                         %∆          (8.7)
+                                                                                                                                       340
+                                                                                         %∆ = +15%      %∆ = +9% %∆ = +2%
+                     1,500                   RD = −869
+                                                                               380
+                                                   (89)
+                  3,000
+                                            %∆ = −34%
+                                                           RD = −437
+                                                                 (89)
+                                                          %∆ = −31%            340
+                  1,500
+                              0                                                                                                        300
+                      0                                                        300
+                                    135 150                         200                        250                    300                    133 150               200
+                          135 150         200           250          300             133 150          200          250          300
+
+
+                                                      Income, percent of FPL
+                                    Income, percent of FPL                                       Income, percent of FPL
+                                                                                                                                                           Income, perc
+                                    Figure 5. CommCare Enrollment and Average Insurer Costs, 2009–2013                                                              15/32
+                                                                                                                                       Finkelstein, Hendren, Shepard 2019
+                  Notes: The figure shows discontinuities in enrollment and average insurer costs at the income thresholds (150 per-
+                  cent, 200 percent, and 250 percent of FPL) at which enrollee premiums increase (see Figure 2). Panel A shows aver-
+Enrollment in MA Commonwealth Care among the eligible population
+              VOL. 109 NO. 4                 FINKELSTEIN ET AL.: SUBSIDIZING HEALTH INSURANCE                        1543
+
+
+
+
+                                                     (Smoothed) estimate of
+                        4,500                        eligible population size
+
+
+
+
+                        3,000
+
+
+
+
+                        1,500               Raw count of
+                                             CommCare
+                                             enrollment
+
+
+
+
+                            0
+
+                                135   150                      200                  250                    300
+                                                              Income, percent of FPL
+
+                                            Figure 4. Eligible and Enrolled Population, 2011
+
+              Notes: Figure shows our (smoothed) estimate of the CommCare-eligible population in 2011 (based on ACS data),
+              and raw enrollment counts in CommCare in 2011 by bins of 5 percent of the FPL.
+
+
+
+              where Yb is an outcome measure in that income bin b, Incb is income (as a percent of
+              FPL) at the midpoint of the bin, and s(b) is the income segment on which bin b lies
+                                                                                                Finkelstein, Hendren, Shepard16/32
+                                                                                                                              2019
+
+              (either 135–150 percent, 150–200 percent, 200–250 percent, or 250–300 percent
+Panel C. Adjusted WW 250%FPL
+                   L L   1552                            0                         Panel                4W
+                                                                                                  $31) ∆W
+                                                                                         (0.94, $0)
+                                                                                     THED.(0.39,
+                                                                                             Adjusted
+                                                                                           AMERICAN    ECONOMIC
+                                                                                                                  250%FPL
+                                                                                                           HL 0 REVIEW
+                                                                                                           HL
+  Estimated H.I. demand curve: Commcare-eligible
+ 100                                                                                adults
+                                                                 30                            (0.52, 0.2
+                                                                                                       $29) 0.4
+     125 (0.36, $116)
+                                            0.2       0.4       0.6        0.8       1                                       0.6
+                          (0.58, $77)                             s  40         (0.50, $29)                                    s
+                                                                                                     4W
+                                                                                  $/month
+                                                                                                           200%FPL
+                                          (based          −     )                                     4W       (based         H)
+                                                                            (0.31, $31) 4WPanel
+  75                        Panel
+                            250%FPLA. W             on 1     D                             Panel   B.                   on   D
+            (0.56, $77) W L Panel C.
+                                                                                              250%FPL      HL
+                                                                                                     D. Adjusted ∆WHL
+                                        L                      U                                           HL
+                                           Adjusted WL                                        HL
+     100                         200%FPL
+                              W L125 (0.44, $116)
+                                                                 20
+                                                                     30                         40         (0.70, $19)
+                                      125 (0.36, $116)                                  (0.64, $19)
+                                                                                                  40
+  50                               (0.76, $39)                                  (0.44, $29)                     4W    150%FPL
+
+
+  $/month
+                                                                                                        4W HL       4W
+
+                                                                            $/month
+                                                        W 250%FPL
+                                                                                                              200%FPL HL 250%FPL
+      75                                                   L W 250%FPL                                (0.39,        4W   HL
+              (0.50,
+                                                                                                                         250%FPL
+                                                                                                        (0.31,
+                                                                                                             $31)
+                   (0.70,
+                     $77)$39)     100 100                       L
+                                                                 10 20                          30
+                                                                                                               $31)      HL
+                                                                                                                          (0.52, $2
+                                                                                                   (0.80, $11)
+                                      200%FPL                                                     30
+  25                               WL                                                                        (0.50, $29)
+                                            150%FPL           (0.58, $77)                (0.64, $19)        (0.44,
+                                   75 75W L                                                                     4W 150%FPL       4W
+                                    $/month
+                                                                                                               $/month
+      50                                                                                                           $29)
+
+                                              $/month
+                                                (0.56,                       Adjusted 4WL                                         4
+          Adjusted WL                            (0.50,$77)
+                                                        $77)                                                          HL
+                               (0.94,                                        (150%
+                                                                                                20
+          (150% FPL) (0.70, $39)50 50                                                                          $/month
+   0                                  $0)                          0W 200%FPL
+                                                                      L WL
+                                                                     10   200%FPL    FPL)         20
+      25                                                                                                             (0.64, $19)
+                                                                                                     (0.80, $11) (0.64,     $19)
+                                               150%FPL
+                                                              W L1      (0.76, $39)                                              Adjusted 4WL
+            0.2      0.4     0.6               0.8            Adjusted WL
+                                                              (0.70, $39)
+                                                                                            0.2       0.4            0.6            0.8
+                                                                                                                                 (150% FPL)
+                                                                                                                                                       1
+                                                       (150% FPL) (0.70, $39)
+                                                                                                                     1010
+                              s                 (0.94,
+                                                25 25 $0)                                                              s                                 (0.80
+                                                                                                                                                          (0.80
+             0                                                                              0        150%FPL
+                                                                                                  WW
+                                                                                                   150%FPL
+                                                                                                   L L
+
+el C. Adjusted
+           0.2 WL 0.4              0.6             0    0.8
+                                                        0               1           D.(0.94,
+                                                                             Panel (0.94,
+                                                                                       Adjusted
+                                                                                          $0)$0)
+                                                                                          0.2    ∆WHL
+                                                                                                 0.4                     00.6
+                                                                                                                           0            0.8             1
+                                     s                                                                                      s
+ 125        (0.36, $116)                                0.2 0.2 0.40.4          0.60.6
+                                                                                 s 40s
+                                                                                            0.80.8    1 1                   0.2
+                                                                                                                              0.2       0.4
+                                                                                                                                         0.4          0.6
+                                                                                                                                                       0.6
+                                                                                                                                                        ss
+                           W 250%FPL
+                             L
+                                  Figure 10. Willingness to Pay Curves:
+                                 Panel C. Adjusted W                         4WPanel
+                                                                        Empirical
+                                                                 (0.31, $31)
+                                                                                250%FPL
+                                                                                HL   D. Adjusted ∆W
+ 100                                                                L                  Figure 10. Willingness to Pay Curves: EmpiricalHL
+                                                                                       30
+                                             willingness to pay curves (WL and ∆ WHL)40based on the demand
+                                         (0.36, $116)
+                                                                                                                         Finkelstein, Hendren, Shepard 2019
+Notes: Figures show our construction
+                                  125of the                                                                          points
+                                                                          (0.44,   $29) to pay curves (WL and ∆ W ) based o
+                                                                                                                   17/32
+                                 Notes: Figures show our construction of the willingness
+                                                                            nth
+in our RD estimates in Figure 7 and the premium variation     at each discontinuity from Figure
+                                                           250%FPL                                4W3.200%FPL
+                                                                                                        Panel A HL
+                                                                                                                 shows the
+Takeaways
+
+
+
+ 1. How much do potential CommCare benefciaries value subsidized insurance?
+
+
+
+
+                                                                              18/32
+Takeaways
+
+
+
+ 1. How much do potential CommCare benefciaries value subsidized insurance?
+
+ 2. Why don’t benefciaries value it more?
+
+
+
+
+                                                                              18/32
+Takeaways
+
+
+
+ 1. How much do potential CommCare benefciaries value subsidized insurance?
+
+ 2. Why don’t benefciaries value it more?
+
+
+ 3. Would benefciaries be better of instead with a cash transfer equal to cost of CommCare
+    instead?
+
+
+
+
+                                                                                             18/32
+Takeaways
+
+
+
+ 1. How much do potential CommCare benefciaries value subsidized insurance?
+
+ 2. Why don’t benefciaries value it more?
+
+
+ 3. Would benefciaries be better of instead with a cash transfer equal to cost of CommCare
+    instead?
+
+ 4. Why do governments (and voters) insist on giving in-kind transfers rather than cash
+    transfers?
+
+
+
+
+                                                                                             18/32
+Why do governments—and voters—appear
+  to favor in-kind over cash transfers?
+© National Tax Association. All rights reserved. This content is excluded from our Creative Commons license. For more
+information, see https://ocw.mit.edu/help/faq-fair-use/
+Liscow and Pershing survey sample
+
+
+
+
+                                                    21/32
+                                    Liscow & Pershing,2022
+Preference question: Cash versus in-kind transfers?
+
+
+
+
+                                                                      22/32
+                                                      Liscow & Pershing,2022
+          Figure 1. Preference Between Cash and In-Kind Programs – General Population
+
+
+
+
+Notes: The figure shows the percent of respondents preferring each of the cash and in-kind programs, when
+respondents are asked to choose between them. The thin bars mark 95 percent confidence intervals. Data are from
+control survey.
+                                                                                                      Liscow & Pershing,2022
+Liscow & Pershing,2022
+Subjective beliefs question: How do the poor spend their money?
+
+
+
+
+                                                            Liscow & Pershing,2022
+
+
+
+
+                                                                            25/32
+Recall: Families living at/near poverty spend about 75% of income on
+food, transportation, rent, utilities, cellphone service
+
+
+
+
+                                                                       26/32
+                                                                Econofact.org
+   Figure 2. Relationship Between Program Preference and Perception of the Poor’s Spending
+                                 Habits – General Population
+
+
+
+
+Notes: This graph shows the preference for the cash program, by respondents’ perception of how much out of a cash
+transfer the poor would spend on necessities. Marker size is proportional to the number of observations in each
+decile of perceived spending on necessities. The coefficient from the regression of preferring cash on perceived
+spending is 0.42 (SE = 0.05). Data are from control survey.
+               Figure 3.a. Reasons Given for Preferring In-Kind – General Population
+
+
+
+
+Notes: This figure shows the percentage of respondents who selected each reason for preferring in-kind, by order of
+popularity. “Other (please specify)” was also displayed as an option; it was chosen by 3 percent of respondents. The
+thin bars mark 95 percent confidence intervals. Observations are respondents preferring in-kind in the control         28/32
+survey.
+29/32
+        Figure 5. Preference Between Cash and In-Kind Programs – Below-Poverty Survey
+
+
+
+
+Notes: The figure shows the percent preferring each of the cash program and the in-kind program, when respondents
+in the below-poverty survey are asked to choose between them. The thin bars mark 95 percent confidence intervals.
+
+
+                                                                                                                                    30/32
+                                                                                                                    Liscow & Pershing,2022
+       Figure 6.b. Reasons Given for Preferring Cash as Recipient – Below-Poverty Survey
+
+
+
+
+Notes: The figure shows the support for each of the reasonings offered in the below-poverty survey for preferring
+cash, in order of popularity. “Other (please specify)” was also displayed as an option; it was selected by 4 percent of
+respondents. The thin bars mark 95 percent confidence intervals.
+                                                                                                                          31/32
+Solving for the political equilibrium
+                                   Figure 7. Willingness to Provide or Accept In-Kind vs. Cash Transfers
+
+
+
+
+                    Note: This figure shows, for the control sample, the average ratio between the dollar amounts of respondents’
+ − Poor valuewillingness
+                in-kind        transfers
+                           to provide in-kind at  approx
+                                              versus cash, by $0.80
+                                                              participantper  dollar
+                                                                         household income bin. These are shown with light blue
+             circles. It shows the same measure for the Yale Law School sample with a dark blue triangle. The average premium
+ → Takes about    $1.25areof     in-kind     transfer     to onpsychically         equal    $1.00      in cash
+            participants in the below-poverty sample need to accept in-kind instead of cash is shown with a green X; exact
+            calculations      shown in footnote 53. Placement   the x-axis is at the midpoint of the control group’s income bins
+                    and at the average household income for the Yale and below-poverty samples. Respondents’ willingness to provide
+ − Afuent households
+           or accept for eachwilling    to cash
+                             of in-kind and provide     $1.20at the
+                                                are winsorized   – 90
+                                                                    $1.80  in in-kind transfers per dollar of cash
+                                                                      percentile.th
+                                                                                                                                                       32/32
+                                                                                                                                      Liscow & Pershing, 2022
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

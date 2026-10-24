@@ -1,12 +1,11 @@
 ---
-title: '面向环境可持续性的设计'
+title: 面向环境可持续性的设计
 type: lecture
 lecture: 11
 tags: [design-for-environment, sustainable-design, life-cycle-assessment, circular-economy, dfe-process]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 11 面向环境可持续性的设计（Design for Environment）
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  

@@ -1,112 +1,99 @@
 ---
-title: '15.071 数据分析优势（The Analytics Edge）'
+title: 15.071 数据分析优势（The Analytics Edge）
 type: course
-course: '15.071 数据分析优势（The Analytics Edge）'
+course: 15.071 数据分析优势（The Analytics Edge）
 course_id: '15.071'
 tags: [analytics-edge, machine-learning, linear-regression, integer-optimization]
-status: stub
+status: complete
 source: 'https://ocw.mit.edu/courses/15-071-the-analytics-edge-spring-2017/'
 ---
 
 # 15.071 数据分析优势（The Analytics Edge）
 
-> MIT Course 15 · Operations Research/Statistics · 课号 15.071
+> MIT Sloan School of Management · 旗舰核心课 · 授课教师：Prof. Dimitris Bertsimas / Allison O'Hair
 
 ## TL;DR
 
-- 以真实产业案例（最高法院判决预测、推特情感、Netflix 推荐）驱动的数据分析核心课。
+- 本课程以真实商业与公共政策案例驱动，构筑从数据洞察到最优决策的端到端能力。
 - 融会贯通线性回归、逻辑回归、分类回归树（CART）、随机森林与聚类算法。
-- 将预测模型无缝接入整数规划与线性优化，实现从预测洞察向可落地决策的端到端跃迁。
+- 深度覆盖文本挖掘、情感分析、自然语言问答与前沿数据可视化图表语法。
+- 最终将预测结果无缝注入线性规划与混合整数规划，实现决策价值闭环。
 
-- **同一课程的其他编号 / Also listed as**: 15.0711、15.727（MIT 目录中同一门课程的不同班级/项目编号）
+- **同一课程的其他编号 / Also listed as**: 15.0711、15.727（MIT 目录中同一门课程的不同项目编号）
 
 ## 课程简介 / Description
 
-This course presents real-world examples in which quantitative methods provide a significant competitive edge that has led to a first order impact on some of today's most important companies. We outline the competitive landscape and present the key quantitative methods that created the edge (data-mining, dynamic optimization, simulation), and discuss their impact.
+《数据分析优势》（The Analytics Edge）是麻省理工学院斯隆管理学院享誉全球的旗舰数据科学课程，由运筹学世界领军学者 Dimitris Bertsimas 教授与 Allison O'Hair 博士联袂主讲。
 
-## 讲义 / Lecture Notes
+与传统的纯理论统计课程不同，本课程完全摒弃空洞抽象的数学填鸭，而是以 24 个深刻改变了当今世界顶尖商业企业与公共机构运营格局的**真实产业级重磅案例**为骨架：从奥克兰运动家队的棒球点石成金，到 IBM 沃森问答系统力克人类冠军；从最高法院判决的决策树预测，到美国大选民调仿真；从 Netflix 百万大奖电影推荐，到肿瘤医院放射治疗线性规划。全课贯通了**数据清洗、机器学习、因果推断与运筹优化**四大支柱，全方位培养现代科技与商业领军者的量化决断素养。
 
-- **1.2**
-  - Introduction to Analytics
-  - Introduction to the Analytics Edge (PDF)
-- **1.3**
-  - Introduction to R and the Analytics of Google’s Search Engine
-  - Introduction to the R Programming Language (PDF)
-- **1.4**
-  - Recitation: Understanding Food
-  - Nutritional Education with Data (PDF - 2.1MB)
-- **2.2**
-  - Predicting the Quality of Wine
-  - Introduction to Linear Regression (PDF - 1.3MB)
-- **2.3**
-  - Moneyball: Sport Analytics
-  - The Power of Sports Analytics (PDF - 1.4MB)
-- **2.4**
-  - Recitation: Playing Moneyball in the NBA
-  - No notes
-- **3.2**
-  - Modeling the Expert
-  - An Introduction to Logistic Regression (PDF - 1.2MB)
-- **3.3**
-  - The Framingham Heart Study
-  - Evaluating Risk Factors to Save Lives (PDF)
-- **3.4**
-  - Recitation: Predicting the Winner Before any Votes are Cast
-  - Election Forecasting (PDF)
-- **4.2**
-  - Forecasting Supreme Court Decisions
-  - An Introduction to Trees (PDF - 1.1MB)
-- **4.3**
-  - Predicting Healthcare Costs
-  - The D2Hawkeye Story (PDF - 1.3MB)
-- **4.4**
-  - Recitation: Location, Location, Location
-  - Regression Trees for Housing Data (PDF - 1.1MB)
-- **5.2**
-  - Sentiment Detection and Text Analytics
-  - Turning Tweets into Knowledge (PDF)
-- **5.3**
-  - IBM Watson
-  - How IBM Built a Jeopardy Champion (PDF - 1.1MB)
-- **5.4**
-  - Recitation: Predictive Coding
-  - Bringing Text Analytics to the Courtroom (PDF)
-- **6.2**
-  - Recommendation Systems: Netflix Movie Data
-  - Introduction to Clustering (PDF - 1.3MB)
-- **6.3**
-  - Clustering for Customer Segmentation and Patterns of Heart Attacks
-  - Discovering Patterns for Disease Detection (PDF - 1.4MB)
-- **6.4**
-  - Recitation: Seeing the Big Picture
-  - Segmenting Images to Create Data (PDF)
-- **7.2**
-  - Visualizing the World
-  - An Introduction to Visualization (PDF)
-- **7.3**
-  - Visualization for Law and Order
-  - Predictive Policing (PDF)
-- **7.4**
-  - Recitation: ﻿The Good, the Bad, and the Ugly
-  - Bad vs. Good Visualizations﻿ (PDF)
-- **8.2**
-  - Airline Revenue Management
-  - Introduction to Linear Optimization (PDF - 6.3MB)
-- **8.3**
-  - Radiation Therapy
-  - An Application of Linear Optimization (PDF - 1.8MB)
-- **8.4**
-  - Recitation: Google AdWords
-  - Optimizing Online Advertising (PDF - 1.1MB)
-- **9.2**
-  - Sports Scheduling
-  - An Introduction to Integer Optimization (PDF - 1.1MB)
-- **9.3**
-  - eHarmony and Integer Optimization
-  - Maximizing the Probability of Love (PDF)
-- **9.4**
-  - Recitation: Operating Room Scheduling
-  - An Optimization Model for Hospitals (PDF)
+## 讲义导航 / Lecture Notes
+
+全课程 24 讲系统讲义按照 9 大核心技术与商业应用单元纵深展开：
+
+### 第一部分：分析学基石与回归因果模型 (Units 1 - 3)
+
+| 讲次 | 核心主题 (中英文对照) | 核心算法与分析方法 | 商业与公共政策实战案例 |
+| :--- | :--- | :--- | :--- |
+| **[Lec 1](lec1.md)** | [数据分析优势导论与谷歌搜索引擎算法](lec1.md) | 马尔可夫随机游走、转移矩阵、PageRank 稳态求解 | 谷歌颠覆传统关键词匹配与信息分发 |
+| **[Lec 2](lec2.md)** | [营养膳食数据科学：从 USDA 数据库解析微量元素与健康](lec2.md) | 探索性数据分析 (EDA)、异常值审计、多维协方差分析 | USDA 全球食物营养数据库与慢病风控 |
+| **[Lec 3](lec3.md)** | [波尔多葡萄酒品质预测：一元与多元线性回归的奠基之作](lec3.md) | 普通最小二乘法 (OLS)、植物气象学特征工程、弹性测算 | 阿申费尔特打破欧洲品酒专家百年权威 |
+| **[Lec 4](lec4.md)** | [点石成金（Moneyball）：数据分析颠覆职业棒球联盟决策范式](lec4.md) | 赛伯计量学 (Sabermetrics)、上垒率 (OBP) 偏效应、价值套利 | 奥克兰运动家队以小博大创 20 连胜奇迹 |
+| **[Lec 5](lec5.md)** | [NBA 篮球高阶数据分析：节奏、空间与投篮期望值革命](lec5.md) | 百回合攻防效率、投篮期望值模型、真实正负值 (RPM) | 消除长两分中投与休斯顿火箭魔球战术 |
+| **[Lec 6](lec6.md)** | [逻辑回归导论与专家经验的形式化建模](lec6.md) | 逻辑斯蒂 Sigmoid 函数、Logit 变换、几率比、最大似然估计 | 急诊科链球菌感染自动化初筛专家系统 |
+| **[Lec 7](lec7.md)** | [弗雷明汉心脏研究：心血管疾病 10 年风险因果评估与救命模型](lec7.md) | 流行病学前瞻队列、二元逻辑回归、ROC-AUC、混淆矩阵 | 全球心血管疾病四大独立危险因子确立 |
+| **[Lec 8](lec8.md)** | [选战风云：基于民调与人口统计学的总统大选胜选预测](lec8.md) | 选举人团赢者通吃机制、州级逻辑回归、关联蒙特卡洛仿真 | 美国总统大选摇摆州选情与 538 预测范式 |
+
+### 第二部分：决策树、非线性边界与自然语言挖掘 (Units 4 - 5)
+
+| 讲次 | 核心主题 (中英文对照) | 核心算法与分析方法 | 商业与公共政策实战案例 |
+| :--- | :--- | :--- | :--- |
+| **[Lec 9](lec9.md)** | [决策树模型导论：以 CART 预测美国最高法院判决](lec9.md) | 递归二分法、基尼不纯度 (Gini)、复杂度参数 cp、剪枝 | CART 决策树以 75% 准确率击败 83 位法学泰斗 |
+| **[Lec 10](lec10.md)** | [D2Hawkeye 医疗索赔案例：分类树与高医疗成本患者识别](lec10.md) | 帕累托医疗分布、成本敏感型树、非对称惩罚矩阵 | 提前 12 个月干预极高危慢病避免 ICU 巨额支出 |
+| **[Lec 11](lec11.md)** | [房地产空间价值建模：回归树在房价预测中的非线性优势](lec11.md) | 回归树极小化 RSS、空间断层拟合、随机森林 (Bagging) | 波士顿住房数据集经纬度空间网格切分 |
+| **[Lec 12](lec12.md)** | [文本分析与情感挖掘：从推特舆情中提炼商业洞见](lec12.md) | NLP 预处理管道、波特词干提取、词袋模型、DTM 稀疏过滤 | 苹果公司推特社交媒体品牌公关危机秒级预警 |
+| **[Lec 13](lec13.md)** | [IBM 沃森问答系统：自然语言理解如何击败人类《危险边缘》冠军](lec13.md) | DeepQA 架构、假设生成、数百个软证据评分器、置信度校准 | 沃森在电视智力竞赛中战胜人类历史上最强总冠军 |
+| **[Lec 14](lec14.md)** | [法律电子取证（Predictive Coding）：以文本挖掘赋能法庭诉讼审判](lec14.md) | 主动学习 (Active Learning)、人在回路、查全率与查准率平衡 | Da Silva Moore 判例确立算法司法采纳合法性 |
+
+### 第三部分：无监督聚类与感知数据可视化 (Units 6 - 7)
+
+| 讲次 | 核心主题 (中英文对照) | 核心算法与分析方法 | 商业与公共政策实战案例 |
+| :--- | :--- | :--- | :--- |
+| **[Lec 15](lec15.md)** | [Netflix 电影推荐系统：层次聚类与协同过滤算法](lec15.md) | 欧氏/余弦距离、聚合层次聚类、树状谱系图 (Dendrogram) | Netflix 百万大奖赛与长尾冷门小众影片挖掘 |
+| **[Lec 16](lec16.md)** | [客户细分与心脏病亚型发现：k-Means 聚类在精准营销与医学中的应用](lec16.md) | WCSS 极小化、Lloyd 期望极大化两步迭代、特征标准化 | 航空公司常旅客会员分群与心肌梗死隐秘亚型分类 |
+| **[Lec 17](lec17.md)** | [图像分割与特征提取：用无监督聚类重构医学 MRI 像素](lec17.md) | 图像像素展平、灰度直方图多峰识别、无监督像素聚类 | 脑胶质瘤病灶自动化几何轮廓勾画与体积测定 |
+| **[Lec 18](lec18.md)** | [数据可视化导论：从感知心理学到 ggplot2 图形语法](lec18.md) | 克利夫兰感知层级、前注意属性、图形语法 (Grammar of Graphics) | 世界卫生组织 (WHO) 全球健康财富多图层渲染 |
+| **[Lec 19](lec19.md)** | [预测性警务（Predictive Policing）：费城警局犯罪空间热力图与巡逻优化](lec19.md) | 犯罪空间聚集性、核密度估计 (KDE)、空间自相关、巡逻调度 | 费城警局微观高危网格驻泊压制暴力犯罪 |
+| **[Lec 20](lec20.md)** | [图表伦理学与设计批判：良图、劣图与欺骗性视觉失真](lec20.md) | 塔夫特视觉诚信、谎言因子 (Lie Factor)、数据墨水比最大化 | 商业与政治图表中截断 Y 轴与双轴操纵陷阱甄别 |
+
+### 第四部分：规范性分析、运筹规划与组合调度 (Units 8 - 9)
+
+| 讲次 | 核心主题 (中英文对照) | 核心算法与分析方法 | 商业与公共政策实战案例 |
+| :--- | :--- | :--- | :--- |
+| **[Lec 21](lec21.md)** | [航空收益管理与超额预订：线性优化在航班座位配额中的应用](lec21.md) | 轴辐式网络流平衡、网络出价 (Bid Price)、超售临界分位数 | 美联航枢纽联程航班收益管理与座位动态锁闭 |
+| **[Lec 22](lec22.md)** | [肿瘤放射治疗规划：利用线性规划平衡照射剂量与健康组织保护](lec22.md) | 调强放疗 (IMRT)、多叶准直器、剂量沉积矩阵、多角度交叉火力 | 前列腺癌与脑瘤放疗精准杀死肿瘤且保全危及器官 |
+| **[Lec 23](lec23.md)** | [谷歌 AdWords 在线广告匹配：受限预算下的双边拍卖动态优化](lec23.md) | 广义二阶拍卖 (GSP)、Ad Rank 质量得分、在线对偶平滑控制 | 谷歌 200 毫秒关键词在线广告动态匹配与预算平滑 |
+| **[Lec 24](lec24.md)** | [组合优化与战略调度：体育赛程、eHarmony 婚恋配对与医院手术室整数规划](lec24.md) | 混合整数规划 (MILP)、旅行商 0-1 约束、二分图匹配、床位联动 | 职业大联盟赛程排定、婚恋平台撮合与三甲手术排班 |
+
+## 知识体系全景脉络
+
+15.071 的精髓在于将原本互不相通的四个学科领域，铸造成了一条环环相扣的决策生产线：
+
+```mermaid
+flowchart LR
+    A[非结构化数据输入: 文本/影像/时空] --> B[规律抽象与模式挖掘: 聚类/可视化]
+    B --> C[前瞻因果趋势预测: 回归/决策树/随机森林]
+    C --> D[资源约束与方案生成: 线性与整数规划]
+    D --> E[商业与公共价值变现: 降本/增效/救命]
+```
+
+每一个案例都始于真实痛苦的商业或社会治理困境，终于可验证、可审计的量化决策代码。本课程确立了现代组织迈向“数据驱动决策（Data-Driven Decision Making）”的行业最高标准。
+
+::: insight [我的理解：算法的终极价值不在于展示智商，而在于改变世界]
+在很多学术象牙塔中，学者们热衷于为了提升 $0.1\%$ 的测试集指标而设计极其复杂的算法迷宫。而 MIT 15.071 展现出了一种无比厚重的现实主义情怀：每一行代码的归宿，都是为了解决真实世界中那些沉甸甸的问题。
+
+无论是让奥克兰的小球星在绿茵场上赢得尊严，还是让重症肿瘤患者在免于瘫痪失明的前提下战胜病魔；无论是帮助单身男女在两千万茫茫人海中找到真爱，还是在深夜的费城街头用一盏警灯守护行人的平安——这才是“数据分析优势”真正令人肃然起敬的力量。技术赋予我们理性的利刃，但只有心怀对人类生活的深情关怀，我们才能真正掌握点石成金的魔法。
+:::
 
 ---
 

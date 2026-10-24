@@ -1,0 +1,44 @@
+The CS Methods Section &#8211; Algorithms, Techniques, Implementation
+In computer science, especially more theoretically focused papers, the Methods section (possibly under an alternative name) presents, in full, the technical contribution of the paper, describing the algorithms, systems, theories, or models introduced in the Introduction in detail. The Methods will generally also build intuition for and contain a discussion of technical choices. For CS papers with experimental results, the description of the experimental setup and details necessary to replicate the experiments are often omitted from the Methods section and included in a short, separate Experiments section or at the start of the Results section.
+Criteria for Success
+A successful Methods section:
+is the “how to” of your paper, with all the relevant details for producing your results
+convinces the reader of the correctness of your approach by providing  justification for choosing your methodology, potentially including analysis or theoretical justification
+provides readers the details, algorithms, and techniques necessary to confirm and/or replicate your findings
+Identify Your Purpose
+The purpose of the Methods section is to describe    how    the questions/knowledge gap posed in the    Introduction    will be answered in the    Results    section. Some readers may skip this section when first skimming the paper, so the Introduction and Results should motivate the problem and approach without the details provided in the Methods. For readers who are interested in the details of the paper, the Methods section has two purposes:
+1. How can others reproduce and build on your work?
+The Methods section provides interested readers the details of how the results presented were achieved. For readers interested in replicating your work to confirm the findings and/or build upon them, the Methods section is the source of detailed methodological information.
+In CS papers, the Methods section contains the description of and details on the proposed device/system, algorithm, model, or analysis. Although the Methods section is often the most technically dense part of your paper, it should also have exposition justifying the choices made and build intuition for the proposed technical approach. One common failure mode of Methods sections is omitting this justification and intuition-building in order to pack in more technical content. Readers are more likely to build upon and cite papers that they understand. Overly dense descriptions of technical contributions may make you feel like a math-whiz but will reduce the impact of your paper. Keep your target audience in mind, and find someone in your field to check the balance of technical content and exposition in your Methods section.
+2. Are the results and conclusions of your study valid?
+Your results and the interpretation of these results depend on the methods you used to obtain them. A reader who is skeptical of your results will read your Methods section to see if they can be trusted. They’ll want to know that you chose the most appropriate methods and that your approach is technically correct. Without this content, skeptical readers might think your data and any conclusions drawn from them are unreliable.  Some of the justification for specific experimental choices (parameter-tuning, dataset preparation, baseline methods) may exist in a separate Experiments section.
+Analyze Your Audience
+Typically, only readers in your field will want to replicate your study or have the knowledge to assess your methodology. More general audiences will read the Introduction and then proceed straight to the Results. You can therefore assume that people reading your Methods understand methodologies that are frequently used in your field. To gauge the level of detail necessary for a given method, you can look at articles previously published in your target journal or conference.
+If your paper is designed to appeal to experts in more than one field, you still need to write your Methods for a single set of experts. For example, say you applied a novel computational approach to gain new insight into the physics of a well-characterized semiconductor device. Is your goal to show electrical engineers the value of your computational tool in characterizing and designing electronic systems, or to show computational scientists how they can help study semiconductor device physics? In the former case, assume less computational expertise and explain your methods and motivations in more detail.
+Skills
+State the reasons for choosing your methodology
+A reader looking to assess your methodology will read the Methods section to judge your experimental design, system or algorithm design, and technical approach. When describing a standard experimental technique or method, place more emphasis on how you    applied    a method rather than on how you    performed    the method. For example, after gauging your technical audience, you may decide that you don’t need to explain how to take an SEM image or how a convolutional neural network works. However, you may  still want to describe    why    SEM imaging or a convolutional neural network is an appropriate approach for the task at hand (and, potentially, why you    didn’t    use another method).
+Specify the purpose of a method
+“SEM imaging was used to examine the fidelity of the nanoimprinted structures.”
+Explain why you used a particular method
+“To obtain material parameters for device modeling, the films were characterized with spectroscopic ellipsometry coupled with transmission measurements, allowing for accurate determination of thicknesses and optical constants.”
+Justify why you didn’t use another method
+“Photothermal deflection spectroscopy was used to measure sub-bandgap absorption, which was too weak to be detected by standard UV-vis measurements.”
+Use subheadings to organize content
+Use subheadings within your Methods to group related experiments or ideas and establish a logical flow. One approach that can be useful is to write your Results section first, and then follow the order of Results subheadings when writing your Methods. The parallel structure will make it easy for readers to locate corresponding information in the two sections.
+Subheadings for Methods and Results may not exactly correspond. Sometimes you may need multiple Methods subheadings to explain one Results subheading. Other times one Method subheading is enough to explain multiple Result subheadings.
+Subheadings can be used to divide separate technical aspects of your proposed approach. You may have one subheading on “Feature learning,” one on “Clustering,” and so on. These subheadings allow readers to focus on the specific part of your approach that most interests them.
+Provide minimal, essential detail
+For readers to replicate your study, you must provide enough detail to allow them to reach the same conclusions as you do in your paper. That said, try to avoid including extraneous details. Specify any factor that might change the conclusions in your paper.
+You can cite papers for standard methods, but any modifications or alterations should be clearly stated. When citing methods, cite the original paper in which a method was described instead of a paper that used the method. This helps avoid chains of citations that your reader must follow to find information about the method. For standard methods that have a survey or book resource, these materials can be cited alongside the original paper.
+Content adapted by the  MIT Electrical Engineering and Computer Science Communication Lab  from an article originally created by the  MIT Biological Engineering Communication Lab .
+Resources and Annotated Examples
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_pdf.gif"
+alt="Annotated Example 1" />
+Annotated Example 1
+Isola et al  IEEE Computer Vision and Pattern Recognition  2018
+1 MB
+Contributors
+Joel Jean
+Julia Rubin
+Genevieve Flaspohler

@@ -6,13 +6,12 @@ tags: [user-experience, interaction-design, usability-heuristics, affordance, me
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 13 用户体验设计
 
-> 参考资料： 
+> 参考资料：
 >
-> - Maven UX Design Principles; 
-> - Don Norman, *The Design of Everyday Things*; 
+> - Maven UX Design Principles;
+> - Don Norman, *The Design of Everyday Things*;
 > - Jakob Nielsen, *10 Usability Heuristics*（done）
 
 ## TL;DR

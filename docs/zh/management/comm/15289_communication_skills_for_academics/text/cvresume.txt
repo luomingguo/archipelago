@@ -1,0 +1,102 @@
+Criteria for Success
+It takes less than 60 seconds for your resume to convince an employer that you are qualified for the target job.
+You show a select group of skills and experiences that match those required by the job.
+The organization and formatting help the reader find the information that shows you are qualified.
+Your experiences are concrete and quantified.
+There are absolutely no typos or errors.
+Purpose
+Just to clarify: A CV is a kind of resume
+A  curriculum vitae  (CV) is a special kind of resume intended for academic or research positions. In this article, we say &#8220;resume&#8221; to mean &#8220;resume or CV&#8221; except when we contrast the two.
+Resume
+CV
+Goal
+Shows how your experiences and skills qualify you for the target job
+Shows your academic achievements and research qualifications
+Length
+Strict 2-page (1 sheet of paper) limit
+2-3 pages for a graduate student; gets longer through a career
+Typical sections include&#8230;
+Name &amp; contact information
+Education
+Work experience
+Skills
+Name &amp; contact information
+Education
+Research experience
+Career objectives/research interests
+Publications &amp; presentations
+Awards &amp; grants
+Professional societies
+Teaching experience
+References
+Resumes must quickly convince readers that you are qualified
+Your resume and cover letter are the first parts of your application that your potential employers will read. Your resume is designed to make the person reading your resume move your application forward in the recruiting process by, say, inviting you for an interview. Your resume should quickly convince your potential employer that you are a well-qualified candidate for the specific job you applied for.
+Analyze your audience
+Your resume should be tailored to the job you&#8217;re applying for and &#8211; if possible &#8211; to the specific people who will be reading it. Do research to find out who will be reading your resume and what they hope to see in it. If the job has explicit job requirements, make sure your resume makes it obvious that you meet all those requirements. Customize the content so it will excite your specific readers.
+Your resume shouldn&#8217;t tell your whole story. In many cases, the people who read your resume will be reading a whole pile of them. Make it easy for them to put you in the &#8220;yes&#8221; pile. You can share your life story during the interview.
+Skills
+Make a custom resume for every application
+First, read each job posting carefully. Make a list of what qualifications are required for the specific role you are applying for. For example, a job posting that says you will &#8220;drive independent research&#8221; might require very different skills from one that says you will &#8220;work closely with an interdisciplinary team.&#8221;
+Next, highlight the skills and accomplishments that demonstrate that you have those qualifications. To do this, you can&#8230;
+include different experiences in your resume.
+put more bullet points under the most relevant experiences.
+move important experiences earlier in the document.
+Resumes in particular have limited space, so you should be critical about what experiences you should include and which you should leave out.
+Concretize and quantify
+Give concrete—preferably quantitative—evidence that you are a qualified match for the organization you want to work in and the specific role you are applying for.
+Vaguely-worded experience
+Concrete, quantified experience
+Researched sensors and instrumentation in the Canty lab
+Developed method for tracking air conditioner efficiency from harmonic content in demanded electricity
+Co-advised 8 graduate students
+Contributing author on 5 papers
+Teaching Assistant for several classes
+Organized bi-weekly laboratory assignments
+Taught technical workshops for 3 lecture and lab-based courses
+Treasurer for Tau Beta Pi
+Managed $6K budget and raised $500
+Volunteer with the regional young leadership board of the Anti-Defamation League
+Chair of nominating committee for regional young leadership board of the Anti-Defamation League
+Successfully recruited over 60 young leaders in the past 3 years
+Led initiative to create the first committee charter and assisted in implementation of committee bylaws
+Developed relationships with new sponsors
+Recruited $10k in new sponsorship
+Served as a summer research advisor for the Research Science Institute at MIT
+Mentored a high school student participating in MIT’s prestigious Research Science Institute summer program
+Designed a research project for the student on parallel implementation of a union-find data structure
+The student’s work was selected as a top 10 finalist from an overall program of 80 student projects.
+When it&#8217;s accurate, use verbs that illustrate impact over verbs that make you sound passive. Aim for verbs that are more specific to the actual contribution you made.
+Weak verbs
+Action verbs
+Participated
+Researched
+Designed
+Managed
+Led
+Developed
+When describing research experiences, it&#8217;s okay to include a brief overview of the lab, but it&#8217;s critical to characterize your individual contributions.
+If you are applying for a research position, do include your PI&#8217;s name. Your academic pedigree is important currency in the scientific community.
+Make your document easy to skim
+Recruiters will skim your resume in 30 to 60 seconds. You need to make relevant information easily identifiable.
+Use headers  that package your experiences in a way that best shows you are qualified for the job. For example, if the job involves teaching or entrepreneurship, make sure to include the relevant header to highlight your experience in these areas.
+Order your headers  so that the sections that have the experiences that are most relevant to this job come first.
+Use white space  to make it easy for a hiring manager to read your resume. Use indentation and bullet points to partition information. A dense resume has more information in it but is hard to read. A spacious resume might have less information, but your reader will understand more of it.
+Bold important words  so the reader can quickly find the important content.
+Proofread! Spell check!
+A single mistake can be enough to get you put in the &#8220;no&#8221; pile. Have a detail-oriented friend help you catch things you missed.
+Content adapted by the  MIT Electrical Engineering and Computer Science Communication Lab  from an article originally created by the  MIT Biological Engineering Communication Lab .
+Resources and Annotated Examples
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_img.gif"
+alt="Annotated CV Example 1" />
+Annotated CV Example 1
+This CV page (sampled from a longer document) is from an MIT postdoc.
+1 MB
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_img.gif"
+alt="Annotated Resume Example 1" />
+Annotated Resume Example 1
+This resume is from an MIT postdoc. The 2-column format is unusual, but allows more sections and white space.
+10 MB
+Contributors
+Peter Lindahl
+Julia Rubin
+Chris Musco

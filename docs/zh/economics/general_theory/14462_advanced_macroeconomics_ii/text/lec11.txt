@@ -1,0 +1,218 @@
+--- PAGE 1 ---
+14.462
+Spring, 2020
+Optimal Cryptocurrency Policy and 
+Optimal Monetary Policy: Observing 
+Transactions Patterns, Heterogeneity 
+and Wealth Effects, and the  
+Implications of Micro-Market Frictions
+(Lecture 11)
+Robert M. Townsend
+Elizabeth & James Killian Professor of Economics, MIT
+
+
+--- PAGE 2 ---
+Cryptocurrency: Role/Value and Policy with Respect to Tokens in 
+Economies with Distributed Ledger Systems: Analogy to Fiat Money
+Tokens and cryptocurrency satisfy velocity and frequent-use-in-payments 
+definitions of money
+Room for them, due to gaps, not equating IMRS.
+Potentially improved intermediation
+From monetary theory, the value of fiat money can be endogenous and potentially 
+indeterminate, loss of the fundamental welfare theorems,  empirical tests for 
+optimal size of bubbles –same here for crypto
+Or, money can have a value due to taxes or legal stipulations, cash in advance, or 
+as reduced-form money in utility function
+Crypto here as utility tokens in mechanisms
+Either way, endogenous valuation or with exogeneous restrictions, cryptocurrency 
+can have value or play a role on top of the fiat structure
+Indeterminacy, inflation, speculation  have remedies in the same roots of monetary 
+theory: interest on currency/reserves, central bank reputation or digital reserve bank 
+commitment, use requirements gives minimum lower bound
+Smart contracts and an algorithmic digital reserve system can implement optimal 
+activist policy as in monetary models  using transactions data 
+
+
+--- PAGE 3 ---
+Begin with Some Basics
+
+
+--- PAGE 4 ---
+
+
+--- PAGE 5 ---
+• All agents who start with 0 are referred to as
+agents of type A. A similar restriction is placed
+on those who begin with 1 unit, agents of type
+B It bears repeating here that when an
+B. It bears repeating here that when an
+allocation is termed optimal below, it is only
+established to be optimal in the class of
+symmetric allocations
+
+
+--- PAGE 6 ---
+
+
+--- PAGE 7 ---
+
+
+--- PAGE 8 ---
+
+
+--- PAGE 9 ---
+
+
+--- PAGE 10 ---
+
+
+--- PAGE 11 ---
+As Figure 3 makes clear, with the discount rate 
+β fixed,O < β < 1, at least one of the 
+relationships (10) and (11) must hold as a strict 
+inequality for any value of λ between 0 and I. 
+That is, at least one agent type will be 
+accumulating money balances over time in the 
+above sense. But then this cannot be an 
+equilibrium.
+
+
+--- PAGE 12 ---
+
+
+--- PAGE 13 ---
+PROPOSITION 4. There exists a noninterventionist monetary equilibrium with 
+constant prices, with binding nonnegativity constraints on money balances in 
+every other period, and with alternating consumption sequences.
+
+
+--- PAGE 14 ---
+ALTERNATIVE MONETARY POLICIES IN A 
+TURNPIKE ECONOMY: VINTAGE ARTICLE
+MANUELLI AND SARGENT (2009)
+
+
+--- PAGE 15 ---
+
+
+--- PAGE 16 ---
+
+
+--- PAGE 17 ---
+
+
+--- PAGE 18 ---
+
+
+--- PAGE 19 ---
+As if 2 agents, one of 
+each type
+So H in total
+Total interest paid 
+Per capita
+These are in nominal terms
+
+
+--- PAGE 20 ---
+
+
+--- PAGE 21 ---
+
+
+--- PAGE 22 ---
+
+
+--- PAGE 23 ---
+
+
+--- PAGE 24 ---
+Type I equilibrium
+Even guy is running out of 
+money 
+This is Type II
+Possibly odd guy is 
+running out of money
+
+
+--- PAGE 25 ---
+Odd guy facing (a, 0) 
+come into t = 0 with zero 
+money
+Acquires money at t – 1 
+to carry to t = 2
+(9a) and (9b) at equality
+MRP
+This is labor supply
+
+
+--- PAGE 26 ---
+Odd guy is acquiring money and higher future wealth, eats less today
+Already internalizing increase in consumption
+Also worthwhile to work more today to get into money
+
+
+--- PAGE 27 ---
+
+
+--- PAGE 28 ---
+
+
+--- PAGE 29 ---
+
+
+--- PAGE 30 ---
+
+
+--- PAGE 31 ---
+
+
+--- PAGE 32 ---
+
+
+--- PAGE 33 ---
+
+
+--- PAGE 34 ---
+
+
+--- PAGE 35 ---
+Lagos, Ricardo and Shengxing Zhang (2018) “Turnover 
+Liquidity and the Transmission of Monetary Policy”
+
+
+--- PAGE 36 ---
+Bloomberg.com: Why The Repo Markets 
+Went Crazy (Podcast)
+https://www.bloomberg.com/news/audio/2019-11-08/why-the-repo-
+markets-went-crazy-podcast
+
+
+--- PAGE 37 ---
+Financial Times: Fed plans to double repo 
+market intervention to avoid cash crunch
+https://www.ft.com/content/f9c20bde-1d23-11ea-97df-cc63de1d73f4
+
+
+--- PAGE 38 ---
+Gissler and Narajabad (2017)The Increased Role of the 
+Federal Home Loan Bank System in Funding Markets, Part 
+3: Implications for Financial Stability
+https://www.federalreserve.gov/econres/notes/feds-notes/the-increased-role-of-the-federal-
+home-loan-bank-system-in-funding-markets-part-3-20171018.htm
+
+
+--- PAGE 39 ---
+Afonso et al (2020) “The Market Events of 
+Mid-September 2019”
+
+
+--- PAGE 40 ---
+Tilford, Rennison, Noonan, Smith and Greeley (2019) “Repo: 
+How the financial markets' plumbing got blocked”
+https://ig.ft.com/repo-rate/
+
+
+--- PAGE 41 ---
+
+
+--- PAGE 42 ---

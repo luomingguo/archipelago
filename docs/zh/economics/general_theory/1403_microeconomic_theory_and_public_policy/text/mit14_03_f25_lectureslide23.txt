@@ -1,0 +1,878 @@
+Revised December 10, 2025
+
+
+
+
+14.03/003 Microeconomic Theory & Public Policy Fall 2025
+
+
+
+Lecture slides 23. Machine Predictions and Human Decisions
+
+David Autor (Prof), MIT Economics and NBER
+Prediction and decision —
+     Two applications
+Prediction and decision — Two applications
+
+
+
+
+1. Predicting the inevitable: It’s harder than you think
+
+
+2. Predicting medical need: What goes wrong, and how to fx it
+
+
+
+
+                                                           2/41
+     “Predictive modeling of U.S. health care
+                spending in late life”
+
+Einav, Finkelstein, Mullainathan, Obermeyer, Science, 2016
+Annual mortality rates in the US in 2023 — per 1,000 people
+
+
+
+
+                                                              4/41
+Measuring medical costs of the deceased (in 2008)
+
+
+
+ 1. Unadjusted – Starting from January 1, 2008, expenditure on those who die in that
+    year
+ 2. Backflled – Starting from the date of death, measure spending over the prior year
+    (what is commonly reported in popular discussion)
+
+ 3. In both cases, the denominator is total Medicare benefciary spending in the year
+    (2008)
+
+
+
+
+                                                                                   5/41
+Medical spending on the ‘ex post deceased’
+
+
+
+
+                                             Einav, Finkelstein, Mullainathan, Obermeyer, Science, 2016
+                                                                                                   6/41
+Interpreting the medical costs of the those who have died
+
+
+
+What factors should determine the ‘right’ level of spending on the dying?
+
+Many considerations
+
+ − How much does spending comfort the dying?
+
+ − How much does spending comfort the living?
+
+ − What is the marginal efectiveness of medical care at preventing death?
+
+ − How accurately can we predict who will live and who will die?
+
+
+
+                                                                            7/41
+Interpreting the medical costs of those who have died
+
+
+
+
+Those who end up dying are not the same as those who are relatively likely to die
+
+ − We spend more on sicker patients
+
+ − We could end up spending a large fraction of $$ on patients in their fnal year of life,
+   even if we could not predict who their deaths at the start of the year
+
+
+
+
+                                                                                             8/41
+Distribution of predicted one-year mortality on January 1, 2008
+
+
+
+
+                                              Einav, Finkelstein, Mullainathan, Obermeyer, Science, 9/41
+                                                                                                    2016
+Distribution of predicted one-year mortality on January 1, 2008
+
+
+
+
+                                              Einav, Finkelstein, Mullainathan, Obermeyer, Science,10/41
+                                                                                                    2016
+Death is surprisingly hard to predict
+
+
+
+
+ 1. There is no sizable mass of people for whom death is certain (or even near certain)
+    within the year
+
+ 2. The 95th percentile of predicted annual mortality is only about 25%.
+
+ 3. Less than 10% of those who end up dying within the year have an annual mortality
+    probability above 50%
+
+
+
+
+                                                                                          11/41
+Less than 10% of those who end up dying within the year have an annual
+mortality probability above 50%. Why is this?
+ − Note these approximate statistics
+     □   Annual mortality among Medicare population is Pr[D] = 0.05
+     □   Pr[D > 0.50] = 0.01
+     □   Pr[D <= 0.50] = 0.99
+     □   E[D| Pr(D > .50)] = 0.51
+     □   E[D| Pr(D ≤ .50)] = 0.045
+
+ − Applying Bayes’ Rule
+                                            Pr(B|A) × Pr(A)
+                   Pr(A|B) =
+                                (Pr(B|A) × Pr(A)) + (Pr(B|¬A) × Pr(¬A))
+
+                                             0.51 × 0.01
+                Pr[D ≥ 0.50|D] =                                = 0.103 = 10.3%
+                                     0.51 × 0.01 + 0.045 × 0.99                   12/41
+Spending shares of survivors and decedents by predicted mortality
+
+
+
+
+                                             Einav, Finkelstein, Mullainathan, Obermeyer, Science,13/41
+                                                                                                   2016
+Spending shares of survivors and decedents by predicted mortality
+
+
+
+
+                                             Einav, Finkelstein, Mullainathan, Obermeyer, Science,14/41
+                                                                                                   2016
+Spending by predicted mortality – summing survivors + decadents
+
+
+
+
+                                                                  15/41
+Spending by predicted mortality – split by survival status
+
+
+
+
+                                                             16/41
+Death is surprisingly hard to predict
+
+
+Individuals with high predicted mortality account for only a small share of total spending
+
+ − The highest-risk percentile – those with predicted mortality above 46% – accounts for
+   under 5% of total spending
+
+ − Consistent with prediction, 45% of the highest risk percentile are survivors
+
+ − To identify a group of decedents who account for at least 5% of total spending, must set
+   a threshold of predicted mortality of 39% or higher
+
+ − (Results are based on the backflled measure of decedent spending. When using the
+   unadjusted measure, spending on decedents is even lower )
+
+                                                                                             17/41
+    “...for most people, death comes only after long medical struggle
+    with an incurable condition—advanced cancer, progressive organ
+    failure..., or the multiple debilities of very old age. In all such cases,
+    death is certain, but the timing isn’t”
+                                                                         Atul Gwande, New Yorker, 2 Aug 2020
+
+
+
+
+© The New Yorker. All rights reserved. This content is excluded from our Creative Commons license. For more information, see
+https://ocw.mit.edu/help/faq-fair-use/
+                                                                                                                          18/41
+© Princeton University Press. All rights reserved. This content is excluded from our Creative Commons license. For more
+information, see https://ocw.mit.edu/help/faq-fair-use/
+Intention, prediction, and
+  self-fulflling prophecy
+Machines as decision-makers: Will they learn and replicate our biases?
+
+
+
+ 1. Job search ads for highly paid positions are less likely to be presented to women
+
+ 2. Image searches for professions such as CEO produce fewer images of women
+
+ 3. Facial recognition systems increasingly used in law enforcement perform worse on
+    recognizing faces of women and minorities
+
+ 4. Natural language processing algorithms encode language in gendered ways
+
+
+
+
+                                                                                    21/41
+“Dissecting racial bias in an algorithm used to
+       manage the health of populations”
+
+Obermeyer, Powers, Vogeli, Mullainathan, Science, 2019
+Algorithms seek to identify patients who will beneft from treatment
+
+
+
+ 1. Key assumption
+      □   Those with the greatest care needs will beneft the most from the program
+
+ 2. Under this assumption
+      □   The targeting problem becomes a pure prediction problem
+
+ 3. Developers build algorithms by training on history
+      □   Use past data to build a predictor of future health care needs
+
+
+
+
+                                                                                     23/41
+Machines as decision-makers: Will they learn and replicate our biases?”
+
+
+
+Empirical investigations of algorithmic bias often hindered by opaqueness
+
+ − Algorithms deployed at scale are typically proprietary, making it difcult for independent
+   researchers to dissect them
+
+ − Researchers often work “from the outside,” often using workarounds like audit studies
+
+ − Can document disparities, but understanding how and why they arise is difcult without
+   greater access to the algorithms themselves
+
+
+
+
+                                                                                         24/41
+This study
+
+
+Dataset describes one such health management algorithm
+
+ − Contains algorithm’s predictions
+
+ − Also contains data needed to understand its inner workings—the underlying ingredients
+   used to form the algorithm (data, objective function, etc.)
+
+ − Plus links to a rich set of outcome data
+
+ − Provide a rare opportunity to quantify racial disparities in algorithms and isolate the
+   mechanisms by which they arise
+
+
+                                                                                             25/41
+Obermeyer, Powers, Vogeli, Mullainathan, Science,26/41
+                                                  2019
+Obermeyer, Powers, Vogeli, Mullainathan, Science,27/41
+                                                  2019
+Research sample
+
+
+
+ − Algorithmic risk score generated for each patient-year for 100, 009 patients during the
+   enrollment period for the system’s care management program
+
+ − Patients above the 97th percentile are automatically identifed for enrollment in the
+   program
+
+ − Those above the 55th percentile are referred to their primary care physician, who is
+   provided with contextual data about the patients and asked to consider whether they
+   would beneft from program enrollment
+
+
+
+                                                                                          28/41
+Research sample
+
+
+ − Algorithm takes raw insurance claims data Xi,t1 (features) over the year t − 1
+
+ − Demographics (e.g., age, sex), insurance type, diagnosis and procedure codes,
+   medications, and detailed costs
+      □   71.2% enrolled in commercial insurance
+      □   28.8% enrolled in Medicare
+      □   Average age 50.9 yrs
+      □   63% female
+
+ − The algorithm specifcally excludes race
+
+
+                                                                                    29/41
+          RESEARCH                                                                                             |     RESEARCH ARTICLE
+
+
+At each pctile
+          A    of risk score, Black patients have more chronic Bconditions
+                                                                                         Race
+                                                                                                                    Black                                                                                                                                                                                                 O
+                                                                                                                    White                                                                                                                                                                                                 S
+                                                                                                                                         Referred for screen                                     Defaulted into program
+                                                                                                                                                                                                                                                                                                                   Referred
+
+
+
+
+           Number of active chronic conditions
+                                                                                                                                                                                                                                                             Fraction Black
+                                                 RESEARCH                                      |   RESEARCH ARTICLE
+
+
+
+                                                 A                                                                                                                   B
+
+                                                                                        Race
+                                                                                                   Black                                                                                     Original                         Defaulted into program
+                                                                                                   White                                                                                     Simulated
+                                                                                                              Referred for screen        Defaulted into program
+                                                                                                                                                                                      Referred for screen
+
+
+
+
+                                                  Number of active chronic conditions
+                                                                                                                                                                     Fraction Black
+
+
+
+
+                                                                                                                                                                                                                                                             Downloaded from http://science.sciencemag.org/ on F
+                                                                                                                                    Percentile of Algorithm Risk Score
+                                                                                                           Percentile of Algorithm Risk Score                      Percentile of Algorithm Risk Score
+
+                                                 Fig. 1. Number of chronic illnesses versus algorithm-predicted risk,                                                    replaced with less healthy Blacks below the threshold, until the marginal patient
+                                                 by race. (A) Mean number of chronic conditions by race, plotted against                                                 is equally healthy). The × symbols show risk percentiles by race; circles
+          Fig. 1. Number of chronic illnesses versushow risk deciles with 95%               algorithm-predicted     confidence intervals risk,
+                                                 algorithm risk score. (B) Fraction of Black patients at or above a given risk            clustered by patient. The       replaced with less h
+                                                 score for the original algorithm (“original”) and for a simulated scenario
+                                                                                       dashed vertical lines show the auto-identification threshold (the black
+          by race. (A) Mean number of chronic conditions                                             by the
+                                                                                       line, which denotes  race,      plotted
+                                                                                                                97th percentile)
+                                                 that removes algorithmic bias (“simulated”: at each threshold of risk, defined
+                                                                                       line, which denotes the 55th percentile).
+                                                 at a given percentile on the x axis, healthier Whites above the threshold are
+                                                                                                                                        against
+                                                                                                                                 and the screening threshold (the gray    is equally healthy).
+          algorithm risk score. (B) Fraction of Black patients at or above a given risk                                                                                   show risk 30/41
+                                                                                                                                                                                        deciles w
+          score    for the original algorithm                     (“original”) and for a                                Obermeyer,
+                                                                                                              simulated scenario            Powers,     Vogeli,     Mullainathan,
+                                                                                                                                                                          dashed  Science, 2019 line
+                                                                                                                                                                                     vertical
+              of substantial disparities in program screening. diabetes who are at risk of catastrophic com-       as well as its objective function, providing us
+                                                 We quantify this by simulating a counterfactual                                            plications if they do not lower their blood sugar               a unique window into the mechanisms by
+es    system itself leads to reduced use of health care.                                                               trained.
+                                                                                                                     poverty   canOnleadthetoone     hand, the
+                                                                                                                                                disparities     in algorithm
+                                                                                                                                                                   use of health   man-
+ ty   The collective effect of these many channels is                                                                  ufacturer’s
+                                                                                                                     care:  geography choice
+                                                                                                                                          and to     predict future
+                                                                                                                                                 differential    access costs
+                                                                                                                                                                         to trans-is rea-    90
+
+
+
+ g:   At each pctile, Black patients have more hypertension and diabetes
+      to lower health spending substantially for Black                                                                 sonable: The
+                                                                                                                     portation,          program’s
+                                                                                                                                   competing              goal, atfrom
+                                                                                                                                                     demands         leastjobs
+                                                                                                                                                                             in part,
+                                                                                                                                                                                   or is
+ ly                                                                                                                  child care, or knowledge of reasons to seek care                               10   20   30   40   50    60  70    80 90        1
+
+ve                                                                                                                   (29–31). To    the extent that race and socioeco-
+                                                                                                                                                                                                         Percentile of Algorithm Risk Score
+                                                                                                     Race         Black         White
+ re                                                                                                                  nomic status are correlated, these factors will
+  n                                                      A Hypertension: Fraction clinic visits with SBP >139 mmHg B differentially
+                                                                                                                            Diabetesaffect     Black
+                                                                                                                                        severity:       patients. Second, race
+                                                                                                                                                    HbA1c
+ng                                                                   Referred for screen Defaulted into program      could affect costs
+                                                                                                                                 7.5
+                                                                                                                                             directly
+                                                                                                                                        Referred         via Defaulted
+                                                                                                                                                 for screen  several into
+                                                                                                                                                                        channels:
+                                                                                                                                                                            program       Fig. 2. Biomarkers of health versus
+ge                                                                                                                   direct (“taste-based”) discrimination, changes                       algorithm-predicted risk, by race. (A to
+
+
+
+
+       Fraction with uncontrolled blood pressure
+ B.                                                                                                                  to the doctor–patient relationship, or others. A                     E) Racial differences in a range of biological
+by                                                 0.3                                                               recent trial randomly assigned Black patients
+                                                                                                                                 7.0                                                      measures of disease severity, conditional
+ te                                                                                                                  to a Black or White primary care provider and                        on algorithm risk score, for the most common
+
+
+
+                                                                                                                     Mean HbA1c (%)
+ ss                                                                                                                  found significantly higher uptake of recom-                          diseases in the population studied. The ×
+n-                                                                                                                   mended preventive care when the provider was
+                                                                                                                                 6.5                                                      symbols show risk percentiles by race, except
+                                                                                                                     Black (32). This is perhaps the most rigorous                        in (C) where they show risk ventiles; circles
+
+
+
+
+                                                                                                                                                                                                  Downloaded from http://science.sciencema
+                                                   0.2
+  d
+ at                                                                                                                  demonstration of this effect, and it fits with a                     show risk quintiles with 95% confidence
+                                                                                                                     larger literature on potential mechanisms by                         intervals clustered by patient. The y axis in
+ws                                                                                                                               6.0
+
+
+                                                                                                                     which race can affect health care directly. For                      (D) has been trimmed for readability, so the
+nt                                                 0.1
+
+                                                                                                                     example, it has long been documented that                            highest percentiles of values for Black patients
+nt
+                                                                                                                     Black patients have reduced trust in the health
+                                                                                                                                 5.5                                                      are not shown. The dashed vertical lines
+  d                                                                                                                  care system (33), a fact that some studies trace                     show the auto-identification threshold (black
+  d                                                0.0                                                               to the revelations of the Tuskegee study and                         line: 97th percentile) and the screening
+ v-                                                       0   10   20    30    40    50    60     70   80  90   100       0    10
+                                                                                                                     other adverse
+                                                                                                                                     20    30     40
+                                                                                                                                         experiences
+                                                                                                                                                        50   60    70
+                                                                                                                                                           (34).Risk
+                                                                                                                                                                         80
+                                                                                                                                                                  A substantial
+                                                                                                                                                                               90    100
+                                                                                                                                                                                          threshold (gray line: 55th percentile).
+                                                                 Percentile of Algorithm Risk Score                               Percentile    of Algorithm           Score
+ at
+ x-                                                      C Bad cholesterol: LDL                                         D Renal failure: creatinine (log)
+                                                                                                                     Obermeyer et al., Science 366, 447–453 (2019)                25 October 2019
+we                                                                    Referred for screen Defaulted into program                      0.2
+                                                                                                                                            Referred for screen Defaulted into program
+ e-                                                                                                                                                                            Obermeyer, Powers, Vogeli, Mullainathan, Science, 2019
+ ly                                                                                                                                                                                                                                          31/41
+                                                                                                                    dL)
+                                                   110
+             table    S2). Thus avoidable talizations,
+                to reduce costs, and it stands to reason that
+                                                              future   costs, i.e.,                 different
+                                                                   could be a useful label to predict.
+                                                                                                                     options, each with its own profile
+                                                                                                       Experiments on label choice
+
+
+                   patients w/same risk scoresofhave
+           those related to emergency visits and hospi- costs and benefits.
+                                               patients with the greatest future costs could                                                Alternatively, rather than predicting costs         Through a series of experiments with our data-
+
+Black and white                                               ≈ identical med
+                                               have the greatest benefit from the program.
+                                               As noted in the supplementary materials,
+                                               the manufacturer is not alone. Although the
+                                                                                                                                            at all, we could simply predict a measure of
+                                                                                                                                            health; e.g., the number of active chronic health
+                                                                                                                                            conditions. Because the program ultimately
+                                                                                                                                                                                                set, we can gain some insight into how label
+                                                                                                                                                                                                choice affects both predictive performance and
+                                                                                                                                                                                                racial bias. We develop three new predictive
+                                               details of individual algorithms vary, the cost                                              operates to improve the management of these         algorithms, all trained in the same way, to
+                                               label reflects the industry-wide approach. For                                               conditions, patients with the most encoun-          predict the following outcomes: total cost in
+
+expendituresA                                  example, the Society of Actuaries’s compre-
+                                               hensive evaluation of the 10 most widely
+                                                                            B
+                                               used algorithms, including the particular al-
+                                               gorithm we study, used cost prediction as its
+                                                                                                                                            ters related to them could also be a promis-
+                                                                                                                                            ing group on which to deploy preventative
+                                                                                                                                            interventions.
+                                                                                                                                               The dilemma of which label to choose re-
+                                                                                                                                                                                                year t (this tailors cost predictions to our own
+                                                                                                                                                                                                dataset rather than the national training set),
+                                                                                                                                                                                                avoidable cost in year t (due to emergency
+                                                                                                                                                                                                visits and hospitalizations), and health in year
+                                               accuracy metric (21). As noted in the report,                                                lates to a growing literature on “problem formu-    t (measured by the number of chronic condi-
+                                               the enthusiasm for cost prediction is not                                                    lation” in data science: the task of turning an     tions that flare up in that year). We train all
+                                               restricted to Race
+                                              60,000          industry: Similar algorithms are                                              often amorphous concept we wish to predict          models in a random ⅔ training set and show                                                                                     60,000                                                                Race
+                                               developed and used by non-profit hospitals,
+                                                                                    Black
+                                                                                      Black                                                  Referred
+                                                                                                                                            into a  concretefor    screen
+                                                                                                                                                              variable that can be predicted  Defaulted
+                                                                                                                                                                                                all          intofrom the
+                                                                                                                                                                                                    results only     program ⅓ holdout set. Fur-
+                                                                                                                                                                                                                                                                                                                                                                                                                    Blac
+                                                                                                                                                                                                                                                                                                                                                                                                                      Bla
+                                               academic groups, and governmental agen-                                                      in a given dataset (38). Problems in health         thermore, as with the original algorithm, we
+                                               cies, and are often described inWhite  White
+                                                                                    academic                                                seem particularly challenging: Health is, by        exclude race from the feature set (more details                                                                                                                                                                     Whit
+                                                                                                                                                                                                                                                                                                                                                                                                                      Wh
+                                               literature on targeting population health                                                    nature, holistic and multidimensional, and          are in the materials and methods).
+                                               interventions (18, 19).                                                                      there is no single, precise way to measure it.         Table 2 shows the results of these experi-
+                                                  On the other hand, future cost is by no                                                   Health care costs, though well measured and         ments. The first finding is that all algorithms
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                Downloaded from http://science.sciencemag.org/ on February 8, 2020
+                                               means the only reasonable choice. For exam-                                                  readily available in insurance claims data,         perform reasonably well for predicting not
+                                               ple, the evidence on care management prog-                                                   are also the result of a complex aggregation        only the outcome on which they were trained
+                                               rams shows that they do not operate to reduce                                                process with a number of distortions due to         but also the other outcomes: The concentra-
+                                               costs globally. Rather, these programs primar-                                               structural inequality, incentives, and ineffi-      tion of realized outcomes in those at or above
+                                              20,000                                                                                                                                                                                                                                                                           20,000
+
+
+
+
+             Mean Total Medical Expenditure                                                                                                                                                                                                                                                   Mean Total Medical Expenditure
+                                               ily work to prevent acute health decompensa-                                                 ciency. So although the choice of label is          the 97th percentile is notably similar for all
+                                               tions that lead to catastrophic health care                                                  perhaps the single most important decision          algorithms across all outcomes. The largest
+                                               utilization (indeed, they actually work to in-                                               made in the development of a prediction al-         difference in performance across algorithms
+                                               crease other categories of costs, such as pri-                                               gorithm, in our setting and in many others,         is seen for cost prediction: Of all costs in the
+                                               mary care and home health assistance; see                                                    there is often a confusingly large array of         holdout set, the fraction generated by those
+                                               table S2). Thus avoidable future costs, i.e.,                                                different options, each with its own profile        at or above the 97th percentile is 16.5% for the
+                                               those related to emergency visits and hospi-                                                 of costs and benefits.                              cost predictor versus 12.1% for the predictor
+
+
+                                                8,000                                                                                                                                                                                                                                                                           8,000
+                                                A                                                                                                                          B
+                                                                                60,000   Race                                                                                                                60,000   Race
+                                                                                                      Black
+                                                                                                       Black    Referred for screen         Defaulted into program                                                                  Black
+                                                                                                                                                                                                                                      Black
+                                                                                                      White
+                                                                                                       White                                                                                                                        White
+                                                                                                                                                                                                                                      White
+
+
+
+
+                                                                                20,000                                                                                                                       20,000
+
+
+
+
+                                               Mean Total Medical Expenditure                                                                                               Mean Total Medical Expenditure
+                                                     3,000                                                                                                                                                                                                                                                                      3,000
+
+                                                                                 8,000                                                                                                                        8,000
+
+
+
+
+                                                                                 3,000                                                                                                                        3,000
+
+
+
+
+                                                     1,000                                                                                                                                                                                                                                                                      1,000
+
+                                                                                 1,000       0             10              20              30           40                 50                                 1,000       60              70             80             90         100                                                                                                               0      10       20
+                                                                                         0       10   20       30     40     50       60    70     80      90        100                                              0        10    20        30   40        50   60        70   80   90   100
+
+
+                                                                                                                                             Percentile of Algorithm Risk Score
+                                                                                                                Percentile of Algorithm Risk Score                           Chronic Illnesses
+                                                                                                                                                                                                                                                                                                                                                                                                            32/41
+                                              Fig. 3. Costs versus algorithm-predicted risk, and costs versus health, by race. (A) Total medical expenditures by race, conditional on algorithm risk score.
+                                              The dashed vertical lines show the auto-identification threshold (black line: 97th percentile) and the screening threshold (gray line: 55th percentile). (B) Total medical
+             Fig. 3.   Costs
+                 expenditures        versus
+                              by race,               algorithm-predicted
+                                       conditional on number of chronic                       risk,
+                                                                        conditions. The × symbols        and
+                                                                                                  show risk       costs
+                                                                                                            percentiles;         versus
+                                                                                                                         circles show            health,
+                                                                                                                                      risk deciles with         by intervals
+                                                                                                                                                        95% confidencerace. (A) Total medical expend
+What could be going wrong?
+
+
+ − Race is not included in calculation of risk score
+
+ − The system is not deliberately race discriminatory
+
+ − The risk score Y is ‘calibrated’
+
+                               E[Y |X, R = B] = E[Y |X, R = W ].
+
+ − Black and white patients with identical medical histories receive identical risk scores, Y
+
+ − Hint: What do you suppose Y is?
+
+
+                                                                                           33/41
+Question — What is going wrong?
+                                                                                                                                                                                                                                                                                ence.sciencemag.org/ on February   8, 2020
+erent options, eachto reduce
+                     withcosts, itsand it
+                                      own       profile
+                                          stands to  reason that              talizations, could be a useful label to predict. at or above the 97th percentile      islabel
+                                                                                                                                                        Experiments on  16.5%
+                                                                                                                                                                            choice for the
+                   patients with the greatest future costs could              Alternatively, rather than predicting costs                                                                                                    Through a series of experiments with our data-
+                                  cost predictor versus 12.1% for the predictor
+osts and benefits. have the greatest benefit from the program.                at all, we could simply predict a measure of                                                                                                   set, we can gain some insight into how label
+
+     With same chronic illness score,   Black patients have much lower med
+                             As noted in the supplementary materials,
+                             the manufacturer is not alone. Although the
+                             details of individual algorithms vary, the cost
+                                                                              health; e.g., the number of active chronic health
+                                                                              conditions. Because the program ultimately
+                                                                              operates to improve the management of these
+                                                                                                                                                                                                                             choice affects both predictive performance and
+                                                                                                                                                                                                                             racial bias. We develop three new predictive
+                                                                                                                                                                                                                             algorithms, all trained in the same way, to
+                             label reflects the industry-wide approach. For   conditions, patients with the most encoun-                                                                                                     predict the following outcomes: total cost in
+                             example, the Society of Actuaries’s compre-      ters related to them could also be a promis-                                                                                                   year t (this tailors cost predictions to our own
+
+     expenses B              hensive evaluation of the 10 most widely
+                             used algorithms, including the particular al-
+                             gorithm we study, used cost prediction as its
+                                                                              ing group on which to deploy preventative
+                                                                              interventions.
+                                                                                 The dilemma of which label to choose re-
+                                                                                                                                                                                                                             dataset rather than the national training set),
+                                                                                                                                                                                                                             avoidable cost in year t (due to emergency
+                                                                                                                                                                                                                             visits and hospitalizations), and health in year
+                             accuracy metric (21). As noted in the report,    lates to a growing literature on “problem formu-                                                                                               t (measured by the number of chronic condi-
+                             the enthusiasm for cost prediction is not        lation” in data science: the task of turning an                                                                                                tions that flare up in that year). We train all
+                             restricted
+                                   60,000         Race
+                                         to industry: Similar algorithms are  often amorphous concept we wish to predict                                                                                                     models in a random ⅔ training set and show
+                             developed and used by non-profit hospitals,      into a concrete variable that can be predicted                                                                                                 all results only from the ⅓ holdout set. Fur-
+ulted into program           academic groups, and governmentalBlack     Black in a given dataset (38). Problems in health
+                                                                      agen-                                                                                                                                                  thermore, as with the original algorithm, we
+                             cies, and are often described in academicWhite
+                                                                        White seem particularly challenging: Health is, by                                                                                                   exclude race from the feature set (more details
+                             literature on targeting population health        nature, holistic and multidimensional, and                                                                                                     are in the materials and methods).
+                             interventions (18, 19).                          there is no single, precise way to measure it.                                                                                                    Table 2 shows the results of these experi-
+                                On the other hand, future cost is by no       Health care costs, though well measured and                                                                                                    ments. The first finding is that all algorithms
+                             means the only reasonable choice. For exam-      readily available in insurance claims data,                                                                                                    perform reasonably well for predicting not
+                             ple, the evidence on care management prog-       are also the result of a complex aggregation                                                                                                   only the outcome on which they were trained
+                             rams shows that they do not operate to reduce    process with a number of distortions due to                                                                                                    but also the other outcomes: The concentra-
+                             costs globally. Rather, these programs primar-   structural inequality, incentives, and ineffi-                                                                                                 tion of realized outcomes in those at or above
+                                   20,000
+
+
+
+
+                             Mean Total Medical Expenditure
+                             ily work  to prevent acute health decompensa-    ciency. So although the choice of label is                                                                                                     the 97th percentile is notably similar for all
+                             tions that lead to catastrophic health care      perhaps the single most important decision                                                                                                     algorithms across all outcomes. The largest
+                             utilization (indeed, they actually work to in-   made in the development of a prediction al-                                                                                                    difference in performance across algorithms
+
+
+
+
+                                                                                                                                                                                                                                                                                                            Downloaded from http://science.sciencemag.org/ on February 8, 2020
+                             crease other categories of costs, such as pri-   gorithm, in our setting and in many others,                                                                                                    is seen for cost prediction: Of all costs in the
+                             mary care and home health assistance; see        there is often a confusingly large array of                                                                                                    holdout set, the fraction generated by those
+                             table S2). Thus avoidable future costs, i.e.,    different options, each with its own profile                                                                                                   at or above the 97th percentile is 16.5% for the
+                             those related to emergency visits and hospi-     of costs and benefits.                                                                                                                         cost predictor versus 12.1% for the predictor
+
+
+                                                                   8,000
+                              A                                                                                                                              B
+                                                              60,000   Race                                                                                                                   60,000   Race
+                                                                                       Black
+                                                                                        Black    Referred for screen          Defaulted into program                                                               Black
+                                                                                                                                                                                                                     Black
+                                                                                       White
+                                                                                        White                                                                                                                      White
+                                                                                                                                                                                                                     White
+
+
+
+
+                                                              20,000                                                                                                                          20,000
+
+
+
+
+                             Mean Total Medical Expenditure                                                                                                  Mean Total Medical Expenditure
+                                                                   3,000
+
+
+                                                               8,000                                                                                                                           8,000
+
+
+
+
+                                                               3,000                                                                                                                           3,000
+
+
+
+
+                                                                   1,000
+
+    80      90       100                                                           0                 10             20             30             40                                          50              60             70          80             90        100
+                                                               1,000                                                                                                                           1,000
+
+                                                                       0      10       20       30        40   50        60   70        80   90        100                                             0      10    20       30    40     50    60      70   80    90   100
+
+Score                                                                                            Percentile of Algorithm Risk Score
+                                                                                                                                                  Chronic Illnesses                                                                 Chronic Illnesses
+                                                                                                                                                                                                                                                                                                                                                                                 35/41
+                             Fig. 3. Costs versus algorithm-predicted risk, and costs versus health, by race. (A) Total medical expenditures by race, conditional on algorithm risk score.
+ersus health, by race. (A) Total medical expenditures by race, conditional on algorithm risk score.
+                             The dashed vertical lines show the auto-identification threshold (black line: 97th percentile) and the screening threshold (gray line: 55th percentile). (B) Total medical
+                             expenditures by race, conditional on number of chronic conditions. The × symbols show risk percentiles; circles show risk deciles with 95% confidence intervals
+Label bias
+
+ − We want a measure of health risk, Y ∗
+ − But this is not an observable variable, so we choose a proxy (AKA, label) Ỹ
+ − This label might be correct on average
+                                       E[Y ∗ ] = E[Ỹ ]
+ − Yet, the label may unintentionally replicate human biases encoded in the data
+
+             E[Ỹ − Y ∗ |R = B] < 0 : Black patients systematically under-treated
+            E[Ỹ − Y ∗ |R = W ]   > 0 : White patients systematically over-treated
+
+ − Can happen if race is predictable from X, even if race not in data: W, B ̸⊥
+                                                                             ⊥X
+ − Marzyeh’s lecture underscored that this is commonplace
+                                                                                     36/41
+Label bias can reinforce existing disparities, create self-fulflling prophesies
+ 1. High school performance measures (e.g., AP scores, college admissions) mostly refect
+    afuence of the kids who attend the school, not school’s value-added
+      □   Causes more kids from afuent families to attend
+
+ 2. Credit-scoring algorithms predict outcomes related to income, thus incorporating
+    disparities in employment and salary
+      □   Low-income adults have more trouble getting loans, pay higher interest rates, develop worse
+          credit
+
+ 3. Policing algorithms predict measured crime, which also refects increased scrutiny of
+    some groups
+      □   Groups that are policed more aggressively will develop records, get further scrutiny
+
+ 4. Hiring algorithms predict supervisory ratings, which codify existing stereotypes,
+    preferences
+      □   Prevent qualifed people from getting hired, inhibiting career advancement              37/41
+    Fraction Black
+              B
+                   patients by risk score—risk score and corrected for health
+                                                                                                 Original                                                                       Defaulted into program
+                                                                                                 Simulated
+into program
+                                                                                Referred for screen
+
+
+
+
+                  Fraction Black
+                                   RESEARCH                                     |   RESEARCH ARTICLE
+
+
+
+                                     A                                                                                                               B
+
+                                                                         Race
+                                                                                    Black                                                                                    Original                           Defaulted into program
+                                                                                    White                                                                                    Simulated
+                                                                                               Referred for screen       Defaulted into program
+                                                                                                                                                                      Referred for screen
+
+
+
+
+                                   Number of active chronic conditions
+                                                                                                                                                     Fraction Black
+
+
+
+
+                                                                                                                                                                                                                                                                                                     Downloaded from http://science.sc
+                                                                                                                                                                                                                                               Downloaded from http://science.sciencemag.org/ on F
+                                                                                                                 Percentile of Algorithm Risk Score
+                                                                                            Percentile of Algorithm Risk Score                  Percentile of Algorithm Risk Score
+
+                                   Fig. 1. Number of chronic illnesses versus algorithm-predicted risk,                                                    replaced with less healthy Blacks below the threshold, until the marginal patient
+                                   by race. (A) Mean number of chronic conditions by race, plotted against                                                 is equally healthy). The × symbols show risk percentiles by race; circles
+
+cted risk,              replaced with less healthy Blacks below thedashed                                 threshold, until the marginal patient
+                                   algorithm risk score. (B) Fraction of Black patients at or above a given risk
+                                                                                                       show risk deciles with 95% confidence intervals clustered by patient. The
+                                   score for the original algorithm (“original”) and for a simulated scenario   vertical lines show the auto-identification threshold (the black
+
+ ted against            is equally healthy). The × symbols show risk                                          percentiles                by race; circles
+                                                                                                       line, which denotes the 97th percentile) and the screening threshold (the gray
+                                   that removes algorithmic bias (“simulated”: at each threshold of risk, defined
+                                                                                                       line, which denotes
+                                   at a given percentile on the x axis, healthier Whites above the threshold are             the 55th percentile).
+                                                                                                                                                                                         38/41
+ e a given risk         show risk deciles with 95% confidence intervals clustered by patient. The
+                                                                                                                                         Obermeyer, Powers, Vogeli, Mullainathan, Science, 2019
+ d scenario             dashed       vertical
+                             of substantial            lines
+                                            disparities in       show
+                                                           program screening.the   auto-identification
+                                                                               diabetes who are at                         threshold
+                                                                                                   risk of catastrophic com-         as well as its(the     black
+                                                                                                                                                    objective function, providing us
+                                   We quantify this by simulating a counterfactual                                          plications if they do not lower their blood sugar               a unique window into the mechanisms by
+Epilogue (p1 of 3)
+
+
+− We contacted the algorithm manufacturer for an initial discussion of
+  our results
+− The manufacturer independently replicated our analyses on its
+  national dataset of 3, 695, 943 commercially insured patients
+− This confrmed our results
+− Calculated in their dataset, Black patients had 48, 772 more active
+  chronic conditions than White patients, conditional on risk score
+                                                                    39/41
+Epilogue (p2 of 3)
+
+− To resolve the issue, we began to experiment with solutions together
+− We suggested using the existing model infrastructure— sample,
+  predictors (excluding race, as before), training process, and so
+  forth—but changing the label...
+− Rather than future cost, we created an index variable that combined
+  health prediction with cost prediction
+− This reduced the number of excess active chronic conditions in Black
+  patients, conditional on risk score, to 7, 758, an 84% reduction in
+  bias.                                                               40/41
+Epilogue p3 of 3)
+
+
+
+− We are establishing an ongoing (unpaid) collaboration...
+− To convert the results into a better, scaled predictor of
+  multi-dimensional health measures
+− Goal: Rolling these improvements out in a future round of algorithm
+  development
+
+
+                                                                   41/41
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

@@ -1,0 +1,845 @@
+--- Page 1 ---
+ 
+ 
+ 
+ 
+Originally prepared by John Sterman; last updated by JS and HR October 2013. 
+ 
+ denotes a question for which you must hand in an answer, a model, or a plot. 
+ 
+denotes a tip to help you build the model or answer the question. 
+ 
+System Dynamics Group 
+Sloan School of Management 
+Massachusetts Institute of Technology 
+ 
+System Dynamics II, 15.872 
+Professors Hazhir Rahmandad and John Sterman 
+ 
+Assignment 1 
+Structure and Behavior of Delays 
+ 
+Assigned:  Monday 28 October 2013; Due: Wednesday 6 November 2013 
+ 
+This assignment should be done in a team totaling three people and submitted digitally 
+ 
+Delays are a critical source of dynamics in nearly all systems.  Thus far in our modeling, 
+however, we have represented delays in causal diagrams qualitatively.  In this assignment you 
+explore the structure and behavior of delays and test their responses to a range of inputs.  You 
+will also apply your knowledge of delays to an important real-world issue:  the current glut of 
+natural gas in the US.  The assignment helps you understand the dynamics of delays so that you 
+can use them appropriately in more complex models.  The assignment also develops your skills 
+in model formulation and analysis.  To do this assignment it is essential that you first read 
+chapter 11 in the text. 
+ 
+A. 
+Material Delays 
+  A1. Do the challenge on page 425 of the text (Response of Material Delays to Steps, 
+Ramps, and Cycles).  Note that you are asked to: 
+ 
+   Sketch your intuitive estimate of the response of a first order material delay to the 
+four test inputs shown in Figure 11-9.   
+ 
+ To assist you, Figure 11-9 is reproduced on the following pages so you can 
+sketch your estimates directly on the graphs by hand or digitally; you will 
+need to submit your response digitally so you can take a picture of your 
+hand-drawn graphs and paste it into your write up. 
+ 
+ Your grade will not be affected by your answer to this part of the question.  
+Please be honest and sketch your responses before simulating the model; 
+this is important for building your intuition about delays. 
+ 
+
+--- Page 2 ---
+ 
+ 
+2 
+  A2.  After sketching your intuitive estimates, build and simulate the model for the first-order 
+material delay.  
+ 
+ 
+The structure and equations for a first-order delay are described in the text 
+(section 11.2.4).  Build the delay explicitly as a stock and flow structure shown in 
+Figure 11-4 (that is, do not use Vensim's built-in function DELAY1). 
+  
+Set the initial value of the stock of letters in transit so that the delay is always 
+initialized in equilibrium, independent of the initial value of the input.  In 
+equilibrium, the stock in transit is unchanging, so the inflow and outflow to the 
+delay must be equal.  Solve this equation for the equilibrium value for the stock 
+in transit, and enter this parametric expression as the initial condition for the 
+stock in your model.  Run your model with a few different constant input values 
+to confirm that it begins and remains in equilibrium.  You do not need to hand in 
+the equilibrium run.  
+   
+We have created a “test input generator” that will make it easy for you to 
+generate the step, ramp, sine wave, and other test inputs you need to run the tests.  
+Download the model, TestGen.mdl, from the course website and use it to 
+generate the input patterns you need.  The test input generator is fully 
+documented and dimensionally consistent (see appendix 1).      
+   
+To learn more about the parameters for the built-in functions used in the Test 
+Input Generator (specified in the Appendix) and in the following exercises, use 
+the pull-down “Help” menu in Vensim.  Click on “Keyword Search...” and type 
+in the function name (e.g., STEP), and hit Enter. 
+   
+Note that the test generator has an initial value of one, so the exponential growth 
+rate you need to replicate the test input in the graphs is 0.05/day.  The ramp slope 
+needed is 0.05/day. 
+   
+Set the initial time to –5 days, the final time to 25 days, and the Time Step (dt) to 
+0.125 days.  Be sure to save output every time step (in the Time Bounds tab 
+under Settings…, in the Model menu).   
+   
+To show the relationship between the input and output, define a custom graph 
+that shows the input and output rate on the same graph, and with the same scale.  
+Also use the strip graph tools to examine the behavior of the stock in transit. 
+   
+It may be helpful to envision the delay as the post office, with the input 
+representing the mailing rate, the output representing the delivery rate, and the 
+stock in transit representing the letters in the post office system. 
+ 
+  
+After you run the model for each of the test inputs, compare the results to your 
+intuitive estimates and comment briefly.  Were your mental simulations correct?  
+Why? / Why not?  In particular,  
+ 
+1. 
+Consider the linear ramp.  The response of any system to a shock consists of a 
+transient, during which the relationship of input and output is changing, and a 
+steady state in which the relationship between input and output is no longer 
+
+--- Page 3 ---
+ 
+ 
+3 
+changing (even though the input and output might both be growing, for example).  
+Does the output of the delay (e.g., the delivery rate of letters) equal the input (e.g., 
+the mailing rate) in the steady state for the linear ramp?  Explain. 
+ 
+2. 
+How does the response to the sine wave depend on the delay time relative to the 
+period of the cycle?  In particular, as the delay time increases relative to the period 
+of the cycle, what happens to the amplitude and timing of the output? 
+ 
+A3. 
+ 
+Next, repeat the steps above (both mental and formal simulation) for a third order 
+material delay with the same average delay time of 5 days.  
+ 
+ 
+Build the delay explicitly as shown in section 11.2.5.  Do not use the Vensim 
+built-in function DELAY3.  Figure 11-6 shows a second order material delay; 
+the third order delay is analogous but contains three intermediate stocks of 
+material in transit (see equation 11-4).  
+ 
+Build the third order delay in the same model as your first order delay and use 
+the same input test generator.  This allows you to compare the behavior of the 
+third order delay to the first order delay. 
+ 
+A4. 
+ 
+Next, repeat the steps above (again both mental and formal simulation) for a 
+pipeline delay with the same average delay time of 5 days.  
+ 
+ 
+Build the pipeline delay using the DELAY FIXED function in Vensim.  The 
+pipeline delay is described in section 11.2.3.  To access the  DELAY FIXED 
+function from the variable definition dialog in VensimPLE, click on the tab 
+labeled Functions; you will then see an alphabetical list of all the built in 
+functions available in PLE.  The syntax for the DELAY FIXED function is: 
+ 
+OUTPUT = DELAY FIXED(INPUT, DELAY TIME, INITIAL OUTPUT)  
+ 
+Build the pipeline delay in the same model as your other delays so you can 
+easily compare the output of the three delay types.  
+ 
+
+--- Page 4 ---
+ 
+ 
+4 
+ 
+ 
+Four test inputs to a delay 
+Before simulating the model, sketch the response of a first order material delay to each of these inputs, assuming a 5 day average 
+delay time. 
+
+--- Page 5 ---
+ 
+ 
+5 
+ 
+Four test inputs to a delay 
+Before simulating the model, sketch the response of a third order material delay to each of these inputs, assuming a 5 day average 
+delay time. 
+
+--- Page 6 ---
+ 
+ 
+6 
+Four test inputs to a delay 
+Before simulating the model, sketch the response of a Pipeline delay to each of these inputs, assuming a 5 day average delay time. 
+
+--- Page 7 ---
+ 
+ 
+7 
+B. 
+Information Delays 
+ 
+In the previous sections we considered material delays, where the input to the delay is a physical 
+inflow of items to a stock of units in transit, and the outflow is the physical flow of items exiting 
+the stock.  Many delays, however, exist in channels of information feedback—for example, in the 
+measurement or perception of a variable, such as the order rate for a product.   
+ 
+ 
+ 
+In this example, the expected order rate is management’s belief about the value of the order rate.  
+The expected order rate lags behind the actual order rate due to delays in measuring and reporting 
+orders, and due to the time it takes managers to update their beliefs about the order rate.  The 
+physical order rate does not flow into the delay; rather information about the order rate enters the 
+delay.  For reasons discussed in Business Dynamics, Ch. 11, a different structure is needed to 
+represent these information delays. 
+ 
+As an example of an information delay, consider the way a firm forecasts demand for its 
+products.  Why does forecasting inevitably involve a delay?  Firms must forecast demand 
+because it takes time to adjust production to changes in demand, and because it is costly to make 
+large changes in production.  They don’t want to respond to temporary changes in demand but 
+only to sustained new trends.  A good forecasting procedure should filter out random changes in 
+incoming orders to avoid costly and unnecessary changes in output while still responding quickly 
+to changes in trends to avoid costly stockouts and lost business.  
+ 
+One of the most widely used forecasting techniques is called “exponential smoothing” or  
+“adaptive expectations.”  As discussed in section 11.3.1, “Adaptive expectations” means the 
+forecast adjusts (adapts) gradually to the actual stream of orders for the product.  If the forecast is 
+persistently wrong, it will gradually adjust until the error is eliminated.  The structure of an 
+exponential smoothing delay is shown in Figure 11-10.  Specifying this structure for the case of a 
+demand forecast leads to the following: 
+ 
+The equation for the rate at which expectations adapt—the rate at which the forecast is revised—
+is: 
+ 
+ 
+d(EOR)/dt = (IOR - EOR)/TEOR 
+
+--- Page 8 ---
+ 
+ 
+8 
+where 
+ 
+EOR = Expected Order Rate (widgets/month) 
+ 
+IOR = Actual Incoming Order Rate (widgets/month) 
+ 
+TEOR = Time to adjust the Expected Order Rate (months) 
+ 
+The “time constant” TEOR represents the time required, on average, for expectations to respond 
+to a change in actual conditions.  The forecast, EOR, is a stock, since the forecast is a state of the 
+system, in this case representing a state of mind of the managers regarding what the future order 
+rate will be.  This stock remains at its current value until there is some reason to change it.  In 
+adaptive expectations, the stock (the managers’ belief about the future order rate) changes when 
+there is a difference between the current order rate and their belief about the expected order rate.  
+This structure is known as a first-order information delay, or ‘first-order exponential smoothing’. 
+ 
+Build a model to represent this forecasting procedure.  Your model should include the equations 
+above exactly.  Do not add any additional structure.  
+ Assume TEOR is 6 months.   
+ Assume the order rate IOR is exogenous.  Use the Test Input Generator in the Appendix 
+to determine the incoming order rate.  You will have to change the units for time in the 
+test generator from days to months.   
+ Set the initial value of the forecast to 100 widgets/month.   
+ Use a simulation time step of 0.25 months and simulate the model for 60 months.   
+ Create a custom graph that traces the behavior of both IOR and EOR. 
+ 
+ B1. Run your model with a random input to demand.  Set the Noise Standard Deviation to 
+0.50, and the Noise Start Time to 5 months.  That is, the noise should have a standard 
+deviation of 50% of the initial input. 
+ 
+ 
+To filter out random variation in incoming orders, should the adjustment time be long or 
+short? 
+ 
+ B2. Consider the response to a step input.  Set the Step Height to 0.50 and the Step Time to 5 
+months.   
+ 
+ 
+To respond quickly to a permanent change in incoming orders should the adjustment time 
+be long or short? 
+ 
+ 
+ C. 0 points--unless you don’t document your model, in which case the grader may deduct an 
+arbitrary number of points.  Hand in the dimensionally consistent and documented 
+Vensim model files (.mdl) along with your submission (including the first order, third 
+order, and pipeline material delays, and for the information smoothing delay). 
+ 
+
+--- Page 9 ---
+ 
+ 
+9 
+D.  Delays in Action:  the Natural Gas Glut 
+ 
+Now let’s apply your knowledge of delays to model an important issue:  the dynamics of natural 
+gas supply and prices. 
+ 
+Hydraulic fracturing (fracking) has led to a boom in exploration for, and production of, natural 
+gas.  Modern fracking was introduced around 1998.  Fracking suddenly made it possible to find 
+and produce large quantities of gas that were previously too expensive or technically 
+unrecoverable.  As shown in the graphs below, drilling activity in the US boomed, reaching a 
+peak around 2006-2008 about three times higher than the average for the 1980s-1990s.  Proved 
+reserves soared.  However, the demand for gas is quite inelastic in the short run.  Consumption 
+has been growing modestly and did not increase nearly as much as production capacity.   
+ 
+As a result, the price of natural gas plunged.  As seen below, real prices (measured in constant 
+2010 dollars) fluctuated from about $6 to over $10 per thousand cubic feet (tcf) from about 2005 
+through 2008.   Since then, however, prices have tumbled, reaching a low of less than $2/tcf, an 
+enormous decline (the price has rebounded to about $3/tcf today).  Some of the decline can be 
+attributed to the recession and weak economy since 2008.  But as you can see in the graph of 
+consumption, demand did not fall much from 2008-2010.  The main source of the price crash lies 
+on the supply side:  The US is awash in gas—At $2-3/tcf, gas is now so cheap that many 
+exploration and development firms are losing money.  As the New York Times reported (20 
+October 2012; the full article is appended to this assignment): 
+ 
+“…while the gas rush has benefited most Americans, it’s been a money loser so far for many of 
+the gas exploration companies and their tens of thousands of investors. 
+ 
+The drillers punched so many holes and extracted so much gas through hydraulic fracturing that 
+they have driven the price of natural gas to near-record lows. And because of the intricate 
+financial deals and leasing arrangements that many of them struck during the boom, they were 
+unable to pull their foot off the accelerator fast enough to avoid a crash in the price of natural 
+gas, which is down more than 60 percent since the summer of 2008. 
+ 
+…most of the industry has been bloodied — forced to sell assets, take huge write-offs and shift 
+as many drill rigs as possible from gas exploration to oil, whose price has held up much better. 
+ 
+Rex W. Tillerson, the chief executive of Exxon Mobil, which spent $41 billion to buy XTO 
+Energy, a giant natural gas company, in 2010, when gas prices were almost double what they are 
+today, minced no words about the industry’s plight during an appearance in New York this 
+summer. 
+ 
+“We are all losing our shirts today,” Mr. Tillerson said. “We’re making no money. It’s all in the 
+red.” 
+ 
+
+--- Page 10 ---
+ 
+ 
+10 
+ 
+ 
+The US natural gas industry.  From top:  exploration activity (wells drilled/month); spot price (2010 $/tcf, Henry 
+Hub.  Henry Hub is an important gas pipeline distribution center in Louisiana; Henry Hub spot and futures contracts 
+are traded in commodity markets including the NY Mercantile Exchange [NYMEX].  Prices deflated using the 
+Producer Price Index [PPI]); proved reserves (trillion cubic feet); total US consumption, in trillion cubic feet/year.  
+Source:  Energy Information Administration, US Department of Energy.   
+
+--- Page 11 ---
+ 
+ 
+11 
+We can conceptualize the impact of fracking technology as a shift in the long run supply curve 
+that increased the quantity of gas that can be produced at a given price (a hypothetical supply 
+curve is shown in the graph below).  In the short run, fracking lowered the marginal cost of 
+developing a new well below the market price, creating excess profits and a huge incentive to 
+drill.  Standard economic theory suggests (1) price should fall to a new equilibrium at the new, 
+lower marginal cost, and (2) exploration should expand capacity until the marginal cost of gas 
+once again equals the market price.  Profits would rise until this happens and then return to 
+normal levels, but not drop below normal.  However, as shown in the data and described above, 
+drilling expanded too much and too long, resulting in a glut and prices significantly below 
+marginal cost for many producers.  The industry dramatically overshot equilibrium.  How did this 
+happen?  In this section, you will use your knowledge of delays to build a simple model of the 
+exploration process. 
+ 
+ 
+Quantity 
+($/tcf)  
+Marginal cost 
+before Fracking 
+Marginal cost    
+after Fracking 
+Demand 
+Curve 
+Equilibrium 
+before 
+Equilibrium after 
+ 
+ 
+ 
+Note on model boundary:  To keep this assignment simple, the model is not intended to be a 
+complete representation of the market.  In particular, we will focus on the supply side, assuming 
+(for simplicity) that demand is constant.  We will also use a simple model for price determination 
+and market clearing; a more sophisticated approach is described in Business Dynamics, Ch. 
+13.2.12 and Ch. 20.2.6.  Further, although gas is a nonrenewable resource, the model omits the 
+depletion of the resource base.  Finally, natural gas production and combustion generate methane 
+and CO2 emissions, the two most important greenhouse gases contributing to global climate 
+change.  These impacts are also omitted.  We also omit environmental issues around fracking 
+including seismicity, water pollution, air quality, and other local environmental impacts. 
+
+--- Page 12 ---
+ 
+ 
+12 
+Causal Structure of the Market:  The diagram below shows a causal diagram of the supply side 
+of the natural gas market.  There are two main stocks, Production Capacity and Capacity Under 
+Development.  Production capacity (measured in million cubic feet/year of potential production 
+from existing wells), increases when new exploration and development projects are completed, 
+adding to the stock of producing wells, and decreases when the wells and associated production 
+and distribution equipment reach the end of their useful life and are decommissioned.  There are 
+important time delays in the reaction of exploration and production to changes in market and 
+technological conditions.  When entrepreneurs believe that it is profitable to develop new 
+resources, they initiate new development projects.  The flow of new projects increases the stock 
+of projects under development.  After some time, these projects are completed and the number of 
+producing wells increases. Capacity under development captures all exploration and development 
+projects that have been initiated but not yet completed, including capital budgeting and financing, 
+planning, site location, lease acquisition, acquisition of drill rigs, and the time required to carry 
+out the actual drilling.  For simplicity, these stages are not explicitly separated.1 
+ 
+The decision to expand or contract drilling activity is based on entrepreneurs’ and energy 
+company managers’ beliefs about whether new exploration will be profitable.  If they believe that 
+the price of gas (in the future, when the wells they begin to develop now will begin to produce) 
+exceeds the marginal cost of development, they will expand drilling activity.  If they believe 
+future prices will be below marginal costs they reduce the number of projects they start.  
+Marginal costs depend on the long run supply curve:  the larger the total exploited resource, the 
+higher the marginal cost will be.  These relationships create the balancing Marginal Cost 
+feedback:  an increase in profitability leads to more exploration and development, raising the 
+marginal costs of the next development prospects until profitability drops enough to stop further 
+development. Note however that it takes time to assess the marginal cost of new wells.  Each 
+region, geologic zone, and region differs, and the costs of new technologies are uncertain.  
+Although fracking lowered the marginal cost of development in many places, its benefits were 
+not immediately obvious:  Developers had to gain enough experience with the technology to 
+update their prior beliefs about costs.  Hence there is a lag in the response of developers’ 
+perceptions of marginal cost to changes in actual costs. 
+ 
+The second feedback in the diagram shows the determination of spot prices.  Prices respond to 
+the balance of demand and production capacity.  When there is excess capacity, prices fall, 
+causing the most expensive wells to be shut in.  Price, and utilization, continue to fall until price 
+reaches a level that clears the market.  The result is the balancing Price feedback, shown as B2 in 
+the diagram.  If profitability is high, exploration increases, eventually increasing production 
+capacity.  Prices then fall, eroding profitability.   
+ 
+Expected profitability depends not on the current spot price, but on the expected future price.  
+Energy prices are notoriously volatile—a rise in price today, or this month, may not persist long 
+enough to justify an expansion in drilling.  Entrepreneurs tend to wait and see whether prices will 
+stay high before adjusting their price expectations upward.  Research shows that people’s price 
+expectations are strongly conditioned on past prices (see Business Dynamics, Chapter 16). 
+                                                 
+1 A more detailed model would recognize that some wells lead to large discoveries while others are dry holes.  For 
+the purpose of this model we aggregate over all development prospects.  That is, we assume developers account for 
+the expected value of well productivity and the probability of dry holes when assessing expected profitability. 
+
+--- Page 13 ---
+ 
+ 
+13 
+ 
+Marginal Cost
+Perceived
+Marginal Cost
+Expected
+Price
+Expected
+Profit
+Capacity Under
+Development
+Production
+Capacity
+Project
+Initiation
+Project
+Completion
+Decommissioning
++
++
+-
++
+Average
+Development
+Delay
+Average Life of
+Capacity
+-
+-
+Demand
++
+Effect of Expected
+Profit on Investment
++
+Time to Form Price
+Expectations
+Time to Perceive
+Marginal Cost
++
+Long Run
+Supply Curve
+Sensitivity of
+Investment to
+Profitability
+<Reference
+Production
+Capacity>
++
+Total Exploited
+Resource
++
++
+Price
+Sensitivity of
+Utilization to Profit
+-
++
++
++
++
+B1
+Marginal Cost
+B2
+Price
+<Perceived
+Marginal Cost>
++
+ 
+ 
+ 
+Tasks: 
+ 
+ D1.  The causal diagram above shows several delays.  These are: 
+ 
+ 
+a.  Time to form price expectations (affects the Expected Price) 
+(the average time required for developers to adjust their expectations regarding the 
+future price as prices vary); 
+ 
+b.  Time to perceive marginal costs (affects Perceived Marginal Cost) 
+(the average time required for developers to adjust their beliefs about the marginal 
+costs of exploration and development to new information); 
+ 
+c.  Average development delay (affects Project Completion) 
+(the average lag between the decision to develop new wells and project completion); 
+ 
+d.  Average life of capacity (affects Decommissioning) 
+(the average useful life of a well and associated production equipment). 
+ 
+
+--- Page 14 ---
+ 
+ 
+14 
+Using your best judgment, estimate the average duration of each delay, in years (or fractions of 
+years).  Do not do any research or gather any data to respond: we are interested in your 
+intuitive estimate of the average delay time for each of these processes.  Provide a brief (1-2 
+sentence) justification for your estimate.  Hint:  Consider the relationship among these delays, 
+particularly the first three.  Your grade for this part does not depend on the estimate you provide, 
+but on the clarity of your explanation. 
+ 
+ D2.  Consider the shape of the response of the development delay.  Using the graph below, 
+sketch the shape of the project completion flow to a pulse in project initiation.  That is, if a 
+thousand new wells were started all at once, what would the pattern of completions look like as 
+time unfolds?  Provide a time axis for your sketch.  Briefly explain the shape you choose.  See 
+Business Dynamics, Ch. 11.2 and Figure 11-2 for an example and discussion of the relevant 
+considerations.   
+ 
+Pulse of wells all started at time 0 
+Wells/Year 
+0 
+Time (Years) 
+ 
+ 
+ D3.  Download and open the model, Natural Gas Market.mdl from the course website.  The 
+model corresponds to the causal diagram above.  The equations and units of measure are all 
+specified for you, with the exception of the formulations for the delays.  Given your responses to 
+the questions above, specify the equations for perceived costs, expected price, and the 
+development delay.  Hint:  Pay particular attention to the type of delay (material or 
+information), the average duration of the delay, and the order of the delay.  Do not agonize 
+over the order of the delays:  the main choices, as described in BD Ch. 10, are first order, 
+intermediate order, and a pipeline delay.  You can use the built-in third order delay functions in 
+Vensim if you want to specify an intermediate order delay. 
+ 
+
+--- Page 15 ---
+ 
+ 
+15 
+ D4.  Provide documentation for your formulations (enter the explanation in the comment field 
+in the equations for the delays you have specified).  Check to be sure your model is 
+dimensionally consistent. 
+ 
+ D5.  Simulate the model with your delay formulations and values.  The model is set up to 
+begin in equilibrium. The model is set up to simulate the introduction of fracking.  To do so, the 
+long run supply curve shifts down by 20% in year 0 (see the Marginal Cost view in the model).  
+Note:  the simulation begins in year -2 and runs through year 40, with a time step of 0.015625 
+years (1/64 of a year, or a little less than 1 week).   
+ 
+In your write-up, provide a screenshot of the Dashboard view in the model showing the response 
+of the system to the change in marginal costs with your estimated parameters.  What happens, 
+and why?   
+ 
+ D6.  Explore how the behavior of the market and exploration changes as you vary the duration 
+of the time delays (use Synthesim and the sliders for each delay time).  Briefly explain the impact 
+of changes in the delays on the response.   
+ 
+ D8.  Briefly explain the policy implications of your results.  Why has the introduction of 
+fracking led to a glut of natural gas and steep losses for exploration and development firms?  
+What do you think is likely over the next decade or more in terms of exploration, demand, and 
+prices?   
+ 
+ E. 0 points--unless you don’t document your model, in which case the grader may deduct an 
+arbitrary number of points.  Hand in the dimensionally consistent and documented 
+Vensim model file (.mdl) along with your submission. 
+ 
+ 
+ F. What to hand in and how to submit your work  
+Write up your responses to the questions above in a word (.docx) document.  In addition, 
+you need to submit the various Vensim model (.mdl) files called for in parts C and E.   
+th
+Upload your team’s assignment by 5 PM on November 6 .  Submit your 
+assignment as a single .zip file including your response document and models.   
+Name files with your team’s name, and for multiple files of the same type, the assignment 
+section, e.g. “Team21.docx”, “Team21-C.mdl”, all submitted as part of “Team21.zip”.  
+ 
+ 
+ 
+ 
+
+--- Page 16 ---
+ 
+ 
+16 
+Appendix 1:  Test Inputs 
+ 
+System dynamics modeling software provides functions for the most commonly used test inputs:  
+step, pulse, ramp, sine wave, exponential, and uncorrelated (or “white”) noise, etc.  These inputs 
+are not necessarily intended to correspond to anything that really happened in the past or that will 
+happen in the future.  Rather, the inputs are designed to help you easily explore the dynamics of a 
+model.  With a very simple input, it is easy to see the dynamics generated by the model.  More 
+complicated input patterns, such as actual historical data, make it difficult to isolate the behavior 
+generated by the model’s structure from the input pattern.  Once the dynamics of the structure are 
+understood, it is usually possible to grasp how the structure will behave with more complicated 
+inputs such as the actual historical input data.   
+ 
+A useful “Test Input Generator” is provided by the following structure.  Note: When using this in 
+other models, be sure to check the units for time and modify if necessary, along with the default 
+parameters. 
+ 
+ 
+Equations: 
+ 
+Input= 
+ 
+1+STEP(Step Height,Step Time)+ 
+ 
+(Pulse Quantity/TIME STEP)*PULSE(Pulse Time,TIME STEP)+ 
+ 
+RAMP(Ramp Slope,Ramp Start Time,Ramp End Time)+ 
+ 
+STEP(1,Exponential Growth Time)*(EXP(Exponential Growth Rate*Time)-1)+ 
+ 
+STEP(1,Sine Start Time)*Sine Amplitude*SIN(2*3.14159*Time/Sine Period)+ 
+ STEP(1,Noise Start Time)*RANDOM NORMAL(-4, 4, 0, Noise Standard 
+  Deviation, Noise Seed) 
+ 
+~ Dimensionless 
+ 
+~ The test input can be configured to generate a step, pulse, linear 
+ramp, exponential growth, sine wave, and random variation.  The initial value 
+
+--- Page 17 ---
+ 
+ 
+17 
+of the input is 1 and each test input begins at a particular start time.  The 
+magnitudes are expressed as fractions of the initial value. 
+Step Height=0 
+ 
+~ Dimensionless 
+ 
+~ The height of the step increase in the input. 
+ 
+Step Time=0 
+ 
+~ Day 
+ 
+~ The time at which the step increase in the input occurs. 
+ 
+Pulse Quantity=0 
+ 
+~ Dimensionless*Day 
+ 
+~ The quantity added to the input at the pulse time.   
+ 
+Pulse Time=0 
+ 
+~ Day 
+ 
+~ The time at which the pulse increase in the input occurs. 
+ 
+Ramp Slope=0 
+ 
+~ 1/Day 
+ 
+~ The slope of the linear ramp in the input. 
+ 
+Ramp Start Time=0 
+ 
+~ Day 
+ 
+~ The time at which the ramp in the input begins. 
+ 
+Ramp End Time=1e+009 
+ 
+~ Day 
+ 
+~ The end time for the ramp input.   
+ 
+Exponential Growth Rate=0 
+ 
+~ 1/Day 
+ 
+~ The exponential growth rate in the input. 
+ 
+Exponential Growth Time=0 
+ 
+~ Day 
+ 
+~ The time at which the exponential growth in the input begins. 
+ 
+Sine Start Time=0 
+ 
+~ Day 
+ 
+~ The time at which the sine wave fluctuation in the input begins. 
+ 
+Sine Amplitude=0 
+ 
+~ Dimensionless 
+ 
+~ The amplitude of the sine wave in the input. 
+ 
+Sine Period=10 
+ 
+~ Day 
+ 
+~ The period of the sine wave in the input. 
+ 
+Noise Seed=1000 
+ 
+~ Dimensionless 
+ 
+~ Varying the random number seed changes the sequence of realizations 
+for the random variable. 
+ 
+Noise Standard Deviation=0 
+ 
+~ Dimensionless 
+ 
+~ The standard deviation in the random noise.  The random fluctuation 
+is drawn from a normal distribution with min and max values of +/-  
+4.  The user can also specify the random number seed to replicate 
+
+--- Page 18 ---
+ 
+ 
+18 
+simulations.  To generate a different random number sequence, 
+change the random number seed. 
+ 
+Noise Start Time=0 
+ 
+~ Day 
+ 
+~ The time at which the random noise in the input begins. 
+ 
+******************************************************** 
+ 
+.Control 
+********************************************************~ 
+ 
+ 
+Simulation Control Parameters 
+ 
+| 
+ 
+FINAL TIME  = 25 
+ 
+~ Day 
+ 
+~ The final time for the simulation. 
+ 
+INITIAL TIME  = -5 
+ 
+~ Day 
+ 
+~ The initial time for the simulation. 
+ 
+SAVEPER  =  
+        TIME STEP  
+ 
+~ Day 
+ 
+~ The frequency with which output is stored. 
+ 
+TIME STEP  = 0.125 
+ 
+~ Day 
+ 
+~ The time step for the simulation. 
+ 
+ 
+
+--- Page 19 ---
+ 
+ 
+19 
+A Note on Random Noise   
+ 
+The random input is useful to simulate unpredictable shocks.  The RANDOM_NORMAL 
+function in Vensim samples from a normal distribution with parameters the user specifies.  The 
+function has the following syntax:  
+ 
+ 
+RANDOM_NORMAL (min, max, mean, std dev, seed) 
+ 
+Vensim uses a default random number “seed.”  You can specify a different seed by defining a 
+constant called “Noise Seed” in your model and setting it equal to some value (e.g. Noise Seed = 
+1000).  Vensim generates a single random sequence for any given seed.  Let’s say the sequence 
+is: 0.500, 0.213, 0.678, 0.932, 0.340, 0.015.  If there is a single random number function in the 
+model it will simply yield the random sequence.  If there are two or more random functions, the 
+functions will take turns accessing the sequence.  For example, if you have two functions, the 
+first will yield 0.5, 0.678, 0.34; and the second will yield 0.213, 0.932, 0.015.  If you run two 
+simulations with the same seed, you will get exactly the same sequence of random numbers.  
+This is important so that you can compare two runs with different policies and be sure the 
+differences in behavior are due only to the policies and not to different realizations of the random 
+number generator.  When you do want to examine runs with different realizations of the random 
+process, you need to change the value of the random number seed. 
+ 
+Note also that the use of a function such as RANDOM_NORMAL means a new random number 
+is selected every time step.  Cutting the time step in half would then double the number of 
+random shocks to which the model is subjected, and increase the highest frequency represented 
+in the random signal.  This is generally not good modeling practice.  In realistic models, one must 
+not only select the standard deviation of any random processes, but also specify its frequency 
+spectrum (or, equivalently, the autocorrelation function).  Failure to do so can lead to spurious 
+results and make your model overly sensitive to the time step.  These issues are discussed in 
+Appendix B. 
+ 
+A Note on the Pulse Function 
+ 
+The pulse function is used to simulate the effect of instantaneously adding a fixed quantity Q to a 
+variable. To ensure the entire quantity is added all at once (within a single time step, or DT [delta 
+time]), the duration of the pulse is set to the smallest interval of time in the model, that is, to the 
+time step DT.  The height of the pulse is then the quantity to be added divided by the time step in 
+the model, Q/DT.  The inflow increases by the height of the pulse and remains at the higher level 
+for one time step, so that the total quantity added to the accumulation is (Q/DT)*DT = Q units. 
+ 
+ 
+
+--- Page 20 ---
+MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+ 
+15.872 System Dynamics II
+Fall 2013
+ 
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.

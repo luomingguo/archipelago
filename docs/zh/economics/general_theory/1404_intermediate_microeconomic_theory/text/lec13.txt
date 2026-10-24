@@ -1,0 +1,1142 @@
+MITOCW | ocw_1404_lecture13_2020oct22.mp4
+
+            [SQUEAKING]
+
+
+            [RUSTLING]
+
+
+            [CLICKING]
+
+
+
+ROBERT      OK, so let me say a couple of words about where we are in the reading list. We're going to start today. We're
+TOWNSEND:   done with the segment on contracts and mechanism design, theory and applications.
+
+
+            And we start today, Walrasian General Equilibrium, which you've seen a bit before already. But we'll review and
+
+            give the proper definitions for the first 20% of the lecture. And then the rest of the lecture is devoted to an
+
+            important application of General Equilibrium theory. And in particular, it has to do with trade.
+
+
+            So this lecture today is the theory, with some really startling and interesting propositions. And then with trade on
+            our minds, we'll go back to the Thai data, and take a look at trade flows and financial flows that have changed
+
+            over time as the country became more liberalized, or more open internally.
+
+
+            And then we're going to go to a parallel lecture on the US that's going to look at trade flows and potentially
+
+            financial flows across states in the US, where we'll be analyzing the impact of tariffs, and/or China shocks-- China
+
+            imports.
+
+
+            So these, dare I say it, it may or may not be on your mind. If it's on your mind already, the motivation here is a
+            US policy decision which is very much in the news, and in some respects, a big part of the upcoming election. So I
+
+            don't know if the timing of these lectures are good or bad. But anyway, we'll be talking about US trade policy
+
+            within two lectures.
+
+
+            So that's what's coming up. And today's lecture has got two start readings, the Kreps book on section 6.1, and
+
+            this Mas-Colell, Whinston, and Green. I rarely assign this book. But on the other hand, the lecture is based very
+
+            closely on that chapter. So I went ahead and just listed it, MWG chapter 15 D, although it's quite a famous model.
+
+            We've been using MWG in the theorems and so on. But I've never really featured it so heavily.
+
+
+            In terms of the overall-- just to see it in one spot, again, we're going to do Walrasian equilibrium, and then two
+
+            applications of trade in Thailand and the US. That's actually going to complete-- lecture 15 completes the current
+
+            segment of lectures before the second exam. So problem set 4, which was released last-- the last thing I want to
+
+            do before getting to the lecture is to review a bit of what we did last time.
+
+
+            I deliberately didn't pick out very many questions here. Allow risk aversion on the part of the borrower. There are
+
+            several advantages to writing down programs in lotteries. List two of them and explain. So let's see if I can get
+
+            some-- Charles, do you want to take a crack at that?
+
+
+AUDIENCE:   I think I can guess one, definitely at least one of them, which, if I remember correctly, is that it allows you to
+
+            make an incentive. You may select between people with high income and low income, if you don't know the
+
+            income already.
+            So like, if you're risk averse in the correct manner, then if you have a lottery, then someone with low income
+
+            might prefer a lottery with something like-- you might prefer the different risk return trade off at different
+
+            incomes.
+
+
+            There's a dislike between various things, and help with some of the constraints. The other one, I don't remember
+
+            the exact details. I haven't quite got them yet.
+
+
+ROBERT      The first one is good.
+
+TOWNSEND:
+
+
+AUDIENCE:   I'm going to guess something like, maybe making people not as willing to borrow or something like that. But I'm
+
+            not exactly sure.
+
+
+ROBERT      Let's see. Kerry, can you get one more of them?
+
+TOWNSEND:
+
+
+AUDIENCE:   Is it, like, incentive constraints could be non-convex. So it might be hard to solve.
+
+
+ROBERT      Yeah, good. So there's various sources of non-convexity. So those incentive constraints, when written without the
+TOWNSEND:   lotteries, like first order conditions of the borrower's choice of effort. Those things can lead to non-convexity. So
+
+            by doing it in lotteries, we get that problem solved.
+
+
+            And also, if there is some indivisibilities, that would be solved. There are two indivisibilities in this problem. One
+
+            has to do with occupation choice. You're either a wage earner or an entrepreneur. That's a binary choice. So the
+
+            lotteries kind of smooth that over because you can effectively choose the probability.
+
+
+            And secondly, there could be individual abilities in the discreteness of the capital grid. Like, you're going to
+
+            capitalize a high amount or a low amount. And again, lotteries help with that indivisibility.
+
+
+            OK, so the next one is really a summary of what we did. But let me read it out. Sketch out how one can take the
+
+            model with the lotteries to the data on occupation choice, and estimate parameters. So can anyone attempt a
+            summary of what we did last time on that dimension?
+
+
+            Pablo?
+
+
+AUDIENCE:   Sure, I can take a stab at this. So I think the way that we did it was we-- given these different parameters that we
+
+            had, of ability, education, and wealth, we solved for this optimal contract, theoretically. And then we made a
+
+            likelihood function to-- given these solutions, to see which one of these is like going to be like the best,
+
+            essentially.
+
+
+ROBERT      Do you remember how we did, quote, "the best?" The best in terms of what?
+
+TOWNSEND:
+
+
+AUDIENCE:   Just kind of, like, the likelihood function, trying to maximize that.
+
+
+ROBERT      Yeah, OK. Yeah, so the likelihood function tells us the probability of what we are seeing in the data if the model
+TOWNSEND:   were true. So we're choosing parameters to make that probability as high as possible. OK, that's good.
+Any other questions about that lecture? All the other questions at the beginning here were basically, write it
+
+down the way we did it in class, et cetera, et cetera. So it's not exactly conducive to asking you these questions
+
+in class. But it is important to be reviewing these review questions.
+
+
+All right, so then we come to the lecture today. This is Walrasian equilibria with an application to trade. And we're
+
+going to consider trade, for the most part, in a small open economy. Although we'll say a little bit about putting
+
+the world pieces together at the very end. So here's the notation, which is largely a review because you have
+
+seen almost all of it before.
+
+
+When we write down an economy, we mean the commodity space, in this case, capital L, a finite number of
+
+commodities. I is the number of consumers. J is the number of firms-- finite for each. Household or consumer, I,
+
+has a consumption set. And preferences over bundles in the consumption set, as for, example, represented by a
+
+utility function.
+
+
+Each firm, J, has a technology production possibility set in the same L dimensional space. And the economy has
+
+exogenously given endowments, according to this L dimensional endowment vector, with the bars being the
+
+aggregates.
+
+
+So that's the economy. Now, in, say, a private ownership economy, we have to specify, in addition, who owns
+
+what. So we imagine that consumer I has an endowment vector, L dimensional, subscript I, for consumer, I. And
+
+it is the sum of these endowments over all the household that adds up to the omega bar L dimensional
+
+endowment vector on the previous slide. Aggregates naturally come from the individual's ownership.
+
+
+Each consumer, in addition to having endowments, has some share of the profits of firms. So theta, IJ, being the
+
+share that household, I, has, of J's profits. So these are meant to be a division of the profit. So the sum of the
+
+shares over households, I, for a given firm, J, add up to 1. Everything gets distributed. And household I is getting
+theta IJ of pi J, for firm, J. Now, pi J is obviously an endogenous object.
+
+
+It could be 0 if there were constant returns to scale. It could be positive if there are diminishing returns to scale.
+
+And also, when we did risk and return in village economies, we kind of naturally had an interesting and relevant
+
+special case that household I gets all the profits from the activities that it undertakes.
+
+
+In that case, there was a household, I, and a firm, I. It was the same entity. And household I was getting theta IJ
+
+equal to 1 of its own profits, as a special case.
+
+
+But general equilibrium theory usually allows something more general. And you could think of this literally as a
+
+market economy, where the shares are equity shares being traded. And all of the dividends are claimed by the
+ownership of shares. OK, so a private ownership economy has a summary of the consumption, set preferences,
+
+endowments of consumer I, the production sets of all the house firms, J, and the shares, theta IJ.
+
+
+Now we get to the big definition here. In this L dimensional commodity space, a price vector, p, is the price of all
+
+the commodities, inputs, and outputs, and everything. And a Walrasian equilibrium, or competitive equilibrium
+
+for short, for this private ownership economy, is a specification of allocations with stars on them, x and y star, for
+
+consumers and firms-- and a price vector star here because it's a special price.
+Allocations and prices have the special properties. Each firm, J, has y star J as the maximum of the firm's
+
+problem, which is to maximize profits. Hence, at y star, the valuation of outputs less inputs is weakly greater
+
+than it would be for any other choice of production vector.
+
+
+Each consumer, i, is maximizing relative to the preference ordering on bundles in the consumption set, but also
+
+subject to the budget constraint, that expenditures at price p star, for any xi that could potentially be chosen--
+
+cannot exceed the right hand side, which is the private ownership part. So omega i, being the endowments of
+
+consumer, i, evaluated at price p star, that dot is inner product.
+
+
+And again, household i's claim on the profits of firm, J. And the final property is that the allocation has to be
+
+feasible. And you can just read this as demand cannot exceed supply, where supply includes both the aggregated
+
+endowment and production. So we worked a lot with feasibility before. We did that when we defined Pareto
+
+optimality.
+
+
+The difference here in general equilibrium or Walrasian equilibrium is we've added this price vector explicitly,
+
+and rewritten consumer maximization problem, on which we've had several lectures. And firms-- sorry, I reversed
+
+the order-- firms max and consumers max problems. So everything's in one spot.
+
+
+OK, so a classic example is the Edgeworth Box. We previously defined Pareto optimal allocations in this box, as
+
+characterized by tangencies of indifference curves. Here we add one more ingredient, that if they start with this
+
+endowment, and we draw a price line through the endowment, then each consumer is maximizing utility, subject
+
+to its budget.
+
+
+So consumer 1 here has the normal-looking budget line. And coming from the endowment and the tangency at x
+
+star would be the maximum. You may remember consumer 2 up here on the northeast is moving to the
+
+southwest in terms of increased utility, and is also maximizing utility, which is achieved by a tangency on that
+
+consumer's budget line.
+
+
+
+So this line here is doing double duty. It's a budget line for each household. But the perspective is at or below
+
+consumer 1, at or above the line for consumer 2. And here you're seeing the star allocations, which are a
+
+competitive equilibrium. Everything in the box adds up to the aggregates by construction. There is no production.
+
+They're all maximizing utility.
+
+
+And the price vector is characterized by the slope of this budget line. Now, we could go on with a lot more
+
+interesting, and some nonstandard pictures, of the Edgeworth Box. But we're going to save a lot of that for
+
+another lecture. Here, I defined Walrasian equilibrium. I wanted to find something similar but not identical. It's a
+
+price equilibrium with transfers.
+
+
+So here, the idea is that the right hand side is a wealth assignment. Household, i, has wealth, w sub i. So the rest
+
+is similar. We're going to have an allocation with stars-- a price vector, p, which should have had stars on it
+
+because it's a special one-- with the property, and an assignment of these wealth levels, such that firms
+
+maximize profits. That's the same as before.
+Households maximize utility. But the right hand side of the budget is this wealth object. And again, when we did
+
+partial equilibrium consumer problem, we talked about prices and wealth. We had income expansion paths as
+
+wealth varied. So this formulation of the problem is consistent with that. Although in partial equilibrium, we didn't
+
+ask where that wealth was coming from.
+
+
+An allocation is feasible. Again, demand cannot be greater than the two sources of supply. Now the wealth
+
+assignments have to be feasible. And here's where we can say something about where wealth is coming from,
+
+namely, the sum of the wealths, whatever they are, have to equal the valuation of the aggregated endowment
+
+vector plus the profits of all the firms.
+
+
+So somehow, this stuff on the right hand side gets distributed across the households, each household, i, getting
+
+wealth, wi. And when we add it up, therefore, it sums up to the right hand side. Now note that at the bottom
+
+here, a particular wealth assignment that works is what we had on the previous slide, namely, give household, i,
+
+the valuation of its endowment, plus its share of the profits of the firms that it owns.
+
+
+So in that sense, a price equilibrium with transfers is more general, but includes the valuation equilibrium. That
+
+said, the word transfers may catch your eye. And the idea here is that a Walrasian equilibrium with ownership
+
+specifies one level of wealth. But we could, in principle, redistribute that wealth by the government with lump
+
+sum taxes and transfers, and then look for a new priced equilibrium.
+
+
+And we will-- I think it's on the next slide, yeah. We will get to why we're doing this. Namely, any Walrasian
+
+equilibrium is Pareto-optimal. But it's also true that any Pareto-optimal allocation can be supported as a price
+
+equilibrium with transfers, as in this definition. However, to achieve the fact that any optimum can be supported,
+
+it's kind of intuitive. We may have to redistribute wealth.
+
+
+And again, I have a series of lectures on this. But if we're back in the Edgeworth Box, the competitive equilibrium
+
+has picked out one particular Pareto-optimal allocation. But as there are many optimal allocations-- and to get to
+
+those, we're going to have to move this budget line up or down, hence, redistributing the wealth.
+
+
+OK, so now that we've got the concept of the Walrasian equilibrium in hand, I want to focus on the primary
+
+application today, which is production in a small open economy. We have to shift gears just a little bit. It's
+
+definitely going to be general equilibrium. We're going to have J firms. And firms are producing goods.
+
+
+So they're J goods because we have J firms. Firm J produces good, qJ. And there are L factors of production,
+
+labeled, in this case, Z. So Z1J is the input of the first factor by firm, J, and so on. And each firm, J, has a strictly
+
+concave production function, indicated here by f sub J. Output of consumer good, qJ, is a function of the input
+
+vector, ZJ.
+
+
+So now we specify endowments. The endowments are going to be given of the factor inputs. They're owned by
+
+households. And for the sake of argument, let's say they're supplied in-elastically.
+
+
+And they're not going to be consumed. What we're going to try to do is find the factor prices that's consistent
+
+with an equilibrium within this small open economy.
+
+
+However, we're going to take the prices of the goods as fixed. So in that sense, it's still partial equilibrium. Think
+
+of it as a village, as a small open economy or a country, that is small relative to the rest of the world so that
+
+these price vectors are fixed.
+They're not going to be the focus of our attention. We are going to, however, try to find the allocation of the
+
+inputs across all the firms, how those endowments of factors get used, as well as the Walrasian equilibrium price
+
+vector.
+
+
+So firm j producing good qj will maximize the difference between revenues and costs. So if w star, say, is a
+
+candidate equilibrium price vector, the firm would choose its input vectors, Zj, to maximize revenue minus costs
+
+at that guessed equilibrium price vector, w star. p is, again, a given-- pj, the price of quantity, j, is externally
+
+specified.
+
+
+So Z star j is the solution to firm j's maximization problem. And if we're finding an equilibrium, each firm will be
+
+maximizing profits and the sum of the input demands, in this case, the demand for the L-th input from firm, j,
+
+summing over all the firms j, and in particular the stars, which are already profit-maximizing, add up to the
+
+economy's endowment of the factor, Z bar, for the L-th factor.
+
+
+And this is true for all, each and every, factor, L. This one is true for each and every firm, j. So this is what we're
+
+looking for, the Walrasian equilibrium in the factor markets, taking external prices as given. All right, you already
+
+know something about the solutions to the profit maximization problem. Namely, the value of the marginal
+
+product should be equal to-- of the L factor, should be equal to its cost.
+
+
+Just differentiate this thing on the previous slide. With respect to zj, you'll get a derivative in the F function, and
+
+will get the factor input price on the cost side. That's what this says. Factor input price-- here's the derivative of F,
+
+with respect to the L factor. And that p is, of course, part of the exogenously-given price vector.
+
+
+How many equations are there like this? Well, we have to specify here. It's the L factor. And we have L-- capital L
+
+factors all together. And this is for the j firm. But we have capital J firms. So we have L times J equations here.
+
+And we have another set of equations which are the equilibrium, that the demand for the factors adds up to the
+
+total.
+
+
+But again, this is true for each and every L-th factor. So there are L of these guys. So we have L times J equations
+
+here. And we have L equations here. So the number of equations is equal to the number of variables. So in
+
+principle, we should be able to solve this system of equations to determine the equilibrium factor prices.
+
+
+It's tedious and boring to keep counting the number of variables. But it is actually useful to see if we have fully
+
+specified, and we potentially have a solution. So now, we've already solved in lecture 4, which was about
+
+production, a cost minimization problem. So we defined there the cost for firm J of producing the quantity, qj,
+
+when the input vector was w.
+
+
+I must say, even I went back this morning in reviewing this lecture to take a look at the earlier lecture. Today
+
+there's kind of an uneasy tension because I'm partially telling you things that you've had before, on the other
+
+hand, aware that you may not remember exactly what we had before. If you go back and look, it'll all come back
+
+to you. And some of these slides are actually repeats of what was in lecture 4.
+
+
+Anyway, when we derived the least cost way of producing an output, qj, we got that marginal cost was equal to
+
+price. It's equal. Marginal cost is from your very first economics micro course, probably. Now, this second
+
+equation is the equation that the demands for the factors adds up to the total. But it's written in an interesting
+
+and a bit unconventional way.
+The aggregate amount of factor l that's available is z bar l. And we want the demands of these firms for
+
+producing. But instead, we use the Shephard's lemma, the derivative of the cost of firm j, with respect to the
+
+price of the l-th factor, we derived as the amount of the l-th factor to be used. And again, you may or may not
+
+remember that that's the Shephard's lemma.
+
+
+Here it is, written down here at the bottom. So we just substitute what was written as zlj, summation over j equal
+
+to z bar, we substitute in the result from Shephard's lemma to get this equation
+
+
+OK, special case, 2 by 2. And there'll be another two coming later. But for now, two types of firms, J equals 1, 2--
+
+two inputs. Now, it's useful to think of the inputs as labor and capital. And that, in fact, will anticipate the trade
+
+applications.
+
+
+Are we reproducing goods with machines? Are we producing goods with labor? What happens to the labor when
+
+we have a decline in manufacturing? It comes from having more inputs.
+
+
+So these are the kind of ingredients, labor and capital being kind of obvious labels for us, in the case of this two
+
+factor model. Production functions, just to write out the notation, production function for good 1, as it inputs, the
+
+second subscript denotes the firm, the first one, the input.
+
+
+So this is the first input in firm 1, the second input in firm 1. f2 is output of firm 2 as a function of the first input in
+
+for firm 2, and the second input for firm 2.
+
+
+And we're going to assume, in this special 2 by 2 model, that these production functions, each of them, are
+
+constant returns to scale. So it's homogeneity of degree 1. So if we're given a vector of input prices for capital
+
+and labor, we can define the cost of producing one unit of good, j.
+
+
+This is called the unit cost-- or you may want to review that the cost of producing arbitrary levels just scales up
+
+or down depending on whether that other target level is higher or lower than 1. So once we have the cost of
+
+producing one unit, we can get the cost of producing any number of units.
+
+
+And what inputs solve that minimum cost problem? They're denoted with a's. So for firm j, a1j and a2j are the
+
+way to achieve the least cost when the input vector is w. Input price vector is w So here I belabor a little bit what
+
+you've seen before. It's constant returns to scale. So the cost function is linear. Constant returns to scale is this
+
+linear production possibilities frontier.
+
+
+Cost function is linear. Marginal cost equals average cost. If price of a good, say good j, is less than marginal and
+
+average cost, nothing gets produced. And when price is equal to marginal and average cost, then they're happy
+
+to produce anything. Although profits are 0. And price cannot be higher because they would go bananas.
+
+
+And then the assertion, which I've already said twice, profits must be zero. And that's just, again, a review slide
+
+from before. So price equals cost. This is the unit cost. Price is the price of a unit. So we have cost equal to
+
+prices. OK, so another review. We did this before, too.
+
+
+What's special about constant returns to scale is we can solve the problem for the one unit of output, minimize
+
+the cost of achieving one unit of output. And that's going to give us-- I guess I just said this, the cost for any other
+
+level of output, just by scaling up and down the solution. And the ratios of input use will not be changing.
+I think in the previous lecture, I actually said I wasn't terribly pleased with how cryptically-worded it was. And I
+
+gave you as an informal homework assignment to do a proof by contradiction to prove that the input use ratio is
+
+going to be entirely dictated by the input prices, regardless of the scale. That is to say, this input ratio will remain
+
+constant.
+
+
+And again, please, I apologize because I'm throwing at you things from a previous lecture. It was lecture 4. So
+
+that was some time ago. But I don't want to belabor it today or we won't get to something new. So for now, we'll
+
+just accept this as a fact.
+
+
+Then we come to a key definition about factor intensity. Say good 1 is more intensive in factor 1 than good 2.
+
+Then the production of good 2, if naturally, firm producing good 1 uses relatively more of input 1-- input 1 relative
+
+to input 2, then does firm 2.
+
+
+So the definition, to say good 1 is relatively more intensive than factor 1, means that the ratio of factor 1 to factor
+
+2 in firm 1 is higher than it is in firm 2. So it's a pretty natural definition. Of course, it can move around. But the
+
+inequality remains the same. It's intense. No matter what the input price ratio is, the optimizing choice of inputs
+
+will always satisfy this inequality when comparing firm 1 to firm 2.
+
+
+So now something a bit new that was not in lecture 4, although it's not hard. We're going to plot the cost of
+
+producing one unit of a good. We're going to plot that cost curve as a function of the input prices, w1 and w2.
+
+
+So in particular, if, say, for a given w1 and w2 bar, your assertion is we're on this cost curve, then if we increase
+
+the price of the first input to w prime 1 and we're supposed to be on an isocost, meaning same cost curve, the
+
+increase in the first factor price would mean the cost would be higher.
+
+
+So we have to lower the price of the second factor in order to compensate. So that on net, after we make this
+
+move, total costs are the same because it is the isocost curve.
+
+
+So this down-sloping nature of the isocost curve, plotted against various input prices, makes a lot of sense. The
+
+other thing is this concave shape. This comes from a property of the minimized cost. In particular, this set of
+
+input prices at or above the cost line is a convex set. But we did this a lot with respect to the consumer
+
+optimization problem.
+
+
+We defined quasi-concave utility functions and the associated concave indifference curves. And we had the weak
+
+upper contour set as being strictly convex. So these are analogs here. Now, the assertion is that this cost
+
+function is, in fact, concave. And again, as a review-- but who remembers?
+
+
+We already had derived in lecture 4 that the cost function is concave in the input prices. So I just pasted in the
+
+slide to remind us. So now we have down-sloping concave.
+
+
+And the other thing that's going on here is, at these particular input prices, if we go back to Shephard's lemma,
+
+the derivative of the minimized cost, with respect to, say, the price of the first factor, is the level input of the first
+
+factor, and similarly, for the level input of the second factor.
+
+
+So the ratio, the slope of this line, which is the ratio of the derivatives of the cost curve at an optimum, must, by
+
+Shephard's lemma, be equal to the ratio of the optimizing inputs.
+And again, logically, if you increased the input price of factor 1, keeping cost constant, you would move along this
+
+isocost line. And you would increase the amount of good 2 and factor 2, and decrease the amount of factor 1.
+
+
+You substitute away from the factor, which has now increased in price. So in the earlier slide, lecture 4, I didn't
+
+replicate it. We had a Walt Disney example about machinery versus humans.
+
+
+Now I'll just warn you, it is very hard to remember what's divided by what. But anyway, the fact that this
+
+perpendicular becomes steeper is consistent with the input of factor 1 going down because it's the inverse ratio.
+
+All right, did that. So now, how do we solve for equilibrium factor prices? This is just a picture of a particular firm
+
+and what it would do, firm j-- what it would do as we vary the input prices?
+
+
+And we want to find particular input prices, such that both firms are minimizing costs, and all the factors get
+
+utilized. So remember, because we have constant returns to scale and because we've taken the right hand side
+
+prices as arbitrary and given, coming from nowhere, say, but certainly known to the firms, as part of the solution,
+
+the unit cost has to equal to the price for both firms 1 and 2.
+
+
+So we have, from this, two equations and two unknowns, namely the factor prices, w1 and w2, that we want to
+solve for. So visually, we can actually put both firm 1's and firm 2's isocost lines on the same diagram.
+
+
+In other words, I've gone from here, which was firm j, and firm j's particular isocost line-- talking about how it
+
+varies with w1 and w2, to this diagram, in which we have not only firm 1-- excuse me, but also firm two.
+
+
+And if we're going to find an equilibrium, we're going to find price for factor 1 and a price for factor 2, each. So
+
+each firm, in an equilibrium, is going to face the same factor prices. And each firm must lie on its own unit cost
+
+curve equal to the price from this equation. So you can see the unit cost for firm 1 equal to p 2, the unit cost of
+
+firm 2 equal to p2.
+
+
+These are particular isocost curves for firm 1 and firm 2 that are associated with two of the equilibrium
+
+equations. And if we're going to find common factor prices faced by both of the firms, we only want one factor
+
+price for the first factor, and one factor price for the second one. So where can that happen in this diagram? Only
+
+one spot, and that's where these isocost curves cross. So this is kind of displaying the equilibrium.
+
+
+Let me say one more word about why they're shaped in this way. Remember, firm 1 is intensive in factor 1. So if
+
+we did move along its curve, lowering w2 and increasing w1-- because it's intensive in factor 1, it tends to use a
+
+lot of factor 1. So increasing the price of factor 1 is kind over big burden for firm 1.
+
+
+And to compensate, we have to lower the price of the second factor quite a lot, relative to the compensation we
+
+would have to offer firm 2. For the same increase in w1, the corresponding decrease in w2 is less for firm 2 than
+
+firm 1 because, again, firm 1 is intensive in factor 1.
+
+
+So this factor intensity, which I said was a very natural definition, is true everywhere by definition. Hence, the
+
+curve for firm 1 has to be steeper everywhere than the curve for firm 2. And that's why they have to cross.
+
+Questions?
+
+
+OK, so again, just to review this slide, we're looking for an equilibrium. The claim is we found it now because we
+
+have found the factor prices for the first and second factor, such that each firm is minimizing its unit costs
+
+associated with the cost-- the unit cost being equal to price.
+So these must be the equilibrium quantities of the factors being utilized in each of the two firms. All right, so
+
+we're kind of doing an algorithm here. The algorithm was define Walrasian equilibrium. And do that for this 2 by
+
+2 model. And without telling you that I was going to do this, we're doing it iteratively. The very first thing we do is
+
+solve for the factor prices.
+
+
+And now we're going to get the quantities this way. So the quantities, naturally, are going to come from a
+
+diagram where we have isoquants. So here we have the input of factor 1, the input of factor 2. For firm j, this is
+
+an isoquant equal production, as you move along that isoquant curve.
+
+
+And again, you may remember, or not, that to minimize the cost of producing one unit, we find the tangency,
+
+where the isoquant is tangent to the isocost line. Now again, it's a bit dizzying because what's an isocost line in
+
+one space is a different-looking cost line in another.
+
+
+In this space, the isocost curves are concave, as I was saying. That's in the space of factor inputs. W1 and W2
+
+prices. w1 and w2 here, the isocost line is linear, in the space of input quantities, z1 and z2.
+
+
+So again, the minimized cost of producing one unit of output here at these factor prices, w, is this tangency. And
+
+it's associated with the inputs, a1 and a2, to firm, j.
+
+
+And again, the reason is something we reviewed before, that when you take the derivative of the isoquant, we're
+
+getting dz2, dz1, the quantity is staying the same. So we solve for the solution. And we're getting a relationship
+
+between the derivative of the isocost and the inputs.
+
+
+OK, so now we want to solve, not only for quantities, but the equilibrium amounts. Now remember, again, here
+
+we were playing around with unit costs. But we don't know the level of the quantities yet. And likewise, hence,
+
+we don't know the levels of the inputs. Although we do know something about the ratios of the inputs one once
+
+we find the equilibrium factor prices.
+
+
+So having found the equilibrium factor prices, we now turn to determining the inputs. But it almost looks like a
+
+review. The input ratio for firm 1 must be those a coefficients, the solution to the cost minimization problem in
+
+the quantity space at the equilibrium factor prices, w star. This is true for firm 1. It's also true for firm 2.
+
+
+So the ratios of inputs being used must be consistent with the optimized ratio of inputs being used at the
+
+equilibrium factor prices. There are two equations there. There's another equation, namely that the inputs being
+
+used by the firm, in this case, input 1, and the second, input 2-- input 1 in firm 1, input 1 in firm 2, must sum up
+
+to the aggregate endowments.
+
+
+So finally, another ingredient of the economy, the level of the input endowments, is here on the right hand side.
+
+And when we found an equilibrium in input use, it has to satisfy this system of equations. Now I can show you a
+
+picture of it. You may remember that when we did production, we talked about the production box-- not the
+
+Edgeworth Box of the consumer theory, but the production box of production theory.
+
+
+We had, again, like the isoquants, input 1 and input 2 on the x and y-axis, firm 1 is oriented around 01. And we
+
+have isoquants for firm 1. And this ratio, the slope of this line, is the optimizing ratio of inputs. And again, that
+
+optimizing ratio of inputs is entirely pinned down by the equilibrium factor prices, which we already found.
+So they have to lie on this line somewhere. Why here? Because when we go up to firm 2, the same thing is true,
+
+that the optimizing input ratio of factor 2 to factor 1 must lie on this line coming out of the 02 origin. So input
+
+ratio for firm 1 is fixed. Input ratio for firm 2 is fixed. Fixed at what? Fixed at these levels, as in the earlier
+
+diagrams.
+
+
+Hence, in an equilibrium, to be consistent with each of them, it must be where these lines cross. So this finally
+
+determines output because we have isoquants here. So firm 1 is producing on this isoquant.
+
+
+Firm 2 is producing on this isoquant. So now we've got both, the equilibrium level of the inputs-- which is boom
+
+boom and boom boom, as well as the outputs associated with these isoquants.
+
+
+OK, are there questions so far? Well, let me just say, when you review, there is a lot of content in this lecture.
+
+Some of it's review, as I've already been apologizing. Go back to lecture 4.
+
+
+But also, it's kind of stacked, in the sense that each segment builds on the subsequent segments. And it's very
+
+hard to take it in when I go through these slides for the first time.
+
+
+But I think if you review it the second round, you'll see how the ingredients are coming together. Anyway, where
+
+are we at this point? We had a country, say, an economy, with two types of firms, j, equal 1, 2. We have two
+
+factors, say labor and capital.
+
+
+We had this economy facing externally-given arbitrary prices, p1 and p2, for the firms 1 and 2. And we have now
+
+solved for the market clearing factor prices in the input markets for the level of the inputs being used and the
+
+equilibrium quantities being produced. That's how far we got already.
+
+
+OK, so now I want to get to the trade part. And I'm going to add the other two. So this is two firms, two factors,
+
+and two countries. And the two countries are denoted A and B.
+
+
+So each country has the same technologies. Each country can produce good 1 and produce good 2 with these
+
+factors, the two factors, labor and capital.
+
+
+We could have imagined different technologies in the different countries, and in a minute, different preferences.
+
+You haven't seen the consumer side of it yet. But the famous 2 by 2 by 2 model with some amazingly cool
+
+theorems assumes identical technologies and identical preferences in the two countries. What's different across
+
+the two countries are the factor endowments. Namely, one country is capital abundant. The other is labor
+
+abundant.
+
+
+So you might, for example, have thought-- although this is no longer as true as it once was for reasons of the
+
+theorem we're about to see-- that countries like Mexico or China are relatively well-endowed with labor. The US,
+
+being quite industrialized, is relatively well-endowed with capital. So the US, as distinct from Mexico, is a capital-
+
+abundant country.
+
+
+
+And Mexico is a labor-abundant country. I choose the example carefully because, again, with NAFTA, there's all
+
+kinds of controversies about what happened to the wages of US domestic workers when the US increased its
+
+trade with Mexico. We now have a theorem that's going to tell us something about that.
+Oh, anyway, here, two countries, A and B, with different factor endowments-- one being capital abundant, and
+
+the other labor abundant. Now, what if there's no trade at all? We're in autarky. What's going to determine the
+
+price of the consumption goods? Well, that's where we need the consumer part.
+
+
+We're going to need the representative consumer in a given country maximizing utility, given its ownership of
+
+factors, and potentially shares. Although in this constant returns to scale world, there are no profits anyway. So
+we have an entirely domestic market, like China completely closed to the rest of the world.
+
+
+Now we jump all the way to free trade. And if there's no cost of shipping goods around, there's an abstraction.
+
+The price of the two goods now have to be the same in each country because if there's no cost to shipping goods
+
+around, if the price of a good were lower in one country than another, then they would basically be exporting a
+
+lot of that good at a low price to the other country that's willing to buy it at a high price.
+
+
+So those prices can't be different when there's no cost to shipping goods around. Now exactly where the prices
+
+are, I will show you in a minute. But first, let me give you the theorem called Heckscher-Ohlin theorem.
+
+
+Suppose initially, we're in autarky. And neither country is trading. And the price of the capital-intensive good in
+
+the capital-abundant country will be relatively low-- relative to the price of that capital-intensive good in the other
+
+country.
+
+
+This is intuitive in terms of the economics. You have a country that has a lot of capital and relatively little labor.
+
+That's abundant capital. That should drive down the price of the capital input, relative to the wage of the labor
+
+input-- relative also to the other country, which is abundant in labor, and should have, because there's a lot of
+
+labor around, a relatively low wage.
+
+
+So those are the two statements, the price of the capital-intensive good in the capital-abundant country will be
+
+lower, relative to the price of that capital-intensive good in the other country. And vise versa for labor. The price
+
+of the labor-intensive good in the labor-abundant country will be lower, relative to the price of that labor-
+
+intensive good in the other country-- or in some, when an input is abundant, it has a low price.
+
+
+Now we go to trade. We don't allow the inputs to migrate. But we do allow trade in the goods. Think about that
+
+first line. The price of the capital-intensive good is low, relative to the price of the capital-intensive good in the
+
+other country. So because it has a low price, it should be a, quote, "competitive export."
+
+
+So the capital-abundant country will be exporting the capital-intensive good. The labor-abundant country will be
+
+exporting the labor-intensive good. And we're going to find an equilibrium where this kind of arbitrage is no
+
+longer profitable, where the prices will be the same. But the adjustment mechanism is coming from the
+
+possibility of exports and imports.
+
+
+So let me show you an example picture. Suppose we have country B here with this production possibilities set in
+
+the two goods, G1 and G2. Now, I'm not telling you exactly why it looks like this. But it has to do with the fact that
+
+country B is relatively abundant in one of the factors. You can see, relative to country A, this country can produce
+
+a lot of good 2, and relatively little of good 1.
+And that's because of the different factor intensities. The flip side of that is country A over here with its
+
+production possibility frontier. And it can produce relatively more of good 1 than good 2, in the sense of
+
+enumerating all the possibilities. If you're in autarky-- now, you remember the Robinson Crusoe economy where
+
+we had Robinson Crusoe producing two goods?
+
+
+No trade-- we had, in autarky therefore, on the island, Robinson Crusoe's indifference curve would be tangent to
+
+his production possibility set. So this would be the autarky allocation in country B. Likewise, country A, with a
+
+different technology, a different island, so to speak, would have another tangency of its preference indifference
+
+curve, with a production possibility set.
+
+
+Now, it's kind of easier to draw with common preferences, having the same indifference curve tangent in both.
+
+But that's not a necessary part of the argument. All we care about is tangency for country B relative to its
+
+indifference curves, and tangency for country A in autarky, relative to its indifference curves. It just happens to
+
+be the same indifference curve.
+
+
+Now finally, we go from autarky to free trade. What must be the solution? Each country-- B over here will
+
+separate its consumption and production problems.
+
+
+It will maximize profits by finding the point on its production possibility frontier which gives it the highest level of
+
+profits, as captured by this budget line, really-- trade line, that emanates from the new change production point.
+
+
+And I know the old production point was autarky for country B. It's now shifted to be giving up some of good 1,
+
+and producing more of good 2, and then exporting good 2 and getting more of good 1 back.
+
+
+So it specializes more in production. And then achieves balance in consumption by imports and exports. And
+
+country A down here is doing the opposite. It specialized more in production in the other direction, more of good
+
+1, and then trades in the world economy, giving up good 1 and getting good 2.
+
+
+And although it's not drawn here, the exports of good 1 for country A are exactly equal to the imports of good 1
+
+for country B. So the prices of the goods associated with this external price line are the same for both countries,
+
+and have the property that, finally, we have an equilibrium in the goods markets.
+
+
+In sum, we've now made the prices endogenous. P1 and 2, which were given throughout 3/4 of the lecture, are
+
+now determined internationally by free trade. All right, so we did Heckscher-Ohlin. Now we have another
+
+theorem, Stopler-Samuelson theorem.
+
+
+In this 2 by 2 by 2 model with these varying factor intensities, if the price of good i increases, then the equilibrium
+
+price of the factor that's used more intensively in good i also increases, while the price of the other factor
+
+decreases. So let me say it again. And let me give the motivation here.
+
+
+We're going from autarky in each country one at a time, with its internal domestic prices, to an equilibrium in the
+
+world economy with free trade at different prices. So for country b here, P1 over P2 is going down, relative to
+
+what it will be in the free trade equilibrium. And the reverse is true for country A.
+So when we go from autarky to trade, we're moving the price ratio in both countries-- in different directions, but
+
+we're moving it. So let's say, what is the impact now of moving a price? If we increase the price of good i relative
+
+to the other good, the equilibrium price of the factor that was used more intensively in the production of good i
+
+will increase, while the price of the other factor will decrease.
+
+
+OK, so let's go back to a proof of this in the earlier diagram, setting aside the two countries, kind of not asking for
+
+a minute where the price comes from-- except that where previously we had these isocost lines crossing, the cost
+
+lines associated with P1 and P2-- we now increase the price of good 1. So C1 equal to P1 is here. C1 equal to P
+
+prime 1 lies further out.
+
+
+It kind of stands to reason that it should lie further out because we've increased the price. And we want cost
+
+equal to price. So if price is higher, cost can be higher. And cost can be higher by having higher levels of w1 and
+
+w2 as the input prices. So the isocost line for the price when the price increases, in this case, good 1's price
+
+increases, shifts outward.
+
+
+We haven't done anything to the price of the other good. The C2-- where is it? The C2 line is staying constant.
+
+The C2 isocost line of price B2 is staying constant. However, we need a crossing-- that an equilibrium is
+
+described by where the lines cross. So we would move from this initial crossing to this second crossing.
+
+
+And you can see, as a consequence of the increase in price in P1, that the price of factor 1-- good 1 is intensive in
+
+factor 1. That's the definition that we were given at the beginning. The price of good 1 increases.
+
+
+Therefore, the input, which is used intensively in good 1, namely factor 1, should increase. And the other one
+
+decreases. So this diagram illustrates the Stopler-Samuelson theorem.
+
+
+But again, in the context of free trade, those price movements come about for a reason. Namely, we've gone
+
+from autarky to free trade. So you could see earlier which way the price was moving, depending on the initial
+
+country and the autarky.
+
+
+Now, although we know, again, to repeat the steps of the algorithm, we now know what happens to the factor
+
+prices from this diagram, what happens to the levels of the inputs, and what happens to output.
+
+
+Well, we have this, again, box for production. We had the initial allocation ratio of the factors as quantities
+
+crossed. That is to say, the line for good 1 and the line for good 2 crossed. And they crossed here.
+
+
+But now those factor prices have changed. As a consequence of the price change, the quantity of the first factor
+
+will go down because its price has gone up from country 1's point of view.
+
+
+That produces a somewhat steeper sloped line. And the opposite is going on with country 2. So the new
+
+equilibrium is where these now-changed slope lines cross.
+
+
+And you can actually see, in this case, that firm 1 is producing more because its isoquant will be higher. And it's
+
+using a higher level of both inputs. And likewise, the production of good 2 will contract.
+
+
+So again, this factor price equalization theorem is, just to restate it, in the 2 by 2 and 2-country model, as long as
+
+we have this factor intensity assumption holding and the countries are not completely specialized, the equilibrium
+
+price of factors, inputs, only depends on the technologies and on the output prices-- determined as it may be, in
+
+such a way that the prices of the outputs equals the input costs.
+But now, look, if both countries face the same prices because they trade in goods, and otherwise there would be
+
+arbitrage, then since the prices are the same in both countries, we can zero inside each country, and look at the
+
+factor prices, which are clearing the factor markets in each country. And since each country has the same
+
+technology, these equations across the two goods in each country hold.
+
+
+If the prices are the same on the right hand side as a consequence of free trade, then the solution to the input
+
+prices has to be the same on the left hand side. So in short, remarkably, we have not allowed trade in factors-- no
+
+migration. But we've managed to equalize factor prices without migration simply by having trade in goods.
+
+
+So that's the famous factor price equalization theorem. So vis a vis, the US and Mexico, allowing the NAFTA, free
+
+trade in goods, even with a wall, if I dare say, prohibiting Mexican migration, the theorem says that the wages in
+
+Mexico should rise in Mexico and fall to the US, to the point that the wages are the same.
+
+
+So the factors bear consequences. It's not necessarily a good thing that wages of labor are falling in the US-- not
+
+good for those firms. We have to come back to those households. We have to come back to the welfare theorems
+
+to think about the winners and losers from trade. The point here only is that you can see why there is sometimes
+
+resistance to trade because trade does have consequences for factor prices.
+
+
+Hence, for the welfare of the providers of those factors, depending on whether they're capitalists that own
+
+wealth, capital that's used in machinery and so on, versus laborers that have only their labor endowment.
+
+
+OK, so next time we're going to go with this kind of theorem back to the Thai villages. And then we're going to go,
+
+in the subsequent lecture, to the US, and explore these ideas. OK, that's all I have for today. OK, thank you very
+
+much.
+

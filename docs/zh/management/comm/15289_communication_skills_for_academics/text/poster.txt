@@ -1,0 +1,72 @@
+Criteria for Success
+For a successful poster&#8230;
+Create a  title  that attracts your audience.
+Make the  main message  stand out.
+Use  strong figures  and sparing text to support the main message.
+Practice your 20-second  pitch .
+Structure Diagram
+Posters can have many layouts. Aim for the following overall division of space.
+&nbsp;
+Identify Your Purpose
+Your poster is a visual aid for spoken conversations you&#8217;ll have at a poster session. It should draw people to you, help them understand your work, and help you converse with them about your work.
+Some questions to consider:
+Why are you making this poster?  A clear purpose — for example, &#8220;to hear critical feedback about my planned manuscript&#8221; — defines the poster&#8217;s performance requirements. It should:
+attract people who would read your future paper
+explain to them why you’re performing your research
+present to them the critical problems on which you want feedback
+In contrast, a vague purpose such as &#8220;to tell people about what I&#8217;ve done&#8221; doesn&#8217;t concretize how to design your poster.
+When and where will this poster be used?  Successful posters are designed for a targeted audience at a single event. Posters designed for multiple purposes, for example, for use during a conference and then for use as a stand-alone manuscript-on-a-wall, tend to do poor jobs on both fronts.
+How will this poster be used?  In most cases, you&#8217;ll be standing next to your poster, in which case you&#8217;ll be using it in the same way people use a pen and paper to explain their ideas and results. Unlike a pen and paper however, the figures and data can be clean, clear, and attractive.
+If you&#8217;re not standing next to your poster, what can it accomplish?  Even if you’re not there to meet your audience and explain your work in person, your poster can still accomplish a lot. For example, the reader might be impressed and make note of your name and/or lab group, they might contact you to follow up with some direction questions, or the poster might influence their own research. However, if you won’t be standing next to it to speak with your audience, then your poster must be able to stand alone. That is, without making the poster too “wordy,” you need to support each figure with enough text to explain its contents and implications.
+There are no hard-and-fast rules about what should or shouldn&#8217;t go on a poster. Think instead about what will be useful. To answer, &#8220;should I put my detailed protocol on my poster?&#8221; Ask yourself, &#8220;will that draw or deter my audience? Will it be useful to have on-hand during a conversation? Should I just have a copy of my protocol in my pocket instead? Do I want someone to be able to take a picture of it while I&#8217;m away from my poster?&#8221;
+Keep Your Message Clear and Concise
+People at poster sessions are often overwhelmed: there is an overabundance of people and posters, and both the posters and their presenters often offer an overabundance of specifics. A successful poster contains only necessary information and communicates a cohesive story clearly and quickly; a weak poster, on the other hand, is more like a technical memo broken up into boxes.
+Skills
+Compose a strong title
+A strong title summarizes the main idea of the poster and is typically what draws someone to investigate further. One technique to increase interest in your poster is to use a broad title. In fact, as a guideline, consider making your title broad to the point that if you made it even a little broader, it would either no longer be an interesting idea or a true representation of your work.
+To convert a weak title into a strong title, pull out the key nouns and verbs, make them as general as possible, and then link them together with as few words as possible. For example, consider the weak title,
+Novel Method for imaging temperature and electric current variations across a wide-field of view on GaN HEMTs using Nitrogen Vacancy Centers
+The key nouns are:
+temperature
+electric current
+wide-field
+And the key verbs are:
+imaging
+Linking the key nouns and verbs with minimal but effective wording produces the strong title:
+Wide-field Temperature and Electrical Current Imaging
+Put your title in font big enough to read from 15 feet away. Characters should be at least ¾” in height (approximately 54 pt. font) but preferably 1” (72 pt. font). Make the title as legible as possible: don&#8217;t use all caps, don&#8217;t use shadowing or embossing, but do use high contrast colors, e.g. black text on a white background.
+Make the main message stand out
+Your poster should be easy to understand. If your poster is hard to understand, people will simply move on. The best way to make your poster easy to understand is to focus on conveying a main message and having that main message  stand out . While there isn’t one best way to make the main message stand out on every poster, one powerful strategy is to have the figure that best summarizes the main message get the primary real estate. Make it larger and more centralized than the rest. Whether it shows your protocol, technology, or results, a good figure is worth much more than a 36&#8243; x 36&#8243; page full of text.
+Arrange strong figures and sparing text for easy navigation
+After you&#8217;ve figured out how to show your main message, you&#8217;ll need to support it. What&#8217;s the motivation? What are the implications? What approach did you take? The rest of your poster&#8217;s space is for answering questions like these.
+Aim to answer most of these questions with figures and very sparing text. Bullet points are easier to read than paragraphs.
+Most posters arrange their material into boxes with a navigation system that&#8217;s intuitive (for the reader!) and goes from introduction to main result to implications (with details that are essential to the message but don&#8217;t fit in the flow relegated to the bottom or corners). Exactly which boxes you include depends on your message. It&#8217;s wise to label your boxes with sentences or phrases that convey the message of the box. For example, see Example 1. However, you need not lay out your posters like this. In Example 3, some creativity was used in the layout to emphasize the poster’s message.
+Practice your 20-second pitch
+The most common question you’ll receive at a poster session is some variation of &#8220;So, what&#8217;s all this about?&#8221; The next 20-30 seconds is critical; a strong summary of your main message can spark a conversation, but a fumbling deluge of details can snuff one. A strong pitch has five parts:
+Something that every single person in the room cares about
+Why we need to know/do more about that thing
+What you did in this project
+What your results mean
+How your results contribute to the thing everyone cares about
+Here&#8217;s a pitch that can be comfortably delivered in 20 seconds:
+Have you ever noticed your cellphone getting hot? This heat could be degrading your battery, reducing its operating life  (1) . Unfortunately, there is a lack of technologies that allow scientists and engineers to study this heat and where it&#8217;s coming from. Thus, improvements in thermal imaging are important to design not just better batteries but better electrical devices in general  (2) . I developed a new microscopy system that allows for the imaging of temperature over a large field of view  (3) . My technology offers significant improvements over alternative thermal imaging technologies  (4)  and will be a significant tool in understanding devices with thermal issues  (5) .
+I have bolded where each of the 5 ideas are addressed in my pitch. In this example, I have given each element its own sentence for demonstration purposes; however, you can condense your talk to address these 5 elements simultaneously so that only the core of your research is communicated. And as you practice your pitch and get to know your audience better, you can refine it.
+&nbsp;
+Found this helpful? Feel free to spread the word by acknowledging the Comm Lab on your poster with our  EECS Comm Lab logo .
+Content adapted by the  MIT Electrical Engineering and Computer Science Communication Lab  from an article originally created by the  MIT Biological Engineering Communication Lab .
+Resources and Annotated Examples
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_pdf.gif"
+alt="Example 1" />
+Example 1
+24 MB
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_pdf.gif"
+alt="Example 2" />
+Example 2
+1 MB
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_img.gif"
+alt="Example 3" />
+Example 3
+326 KB
+Contributors
+Christopher Foy
+Peter Lindahl

@@ -1,12 +1,11 @@
 ---
-title: '概率论核心回顾'
+title: 概率论核心回顾
 type: lecture
 lecture: 1
 tags: [probability-space, conditional-probability, bayes-theorem, weak-law-of-large-numbers, random-variables]
 status: complete
 source: 'https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/resources/mit15_075jf11_chpt02/'
 ---
-
 # Lec 1 概率论核心回顾（Review of Probability）
 
 > MIT 15.075J / ESD.07J · Statistical Thinking and Data Analysis · Fall 2011

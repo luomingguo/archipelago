@@ -1,12 +1,11 @@
 ---
-title: '敏捷开发过程'
+title: 敏捷开发过程
 type: lecture
 lecture: 4
 tags: [agile-development, scrum-framework, hardware-agility, sprint-planning]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 4 敏捷开发过程（Agile Development Process）
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  

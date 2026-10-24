@@ -1,12 +1,11 @@
 ---
-title: '供应链信息系统——ERP'
+title: 供应链信息系统——ERP
 type: lecture
 lecture: 8
 tags: [enterprise-resource-planning, master-data, business-processes, mrpii-logic]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 8 供应链信息系统——ERP（Supply Chain Systems - ERP）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 8 讲  

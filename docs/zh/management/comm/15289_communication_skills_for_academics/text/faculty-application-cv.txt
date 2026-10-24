@@ -1,0 +1,75 @@
+Criteria for Success
+Your CV should…
+Convey who you are as a researcher (your  branding statement ) quickly and effectively
+Prioritize   skills and experiences that   show that   you are qualified for the target institution/department/position
+Quantify and show examples of your skills and experiences
+Be formatted in an organized manner
+Avoid typos and errors
+Identify Your Purpose
+A    curriculum vitae    (CV)   is a detailed version of your resume, but it should NOT be a list of everything you have ever done. The CV   is often one of the first pieces of your faculty application package to be read.   Therefore, your CV should quickly and effectively convince the hiring committee that you are a well-qualified candidate.
+It is important to highlight critical information that reflects your  branding statement . Be as concrete as you can: give examples about your experiences and quantify where possible. The typical CV length for an EECS faculty application is 3-6 pages.   Typically, a CV includes the following information:
+Name &amp; contact information
+Education
+Research experience
+Research interests
+Publications &amp; presentations
+Awards &amp; grants
+Professional societies
+Teaching experience
+Outreach/service activities
+References
+Analyze Your Audience
+Your CV should be tailored to the people who will be reading it. During the academic hiring process, a hiring committee is responsible for reviewing the applications. This committee is made up of faculty with diverse backgrounds from across the department to which you are applying. Your CV should clearly show your expertise so that committee members can easily evaluate where you would fit into their department. Be sure to use language that is accessible to those outside your direct research area and enables you to stand out. Customize the content such that it excites the hiring committee by putting the most important information first. Make it easy for them to put your application in the “yes” pile and select you for an interview.
+Skills
+Show, don&#8217;t tell
+Concrete experiences and skills effectively deliver your message. Wherever possible, talk about your experiences in a quantitative way &#8211; for example, how many mentees/collaborators you had, how long a project took, how many publications it resulted in, etc. It is also important to show your individual contribution. Use    descriptive, specific and powerful verbs    that strongly show the contribution you made.
+Instead of&#8230;
+vague words
+Consider&#8230;
+concrete experiences
+Researcher in sensors and instrumentation lab
+Developed method for tracking air conditioner efficiency from harmonic content in demanded electricity
+Co-advised 8 graduate students
+Contributing author on 5 papers
+Postdoctoral associate in a computer architecture lab
+Started a collaboration to develop a new CPU architecture with a computer hardware team
+Led 2 projects and managed 4 PhD students
+Wrote 2 grant proposals (1M USD each) as a co-PI
+Teaching assistant for a class
+Taught weekly recitations for 30 students
+Designed 5 experiments for a bi-weekly laboratory
+Co-designed 2 quizzes
+Participated in the Kaufman teaching certificate program
+Completed a teaching certificate program based on eight workshops aimed at the development of teaching skills
+Presented two short teaching sessions which were recorded and received feedback on my teaching performance
+EECS Comm Lab Fellow
+Held one-on-one coaching sessions (approximately 20 to-date) with students on science communication tasks
+Developed teaching materials and delivered workshops for EECS graduate students
+Customize your CV depending on the position
+It is best to customize your CV if you are applying for different types of positions. Many faculty positions involve both building a research lab and teaching. Others are purely teaching or purely research. First, read each job posting carefully. Make a list of qualifications required for the specific role you are applying for. Then, highlight the skills and accomplishments that demonstrate that you have those qualifications. Finally, design your CV to prioritize the most relevant experiences for the position.
+Use clear formatting and organization
+Prioritize the information that shows that you are qualified to be a professor by moving important sections (often, research experience and/or publications) to the beginning of your CV. The most salient information should be on the first page.  For a long but important section, you may wish to add a summary on the first page and include the detailed version later in the document.  For any long section, consider including a summary at the beginning. For example, use the section header to mention how many journal/conference publications are included in a long publication section.
+A CV should be very organized and easy to skim. To help accomplish that:
+Use headers to group your experiences into sections that emphasize you are qualified for the job.
+Use white space, indentation, and bullet points to make your CV more readable.
+Use formatting such as  bold  or  underlining  so the reader can quickly find the most relevant content; however, avoid excessive and inconsistent formatting.
+Proofread, spell-check, and get feedback from colleagues
+Check your document over and over for mistakes and typos. Use spell-check or other proofreading software to help catch mistakes. Share your whole application with colleagues, both within and outside of your subfield to get feedback and catch errors you missed.
+MIT EECS affiliates can    make an appointment    with a    Communication Fellow    to obtain feedback on any part of their faculty application package.
+&nbsp;
+Some content in this article was adapted from the general    CV/Resume article    adapted by   the    MIT Electrical Engineering and Computer Science Communication Lab    from an article originally created by the    MIT Biological Engineering Communication Lab   .
+Resources and Annotated Examples
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_pdf.gif"
+alt="Arvind Satyanarayan CV" />
+Arvind Satyanarayan CV
+This CV was submitted as part of a successful faculty application package by Arvind Satyanarayan, now assistant professor at MIT EECS
+230 KB
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_pdf.gif"
+alt="Malte Schwarzkopf" />
+Malte Schwarzkopf
+This CV was submitted as part of a successful faculty application package by Malte Schwarzkopf, now assistant professor at Brown University
+492 KB
+Contributors
+Mohamed I. Ibrahim
+Slobodan Mitrovic
+Eugenia Inda

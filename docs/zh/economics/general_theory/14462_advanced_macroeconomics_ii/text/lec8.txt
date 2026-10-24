@@ -1,0 +1,392 @@
+--- PAGE 1 ---
+14.462
+Spring, 2020
+Payment Systems: Problems and 
+Issues to be Considered in Alternative 
+Designs
+(Lecture 8)
+Robert M. Townsend
+Elizabeth & James Killian Professor of Economics, MIT
+
+
+--- PAGE 2 ---
+Integrating Thread
+Distinguish in what follows payments as a separate problem vs. 
+payments connected to exchange and underlying economic 
+environment 
+
+
+--- PAGE 3 ---
+Walras without Obstacles: Pure Unit of 
+Account in Commodities or Securities
+with p·(fa-ea) ≤ 0 for all a
+
+
+--- PAGE 4 ---
+Application: Trade Fairs
+Townsend (1990) – continued
+Consider a banking system where credit transfers are possible. That is, the 
+obligation of the debtor (purchaser) can be eliminated by written transfer of 
+a credit in the books of a banker. In effect, the debts of the banker can be 
+reassigned.
+Further, bankers can create credit by writing entries in their books, even 
+w/o the deposit of lawful currencies; a customer was simply granted an 
+overdraft. 
+Merchants used this banking transfer system in the great international trade 
+fairs of Champagne. As noted earlier, such fairs had pre-specified days, first 
+for introduction of goods, then for transactions in cloth, etc. There is little 
+doubt that bankers played a key role in this sequence. Indeed, Usher (1943) 
+believes that traders brought relatively few coins with them to the fair. 
+Somehow potential sellers received credit from bankers for goods yet not 
+sold, and this credit as buyers was transferred to other sellers relatively 
+early on in the fair sequence
+
+
+--- PAGE 5 ---
+Ghost Currencies as Unit of Account
+A complete separation of a book-transfer payment system from coins 
+or specie is hard to imagine. Again, however, it appears that medieval 
+merchants came quite close at times. 
+Supporting evidence is provided by the use at various dates and 
+locations of pure units of account for record-keeping purposes, as 
+noted by Cipolla (1956). 
+Later, accounts were kept in circulating coins of various 
+denominations to facilitate record-keeping. Subsequent devaluations 
+changed the relative value of circulating coins, potentially destroying 
+the record-keeping system. However, merchants in Milan after 1340, 
+for example, continued to use older coins in their record-keeping 
+systems with the understanding that they were pure fictional units of 
+account
+
+
+--- PAGE 6 ---
+Trade Fails in Practice: Beneficial Impact of 
+Expanded Fed Balance Sheet on Payments
+As if an experiment with good, if unintended consequences
+Trade fails: previously high but now down
+Looking at payments more narrowly
+6
+-
+Fed
+now
+makes
+available
+current and historical data on
+trades in US Treasury and
+other securities that fail to
+settle as scheduled
+-
+Substantial
+variation
+in
+the
+frequency of fails
+-
+surges
+in
+fails
+sometimes
+result
+from
+operational
+disruptions
+-
+But often reflect market parti-
+cipants’ insufficient incentive
+to avoid failing
+http://libertystreeteconomics.newyorkfed.org/2014/09/measuring-settlement-fails.html
+
+
+--- PAGE 7 ---
+Why Do Treasury Trades Fail?
+Settlement fails can occur for any of several reasons. 
+Miscommunication. A buyer and seller may not have a common understanding 
+of the terms of a trade, or one or the other may have failed to communicate 
+settlement instructions to its custodian, or may have communicated incorrect 
+instructions.
+System Failure. Well-known instance occurred on Thursday, Nov 21, 1985, 
+with a computer outage at the Bank of New York . Also, after 9/11, when there 
+was an initial surge in fails due to massive operational disruptions but 
+insufficient incentive to resolve fails contributed to their persistence.
+Seller does not have the requisite securities in its commercial book-entry 
+account. This is the most common reason for failing when fails are chronic, 
+but it is usually avoided at other times by borrowing securities and delivering 
+the borrowed securities. Otherwise the seller is not paid and is loosing implicit 
+interest . There are other costs (capital charges, customer relations, back office 
+staff costs, etc) 
+Seller’s failure to receive the securities in settlement of an unrelated purchase. 
+This can lead to a “daisy chain” of cascading fails.
+7
+
+
+--- PAGE 8 ---
+A Model of Actual Practice: Imposed Nash Game, 
+Suggesting Current System Is Not Optimal
+Bech & Garratt (2003) “The intraday liquidity management game” 
+8
+
+
+--- PAGE 9 ---
+9
+In this model, payments are seemingly separated from underlying trades
+
+
+--- PAGE 10 ---
+Default and Need for Penalties to Implement Walras 
+Optimum: Back to General Equilibrium Version of Payments
+Lessons from the Theory of Implementation
+In theoretical models, there are penalties which allow purchases 
+before sales, or purchases in some markets and sales in others, which 
+may or may not net to zero
+Dubey (1982): liquidity across markets and bankruptcy
+Moral of the Story: Penalties have to be sufficiently severe so as to 
+achieve Walrasian outcome
+But bear in mind some of the timing in Garrett et al is suppressed
+10
+
+
+--- PAGE 11 ---
+•
+And, again, these could be in the space of securities and indirect utility 
+function
+
+
+--- PAGE 12 ---
+
+
+--- PAGE 13 ---
+
+
+--- PAGE 14 ---
+
+
+--- PAGE 15 ---
+
+
+--- PAGE 16 ---
+
+
+--- PAGE 17 ---
+
+
+--- PAGE 18 ---
+Another Take on the Problem, Linking 
+Incomplete Contracts to Payments
+Default and punishment in general equilibrium with incomplete 
+markets
+Dubey, Geanakoplos and Shubik (2005)
+18
+
+
+--- PAGE 19 ---
+19
+
+
+--- PAGE 20 ---
+Liquidity Fails in Practice: A Systemic Risk
+The partial equilibrium payments view, again
+Kuussaari (1996): “Systemic Risk in the Finish Payment System: an 
+Empirical Investigation”, Bank of Finland
+On the payments system risk:
+Risk that one clearing system participant’s failure to settle causes other participants 
+to default
+Risk in clearing systems where payment messages are during day but funds 
+transferred at the end of the day
+Simulation of the effects of a systemic crisis in the Finish Payment system using 
+actual payments system data.
+If in the simulation a participant fails to settle, it is removed and algorithm is run 
+again, removing potentially more entities until  remaining banks are able to  fulfill 
+their obligations
+Thus, payments systems are linked directly to potential financial crisis
+Though in the simulation these counterparty  risk are judged to be small, they are 
+real
+On the other hand, seems related to Chandrasekhar, Townsend and Xandri
+(2019)
+
+
+--- PAGE 21 ---
+Complexity in Practice, as in Computer Science: 
+An Additional Obstacle for Decentralized Payments
+Güntzer et al. (1998): “Efficient algorithms for the clearing interbank 
+payments”
+The daily volume of the more than 50,000 payment orders currently to be 
+processed in EAF-2 sums up to over DM 600 billion (approximately US$ 
+353 billion)
+Complexity is a separate problem
+Even when there is no uncertainty, as when both liquidity in accounts and trades 
+are all submitted in advance, algorithms for clearing are computationally complex 
+– NP hard
+Bank Clearing Problem: discrete optimization problem
+Objective function: clearing volume
+Limiting resources: deposits of participants
+Maximize number of completed trades 
+Not all trades will be completed! 
+Be mindful of limits within current centralized clearing systems
+Comparison to previous lectures 
+We have seen that scaling up is a problem due to validation, too 
+But the problem here is not peculiar to DLT but rather includes traditional systems 
+Is the solution hybrids with smaller numbers, as for off-chain?
+
+
+--- PAGE 22 ---
+Public Liquidity Is Not a Panacea
+Outside Central Bank money (coin, currency, other) as a way to store value 
+for settlement is another way to achieve end-of-period clearing and 
+settlement, and so can be seen as mitigating the role for penalties, if the 
+central bank itself is trusted. 
+But real-time-gross settlement (RTGS) systems are costly precisely in the 
+requirement of setting aside large amounts of value in liquidity, instead of 
+having this value invested or lent out for productive purposes. 
+A time discount rate puts a wedge between money earned from sales and 
+money used in purchases. 
+Dynamics matter: Liquidity for payments comes from where?
+Thus RTGS settlements have in practice given rise to liquidity savings 
+mechanisms, for example, contingent staggered settlement of purchases 
+based on subsequent receipts. 
+This returns us part of the way back toward where we started, and the 
+problem of overspending and reneging. Ample central bank liquidity is no 
+panacea.
+22
+
+
+--- PAGE 23 ---
+The Cost of Liquidity: With Some Economics 
+Coming from a Model
+Townsend (1983) “Financial Structure and Economic Activity”
+23
+
+
+--- PAGE 24 ---
+Application: Payments, Project Jasper, 
+Canada as Actual DLT
+An experiment in private permissioned distributed ledgers allows for 
+the exchange of central bank issued digital assets 
+Could handle the high volume of Canada’s large-value interbank 
+transfer system
+Explored utilizing Ethereum, moved to R3’s Corda platform to allow 
+for improvements in settlement finality, scalability, and privacy
+The role of the Corda notary node is played by the Bank of Canada
+Netting promotes funding efficiency –a central queue within a DLT 
+platform for payments 
+a participant’s account gives permission for a bounded, specified amount of 
+value to be placed into a queuing option. This can be changed, but not when 
+the queuing algorithm is running; the participant is blocked as codes search 
+over best transfers.
+The central bank maintains a commitment to settle accounts but has 
+risk exposure in doing so, collateral is posted by participants as part 
+of DLT
+
+
+--- PAGE 25 ---
+Payments Canada (2017) “Project Jasper: A Canadian 
+Experiment with Distributed Ledger Technology for 
+Domestic Interbank Payments Settlement”
+
+
+--- PAGE 26 ---
+Garratt (2019) “An Application of Shapley Value 
+Cost Allocation to Liquidity Savings Mechanisms”
+
+
+--- PAGE 27 ---
+Needed: Cross-Border Payments Systems 
+with DLT
+Cross-border payments
+Example: Remittances in fiat money in Southeast Asia 
+have transfer fees currently at 7.1%. The high transfer 
+fees are partly due to legacy technology in the formal 
+sector and limited access to formal currency exchange 
+markets 
+Bank of Canada and Monetary Authority of Singapore
+Enabling cross-border high value transfer using 
+distributed ledger technologies 
+Recognized priority for many central banks
+Hong Kong Monetary Authority
+Bank of England
+26
+
+
+--- PAGE 28 ---
+Lightnet:  Remittance Payment Rail for 
+Money Transfer Operators in SEA
+Avoids direct transfers of fiat money, yet enables participants to 
+efficiently conduct cross-border transactions 
+MTOs who join have collateral placed securely and are granted 
+credit lines for intraday transfers of fiat tokens
+Fiat tokens represent claims on fiat money
+Lightnet does the netting and liquidity management, the settlement 
+layer, as in a central counterparty (CCP) in high value payments 
+systems 
+Payments rail
+maintains an off-chain order book, groups and offset transactions 
+before sending batched orders to Stellar at regular intervals for 
+international transfer of fiat tokens. Deals with scaling problem
+Fiat money does not cross borders
+28
+
+
+--- PAGE 29 ---
+BANK FOR INTERNATIONAL SETTLEMENTS 
+Distributed ledger technology and large 
+value payments: a global game approach 
+Stephen Morris (Princeton University)* 
+Hyun Song Shin (Bank for International Settlements)* 
+Keynes Lecture, University of Cambridge, 22 January 2019 
+Conference on "Cryptocurrencies and Blockchains", 
+University of Chicago Becker Friedman Institute, 9 November 2018 
+* The views expressed here are those of the authors and not necessarily those of the Bank for International Settlements. 
+
+
+--- PAGE 30 ---
+Where are we now? 
+Several central banks have experimented with DLT payment 
+systems 
+► Cash-in-advance payment systems with digital tokens 
+redeemable at central bank 
+► Wholesale central bank digital currency (CBDC) 
+► Periodic netting arrangements to reduce credit needed for 
+payments 
+► Central bank retains some role 
+Assessment so far 
+► Technology works, but advantages over existing payment 
+systems yet to be demonstrated 
+
+
+--- PAGE 31 ---
+Two issues 
+► How to ensure confidentiality of payments? 
+► How to overcome need for credit to finance payments? 
+
+
+--- PAGE 32 ---
+Issue 1: how to ensure confidentiality? 
+Open, permission less systems ( eg, Bitcoin) have transactions 
+visible to everyone, albeit with masked identities 
+Confidentiality of payments with oversight point to private, 
+hierarchical DL T systems 
+► Private: banks and payment firms are voting nodes 
+► Hierarchical: central bank retains some role ( eg, as notary) 
+
+
+--- PAGE 33 ---
+Issue 2: how to provide credit to finance payments? 
+Real time gross settlement (RTGS) systems have heavy credit 
+needs 
+► Daily payments ~ 100 times the deposit balance held at 
+central bank 
+► Banks rely on incoming payments to finance outgoing 
+payments 
+► Bech and Garratt (JET 2003), Afonso and Shin (JMCB 2011) 
+
+
+--- PAGE 34 ---
+Coordination problem arising from credit needs may swamp 
+any technological refinements 
+Sources of funds in conventional domestic payment system 
+1. Balances maintained at the central bank 
+2. Borrowing from other banks through money markets 
+3. Credit extension from the central bank ( eg, discount window 
+or "daylight overdraft") 
+4. Incoming transfers from other banks 
+How to overcome incentives to delay when liquidity is scarce? 
+Who provides the credit to make the system work? 

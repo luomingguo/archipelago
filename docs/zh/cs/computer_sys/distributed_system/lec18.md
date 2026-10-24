@@ -2,71 +2,344 @@
 title: Ray
 type: lecture
 lecture: 18
-tags: []
+tags: [distributed-computing, actor-model, futures, ownership, fault-tolerance]
 status: complete
 ---
 # Lec 18 Ray
 
-> 阅读资料
->
-> [Ownership: A Distributed Future System For Fine-Grained Tasks, nsdi'21](https://pdos.csail.mit.edu/6.5840/papers/ray.pdf)
+## TL;DR
 
-首先，为什么要学习这篇分布式计算框架 Ray 的论文？
+- Ray 面向动态、有状态与低延迟的分布式 AI/通用计算，融合了无状态 Task 与有状态 Actor 两种编程抽象。
+- Ownership 架构模型：将分布式 Future 的元数据管理（血缘 Lineage、分布式引用计数与调度）去中心化分散到各 Object 的 Owner 节点。
+- 高性能分布式对象存储：小对象直接内联在 RPC 消息中，大对象写入本地共享内存 Plasma Store 并经由点对点传输。
+- 细粒度容错：无状态 Task 依赖 Lineage 重新执行恢复；有状态 Actor 借助 Checkpoint 与消息日志重放重建状态。
 
-Ray 是现代版的 MapReduce，Spark。Ray 使用 future 高效地移动大量数据，并通过 Ownership 高效管理分布式 future，是个被广泛运用的开源项目（被 OpenAI、Anyscale 使用），并且能运用在任何规模上。
+## 一、为什么需要 Ray？
 
-并行应用场景，需要同时具备函数式（有明确的输入输出、不维护状态）、有状态（保留上下文），并且低延迟。比如：
+### 1.1 MapReduce/Spark 的局限
 
-- 模型服务（论文 3a）。需要快速相应、客户端上传的数据量大，router 和模型副本（replica）在多次调用之间保持状态
-- 在线视频处理（论文 3b）。需要帧与帧之间的连续性，即当前帧处理要考虑上一帧的信息
+MapReduce 和 Spark 是批处理系统，设计范式是：**无状态、静态数据集、粗粒度任务**。它们不适合以下场景：
 
-MapReduce 和 Spark 不适合这种类型，因为他们是批处理系统，设计为无状态的任务并行处理。不擅长保留状态、实时处理和交互式场景。
+- **模型服务（Model Serving）**（论文图 3a）：需要快速响应，客户端上传大量图像数据，Router 和模型副本（replica）在多次调用之间需要保持状态（如权重常驻 GPU 内存）。
+- **在线视频处理**（论文图 3b）：需要帧间连续性——处理当前帧时必须参考上一帧的轨迹状态，Actor 负责存储已解码的帧。
 
-## 本讲导览
+::: definition 新兴并行应用的三个特征
+① 函数式（明确输入输出）与有状态（跨调用保留上下文）并存
 
-- Ray 设计的核心思想
--
+② 低延迟要求（毫秒级响应）
 
-## Ray 设计的核心思想
+③ 异构任务（模拟 + 训练 + 服务混合）
+:::
 
-有 3 个核心思想：
+### 1.2 强化学习（RL）的需求
 
-- actors（跨调用之间维持状态）
-- futures（表示计算结果的句柄）
-- 根据哪个 actor 拥有某个 future，把 future 的状态按 ownership 进行分片管理。
+RL 应用的核心：学习一个策略（policy）——从环境状态到动作的映射。大规模 RL 需要：
 
-### Future
+1. **模拟（Simulation）**：探索大量行动序列，细粒度、毫秒级任务；
+2. **分布式训练**：基于模拟数据改进策略；
+3. **策略服务（Policy Serving）**：实时推理，低延迟。
 
-程序可以异步调用一个函数，返回一个 future，并且可以将该 future 的引用作为参数传递给另外一个函数，或者也可以对齐强制求值。这样的好处在于，系统可以决定何地运行 future，何时进行数据移动。
+现有框架一个都覆盖不好，Ray 试图用统一接口全部支持。
 
-关于 Ray 的 python 例子
+---
+
+## 二、Ray 编程模型
+
+Ray 提出三个核心抽象：
+
+| 抽象 | 说明 | 类比 |
+|------|------|------|
+| **Task（任务）** | 无状态远程函数，返回 Future | 纯函数调用 |
+| **Actor（演员）** | 有状态对象，跨调用维持状态 | 对象实例 |
+| **ObjectRef（Future）** | 异步计算结果的句柄 | Promise/Future |
+
+### 2.1 Future（ObjectRef）
+
+程序可以**异步**调用一个函数，立即返回一个 Future（ObjectRef），不阻塞。可以将该 Future 作为参数传给另一个函数（按引用传递，避免数据复制），也可以强制求值（`ray.get()`）。
 
 ```python
-# see https://docs.ray.io/en/latest/ray-core/tips-for-first-time.html
-import ray, time
-
+import ray
 ray.init()
 
 @ray.remote
 def g(i):
-  return i  
+    return i
 
-f = g.remote(10)  # f is a future and ray invokes g asynchronously
+# 异步调用，f 是 Future，g 立即在后台执行
+f = g.remote(10)
+
+# 并行运行 4 个 g 调用
+future_ids = [g.remote(i) for i in range(4)]
+results = ray.get(future_ids)  # 阻塞等待所有完成
 ```
 
-Future 的实现，见另外一篇论文
+**Future 的好处**：系统可以自主决定**何时**执行、**在哪里**执行，并自动管理数据移动，调用方无需关心。
 
-[Ray: A Distributed Framework for Emerging AI Applications, osdi'18](https://www.usenix.org/system/files/osdi18-moritz.pdf)
+### 2.2 Actor（有状态对象）
 
-### 挑战
+```python
+@ray.remote
+class Counter:
+    def __init__(self):
+        self.value = 0
+    def increment(self):
+        self.value += 1
+        return self.value
 
-1. 大量的 future，有些可能运行很短的时间（几个 ms）；
-2. 对象的 GC
-3. 当运行 future 时候 worker 机器 crash 了
+counter = Counter.remote()         # 实例化为远程 Actor
+f = counter.increment.remote()     # 返回 ObjectRef
+print(ray.get(f))                  # 输出 1
+```
 
-### 稻草人方案——集中协调者
+Actor 是特殊的 Task：可以被多次调用，调用之间保持内部状态。Router 可以用 Actor 实现请求批处理（batching），模型 Actor 保持权重在本地 GPU 内存中。
 
-### Ray 的解决方案——Ownership
+### 2.3 数据传递：按值 vs 按引用
+
+```python
+# 按引用传递（borrowing）：避免大数据复制
+f1 = C.remote()
+f2 = C.remote()
+f3 = Add.remote(shared(f1), shared(f2))  # f1, f2 按引用传入 Add
+c = ray.get(f3)
+```
+
+系统在后台自动管理依赖关系：`Add` 只有在 `f1`、`f2` 都完成后才真正执行。
+
+---
+
+## 三、架构与实现挑战
+
+### 3.1 核心挑战
+
+::: insight 为什么分布式 Future 管理很难？
+一个 Future（ObjectRef）会被多个进程共享：持有引用的进程、创建对象的执行者、对象的实际存储节点。这三方必须协调：
+
+① 引用计数（GC）：何时可以安全删除对象？
+
+② 任务调度：把任务发给哪个 worker？
+
+③ 故障恢复：worker 崩溃后如何重新执行？
+
+传统 RPC 按值传递，无共享状态，天然好扩展；分布式 Future 按引用传递，共享状态带来协调难题。
+:::
+
+### 3.2 稻草人方案：集中协调者
+
+设想一个中心 Coordinator 维护全局表：
+
+| ID | Task | Owner | Refs | Location | Value |
+|----|------|-------|------|----------|-------|
+| x  | B()  | W1    | W1,W3| W2       |       |
+| y  | C(x) | W1    | W1   | W3       |       |
+
+- **调用 Future**：Scheduler 选 worker，向表中添加记录；
+- **`get()`**：联系 Coordinator，若值已存在则返回，否则阻塞等待；
+- **GC**：引用计数归零时删除；
+- **故障恢复**：Worker 崩溃后，重新执行血缘（lineage）中的任务。
+
+**问题**：每次调用和 `get()` 各需一次 RPC 与 Coordinator 通信；系统有大量短命 Future（毫秒级），Coordinator 成为**扩展瓶颈**。
+
+---
+
+## 四、Ownership：Ray 的核心方案
+
+### 4.1 核心思想
+
+::: definition Ownership（所有权）原则
+**调用者（caller）是其所调用函数返回 Future 的 Owner（所有者）**。
+
+Owner 负责：① 该 Future 的元数据管理；② 引用计数；③ 故障恢复协调。
+
+对象的**值**存储在实际执行该 Task 的 Worker 节点上，与 Owner 可以不同。
+:::
+
+以图 6 的 A → B/C 为例：
+
+```text
+def A():
+    x = B.remote()          # A 是 x 的 Owner
+    y = C.remote(shared(x)) # A 是 y 的 Owner；C "借用" x
+```
+
+各节点状态（Worker 1 = A, Worker 2 = B, Worker 3 = C）：
+
+**Owner 表（W1，A 的节点）：**
+
+| ID | Task | Owner | Refs  | Location | Value |
+|----|------|-------|-------|----------|-------|
+| x  | B()  | W1    | W1,W3 | W2       |       |
+| y  | C(x) | W1    | W1    | W3       |       |
+
+**W2（运行 B，存储 x 的值）：**
+
+| ID | Owner | Refs | Location |
+|----|-------|------|----------|
+| x  | W1    |      | W2       |
+
+**W3（运行 C，借用 x）：**
+
+| ID | Owner | Location |
+|----|-------|----------|
+| x  | W1    | W2       |
+| y  | W1    | W3       |
+
+**优势**：A 调用 C 时无需与 B 通信，元数据查询直接在 Owner（A）本地完成。
+
+### 4.2 ID 生成规则
+
+```text
+owner       = (IP, port, workerID)
+taskID      = hash(parentTaskID + task_index)  # 根任务随机分配
+objectID    = taskID + obj_index               # 同一任务的多个返回值用 index 区分
+DFut        = (ObjectID, Owner_address)        # Future 的完整表示
+```
+
+### 4.3 Ownership 的扩展性优势
+
+如果一个 Task 管理大量 Future，可以将其拆分为多个子任务，每个子任务成为一部分 Future 的 Owner，实现**状态分片**（sharding），无需中心协调者。
+
+---
+
+## 五、分布式调度
+
+### 5.1 Bottom-Up 调度策略
+
+Ray 采用**自底向上的分布式调度**（Bottom-Up Distributed Scheduling）：
+
+```text
+schedule(task t):
+    id = local_worker
+    while true:
+        ok, id = reserve(id, resource_requirements)
+        if ok:
+            lease = get_lease(id)
+            break
+    table[t].Location = lease
+```
+
+- **优先本地**：默认尝试在发起调用的节点本地运行；
+- **随机探测**：若本地资源不足，随机询问另一个调度器；
+- **Lease 复用**：优化重复分配同一 worker 的情况。
+
+::: insight 调度策略总结
+默认策略：本地优先 → 资源不足则随机 Work Stealing。这避免了集中调度的瓶颈，同时借助局部性（locality）减少数据传输。
+:::
+
+---
+
+## 六、内存管理（对象存储）
+
+### 6.1 Plasma 共享内存对象存储
+
+每个节点有一个本地 **Object Store**（基于 Plasma），提供 API：
+
+| 操作 | 说明 |
+|------|------|
+| `Create(oid)` | 创建对象槽位，并自动 Pin 住 |
+| `Get(oid)` | 阻塞等待对象创建完成后返回 |
+| `Pin(oid)` | 增加引用计数，防止 GC |
+| `Release(oid)` | 减少引用计数，允许 GC |
+
+对象是**不可变（immutable）**的，天然支持零拷贝读取（同节点进程通过共享内存直接访问）。
+
+### 6.2 Secondary Copy（次副本）
+
+当 C（W3）需要使用存储在 W2 的 `x` 时，会从 W2 拉取并在本地保留一份副本（secondary copy）。这份副本用于**加速故障恢复**——若 B 崩溃，无需重新计算 `x`，直接使用 W3 的副本。
+
+---
+
+## 七、容错机制
+
+### 7.1 Lineage-Based 重执行（针对 Task）
+
+Worker 崩溃后，Owner 检测到对象丢失，沿血缘（lineage）重新提交 Task：
+
+```text
+if worker 3 (C) fails:
+    Worker 1 (Owner of y) detects failure
+    → re-submits C(x) to Ray runtime
+    → uses secondary copy of x if available, else re-execute B()
+```
+
+**前提**：Task 必须是**幂等的（idempotent）**——相同输入产生相同输出，无副作用。非幂等 Task（如写数据库）需要 Actor 自己实现 WAL 等机制，超出 Ray 本身范围。
+
+### 7.2 Fate Sharing（命运共享，针对 Owner 崩溃）
+
+::: insight Fate Sharing 场景分析
+设 W1=A（Owner of x,y），W2=B（存储 x），W3=C（借用 x）。
+
+若 W2 崩溃（x 的存储位置丢失）→ W1 作为 Owner 负责重新执行 B()，重建 x。
+
+若 W1 崩溃（Owner 丢失）→ W3 持有 x 的悬空引用（dangling reference），该引用将永远无法被解析。为避免系统进入不一致状态，W3 **主动终止自身（命运共享）**，上层 Caller 会重新提交 A()，从而重建整个计算链。
+:::
+
+**Homework 分析**：若 `C(x)` 内部调用 `D(x)` 并 `get(z)`，当运行 D 的 Worker 崩溃时，谁重新执行 D？
+- `z` 的 Owner 是 C（调用 D 的那个 caller），所以由 **C 所在的 Worker** 重新提交 D。
+
+### 7.3 Actor 容错
+
+Actor 是有状态的，无法简单重放血缘（状态已改变）。Ray 为 Actor 提供**检查点（Checkpoint）**机制：定期持久化 Actor 状态，故障后从最近的 Checkpoint 恢复。
+
+---
+
+## 八、应用示例
+
+### 8.1 强化学习（参数服务器模式）
+
+```text
+Parameter Server (Actor) ←→ Worker Actors (并行模拟)
+     ↑ 梯度聚合              ↓ 策略推理
+     └── 更新权重 ──────────→ 分发最新策略
+```
+
+- **PS Actor**：维护全局模型参数（跨调用有状态）；
+- **Worker Tasks**：无状态模拟，并行运行，返回梯度；
+- Ray 统一调度，替代手工实现的 PS-Worker 架构。
+
+### 8.2 模型服务（图 3a）
+
+- **Router Actor**：有状态，维护请求队列，支持批处理；
+- **Model Replica Actors**：有状态，保持权重在 GPU 内存；
+- 请求作为 Task 分发给 Replica，返回推理结果 Future。
+
+### 8.3 在线视频稳像（图 3b）
+
+- **Decoder Actor**：存储解码后的帧（跨帧有状态）；
+- **Stabilizer Task**：读取前后帧轨迹，无状态计算；
+- 帧处理流水线化，低延迟。
+
+---
+
+## 九、FAQ 核实
+
+::: insight Ray 如何处理非幂等 Task？
+A：Ray 本身不支持。需要开发者在 Actor 内自行实现类似事务的机制（如 WAL），这超出 Ray 框架范围。
+:::
+
+::: insight Lineage 重执行 vs 持久化日志恢复，各自的权衡？
+A：Lineage 恢复要求计算幂等，且可能需要重跑大量计算（生成大量数据）。Ray 通过 Secondary Copy 加速：若次副本存在，直接使用而无需重算。持久化日志（如 Checkpoint）不要求幂等，但写入开销更高。
+:::
+
+::: insight Ownership 与 Rust 的所有权有何关系？
+A：概念相似，但实现不同。Rust 的借用者不能修改对象（安全保证），Ray 的借用者可以读取（甚至再转借）对象引用。Ray 的 Ownership 更侧重分布式元数据管理而非内存安全。
+:::
+
+---
+
+## 本讲小结
+
+| 问题 | Ray 的解答 |
+|------|-----------|
+| 如何支持有状态计算？ | Actor 抽象，跨调用保持状态 |
+| 如何高效传递大数据？ | Future 按引用传递 + Plasma 共享内存零拷贝 |
+| 如何避免调度中心瓶颈？ | Ownership 分片 + Bottom-Up 分布式调度 |
+| Task 崩溃如何恢复？ | Lineage 重执行（要求幂等） + Secondary Copy 加速 |
+| Owner 崩溃如何处理？ | Fate Sharing：借用者主动终止，上层重提交 |
+| 如何管理对象生命周期？ | 引用计数 GC，Owner 协调 Pin/Release |
+
+::: insight 核心设计原则
+Ray 的精髓在于：**应用结构（调用关系）天然决定了元数据的分片方式**。谁调用谁，谁就拥有（Own）返回的 Future——这一简单规则消除了集中协调者，使系统可以水平扩展到每秒百万级任务，同时保持毫秒级延迟和透明的故障恢复。
+:::
 
 ## 论文阅读： Ray
 

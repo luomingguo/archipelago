@@ -1,12 +1,11 @@
 ---
-title: '数据洪流与 CRISP-DM 方法论'
+title: 数据洪流与 CRISP-DM 方法论
 type: lecture
 lecture: 1
 tags: [crisp-dm, big-data, data-cleaning, business-analytics]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 1 数据洪流与 CRISP-DM 方法论（Looking to Data for Answers）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 1 讲  
