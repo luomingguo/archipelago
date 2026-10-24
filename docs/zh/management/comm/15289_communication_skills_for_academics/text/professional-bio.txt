@@ -1,0 +1,119 @@
+Criteria for Success
+A successful professional bio…
+Begins with a one-sentence main message: a memorable statement of your professional identity and goals.
+Describes your experiences and qualifications that support the main message and match the interests of your targeted audience.
+Concludes with a “call to action” that encourages readers to further connect with you or your work.
+Communicates credibility, accomplishment, and professionalism through writing style.
+Structure Diagram
+Professional bios follow the “inverted pyramid” structural model also used in journalism: begin with a broad main message, and then funnel into increasingly specific relevant details.
+End with a “call to action” &#8211; this is a marketing term for something that prompts readers to take immediate action if they are interested in you, such as a link to email you or view your design portfolio.
+Identify Your Purpose
+A professional bio is a brief profile of activities and interests (mainly academic and/or technical) that serves as an introduction to you, for example on your professional website, portfolio, or Twitter. It should be a controlled projection of how you want to be perceived by a specific audience &#8211;    not    an exhaustive list. It should hook your audience’s attention and convince them that your accomplishments are both significant and relevant to their interests and needs.
+Before beginning, reflect on your professional goals, both immediate and long-term. Are you trying to&#8230;
+Attract collaborators, investors, or funding programs?
+Increase visibility of your service, methods, or tools?
+Market yourself to a future employer?
+Hire students to work with you?
+Create a memorable introduction to a conference talk?
+When crafting your bio, select only content that supports those specific goals.
+Analyze Your Audience
+The identity of your targeted audience will also determine which content you should include in your bio and how you should describe it. Who are you trying to get excited about your qualifications and experiences? Is it…
+an academic or technical audience, such as professors and students?
+an industry audience, such as potential collaborators, customers, or investors?
+recruiters or HR?
+the public?
+The broader your audience, the more you should strive to use simple language and avoid technical jargon.
+Skills
+Craft a main message that summarizes your professional identity and goals
+Reflect on your core professional principles, approaches or methods, and goals. What do you do, how do you do it, and why do you do it? Phrase this as a single sentence, which you will use as the opening of your bio.
+An example main message:
+Through engineering principles, I rationally design materials to enable on-demand delivery of therapeutics.
+Select content that supports your main message and matches your audience’s interests
+When selecting content for the body of your bio, aim to create a match between yourself and your audience:    show    them that you are the person they are looking for. One process to achieve this match is to&#8230;
+List  all of your potentially interesting experiences, such as&#8230;
+Research experience
+Work experience
+Education
+Awards
+Leadership and outreach
+Personal projects or hobbies
+Translate  each major experience into a message for your audience. Ask yourself what each experience conveys about your&#8230;
+Skills  &#8211; Technical proficiencies, knowledge, and training
+Credentials  &#8211; Degrees, awards, and accomplishments
+Values  &#8211; Personal beliefs that would be positively associated with your career
+Personality  &#8211; Character traits and quirks you want to convey
+Competitive Differentiation  &#8211; Expertise or unique skill sets that make you stand apart from others in your field
+Select  only the experiences + messages that are most relevant to your audience’s interests. Ask yourself, “Would they care about this?” Take length limitations into account as well: a typical Twitter bio allows only about 30 words, while a website bio could be as long as 500 words.
+Select a narrative structure for your supporting content
+Once you’ve selected your major experiences, there are many options for structuring the body of your bio (the bottom of your Inverted Pyramid), depending on its purpose and content. Here are a few common structures that we’ll discuss:
+A. Chronological  structure starts with more general background information, such as your education and field of specialty, before moving on to more specifics, including current projects and future directions.
+Pros: Intuitive and logical
+Cons: Reader may lose interest if too much background is provided
+B. Circular  structure starts in the middle of the action (e.g. what future projects are in store), before taking a step back to explain more general background information. The conclusion of this structure should parallel the introduction (e.g. what current projects you are working on).
+Pros: Important information is read first
+Cons: Circuitous structure may create redundancy
+C. Zoom in  structure starts by describing several projects or experiences, and then culminates in a major achievement such as an award, public recognition, or grant.
+Pros: Natural progression
+Cons: Reader may lose interest before reaching the major achievement
+D. Zoom out  structure opens with a notable achievement (i.e. what you are known for) and then describes several projects or experiences which resulted in this accomplishment.
+Pros: Most important information is read first
+Cons: Less intuitive; you must make sure your arguments are logically connected
+Conclude with a call to action
+Your bio should ultimately pique the reader’s interest in you. Your “call to action” will provide methods of continuing the engagement: for example, provide the reader with your email address or a link to your design portfolio or CV.
+Edit your style: communicate credibility, accomplishment, and professionalism
+One of the most difficult aspects of writing a professional bio is finding a balance between extremes when self-promoting. Particularly tricky questions include:
+How do you sound impressive but remain credible?
+How do you describe your accomplishments without appearing arrogant?
+How do you maintain a professional tone but also inject personality into your bio?
+To identify the right balance, other people’s feedback will be invaluable: ask your colleagues for input. Below are other strategies for editing your style.
+1. Impressive vs. Credible
+To maintain credibility,   avoid overpromising  :
+Bad:    &#8220;With our new food app, we’ll make the world a better place, one meal at a time.&#8221;
+Better:    &#8220;Our new food app seamlessly matches restaurants with customers, making the transaction easier than it has ever been.&#8221;
+Specificity  , especially in the form of concrete details, also improves credibility.
+Bad:    &#8220;I study olfaction and feeding behavior in disease vectors.&#8221;
+Better:    &#8220;I study how mosquitoes smell and seek out human hosts and how this affects disease transmission.&#8221;
+However, it is important to   use jargon judiciously  : the right use of jargon signals you as an insider, but buzzword stacking can make you sound amateur. Select a level of jargon appropriate to your targeted audience.
+Buzzword stacking:    &#8220;I placed pre-characterized solid state quantum nodes (nitrogen vacancy centers in diamond nanophotonic structures) into a photonic integrated circuit that promises the scalability necessary for general-purpose quantum computing.&#8221;
+Better:    &#8220;I developed a nitrogen vacancy center-based nanophotonic integrated circuit that is promising for scalable quantum computing.&#8221;
+2. Accomplished vs. Arrogant
+Rather than using prestigious institutions or mentors as the stars of each sentence, emphasize   your concrete contributions and role  .  Naming your advisor(s) or mentor(s) can be valuable and earn you credibility, but must not overshadow your own accomplishments.
+Bad:    &#8220;I’m a PhD student at MIT working with Dr. Hotshot, where I study Vygotskian play-based learning.&#8221;
+Better:   &#8220;I build devices that enable play-based learning for my PhD studies with Dr. Hotshot at MIT.&#8221;
+To avoid distracting readers with long names of institutions, degrees, or titles, you can also trim these in order to emphasize your main message. As with jargon, use acronyms and affiliations that you expect your target audience to recognize.
+Bad:    &#8220;I did my PhD at the Massachusetts Institute of Technology as part of the Computational &amp; Systems Biology Initiative in the Department of Biological Engineering.&#8221;
+Alternatives, depending on desired emphasis:
+&#8220;I did my PhD at the Massachusetts Institute of Technology.&#8221;
+&#8220;I did my PhD in Biological Engineering at MIT.&#8221;
+&#8220;I have a PhD in computational and systems biology.&#8221;
+“I have a PhD in biological engineering.”
+3. Professionalism vs. Personality
+When choosing between third and first person voice,   choose a level of formality appropriate to your audience:
+Advantages of first person
+Less formal, but potentially more intimate
+Informal grammar and language use (e.g.    y’all   ) can provide an opportunity to signal aspects of your character (covert prestige).
+Advantages of third person
+More formal, less intimate
+Stating accomplishments may sound less arrogant
+A less overt means for introducing your preferred pronouns
+Including non-work details or hobbies
+Such details can paint a fuller picture of you, but as always, you should select only details that align with your message. Certain hobbies or descriptions may project an unintended message:
+Comedy-loving, or struggling with time management?
+&#8220;I&#8217;m literally addicted to Netflix, and I’m probably binging The Office right now.&#8221;
+Outdoorsy, or “country-club”?
+&#8220;I love golf, and when I&#8217;m not sneaking in a quick nine, I’m probably out sailing on the river.&#8221;
+Resources and Annotated Examples
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_pdf.gif"
+alt="CS Professional Bio" />
+CS Professional Bio
+1 MB
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_pdf.gif"
+alt="EE Professional Bio" />
+EE Professional Bio
+2 MB
+Contributors
+Kyle McLean
+Victor Prost
+Reyu Sakakibara
+Lisa Volpatti
+Diana Chien

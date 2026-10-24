@@ -1,12 +1,11 @@
 ---
-title: '机器学习算法——降维、PCA、聚类与分类'
+title: 机器学习算法——降维、PCA、聚类与分类
 type: lecture
 lecture: 7
 tags: [principal-component-analysis, kmeans-clustering, decision-trees, random-forest]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 7 机器学习算法——降维、PCA、聚类与分类（Machine Learning Algorithms）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 7 讲  

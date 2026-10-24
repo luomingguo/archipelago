@@ -1,12 +1,11 @@
 ---
-title: '产品测试与战略转向'
+title: 产品测试与战略转向
 type: lecture
 lecture: 16
 tags: [concept-testing, product-testing, market-validation, lean-startup, pivot]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 16 产品测试与战略转向（Product Testing and Strategic Pivots）
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
@@ -46,7 +45,7 @@ flowchart TD
 
 1. **明确测试目的：** 明确本次测试是为了决定在三个候选概念中选优、评估目标零售价接受度，还是向投资机构证明潜在市场规模。
 2. **选择样本群体：** 严格限定在目标用户画像之内，避免向非目标人群（如向不滑雪的人群测试雪崩探针）发送问卷导致数据失真。
-3. **选择调查媒介：** 实体硬件概念测试优先推荐面对面展示（携带Looks-like外观样机），使受访者获得真实的体量感感知。
+3. **选择调查媒介：** 实体硬件概念测试优先推荐面对面展示（携带 Looks-like 外观样机），使受访者获得真实的体量感感知。
 4. **传达概念：** 统一采用客观、中立的“概念描述卡”（Concept Fact Sheet），包含产品核心工作原理图、尺寸规格、材料说明及预期销售价格，杜绝夸大推销。
 5. **测量客户反应：** 采用标准的五级购买意向分级（Purchase Intent Scale）。
 6. **解释结果与量化销量预测：** 剥除虚假热情，代入统计经验公式。

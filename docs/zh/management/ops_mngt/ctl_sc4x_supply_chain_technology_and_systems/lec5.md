@@ -1,12 +1,11 @@
 ---
-title: '数据库专题——索引、OLTP/OLAP、NoSQL 与数据清洗'
+title: 数据库专题——索引、OLTP/OLAP、NoSQL 与数据清洗
 type: lecture
 lecture: 5
 tags: [database-indexing, oltp-olap, nosql-databases, etl-pipeline]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 5 数据库专题——索引、OLTP/OLAP、NoSQL 与数据清洗（Topics in Databases）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 5 讲  
@@ -103,7 +102,7 @@ NoSQL 数据库提供了一种**不同于关系表**的数据存储与检索机�
 | **PaaS**（平台即服务） | 外包运行环境；云平台提供操作系统、数据库等 | Amazon、Microsoft、Google |
 | **SaaS**（软件即服务） | 外包整套软件；用户只需配置第三方应用；最不灵活，但前期总 IT 成本最低 | Salesforce、HubSpot |
 
-> 从 IaaS → PaaS → SaaS，**第三方接管的层级越来越多，企业自身需要维护的东西越来越少，但可定制的灵活度也随之下降**。（本讲先给出这张速查表，第10讲"软件选型与实施"还会从架构和实施决策角度再次深入。）
+> 从 IaaS → PaaS → SaaS，**第三方接管的层级越来越多，企业自身需要维护的东西越来越少，但可定制的灵活度也随之下降**。（本讲先给出这张速查表，第 10 讲"软件选型与实施"还会从架构和实施决策角度再次深入。）
 
 ## 6. 数据清洗（Data Cleaning）
 

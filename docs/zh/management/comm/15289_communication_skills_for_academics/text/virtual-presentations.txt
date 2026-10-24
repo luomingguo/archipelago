@@ -1,0 +1,114 @@
+Whether you are giving a research talk, lecturing, or giving a workshop, virtual presentations present a new set of challenges, &#8211; from interacting with an audience that you can’t always see to managing teleconferencing technology. You can keep your audience oriented by presenting a talk with a clear structure. Make sure to practice in this new environment and prepare your technological set-up. Finally, create a plan for engaging your audience.
+For general advice on presentations, check out our  Slide Presentation  article.
+Criteria for Success
+A successful virtual presentation&#8230;
+Has a clear purpose that is tailored to the type of audience.
+Sets expectations at the beginning of the presentation about what you will talk about and what kind of feedback you want from your audience.
+Only includes visual and verbal information that supports the major point of each slide and the overall objective of the presentation.
+Is well-rehearsed, as the energy of your presentation will come from how you deliver key points.
+Uses the available technology to engage the audience.
+Identify Your Purpose
+How you design and deliver any presentation, virtual or in person, depends on the goal you want your presentation to achieve. However, in a virtual environment with more distractions and less audience feedback, identifying the purpose of your presentation is even more important. This goal will help you decide what you need to emphasize and what you can drop to make sure your message rises above the digital noise.
+For this article, we divide presentations into three general categories:
+The research talk,  such as a conference presentation, thesis defense, department seminar, or group meeting:
+Purpose:  Share work that you have accomplished with a wider audience. You want others to be informed about the progress on and benefits of your research without necessarily teaching them how to perform the work themselves.
+The workshop:
+Purpose:  Help your audience learn and practice skills or tools that they can apply outside of the workshop, but don’t expect mastery. They can further explore the content later.
+The class lecture:
+Purpose:  Teach students new skills; help them master the material.
+Below, we share both general strategies and specific recommendations for the three categories, to help you tailor your talk for success no matter how far away you are.
+Analyze your audience
+To make sure your presentation is effective, you need to know not only what you want your audience to take away, but also who they are and how they will perceive your work. For any talk, it&#8217;s important to remember that your audience can vary widely in their expertise and goals, but virtual presentations create additional challenges for the audience&#8217;s experience.
+Qualities
+In-person presentations
+Virtual presentations
+What does this affect?
+Speaker sees the audience
+Yes
+Maybe
+Real-time feedback (audience to speaker)
+Audience sees the speaker
+Yes
+Maybe
+Non-verbal communication (speaker to audience)
+Immersive environment
+Yes
+No
+Audience’s ability to focus on the presentation
+Special audio-visual requirements
+Generally no
+Yes
+Speaker’s ability to focus on giving the presentation
+If you keep these audience challenges in mind, you will be able to choose design and delivery strategies that will help your message shine through.
+Skills
+Design your slides to support the overall message of your presentation
+Design principles are similar to those for an  in-person presentation , but since the audience may be distracted, it’s more important than ever to have a structured, clear, and focused presentation.
+In these figures, we illustrate best practices for slide design:
+Clear presentation structure, declared at the beginning in an overview slide.
+Consistent visual format among slides.
+Simple text and figures.
+Each slide introduces one new point, which is stated by the slide title.
+Practice is even more important for virtual presentations
+In-person presentations allow you to use non-verbal communication to gauge audience understanding, help emphasize key points, and convey energy. In virtual presentations, you and the audience are deprived of these physical cues, and the success of your presentation is often dependent on the quality of your voiceover and your mastery of virtual tools. Therefore, it is critical to  practice, practice, practice  — with friends, family, colleagues, and/or  Comm Fellows .
+Element to practice
+Details to practice
+Why?
+Cadence, tone, and inflection
+Experiment with slowing down, adding pauses, and transitions between slides.
+Slowing down around key points will emphasize them and give your audience time to digest.
+Standing up or sitting down while giving the presentation
+Which makes you feel most comfortable and confident?
+You may find that standing allows you to better project your voice and feel more confident.
+Setting up polls, breakout rooms, and breaks for question and answer sessions
+Familiarize yourself with all of the options.
+Plan the instructions that you’ll give participants for using these features. E.g., how much time will they have in breakout rooms? Will you give them time checks?
+Although these features seem easy to implement, it is always better to test them and avoid surprises during your real presentation. Appoint a co-facilitator to help if you can.
+Using effective redundancy
+Make sure what you are saying explains and reinforces what is illustrated on your slides and matches the overall goal of your presentation.
+If you don’t actually talk about it, remove it.
+This will reinforce and streamline your message.
+Recording a practice run can also help you assess the overall clarity of your communication.
+Technological set-up can greatly improve the audience experience
+Even if you nail the oral delivery of your presentation, to have a successful presentation, you must mitigate distractions introduced by your technological set-up. A bad internet connection, unmuted audience member, or low-quality audio can make it difficult for the audience to stay focused. The tips below will help you give your audience a great virtual experience:
+Type of Presentation
+Technological Ways to Engage Audience
+General
+Ensure that you have a reliable Internet connection.
+Use headphones to help block out background noise.
+Consider investing in a microphone if the one built into your computer is low-quality.
+Try using  dual monitors  if you would like to see your notes separately from your presentation.
+However, DO NOT read from a script. Written and spoken language are fundamentally different, with the former containing more words per sentence than the latter.
+Look at the camera, if you decide to turn it on during your presentation. If you’re using dual monitors, let your audience know that you’ll be looking back and forth.
+Avoid making sudden slide changes or movements with your pointer. There is often lag when presenting on video platforms, so quick movements appear blurry.
+To help keep the audience focused, use slide animations to introduce new information.
+Assign a moderator to let you know if there are technical difficulties and to keep track of questions.
+Large Audience
+Ask participants to turn off their cameras to prevent the session from lagging/freezing.
+Consider turning on your video and asking participants to display speaker view to increase audience engagement.
+Make sure you or your co-host mute all participants to ensure that you are not interrupted during your presentation.
+Small Audience
+Ask participants to keep their cameras on to improve interactivity.
+Try the  dual-monitor display feature  available on Zoom. This allows you to see your presentation on one screen and the participants in a gallery view on the other. In a teaching or workshop setting, this feature is particularly useful to monitor and engage your audience.
+Make a plan for engaging the audience
+If the audience knows where your presentation is going and what their role will be, they are more likely to stick around for the ride. Be upfront with your audience about what you will talk about, what kind of feedback you are seeking, and when you would like to receive that feedback. Engage your audience throughout the presentation, whether that means walking through problems step-by-step or telling a cohesive story about your research.
+Type of Presentation
+Audience Engagement Strategies
+The Research Talk
+Large audience:
+Tell a  story . Stories can help the audience understand and remember scientific content.
+Take questions at the end of the presentation by having people use the chat box or raise their hand.
+Small audience:
+Send out an  agenda  ahead of the meeting with concrete questions or goals you want to address in the meeting.
+Assess previous knowledge with  polls .
+Ask the audience if they have questions or comments at predetermined points throughout the presentation.
+The Class Lecture
+Use the  annotate function,  a tablet, or a projector to show students how to work out problems step-by-step.
+Ask questions throughout the class using the  poll  function. You can download results to see who participated, and count participation toward students’ grades.
+Show  videos  of complicated concepts rather than explaining them verbally.
+Assign students to  breakout rooms  to work on problems in smaller groups.
+The Workshop
+As the goals of a workshop are somewhere between that of a class lecture and research talk, you can draw engagement strategies from either or both presentation categories listed above.
+Contributors
+Catherine Henry
+Caroline Nielsen
+Charlie Hirst

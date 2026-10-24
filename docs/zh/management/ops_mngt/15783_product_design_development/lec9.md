@@ -1,12 +1,11 @@
 ---
-title: '体验与服务设计'
+title: 体验与服务设计
 type: lecture
 lecture: 9
 tags: [service-design, service-blueprint, customer-experience, product-service-systems]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 9 体验与服务设计（Experience and Service Design）
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  

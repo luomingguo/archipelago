@@ -1,12 +1,11 @@
 ---
-title: '工业设计'
+title: 工业设计
 type: lecture
 lecture: 10
 tags: [industrial-design, ergonomics, human-factors, aesthetics, form-language]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 10 工业设计（Industrial Design）
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  

@@ -1,0 +1,37 @@
+Criteria for Success
+General Background.  Something that everyone in your audience cares about.
+Specific Background.  Zoom in from the thing everyone cares about to the thing you did.
+Statement of Problem  or  Knowledge Gap.  What specific problem or phenomenon do we not understand in this field of study? (or) What specific design metric needs to be improved?
+Here we show.  One sentence about what you learned or did, and how that fulfills the demonstrated gap.
+Approach &amp; Results.  Only the very highest-level methodology summary and most striking or supportive result(s).
+Implications.  So what? What do your results mean for the thing everyone cares about?
+Structure Diagram
+Purpose
+Your abstract is your sales pitch for your work. When browsing a journal, very few readers get beyond the title and abstract for any article. If you haven’t convinced your reader by the end of the abstract that your work is interesting and relevant, you’ve lost the opportunity to convert them from curious browser to dedicated reader. The same goes for folks deciding which talks and posters to see at a busy conference.
+In only a few hundred words—or, from your audience’s perspective, a few minutes of reading time—you have to
+convince your reader that your work is addressing an authentic, pressing problem in science or engineering,
+convey the essence of your results,
+explain what those results mean for the state of the field and for future work.
+Analyze Your Audience
+Most people will only skim your abstract to decide if they actually want to learn more about your work.
+To catch their attention, start from a place that your entire audience can understand. For a specialized audience (e.g. an IEEE Transactions readership), you can lead with something specific, such as:
+Single-phase power factor correction converters typically cannot achieve soft switching to enable High Frequency operation.
+However, for journals with a broader readership, you want to start with something the broader audience cares about. For example, the sentence above could be modified to the following:
+Power converters connected to the grid often cannot take advantage of size-reducing technologies common in other converters .
+Skills
+Avoid jargon
+Don’t rely on technical names; explain what something is or why it matters for your work. If by &#8220;HEMT&#8221; you really mean &#8220;transistor&#8221;, just say &#8220;transistor&#8221;. Rather than &#8220;NiZn ferrite&#8221;, you might say &#8220;a high frequency magnetic material (NiZN ferrite)&#8221;. In this way, you speak to the general audience (who can understand &#8220;high frequency magnetic material&#8221;) and to your specialist peers (who would ask, &#8220;What type of magnetic material?&#8221;).
+Be critical of any jargon you include and remove any that is not essential to conveying your high-level message. Consider asking a friend in a different lab to read over your abstract and point out any terms that obscure your meaning (Communication Lab Fellows are useful resources for this as well).
+Use the standard abstract formula
+A successful abstract has six components. Use the Criteria for Success!
+Be concise
+Every component from the abstract formula should only have a few sentences at most; concise abstracts are usually around 150 words, up to 250 words maximum.
+Content adapted by the  MIT Electrical Engineering and Computer Science Communication Lab  from an article originally created by the  MIT Biological Engineering Communication Lab .
+Resources and Annotated Examples
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_img.gif"
+alt="Annotated Example 1" />
+Annotated Example 1
+Example abstract
+712 KB
+Contributors
+Alex Hanson

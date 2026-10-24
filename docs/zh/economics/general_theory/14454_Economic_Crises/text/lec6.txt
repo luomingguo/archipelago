@@ -1,0 +1,528 @@
+Credit Booms
+14.454
+Ricardo J. Caballero
+MIT
+
+Economic Crises
+
+1
+
+Some Facts
+
+Source: Mendoza and
+Terrones (2012)
+
+2
+
+Some Facts
+
+3
+
+Some Facts
+
+4
+
+References
+
+(1) (*) Martin and Ventura, “Managing
+Credit Bubbles,” JEEA 14(3), June
+2016
+
+(2) (*) Lorenzoni, “Ineÿcient Credit
+Booms,” Review of Economic Studies,
+75, 2008.
+
+Connects credit with RE bubbles (bubbles
+relax fnancial constraints)
+
+Explains why the (rational) private sector
+may overinvest
+
+5
+
+Managing Credit Bubbles (Martin and Ventura)
+
+We will skip the “Managing” part and focus instead on the connection between bubbles and
+credit
+
+I In a sense, borrower can obtain
+“excess” credit today because it is
+expected that there will be “excess”
+credit in the future as well
+
+Basic idea:
+I Collateral constraints can be relaxed by
+“fundamental” collateral and “bubbly”
+collateral
+
+I But they can be excessive (crowding
+out of future investment)
+
+I (New) Bubbles help in relaxing fnancial
+constraints (credit bubble – a crowding
+in mechanism)
+6
+
+The Model
+
+I Bubble interpretation: Credit given in
+excess of fundamental to an
+entrepreneur [but the key is the NEW
+bubbles]
+
+I OLG with production (Diamond) +
+bubbles (Tirole) + credit market
+(intragenerational trades)
+I Each generation starts a new bubble (of
+random size), which is traded alongside
+old bubbles
+
+I (*) I will only develop a special subcase
+of ‘quiet’ bubbles (main insight)
+
+I Workers/lenders and
+Entrepreneurs/borrowers (owners of
+capital and bubbles)
+7
+
+Basic Setup
+
+Workers and Entrepreneurs preferences
+
+Entrepreneurs
+
+i
+Uti = Cti ,t + βEt Ct,t+1
+
+Cti ,t
+
+=
+
+Lt − Kt+1 − Bt
+
+i
+Ct,t+1
+
+=
+
+F (Kt+1 , Nt+1 , t + 1) − Wt+1 Nt+1
++ Bt+1 − Rt+1 Lt
+
+Workers
+Cti ,t
+
+=
+
+Wt − Lt
+
+i
+Ct,t+1
+
+=
+
+Rt+1 Lt
+
+8
+
+Basic Setup
+
+Entrepreneurs invest and produce
+F (Kt , Nt , t) = AKtα (γ t Nt )1−α
+
+They face a fnancial constraint:
+Rt+1 Lt ≤ φ [F (Kt+1 , Nt+1 , t + 1) − Wt+1 Nt+1 ]
++ Bt+1
+
+Entrepreneurs also initiate and
+trade bubbles. The total stock of
+bubbles is Bt , and it evolves
+according to (the BtN+1 ≥ 0 are the
+bubbles created by generation t):
+N
+Bt+1 = RtB+1 Bt + Bt+1
+
+9
+
+Characterization
+Let x ≡ γ −t Xt and assume that βγ > 1: individuals are patient enough to save even if interest rate is
+below growth rate (otherwise interest rate never drops below growth and bubbly equilibria would not be
+possible)
+
+Assume, however, that the frictionless economy
+is dynamically eÿcient and investment is always
+productive (frst inequality). Thus bubbly
+equilibria only exist if the (e˙ective) demand
+for funds is depressed (low collateral). The
+second inequality ensures that this is the case
+
+For a fxed n (value of new bubbles as a share of
+output), the economy converges to the following
+steady state:
+(
+1−α
+b∗
+∗
+k = min
+,
+A(k ∗ )α −
+γ
+γ
+)
+
+1
+1
+≤α≤
+2
+1+φ
+
+1
+
+[β(φα + n)A] 1−α
+10
+
+b∗ =
+
+γnA(k ∗ )α
+γ − (φα + n)A(k ∗ )α−1
+
+Characterization
+
+Collateral abundant
+region—constrained by supply of
+funds (young’s wages)
+
+Collateral scarce
+region—constrained demand for
+funds
+
+11
+
+Characterization
+
+where b and n are the
+value of old and new
+bubbles as a share of
+output, respectively
+
+12
+
+Characterization
+
+13
+
+Discussion
+
+Note that the unconstrained economy is
+dynamically eÿcient but the interest rate is
+below the rate of growth of the economy in
+all cases explored. This can happen because
+pledgeable income is limited (fnancial
+constraint) — that is, the supply of assets
+for outside savers is less than the value of
+the stock of capital in the economy.
+
+Distinction between bubble creation, n, and
+bubble realization, u. The latter crowds out
+investment as standard bubbles do. The
+former increases current collateral, and
+crowds out future investment
+
+14
+
+Ineÿcient Credit Booms (Lorenzoni)
+
+There is a (near) consensus that rapid and
+large credit expansions need to be reined in
+by policy action
+
+But why doesn’t the private sector do the
+right calculations?
+
+Main point: Even if agents are fully rational,
+the outcome may not be constrained eÿcient
+as private agents don’t fully internalize the
+consequence of their borrowing during the
+downturn (excessive contraction and asset
+prices collapse)
+
+Second point: Even if they don’t internalize
+them, the outcome could still be constrained
+eÿcient...
+
+Note: Pecuniary externalities are very
+15 prevalent in fnancial markets (next lecture:
+
+AD externality)
+
+The Model
+
+Three periods (0, 1, 2); two goods
+(perishable consumption and capital); two
+agents (consumers and entrepreneurs)
+
+Entrepreneurs invest at date 0 but may be
+hit by bad aggregate shock at date 1. If
+they do, they need to sell assets to fund
+operational losses
+
+Agents:
+I Consumers: Risk neutral and no
+discounting; receive endowment e
+(consumption goods) in each period
+I Entrepreneur: Risk neutral but only
+consume in fnal period; begin life with
+endowment n (consumption goods) and
+16
+receive no further endowments
+
+Buyers (consumers) are less eÿcient users
+of these assets (fre sales and welfare gains
+from having more of the assets in the hands
+of distressed entrepreneurs)
+
+Setup
+
+Consumption goods can be converted to capital
+one to one at any time, but the opposite is
+infeasible.
+
+Consumers (and entrepreneurs) have access
+to a traditional technology at date 1, that
+produces F (k1T,s ) goods at date 2, with
+marginal product bounded below at q
+(greater than γ, so no scrapping in eq., hence
+I’m going to simplify going forward) and
+F 0 (0) = 1 < A
+
+Entrepreneurs have access to an investment
+technology
+I Choose k0
+I In period 1, it yields as k0 where s is an
+aggregate state (low and high)
+
+The price of capital at date 1 is denoted by qs .
+It is 1 at date 0 as long as some investment
+takes place, and 0 at fnal date 2
+
+I Maintenance cost of γ per unit of capital
+maintained (rest is scrapped) requires γχs
+units of consumption, and
+k1,s = χs k0 + (k1,s − χs k0 )
+I Date 2 production: Ak1,s (and then capital
+depreciates)
+
+17
+
+Financial Contracts and Limited Commitment
+
+Limited commitment: A fraction 1 − θ of frms’
+current proft is lost if liquidated (if consumer
+doesn’t accept a take-it-or leave o˙er from
+entrepreneur):
+
+State contingent contracts between
+entrepreneurs and consumers: {d0 , d1s , d2s }
+
+The budget constraints for the entrepreneur are
+(we’ll skip the consumer, which is boring):
+k0
+
+≤
+
+d1s + d2s
+
+≤
+
+(θas + (qs − γ))k0
+
+d2s
+
+≤
+
+θAk1,s
+
+n + d0
+
+qs (k1,s − k0 )
+
+≤
+
+as k0 − γk0 − d1s
+
+c2s
+
+≤
+
+Ak1,s − d2s
+
+Consumers have no commitment (i.e.,
+imperfect insurance market):
+
+18
+
+d1s + d2s
+
+≥
+
+0
+
+d2s
+
+≥
+
+0
+
+Optimal Financial Contract (sketch)
+
+Notation:
+I NPV of promised repayments per
+unit of capital:
+b1s = (d1s + d2s )/k0 and
+b2s = d2s /k1s
+I Net proft per unit of capital:
+xs = as − γ
+
+The entrepreneur chooses the fnancial contract
+hd0 , {b1s , b2s }i and the investment levels k0 and
+{k1s } to maximize
+X
+πs (A − b2s )k1s
+s
+
+Subject to budget constraints, no default
+constraints, consumer participation constraints,
+and non-negativity constraints on k0 and k1s
+
+19
+
+Optimal Financial Contract (sketch)
+
+Let z0 and z1s represent the rates of returns on
+entrepreneurial wealth at dates 0 and 1. Then, for a vector
+of eq prices {qs }, an individually optimal contract satisfes
+the conditions
+b1s
+
+=
+
+0
+
+b1s
+
+∈
+
+[0, θas + qs − γ]
+
+b1s
+
+=
+
+θas + qs − γ
+
+if z0 < z1s
+if z0 = z1s
+
+With:
+
+(1 − θ)A
+z1s =
+qs − θA
+P
+π
+z
+(qs + xs − b1s )
+s
+1s
+s
+z0 =
+1−ρ
+X
+ρ≡
+πs b1s
+s
+
+if z0 > z1s
+
+b2s = θA
+
+20
+
+Asset Prices
+
+Since investment is positive in the
+high state, qh = 1.
+
+In contrast, in the low state
+entrepreneurs need to sell some
+capital to consumers (traditional
+technology), so ql < 1
+
+21
+
+Characterization of (Overinvestment) Equilibrium
+
+Where ρb is the cuto˙ beyond
+which the entrepreneur also
+borrows against revenue in the
+low state
+
+22
+
+Overborrowing
+
+Planner adds:
+qs = F 0 ((k0 − k1s )+ )
+
+Entrepreneurs do not take
+into account the impact of
+their borrowing on ql
+
+23
+
+Discussion
+
+The source of ineÿciency stems from both limited
+commitments problems (entrepreneur and
+consumer):
+
+I A coordinated reduction in date 0
+borrowing provides a little of the missing
+insurance by raising ql1
+
+I Entrepreneur: By setting θ = 1, frst best is
+achieved
+
+I (This can be implemented with a
+combination of capital requirements and
+transfers)
+
+I Consumer’s role is more subtle: z1l > z0 is
+key behind ineÿciency, because ex-post
+value of funds for entrepreneur is greater
+than ex-ante, but this can only happen if
+there is limited insurance (entrepreneur
+cannot transfer resources from date 0 to 1
+in bad state)
+24
+
+Constrained Eÿciency
+I’ve highlighted the overborrowing case, but there is also a constrained eÿcient scenario,
+where limiting ex-ante investment is ineÿcient (warning for “macroprudential” policies)
+
+25
+
+Constrained Eÿciency
+
+26
+
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+14.454 Economic Crises
+Spring 2026
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+
+27
+
+

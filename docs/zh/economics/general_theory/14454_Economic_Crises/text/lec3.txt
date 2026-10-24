@@ -1,0 +1,358 @@
+The Credit Crunch
+14.454
+
+Ricardo J. Caballero
+MIT
+
+Economic Crises
+
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+1 / 15
+
+Holmstrom-Tirole (QJE 1997)
+
+Holmstrom, B. and J.Tirole, “Financial Intermediation, Loanable Funds, and the
+Real Sector,” Quarterly Journal of Economics, 112(3), 663-691, August 1997
+Main points:
+Banks play a central role in ﬁnancial intermediation and can be both a source
+of systemic shocks and an ampliﬁcation mechanism
+Bank capital constraint matters
+Smaller, collateral poor ﬁrms are hit the hardest even if the problem stems
+from banks (ﬂight to quality)
+
+Useful terminology: Credit crunch vs collateral squeeze (and savings
+squeeze)
+
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+2 / 15
+
+Environment
+
+Three type of agents: ﬁrms, intermediaries, and (uninformed) investors
+Firms (a continuum) have the same technology but diﬀerent amount of funds
+(cash), A, with distribution G (A).
+They need external ﬁnance for investment I (ﬁxed) if A < I
+Project has return R in good state, 0 in bad state
+Moral hazard: if entrepreneur (who runs the ﬁrm) shirks, gets private beneﬁt
+B, but prob. of good state is only pL . If not, no private beneﬁt, but prob. of
+good state pH > pL
+Monitor (bank): can spend cost c to reduce private beneﬁt from B to b
+Technical Assumption (TA): pΔHp (B − b ) > c > (B − b ), for monitoring to be
+valuable and to rule out intermediation w/o capital
+Rate of return to private investors γ, to banks β > γ.
+
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+3 / 15
+
+Trade-oﬀs
+
+Assume parameters are such that only the good project is economically viable:
+pH R − γI > 0 > pL R − γI + B
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+4 / 15
+
+Firms fully ﬁnanced by private investors (direct ﬁnance)
+Return in good state R is split between ﬁrm and investor:
+R f + Ru = R
+Since shirking is not proﬁtable, a necessary condition for direct ﬁnance is that
+the ﬁrm prefers to be diligent:
+pH Rf ≥ pL Rf + B
+
+⇒
+
+Rf ≥
+
+B
+Δp
+
+This means that the maximum expected income that can be promised to
+investors (pledgeable expected income) is:
+
+
+B
+pH R −
+Δp
+
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+5 / 15
+
+Firms fully ﬁnanced by private investors (direct ﬁnance)
+
+In order to have access to direct funding, the ﬁrm has to satisfy:
+
+
+B
+γ [ I − A ] ≤ pH R −
+Δp
+From which it follows that there is a minimum threshold A(γ) to be able to
+invest using direct funding:
+A ≥ A( γ ) = I −
+
+pH
+γ
+
+
+
+R−
+
+B
+Δp
+
+
+
+,
+
+If a ﬁrm cannot access direct ﬁnancing, it may seek the help of an
+intermediary that reduces the opportunity cost of being diligent: b < B
+
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+6 / 15
+
+Firms partially ﬁnanced by banks (indirect ﬁnance)
+This allows more capital to be raised, but it is expensive for the ﬁrm (see
+below), so the ﬁrm will still want to use direct ﬁnance in addition to the
+minimum amount of intermediary funding needed to satisfy incentive
+constraints (a certiﬁcate of good behavior)
+R f + Ru + Rm = R
+Now we have two ICs:
+Rf
+
+≥
+
+Rm
+
+≥
+
+b
+;
+Δp
+c
+Δp
+
+The maximum expected income that can be promised to uninformed
+investors is now:
+
+
+b+c
+pH R −
+Δp
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+7 / 15
+
+Firms partially ﬁnanced by banks (indirect ﬁnance)
+If Im is the amount ﬁnanced by banks and Rm the return to the bank in the
+good state, the expected rate of return on intermediary capital is :
+p Rm
+β= H
+>γ
+Im
+The last inequality holds from the fact that monitoring is costly. This means
+ﬁrms prefer the smallest possible bank loan that preserves the banks
+incentives (skin in the game):
+p c
+Im ( β) = H
+β Δp
+Uninformed investors supply the balance:
+Iu = I − A − Im
+So now the condition for a ﬁrm to be ﬁnanced is:
+
+
+b+c
+γ [I − A − Im ] ≤ pH R −
+Δp
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+8 / 15
+
+Firms partially ﬁnanced by banks (indirect ﬁnance)
+And we have new threshold:
+A ≥ A(γ, β) = I − Im ( β) −
+
+pH
+γ
+
+
+
+R−
+
+b+c
+Δp
+
+
+
+,
+
+With A(γ, β) increasing in both of its arguments
+A ﬁrm with less than A(γ, β) cannot persuade uninformed investors to supply
+enough capital to the project
+Note that since monitoring is costly, the minimum acceptable rate β satisﬁes:
+pH
+To imply:
+
+c
+− c = γIm ( β)
+Δp
+p
+β= Hγ>γ
+pL
+
+TA ensures:
+A(γ, β) < A(γ)
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+9 / 15
+
+Banks as Monitors (Certiﬁcation)
+
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+10 / 15
+
+Alternative interpretation: Banks as Intermediaries
+
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+11 / 15
+
+Equilibrium
+
+If Km is the supply of informed capital (owned by banks), market clearing
+implies
+
+
+Km = G (A(γ)) − G (A(γ, β)) Im ( β).
+The supply of uninformed (private) capital must satisfy
+S (γ) =
+
+R.J. Caballero (MIT)
+
+Z A (γ)
+
+A ( γ, β )
+
+(I − Im ( β) − A)g (A)dA +
+
+The Credit Crunch
+
+Z I
+
+A (γ)
+
+(I − A)g (A)dA.
+
+Economic Crises
+
+12 / 15
+
+Equilibrium
+
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+13 / 15
+
+Credit crunch
+Note: I will assume G (A) is such that the most intuitive results hold
+(technicalities due to ﬁxed I )
+Credit crunch (Km falls)
+β rises, so A (γ, β) rises
+uninformed capital becomes less scarce, hence, γ and A (γ) fall. Flight to
+quality.
+Spread β − γ rises
+Investment falls
+
+Insights extend beyond banks. Informed capital/investors (specialists) play a
+special role, which often gives them systemic importance. Very important for
+EMs (will return to it).
+Secondary results:
+Collateral Squeeze (g (A ) shifts to the left): γ and β fall; Investment falls
+Savings squeeze: S (γ) shifts up: γ rises, β ambiguous but A (γ, β) rises
+
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+14 / 15
+
+User Guide
+
+Research: Hard to publish this kind of papers today...
+However, very useful to get a quick sense/organize your thoughts about the
+implications of a distressed specialists/node
+Example 1: Asian crisis — Russian default.... LTCM crisis!
+Example 2: Brazil during the post-Asian crisis: A (γ, β)
+Example 3: SVB event and impact on CRE and small businesses
+
+R.J. Caballero (MIT)
+
+The Credit Crunch
+
+Economic Crises
+
+15 / 15
+
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+14.454 Economic Crises
+Spring 2026
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+
+

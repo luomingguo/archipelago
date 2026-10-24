@@ -1,12 +1,11 @@
 ---
-title: 'SQL 进阶——条件、分组、排序与多表连接'
+title: SQL 进阶——条件、分组、排序与多表连接
 type: lecture
 lecture: 4
 tags: [sql-joins, aggregate-functions, group-by, query-filtering]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 4 SQL 进阶——条件、分组、排序与多表连接（Database Conditional, Grouping, and Joins）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 4 讲  

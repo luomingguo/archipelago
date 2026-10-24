@@ -59,7 +59,12 @@ async function exists(file) {
   try { await access(file); return true; } catch { return false; }
 }
 
-const sourceFiles = await filesBelow(docsRoot, '.md');
+// Keep route verification aligned with the Astro content collection. Transcript
+// source material is intentionally retained under docs, but is not published as
+// a standalone note route.
+const sourceFiles = (await filesBelow(docsRoot, '.md')).filter(
+  (file) => !file.split(path.sep).includes('transcripts'),
+);
 const sourcePublicFiles = (await filesBelow(publicRoot)).filter((file) => path.basename(file) !== '.DS_Store');
 const missingRoutes = [];
 for (const source of sourceFiles) {

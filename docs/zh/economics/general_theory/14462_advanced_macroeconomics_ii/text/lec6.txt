@@ -1,0 +1,685 @@
+--- PAGE 1 ---
+14.462
+Spring, 2020
+Needed Financial Infrastructure: 
+Innovations in Emerging Markets and 
+Guidelines from Theory for Optimal 
+Infrastructure Design
+(Lecture 6)
+Robert M. Townsend
+Elizabeth & James Killian Professor of Economics, MIT
+
+
+--- PAGE 2 ---
+Gaps on the Ground in Financial 
+infrastructure, Featuring Thai Application
+2
+Missing an opportunity for regional risk sharing,  
+need more insurance
+Low risk premium for idiosyncratic shocks due 
+to pooling, gift giving in networks 
+(Samphantharak and Townsend, 2015)
+High risk premium for aggregate shocks 
+Yet aggregates differ across villages, could be 
+pooled, but so far are not
+Cash management: Huge welfare losses, potential 
+gains from reforms
+Incomplete contracts, limited financial regimes
+
+
+--- PAGE 3 ---
+Interventions helped, but limited to informal 
+trust systems, missing cross-village formal 
+Interventions such as Million Baht Fund
+Who got the money – “corrupt” village committee and those 
+connected to that committee (Vera-Cossio 2018) 
+Costly state verification regime – costs are lower if have kin in 
+the village (Ru and Townsend 2018)
+Village partitioned into with/without kin (Kinnan et al 2018)-
+contagion
+With: almost perfect insurance for illness/expenditure shock
+Without: More vulnerable in consumption fluctuations, but also 
+production impact spills into input providers (laborers who lose 
+work), inputs are others’ outputs, lower sales (build inventory),
+Contagion, as in financial crises
+Networks especially limited across villages: Wider geographic 
+infrastructure, markets and mechanisms are still missing, need 
+designs for these
+
+
+--- PAGE 4 ---
+Financial Infrastructure: The Needed Smart 
+Contracts and Optimized Competition
+Innovation in two forms
+Individual smart contracts, overcome obstacles (each 
+individual contract can be quite useful)
+oEscrow with non-banks; savings products for 
+automated deposit and portfolio management; 
+securitized waterfall payments along the path of 
+supply chains from buyer to seller; seller to 
+employee loans; capitalize wage payments. All with 
+commitment, immutable
+A platform for contract competition 
+oAs in general equilibrium models with an 
+intermediary broker sector (Prescott and Townsend 
+1984a, 1984b)
+4
+
+
+--- PAGE 5 ---
+EvryNet for SEA: Featured example of 
+innovation
+Provide open-source banking services and financial contracts to 
+unbanked and underbanked populations 
+An interoperable smart contract platform that enables not only 
+traditional banks but also micro-finance institutions and others to 
+initiate and execute banking products and financial contracts, with 
+KYC and other regulatory links
+
+
+--- PAGE 6 ---
+Labor and Lotteries
+General Competitive Analysis in an Economy with
+Private Information by Prescott and Townsend (IER
+84)
+This paper extends the theory of general equilibrium in pure
+exchange economies to a prototype class of environments with
+private information.
+and
+examines again the role of securities in the optimal allocation of
+risk-bearing.
+The ﬁrst welfare theorem holds in this economy:
+competitive equilibrium allocations are Pareto optimal.
+The second fundamental welfare theorem however does not hold:
+Not all Pareto optimal allocations can be supported as competitive
+equilibria.
+Robert M. Townsend (MIT)
+
+
+--- PAGE 7 ---
+Labor and Lotteries
+Motivating Example
+at T = 0 all agents are the same
+at T = 1 fraction λ(θ) of agents receive a private shock
+θ ∈Θ = θ1, θ2
+and their utility from consumption becomes U(c, θ)
+U(c, θ) is increasing, concave and continuously differentiable in c
+U′(∞, θ1) = 0 and U(c, θ2) = θ2c, (θ2 > 0)
+We only require type1 to be more risk averse than type2
+all agents recieve endowment e of consumption good with
+certainty and U′(e, θ1) < θ2.
+Robert M. Townsend (MIT)
+
+
+--- PAGE 8 ---
+Labor and Lotteries
+Pareto Optimal Allocation
+If θ were public, Pareto optimal allocation problem at T = 0 is:
+max
+c1,c2
+λ(θ1)U(c1, θ1) + λ(θ2) × (θ2c2) 
+s.t. λ(θ1)c1 + λ(θ2)c2 ≤ e
+Pareto optimal allocation requires:
+U′(c∗
+1, θ1) = θ2
+λ(θ1)c∗
+1 + λ(θ2)c∗
+2 = e
+i.e. marginal utilities are equated across states and the endowment
+is exhausted
+But with our assumptions, this requires c∗
+1 < c∗
+2.
+If θ is private knowledge, we cannot implement this allocation
+since type1 is always better off reporting her type is 2.
+Robert M. Townsend (MIT)
+
+
+--- PAGE 9 ---
+Labor and Lotteries
+Graphical Illustration
+Robert M. Townsend (MIT)
+
+
+--- PAGE 10 ---
+Labor and Lotteries
+Pareto Optimal Allocation with Lotteries
+Lotteries can solve this incentive compatibility problem.
+Since type2 is risk neutral, she is indifferent between:
+recieving c∗
+2 with certainty
+recieving c∗
+3 with probability α∗= c∗
+2/c∗
+3 and consumption 0 with
+probability 1 −α∗.
+But for c∗
+3 sufﬁciently large, type1 agents prefer consuming c∗
+1 for
+sure instead of type2 agents allocation.
+Thus with lotteries we can achieve an allocation that is both Pareto
+optimal and incentive compatible.
+Robert M. Townsend (MIT)
+
+
+--- PAGE 11 ---
+Labor and Lotteries
+Competitive Market Implementation
+Imagine households can buy and sell contracts (make
+commitments) in a planning period (T = 0) market.
+Commitments can be conditional on households’ individual
+circumstances (i.e. their private shocks θ)
+of course, households will choose the option which is best given its
+individual circumstance.
+W.L.O.G. we can restrict to options such that household announce
+its individual shocks truthfully.
+We allow options to affect random allocation of consumption good.
+Robert M. Townsend (MIT)
+
+
+--- PAGE 12 ---
+Labor and Lotteries
+Contracts as a Bundle-I
+Without Lotteries. Simplest notation is one good, but here to make sense need vector, 
+otherwise no trade without lotteries.
+c(θ) is the contract contingent on θ, [c(θ), θ]
+Then U[c(θ), θ] ≥U[c(θ’), θ] for all θ, θ’ ∈Θ
+The expected utility of contract [c(θ), θ] for θ ∈Θ is:
+W{[c(θ), θ]} =
+X
+θλ(θ)U[c(θ), θ]
+Competitive Market
+Households maximize in the standard problem by purchasing
+incentive compatible contracts [c(θ), θ]θ ∈Θ, taking some pricing
+function p(θ)θ ∈Θ as given:
+max
+X
+θλ(θ)U[c(θ), θ]
+s.t.
+X
+θp(θ)c(θ) ≤
+X
+θp(θ)ς
+So it is as if selling endowment (ς) and buying θ contingent
+consumption back
+Equivalent with excess demand, or supply, for each θ, hence insurance
+Robert M. Townsend (MIT)
+
+
+--- PAGE 13 ---
+Labor and Lotteries
+Contracts as a Bundle-II
+A broker dealer offering contracts [y(θ), θ ∈Θ], where y(θ) > 0:
+broker dealer is giving out to those who announce θ, indemnity,
+ex-post
+y(θ) < 0: broker dealer is taking in from those who announce θ,
+premium, ex-post
+Revenue isP
+θ p(θ)y(θ)
+Feasible trading set is deﬁned by P
+θ λ(θ)y(θ) ≤0
+Robert M. Townsend (MIT)
+
+
+--- PAGE 14 ---
+Labor and Lotteries
+Competitive Market
+Formally an insurance contract can be shown by
+x(c, θ), c ∈C, θ ∈Θ
+If household announce its shock θ, in the consumption period
+receive c with probability x(c, θ).
+of course 0 ≤x(c, θ) ≤1 and P
+c x(c, θ) = 1
+Households buy these insurance contracts in the planning period
+market.
+Households endowments can be shown by probability measures
+ζ(c, θ), θ ∈Θ each putting mass one on the endowment point e.
+These endowments are sold in the planning period market.
+Robert M. Townsend (MIT)
+
+
+--- PAGE 15 ---
+Labor and Lotteries
+Competitive Market
+In summary households maximize:
+max
+x(c,θ)
+X
+θ
+λ(θ)
+X
+c
+x(c, θ)U(c, θ)
+s.t.
+X
+θ
+X
+c
+p(c, θ)x(c, θ) ≤
+X
+θ
+X
+c
+p(c, θ)ζ(c, θ)
+and
+incentive compatibility
+We also assume there are ﬁrms or intermediaries that make
+commitments to buy and sell the consumption good.
+Robert M. Townsend (MIT)
+
+
+--- PAGE 16 ---
+Labor and Lotteries
+Competitive Market
+Firm production y(c, θ) delivers c units of consumption if agent
+announce her type is θ.
+Production set of each ﬁrm is deﬁned by
+Y =
+(
+y(c, θ), c ∈C, θ ∈Θ :
+X
+θ
+λ(θ)
+X
+c
+cy(c, θ) ≤0
+)
+(intermediary effectively facing aggregate resource constraint)
+This requires each ﬁrm not deliver more of the single consumption
+good in the consumption period than it takes in.
+Y displays constant return to scale. So we can assume we only
+have one price taker ﬁrm.
+y(c, θ) is passive:
+y(c, θ) > 0: ﬁrm is giving away. 
+y(c, θ) < 0: ﬁrm is taking in.
+Robert M. Townsend (MIT)
+
+
+--- PAGE 17 ---
+Labor and Lotteries
+Competitive Market
+Firm problem is:
+max
+X
+θ
+X
+c
+p(c, θ)y(c, θ)
+Equilibrium price system p∗(c, θ) must satisfy
+p∗(c, θ) = λ(θ)c
+This corresponds to actuarially fare insurance.
+Price of A-D security which pays c at state θ is just equal probability
+of the state × consumption in that state
+Robert M. Townsend (MIT)
+
+
+--- PAGE 18 ---
+Labor and Lotteries
+Welfare Theorems-I
+An allocation (xi) is implementable if it satisﬁes the resource
+constraints and a no-envy constraint
+W(xi, i) ≥W(xj, i) ∀i, j
+An allocation is a Pareto optimum if it is implementable and there
+does not exist an implementable allocation (x′
+i ) such that
+W(x′
+i , i) ≥W(xi, i) with a strict inequality for some i.
+Deﬁnition of Competitive Equilibrium
+A competitive equilibrium is
+a state[(x∗
+i ), y ∗]
+a price system v∗
+such that:
+1
+for every i, x∗
+i maximizes W(xi, i) subject to xi ∈X and v ∗(xi) ≤v ∗(ζ)
+2
+y∗maximizes v ∗(y) subject to y ∈Y
+3
+Pn
+i=1 λ(i)x∗
+i −y ∗= ζ
+Robert M. Townsend (MIT)
+
+
+--- PAGE 19 ---
+Labor and Lotteries
+Welfare Theorems-Limitations
+First Welfare Theorem
+If the allocation [(x∗
+i ), y∗], together with the price system v∗,is a
+competitive equilibrium and if no x∗
+i is a local saturation point, then
+[(x∗
+i ), y∗] is a Pareto optimum.
+Second Welfare Theorem
+With private information, there is no guarantee that every Pareto
+optimum can be supported by a quasi-competitive equilibrium with
+an appropriate redistribution of wealth.
+It is true that a separating hyperplane exists such that y∗maximizes
+value subject to the technology constraint, but x∗
+i does not
+necessarily minimize value over the set
+{xi ∈Xi : W(xi, i) ≥W(x∗
+i , i)}. Rather, it minimizes value over the
+set
+n
+xi ∈Xi : W(xi, i) ≥W(x∗
+i , i) and W(xi, j) ≤W(x∗
+j , j) for j ̸= i
+o
+.
+Need no envy condition.
+Robert M. Townsend (MIT)
+
+
+--- PAGE 20 ---
+Some Limitations
+Makowski (1980)
+Xandri (2010) “Notes on ‘Perfect Competition, the Profit Criterion, and the Organization of Economic Activity’ 
+by Louis Makowski (1980)”
+
+
+--- PAGE 21 ---
+Some Limitations
+Pesendorfer (1995)
+Xandri (2010) “Notes on ‘Financial Innovation in a General Equilibrium Model’ by Wolfgang Pesendorfer
+(1995)”
+
+
+--- PAGE 22 ---
+Regulation and Design of Financial Markets
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+December 10, 2018
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+1 / 48
+
+
+--- PAGE 23 ---
+Introduction
+Financial Intermediation in Endogenous Incomplete Markets:
+They play the role of creating assets for agents to invest in
+Non-convexities in aggregate production set, such as trading ﬁx costs
+(Pesendorfer (95), Bisin (98))
+In general, ﬁnancial intermediaries have a coordination purpose:
+obtain resources from consumers and invest them in the productive
+sector.
+If there are economies of scale in aggregate risk sharing,
+intermediaries help coordinate investment.
+In this paper, we study a (very simple) model of constrained eﬃcient
+incomplete markets, (from min scale constraints)
+We also study optimal ﬁnancial regulation = optimal arrangements
+for intermediation (contracts, institutions and rules of competition)
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+3 / 48
+
+
+--- PAGE 24 ---
+Introduction
+The paper is divided in two parts
+1 An optimal mechanism design problem: Abstracting away from
+markets, choose optimal
+1
+span of assets (or technologies)
+2
+investment portfolio
+3
+“deposit” insurance for consumers
+2 Implementation: Decentralize the optimal allocation with familiar
+institutions
+1
+Broker - Dealers (acting as commercial banks) with free entry
+2
+Firms (with free entry)
+However, this institutions must be regulated in order to implement
+the optimal mechanism.
+In our simple example, these are quite stark: shut down consumer ↔
+ﬁrms channel.
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+4 / 48
+
+
+--- PAGE 25 ---
+Setup
+Households
+Diamond-Dygvig model
+Continuum set of households I, with measure 1.
+One consumption good, which is perishable. Households live for 3
+periods t = 0,1,2.
+At t = 0, all households are identical, and receive an endowment of
+ω > 0 units of t = 0 consumption
+Consumers have no endowment in t = 1,2.
+Only derive utility from c1,c2
+Private Information:
+Ex-ante identical households.
+At t = 1 a taste shock θ ∈Θ is drawn from a distribution F (θ)
+(compact, Banach space)
+At t = 1 there is also a publicly observed shock s ∼Uniform[0,1]
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+6 / 48
+
+
+--- PAGE 26 ---
+Setup
+Technology
+Two types of securities:
+Storage (short): Safe, that pays only 1 unit of next period
+consumption.
+Long assets, or productive technology, that pay oﬀin period 2 only.
+For each ˆs ∈[0,1] there is an asset Aˆs that pays a rate of return rˆs (s)
+rˆs (s) =
+(
+0
+if s ̸= ˆs
+R > 1
+if s = ˆs
+If invest y in all long technologies equally, then gets Ry w.p.1
+This would map directly to classical Diamond-Dygvig model
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+7 / 48
+
+
+--- PAGE 27 ---
+Setup
+Minimum Scale
+Constraint: Minimum scale requirement for investment y (s) in
+asset s:
+rs (ˆs = s) = R ⇐⇒y (s) ≥M (s)
+This constraint is binding in the aggregate; i.e. there is not enough
+endowment to invest in all technologies
+Z 1
+0 M (s) > ω
+Acemoglu and Zilibotti (1997): model of endogenous incomplete
+markets.
+Extra assumptions:
+M (s) is weakly increasing (w.l.o.g)
+Continuous
+M (s) = 0 for all s ∈[0,δ] for some δ > 0
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+8 / 48
+
+
+--- PAGE 28 ---
+Timeline
+t = 0:
+agents ex-ante identical, have ω > 0 for investing
+investments made in storage (x) and long technologies (y (s))
+t = 1 :
+Aggregate shocks s (publicly observed) and θi (private) are realized
+Agents report types ˆθi and receive consumption c1
+
+ˆθi,s
+
+Invest remainder = x −
+R c1 (θ,s)dF (θ) to storage technology again
+t = 2
+Agents consume c2
+
+ˆθi,s
+
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+9 / 48
+
+
+--- PAGE 29 ---
+Planners Problem
+Planner Problem: Choose optimal “consumption allocation” and
+“portfolio plan” to maximize consumers ex-ante expected utility
+Consumption Allocation: Functions c1 (θ,s),c2 (θ,s)
+Portfolio Allocation: Investment in short technology x ≥0 and in long
+technologies (y (s))s∈[0,1]
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+10 / 48
+
+
+--- PAGE 30 ---
+Planners Problem
+W ∗=
+max
+c1(θ,s),c2(θ,s),x,y(s)
+Z 1
+0 ds
+Z
+U (c1 (θ,s),c2 (θ,s))dF (θ)
+1 Inter-temporal RC: for all s ∈[0,1] :
+Z
+[c1 (θ,s)+c2 (θ,s)]dF (θ) ≤x +Ry (s)
+(2)
+2 IC constraints: for all s ∈[0,1] and all θ, ˆθ ∈Θ :
+U(c1(θ,s),c2(θ,s),θ) ≥U(c1(ˆθ,s),c2(ˆθ,s),θ)
+(3)
+3 Minimum scale constraints:
+x ≥0 and y (s) ≥M (s) whenever y (s) > 0
+(4)
+4 Portfolio Budget:
+x +
+Z 1
+0 y (s)ds ≤ω
+(5)
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+12 / 48
+
+
+--- PAGE 31 ---
+Separate into two Programs
+1 Incentive program: Given output Y ≥0:
+V (Y ) :=
+max
+c1(θ),c2(θ)
+Z
+U (c1 (θ),c2 (θ),θ)dF (θ)
+Z
+[c1 (θ)+c2 (θ)]dF (θ) ≤Y
+(6)
+U(c1(θ,s),c2(θ,s),θ) ≥U(c1(ˆθ,s),c2(ˆθ,s),θ) for all θ, ˆθ ∈Θ (7)
+2 Investment program: Given V (·), choose investments:
+W ∗=
+max
+x,(y(s))s∈[0,1]
+Z 1
+0 V (x +Ry (s))ds
+(8)
+x ≥0 and y (s) ≥M (s) whenever y (s) > 0
+(9)
+x +
+Z 1
+0 y (s)ds = ω
+(10)
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+13 / 48
+
+
+--- PAGE 32 ---
+Investment Program
+y∗ = M (s∗)
+s∗
+sˆ
+s ∈ [0,1]
+M (s)
+Figure: Optimal y∗(s) schedule
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+19 / 48
+
+
+--- PAGE 33 ---
+Decentralization
+We propose a decentralization with three distinct sectors:
+1 Consumers: Buy (lotteries) over deposit contracts
+2 Firms: They manage short and long productive technologies (free
+entry)
+3 Broker-dealers (or ﬁnancial intermediaries): They sell contracts, and
+invest directly in ﬁrms
+There is free entry in all sectors (anyone can run a ﬁrm or be a
+ﬁnancial intermediary)
+Endogenous markets:
+Study ﬁrst equilibria for a given set of contracts and ﬁnancial
+intermediaries
+Then determine set of contracts traded in equilibrium
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+29 / 48
+
+
+--- PAGE 34 ---
+Financial 
+Sector 
+Households
+Productive        
+Sector
+Invests (lends) wealth 
+endowments to
+Pays dividends to
+Invests in projects 
+managed by
+Gives Insurance
+Contracts to
+(1) – Households cannot trade 
+with Productive sector
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+37 / 48
+
+
+--- PAGE 35 ---
+Financial 
+Sector 
+Households
+Productive        
+Sector
+Invests (lends) wealth 
+endowments to
+Pays dividends to
+Invests in projects 
+managed by
+Gives Insurance
+Contracts to
+(2) Households cannot trade 
+among themselves
+Robert Townsend (MIT) and Juan Xandri (Princeton University)
+Regulation and Design of Financial Markets
+December 10, 2018
+38 / 48

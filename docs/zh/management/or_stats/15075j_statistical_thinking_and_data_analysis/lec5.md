@@ -1,12 +1,11 @@
 ---
-title: '统计推断基本概念与假设检验'
+title: 统计推断基本概念与假设检验
 type: lecture
 lecture: 5
 tags: [statistical-inference, point-estimation, bias-variance-tradeoff, hypothesis-testing, p-value]
 status: complete
 source: 'https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/resources/mit15_075jf11_chpt06b/'
 ---
-
 # Lec 5 统计推断基本概念与假设检验（Basic Concepts of Inference）
 
 > MIT 15.075J / ESD.07J · Statistical Thinking and Data Analysis · Fall 2011

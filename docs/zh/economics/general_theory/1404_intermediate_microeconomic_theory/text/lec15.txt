@@ -1,0 +1,1192 @@
+MITOCW | ocw_1404_lecture15_2020oct29.mp4
+
+            [SQUEAKING]
+
+
+            [RUSTLING]
+
+
+            [CLICKING]
+
+
+
+ROBERT      All right. Let's look at this schedule. So we're going to do the second of two applications in trade today, focusing
+TOWNSEND:   on the US and data issues. So that's where we are in terms of the schedule.
+
+
+            In terms of the reading list, we're, again, down to lecture 15. There's two papers that are starred here. And I have
+
+            a few slides on each of these-- one, this Raj Chetty et al paper having to do with the impact of COVID-19. And
+
+            you'll see today how that fits in to what we're trying to accomplish.
+
+
+            And relatedly is this paper by Scott Baker and co-authors, again, on the impact of the virus. So you know that I
+            am very conservative about starring material. But, today, those two things are starred and given important
+
+            obvious importance surrounding us of this topic.
+
+
+            You might find them particularly interesting, and I'll introduce that work today. And also, previous lecture, there
+
+            were two starred papers as well, including Dawkins, that we didn't cover in class. So that's the reading list.
+
+
+            And then, as usual, we can review a bit what we did last time, gains and losses from trade. So it's lecture 14. So
+
+            the first one I earmarked-- "There are two key features that distinguish households even within the same village."
+
+            And I wrote this. "Pick one of these and be able to tell a classmate about it." Try to tell "a compelling story about
+
+            how households differ."
+
+
+            Imagine if you want to be a reporter for the news diving into a community and interviewing various types of
+            households. So let me get volunteers on this. Two key features. We covered two key features. I'm asking you to
+
+            pick one.
+
+
+AUDIENCE:   I think the first one is talent. And the second one-- I think maybe it's a initial fixed assets, which can determine
+
+            your job. For example, if your initial asset is low, maybe you are a wage earner. And if your initial fixed asset is
+
+            large, you own, like, a business.
+
+
+            And for talent, what we have discussed is that-- this is more related to the sector part. I remember that if we take
+
+            all the capital and labor which is not related to talent, and we get the talent, and we have sector average talent,
+
+            and if we also exclude that part, and we have household-specific talent, which will distinguish households
+
+            between each other.
+
+
+            And this talent will also be related to the jobs that the households have. And I remember there is a table in the
+
+            stats which have, like, livestock and something. Yeah.
+
+
+ROBERT      Perfect answer. That's really terrific. It's hard to add to that. Yeah. In a village, you have rich people and poor
+
+TOWNSEND:   people distinguished by assets, or even real, tangible assets. And you've got people that differ in talent.
+
+
+            The talent is something you don't see directly that you can back it out from how much they're producing,
+
+            controlling for the capital and labor that they utilize in production. And so there was a big dispersion in that
+
+            productivity level across different households. Great answer. Thank you.
+            Next up, "Follow the lines of national level product and income accounts," so-called NIPA, national income and
+
+            product accounts. Essentially, this question is saying, where does GDP come from? What is it, and how do we
+
+            measure it? And, in particular, how can we use the household income account to get to these numbers?
+
+
+            And today I'm in the mood just to take volunteers. So would someone like to take a crack at-- excuse me-- at that
+
+            one?
+
+
+
+AUDIENCE:   I know that GDP is the-- it's the sum of the final goods that are sold. So it doesn't include anything that is going to
+
+            be used as an input for producing something else.
+
+
+
+ROBERT      That's right. So GDP is-- we have to avoid double counting. So if a firm is producing something using capital and
+
+TOWNSEND:   labor and so on, and it sells that to another firm, that becomes an input in the other firm. So the danger is double
+
+            counting what is the input in one firm as the output in the other one.
+
+
+            So what you're referring to is value added. So we take output, and we subtract off payments to factors-- sorry,
+
+            subtract off intermediate goods. And the rest of it is net product being produced.
+
+
+            Another way to put that is that, quote, "net product" at the level of a given household should add up to factor
+
+            payments, so namely, wages paid, interest on capital, rent or interest if borrowed, and so on.
+
+
+            So I think the hard part of this question, given that you-- thank you for volunteering, Armando-- is it's hard to
+
+            describe in words or even remember the details of the financial accounts. We started in the lecture with the
+
+            income statement of the household, which had revenues and costs. And then we added and subtracted across
+
+            the various line items to produce what we called product. So you can go back and review that.
+
+
+            And that's kind of the harder part to put into words. I'm not even doing that well myself.
+
+
+
+AUDIENCE:   Can I ask a quick question?
+
+
+ROBERT      Sure.
+
+TOWNSEND:
+
+
+AUDIENCE:   Yeah. Can you give us some specific details about the difference between the inventories and imports?
+
+            Sometimes, maybe inventories-- we calculate the inventories when we calculate the NIPA. But we subtract the
+
+            inputs.
+
+
+            But sometimes we-- maybe some inventories could be the inputs in the next period. In this period, we buy
+
+            something, and we do not use them. And so they are not imports.
+
+
+            But in the next period, they would be the inputs. Then, in the next period, when we recalculate the NIPA, we
+
+            should subtract this part. We should subtract these inventories.
+
+
+ROBERT      Yes. So you've almost given the answer. We want to keep track of the difference between buying and holding
+
+TOWNSEND:   versus using. So in the productions, the income statement and so on, we have the cost of producing something.
+
+            So if they take something out of inventory or buy it on the market, we value it at the cost and have it as part of
+
+            the cost of production.
+            So that's kind of the flow input. Now, if they bought something on the market but didn't utilize it yet, as in your
+
+            example, then they accumulate it as inventory. And that part is an asset that appears on the balance sheet.
+
+
+            So there is a relation here between the stocks and the flows. And indeed, in the Thai data, we have all kinds of
+
+            inventory accounts. We have the rice that they produced and didn't actually sell. So we have an output inventory
+
+            account.
+
+
+            We have fertilizer that they buy, but they haven't put on the field yet. So that's an input inventory account. And
+            those things are not trivial. But the inventory per se is a way of carrying value over time.
+
+
+AUDIENCE:   Thank you.
+
+
+ROBERT      You're welcome. OK. "How much do villages differ from one another in terms of production." And, in particular,
+
+TOWNSEND:   "Do villages vary in the shares of payments to factors of production?" And, again, today, I'm just taking
+
+            volunteers.
+
+
+AUDIENCE:   Sure. I can take this one. So I think we had that the ones that were near the urban area-- I think that was the
+
+            center-- tended to have a lot more output than the ones that were in the Northeast, the more rural and farming
+
+            villages, whereas the central was more manufacturing.
+
+
+            And we saw this difference, I guess, not only in the value of their output, but also in where their income went to.
+
+            So I think we had that more went to capital in the manufacturing center areas, and more went to wages in the
+
+            rural farming areas.
+
+
+ROBERT      Yes. That's right. We had wages being relatively low where labor is abundant. That's in the agricultural northeast
+
+TOWNSEND:   part of the country. And if you look at the share-- well, it's a bit tricky because there's a lot of laborers, but the
+
+            wage is low.
+
+
+            So you have to multiply price times quantity. And then you get the share of total income in the village which is
+
+            attributable to labor. But you're right about the factor prices and also about the difference in levels. Those
+
+            villages in regions near Bangkok have very high output levels, or GDP levels, relative to villages in the Northeast.
+
+
+
+            OK. Anyway, in the Northeast, despite the lower wages, the share of labor and income was higher than in the
+
+            central region.
+
+
+            And then I'll just ask about the balance of payments. Does someone remember what the balance of payments is
+
+            for a village or a country?
+
+
+
+AUDIENCE:   Would that just be the various balances of-- no, that would just be the balance sheet. No. It's not [INAUDIBLE] the
+
+            accumulated assets and liabilities of everyone added together? Is that it?
+
+
+ROBERT      It has to do with trade.
+
+TOWNSEND:
+
+
+AUDIENCE:   Is it a current account?
+
+
+ROBERT      Yeah.
+TOWNSEND:
+AUDIENCE:   Yeah, it's just the sum of the trade balance and net income transfers.
+
+
+ROBERT      That's right. So the balance of payments is like the current account, which is the sum of the trade balance,
+
+TOWNSEND:   exports minus imports, plus factor payments coming from abroad-- incoming remittances and gifts and so on. So
+
+            those are the two components of the flows on the left-hand side of the so-called balance equation, balance of
+
+            payments equation.
+
+
+            What's on the right hand side? The two sides add up and are equal to each other. What happens if a village is
+
+            exporting a lot and importing relatively little? Where's the money going?
+
+
+
+AUDIENCE:   A financial account?
+
+
+ROBERT      Yeah, it's in the financial account. So, essentially, they're accumulating deposits in commercial banks outside the
+
+TOWNSEND:   village or accumulating currency as cash or, essentially, accumulating claims on foreigners. So if you export a lot
+
+            and import little, you have an advantage. What did you do with the money?
+
+
+            You've got to put it somewhere. Or you could have been indebted externally, and then you're going to repay
+
+            some of that debt. So the claims that foreigners have on you would be diminished.
+
+
+            All right. So we're going to revisit some of these concepts today. So let's start doing that. So lecture today, 15,
+            data and policy in the US-- and I've mentioned this before as motivation, but here we actually have the slides--
+
+            something called the China shock from the standpoint of the US. And it has to do with international trade and the
+
+            welfare gains and losses.
+
+
+            So economists argue that trade is a good thing, that it improves welfare. But we know from two lectures now--
+
+            the two-by-two theory lecture as well as the Thai lecture-- that trade may redistribute income. The idea would be
+
+            that the winners gain more than the losers lose. So, effectively, if you were to try to add it all up, it may appear
+
+            somehow that free trade is a good thing.
+
+
+            But, beneath the surface, there are winners and losers from increasing foreign competition. In some respects,
+
+            this slide is an introduction to something we're going to do two or three lectures from now, which is to talk about
+
+            aggregation.
+
+
+            When we draw those pictures, we look like we have a production possibilities frontier. We have one consumer
+
+            with indifference curves. It looks like, as you move from autarky to free trade, the consumer is better off. But that
+
+            picture is implicitly assuming that we can aggregate households up so that it appears that there's just one
+
+            representative household.
+
+
+            In fact, beneath the surface, income is getting redistributed and some people will be losing from trade. So the
+
+            movement from autarky to free trade is not necessarily Pareto improving unless you compensate the losers.
+
+
+            So here's the Heckscher-Ohlin theorem again. "Owners of a country's abundant factors gain from trade, but
+            owners of a country's scarce factors lose." So you may remember, if the country is abundant in one of the
+
+            factors, then the price of that factor tends to be low in autarky. And that's good for producing, especially for
+
+            sectors that are relatively intensive in that factor.
+So when you open the country up for trade, that low price will be attractive to foreigners. The country will be
+
+exporting. And that, a la Stolper-Samuelson, will raise the price of the factor that's relatively intensive in
+
+production.
+
+
+But the flip side is the other factor, the scarce factor, will be losing as a result of free trade. The US is abundant in
+
+skilled labor. Low-skilled labor is relatively scarce, although not nonexistent, obviously.
+
+
+So when the US opens up to trade with Mexico and China and so on, low-skilled workers in the US are made
+
+worse off. And I can't help but say we're in the midst of the US elections, and these are big issues. What
+
+happened in the Midwest in Michigan, Wisconsin, Pennsylvania, Ohio, and so on, referred to as the Rust Belt--
+
+means they were doing a lot of manufacturing and so on. And the view is that many of the households were hurt
+
+by the rise of trade.
+
+
+China in particular emerged as a great international power and made very clear the relevance of Heckscher-Ohlin
+
+and Stolper-Samuelson and so on. Actually, the slide is a bit of a rambling because it didn't look, for a long time,
+
+as if people were being hurt from trade and people were reconsidering the consensus. But now we went right
+
+back to the original underpinnings of the theory.
+
+
+In particular, these trade shocks that originate in China have impacted industries, plants, and local labor markets
+
+across the US. I'll show you a picture momentarily. So we want to estimate the gains from trade. We also want to
+
+document the losses that also arise under free trade.
+
+
+And we want to quantify who's winning and who's losing. That was the theme of the Thai lecture last time, to
+
+distinguish labor from capital, one village from another, changing the prices, the relative prices of goods. And we
+
+did counterfactuals-- what if they hadn't become more liberal, what if we imposed a tax on imports, and so on.
+
+
+And we were documenting how the incidents could be good or bad, depending on wealth and talent of the
+
+households. So we're going to try to do something like that momentarily for the US.
+
+
+Here is a picture of China-- share of world manufacturing value added. We talked about value added a minute
+
+ago, the blue line going up steadily over the decades-- 20 years approximately-- and China's share of world
+
+manufacturing exports. So not only are they producing more, they're exporting it, also on the steady rise.
+
+
+And here's a picture of the US current account. We reviewed the definition of this just a moment ago, the trade
+
+balance plus incoming remittances. The current account in the US is negative and got increasingly negative at
+
+exactly the same time that China's current account was positive and increasing, peaking, say, in 2005.
+
+
+Now, this picture probably includes the overall US current account, not only with China, but with other countries,
+
+and likewise for China. But for all the world, it looks very bilateral here. Obviously, a big part of what's happening
+
+to the trade balance in the US has to do with China, and vice versa.
+
+
+And then here's a picture of the US by state. And this is from that Autor, Dorn, and Hanson reference about four
+
+slides ago. So they looked at the composition of Chinese imports into the US by sector and looked at where those
+
+goods had been produced previously by county in the US. And these dark areas are the areas that are most
+
+vulnerable in the sense that they had been producing things that are now imported from China.
+That doesn't mean in that state. It means for the US in general. So Chinese imports are bought by consumers all
+
+over the United States, which means that a state, like a big chunk of Tennessee, if you can see it there, which
+
+had been producing manufactured goods now being imported from China, itself would be exporting less to other
+
+states in the United States because it's not producing. Those other states are buying it directly from China.
+
+
+Anyway, it's kind of spotty. But you can see it's certainly not universal. And here's a measure of the current
+
+account, the trade balances plus net remittances.
+
+
+But this treats a state in the United States as a whole country. Or another way to put it-- it treats the states in the
+
+United States the way we were considering villages in Thailand. So you can see here that the current account,
+
+the scale that's down here, is positive. So these are net exporting states. And the red, dark orange colors are,
+
+quote, "net importing" states.
+
+
+So here's a review of those equations again. The current account consists of the trade balance and net incoming
+
+transfers of income. The trade balance is itself the difference between exports and imports. Net income transfers
+
+consist of private and public transfers.
+
+
+So in the US, for example, there's a lot of taxes and a lot of welfare programs. So, actually, a big part of the
+
+state's income is attributable to net public transfers. But that's not the only source of transfers.
+
+
+There are gifts and remittances across states. Now, how does one get at that? Well, there's gross state income
+
+versus gross state product.
+
+
+The product we talked about earlier-- 10 minutes ago-- means that it is produced in the state, hiring capital and
+
+labor and so on. But their gross state income on the income statement of households would include income that
+
+they earned in other states or that other household members earned in other states and sent back home to the
+
+home state. Fortunately, the US measures-- the Bureau of Economic Analysis measures both gross state income
+
+and gross state product. We take the difference of those, and we have net transfers.
+
+
+And then, finally, the current account, which is, again the trade balance and net income transfers on the left, is
+
+balanced by claims on other states. So this is what I asked about. Now, I'm going to show you a lot of data
+
+momentarily.
+
+
+But this equation is kind of making some assumptions. Namely, it's assuming that the financial part of the
+
+adjustment has to do with the transection of the given state with other states-- for example, trading in stocks and
+
+bonds and so on. So that's the part we want.
+
+
+What we don't want is state investment in the capital stock or housing investment, because those are internal
+
+within the state. So to get the change on claims in foreigners, we take the change in net worth, and then subtract
+
+off how much of that shows up as increased investment in capital and housing, and assume the rest of it is an
+
+increase in financial claims on foreign-- I want to say foreign states, on other states. And we'll see how well this
+
+works out momentarily.
+
+
+So what data? Well, in the US, you have to be diligent and creative to begin to measure the various components.
+
+So I won't dwell on this. But, fortunately, there is something called the commodity flow survey, which measures
+
+trade flows across states in the United States, interstate trade.
+The growth state income and product comes from BEA regional accounts, as does public transfers. These
+
+measures incidence of the China shock, I already showed you from Autor, Dorn, and Hanson. And we have those
+
+from David.
+
+
+Housing stock comes from American Community Survey. We have a price index. The socks and bonds
+
+transactions are tough to get. But we have indirect access to IRS data where people report dividends and so on.
+
+And you can kind of back out what their ownership is of the assets from how much interest earnings and so on
+
+that they report.
+
+
+The capital stock is also hard to get. I'm not saying much about it. Household debt is pretty well measured in the
+
+New York Fed CCP, Consumer Credit Panel, which is Equifax credit card-type data.
+
+
+So what is this not? It's not like Thailand. And I keep coming back to this.
+
+
+It's not like we're on the ground measuring the income statement, the balance sheet, cash flow and so on.
+
+Instead, we have to use the best available data in the US, which is different variables coming from different
+
+sources. Although the accounting equations should still be true, the way that we're measuring the variables is
+
+different.
+
+
+So what's the impact of the China shock? We use the accounting identity I just showed you, technically called
+
+"seemingly unrelated regressions," we could regress the trade balance on the China shock. We can regress gifts
+
+and remittances on the China shock. If that accounting identity is true, there is some relationship across those
+
+seemingly separately estimated regressions. And so this technique is a way to do it jointly and take into account
+
+the accounting identity.
+
+
+So we take, say-- let me skip down here-- a 10-year difference. You can think of this conceptually as comparing
+
+states hit by the Chinese shock, states which have not been hit by the China shock, and then comparing what's
+
+going on with their trade balance.
+
+
+The impact on the trade balance is negative. That is to say it's an adverse shock. The impact on the current
+
+account is negative-- also an adverse shock. Impact on transfers is positive, but not enough to overcome the
+
+difference in the trade balance.
+
+
+And we can break it down further. Exports-- a state specialized in manufactured goods now competing with
+
+China, exports of that state to other states goes down. Imports don't seem to move very much. They're not
+
+importing less.
+
+
+Public transfers, ironically, over a 10-year period, don't move much. But private transfers, quite interestingly, are
+
+positive. So this is a pretty new finding. We haven't published it yet. But it should remind you a little bit about gift
+
+giving in Thai villages.
+
+
+We talked about them helping each other out from various shocks. These states, obviously, quote unquote, "help
+
+each other out" in the sense that they get incoming gifts and remittances and factor payments precisely when
+
+they need it when they're in trouble because they've been hit by a long-term adverse shock.
+
+
+So that's kind of the, quote unquote, "left-hand side" of the equation. Now we can turn to the right-hand side,
+
+which is adjustments in physical and financial capital. And we don't find much.
+Housing actually went up, which is counterintuitive. And the rest of the variables are insignificant. Now, this
+
+violates the accounting identity. Something on the right-hand side has to move.
+
+
+But, because we've been using data from all these different sources, as well as assuming that we have a way of
+
+measuring decreased claims on other states, we're just not doing good enough. It's not a comment on our
+
+techniques. It's a comment on both the data sources as well as this assumption. And I'll keep coming back to
+
+that.
+
+
+In particular, how do we measure wealth and income in the US? Our measure of wealth on the right-hand side
+
+isn't working very well. It is supposed to be aggregated up at the state level.
+
+
+But, within a state, there's arguably a lot of heterogeneity, which is kind of why we reviewed what way villages
+
+differ from one another and households within villages differ from one another. And surely within a state in the
+
+US, you see rich people and poor people. You see a lot of different wealth groups.
+
+
+
+So the low-wealth group would correspond with low-wealth workers who rely on wages, and hopefully, on
+
+pensions, versus the higher-wealth people within a state which typically have income from their business.
+
+
+So when we aggregate up to the whole state, we're not able to make this distinction. So that's one potential
+
+problem. Some households' financial assets are going in one direction as they're benefited, others going in the
+
+opposite direction as they're harmed. And we take the net difference, and we're having trouble finding
+
+something. That's one plausible explanation.
+
+
+The other is the way the data are collected to begin with. The Federal Reserve is constructing Flow of Funds,
+
+changing the balance sheet, and using a survey called the Survey of Consumer Finances. And it does a really
+
+wonderful job. These are really important measurements.
+
+
+People use the Flow of Funds and the Survey of Consumer Finances all the time for US data analysis, although it's
+
+not really available at a regional level, and certainly not at the level of states. They don't gather it that way, and
+
+they won't release it. Believe me, I've tried.
+
+
+The flip side are the flows from the Bureau of Economic Analysis. And they do a great job, too, as I've already
+
+said, measuring income and product, not only at the state level, but at the level of municipalities and centers,
+
+districts, and so on. The problem is these different agencies are doing a good job with the thing under their
+
+domain. But they have no-- the Federal Reserve is not collecting income data, and the BEA is not collecting asset
+
+or wealth data.
+
+
+So the wealth changes and the income changes are not consistent with one another. They're not using the logic
+
+of the accounting identities that we've been emphasizing. What identity? Namely, when you have, say, positive
+
+savings-- that's a flow-- what are they doing with that saving? That should show up as a change in wealth, a
+
+change in real or financial assets in the balance sheet, at least adjusting for capital gains.
+
+
+The balance sheet can go up or down with the stock market. You don't want that. So you take out those price
+
+movements, and you're left with real balance sheet items that have to move in the sense of an accounting
+
+identity with savings.
+But they don't, in the data, because the data aren't measured through the lens of the accounting identity. Unlike
+
+what we showed you for Thailand, where we collected the data at the level of individual households and firms,
+
+where we had the income, the balance sheet, and so on for each one of them, the income and balance sheet
+
+have to be consistent with one another.
+
+
+In the US, we have these well-known surveys. I've already mentioned the Survey of Consumer Finances from the
+
+Federal Reserve Board. We have the Consumer Expenditure Survey, the Panel Study of Income Dynamics, and
+
+others. So I'm showing you a balance sheet constructed by each one of these surveys. These items should start
+
+to seem familiar.
+
+
+You've got current assets-- namely cash, bank accounts, certificates of deposit, and so on. So, say, the median
+
+level-- $422,000 depending on the survey-- it's only $226,000 in the survey of consumer finances. It's $600,000--
+
+the different surveys measure different things. So that's one problem.
+
+
+But also, we have physical investments down here, business assets, housing assets, and so on. So this should be
+
+reminding you of the balance sheets for the Thai households. After all, the concept of a balance sheet is quite
+
+general. It's just a matter of where you're applying it.
+
+
+However, this is not one particular household. This is the median or average level, that sort of synthesized or
+
+synthetic balance sheet that's created for each and all of these surveys individually.
+
+
+And you can get the income statement. An aggregate version from the PSID, the Consumer Expenditure Survey,
+
+and so on-- median income in the US, roughly $67,000, $65,000, $83,000, $70,000 et cetera, coming from labor
+
+income, production income, other income, including interest dividends, government transfers. And we have
+
+expenditures.
+
+
+So expenditures would not only be depreciation and so on. But it would include taxes. And the way we do the
+
+accounting in Thailand, we have consumption over here.
+
+
+So, basically, that's an outflow. We had net profits taking revenue minus expenses. And from the net profits, if it
+
+were positive, we would have savings and consumption. So consumption is not included. That's why it's in red
+
+here. But it is in the Statement of Cash Flows.
+
+
+And here's the Statement of Cash Flows for each one of those surveys-- cash flow from production, cash flow from
+
+consumption, from investment, cash flow from financing. We introduced a cash flow statement way back when
+
+we talked about Bitcoin.
+
+
+We had transfer of Bitcoin accounts. I made the point that both the balance sheet and the cash flow were being
+
+represented in the same ledger. You had to own it before you could buy it-- use it to buy things. Relatedly, the
+
+change in cash flow in Bitcoin should be-- if it's outgoing, should be associated with a decrease in the ownership
+
+of the coin.
+
+
+Or more generally, in the accounting sense, the change in cash in the statement of cash flow should be the same
+
+as the change in cash holding in the balance sheet. It seems pretty natural. And if you collect the data from
+
+scratch, each entity, one at a time, you can run this check and make sure it's true if you're using the accounting
+
+framework. If not, then you did something wrong, and you have to start over.
+The US data are not collected in that way. Nobody ever ran this check. So I did it with Scott Schuh and Chris. And
+
+here you can see a big discrepancy between the change in the cash flow from the statement of cash flow and the
+
+change in cash as measured on the change in the balance sheet.
+
+
+How big are these numbers? Well, the percent normalized by current assets is anywhere from 16 to 37%. It's
+
+huge. In other words, something is wrong.
+
+
+The flows aren't measured properly, or the assets are not measured properly. Does it really matter? Can we wave
+
+our hands. Well, we tried to use the data that we have. But we could be off by as much as 37% on the balance
+
+sheet.
+
+
+So this is the sad state of affairs for US data. Although I must say each one of these surveys is really fantastic, it
+
+was never designed with the accounting framework in mind. And they're very good at measuring what they
+
+intended to do. But, on the other hand, they never ran this check.
+
+
+So the notion that the change in the balance sheet and the income statement ought to be consistent is not new.
+
+It comes with the accounts. And there is something in the US called integrated macro accounts, which is exactly
+
+what it is-- accounts integrated with each other.
+
+
+So this unusual cooperation between the Federal Reserve Board and the BEA tried to pool the data that each has,
+
+that each is good at collecting. But they didn't change the way they're collecting the data. So there's an errors
+
+and omission line that shows up in the accounts, which is the way they reconcile the two systems together. And,
+
+again, that error and omissions line is sometimes quite substantial.
+
+
+Here's a picture for these integrated financial accounts, which is really a review of what you already know. You
+
+start with production. And then you have inputs, outputs, profits, and so on, producing income and savings, if
+
+they didn't eat everything.
+
+
+The savings has to show up somewhere. It's showing up in physical fixed inputs, capital inputs, or it's showing up
+
+in financial inputs, net lending or asset acquisition if positive, or a decrease in borrowing, assuming that profits
+
+over here were positive.
+
+
+Then you adjust for capital gains and losses, as I said, on the balance sheet. And you end up with a net balance
+
+sheet position. So you see you're going from flows into changes in the stocks into the new balance sheet.
+
+
+You have assets. You use assets in production. You get the flow, et cetera. Inventory-- that was asked about
+
+earlier-- is an example, again, of distinguishing inputs in production from ways of savings. So this is the
+
+integrated financial accounts.
+
+
+Unfortunately, it is, again, not available-- it has errors and omissions, and it's not available at the state or local
+
+level. So now I want to take you through a series of examples of other things that are always in the news, that
+
+you've heard about. And I'll present those facts to you and then explain how the measurement underlying those,
+
+quote, "well-known facts" is problematic.
+
+
+So one, inequality-- and here I'm drawing on this paper-- Piketty, Saez, and Zucman-- and they're obviously not
+
+the only ones. The story here is the top 1% of the population own 60% of the wealth. You hear that over and over
+
+again.
+So where are these numbers coming from? Well, what we have is quite limited. These guys start with GDP as
+
+measured by the BEA and so on. And then they're saying, well, who actually has part of it? Who has the shares?
+
+How big are the shares of GDP?
+
+
+So they want to create something new, arguably, called distributional accounts, which is the way GDP is
+
+distributed in the population, saying GDP is fine for totals, for growth, and so on. But for inequality, the
+
+aggregates don't tell us the degree of inequality.
+
+
+So people have used different surveys to measure inequality, and there's a discrepancy. So they're saying that
+
+we really need better distributional accounts. What fraction of economic growth accrues to the bottom 50% of the
+
+population or the top 10% of the population? How much of the rise in income inequality is due to the change in
+
+labor share of output versus capital shares of output?
+
+
+And even within labor, what's the dispersion in labor earnings across different households with respect to capital?
+
+What's the rate of return on capital? They're complaining here that we don't have answers to these questions.
+
+Actually, we don't even have good answers to the questions about how much wealth is being redistributed
+
+through taxes and transfers.
+
+
+So what do they do? They make an estimate. And these guys-- Smith, Zidar, and Zwick-- complain about the
+
+estimate, and they try to do better. So why are the estimates unreliable? Because, as in the theme of this
+
+lecture, wealth and income are not independently measured. They're consistent with one another but only in a
+
+mechanical way.
+
+
+How wealthy is a household? We don't have the wealth. Let's look at the flows. Let's look at the income flows
+
+over time the way we did for that life cycle model for Thailand, or, for example, I showed you one slide for the
+
+US.
+
+
+If you had income over time and say they could put it in the bank, then you might want to discount the income
+
+and get the net present value today of future labor earnings, like human capital or flows from assets. The
+
+problem is, how do you discount it? What discount rate do you use?
+
+
+Piketty et al. are assuming a constant discount rate across all the households, despite the obvious heterogeneity
+
+in households-- in particular, despite the fact that some wealthier households get income from business and
+
+poorer households don't. At best, they have financial income. But it's usually wages and so on.
+
+
+So Zwick basically adjusts the discount rate. And they start changing the numbers. Basically, the share of wealth
+
+of the top 1% is different from what you commonly hear. The share of wealth of the top 10% of the population is
+
+a bit different from what you typically hear, because they've allowed for heterogeneity in this discount rate. So
+
+their estimates of net worth are different across these different groups.
+
+
+So that's one illustration of the problems with very important topical issues. So much policy work and politics is
+
+based on perceived measures of inequality that are actually not terribly reliable. I'm not saying people aren't
+
+poor, and I'm not saying there's no inequality. I just wish we had better quantitative measures of it.
+
+
+Second application in this terrible world we're living in-- COVID-19. So what is the impact of COVID-19 on
+
+individuals, on groups, on the entire economy? Again, the problem we face in the US-- the data are coming from
+
+different sources.
+There's a lot of creativity. I'll show you what people have done. But the bottom line is going to be, again, the data
+
+are not integrated in the sense that the income flows are measured but are not measured in a way that would be
+
+consistent with a balance sheet. In fact, typically, we do not have both an income statement and a balance sheet
+
+for anybody in the US.
+
+
+So here's a great paper-- Chetty and coauthors-- which is the starred paper on the reading list. "How Did COVID-
+19 and Stabilization Policies Affect Spending and Employment?" And then subheader-- "A New Real-Time
+
+Economic Data Tracker."
+
+
+If you look at the paper, you'll see the WWW dot. You can click on it, and you'll start seeing a lot of geography.
+
+So this is a summary of what they're finding.
+
+
+And I should tell you, this and all the other slides are based on what was going on in the US post-March, April, the
+
+first surge, and not the surge that took place early in the summer and not the current mess. So what they find is
+
+that high-income individuals reduced spending in mid-March, particularly in areas that had high COVID infection
+
+rates, and particularly in sectors associated with physical interaction.
+
+
+So the reduction in spending of the individuals hurt businesses that catered to high-income individuals, namely,
+
+small businesses in affluent zip codes, like restaurants and so on. They laid off their employees, who tend to be
+
+low-income individuals, which is where we got the surge in unemployment, initially in affluent areas. You can see
+
+the local diversity here.
+
+
+So they go on to use an event study to then estimate the impact of policies that were supposed to mitigate the
+
+adverse impact. States varied in reopening, as you know. And, nevertheless, it didn't have a lot of impact on local
+
+employment.
+
+
+Stimulus payments to households were made. That did increase consumer spending, but again, had very little
+
+impact on employment because, obviously, you don't take the check and go buy something at risk in a shop that
+
+may be closed. At best, you're going to spend it on-- I'll get to the spending and saving momentarily.
+
+
+In particular, this Paycheck Protection Program, which is in the news again today because the BEA is under-- SBA
+
+is under scrutiny-- those loans had little impact on employment in small businesses. So I don't know. If you're
+
+macro-oriented, you might think, that's an increase in spending. It should affect aggregate demand. It should
+
+have shown up as increased employment. But it didn't.
+
+
+This is a study from the Philadelphia Fed. And they used payments transection data, called Fiserv. So this is
+
+related to credit/debit card transactions, but it's not Visa data. It's actually the processing company that puts
+
+devices out there so you can swipe your credit card and send a communication from the store to the bank. Those
+
+transactions data are available on Fiserv in the US.
+
+
+And the Philadelphia Fed study is consistent with Chetty and so on in the sense that spending on restaurants and
+
+lodgings went down. And instead, people started spending money at home on home improvement, some people.
+
+So this is, again, the story of heterogeneity.
+
+
+Some people were able, as essential workers, to keep working on site. Not much shows up for their spending
+
+differences. Some start working remotely, but they're still working. Their expenditures are pretty much
+
+proportional to their income, not terribly surprisingly.
+You have people who were laid off and furloughed. They're not getting income anymore. And the expenditures
+
+drop more for the people who had been earning the least income. So there's a big drop in expenditures to
+
+vulnerable people, people who had low income to begin with-- more on the balance sheet momentarily.
+
+
+Now, one potential limitation of these data is they're electronic transactions, obviously. Well, what about
+
+currency? Well, you might think, oh, come on. That's not a big deal.
+
+
+It is a big deal. In the US, roughly 25% of transactions are still accounted for by paper currency. And then,
+
+mystery of all mysteries, it skyrocketed upwards. And that's not just a US phenomenon.
+
+
+So it's kind of perplexing. You would think paper currency is pretty dirty stuff. You're exposed to the virus,
+
+handling other people's-- you eventually get their money and so on.
+
+
+Some people take it home at night and wash it because they don't want to be infected by it. But they seem to be
+
+doing stuff that's requiring more of it because currency outstanding, as measured by the Federal Reserve, has
+
+gone way up. And there's a shortage of coins in the US right now.
+
+
+So we don't know why. And it also makes the measurement under Fiserv a little trickier. This would not be true
+
+with Alipay in China because they got all the transactions data-- maybe we'll get back to that later.
+
+
+What about lower-income households? So here's another study by Baker and co-authors on income and liquidity.
+
+Now, this is kind of interesting. They're looking at the marginal propensity to consume out of the stimulus
+
+payments.
+
+
+They made friends with a not-for-profit company called SaverLife, helping working families previously for the
+
+virus, helping those families to develop better savings habits and to meet financial goals. This reminds me a lot of
+
+what we were doing in Thailand.
+
+
+In particular, they had individuals link there voluntarily-- if they chose to do it, link their accounts to SaverLife. So
+
+now SaverLife has access to their bank account information to see the transactions and the balance sheets.
+
+
+You see where I'm going with this. So now you can finally, for this special subset of households, see inflows and
+
+outflows. I guess I misspoke a minute ago when I said it's never done. This is an instance where we have a
+
+version of the income statement and a version of the balance sheet, at least for some of the line items.
+
+
+What happened with the stimulus payments? As soon as they get the money, they spend it within 10 days. And
+
+they spend it on food and nondurables, pay the rent-- that's in the news again lately. So you get a picture of
+
+relatively poor households.
+
+
+
+Not only that, they looked at the balance sheet to see how much, quote, "liquidity" households had. And the
+
+lower the liquid stuff in the balance sheet, the larger their marginal propensity to consume out of the stimulus
+
+payment.
+
+
+So this looks like households that have a pretty lean balance sheet. They do not have a lot of assets. They
+
+certainly don't have liquid assets. So then they have been saving very much. And when they get that stimulus
+
+payment, they spend it.
+So they must have been cutting back on expenditures, at least before they got the stimulus payment. And,
+
+likewise, they didn't seem to save it. They could have taken the income transfer and put it into their savings
+
+account.
+
+
+But they didn't. By and large, they spent it. Well, it makes sense if you're poor, and you don't have liquid assets,
+
+and you've lost your income.
+
+
+But then you come to this other study. This is JPMorgan, the bank, using their own internal data on household
+
+accounts held by JPMorgan. And they have an institute that does research. So they're reporting here on the
+
+spending of various households, including low-income households.
+
+
+And they find large increases in liquid assets for almost all households, including these low-income households.
+
+That's exactly the opposite of what Baker found. So it's a bit of a puzzle.
+
+
+Now, granted, it's a different sample. It doesn't mean that one is wrong and the other is right. But it certainly
+
+shows you that we're getting very mixed pictures here, because these are among the very few ways that you can
+
+join the stocks and flows. You can get the income and balance sheet for customers of JPMorgan if you construct
+
+it, as these guys did. And you can get it for SaverLife, which is the data that Baker and company were using.
+
+
+They also looked at small businesses. And they find cash balances in JPMorgan accounts of small businesses
+
+decreased when COVID arrived and decreased more in some cities than others and decreased more for certain
+
+sectors and for certain ethnicities. So, again, restaurants hit hard-- Asian-owned firms actually hugely hit, even
+
+more than Black firms, which, in turn, were hit harder than white-operated businesses.
+
+
+So businesses are hurting. Some people think small businesses-- small and medium enterprises are the backbone
+
+of the US and many economies. And so the adverse impact of COVID hits hard on the economy when it hits these
+
+businesses.
+
+
+So then you would hope this Paycheck Protection Program would have helped. So the Paycheck PPP Program
+
+passed by Congress allowed the Treasury to fund loans through the Small Business Administration. SBA loans in
+
+the US are for small businesses. They're 85% guaranteed loans. But they're initiated by commercial banks.
+
+
+So in order to get access to PPP, you essentially already had to have some relationship with a bank. So, in the
+
+end, who got the money? People that had bank accounts in relationship banking.
+
+
+This picture struck me this morning when I was reviewing before class because these red areas in March and
+
+April were pretty much low-virus areas. Of course, nowadays, today, everything is reversed. And this is where the
+
+current surge is.
+
+
+But it was not like this in March. Instead, it was New York, remember? Well, New York didn't get very many of
+
+these PPP loans.
+
+
+So the loans went-- so it's a complaint, yes. It's also a comment on the physical infrastructure. Because we don't
+
+have good measurement, we also didn't have a good way of getting purchasing power into the hands of those
+
+small businesses that really needed the liquidity.
+So, to bring all these pieces together, we need better data in the US. The US doesn't have surveys like what I had
+
+shown you for Thailand. And, likewise, there is payments data-- I was alluding to it-- Scott Schuh was at the
+
+Boston Fed, and they were collecting surveys. That's how we know how many people use currency in the US.
+
+
+So I've teamed up with Scott. And we're making plans to basically collect data like we collected in Thailand. Scott
+
+moved from Boston to West Virginia. He's at the University of West Virginia.
+
+
+That's a deliberate choice because that's an obvious area-- West Virginia being a relatively poor state in the
+
+United States. And that's basically what we hope will be the starting point. So we have in mind here an ambitious
+
+multiyear research program, where we're going to be collecting data according to best practices.
+
+
+Part of it is going to combine the Boston Fed payment surveys with my surveys from Thailand. But part of it is
+
+we're not going to collect it all with physical surveys. We want to get the electronic data. So we will go to the
+
+households and so on and try to get permission the way Baker et al. did to access the electronic data for bank
+
+account and payroll information, assuming that's the way they get paid.
+
+
+So we'll run a survey to see whether households are willing to share this data with us or not and figure out the
+
+best method, and then collect it, very mindful of the financial accounts. So we'll be using the framework of
+
+integrated financial accounts, linking the balance sheet to the income statement and running checks all the while
+
+so that we have as good of a survey with as few errors as possible.
+
+
+I wish we were a little bit further along with this. But I'll just say that if any of you are interested, let me know,
+
+because there is a lot of work to do. But, actually, nowadays, traveling isn't very easy either. But my heart is in
+
+this enterprise.
+
+
+So that's all for today. This is kind of the state of data in the US. And I've chosen to do this by looking at 3 topics--
+
+one, what we did in Thailand, which is local economies-- in this case, states in the US-- looking at it through the
+
+lens of balance sheets and income statements if possible, although struggling because we don't have the data
+
+collected that way, and then looking at the impact of trade shocks and state-level balance of payments.
+
+
+The second was measures of inequality and how we wish they were better. And the third-- the impact of the
+
+virus, which, again, runs into the same limitations. Questions?
+
+
+OK. So that completes the second of the two applications of trade for Thailand in the US, back to the two-by-two-
+
+by-two. And then we'll gear up for a review of the material that we've covered since the last midterm.
+
+
+We'll do that next Tuesday. And you can start on Friday with Michael. So that's all for today. Thank you so much.
+

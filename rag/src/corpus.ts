@@ -267,7 +267,7 @@ async function walk(dir: string, out: string[] = []): Promise<string[]> {
   for (const e of entries) {
     const full = path.join(dir, e.name)
     if (e.isDirectory()) {
-      if (e.name === 'public' || e.name.startsWith('.')) continue
+      if (e.name === 'public' || e.name.startsWith('.') || e.name === 'transcripts') continue
       await walk(full, out)
     } else if (e.isFile() && e.name.endsWith('.md')) {
       out.push(full)

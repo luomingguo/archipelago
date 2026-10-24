@@ -1,12 +1,11 @@
 ---
-title: '软件选型与实施'
+title: 软件选型与实施
 type: lecture
 lecture: 12
 tags: [software-selection, rfp-process, total-cost-of-ownership, change-management]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 12 软件选型与实施（Software Selection & Implementation）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 12 讲  

@@ -1,0 +1,1040 @@
+--- PAGE 1 ---
+14.462
+Spring, 2020
+The Information Problem of 
+Decentralized Monetary Exchange and 
+of Equilibria with High-Velocity 
+Circulating Private Debt: Regulation 
+Using Distributed Ledger Technology
+(Lecture 9)
+Robert M. Townsend
+Elizabeth & James Killian Professor of Economics, MIT
+
+
+--- PAGE 2 ---
+Outline
+Information problem of decentralized monetary exchange
+Ostroy-Star
+Coordination problem with circulating private debt
+Townsend-Wallace
+Rehypothecation and broker dealers in NY markets
+
+
+--- PAGE 3 ---
+Problems in Decentralized Exchange: Theory 
+“Money and the Decentralization of Exchange” 
+(Ostroy and Starr 1974)
+Achieving an ideal Walrasian allocation of resources
+Even with no transaction costs, with meetings and prices known in advance and no 
+strategic behavior
+Implementing a smart contract
+Two exceptional solutions
+Abundant liquidity: have everyone so well endowed that all purchases can be 
+financed before sales (it is enough in some environments). Concerns: in some 
+cases the liquidity is someone else’s liability. 
+o Is this central bank accounts, with consequences? 
+Central warehouse: have a trader so well endowed so as to act as a commodity 
+warehouse or universal brokerage. 
+o Is this a trading platform linked to a clearing bank?
+Generic Impossibility Theorem: a quid pro quo condition in bilateral 
+exchange must be supplemented with a (centralized or other equivalent) 
+record keeping system so agents can coordinate in trade.
+Liquidity is not only about the amount of trade, or stuff to clear
+but also about the timing and nature of transactions, keeping track of this history
+
+
+--- PAGE 4 ---
+Mathematical Formalization of the Trading Process: 
+To Achieve a Multiparty Smart Contract
+J traders and finite number of commodities with given price vector p. A Walrasian environment
+Each trader is endowed with vector b and has excess demand z. If trades are completed 
+successfully, the trader will have b+z commodities.
+Three basic underlying restrictions on z (denote them by U, undelying):
+i.
+for each trader, p · z = 0
+ii. Σj∈J zj = 0
+iii. z must be feasible given trader’s endowment, so zc ≥ -bc for each commodity c
+A familiar example of U is a competitive equilibrium 
+Mechanics of trading. A round of trading has T periods. In each period, traders meet in pairs, and 
+T is the number of periods required so that a trader meets every other trader exactly once. If J is 
+odd, one trader stays out of trading in each period. 
+Let ait be the vector that represents the trading outcome for trader i in period t.
+A trade: positive number, acquisition  of each commodity bought, but negative number meaning sale
+Three basic underlying restrictions on a
+i.
+ait should not result in a negative holding of any commodity
+ii. commodities must be conserved, if trader i is meeting with trader j, ait + ajt = 0 
+iii. trade should be fair (quid pro quo), for every trader i, p · ait = 0, payment and clearing
+iv. denote them by A, trade actions
+
+
+--- PAGE 5 ---
+Information Restrictions on Trades
+Information restrictions determine which variables can be used as
+arguments of trading process, as inputs to that function.
+The paper proposes three decentralizing D restrictions D.1, D.2, D.3; with
+higher number representing greater amount of information.
+It also proposes a centralizing restriction C, which allows two meeting
+traders to use information on other traders.
+
+
+--- PAGE 6 ---
+Completion of Trades: Fast Chains, Key 
+Broker
+Theorem 1: There is a trading rule that (i) uses information C; (ii) satisfies A; and
+(iii) completes trading within a single round for any (p, Z, B) satisfying U.
+This tells us that physical decentralization is possible when information is shared. The
+following theorems limit the types of information used for trading (D.1, D.2, D.3)
+Theorem 2: There is NO trading rule that (i) uses information D.3; (ii) satisfies A;
+and (iii) completes trading within a single round for any (p, Z, B) satisfying U.
+It implies that some extra assumptions are necessary to allow decentralization, Theorems 3
+and 4 are in this line.
+Theorem 3: There is a trading rule that (i) uses information D.2; (ii) satisfies A;
+and (iii) completes trading within a single round for any (p, Z, B) satisfying U such
+that there exists a trader i such that his endowment is enough to cover all the other
+traders’ buying needs:
+It is the case in which trader i serves as a facilitator of trades (giant warehouse/supplier): she
+should have large enough stock of every commodity. It solves the difficulty of arranging
+trades when commodities are scarce and trades must be routed along the right chain to
+ensure that demands be met within a single round
+[𝑧𝑧𝑗𝑗𝑗𝑗]+
+
+
+--- PAGE 7 ---
+Completion of Trades: Ample Ex Ante 
+Liquidity
+Theorem 4: There is a trading rule that (i) uses information D.1; (ii)
+satisfies A; and (iii) completes trading within a single round for any (p, Z,
+B) satisfying U such that there exists a commodity m and for every trader i,
+her endowment of commodity m is enough to fund all her purchases:
+It is the case where commodity m serves as some type of money and in which
+every trader has a large enough stock of commodity m to pay for his purchases.
+Commodity m helps traders solve problems arising from the restriction of quid pro
+quo.
+Without quid pro quo, easy to find trading process that completes trade within a
+single round without additional assumptions. However, with the restriction, when
+two meeting traders’ excess demands do not precisely offset each other, they
+should decide which subset of their demands would be met at the meeting.
+Money solves this problem because at each meeting, the traders can just fulfill
+individual demands as much as possible and settle the difference in commodity m
+
+
+--- PAGE 8 ---
+Completion of Trades: The Walras Banker, 
+with Trade Credit, IOUs
+Theorem 4: There is a trading rule that (i) uses information
+D.1; and (ii) completes trading within three rounds for any
+(p,Z,B) satisfying U in a ‘bank credit economy’.
+In the credit bank economy, every trader can meet their excess
+demand using money, as in the ‘monetary economy’ described by
+theorem 4
+However, in the bank credit economy, the premise that every trader
+holds enough money at the beginning is not required Instead, there
+is a bank that can create money (issue notes/IOUs).
+In the first round, traders do nothing other than borrowing money
+from the bank, so all of them have enough money as required by the
+premise of the monetary economy.
+In the second round, they make trades as they would do in the
+monetary economy. At the end of the second round, every trader has
+met his excess demand and holds the same amount of money that he
+started the second round with.
+In the third round, traders pay back what they borrowed from the
+bank.
+
+
+--- PAGE 9 ---
+Key Example of the Difficulty: Proof of Theorem 
+2, Kyungmin Kim
+
+
+--- PAGE 10 ---
+
+
+--- PAGE 11 ---
+Trader 1 demands 
+none of good 2, 
+currently has 2 
+units. Has use for 1 
+only. So, give 1 
+unit of good to 
+Trader 2 and 2 
+units of good 3. 
+This is the entire 
+history of trades of 
+2 and 3. Only under 
+C do they know 
+more.
+Traders 1 and 2 
+excess demands 
+have not changed. 
+History of Traders 3 
+and 4 at t = 1 is 
+different but 
+Traders 1 and 2 
+cannot know this.
+
+
+--- PAGE 12 ---
+“CIRCULATING PRIVATE DEBT: 
+AN EXAMPLE WITH A 
+COORDINATION PROBLEM”
+TOWNSEND-WALLACE (1987)
+
+
+--- PAGE 13 ---
+• A seemingly central observation for monetary 
+economics is that some objects-often referred to 
+as monies-appear in exchange much more 
+frequently than other objects. In this paper, we 
+present and study a model that generates a version 
+of this observation for private securities; in the 
+model, some securities get traded frequently, or 
+circulate, whereas others do not. In this and other 
+respects, the securities in our model resemble 
+historically observed bills of exchange.
+
+
+--- PAGE 14 ---
+•
+The quantities of securities that are required to support an 
+equilibrium and that are issued by individuals at the same time in 
+spatially and informationally separated markets must satisfy 
+restrictions not implied by individual maximization and by market 
+clearing in each separate market. 
+•
+The utility-maximizing choices of quantities of securities, the 
+strategies of individuals, are not in general unique but must 
+somehow be coordinated across informationally separated markets if 
+they are to be consistent with the existence of an equilibrium.
+•
+This (coordination) problem arises only in some versions of our 
+model. There is a close connection between its appearance and that 
+of circulating securities
+•
+problems-perhaps in the form of chaotic conditions-sometimes arise 
+in credit markets with unregulated issue of private securities that 
+play an important role in exchange.
+
+
+--- PAGE 15 ---
+• More general: Let  J denote the number of locations and T 
+the number of dates, the commodity space has dimension 
+JT. We assume that each person gets utility from 
+commodities and has positive endowments of commodities 
+in a proper subset whose elements correspond to the 
+location-date combinations that the person visits
+• One commodity for each location-date combination
+• one good that is indexed by location and date
+• goods indexed by one location-date combination cannot be 
+transformed into goods indexed by another location-date 
+combination
+• there is no transportation, production, or storage technology 
+for goods.
+
+
+--- PAGE 16 ---
+• spatial separation limit trades in securities in what 
+seems to be a natural way
+• at a particular time, a person can only trade securities 
+with someone he or she meets.
+• Second, although securities can be transported, they can 
+move only with a person. 
+• Finally, we do not allow people to renege on their debts 
+or to counterfeit others' debts. Securities or debts in our 
+model take the form of promises to pay stated amounts 
+of goods that are date and location specific. We assume 
+that if the promise is presented at the relevant date and 
+location, then it is honored.
+
+
+--- PAGE 17 ---
+
+
+--- PAGE 18 ---
+•
+If T = 2-that is, if the economy lasts only two periods-then no trade 
+is possible in the table V-I economy under our security trading rules. 
+•
+For example, person 1 cannot sell a promise to person 2 because 
+person 2 can neither redeem it at date 2 nor pass it on to person 4, 
+who has no use for it at date 2, the assumed last date
+•
+absence of double coincidence:       T = 2 no pair of persons has 
+endowments and cares about a common two-dimensional subspace 
+of the commodity space
+•
+in the sense that there can exist redistributions of the endowments 
+that give rise to allocations that are Pareto-superior to the 
+endowment allocation. Put differently, if all four people were 
+together at some time zero and traded in complete (location and date 
+contingent) markets, something we rule out, then the endowment 
+would not necessarily be a competitive equilibrium
+
+
+--- PAGE 19 ---
+• We assume an economy with G persons, each 
+of whom lives T periods. At each time t, each 
+person g can be paired with some other person 
+or with no one. These pairings occur at 
+(isolated) locations. Thus, we assume that 
+person g is assigned to some location i at each 
+time t and that in that location there either is or 
+is not a single trading partner.
+
+
+--- PAGE 20 ---
+
+
+--- PAGE 21 ---
+
+
+--- PAGE 22 ---
+
+
+--- PAGE 23 ---
+
+
+--- PAGE 24 ---
+16 for location 
+dates not 
+visited = 4 x 4
+Two people in 
+same island
+4 people 
+x 4 dates 
+x 2 locations
+Budget for 
+person 1
+3 for excess 
+demand
+8 for location  
+date market 
+clearing
+
+
+--- PAGE 25 ---
+
+
+--- PAGE 26 ---
+
+
+--- PAGE 27 ---
+
+
+--- PAGE 28 ---
+
+
+--- PAGE 29 ---
+▶Preferences: Ui = P4
+t=1 ln
+ ci
+t
+
+.
+▶Endowments: aggregate endowment is constant at Ω= ¯ω + ω, and
+agents alternate between the high and low states (with agents 1 and
+4 starting with ¯ω and agents 2 and 3 starting with ω in t = 1).
+▶CME: everyone consumes ¯ω+ω
+2
+in every period, and all prices are 1.
+▶Suppose debts issued at t = 1 do not support the CME, and we
+want to ﬁnd the equilibrium for t = 2 onwards (assuming everyone
+knows the debts that were issued at t = 1). The equilibrium is given
+by 10 prices and 2 quantities: the prices of the four circulating debts
+at t = 2 and t = 3, and the prices and quantities of the two the
+non-circulating debts issued at t = 2.
+▶We can reduce the dimensionality by noting that the price of the
+non-circulating debts is pinned-down by the aggregate endowment
+(by homotheticity), and there are arbitrage conditions between prices
+(e.g., agent 1 can save/borrow between periods t = 2 and t = 4
+either by buying non-circulating debt or by buying and reselling
+circulating debts).
+Spector and Townsend (2019) 
+"Notes on Townsend-Wallace"
+
+
+--- PAGE 30 ---
+▶Suppose ¯ω = 1, ω = 0.5, and consider two scenarios:
+▶Scenario 1: CME with all circulating debt issued in location 1 (and
+non-circulating debts are calculated to support the CME).
+▶Scenario 2: location 1 issues the same debts as in Scenario 1, but
+now location 2 also issues the same debts (i.e., everyone thinks,
+mistakenly, that all long-term debt is being issued in their location).
+Location 1
+Location 2
+Sc.1
+Sc.2
+Sc.1
+Sc.2
+t = 1
+d1
+14
+0.50
+0.50
+d3
+14
+0.00
+0.00
+d2
+14
+0.00
+0.00
+d4
+14
+0.00
+0.50
+d1
+13
+-0.25
+-0.25
+d4
+13
+0.25
+-0.25
+t = 2
+c1
+0.75
+0.66
+c2
+0.75
+0.84
+c3
+0.75
+0.84
+c4
+0.75
+0.66
+p4
+14
+–
+0.36
+p1
+14
+1.00
+0.36
+p1
+24
+1.00
+1.00
+p4
+24
+1.00
+1.00
+d1
+24
+-0.25
+-0.16
+d4
+24
+0.25
+-0.16
+t = 3
+c1
+0.75
+1.03
+c3
+0.75
+0.47
+c2
+0.75
+0.47
+c4
+0.75
+1.03
+p4
+14
+–
+0.56
+p1
+14
+1.00
+0.56
+t = 4
+c1
+0.75
+0.66
+c2
+0.75
+0.84
+c3
+0.75
+0.84
+c4
+0.75
+0.66
+Sc.1
+Sc.2
+U1
+-0.86
+-0.80
+U2
+-0.86
+-1.10
+U3
+-0.86
+-1.10
+U4
+-0.86
+-0.80
+
+
+--- PAGE 31 ---
+Repo Market Structure
+Baklanova, Caglio, Cipriani and Copeland (2016) “The U.S. 
+Bilateral Repo Market: Lessons from a New Survey”
+
+
+--- PAGE 32 ---
+Rehypothecation 
+
+
+--- PAGE 33 ---
+Repo market coordination: the case for a smart
+contract
+Daniel Aronoﬀand Robert Townsend
+MIT
+February 28, 2020
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+1 / 20
+
+
+--- PAGE 34 ---
+1. The Research Questions
+1. The Research Questions
+2. What is repo?
+3. Agents and Objectives
+4. Repo market timing
+5. Interest rates and data
+6. The Model
+Model Elements
+Mis-coordination and risk aversion
+Multiple equilibrium with a repo DL
+Smart Contracts
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+1 / 20
+
+
+--- PAGE 35 ---
+1. The Research Questions
+Repo’s are short term collateralized loans with a peculiar legal structure.
+The repo market (aka the money market) has greater than $1.5 trillion daily
+turnover. It is the largest volume market in the world by orders of magnitude.
+The US treasury collateral market is the largest segment.
+The repo market is decentralized and connected. Broker-dealers make repo
+trades in isolated markets, then enter into repo trades with each other. This
+creates a possibility of multiple equilibria in trading volumes and
+mis-coordination.
+Treasuries reside on a ledger at the US Treasury. Repo contracts are
+standardized.
+Research questions
+✓Can we solve coordination problems by placing the treasuries on a DL to which
+we append repo contracts?
+✓Can we solve coordination problems if, in addition, we append a smart contract
+onto the DL?
+✓Is there a feasible implementation to do this?
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+2 / 20
+
+
+--- PAGE 36 ---
+2. What is repo?
+1. The Research Questions
+2. What is repo?
+3. Agents and Objectives
+4. Repo market timing
+5. Interest rates and data
+6. The Model
+Model Elements
+Mis-coordination and risk aversion
+Multiple equilibrium with a repo DL
+Smart Contracts
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+2 / 20
+
+
+--- PAGE 37 ---
+2. What is repo?
+A repo trade has 2 legs. Let’s consider a repo trade between a Money Market
+Fund ”MM” and a Broker-Dealer ”BD” say, Goldman Sachs.
+First leg: MM purchases treasuries ”T” from BD for a unit price of p1. T moves
+from BD to MM and a commercial bank deposit ”R” moves from MM to BD.
+Second leg: BD purchases T from MM for a unit price of p2.The objects move
+back to their initial positions.
+The ”repo rate” for this trade is rMM = p2−p1
+p1
+It is the implicit interest rate paid by BD for borrowing R from MM.
+Figure 1
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+3 / 20
+
+
+--- PAGE 38 ---
+2. What is repo?
+Some crucial repo facts:
+The repo contract, entered into on the ﬁrst leg, includes the (re)purchase
+obligation for the second leg.
+The repo contracts are standardized.
+When collateral Tis transferred, so is ownership of T.
+The holder of T collateral has the legal right to sell it or use it as collateral in
+another transaction - Rehypothecation.
+In the event the borrower on the ﬁrst leg fails to repurchase on the second
+leg, the lender’s right to retain or sell T cannot be ’stayed’ by a bankruptcy
+court. It is an absolute right.
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+4 / 20
+
+
+--- PAGE 39 ---
+3. Agents and Objectives
+1. The Research Questions
+2. What is repo?
+3. Agents and Objectives
+4. Repo market timing
+5. Interest rates and data
+6. The Model
+Model Elements
+Mis-coordination and risk aversion
+Multiple equilibrium with a repo DL
+Smart Contracts
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+4 / 20
+
+
+--- PAGE 40 ---
+3. Agents and Objectives
+MM manages R on behalf of investors. Dual mandate: Safety (”don’t lose”)
+and liquidity (access to cash on short notice). Solution: exchange R for T
+with an agreement to return the objects after a short duration
+(day/week/month). This is the essence of a repo contract.
+A risk manager ”RM” owns T and desires to borrow R in order to boost
+yield. e.g. pension fund required to hold portfolio of T and under pressure to
+earn higher return to meet payout obligations.
+BD intermediates trade in R and T between its clients, MM and RM.
+Key takeaway
+✓MM and RM have gains from trading objects R and T, but they need to go
+through BD to consummate trades (an empirical fact).
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+5 / 20
+
+
+--- PAGE 41 ---
+3. Agents and Objectives
+Example: A Matched-Book repo trade
+MM initially holds R. It requires the ability to quickly transfer bank deposits, yet wants
+to hold T to avoid the unsecured bank deposit risk.
+At the same time, RM desires to borrow R and is willing to oﬀer T as collateral.
+Solution
+BD purchases T from RM with a promise to re-purchase at a later date (maybe the next
+day). This provides RM with the R it desires and it provides BD with T it needs to
+convey to MM.
+Simultaneously, MM purchases T from BD with a promise to re-purchase at a later
+date. This provides MM with the T it desires, along with access to a deposit on the
+repurchase date, and it provides BD with the R it needs to convey to RM.
+Note that BD merely moves objects between its clients; it does not retain any objects.
+This is what is meant by Matched Book.
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+6 / 20
+
+
+--- PAGE 42 ---
+3. Agents and Objectives
+Example: A Matched-Book repo trade
+The movement of objects in the matched-book repo trade is depicted below.
+Figure 2
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+7 / 20
+
+
+--- PAGE 43 ---
+3. Agents and Objectives
+The inter-dealer repo market
+In fact, there are multiple BD’s, each serving a non-identical client base. Suppose
+(i) RM4 desires more R than the MM clients of BD2 are willing to provide and (ii)
+MM1 desires more T than the RM clients of BD1 are willing to provide.
+Solution The BD’s can satisfy their client excess demands by transacting an
+inter-dealer repo, conveying the objects between RM4 andMM1.
+Figure 3
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+8 / 20
+
+
+--- PAGE 44 ---
+4. Repo market timing
+1. The Research Questions
+2. What is repo?
+3. Agents and Objectives
+4. Repo market timing
+5. Interest rates and data
+6. The Model
+Model Elements
+Mis-coordination and risk aversion
+Multiple equilibrium with a repo DL
+Smart Contracts
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+8 / 20
+
+
+--- PAGE 45 ---
+4. Repo market timing
+We model the repo market as a repeating sequence of the following timing game:
+t1: First leg of client repos BD’s intermediate repo trades with their clients.
+Matched-book at the max volume. BD chooses how much excess demand to
+absorb and carry into inter-dealer market.
+t2: First leg of inter-dealer repos BD’s enter into repo trades on matching excess
+inventory. e.g. if BD1 has R inventory and BFD2 has T inventory, they will make
+repo trade. If inventory values don’t match up, the BD with the most inventory
+will hold inventories it cannot trade.
+t3,t4:Second leg of client and inter-dealer repos.
+Key takeaway
+✓In t1 BD’s make strategic choice of the amount of client excess demand to
+accommodate. This can lead to (i) multiple equilibria and (ii) mis-coordination in
+t2.
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+9 / 20
+
+
+--- PAGE 46 ---
+4. Repo market timing
+Repo market timing
+Figure 5
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+10 / 20
+
+
+--- PAGE 47 ---
+5. Interest rates and data
+1. The Research Questions
+2. What is repo?
+3. Agents and Objectives
+4. Repo market timing
+5. Interest rates and data
+6. The Model
+Model Elements
+Mis-coordination and risk aversion
+Multiple equilibrium with a repo DL
+Smart Contracts
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+10 / 20
+
+
+--- PAGE 48 ---
+5. Interest rates and data
+Participation in the repo market induces an ordering of repo rates.
+MMTo induce BD to intermediate matched book trades between RM and MM at
+t1, the BD must earn a positive spread. Thus rRM > rMM.
+RM To induce RM to borrow in the repo market, the repo rate rRM must be lower
+than the interest rate charged by a bank, rB. Thus, rB > rRM.
+BD To induce the BD’s to carry inventories into t2 and trade with each other, the
+following must obtain.
+▷For BD1 to accommodate an excess demand for T from its MM clients by
+borrowing R, it must anticipate that it can lend the R to BD2 for a proﬁt.
+Thus,rBD > rMM.
+▷For BD2 to accommodate an excess demand for R from its RM clients by
+borrowing R from a bank at rate rB (which, by the above exceeds the rRM it earns
+from its RM client), it must anticipate that it can borrow R from BD1 at a lower
+rate and pay oﬀits bank loan while earning a positive net interest margin. Thus
+rRM > rBD.
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+11 / 20
+
+
+--- PAGE 49 ---
+5. Interest rates and data
+Here is a snapshot of what is going on.
+t1(Before inter-dealer repos) BD1 accommodates an excess demand for T by borrowing
+at interest rate rMM, which is a loss to BD1.
+BD2 accommodates an excess demand for R by its clients by borrowing from a bank at
+interest rate rB. BD2 is losing money, since rB > rBD.
+t2 (After inter-dealer repos) The brokers enter into a repo trade at interest rate rBD.
+This enables BD1 to turn a proﬁt, since rBD > rMM. This enables BD2 to turn a proﬁt,
+since rB > rRM > rBD.
+Figure 6
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+12 / 20
+
+
+--- PAGE 50 ---
+5. Interest rates and data
+The ordering of repo interest rates
+Pulling together the ordered pairs yields
+rB > rRM > rBD > rMM
+The data corroborates the predictions of our model.
+OFR 
+Bilateral 
+repo pilot 
+study
+r RM
+r MM
+r MM + r BD
+Date
+Bilateral 
+repo 
+Mean 
+'securites-
+in'**-
+Median
+Tri-party 
+GC-O/N
+Tri-party + 
+GCF-
+O/NVV
+Tri-Party + 
+GFC + 
+FICC 
+bilateralvvv
+1.12.2015
+0.06
+0.06
+0.08
+2.10.2015
+0.07
+0.07
+0.09
+3.10.2015
+0.11
+0.06
+0.07
+0.08
+Ave from 
+11.20.201
+4 -
+3.29.2018-
+--
+43
+43.2
+46.9
+FRBNY centrally cleared repo series
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+13 / 20
+
+
+--- PAGE 51 ---
+6. The Model
+1. The Research Questions
+2. What is repo?
+3. Agents and Objectives
+4. Repo market timing
+5. Interest rates and data
+6. The Model
+Model Elements
+Mis-coordination and risk aversion
+Multiple equilibrium with a repo DL
+Smart Contracts
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+13 / 20
+
+
+--- PAGE 52 ---
+6. The Model
+Model Elements
+Model Elements
+Agents Two broker-dealers, BD1 and BD2 and RM’s and MM’s.
+Price formation Repo rates are exogenous. They comply with the ordering derived from
+the model. rBD is the Nash Bargaining Solution (see below).
+Timing Repeating sequence as per above.
+Preferences Client demands R or T. BD’s gain utility from repo spreads. Matched-book
+intermediation between RM and MM is risk-free. Absorbing excess client demand has
+risk that other BD might not have matching inventory to trade.
+Strategic interaction Clients are non-strategic. BD’s choose the amount of excess
+demand to accommodate. Assume BD1 faces excess demand for T; BD2 faces excess
+demand for R.
+Key takeaway
+✓A BD must forecast inventories its counterpart will bring to the inter-dealer market.
+BD’s are subject to two competing objectives, (i) avoid loss from holding inventories in
+excess of inter-dealer demand and (ii) make proﬁt from volume of inter-dealer inventory
+repos.
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+14 / 20
+
+
+--- PAGE 53 ---
+6. The Model
+Model Elements
+Model Elements
+Client excess demand
+Client aggregate excess demand (in terms of R) is drawn from a probability
+distribution. The joint distribution is known to both BD’s.
+xT
+1 , xR
+2 ∼f (xT
+1 , xR
+2 )
+where xT
+1 is excess demand for T faced by BD1 and xR
+2 is excess demand for R
+faced by BD2.
+ˆxi is the amount of client excess demand BDi absorbs and carries into the
+inter-dealer market as inventory i ∈{1, 2}.
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+15 / 20
+
+
+--- PAGE 54 ---
+6. The Model
+Model Elements
+Model Elements
+BD utility functions
+BDi’s utility from accommodating client excess demand, U(πi), is concave and
+diﬀerentiable, where
+πi = 1
+2(rRM −rMM)) × Q −(ˆxi −Q)Li, Q = min{ˆx1, ˆx2}.
+The terms of πi have the following interpretation.
+1
+2(rRM −rMM) = rBD is the Nash Bargaining solution to the inter-dealer rate,
+The ﬁrst term, 1
+2(rRM −rMM) × Q, is the proﬁt BDi makes by entering into a repo trade
+in the inter-dealer market at t2.
+The second term, (ˆxi −Q)Li, is the loss BDi suﬀers by carrying inventories in excess of
+its counterpart into the inter-dealer market, where L1 = rMM, the rate BD1 pays to
+satisfy the excess demand of MM for T and L2 = rB −rRM, the net rate BD2 pays to
+satisfy the excess demand of RM for R .
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+16 / 20
+
+
+--- PAGE 55 ---
+6. The Model
+Model Elements
+Model Elements
+Welfare
+We characterize welfare associated with excess client demands, broker inventories
+and repo trading in the inter-dealer market.
+BD’s face the risk of holding excess inventories. U(πi) is maximized when the
+following 2 conditions obtain: (i) Q = min{xT
+1 , xR
+2 } and (ii) ˆxi = Q, i ∈{1, 2}.
+This is the Pareto Optimum (PO) associated with the highest utility levels for the
+BD’s, since it is the maximum amount of inter-dealer repo trading consistent with
+no excess inventories.1
+Key takeaway
+✓We want to explore whether a public repo DL will push outcomes in the
+direction of the maximal PO.
+1The computation of welfare is more complicated when clients are included. There may be a
+social optimum which involves a BD absorbing excess demand (accumulating inventories) it
+cannot trade in the inter-dealer market.
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+17 / 20
+
+
+--- PAGE 56 ---
+6. The Model
+Mis-coordination and risk aversion
+Mis-coordination and risk aversion
+BD’s are risk averse; they prefer certainty over a risky bet.
+Conjecture
+BD1 chooses inventory ˆx1, after realization of its client excess demand, xT
+1 . It knows the
+joint distribution f from which BD2’s client inventory is drawn, but it does not observe
+the draw. BD1 also knows that BD2 faces an identical decision problem in choosing its
+inventory ˆx2.
+Each BD might choose a low volume of inventories to limit potential loss from
+holding excess inventories, since uncertainty over counterpart inventories will likely
+cause ˆx1 ̸= ˆx2, which imposes an inventory carry cost on the BD with the most
+inventory.
+The fact that each BD knows the other BD faces the same decision problem, exerts
+additional incentive to lower its inventory volume.
+✓A DL would enable each BD to see the other BD’s inventory at t1. Will the DL drive
+inventory volume to the max PO?
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+18 / 20
+
+
+--- PAGE 57 ---
+6. The Model
+Multiple equilibrium with a repo DL
+Multiple Equilibrium
+Consider what happens under perfect foresight as when the repo trades are on a public
+DL.
+- Each BD knows ex ante the inventories its counterpart will carry into the inter-dealer
+market.
+- In t1, BD1 faces excess demand of xT
+1 = - p1T
+′. and BD2 faces excess demand of xR
+2
+=R’ and
+It would be PO for each BD to carry Q = min(R
+′, p1T
+′) of inventories. It is also an
+equilibrium. Any deviation will reduce the proﬁt of the deviating BD. She will incur a loss
+from any addition to her inventory and a decline in proﬁt on any reduction in inventory.
+But...the same reasoning applies to any deviation from any level of matching inventories
+below Q. Thus, any level of matching inventories below Q is an equilibrium when there
+is perfect foresight!
+✓It doesn’t look like the DL helps...but there is something else that can be done with a
+DL.
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+19 / 20
+
+
+--- PAGE 58 ---
+6. The Model
+Smart Contracts
+Smart Contracts
+Incentive Compatibility RM and MM are not strategic; they announce their true
+demand for objects. Under our assumption that price is exogenously determined,
+the clients have an incentive to tell the truth. They gain nothing, and risk loss, by
+announcing falsely.
+Aggregation of demand If the clients posted their demand for repo trades to the
+DL, the excess demand in each client market could be calculated and thereby the
+max PO level of inventories for each BD could be determined.
+Smart contract A smart contract appended to a public repo DL could achieve the
+max PO under the following rule:
+”Each BD shall fulﬁll repo transactions equal to Q = min{xT
+1 , xR
+2 } above the
+matched-book volume.”2
+2Also need to create allocation rule for oversubscribed demand.
+Daniel Aronoﬀand Robert Townsend (MIT)
+Repo market model
+February 28, 2020
+20 / 20

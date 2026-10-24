@@ -1,12 +1,11 @@
 ---
-title: '统计量的抽样分布与三大推导分布'
+title: 统计量的抽样分布与三大推导分布
 type: lecture
 lecture: 4
 tags: [sampling-distribution, central-limit-theorem, chi-square-distribution, student-t-distribution, f-distribution]
 status: complete
 source: 'https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/resources/mit15_075jf11_chpt05/'
 ---
-
 # Lec 4 统计量的抽样分布与三大推导分布（Sampling Distributions）
 
 > MIT 15.075J / ESD.07J · Statistical Thinking and Data Analysis · Fall 2011

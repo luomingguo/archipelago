@@ -1,0 +1,447 @@
+The Liquidity Trap and Leverage
+14.454
+Ricardo Caballero
+MIT
+
+Economic Crises
+
+1
+
+Introduction
+
+I You are familiar with the liquidity trap from 14.453
+I Our focus: Role of leverage and deleveraging.
+I Overborrowing due to an AD externality (instead of
+a pecuniary externality)
+
+I (*) A. Korinek and A.
+Simsek, “Liquidity Trap
+and Excessive Leverage,”
+American Economic
+Review, 106(3), 699–738,
+2016
+
+2
+
+Introduction
+
+3
+
+Introduction
+
+4
+
+Main results of K-S: Excessive leverage and underinsurance
+
+Model with anticipated deleveraging and liquidity trap.
+
+I Contributing factors:
+Impatience, previous
+leverage, optimism...
+
+Main results:
+I Competitive equilibrium is constrained ineÿcient.
+I Excessive leverage and underinsurance.
+I Pareto improvement by macroprudential policies
+targeted towards reducing leverage, e.g., debt limits
+and mandatory insurance.
+5
+
+Key channel: Aggregate demand externality
+
+Source of ineÿciency: Aggregate demand externality.
+
+Greater ex-ante leverage:
+=⇒ Lower ex-post wealth for borrowers, higher for lenders.
+=⇒ Lower aggregate demand.
+(Since borrowers have higher MPC due to deleveraging).
+=⇒ Deeper recession and lower output.
+
+Similar mechanism for underinsurance.
+6
+
+Environment with anticipated borrowing constraints
+
+I Single good (dollar) and dates
+t ∈ {0, 1, ..}
+
+First ingredient: Future borrowing
+constraints:
+
+I Households h ∈ {b, l}, with equal
+mass normalized to 1/2
+
+I For each t ≥ 1, agents face borrowing
+constraint dth+1 ≤ φ.
+
+I Types identical except β b ≤ β l and
+d0 ≡ d0b = −d0l ≥ 0
+
+I In contrast, at t = 0, they can choose
+d1 without constraint
+
+I Tightening is anticipated. No
+uncertainty in baseline
+I Let rt+1 denote the real interest rate
+between t and t + 1.
+7
+
+Main ingredient: Lower bound on the interest rate
+I Key ingredient is the lower bound on the real interest rate:
+rt+1 ≥ r
+
+for each t ≥ 1.
+
+I In practice, the lower bound emerges from two features:
+
+1
+
+Zero lower bound on the nominal
+interest rate:
+
+2
+
+Sticky infation expectations:
+Et [Pt+1 /Pt ] = 1 + ζ for each t ≥ 1.
+
+it+1 ≥ 0 for each t ≥ 0.
+
+The combination gives the bound on the real rate with r ' −ζ. We will assume fully sticky
+8
+prices, so r = 0
+
+Demand side: Household optimization
+
+�
+� 
+I Baseline preferences (remove income e˙ect from labor supply): u c̃th − v nth
+� 
+I Defne cth = c̃th − v nth as net consumption. Households solve:
+ h max
+ct ,dth+1 ,nth
+
+∞
+X
+
+� h t � h 
+β u ct
+
+t=0
+
+t
+
+s.t. cth
+
+=
+
+where eth
+
+=
+
+dth+1
+for all t,
+1 + rt+1
+
+�
+wt nth + Πt − v nth denotes net income,
+
+and dth+1
+
+≤
+
+φ for each t ≥ 1.
+
+eth − dth +
+
+9
+
+Supply side: Linear technology
+
+I Technology: 1 unit of
+labor to 1 unit of
+consumption good
+
+I Eÿcient level of output maximizes net income:
+e ∗ = max nt − v (nt ) .
+nt
+
+I Equilibrium does not necessarily feature e ∗ due to
+bound on rt+1
+
+10
+
+Supply side: New Keynesian with extreme stickiness
+
+I (Symmetric) Monopolists meet all of the
+demand in equilibrium (since MC<price)
+
+Lemma
+
+I So outcomes are determined by demand
+
+If rt+1 > 0, et = e ∗ . If rt+1 = 0,
+c b +c l
+et = t 2 t < e ∗
+
+et =
+
+ctb + ctl
+2
+
+I This depends on monetary policy...
+
+I If rt+1 = 0, price of current
+consumption too high. Demand
+too low.
+11
+
+Equilibrium after deleveraging is complete
+
+I Dates t ≥ 2: Steady state with 1 + rt+1 = 1/β l > 1
+I This implies rationing constraint does not bind: et = e ∗
+I Agents’ consumption is given by:
+
+�
+
+�
+c2l = e ∗ + φ 1 − β l and c2b = e ∗ − φ 1 − β l .
+
+I Next consider date 1, the date at which deleveraging happens...
+
+12
+
+Equilibrium during the deleveraging episode
+
+Borrowers’ (constrained)
+consumption:
+
+
+φ
+c1b = e1 − d1 − 1+r
+.
+2
+Lenders’ (unconstrained)
+consumption:
+
+
+φ
+c1l = e1 + d1 − 1+r
+.
+2
+
+I Increase mediated by reduction in real rates
+(Euler):
+
+� 
+�
+�
+u 0 c1l = β l (1 + r2 ) u 0 e ∗ + φ 1 − β l .
+I Constraint r2 ≥ 0, implies upper bound on
+lender’s consumption:
+� 
+�
+�
+
+c1l ≤ c l1 where u 0 c l1 = β l u 0 e ∗ + φ 1 − β l .
+
+13
+
+Equilibrium during the deleveraging episode
+
+Equilibrium depends on:
+d −φ
+| 1 {z }
+
+7
+
+leverage adjustment at 0 rate
+
+c l − e∗
+| 1 {z }
+
+,
+
+unconstrained agents’ bu˙er at 0 rate
+
+I If adjustment is suÿciently small, then r2 > 0 and e1 = e ∗ .
+I Otherwise, if leverage is suÿciently high:
+d1 ≥ d 1 = φ + c l1 − e ∗ ,
+then r2 = 0 and we are in the constrained regime...
+14
+
+Liquidity trap, Keynesian cross, and Keynesian multiplier
+
+I Net income is then determined by aggregate demand:
+e1 =
+
+c1b + c1l
+2
+
+I Agents’ consumption are c1b = e1 − (d1 − φ) and c1l = c 1l , and thus:
+e1 =
+
+e1 − (d1 − φ) + c l1
+.
+2
+
+I This is a Keynesian cross with associated Keynesian multiplier.
+I Solving it, we obtain the equilibrium net income:
+e1 = c l1 + φ − d1 .
+15
+
+Pictorial illustration of equilibrium
+
+16
+
+Conditions for an anticipated recession
+I Date 0 equilibrium determined by Euler equations:
+� 
+� 
+u 0 c0l
+u 0 c0b
+1 + r1 = l 0 � l  = b 0 � b  .
+β u c1
+β u c1
+
+Proposition
+There is a recession at date 1, d1 > d 1 , as long as:
+(i) Borrowers are suÿciently impatient: β b < β¯b�(d0) or
+(ii) Borrowers are suÿciently indebted: d0 > d̄0 β b .
+
+I Recession is anticipated. Is it eÿcient? We turn to welfare analysis...
+
+17
+
+Pecuniary externalities hurt some agents, beneft others
+
+I Defne agents’ date 1 welfare as a function of debt:
+⎛
+⎞
+
+
+φ
++ continuation.
+V b ⎝ d1 , D1 ⎠ = u e1 (D1 ) − d1 +
+|{z} |{z}
+1 + r2 (D1 )
+own
+
+aggregate
+
+I If D1 < d̄1 , then usual pecuniary externalities apply:
+� 
+
+∂V h
+−ηu�0 c1h < 0, if h = l
+=
+, where η ∈ (0, 1) .
+ηu 0 c1h > 0, if h = b
+∂D1
+I Externalities net out. Equilibrium is constrained eÿcient in this range.
+18
+
+Aggregate demand externalities hurt all agents
+
+I If D1 > d̄1 , then aggregate demand externalities apply:
+� 
+∂V h
+∂e1 0 � h 
+=
+u c1 = −u 0 c1h < 0, for each h ∈ {b, l} .
+∂D1
+∂D1
+I Unlike price externalities, AD externalities negative for all agents.
+
+I Opens the door for ineÿciencies....
+
+19
+
+Main result: Ex-ante ineÿciency and excessive leverage
+I Suppose planner can impose endogenous debt limit: d1h ≤ D1 .
+I Can also use date 0 transfer, T0 , to trace the Pareto frontier.
+I Constrained eÿcient: Can be implemented with these policies.
+
+Proposition
+An allocation is constrained eÿcient i˙ e0 = e ∗ and:
+(i) D1 < d̄1 and the usual Euler equations hold.
+(ii) D1 = d¯1 the following distorted Euler inequality holds:
+� 
+� 
+β l u 0 c1l
+β b u 0 c1b
+�  >
+�  .
+u 0 c0b
+u 0 c0l
+
+20
+
+Main result: Ex-ante ineÿciency and excessive leverage
+
+I Implication: Equilibrium with d1 > d̄1
+is constrained ineÿcient.
+I Intuition for policy: First order gains
+from AD externalities but only second
+order losses from distorting agents’
+Euler equations.
+
+I In fact, in this model the externality is
+so strong, that even ex-post debt
+forgiveness to bring debt to d̄1 is
+Pareto (the negative wealth e˙ect for
+the lender is o˙set by the positive AD
+e˙ect)
+I Note: Again, the pecuniary externality
+alone is not enough to justify policy
+intervention.
+
+21
+
+Adding uncertainty
+
+I Consider a version with two states s ∈ {H, L} at date 1
+• State H, there is no debt limit φ = ∞
+• State L, as before (low leverage)
+
+I Markets are complete: at date 0, choose debt and A-D insurance
+I Full insurance condition:
+β l u 0 c1l L
+� 
+q1L = πLl
+u 0 c0l
+�
+
+
+
+β b u0 c b
+= πLb 0 � b1L
+u c0
+�
+
+I Social planner would want (minimum insurance):
+� l 
+� b
+l 0
+b 0
+l β u � c1L
+b β u � c1L
+> πL 0 b
+πL 0 l
+u c0
+u c0
+
+
+
+22
+
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+14.454 Economic Crises
+Spring 2026
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+
+23
+
+

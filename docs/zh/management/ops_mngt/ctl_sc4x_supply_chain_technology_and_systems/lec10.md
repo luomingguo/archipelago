@@ -1,12 +1,11 @@
 ---
-title: '仓储管理——仓库类型、核心作业与绩效评估'
+title: 仓储管理——仓库类型、核心作业与绩效评估
 type: lecture
 lecture: 10
 tags: [warehouse-operations, order-picking, slotting-optimization, warehouse-kpi]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 10 仓储管理——仓库类型、核心作业与绩效评估（Warehousing Operations）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 10 讲  

@@ -1,0 +1,205 @@
+--- Page 1 ---
+ 
+Originally prepared by Nelson Repenning, last revised by John Sterman, Nelson Repenning and Hazhir Rahmandad, 
+September 2013. 
+ denotes a question for which you must hand in an answer, a model, or a plot. 
+ 
+ 
+denotes a tip to help you build the model or answer the question. 
+System Dynamics Group 
+Sloan School of Management 
+Massachusetts Institute of Technology 
+ 
+15.871 Introduction to System Dynamics 
+Fall 2013 
+Professors John Sterman, Hazhir Rahmandad, and Nelson Repenning 
+ 
+Assignment 1 
+Modeling an Epidemic 
+Assigned: Monday, September 9, 2013; Due: 5 PM Monday, September 16, 2013  
+This is an individual assignment 
+ 
+ 
+In this assignment you will experience the system dynamics modeling process by exploring the 
+propagation of an infectious disease through a population of susceptible individuals. Infectious diseases 
+present critical management and public policy challenges (consider SARS, MERS, Avian influenza, HIV, 
+or the threat of bioterror attack). They also provide a useful setting to explore feedback—how the states 
+of a system (the levels or stocks) influence (or “feed back” to) the flows that alter those states. The 
+assignment also introduces you to the structure and behavior of fundamental feedback systems. These 
+systems are the building blocks from which more complex systems are composed. In particular, the 
+feedback structure governing the spread of contagious disease can also help to explain the growth of new 
+products, the diffusion of innovations, the spread of financial panics, and other forms of social contagion 
+important in business settings. The assignment gives you practice with the concepts of dynamic modeling 
+and the modeling process while enabling familiarity with the modeling software we will use.  
+You are to work on this assignment individually, and submit your individual work and writeup via the 
+course website. 
+ 
+A.   
+Get the Software 
+We’ve mentioned that there are several excellent software packages available for dynamic modeling. For 
+our work this semester we will use the VensimPLE software. Your syllabus and Assignment 0 explained 
+how to download and install the program.  
+B.   
+Become Familiar with the Software and Build and Explore the Base Model 
+Make sure to start your work early this week and attend the recitation if you have questions. 
+Download both <VensimPLE_Tutorial_F2013.pdf> and the datafile <SARSDATA.vdf>, which contains 
+data for the Taiwanese SARS epidemic as a Vensim Data File (.vdf). Put the SARSDATA file in your 
+Vensim directory. The tutorial walks you though the development of the epidemic model step by step and 
+shows you how to use the data. 
+ 
+
+--- Page 2 ---
+ 
+2 
+ 
+B1. 
+2 points.  Do the tutorial and build the model it describes. 
+ Be sure to document your model (both the diagram and the equations). This means the 
+following: 
+1. Add sufficient commentary and explanation so that the meaning of each variable, the 
+reasoning behind each formulation, and the data sources for each parameter value are 
+clear to your audience. Do not wait until later to fill in the documentation, but document 
+each equation as you create it. Doing so saves time in the long run. Forcing yourself to 
+describe, in writing, the rationale for each formulation and sources for each parameter 
+tests your understanding: if you can’t write a concise, clear description of a formulation 
+you probably don’t understand it well enough.   
+2. Label causal links with the correct polarities. 
+3.  Denote causal loops with appropriate names and labels. 
+ Always provide the units of measure for every variable, and check that every equation is 
+dimensionally consistent. Vensim can test your model for dimensional consistency (see the 
+tutorial). Models that fail the dimensional consistency test are meaningless.  Dimensional 
+errors are usually symptoms of more serious conceptual difficulties.  
+ As you finish the tutorial, you will have chosen base case parameter values for the exogenous 
+parameters we asked you to select. Once you have a satisfactory overall pattern of behavior, 
+don’t worry too much about the exact values, but use the base case settings as a basis for 
+comparison in the questions that follow.  
+ 
+Include your model (the “.mdl” model file you created in Vensim) with your final submission.  
+ 
+B2. 
+2 points.  Answer the following three questions. 
+  a. 
+What happens when you initialize the stock of infected people at zero? Briefly explain how you 
+account for the behavior you observed with reference to the model’s structure (remember, 
+structure drives behavior). How do the dynamics change if you assume that one or more members 
+of the population in question are already infected? 
+  b. 
+How do the dynamics change as the contact frequency increases? Does changing the contact 
+frequency influence the total number of people who get SARS? Explain why or why not with 
+reference to the structure of the model. 
+  c. 
+How do the dynamics change as infectivity varies? Explain. 
+ Submit your answers to the above questions in a brief writeup: each answer may be a few 
+sentences and involve a handful of model runs. To back up your points, show only a few 
+graphs, tables, or any form of result summary based on model output. You need not show all 
+model runs you have done—just select the minimum you need to answer the questions 
+concisely.  
+ Note: Place relevant selections of models and graphs next to your answers to a given 
+question. Placing graphs in an appendix makes it harder to follow your logic (and to grade 
+your work appropriately)  
+B3. 
+2 points.  Critique your model. 
+ 
+The model you have developed so far is very simple. Briefly critique its formulation and list the 
+major assumptions you view as unrealistic. Aim for one paragraph or so. 
+
+--- Page 3 ---
+ 
+3 
+ 
+C. 
+Improve Your Model. 
+ 
+ In developing your critique of the model, you should have identified a range of unrealistic 
+assumptions. In this section we will guide your exploration of what happens when one such 
+assumption is relaxed. 
+C1. 
+2 points.  So far we’ve assumed people remain infectious indefinitely. In epidemiology this is 
+known as the “SI” (for Susceptible-Infectious) model. The SI model is appropriate for chronic 
+infections that the body cannot clear and for which there is no cure, so that people remain 
+infectious indefinitely. For most infectious diseases, including SARS, smallpox, chicken pox, 
+measles, and influenza, patients either recover or die. 
+ 
+We’ll help you reformulate your model to capture the notion that people eventually recover from 
+SARS and are thus no longer infectious. The revised model is known in epidemiology as the 
+“SIR” model (the “R” denotes “Removal” or “Recovery”). After following our instructions, your 
+final model will look something like the following: 
+ 
+ 
+To modify your model, first create a new stock to represent the recovered population, placing it 
+to the right of Population Infected with SARS. Next create a new flow, called the Recovery 
+Rate, that moves people from the Infectious to the Recovered states (see the tutorial for help in 
+creating stock and flow variables). Set the initial number of Population Recovered from SARS 
+to zero. 
+ For simplicity, we will not distinguish death from recovery, so the recovery flow includes 
+those recovering and those dying.  
+ 
+Next add an auxiliary variable representing the average duration of infection (that is, how long 
+people remain infectious, on average).  
+ 
+Now you need to capture the feedback structure determining the rate at which people recover. 
+The number of people who recover per day must depend on the number of people who are 
+currently infected and the average duration of their infectivity. There are several ways to model 
+the recovery process, but the simplest (and most widely used) is:  
+
+--- Page 4 ---
+ 
+4 
+ 
+ 
+Recovery Rate = Population Infected with SARS/Average Duration of Infectivity 
+To implement this formulation you need to add causal links connecting the infected stock and the 
+average duration of infectivity to the recovery flow, as shown on the previous model diagram. 
+Next, change the equation for the infected population so that the recovery flow is now included 
+as an outflow that drains the infected stock. Alter the equation for the Population Infected with 
+SARS to read: 
+ 
+Population Infected with SARS = INTEG(Infection Rate – Recovery Rate)  
+The equation states that the infectious population increases as people become infectious and 
+decreases as people recover; the population infected with SARS accumulates the difference 
+between infection and recovery. 
+Note that the infectious population is no longer equal to the cumulative number of cases. 
+Finally, you must estimate a value for Average Duration of Infectivity. Epidemiologists believe 
+the infectious stage of SARS lasts about 1 to 3 weeks (7 – 21 days). Use your judgment to select 
+a base case value. 
+Check that your diagram now resembles that on the previous page. 
+ Make sure your revised model is documented and dimensionally consistent.  
+  
+What kind of feedback loop have you added to your model? Make sure you have added an 
+appropriate loop identifier and loop name to your diagram. 
+ 
+Include your model (the “.mdl” model file you created in Vensim) with your final submission.   
+C2. 
+2 points.  Analyze your model to determine the effect of adding recovery. 
+   
+Explore how your model now behaves by running simulation tests. How do the dynamics change 
+as the duration of infectivity is increased or decreased? What is different now? Explain in a brief 
+discussion with reference to the structure of your model. You need not include many runs or 
+tables, but do present a small selection of graphs or an overview of the data to back up your 
+points. 
+Bonus Return to the questions you explored before. How does the epidemic change, once recovery is 
+added? Now, what is the effect when contact frequency and infectivity change? Vary key 
+parameters over a range to be sure you understand the possible dynamics of the system. 
+Specifically, consider how the timing and severity of the epidemic change with parameters. How 
+do the dynamics differ from those of the SI model in which there is no recovery? 
+ 
+D. 
+What to hand in and how to submit your work  
+Write up your responses to the questions above in a word (.docx) document.  In addition, you 
+need to submit the various Vensim model (.mdl) files called for above in parts B1 and C1.   
+Upload your assignment by 5 PM on Sept 16, 2013.  Submit your assignment as a single .zip file 
+including your response document and models.   
+Name files with your last name, and for multiple files of the same type, the assignment section, 
+e.g. “Smith.docx”, “Smith-B1.mdl”, and “Smith-C1.mdl”, all submitted as part of “Smith.zip”.  
+
+--- Page 5 ---
+MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+ 
+15.871 Introduction to System Dynamics
+Fall 2013
+ 
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.

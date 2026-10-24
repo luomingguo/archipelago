@@ -1,12 +1,11 @@
 ---
-title: '导论与设计思维'
+title: 导论与设计思维
 type: lecture
 lecture: 1
 tags: [design-thinking, product-development-process, opportunity-identification, cross-functional-teams]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 1 导论与设计思维（Introduction and Design Thinking）
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  

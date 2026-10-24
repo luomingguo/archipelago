@@ -1,12 +1,11 @@
 ---
-title: '数据收集与抽样策略'
+title: 数据收集与抽样策略
 type: lecture
 lecture: 2
 tags: [sampling-methods, simple-random-sample, stratified-sampling, selection-bias, experimental-design]
 status: complete
 source: 'https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/resources/mit15_075jf11_chpt03/'
 ---
-
 # Lec 2 数据收集与抽样策略（Collecting Data）
 
 > MIT 15.075J / ESD.07J · Statistical Thinking and Data Analysis · Fall 2011

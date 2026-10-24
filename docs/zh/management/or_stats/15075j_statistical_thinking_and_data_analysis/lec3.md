@@ -1,12 +1,11 @@
 ---
-title: '数据探索与特征汇总'
+title: 数据探索与特征汇总
 type: lecture
 lecture: 3
 tags: [summary-statistics, robust-statistics, simpsons-paradox, pearson-correlation, time-series-smoothing]
 status: complete
 source: 'https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/resources/mit15_075jf11_chpt04/'
 ---
-
 # Lec 3 数据探索与特征汇总（Summarizing Numerical Data）
 
 > MIT 15.075J / ESD.07J · Statistical Thinking and Data Analysis · Fall 2011

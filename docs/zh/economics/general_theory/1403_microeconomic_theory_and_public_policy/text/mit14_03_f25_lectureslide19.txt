@@ -1,0 +1,588 @@
+Revised November 24, 2025
+
+
+
+
+14.03/003 Microeconomic Theory & Public Policy Fall 2025
+
+
+
+Lecture slides 19. Private Information and Adverse Selection
+
+David Autor (Prof), MIT Economics and NBER
+Health insurance with adverse selection
+Basics: Health insurance with adverse selection
+ 1. There’s a unit mass of consumers i indexed from i ∈ [0, 1], each facing the risk of
+    $10,000 health expense. This risk is uniformly distributed on r ∼ U [0, 1]
+
+
+
+
+                                                                                          2/21
+Basics: Health insurance with adverse selection
+ 1. There’s a unit mass of consumers i indexed from i ∈ [0, 1], each facing the risk of
+    $10,000 health expense. This risk is uniformly distributed on r ∼ U [0, 1]
+ 2. The risk ri for consumer i is ri = i. So, for i = 1, the risk of a $10K loss is 100%. For
+    i = 0.5, risk of loss is 50%, etc.
+
+
+
+
+                                                                                            2/21
+Basics: Health insurance with adverse selection
+ 1. There’s a unit mass of consumers i indexed from i ∈ [0, 1], each facing the risk of
+    $10,000 health expense. This risk is uniformly distributed on r ∼ U [0, 1]
+ 2. The risk ri for consumer i is ri = i. So, for i = 1, the risk of a $10K loss is 100%. For
+    i = 0.5, risk of loss is 50%, etc.
+ 3. Consumers are risk averse, meaning that the risk of loss has a direct utility cost
+      □   Let W equal wealth and L = 10, 000 equal the potential loss. Consumer utility is:
+                             U (W, L, ri ) =ri × (W − L) + (1 − ri )W − 0.5 × ri L
+                                         =W − 1.5 × ri L
+                                         =W − 1.5 × E[L|ri ]
+      □   It’s as if the consumer loses an additional 50% of the expected loss just by worrying
+
+
+
+
+                                                                                                  2/21
+Basics: Health insurance with adverse selection
+ 1. There’s a unit mass of consumers i indexed from i ∈ [0, 1], each facing the risk of
+    $10,000 health expense. This risk is uniformly distributed on r ∼ U [0, 1]
+ 2. The risk ri for consumer i is ri = i. So, for i = 1, the risk of a $10K loss is 100%. For
+    i = 0.5, risk of loss is 50%, etc.
+ 3. Consumers are risk averse, meaning that the risk of loss has a direct utility cost
+      □   Let W equal wealth and L = 10, 000 equal the potential loss. Consumer utility is:
+                             U (W, L, ri ) =ri × (W − L) + (1 − ri )W − 0.5 × ri L
+                                         =W − 1.5 × ri L
+                                         =W − 1.5 × E[L|ri ]
+      □   It’s as if the consumer loses an additional 50% of the expected loss just by worrying
+
+ 4. Consumers know their own risks ri , but insurers cannot observe any individual’s risk
+
+
+                                                                                                  2/21
+Basics: Health insurance with adverse selection
+ 1. There’s a unit mass of consumers i indexed from i ∈ [0, 1], each facing the risk of
+    $10,000 health expense. This risk is uniformly distributed on r ∼ U [0, 1]
+ 2. The risk ri for consumer i is ri = i. So, for i = 1, the risk of a $10K loss is 100%. For
+    i = 0.5, risk of loss is 50%, etc.
+ 3. Consumers are risk averse, meaning that the risk of loss has a direct utility cost
+      □   Let W equal wealth and L = 10, 000 equal the potential loss. Consumer utility is:
+                             U (W, L, ri ) =ri × (W − L) + (1 − ri )W − 0.5 × ri L
+                                         =W − 1.5 × ri L
+                                         =W − 1.5 × E[L|ri ]
+      □   It’s as if the consumer loses an additional 50% of the expected loss just by worrying
+
+ 4. Consumers know their own risks ri , but insurers cannot observe any individual’s risk
+ 5. Insurers will ofer actuarially fair policies, but they must break even: they cannot ofer
+    policies that lose money on average                                                      2/21
+How we’ll approach this problem
+
+
+ 1. Solve for the free market equilibrium
+      □   Find the policy I ∗ that breaks even
+      □   Consider its efciency/inefciency
+      □   Consider what’s going wrong
+
+ 2. Consider instead an insurance mandate
+      □   Determine the mandated price
+      □   Consider aggregate efciency
+      □   Consider Pareto efciency
+
+
+
+                                                 3/21
+Expected losses of risky consumers
+                                                                                   $15,000
+                                           Marginal cost
+
+
+                                                                                   $12,500
+
+
+
+
+                                                                                   $10,000
+
+
+
+
+                                                                                   $7,500
+
+
+
+
+                                                                                   $5,000
+
+
+
+
+                                                                                   $2,500
+
+
+
+
+                                                                                   $-
+         100%   90%   80%   70%   60%      50%         40%   30%   20%   10%   %             4/21
+                                        Risk of loss
+Willingness to pay for insurance
+
+
+ − Consumers are risk averse, meaning that the risk of loss has a direct utility cost,
+   independent of the expected loss
+
+ − Let this cost equal 50% of the expected loss
+
+ − Let W equal wealth and L = 10, 000 equal the potential loss. Consumer utility is:
+                      U (W, L, ri ) =ri × (W − L) + (1 − ri )W − 0.5 × ri L
+                                  =W − 1.5 × ri L
+                                  =W − 1.5 × E[L|ri ]
+
+ − It’s as if the consumer loses an additional 50% of the expected loss just by worrying
+
+
+                                                                                           5/21
+Willingness to pay for insurance
+
+ − Because risk has a direct negative efect on utility, consumers would like to buy insurance
+   to eliminate this risk
+ − How much would they be willing to pay for a policy that completely eliminates the risk?
+ − Let I equal the cost of the policy. The consumer will buy the policy if:
+
+                             U (W − I, L = 0, ri ) ≥U (W, L, ri )
+                                            W − I ≥W − 1.5 × ri 10, 000
+                                       ri ≥ I/15, 000
+ − Defne R(I) ≡ I/15, 000 equals the lowest risk customer who will buy policy with cost I
+ − At insurance price I, consumers with risk r ≥ R(I) = I/15K will buy insurance
+      □   If I = 0, consumers with ri ≥ 0 will purchase policy
+      □   If I = 15, 000 − ε, only with consumers with ri ≈ 1 will purchase
+                                                                                          6/21
+Expected losses and willingness to pay for insurance
+                                                                                              $15,000
+
+                                   Marginal cost         Willingness to pay
+
+                                                                                              $12,500
+
+
+
+
+                                                                                              $10,000
+
+
+
+
+                                                                                              $7,500
+
+
+
+
+                                                                                              $5,000
+
+
+
+
+                                                                                              $2,500
+
+
+
+
+                                                                                              $-
+          100%   90%   80%   70%        60%      50%       40%     30%        20%   10%   %             7/21
+                                              Risk of loss
+Adverse selection
+ − Insurance companies cannot assess risks of individual policyholders
+ − If so, insurers can ofer only one policy at price I. They cannot condition I on the actual
+   risk of buyers
+ − Insurers know the following
+      □   L = 10K in the event of loss
+      □   Risk of loss is r ∼ U [0, 1] → E[L] = $5K
+      □   Each consumer i knows their own risk level ri
+
+ − Insurers also understand adverse selection
+      □   The riskiest buyers (large ri ) will have the highest WTP for insurance
+      □   Let R(I) be the least risky buyer of insurance policy I
+      □   Since risks are uniformly distributed on r ∈ U [0, 1], the average buyer of a policy that
+          costs I will have risk E[r|I] = 0.5 × (1 + R(I))
+                                                                                                      8/21
+Adverse selection
+ − Insurance company’s expected costs depend on the price it sets I
+ − At price I the least risky (i.e., marginal) customer who buys is R(I) = 15,000
+                                                                             I
+
+
+ − For example, if insurer sets I = $9, 000, marginal customer has expected loss of $6, 000
+ − The expected (i.e., average) cost of purchasers as a function of price I is
+
+                                E[L|I] =0.5 (1 + R(I)) × 10, 000
+
+ − If insurer sets I = 9, 000, expected costs will be
+
+                           E[L|I = 9, 000] =0.5 (1 + R(I)) × 10, 000
+                                            =0.5 (1 + 0.6) × 10, 000
+                                            =0.8 × 10, 000
+                                            =8, 000
+                                                                                        9/21
+Marginal and average cost of insured population
+                                                                                         $15,000
+                                  Marginal cost           Average cost
+
+
+                                                                                         $12,500
+
+
+
+
+                                                                                         $10,000
+
+
+
+
+                                                                                         $7,500
+
+
+
+
+                                                                                         $5,000
+
+
+
+
+                                                                                         $2,500
+
+
+
+
+                                                                                         $-
+         100%   90%   80%   70%      60%       50%       40%     30%     20%   10%   %             10/21
+                                            Risk of loss
+The free market equilibrium
+
+
+ − Adverse selection gives rise to the following properties
+      □   Insurer must set price according to average cost of insured
+      □   Average cost of insured depends on the price the insurer charges
+      □   Purchasers are not interested in average cost of insured
+      □   Their question: Is my utility higher or lower with an insurance policy that costs I?
+      □   They are comparing insurer’s average cost with their own marginal willingness to pay
+
+
+
+
+                                                                                                 11/21
+The free market equilibrium
+
+
+ − Adverse selection gives rise to the following properties
+      □   Insurer must set price according to average cost of insured
+      □   Average cost of insured depends on the price the insurer charges
+      □   Purchasers are not interested in average cost of insured
+      □   Their question: Is my utility higher or lower with an insurance policy that costs I?
+      □   They are comparing insurer’s average cost with their own marginal willingness to pay
+
+ − Equilibrium occurs where
+      □   Average cost of insured customers equals marginal willingness to pay of lowest risk
+          customer
+
+
+                                                                                                 11/21
+Free market equilibrium in the health insurance market
+                                                                                               $15,000
+                            Marginal cost    Average cost       Willingness to pay
+
+
+                                                                                               $12,500
+
+
+
+
+                                                                                               $10,000
+
+
+
+
+                                                                                               $7,500
+
+
+
+
+                                                                                               $5,000
+
+
+
+
+                                                                                               $2,500
+
+
+
+
+                                                                                               $-
+         100%   90%   80%    70%       60%      50%       40%       30%        20%   10%   %             12/21
+                                             Risk of loss
+The Free Market Equilibrium
+
+ − Equilibrium: Average cost of insured equals marginal WTP of lowest risk purchaser
+      □   WTP of lowest risk purchaser is 15, 000 × R(I)
+      □   Average cost of insured is 10, 000 × 0.5(1 + R(I))
+
+
+
+
+                                                                                       13/21
+The Free Market Equilibrium
+
+ − Equilibrium: Average cost of insured equals marginal WTP of lowest risk purchaser
+      □   WTP of lowest risk purchaser is 15, 000 × R(I)
+      □   Average cost of insured is 10, 000 × 0.5(1 + R(I))
+
+ − Solving for I ∗
+
+                                        I ∗ : E[L|I ∗ ] = 15, 000 × R(I ∗ )
+                          10, 000 × 0.5(1 + R(I ∗ )) = 15, 000 × I ∗ /15, 000
+                                      1 + I ∗ /15, 000 = I ∗ /5, 000
+                                        5000 + I ∗ /3 = I ∗
+                                             (2/3)I ∗ = 5, 000
+                                         I ∗ = 7, 500
+
+                                                                                       13/21
+The Free Market Policy
+
+
+ − Q Is this equilibrium inefcient (and why)?
+
+
+
+
+                                                14/21
+The Free Market Policy
+
+
+ − Q Is this equilibrium inefcient (and why)?
+
+ − Q Why do so few people buy insurance given that all are risk averse and the insurer is
+   trying only to break even?
+
+
+
+
+                                                                                        14/21
+The Free Market Policy
+
+
+ − Q Is this equilibrium inefcient (and why)?
+
+ − Q Why do so few people buy insurance given that all are risk averse and the insurer is
+   trying only to break even?
+
+      □   The problem is adverse selection
+      □   At any price, people with greatest expected losses always buy the policy
+      □   The insured population is adversely selected, and hence the premium will be higher than if
+          ‘average’ consumers were insured
+      □   Adverse selection deters lower cost consumers from buying insurance
+      □   Only a subset insure
+
+                                                                                                 14/21
+The free market policy
+
+
+
+
+ − Q: Why does the market not completely unravel — leading to no one buying insurance?
+
+
+
+
+                                                                                   15/21
+The free market policy
+
+
+
+
+ − Q: Why does the market not completely unravel — leading to no one buying insurance?
+
+      □   Because some consumers will sign up for the policy even though it is actuarially unfair for
+          them
+      □   They prefer a ’bad deal’ on insurance to no insurance at all
+
+
+
+
+                                                                                                   15/21
+The free market policy: Inefciency
+
+
+ − Only one-half of consumers are insured even though all would pay greater than expected
+   cost to get insurance
+
+ − Consumer surplus is (15, 000 − 7, 500) × 0.5 × 0.5 = 1, 875. (That’s base times height
+   times one-half of the consumer surplus triangle)
+
+ − DWL is (7, 500 − 5, 000) × 0.5 × 0.5 = 625
+
+ − There is no producer surplus because insurance seller breaks even
+
+ − Can we do better?
+
+
+                                                                                        16/21
+Correcting the market failure
+
+
+
+Note that
+
+ 1. All consumers place positive value on insurance (except consumer i = 0, who has zero
+    risk)
+
+ 2. The marginal cost of insuring each consumer is less than or equal to her willingness to
+    pay for this insurance, all consumers should be insured.
+
+
+
+
+                                                                                          17/21
+Correcting the market failure
+
+
+
+Q: What would be an efcient insurance solution in this case?
+
+ − All consumers place positive value on insurance (except consumer i = 0, who has zero
+   risk)
+
+ − An efcient market solution involves all consumers obtaining insurance
+
+ − Since the marginal cost of insuring each consumer is less than or equal to her willingness
+   to pay for this insurance, all consumers should be insured.
+
+ − The efcient policy has a premium of $5000, but this policy is mandatory.
+
+
+
+                                                                                         18/21
+Mandating insurance
+                                                                                               $15,000
+                            Marginal cost    Average cost       Willingness to pay
+
+
+                                                                                               $12,500
+
+
+
+
+                                                                                               $10,000
+
+
+
+
+                                                                                               $7,500
+
+
+
+
+                                                                                               $5,000
+
+
+
+
+                                                                                               $2,500
+
+
+
+
+                                                                                               $-
+         100%   90%   80%    70%       60%      50%       40%       30%        20%   10%   %             19/21
+                                             Risk of loss
+Mandate
+
+− Notice that not every consumer is better of under the mandatory policy
+− At price $5,000, consumers with expected cost of less than (2/3) × $5, 000 = $3, 333
+  (r = 0.33) prefer not to purchase
+− Q: In what sense is it efcient to require them to buy insurance?
+
+
+
+
+                                                                                         20/21
+Mandate
+
+− Notice that not every consumer is better of under the mandatory policy
+− At price $5,000, consumers with expected cost of less than (2/3) × $5, 000 = $3, 333
+  (r = 0.33) prefer not to purchase
+− Q: In what sense is it efcient to require them to buy insurance?
+     □   Think of the mandatory policy as having two parts: an insurance value and a transfer value
+     □   The transfer is from low cost to high cost consumers
+     □   Consumers with r < 0.33 efectively subsidize consumers with r ≥ 0.33
+     □   While the insurance component makes consumers better of, the transfer component makes
+         consumers with r < 0.33 worse of
+
+
+
+                                                                                                20/21
+Mandate
+
+− Notice that not every consumer is better of under the mandatory policy
+− At price $5,000, consumers with expected cost of less than (2/3) × $5, 000 = $3, 333
+  (r = 0.33) prefer not to purchase
+− Q: In what sense is it efcient to require them to buy insurance?
+     □   Think of the mandatory policy as having two parts: an insurance value and a transfer value
+     □   The transfer is from low cost to high cost consumers
+     □   Consumers with r < 0.33 efectively subsidize consumers with r ≥ 0.33
+     □   While the insurance component makes consumers better of, the transfer component makes
+         consumers with r < 0.33 worse of
+
+− Average consumer welfare is higher under the mandatory insurance policy than either
+  the no-insurance or the free market insurance case
+                                                                                                20/21
+The mandatory policy: Efciency properties
+
+ − All consumers are insured, but some are worse of
+
+
+
+
+                                                      21/21
+The mandatory policy: Efciency properties
+
+ − All consumers are insured, but some are worse of
+
+ − Consumer surplus is:
+
+      [(15, 000 − 5000) × 0.66 × 0.5] − [(5, 000 − 0) × 0.33 × 0.5] = 3, 333 − 833 = 2, 500
+
+ − Compare with consumer surplus in free market case of
+    (15, 000 − 7, 500) × 0.5 × 0.5 = 1, 875
+
+
+
+
+                                                                                         21/21
+The mandatory policy: Efciency properties
+
+ − All consumers are insured, but some are worse of
+
+ − Consumer surplus is:
+
+      [(15, 000 − 5000) × 0.66 × 0.5] − [(5, 000 − 0) × 0.33 × 0.5] = 3, 333 − 833 = 2, 500
+
+ − Compare with consumer surplus in free market case of
+    (15, 000 − 7, 500) × 0.5 × 0.5 = 1, 875
+
+ − What is maximum attainable consumer surplus?
+
+                             [(15, 000 − 10, 000) × 1 × 0.5] = 2, 500
+
+ − Thus, the mandatory policy achieves maximum consumer surplus (is fully efcient) but it
+   is not Pareto-improving
+                                                                                         21/21
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

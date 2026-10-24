@@ -1,94 +1,92 @@
 ---
-title: '15.769 运营战略学 (Operations Strategy)'
+title: '15.769 运营战略学'
 type: course
-course: '15.769 运营战略学 (Operations Strategy)'
+course: '15.769 运营战略学'
 course_id: '15.769'
 tags: [operations-strategy, strategic-alignment, manufacturing-footprint, vertical-integration]
-status: stub
+status: complete
 source: 'https://ocw.mit.edu/courses/15-769-operations-strategy-fall-2010/'
 ---
+# 15.769 运营战略学（Operations Strategy）
 
-# 15.769 运营战略学 (Operations Strategy)
-
-> MIT Course 15 · Operations Management · 运营管理 · 课号 15.769
+> MIT Sloan School of Management · Fall 2010 · 授课教师：Prof. Charles Fine, Donald Rosenfield
 
 ## TL;DR
 
-- 将企业顶层商业竞争战略解构为运营层面的四个核心维度：成本、质量、交付速度与柔性。
-- 垂直一体化与外包边界划分、全球工厂网络布局布局（Offshoring vs. Reshoring）。
-- 战略性产能扩张时机的先发抢占与跟随机会评估，实现技术工艺与市场生命周期的动态协同。
+- 将企业顶层商业竞争战略解构为运营层面的四大核心维度：成本、质量、交付速度与柔性。
+- 斯金纳八大决策范畴贯穿结构性资产投入与基础架构流程，确保企业运营能力与市场定位的战略咬合。
+- 深度剖析垂直一体化边界、全球设施网络布局（近岸与回流）、战略寻源及 21 世纪数字化运营前沿。
 
-## 课程简介 / Description
+::: definition [运营战略（Operations Strategy）]
+运营战略是指企业如何构建、配置与演进其运营资源与业务流程，以在目标市场中实现长期、可持续的差异化竞争优势的全局性决策模式。它明确了运营系统在面对成本、质量、交期与柔性等多重竞争目标时的取舍原则与资源投入优先级。
+:::
 
-provides a unifying framework for analyzing strategic issues in manufacturing and service operations. Students analyze the relationships between manufacturing and service companies and their suppliers, customers, and competitors. The course covers strategic decisions in technology, facilities, vertical integration, human resources, and other areas, and also explores means of competition such as cost, quality, and innovativeness.
+## 课程体系与战略分析全景
 
-## 讲义 / Lecture Notes
+本课程基于麻省理工学院斯隆管理学院经典教学框架，系统整合制造与服务运营的顶层战略决策。全课 24 讲分为四大进阶篇章：
 
-- **1**
-  - Course introduction; Innovation and operations discipline
-  - (PDF)
-- **2**
-  - Frameworks for strategy and the decision category approach
-  - (PDF)
-- **3**
-  - Developing an operations strategy; Application of decision category approach and the capabilities approaches
-- **4**
-  - Value chain dynamics and operations decisions
-  - (PDF - 3.5MB)
-- **5**
-  - Value chain dynamics: Lessons from the auto industry
-- **6**
-  - Enterprise architecture and operations strategy
-  - Part II: Key Elements and Decision Categories in an Operations Strategy
-- **7**
-  - Vertical integration and outsourcing
-  - (PDF)
-- **8**
-  - Business processes
-  - (PDF)
-- **9**
-  - Process technology decisions and multiple plants
-  - (PDF)
-- **10**
-  - Capacity strategy: How to make decisions on capacity and capacity expansion
-  - (PDF)
-- **11**
-  - Facilities strategies and globalization; Comparisons of plant productivity
-  - (PDF)
-- **12**
-  - Summary lecture on facilities strategy and globalization
-  - (PDF)
-- **13**
-  - Sourcing and supplier management
-- **14**
-  - Information systems and the impacts of the electronic economy
-- **15**
-  - Logistics systems and the fulfillment supply chain
-  - Part III: Capabilities and Different Approaches to Operations Strategy
-- **16**
-  - Competing on quality: Sources of quality and different measures of quality
-- **17**
-  - Competing on cost versus competing on availability
-  - (PDF)
-- **18**
-  - Competing on cost versus competing on features and innovativeness
-- **19**
-  - Competition in the housing industry: Improving cost, quality
-  - Part IV: Globalization, Outsourcing and Other Critical Issues in Operations Strategy and Policy in the 21st Century
-- **20**
-  - Models for gaining advantage in a global environment; How to position within a value chain
-- **21**
-  - Globalization, joint ventures, sourcing overseas, and macroeconomic effects of off-shoring
-  - (PDF)
-- **22**
-  - Supplier power and overseas sourcing: Moving up the value chain in outsourcing
-  - (PDF)
-- **23**
-  - Student presentations
-- **24**
-  - Student presentations and course wrap-up
-  - (PDF)
-  - (PDF)
+1. **第一篇：战略框架与学科范式（Lec 1–6）**：确立运营从成本车间向竞争武器的范式转变，掌握决策范畴法、资源基础观（RBV）、法恩钟摆速度（Clockspeed）与双重螺旋模型，解析汽车工业百年演变与企业架构协同。
+2. **第二篇：核心要素与决策范畴（Lec 7–15）**：深入自制与外包边界（TCE）、业务流程再造（VSM 与利特尔法则）、工艺技术选型、产能扩张时序博弈、全球设施选址（MILP 与 TCO 模型）、战略寻源（Kraljic 矩阵）与全渠道物流履约。
+3. **第三篇：能力构建与关键权衡（Lec 16–19）**：剖析大卫·加尔文质量八维度与六西格玛（$C_p, C_{pk}$）、成本与可得性非线性权衡（报童模型与 Zara 范式）、目标成本法（VE）与建筑工业化前沿探索。
+4. **第四篇：全球化、外包与 21 世纪前沿（Lec 20–24）**：推演格玛沃特 AAA 全球战略、施振荣微笑曲线、跨国合资博弈、产业公地危机、代工演进阶梯（OEM-ODM-OBM）、苹果与特斯拉战略对标，总结未来自主智能与绿色循环运营范式。
+
+## 讲义全景大纲 / Lecture Notes
+
+### 第一篇：战略框架与学科范式
+- [Lec 1 课程导论与运营学科范式](./lec1.md)
+  - 运营战略本质、Hayes-Wheelwright 能力演进四阶段模型、斯金纳权衡假说与沙堆模型（Sand Cone）。
+- [Lec 2 战略分析框架与决策范畴法](./lec2.md)
+  - 四大结构性决策与四大基础架构性决策范畴、台积电案例、战略匹配度矩阵（Strategic Fit Matrix）。
+- [Lec 3 运营战略制定与核心能力构建](./lec3.md)
+  - 市场驱动 vs. 资源基础观（RBV）、VRIO 审计模型、赢得订单要素与资格要素、动态能力（Dynamic Capabilities）。
+- [Lec 4 价值链动力学与双重螺旋模型](./lec4.md)
+  - 查尔斯·法恩钟摆速度（Clockspeed）、双重螺旋模型（纵向一体化与横向解耦的周期震荡）、价值链动态控制点。
+- [Lec 5 汽车产业的价值链动力学与模块化变迁](./lec5.md)
+  - 福特胭脂河极致一体化、丰田系列网络（Keiretsu）、Tier 1 供应商权力博弈、大众 MQB 平台与新能源重构。
+- [Lec 6 企业架构与运营战略协同](./lec6.md)
+  - Jeanne Ross 四大运营模型（多元化、协同、复制、统一）、ISA-95 制造分层架构、ERP-MES-SCADA 垂直闭环。
+
+### 第二篇：核心要素与决策范畴
+- [Lec 7 垂直一体化与外包边界决策](./lec7.md)
+  - 交易成本经济学（TCE）、资产专用性与套牢问题、Fine-Whitney 能力与容量依赖矩阵、波音 787 过度外包教训。
+- [Lec 8 核心业务流程再造与端到端优化](./lec8.md)
+  - 业务流程再造（BPR）、价值流图（VSM）、利特尔法则（$L = \lambda W$）、流程周期效率（PCE）与流程所有权治理。
+- [Lec 9 工艺技术决策与多工厂制造网络](./lec9.md)
+  - 产品-工艺生命周期矩阵、对角线匹配原则、斯金纳聚焦工厂（Focused Factory）、全球多工厂战略分工阶梯。
+- [Lec 10 产能战略与扩张时机决策](./lec10.md)
+  - 领先型、滞后型与跟踪型扩张时序、规模经济与最小有效规模（MES）、资本投入块状性、Dixit 抢先扩产博弈。
+- [Lec 11 设施选址战略与全球生产率对标](./lec11.md)
+  - 超越名义工资的拥有总成本（TCO）模型、费多斯海外工厂六大战略角色演进阶梯、全要素生产率（TFP）对标。
+- [Lec 12 设施战略与全球化布局综合决策](./lec12.md)
+  - 制造版图重构（近岸与回流）、集中化大枢纽 vs. 分布式小集群网络权衡、设施选址-分配混合整数线性规划（MILP）。
+- [Lec 13 战略寻源与供应商关系管理](./lec13.md)
+  - 卡拉杰克采购组合矩阵（四大象限寻源打法）、供应商早期介入（ESI）、丰田目标成本法（Genka Kikaku）、TCA 审计。
+- [Lec 14 信息系统与数字经济对运营模式的重塑](./lec14.md)
+  - 牛鞭效应成因与信息解药（POS 共享、CPFR、VMI）、双边平台运营范式（Flexport）、工业物联网与数字孪生闭环。
+- [Lec 15 物流系统与全渠道履约网络](./lec15.md)
+  - 物流拓扑范式（越库作业 Cross-Docking）、安全库存平方根法则、全渠道最后一公里经济学、延迟制造（Postponement）。
+
+### 第三篇：能力构建与关键权衡
+- [Lec 16 基于质量的竞争优势：质量维度与测度体系](./lec16.md)
+  - 大卫·加尔文质量八大维度、质量成本 PAF 框架与 1-10-100 法则、六西格玛统计过程能力指数（$C_p, C_{pk}$）。
+- [Lec 17 成本竞争与高可得性竞争权衡](./lec17.md)
+  - 成本-可得性前沿面非线性陡增、报童模型（Newsvendor）临界分位数解、Zara 敏捷快反供应链运营范式。
+- [Lec 18 成本竞争与功能创新性权衡](./lec18.md)
+  - 目标成本法（Target Costing）、价值工程（VE）、狩野模型（Kano Model）功能剪裁、模块化产品平台化架构。
+- [Lec 19 建筑与复杂系统的工业化运营实践](./lec19.md)
+  - 土木建筑业生产率停滞困境、BIM 驱动的离岸预制制造与现场吊装、硅谷独角兽 Katerra 破产深度复盘。
+
+### 第四篇：全球化、外包与 21 世纪前沿
+- [Lec 20 全球竞争优势模型与价值链精准定位](./lec20.md)
+  - 格玛沃特 AAA 全球战略框架（套利、整合、适应）、施振荣微笑曲线（Smile Curve）、隐形冠军生态位垄断。
+- [Lec 21 全球化、合资伙伴与离岸外包的宏观影响](./lec21.md)
+  - 跨国合资企业（IJV）动态博弈与控制权冲突、以市场换技术的赶超逻辑、皮萨诺-西哈“产业公地”枯竭危机。
+- [Lec 22 供应商话语权演变与代工升级机制](./lec22.md)
+  - 代工产业演化阶梯（OEM-ODM-OBM）、EMS 超级航母规模经济与微利造血、采购方困境（Buyer's Dilemma）。
+- [Lec 23 全球运营战略综合案例推演](./lec23.md)
+  - 苹果（轻资产代工管控）与特斯拉（激进重资产垂直整合）巅峰范式对比、五步系统化运营审计法、抗脆弱网络设计。
+- [Lec 24 21世纪运营战略前沿与全课总结](./lec24.md)
+  - 15.769 知识体系全景大厦大一统、地缘政治分布式韧性、AI 与具身智能自主运营闭环、绿色循环经济（Scope 3 审计）。
 
 ---
 

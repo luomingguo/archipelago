@@ -1,0 +1,1986 @@
+--- PAGE 1 ---
+14.462
+Spring, 2020
+Dealing with Externalities of Payments 
+Systems and Fire Sales: Designs for 
+Optimized Competition among 
+Cryptocurrencies and Market Structure 
+to Remove Pecuniary Externalities
+(Lecture 7)
+Robert M. Townsend
+Elizabeth & James Killian Professor of Economics, MIT
+
+
+--- PAGE 2 ---
+Jain and Townsend (2018) “The Economics 
+of Platforms in a Walrasian Framework”
+Kilenthong and Townsend (2019) “A Market 
+Based Solution for Fire Sales and Other 
+Pecuniary Externalities”
+
+
+--- PAGE 3 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+TheEconomicsofPlatformsinaWalrasian
+Framework
+AnilK.Jain⇤andRobertM.Townsend†
+FederalReserveBoardofGovernors⇤andMassachusettsInstituteofTechnology†
+
+
+--- PAGE 4 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Introduction
+Motivation
+I A successful platform needs to intermediate between buyers
+and sellers.
+I We are interested in platforms where buyers and sellers care
+about the composition of the platform’s users.
+I causing a potential ‘externality’ arising from one agent’s
+platform choice on other agents’ willingness to join the same
+platform.
+I A credit card company must attract both consumers and
+merchants.
+I Dark pools and exchanges must attract buyers and sellers.
+I Internet service providers (ISPs) need to attract content
+producers and users.
+
+
+--- PAGE 5 ---
+Competition in Cryptocurrencies
+I Though the credit card payments system links directly to policy issues at
+stake, it also conjures up the image of imperfect competition, as the
+credit card industry is relatively concentrated with the leading companies
+being Visa, MasterCard, American Express and Discover.
+I However, crypto currencies are entering and beginning to compete. Coins
+which feature payments include not only Bitcoin but also Dogecoin,
+Litecoin, Monero, Ripple, Stellar, and Zcash.
+I This inevitably raises the question of whether there is scope for the
+existence of multiple coins, that is, can there be multiple payment
+platforms co-existing.
+I This competitive battle is being waged against the key constraint—the
+problem of scaling up. Bitcoin’s miners are validators using a
+proof-of-work protocol which consumes signiﬁcant electricity, yet has
+limited capacity and slow transaction speed -- an estimated 7 transactions
+per second for bitcoin.
+I But new entrants with alternative protocols are often faster and cheaper,
+for example, Stellar with its Federated Byzantine Agreement; or
+Algorand’s using their proof-of-stake protocol.
+
+
+--- PAGE 6 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Introduction
+Questions to answer
+I In the context of multiple competing platforms is there a
+Walrasian equilibrium?
+I Is the Walrasian equilibrium eﬃcient?
+I Is there a role for regulation due to a possible network
+externality?
+I Are these “externalities” something which (only) regulation
+can deal with?
+I How do changes in wealth a↵ect prices and subsequently
+user’s welfare?
+
+
+--- PAGE 7 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Introduction
+Solution
+I Answer: Under certain assumptions, general equilibrium
+theory can answer these questions—in a manner suggested by
+Meade (1952) and Arrow (1969).
+I We can “internalize” the network externality through ex ante
+contracting.
+I Use “Firms as Clubs” (Prescott and Townsend (2000) and
+General Equilibrium theory.
+
+
+--- PAGE 8 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Model
+Set-up
+I There are two agent types—buyers (A) and sellers (B).
+I Buyers and sellers can trade only on a platform.
+I Buyers and sellers care about the composition of the
+platform’s users.
+I Buyers and sellers each have some capital endowment ().
+I There is a single intermediary that connects agents to
+platforms.
+
+
+--- PAGE 9 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Model
+Agent’s utility function
+I An agent wants a higher ratio of agents of the other type,
+and larger platforms.
+I A buyer’s (A, i) utility function is:
+UA,i(NA, NB) = UA(NA, NB) =
+(
+0
+if NA or NB = 0
+h⇣
+NB
+NA
+⌘γA + N✏A
+B
+i
+else
+I Where γA, γB, ✏A and ✏B > 0
+I Symmetrically, the seller’s (B, i) utility function is:
+UB,i(NA, NB) = UB(NA, NB) =
+(
+0
+if NA or NB = 0
+h⇣
+NA
+NB
+⌘γB + N✏B
+A
+i
+else
+
+
+--- PAGE 10 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Model
+Cost of making a platform
+I A platform is costly to manufacture, increasing in the number
+of users of each type, and increasing in the set of possible
+connections.
+C(NA, NB) =
+⇢
+0
+if NA = 0 or NB = 0
+cANA + cBNB + cNANB + K
+else
+I Where cA, cB, K ≥0 and c > 0.
+I Larger platforms are more than proportionally more expensive
+(c > 0)
+
+
+--- PAGE 11 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Model
+Agent’s maximization problem
+I Agent type (T), subtype (i) buys contracts bT(NA, NB) to
+join a platform of size and composition (NA, NB), subject to:
+I their wealth constraint
+I joining one platform.
+.
+I Key tool to convexify commodity space: agents do not buy
+discrete numbers of contracts instead agent’s buy probabilities
+to join a platform.
+
+
+--- PAGE 12 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Model
+Agent’s maximization problem
+I Agent (T, i) takes prices p[bT(NA, NB)] as given and solve
+the following maximization problem:
+max
+xT,i
+X
+NA,NB
+xT,i[bT(NA, NB)]UT[bT(NA, NB)]
+(1)
+s.t.
+X
+NA,NB
+xT,i[bT(NA, NB)]p[bT(NA, NB)] T,i
+(2)
+X
+NANB
+xT,i[bT(NA, NB)] = 1
+(3)
+
+
+--- PAGE 13 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Model
+Agent’s maximization problem—graphical illustration
+Utility
+Price
+Degenerate points
+Set of points that satisfy 
+Agent’s budget constraint
+Agent’s optimal choice  
+ߢ்,௦
+
+
+--- PAGE 14 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Model
+Intermediary’s problem
+I The intermediary maximizes the number of platforms
+y(NA, NB) to produce for the given prices (p[bT(NA, NB)]) for
+each position in the platform.
+I The intermediary’s proﬁts are equal to the number of
+contracts it sells multiplied by the price of the contract minus
+the cost of the capital input.
+
+
+--- PAGE 15 ---
+Introduction
+Model
+Social Planner’s Problem
+Welfare Theorems
+Examples
+Conclusion
+Model
+Intermediary’s problem
+I The total number of agents of each type on a platform must
+equal the total number of contracts oﬀered for that type.
+yA[bA(NA, NB)]
+NA
+= yB[bB(NA, NB)]
+NB
+= y(NA, NB) 8bA 2 BA, 8bb 2 BB
+I The intermediary maximizes the number of platforms
+y(NA, NB) to produce for the given prices (p[bT(NA, NB)]) for
+each position in the platform.
+I The intermediary’s proﬁts are equal to the number of
+contracts it sells multiplied by the price of the contract minus
+the cost of the capital input.
+⇡= max
+y,yk
+X
+NA,NB
+{p[bA(NA, NB)]NA + p[bB(NA, NB)]NB}⇥y(NA, NB)−yk
+X
+(N
+N )[C(N
+N )]
+
+
+--- PAGE 16 ---
+
+
+--- PAGE 17 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Model
+Intermediary’s problem
+I The intermediary’s FOC w.r.t. to y(NA, NB) is:
+C(NA, NB) ≥p[bA(NA, NB)] ⇤NA + p[bB(NA, NB)] ⇤NB (4)
+I This condition requires the payments/memberships the
+platform recieves must cover all of the platform’s costs.
+
+
+--- PAGE 18 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Model
+Competitive equilibrium
+I A competitive equilibrium in this economy is
+(p, x, y) 2 L ⇥X ⇥Y such that
+I For given prices, the allocation solves the consumer and
+platform maximization problems.
+I All markets clear: the demand for each contract equals the
+supply of each contract.
+I Active platforms are populated by numbers of buyers and
+sellers as anticipated (stipulated).
+
+
+--- PAGE 19 ---
+Introduction
+Model
+Social Planner’s Problem
+Welfare Theorems
+Examples
+Conclusion
+Social Planner’s Problem
+Social Planner’s Problem
+max
+x≥0,y≥0
+X
+i
+λA,i
+8
+<
+:
+X
+bA(NA,NB)
+↵A,ixA,i[bA(NA, NB)]UA(NA, NB)
+9
+=
+;
++
+X
+i
+λB,i
+8
+<
+:
+X
+bB(NA,NB)
+↵B,ixB,i[bB(NA, NB)]UB(NA, NB)
+9
+=
+;
+s.t.
+X
+b(NA,NB)
+xT,i[bT(NA, NB)] = 1 8T, i
+X
+i
+↵T,ixT,i[bT(NA, NB)] = y(NA, NB) ⇥NT 8bT 2 BT, 8T 2 {A, B
+X
+NA,NB
+y(NA, NB)[C(NA, NB)] 
+X
+T,i
+↵T,iT,i
+
+
+--- PAGE 20 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Model
+Summary of results
+I A competitive equilibrium is Pareto optimal.
+I Any Pareto optimal allocation can be achieved with transfers
+between agents:
+I The ﬁrst and second welfare theorems hold in our modiﬁed
+environment
+I The endogenous pricing internalizes the e↵ect of changing the
+composition of the platform—overcoming any network
+externality—as in Arrow (1969)
+
+
+--- PAGE 21 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Examples
+Simple example—identical preferences and wealth
+I Consider a platform with 2 subtypes of buyers, and 2 subtypes of sellers
+I There is a measure 1 of each type, a measure 0.5 of each subtype
+I Each agent is equally wealthy
+Equilibrium platforms
+Platform Size
+Number of
+Platforms
+Created
+Cost of
+Production
+(NA, NB)
+y(NA, NB)
+C(NA, NB)
+(2,2)
+0.5
+8
+Equilibrium user utility and platform choice
+Type
+Wealth
+Platform Joined
+Price of Joining
+Pr(joining)
+Utility on Platform
+(T, s)
+(T,s)
+(NA, NB)
+p(dT [NA, NB])
+xT,s(dT [NA, NB])
+UT (NA, NB)
+A,1
+2
+(2,2)
+2
+1
+2.41
+A,2
+2
+(2,2)
+2
+1
+2.41
+B,1
+2
+(2,2)
+2
+1
+2.41
+B,2
+2
+(2,2)
+2
+1
+2.41
+
+
+--- PAGE 22 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Examples
+The e↵ect of a single richer subtype
+I Let subtype (B, 2) be markedly richer than other types
+I (B, 2) will “sponsor” larger platforms—lower prices for Type
+(A)
+Platform Size
+Number of
+Cost of
+(NA, NB)
+Platforms created
+Production
+(3, 2)
+0.25
+11
+(1, 2)
+0.25
+5
+Type
+Wealth
+Platform
+Price of
+Pr(joining)
+Utility on
+Expected
+(T, i)
+joined (NA, NB)
+joining
+Platform
+Utility
+A, 1
+1.37
+(3, 2)
+1.37
+1
+2.23
+2.23
+A, 2
+1.64
+(3, 2)
+1.37
+0.5
+2.23
+2.53
+(1, 2)
+1.91
+0.5
+2.8
+B, 1
+1.54
+(1, 2)
+1.54
+1
+1.7
+1.7
+B, 2
+3.45
+(3, 2)
+3.45
+1
+2.96
+2.96
+
+
+--- PAGE 23 ---
+
+
+--- PAGE 24 ---
+Introduction
+Model
+Examples
+Comparative statics
+Extensions
+Conclusion
+Comparative statics
+How does the equilibrium change as we redistribute
+wealth? Redistributing wealth across- and within- agent
+type.
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+B,1's wealth
+1.5
+2
+2.5
+3
+3.5
+Utility (T,s)
+A,1
+B,2
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+B,1's wealth
+1.5
+2
+2.5
+3
+3.5
+Utility (T,s)
+A,1
+A,2
+(A) Across: Transferring wealth from
+(B) Within: Transferring wealth from
+(A,2) to (B,1)
+(B,2) to (B,1)
+
+
+--- PAGE 25 ---
+A Market-Based Solution for Fire Sales and Other
+Pecuniary Externalities
+Weerachart T. Kilenthong
+Robert M. Townsend
+UTCC
+MIT
+February 26, 2020
+1 / 36
+
+
+--- PAGE 26 ---
+Main Ideas
+This paper proposes that a market-based solution with rights and
+exclusivity can internalize pecuniary externalities.
+This market-based solution to ﬁre sales and other pecuniary
+externalities can be extended to capture at least the following 6
+prototype economies:
+1
+Fire Sales Economy (Lorenzoni, 2008).
+2
+Liquidity Constrained Economy (Hart and Zingales, 2011).
+3
+Collateral Economy (Kilenthong and Townsend, 2014).
+4
+Exogenous Incomplete Markets (Greenwald and Stiglitz, 1986).
+5
+Moral Hazard with Retrading (Acemoglu and Simsek, 2008; Kilenthong
+and Townsend, 2011).
+6
+Hidden Information with Retrading (Diamond and Dybvig, 1983).
+2 / 36
+
+
+--- PAGE 27 ---
+Pecuniary Externalities: The Pollution Problem
+The inﬂuence of individual decisions on prices which in turn can cause
+ineﬃciencies is akin to pollution, which has a remedy in competitive
+markets for the rights to pollute.
+Consider an initial economy with two goods, one period, one
+representative price taking consumer and one representative price
+taking ﬁrm.
+The consumer is endowed with one good which can be consumed or
+used by ﬁrms to produce the second good which the household also
+values.
+However, that production comes with air or water pollution, which
+gives the household disutility. The competitive equilibrium in which
+this pollution is not priced is not at a social optimum; marginal rates
+of substitution in consumption and production do not line up, as they
+would in the planner’s problem.
+3 / 36
+
+
+--- PAGE 28 ---
+Pecuniary Externalities: The Solution to the Pollution
+Problem
+Solution: Factories have to buy rights to emit pollution, a cost which
+lowers their proﬁt. Households sell rights to suﬀer pollution, a
+revenue added to their budget, and choose how much pollution to
+allow, eﬀectively issuing permits, and how much to consume of the
+two goods.
+In the new decentralized market equilibrium, the supply and demand
+of rights to pollute will be equated by the appropriate price of rights,
+money changes hands, and the new equilibrium is Pareto optimal,
+with some but less pollution.
+Of course rights need to be enforced. Firms cannot pollute beyond
+rights purchased, as in cap and trade.
+The diﬀerence between cap and trade and the full market solution is
+that the quantity of permits are market determined and not ﬁxed by
+the government.
+4 / 36
+
+
+--- PAGE 29 ---
+Pecuniary Externalities: The Over-Saving Problem
+Consider a saving economy with two goods, two periods, and two
+representative price-taking households, types a and b.
+There is no uncertainty, just intertemporal decisions, over time and
+within-period decisions, across the two goods, w and z.
+Further suppose that if there were no obstacles to trade and if
+markets were complete, the environment is such that in a competitive
+equilibrium type-a would be a lender of both goods and type-b a
+borrower. However, suppose in contrast that borrowing is not allowed.
+Only one of the two goods can be stored, good z.
+The relatively rich type a household ends up smoothing consumption
+over time on its own, not by lending to type b but by saving good z.
+As a result, the price of the storage good z is low in the second
+period, as type a sells good z in the spot market then. Likewise, the
+price of good z is high in the ﬁrst period with saving absorbing some
+of good z.
+Thus, the relative prices in both periods are moving with saving, but
+both types take equilibrium prices as given.
+5 / 36
+
+
+--- PAGE 30 ---
+Solution to the Over-Saving Problem: Key Intuition
+The stored good is like the input good in the pollution example. The
+pollution is the impact of the stored good on future relative prices.
+We need a market for rights to trade at those future prices, so that
+agents internalize the impact of their saving decisions, just as with
+pollution.
+Agents need to choose in the ﬁrst period both the price at which they
+want to trade in the second period and the amount of that trade,
+there excess demand or supply at that chosen price.
+Agents can choose in the ﬁrst period one price from among various
+possible future prices; there is an exchange or trading house earmarked
+by each possible future price. Rights are traded in these exchanges.
+The saver type a buys rights in the chosen exchange and the number
+of rights purchased will be time consistent.
+As the borrower type b suﬀers the damage, type b will choose an
+exchange indexed by some future price and sell rights in the ﬁrst
+period to buy the storage good z in the second period, adding
+revenue in the ﬁrst period budget.
+6 / 36
+
+
+--- PAGE 31 ---
+Solution to the Over-Saving Problem: Key Intuition
+(Con’t)
+In the decentralized competitive equilibrium, both types choose the
+same exchange in the ﬁrst period, indexed by the same price, and the
+demand for rights of type a and supply of rights by type b are
+equated there.
+The corresponding future spot market clears at the chosen price. The
+saver type a decides on storage of good z, a constrained-optimal
+allocation is achieved, and there is some but less physical storage.
+As with pollution, we required enforcement of rights, including
+exclusivity.
+An agent chooses only one exchange to buy and sell rights in the ﬁrst
+period, for which they pay or receive compensation, and cannot trade
+in multiple exchanges.
+All spot trade in the second period must take place in the spot
+markets at the associated designated price that agents have chosen
+and agents cannot make spot exchanges on the side.
+7 / 36
+
+
+--- PAGE 32 ---
+The Relationship to Coase (1960), and Arrow (1969) and
+Meade (1952)
+Our contribution is related to Coase (1960) in its emphasis on rights.
+Our pollution example is one of his lead examples.
+However, the Coase theorem is about how any given initial arbitrary
+distribution of rights would not matter if there were bargaining and
+no trading frictions, just as the initial allocation of rights to pollute in
+cap and trade would not matter, as eﬃciency works through
+opportunity costs.
+In contrast for us rights are market determined. Thus, closer to what
+we do is the work of Arrow (1969), following Meade (1952), on the
+equivalence of solutions to planning problems and competitive
+equilibria with rights trade in the objects causing non-pecuniary
+externalities.
+Keys are additional markets and excludability.
+8 / 36
+
+
+--- PAGE 33 ---
+An Example Economy: Timing and Commodities
+Two periods: t = 1, 2.
+Two physical goods: good w and good z.
+▶Good w in not storable, used as a numeraire good.
+▶Good z is storable =⇒endogenous saving, kh.
+There are H = 2 types each with continuum agents of mass αh = 1
+2.
+Endowment of agent h = a, b:
+ eh
+w1, eh
+z1, eh
+w2, eh
+z2
+
+. The endowment
+proﬁles are such that an agent type a is well endowed with 3 units of
+both goods in period t = 1 relative to one unit of both at t = 2, a
+savings type, and vice versa for type b, a want-to-be-borrowing type.
+Storage technology: One unit of good z will become R = 1 units of
+good z at date t = 2.
+Each agent can trade in spot market at date t = 2: τ h
+w2 denote spot
+trade for good w and τ h
+z2 denote spot trade for good z.
+As a result, we can rewrite the utility function as
+uh 
+ch
+w1, ch
+z1
+
++ uh 
+eh
+w2 + τ h
+w2, eh
+z2 + Rkh + τ h
+z2
+
+.
+(1)
+9 / 36
+
+
+--- PAGE 34 ---
+Review of the Basics: First Best Planner Problem
+Deﬁnition (Basic Planner Problem)
+max
+(ch
+w1,ch
+z1,kh,τ h
+w2,τ h
+z2)h
+X
+h
+λhαh 
+uh  ch
+w1, ch
+z1
+
++ uh  eh
+w2 + τ h
+w2, eh
+z2 + Rkh + τ h
+z2
+
+(2)
+subject to
+kh ≥0, ∀h,
+(3)
+X
+h
+αhch
+w1 =
+X
+h
+αheh
+w1,
+(4)
+X
+h
+αh 
+ch
+z1 + kh
+=
+X
+h
+αheh
+z1,
+(5)
+X
+h
+αhτ h
+ℓ2 = 0, ∀ℓ= w, z.
+(6)
+10 / 36
+
+
+--- PAGE 35 ---
+The Intertemporal Euler Equations for the Planner Problem
+The intertemporal Euler equations hold with possible inequality if the
+non-negativity constraint on saving kh ≥0 is binding or adjusted by a
+Lagrange multiplier:
+ua
+z1
+ua
+w1
+= ub
+z1
+ub
+w1
+, ua
+z2
+ua
+w2
+= ub
+z2
+ub
+w2
+,
+(7)
+uh
+z1 = Ruh
+z2 +
+µh
+λhαh , ∀h = a, b,
+(8)
+where uh
+ℓt ≡
+∂uh(ch
+wt,ch
+zt)
+∂cℓt
+for ℓ= w, z; t = 1, 2, and µh is a Lagrange
+multiplier associated with kh ≥0.
+There is an entire class of ﬁrst best allocations as solutions to the
+planner problem indexed by λ-weights, which pin down levels.
+λhαhuh
+ℓt = µℓt, ∀h = a, b; ℓ= w, z; t = 1, 2,
+(9)
+where µℓt are Lagrange multipliers on the resource constraints for
+goods ℓ= w, z at t = 1, 2.
+11 / 36
+
+
+--- PAGE 36 ---
+Competitive Equilibrium Complete Markets
+Deﬁnition (Complete Markets)
+A competitive equilibrium with complete markets is a speciﬁcation of prices pt of
+good z in period t = 1, 2, and the price of ﬁnancial security Q at t = 1;
+consumptions
+ ch
+w1, ch
+z1
+
+at t = 1, saving and ﬁnancial securities
+ kh, θh
+decisions
+made at t = 1, and trades
+ τ h
+w2, τ h
+z2
+
+at t = 2 for each type h = a, b such that
+(i) at t = 2, taking
+ p2, kh, θh
+as given parameters at t = 2, agent type h = a, b
+solves
+V h  kh, θh, p2
+
+= max
+τ h
+w2,τ h
+z2
+uh  eh
+w2 + τ h
+w2, eh
+z2 + Rkh + θh + τ h
+z2
+
+(10)
+subject to the budget constraint in period t = 2,
+τ h
+w2 + p2τ h
+z2 = 0,
+(11)
+12 / 36
+
+
+--- PAGE 37 ---
+Competitive Equilibrium Complete Markets
+Deﬁnition (Complete Markets, Con’t)
+(ii) at t = 1, taking (p1, Q) and V h  kh, θh, p2
+
+from t = 2 as given, agent type
+h = a, b solves
+max
+ch
+w1,ch
+z1,kh,θh uh  ch
+w1, ch
+z1
+
++ V h  kh, θh, p2
+
+(12)
+subject to
+kh ≥0,
+(13)
+ch
+w1 + p1
+ ch
+z1 + kh
++ Qθh = eh
+w1 + p1eh
+z1,
+(14)
+13 / 36
+
+
+--- PAGE 38 ---
+Competitive Equilibrium Complete Markets
+Deﬁnition (Complete Markets, Con’t)
+(iii) market clearing conditions hold:
+X
+h
+αhch
+w1 =
+X
+h
+αheh
+w1,
+(15)
+X
+h
+αh 
+ch
+z1 + kh
+=
+X
+h
+αheh
+z1,
+(16)
+X
+h
+αhτ h
+ℓ2 = 0, ∀ℓ= w, z,
+(17)
+X
+h
+αhθh = 0.
+(18)
+14 / 36
+
+
+--- PAGE 39 ---
+The Intertemporal Euler Equations for Competitive
+Equilibrium with Complete Markets
+The intertemporal Euler equations for competitive equilibrium with
+complete markets are
+p1 = µz1
+µw1
+, p2 = µz2
+µw2
+, Q = µz2
+µw1
+.
+(19)
+Table: Equilibrium allocations with externalities.
+kh
+ch
+w1
+ch
+z1
+ch
+w2
+ch
+z2
+Uh  ch
+h = a
+0
+2
+2
+2
+2
+-2.00
+h = b
+0
+2
+2
+2
+2
+-2.00
+15 / 36
+
+
+--- PAGE 40 ---
+Competitive Equilibrium with Incomplete Markets, Saving
+Only
+Deﬁnition (Incomplete Markets)
+A competitive equilibrium with incomplete markets, speciﬁcally saving kh only
+and no securities, is a speciﬁcation of prices pt of good z in period t = 1, 2;
+consumptions
+ ch
+w1, ch
+z1
+
+at t = 1, saving kh decision made at t = 1, and trades
+ τ h
+w2, τ h
+z2
+
+at t = 2 for each type h = a, b such that
+(i) at t = 2, taking
+ p2, kh
+as given parameters, agent type h = a, b solves for
+trades
+ τ h
+w2, τ h
+z2
+
+V h  kh, p2
+
+= max
+τ h
+w2,τ h
+z2
+uh  eh
+w2 + τ h
+w2, eh
+z2 + Rkh + τ h
+z2
+
+(20)
+subject to the budget constraint in period t = 2,
+τ h
+w2 + p2τ h
+z2 = 0,
+(21)
+16 / 36
+
+
+--- PAGE 41 ---
+Competitive Equilibrium with Incomplete Markets, Saving
+Only
+Deﬁnition (Incomplete Markets, Con’t)
+(ii) at t = 1, taking p1 and V h  kh, p2
+
+from t = 2 as given, agent type h = a, b
+solves
+max
+ch
+w1,ch
+z1,kh uh  ch
+w1, ch
+z1
+
++ V h  kh, p2
+
+(22)
+subject to
+kh ≥0,
+(23)
+ch
+w1 + p1
+ ch
+z1 + kh
+= eh
+w1 + p1eh
+z1,
+(24)
+17 / 36
+
+
+--- PAGE 42 ---
+Competitive Equilibrium with Incomplete Markets, Saving
+Only
+Deﬁnition (Incomplete Markets, Con’t)
+(iii) market clearing conditions hold:
+X
+h
+αhch
+w1 =
+X
+h
+αheh
+w1,
+(25)
+X
+h
+αh 
+ch
+z1 + kh
+=
+X
+h
+αheh
+z1,
+(26)
+X
+h
+αhτ h
+ℓ2 = 0, ∀ℓ= w, z.
+(27)
+18 / 36
+
+
+--- PAGE 43 ---
+The Intertemporal Euler Equations for Competitive
+Equilibrium with Incomplete Markets
+The intertemporal Euler equations for competitive equilibrium with
+incomplete markets are
+p1 = uh
+z1
+uh
+w1
+= uh
+z2
+uh
+w1
+R +
+ηh
+λhαhuh
+w1
+, ∀h = a, b.
+(28)
+Agent type b borrowing nothing and agent type a will be holding
+physical saving on its own to smooth consumption over time.
+The price of good z in period t = 1 is pex
+1 =
+
+4
+4−kex
+2
+= 2.2948, and
+at date 2 is pex
+2 = 0.5570. Note that the price of good z is high at
+t = 1 relative to the ﬁrst best.
+Table: Equilibrium allocations with externalities.
+kh
+ch
+w1
+ch
+z1
+ch
+w2
+ch
+z2
+Uh  ch
+h = a
+1.36
+2.69
+1.78
+1.33
+1.78
+-2.2527
+h = b
+0
+1.31
+0.87
+2.67
+3.58
+-2.5724
+19 / 36
+
+
+--- PAGE 44 ---
+Constrained Planner Problem
+Deﬁnition
+max
+(ch
+w1,ch
+z1,kh)h
+X
+h
+λhαh 
+uh  ch
+w1, ch
+z1
+
++ V h  kh, p2
+ ka, kb
+(29)
+subject to
+kh ≥0, ∀h,
+(30)
+X
+h
+αhch
+w1 =
+X
+h
+αheh
+w1,
+(31)
+X
+h
+αh 
+ch
+z1 + kh
+=
+X
+h
+αheh
+z1.
+(32)
+Note that the value function V h is already deﬁned in the agent maximization
+problem (20) with the pricing function p2
+ ka, kb
+inserted.
+20 / 36
+
+
+--- PAGE 45 ---
+Pecuniary Externality
+The necessary conditions for constrained optimality are given by
+uh
+z1
+uh
+w1
+= uh
+z2
+uh
+w1
+R +
+µh
+λhαhuh
+w1
++
+1
+λhuh
+w1
+X
+˜h
+λ
+˜hα
+˜h ∂V ˜h
+∂p2
+∂p2
+∂kh , ∀h = a, b.
+(33)
+Deﬁnition
+Distinction between Constrained-Optimal and Incomplete Markets
+Allocations, when borrowing is not allowed: The solutions to the Planner
+Problem (29) are termed constrained-eﬃcient allocations. When (33) is
+diﬀerent from (28), the competitive equilibrium with no borrowing is not
+constrained-eﬃcient.
+Deﬁnition
+Pecuniary Externality: A pecuniary externality arises when the last term in
+(33) is non zero.
+21 / 36
+
+
+--- PAGE 46 ---
+Transition to the Decentralization: Market Maker Problem
+We can transform the planner problem to a fully equivalent one in which the
+planner is a market maker choosing price p2 and rights to trade at that
+price, and then ﬁnding savings k consistent with the pricing function
+p2
+ ka, kb
+to support that price p2 with all possible prices considered.
+1
+First step, one can work with the inverse equilibrium price map, that is,
+designating p2 ﬁrst and then ﬁlling in the requisite kh, h = a; b.
+2
+Second step, we can then replace the inverse equilibrium price map by
+simply rewriting clearing condition (6) for good ℓ= w as
+X
+h
+αh∆h  kh (p2) , p2
+
+= 0, ∀p2,
+(34)
+where ∆h  kh (p2) , p2
+
+≡τ h∗
+w2
+ kh (p2) , p2
+
+.
+3
+Third step, write out the entire vector of variables for any agent h
+given the planner’s choice of p2: xh (p2) =
+
+ch
+1 (p2), kh (p2),
+∆h  kh (p2) , p2
+ 
+.
+4
+Fourth step, we let the market maker choose the fraction δh (p2) of
+type h assigned to p2-exchange varying over all possible prices p2.
+22 / 36
+
+
+--- PAGE 47 ---
+The Market Maker Problem
+Deﬁnition
+max
+[δh(p2),xh(p2)]h,p2
+X
+h
+X
+p2
+λhαhδh (p2)
+
+uh  ch
+w1 (p2) , ch
+z1 (p2)
+
++ V h  kh (p2) , p2
+
+(35)
+subject to
+δh (p2) kh (p2) ≥0, ∀h; p2,
+(36)
+X
+p2
+X
+h
+αhδh (p2) ch
+w1 (p2) =
+X
+h
+αheh
+w1,
+(37)
+X
+p2
+X
+h
+αhδh (p2)
+
+ch
+z1 (p2) + kh (p2)
+
+=
+X
+h
+αheh
+z1,
+(38)
+X
+h
+αhδh (p2) ∆h  kh (p2) , p2
+
+= 0, ∀p2.
+(39)
+23 / 36
+
+
+--- PAGE 48 ---
+The Necessary Conditions for the Market Maker Problem
+The necessary conditions can be derived in two parts.
+1
+First, for each h with fraction δh (p2) > 0, for a given choice of p2, the
+planner is choosing ch
+w1 (p2), ch
+z1 (p2) and kh (p2) to maximize (35)
+subject to (36)-(39):
+p1 = uh
+z1
+uh
+w1
+= uh
+z2
+uh
+w1
+R + µh (p2)
+λhαhuh
+w1
+−µ∆(p2)
+µw1
+∆h
+k
+
+kh (p2) , p2
+
+, ∀h = a, b, (40)
+where the derivative of ∆h
+k
+ kh, p2
+
+≡
+∂∆h(kh,p2)
+∂k
+.
+2
+Second, regarding the global problem, the overall choice of p2, for each
+h with fraction δh (p2) > 0, satisﬁes the following condition:
+λhV h
+p
+ kh (p2) , p2
+
+= µ∆(p2) ∆h
+p
+ kh (p2) , p2
+
+(41)
+The planner trades oﬀthe marginal beneﬁt (cost) on V h from choosing
+p2 with the marginal cost (beneﬁt) on excess demand from choosing p2.
+24 / 36
+
+
+--- PAGE 49 ---
+Decentralization with Individually Chosen Rights to Trade
+∆h at prices P∆
+Deﬁnition (Competitive Equilibrium with Rights to Trade)
+A competitive equilibrium with rights to trade is a speciﬁcation of
+allocation
+
+xh (p2) , δh (p2) , τ h (p2)
+
+, price of good z at t = 1, p1, spot
+prices p2 for active and potential spot markets at t = 2, and the prices of
+the rights to trade [P∆(p2)]p2 such that
+(i) at t = 2, taking kh (p2) as predetermined and p2 as given, agent type
+h = a, b solves for trades τ h (p2):
+V h 
+kh, p2
+
+= max
+τ h
+w2,τ h
+z2
+uh 
+eh
+w2 + τ h
+w2, eh
+z2 + Rkh + τ h
+z2
+
+(42)
+subject to the budget constraint in period t = 2,
+τ h
+w2 + p2τ h
+z2 = 0,
+(43)
+25 / 36
+
+
+--- PAGE 50 ---
+Decentralization with Individually Chosen Rights to Trade
+∆h at prices P∆
+Deﬁnition (Competitive Equilibrium with Rights to Trade, Con’t)
+(ii) at t = 1, agent type h takes prices p1 and P∆(p2) as given and solves
+for the choice of p2 and associated xh (p2) to
+max
+[xh(p2),δh(p2)]p2
+X
+p2
+δh (p2)
+
+uh  ch
+w1 (p2) , ch
+z1 (p2)
+
++ V h  kh (p2) , p2
+
+(44)
+subject to
+δh (p2) kh (p2) ≥0, ∀p2,
+X
+p2
+δh (p2)
+h
+ch
+w1 (p2) + p1ch
+z1 (p2) + p1kh (p2)
++P∆(p2) ∆h  kh (p2) , p2
+ i
+≤eh
+w1 + p1eh
+z1,
+26 / 36
+
+
+--- PAGE 51 ---
+Decentralization with Individually Chosen Rights to Trade
+∆h at prices P∆
+Deﬁnition (Competitive Equilibrium with Rights to Trade, Con’t)
+(iii) market-clearing conditions hold:
+X
+p2
+X
+h
+αhδh (p2) ch
+w1 (p2) =
+X
+h
+αheh
+w1,
+(45)
+X
+p2
+X
+h
+αhδh (p2)
+h
+ch
+z1 (p2) + kh (p2)
+i
+=
+X
+h
+αheh
+z1,
+(46)
+X
+h
+αhδh (p2) ∆h 
+kh (p2) , p2
+
+= 0, ∀p2,
+(47)
+X
+h
+δh (p2) αhτ h
+ℓ2 (p2) = 0, ∀ℓ= w, z; p2.
+(48)
+27 / 36
+
+
+--- PAGE 52 ---
+The Necessary Conditions for the Decentralization
+Using the similar steps, we can write the necessary conditions for type
+h maximization as follows.
+p1 = uh
+z1
+uh
+w1
+= uh
+z2
+uh
+w1
+R + ηh (p2)
+uh
+w1
+−P∆(p2) ∆h
+k
+
+kh (p2) , p2
+
+, ∀h = a, b.
+(49)
+The two equations, (40) and (49), are identical when we match the
+Lagrange multipliers and prices from the planner problem and the new
+decentralized equilibrium using the following conditions:
+P∆(p2) = µ∆(p2)
+µw1
+and ηh =
+µh
+λhαh .
+(50)
+Similar to the market maker problem,
+ 
+1
+ηh
+bc,1
+!
+V h
+p
+
+kh (p2) , p2
+
+= P∆(p2) ∆h
+p
+
+kh (p2) , p2
+
+(51)
+28 / 36
+
+
+--- PAGE 53 ---
+Numerical Solutions for Competitive Equilibrium with
+Rights to Trade
+The competitive equilibrium with rights to trade has one and only one
+active exchange, pop
+2 = 0.5974, even though all exchanges are
+available in principle a priori for trade.
+Table: Constrained Optimal Allocation with Pareto weights λ1 = 0.778 and
+λ2 = 0.222.
+kh
+ch
+w1
+ch
+z1
+ch
+w2
+ch
+z2
+∆h  pop
+2
+
+Uh  ch
+h = a
+1.18
+2.61
+1.84
+1.30
+1.68
+0.30
+-2.2934
+h = b
+0
+1.39
+0.98
+2.70
+3.50
+-0.30
+-2.3904
+Table: Equilibrium prices of rights to trade in spot markets P∆(p2) at price p2.
+p2 = 0.5770
+pop
+2 = 0.5974
+p2 = 0.6181
+P∆(p2)
+1.1383
+1.2116
+1.2840
+29 / 36
+
+
+--- PAGE 54 ---
+General Economy with Collateral Constraints
+Consider an economy with S states at t = 2, i.e., s, each of which
+occurs with probability πs, P
+s πs = 1.
+Each agent type h is endowed with
+ eh
+w1, eh
+z1
+
+at date t = 1 and
+ eh
+w2s, eh
+z2s
+
+in state s at date t = 2.
+Utility functions uh are strictly concave with regularity conditions.
+There are J securities. Let D = [Djs] be the payoﬀmatrix of those
+assets at t = 2 where Djs is the payoﬀof asset j in units of good w in
+state s.
+Let θh
+j denote the amount of the jth security acquired by an agent of
+type h at t = 1 with θh ≡
+h
+θh
+j
+i
+j.
+The collateral constraint states that there must be suﬃcient collateral
+in value to honor all promises:
+p2sRskh +
+X
+j
+Djsθh
+j ≥0, ∀s,
+(52)
+where Rs is the state contingent return on the collateral.
+30 / 36
+
+
+--- PAGE 55 ---
+The Planner Problem for General Economy
+Deﬁnition
+The Pareto problem with Pareto weights
+
+λh
+h is deﬁned as follows.
+max
+[xh,δh(p)]h
+X
+h,p
+λhαhδh (p)
+"
+uh ch
+w1 (p) , ch
+z1 (p)
+
++
+X
+s
+πsV h
+s
+
+kh (p) , θh (p) , p
+#
+subject to
+δh (p) kh (p) ≥0, ∀h; p,
+(53)
+δh (p)
+
+p2sRskh (p) +
+X
+j
+Djsθh
+j (p)
+
+≥0, ∀h; p; s,
+(54)
+X
+p
+X
+h
+δh (p) αhch
+w1 (p) =
+X
+h
+αheh
+w1;
+(55)
+X
+p2
+X
+h
+δh (p) αh h
+ch
+z1 (p) + kh (p)
+i
+=
+X
+h
+αheh
+z1;
+(56)
+X
+h
+δh (p) αhθh
+j (p) = 0, ∀j; p;
+(57)
+X
+h
+δh (p) αh∆h
+s (p) = 0, ∀s; p
+(58)
+31 / 36
+
+
+--- PAGE 56 ---
+Decentralization for General Economy with ∆h at prices P∆
+Deﬁnition (Competitive Equilibrium for General Economy)
+A competitive equilibrium with rights to trade is a speciﬁcation of
+allocation
+
+xh, τ h, δh
+h, price of good z at t = 1, p1, spot prices p = [p2s]s
+for active and potential spot markets at t = 2, and the prices of securities
+and the rights to trade [Q (p) , P∆(p)]p such that
+(i) in state s at date t = 2, taking
+ kh (p) , θh (p) , p
+
+as given, agent type
+h = a, b solves
+max
+τ h
+w2s(p),τ h
+z2s(p) uh eh
+w2s +
+X
+j
+Djsθh
+j (p) + τ h
+w2s (p) , eh
+z2s + Rskh (p) + τ h
+z2s (p)
+
+subject to the budget constraint in period t = 2,
+τ h
+w2 (p) + p2sτ h
+z2 (p) = 0,
+(59)
+where the optimum is deﬁned as the value function V h
+s
+ kh (p) , θh (p) ; p
+
+.
+32 / 36
+
+
+--- PAGE 57 ---
+Decentralization for General Economy with ∆h at prices P∆
+Deﬁnition (Competitive Equilibrium for General Economy, Con’ t)
+(ii) at date t = 1, for any agent type h as a price taker,
+
+xh (p) , δh (p)
+
+p
+solves
+max
+xh,δh
+X
+p
+δh (p)
+h
+uh ch
+w1 (p) , ch
+z1 (p)
+
++
+X
+s
+πsV h
+s
+
+kh (p) , θh (p) , p
+ i
+(60)
+subject to
+δh (p) kh (p) ≥0, ∀h; p,
+δh (p)
+
+p2sRskh (p) +
+X
+j
+Djsθh
+j (p)
+
+≥0, ∀h; p; s,
+X
+p
+δh (p)
+h
+ch
+w1 (p) + p1
+h
+ch
+z1 (p) + kh (p)
+i
++ Q (p) · θh (p)
++P∆(p) · ∆h (p)
+i
+≤eh
+w1 + p1eh
+z1,
+33 / 36
+
+
+--- PAGE 58 ---
+Decentralization for General Economy with ∆h at prices P∆
+Deﬁnition (Competitive Equilibrium for General Economy, Con’ t)
+(iii) market-clearing conditions hold:
+X
+p
+X
+h
+δh (p) αhch
+w1 (p) =
+X
+h
+αheh
+w1;
+(61)
+X
+p2
+X
+h
+δh (p) αh h
+ch
+z1 (p) + kh (p)
+i
+=
+X
+h
+αheh
+z1;
+(62)
+X
+h
+δh (p) αhθh
+j (p) = 0, ∀j; p;
+(63)
+X
+h
+δh (p) αh∆h
+s (p) = 0, ∀s; p;
+(64)
+X
+h
+δh (p) αhτ h
+ℓ2 (p) = 0, ∀ℓ= w, z; p.
+(65)
+34 / 36
+
+
+--- PAGE 59 ---
+The Welfare and The Existence Theorems
+Theorem
+With non-satiation of preferences, a competitive equilibrium with rights to
+trade in p-exchanges is constrained Pareto optimal.
+Theorem
+Any constrained Pareto optimal allocation with strictly positive Pareto
+weights λh > 0, ∀h can be supported as a competitive equilibrium with
+rights to trade with transfers.
+Theorem
+With local non-satiation of preferences and positive endowments, a
+competitive equilibrium with rights to trade exists.
+35 / 36
+
+
+--- PAGE 60 ---
+Conclusion
+We show how markets in rights and exclusivity internalize pecuniary
+externalities.
+Ex ante competition can achieve a constrained-eﬃcient allocation:
+create contemporary markets for rights to trade in future spot
+markets at all possible designated prices that could prevail.
+With the appropriate ex ante design of exchanges, we can let markets
+for the rights to trade solve the problem.
+This market-based solution to ﬁre sales and other pecuniary
+externalities can be extended to capture at least the following 6
+prototype economies:
+1
+Fire Sales Economy (Lorenzoni, 2008).
+2
+Liquidity Constrained Economy (Hart and Zingales, 2011).
+3
+Collateral Economy (Kilenthong and Townsend, 2014).
+4
+Exogenous Incomplete Markets (Greenwald and Stiglitz, 1986).
+5
+Moral Hazard with Retrading (Acemoglu and Simsek, 2008; Kilenthong
+and Townsend, 2011).
+6
+Hidden Information with Retrading (Diamond and Dybvig, 1983).
+36 / 36

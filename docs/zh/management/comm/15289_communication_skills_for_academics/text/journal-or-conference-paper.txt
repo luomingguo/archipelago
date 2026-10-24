@@ -1,0 +1,55 @@
+Writing a technical paper can feel overwhelming, no matter what stage of your academic career you are in. It can be difficult to decide what content to include in your paper, what experiments are left to do, or even which section to start writing. Fortunately, starting the writing process by creating a   plan   can help you to stay focused and write your paper with intention. A plan is a detailed method or a series of actionable steps that will allow you to achieve your paper-writing goals.
+Why does planning matter?
+Developing a plan can help keep you focused so that you write to achieve your desired goals. Most importantly, planning–that is, thinking about the important steps surrounding the paper writing process–will lead to a well-focused paper. The planning process helps you think carefully about your audience, your goal(s), your paper’s purpose(s), and your personal objective(s). Planning helps break the daunting task of writing a paper into smaller, manageable chunks. If the process is started early enough, it can even help with planning the research – for example, by designing specific experiments to achieve your objective. All in all, planning is essential for writing your paper with intention.
+Creating your own plan
+There is no standard format or structure to a plan, and it will likely be an iterative process to develop one that works for you. One effective format is to have a running document with a list of planning questions and answers, and a to-do list for each subsection of your paper. Here, we break down a generic plan into its essential components:
+Step 1: Identify your audience
+Every section of your paper should be written with your target audience in mind. Carefully identifying your audience is necessary to determine the level of background material needed to frame your problem and to focus your paper with a specific set of take-home messages. It is your job as the author to make your audience care about the problem you are addressing. Here are a few questions to help you identify your audience:
+Who reads the papers in the conference or journal you plan to submit to?
+What will the audience know about your field?
+Does your paper have more than one audience (for example, theoreticians and practitioners)?
+Step 2: Define your purpose
+The purpose is what you want your audience to learn and/or do after reading your paper. Clearly determining the purpose of your paper before starting the writing process helps to effectively shape your paper by writing with the intention of achieving that purpose. Defining your purpose is closely related to identifying your audience, and you may have multiple purposes, each targeting a specific sub-group within your audience. For example, if you are developing a new algorithm with medical applications, you may want to convey the algorithmic novelty to a computer science audience, and the clinical applicability to a medical audience. To help define your purpose, think about what messages you want to convey and what you want your audience to do after reading your paper. Here are some example purposes:
+Form new collaborations with other researchers in or outside of your discipline
+Inspire applications of your work in the natural sciences and medicine
+Popularize a new technique that you developed
+Step 3: Answer the big picture questions
+The previous two steps should help to identify the main take-away messages of your paper. To effectively convey those messages, there are several big picture questions that your paper should clearly answer. Throughout the planning and writing processes, you should explicitly answer the following questions:
+What is the motivation for your work?
+What problem did you solve? OR What question did you answer?
+How did you improve on the existing state of the art?
+What should the audience remember about your solutions or results?
+What evidence or data shows that your work solves the problem or answers the question?
+You do not need to answer these questions in order, and you should continue to revisit and revise your answers to them during the planning and writing phases.
+Steps 4 through N: Break writing into small tasks
+The rest of the plan is up to you, and what remains is creating a systematic way to break the writing process down into smaller chunks. To help you get started, we’ve provided a paper-writing checklist (in the Resources section below) that contains actionable items to help with planning and writing subsections of your paper. You do not need to complete every task on this checklist. Rather, choose relevant tasks from this list, add your own, and order them in a way that makes sense to you.
+It is most important is to pick the tasks that are easiest for   you   to get started with. Building momentum early on in the writing process can help you overcome writer’s block. Here, we expand on a few of the tasks that are especially helpful with planning and getting started:
+Write a top-down outline down to bullet points:    Write out the sections and subsection headers. List the work that is completed and remaining. Outline as deeply as possible, and update this outline throughout the writing process.
+Write a TODO list for each section:    Using your outline, create a TODO list for each section or subsection. Add deadlines and timelines for the items left to complete. This can help you plan your writing from start to finish. Having a TODO list created before you start each writing session may also eliminate the feelings of having too much to do or not knowing where to start.
+Come up with a 30-second elevator pitch:    Creating an elevator pitch is an effective exercise to concisely convey the purpose and takeaways of your paper. Succinctly describe your problem and its motivation, outline your method, and summarize your results. This will help in the writing process with structuring the key components of your paper, and will be useful when talking about your work with other researchers.
+Make hand-drawn figures:    Drawing sketches of your figures can help you decide how you want sections of your paper to look and think carefully about your deliverables. For example, you can sketch graphs illustrating your results or didactic illustrations explaining your method.
+Start with the paper section that is easiest for you to write   : You do not need to write your paper from beginning to end. Starting with the section that is most familiar to you is an effective strategy for getting started. A common technique is to write the introduction and abstract last.
+Dump your thoughts into a text file or onto a piece of paper   : As you start to write, you may have thoughts that should go in the paper but not be sure where they belong. Write these at the bottom of your planning document, and come back to them later. You don’t want to forget these insights, but you also don’t want them to distract you.
+After planning, start writing
+After planning, you must eventually start writing. As you write each section of your paper, you may find the following articles helpful:
+Abstract
+Paper: Introduction
+Paper: Methods (EE)
+Paper: Methods (CS)
+Paper: Results
+Paper: Discussion/Conclusion
+Overcoming challenges
+While writing each individual section or subsection, you may find yourself getting distracted or struggling with writer’s block. There are a myriad of possible ways to overcome writing struggles. Here are a few that we find particularly helpful:
+Overcoming writer&#8217;s block:    Writer’s block is often caused by perfectionism. You may find yourself stuck thinking about the right words to use. Try setting a timer for 30 minutes and dumping all of your thoughts on paper. Do not stop, and do not edit. It is much easier to trim your text down than to get the perfect first paragraph.
+Make a digital file cabinet:   As you start writing your paper, you will inevitably read background material, including other papers or blog posts. Rather than trying to incorporate this information into your paper immediately, store them in your “digital file cabinet” and add a note about why this paper or information is useful.
+Avoid context switching and distractions:   Write for set amounts of time (for example, 2 hours per day). During these blocks, avoid checking email, Slack, or any other distractions. Try moving to a different location (for example, a library or coffee shop) and writing without internet access.
+Resources and Annotated Examples
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_pdf.gif"
+alt="Paper-writing Checklist" />
+Paper-writing Checklist
+Worksheet for helping to create your own paper-writing plan
+66 KB
+Contributors
+Mazdak Abulnaga
+Deanna Montgomery
+Tej Chajed

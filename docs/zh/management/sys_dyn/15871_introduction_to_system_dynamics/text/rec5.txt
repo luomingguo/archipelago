@@ -1,0 +1,262 @@
+--- Page 1 ---
+15.871 Introduction to System 
+Dynamics
+Integrating systems thinking and strategy
+People Express Flight Simulation  
+October 11, 2013 
+1
+People Express Flight Simulation  
+October 11, 2013 
+
+--- Page 2 ---
+Agenda for Today 
+• Announcements  
+• Assignment #5--Deadline extended to Friday 5pm
+• People Express Logistics
+– Download simulation 
+– Mac Users: Uses teammates’ laptop or use VMWare (windows virtual machine) 
+• The People Express 2000 Microworld- Walkthrough 
+• What to hand in? 
+– List of deliverables 
+• Run Don Burr Strategy, see if you can observe the dynamics that lead to PE demise 
+• Run your Own Strategy  
+2
+
+--- Page 3 ---
+Overview 
+• In this assignment, you will:  
+– First ‘fly’ the company yourself through a “management flight simulator”—a SD 
+model embedded in an interface in which you will make strategic and 
+operational decisions “quarter by quarter” (every 3 months)
+– You will then draw on your experience running your own PE to develop a 
+conceptual model of the feedback structures responsible for the dynamics.  
+– Finally, you will use your conceptual model and experience in the management 
+flight simulator to recommend policies for the sustainable success of PE.  
+3
+
+--- Page 4 ---
+To start the Simulation 
+• The Simulation is developed for a Windows Computer.  
+• To use this code, first install the software and RUNNING AS ADMINISTRATOR open 
+it from Start | Programs | Strategy Dynamics...  
+http://www.gsdoffice.co.uk/mit/ 
+User: MIT 
+Unlock code: 021J234830054780000 
+• Click on GO on the opening screen (picture in centre) then go to File, Unlock and 
+enter the name and code as shown here.   
+• The code is now applied and the software does not need to be run as admin again 
+4
+
+--- Page 5 ---
+Remember: What to Hand in?  
+• Prepare a short report. Brevity is a virtue! (~10-12 pages should be enough)
+• Hint: Main Elements to include in your report:
+– 1) Identify Key Variables: Variable List with units* 
+– 2) Reference modes* 
+– 3) Develop a “ONE PAGE” causal loop diagram including key variables****
+– 4) Explanation of PE strategy** 
+– Telling the PE Story in "A Few Paragraphs" : 
+– 5) Explanation of Your Strategy**:  
+– Policy Recommendations: Imagine You are CEO of PE; What 
+policies/strategies would you propose to ensure the sustainable success of 
+your firm?  
+– 6) Strategy record sheet: Your decisions made per quarter, up to 10 years 
+– Recommended: Include a picture of tables->user decisions, so that we can 
+easily see the decisions you made. Last page of assignment is the graphical 
+presentation of this table.  
+** Important: Refer to your CLD to tell the story of PE and your strategy 
+* More details will follow after the PE flight simulator walk through 
+5
+
+--- Page 6 ---
+Remember: Developing reference 
+modes 
+• Identify the time horizon explicitly 
+– Be homogeneous in all the charts so that it is easy to compare charts and analyze 
+relationships 
+• Use different charts for different variables with different units
+– It simplifies the analysis of the reference modes 
+– Use the same chart only when you want to illustrate explicit relationships 
+(Revenues vs. costs => profit;  Input-Output => Excess production or Change in 
+inventory) 
+• You need to be consistent across the graphs
+– Example: if Input>Output at some point, Inventory has to grow 
+• Find a rationale for every feature in the reference mode you describe
+– E.g. “Cable Revenues go down because Subscription Fee goes down”
+– The rationale will help you find and test the causal loop structure underlying the 
+system 
+aterial and examples based on “Business Dynamics”, Chapter 5 read the book for more information 
+M
+6
+
+--- Page 7 ---
+Example Reference modes  
+(variables are different than the People Express assignment) 
+Customer Base
+Cable Provider Revenues
+200
+100
+Million 
+$Bn/Year
+Households
+2000
+0
+0
+1950
+1975
+2000
+1950
+1975
+2000
+7
+
+--- Page 8 ---
+Remember: Defining causal loops
+• Name all the variables in a convenient, meaningful way, which is measurable 
+Wrong
+Right
++
++
+1.
+Costs rise 
+Price rises 
+Vs.
+Costs 
+    Price 
++
++
+2.
+Feedback 
+Mental attitude 
+Vs.
+Praise
+    Morale 
++ 
+- 
+3.
+Costs 
+Losses 
+Vs.
+Costs 
+    Profits 
++
+- 
+4.
+Criticism 
+Unhappiness 
+Vs.
+Criticism 
+    Happiness 
+Material and examples based on “Business Dynamics”, Chapter 5
+8
+
+--- Page 9 ---
+Remember: Defining causal loops 
+• Make the loops easy to see 
+– Curved arrows help visualize the loops 
+– Try not to have many crossed lines 
+– Don’t box the variables ! (at least, at this stage of the course. Boxes mean stock 
+variables) 
++
++
+Road 
+Chickens 
+Eggs 
++
++
+crossings 
+B
+- 
++
+Road Crossings
+Chickens
+R
+Eggs
+road killing 
+-
++
+reproduction 
+• Assign polarity to all the links!!! 
+Material and examples based on “Business Dynamics”, Chapter 5
+9
+
+--- Page 10 ---
+Remember: Defining causal loops 
+• Use the right way (not the fast way) to find the nature of the loops 
+– It helps you debug the model (e.g. typos in the polarity of links) 
+– It strengthens your understanding of the model 
+– It helps you draw reference modes 
+• Name your loops
+1. Indicating if it is reinforcing (R) or balancing (B) 
+2. Numbering them (R1, R2, B1, B2..) 
+3. Labeling them with a meaningful sentence (Word of mouth, Inventory 
+depletion, etc …)
+Material and examples based on “Business Dynamics”, Chapter 5
+10
+
+--- Page 11 ---
+Overview of Flight Simulator 
+• Simulator consists of 3 parts: 
+• The micro-world: Represents structure of PE 
+• The information system: Reporting current state and the past 
+• The simulator controls: Strategic and operational decisions 
+• . 
+11
+
+--- Page 12 ---
+Cleared for Take-Off 
+• Before you enter your first decisions, let‘s take a look at some of the reports available 
+through the Information system.  
+• Under the Report menu you will find 7 status reports. Click on the Summary 
+Report. This report summarizes the crucial information you will need to run your 
+airline.  
+• Take a look at some other reports if you wish.  
+• The current date is reported at the top of the Summary window.   
+• You are taking over at the beginning of “Year 1”. Thus the summary report gives you 
+the results for the last quarter of “Year 0”. 
+• When you take over, People Express has 3 aircrafts, and 165 employees, or 55
+employees per plane. Reported service quality is high.
+12
+
+--- Page 13 ---
+Game 1: Play Don Burr’s strategy
+• Good starting point is to mimic Don Burr: 
+• Keep prices low from the beginning ($0.09/ seat mile) 
+• Set the target scope low at 0.60 
+• Then expand fleet aggressively (about 100%/year) 
+• Hire people at a comparable rate 
+• You would also market aggressively, particularly in the beginning (say, 12% of 
+revenues in the beginning, falling to 10% as load factor rises)
+-----------------------------
+• After playing Burr, play again with same price and service scope, but choose 
+different growth rate, or a different marketing strategy, or a different target for 
+employees per aircraft 
+• As you start understanding dynamics of the firm, consequences of actions, and 
+delays, you can design your strategy for success 
+• There is no right answer, careful experimentation is key 
+13
+
+--- Page 14 ---
+Helpful Hints
+1. You may sell airplanes as well as buy them. To sell airplanes, simply enter a 
+negative number for the purchase rate. The software will not allow you to sell more than 
+you have.. 
+2. You may fire employees as well as hire them. Simply enter a negative number for 
+hiring. You may not fire more employees than you have. 
+3. Think of strategies, run them. See why they work/ fail. Which loops made it work, 
+which loops did you miss..don’t spend too much time on one run, just play again, as 
+many times as possible 
+4. Remember there can be delays, so behavior can be complex 
+14
+
+--- Page 15 ---
+MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+ 
+15.871 Introduction to System Dynamics
+Fall 2013
+ 
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.

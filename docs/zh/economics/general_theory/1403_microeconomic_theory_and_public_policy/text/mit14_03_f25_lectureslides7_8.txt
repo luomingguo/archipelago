@@ -1,0 +1,528 @@
+14.03/003 Micro Theory & Public Policy, Fall 2025
+
+Lectures 7 & 8. Individual Demand: Income Efects, S ubstitution E fects, and
+Labor Supply
+
+David Autor (Prof), MIT Economics and NBER
+
+
+
+
+Revised September 29, 2025
+Today
+
+
+
+
+ 1. Why so many in-kind transfers?
+
+ 2. Review: Income and substitution efects
+
+ 3. Income efects, substitution efects, and labor supply
+
+
+
+
+                                                           1/52
+© National Tax Association. All rights reserved. This content is excluded from our Creative Commons license. For more
+information, see https://ocw.mit.edu/help/faq-fair-use/
+Liscow and Pershing survey sample
+
+
+
+
+                                                     3/52
+                                    Liscow & Pershing,2022
+Preference question: Cash versus in-kind transfers?
+
+
+
+
+                                                                       4/52
+                                                      Liscow & Pershing,2022
+          Figure 1. Preference Between Cash and In-Kind Programs – General Population
+
+
+
+
+Notes: The figure shows the percent of respondents preferring each of the cash and in-kind programs, when
+respondents are asked to choose between them. The thin bars mark 95 percent confidence intervals. Data are from
+control survey.
+                                                                                                      Liscow & Pershing,2022
+Liscow & Pershing,2022
+Subjective beliefs question: How do the poor spend their money?
+
+
+
+
+                                                            Liscow & Pershing,2022
+
+
+
+
+                                                                             7/52
+Those who believe the poor spend money on necessities favor cash
+             Figure 2. Relationship Between Program Preference and Perception of the Poor’s Spending
+                                           Habits – General Population
+
+
+
+
+          Notes: This graph shows the preference for the cash program, by respondents’ perception of how much out of a cash
+          transfer the poor would spend on necessities. Marker size is proportional to the number of observations in each
+          decile of perceived spending on necessities. The coefficient from the regression of preferring cash on perceived
+          spending is 0.42 (SE = 0.05). Data are from control survey.                                                         8/52
+Modal reason for opposing cash: Paternalism
+                          Figure 3.a. Reasons Given for Preferring In-Kind – General Population
+
+
+
+
+           Notes: This figure shows the percentage of respondents who selected each reason for preferring in-kind, by order of
+           popularity. “Other (please specify)” was also displayed as an option; it was chosen by 3 percent of respondents. The
+           thin bars mark 95 percent confidence intervals. Observations are respondents preferring in-kind in the control
+           survey.                                                                                                                9/52
+10/52
+Respondents who are below poverty line overwhelmingly favor cash
+                      Figure 5. Preference Between Cash and In-Kind Programs – Below-Poverty Survey
+
+
+
+
+              Notes: The figure shows the percent preferring each of the cash program and the in-kind program, when respondents
+              in the below-poverty survey are asked to choose between them. The thin bars mark 95 percent confidence intervals.
+
+                                                                                                                                                  11/52
+                                                                                                                                  Liscow & Pershing,2022
+Modal reason poor favor cash: Individual freedom
+                  Figure 6.b. Reasons Given for Preferring Cash as Recipient – Below-Poverty Survey
+
+
+
+
+           Notes: The figure shows the support for each of the reasonings offered in the below-poverty survey for preferring
+           cash, in order of popularity. “Other (please specify)” was also displayed as an option; it was selected by 4 percent of
+           respondents. The thin bars mark 95 percent confidence intervals.
+                                                                                                                                                     12/52
+                                                                                                                                     Liscow & Pershing,2022
+Why do we give so little cash relative to in-kind? The answer may be here
+ 1. Poor value in-kind transfers at approx $0.80 per dollar
+ 2. It takes about $1.25 ($1.25 = 1/$0.80) of in-kind transfer to psychically equal $1.00 in cash
+ 3. Afuent households are willing to give $1.20 – $1.80 in in-kind transfers per dollar of cash
+
+                         Figure 7. Willingness to Provide or Accept In-Kind vs. Cash Transfers
+
+
+
+
+                                                                                                                          13/52
+
+          Note: This figure shows, for the control sample, the average ratio between the dollar amounts of respondents’
+Income and substitution efects
+ (Normal and Inferior goods)
+
+
+
+
+                                 14/52
+What happens to demand for a good when its price increases but income
+is held constant?
+
+
+
+ − Formally, what is ∂dx (px , py , I)/∂px .
+
+
+ − Two efects:
+
+      1. It shifts the budget set inward toward the origin for the good whose price has risen. This
+         component is the ‘income efect.’
+      2. It changes the slope of the budget set so that the consumer faces a diferent set of market
+         trade-ofs. This component is the ‘substitution efect.’
+
+
+
+
+                                                                                                  15/52
+Efect of a price increase on the budget set
+
+                  y
+
+                 I/py
+                                              This section of budget
+                                              set becomes unfeasible
+
+
+
+
+                        −(px2 /py )                −(px1 /py )
+
+
+                                      I/px2         I/px1        x
+
+                                                                       16/52
+Two efects of price rise: (1) Substitution efect; (2) Income efect
+
+
+ − What happens to consumption of X if
+                                                   px
+                                                      ↑
+                                                   py
+    while utility is held constant?
+
+
+ − Provided that the axiom of diminishing MRS applies, we’ll have
+
+                                           ∂hx (px , py , U )
+                                                              <0
+                                                ∂px
+
+
+ − Holding utility constant, the substitution efect is always negative.
+
+
+                                                                          17/52
+Two efects of price rise: (1) Substitution efect; (2) Income efect
+
+
+ − Income efect defned as
+                                              ∂dx (px , py , I)/∂I
+
+
+ − Can be either negative or positive.
+
+      □   If ∂dx (px , py , I)/∂I > 0, good X is said to be a normal good.
+
+      □   If ∂dx (px , py , I)/∂I < 0, good X is said to be an inferior good.
+
+      □   Inferior goods can be further subdivided in “weakly” and “strongly” inferior goods. We’ll
+          come back to this point Wednesday
+
+
+
+                                                                                                  18/52
+ y
+       Income
+        Efect                    Normal Good
+I/py
+
+
+
+                      S
+
+                          C1
+
+                C2
+                               Substitution
+                                              U1
+                     U2          Efect
+
+
+
+
+                 I/px2              I/px1          x
+Income efects: Normal vs. inferior goods
+
+
+ − Defned as
+                                             ∂dx (px , py , I)/∂I
+
+
+ − Can be either negative or positive.
+      □   If ∂dx (px , py , I)/∂I > 0, good X is said to be a normal good.
+
+      □   If ∂dx (px , py , I)/∂I < 0, good X is said to be an inferior good.
+
+      □   Inferior goods can be further subdivided in “weakly” and “strongly” inferior goods. We’ll
+          come back to this point Wednesday
+
+
+
+                                                                                                  20/52
+ y
+                    Inferior Good
+I/py
+
+       S
+            C1
+
+
+
+
+           C2
+
+
+
+
+            I/px2    I/px1     x
+Normal and Inferior goods
+Summary
+
+
+
+
+ − For a normal good ( ∂d
+                       ∂I > 0), the income and substitution efects are complementary.
+                         x
+
+
+
+
+ − For an inferior good ( ∂d
+                          ∂I < 0), the income and substitution efects are countervailing.
+                            x
+
+
+
+
+ − For a Gifen good (AKA, strongly inferior, abnormal), the income efect dominates:
+     ∂dx
+     ∂I · X   >   ∂hx
+                  ∂px   . Note both are negative. (We’ll cover this Wednesday—not today )
+
+
+
+
+                                                                                            22/52
+Income efects, substitution efects, and labor supply
+
+
+
+
+                                                       23/52
+Income and substitution efects in labor supply
+
+
+
+
+ − We typically think of demand functions as describing goods demand
+ − The same reasoning applies to labor supply
+ − And it’s pretty cool how it works
+ − (We’ll return to demand for goods in the next lecture—specifcally, Gifen goods)
+
+
+
+
+                                                                                     24/52
+First principles: Labor vs. leisure
+
+
+A consumer has to decide whether to work and how much to work
+
+ − She has only 24 hours a day
+
+ − She can divide these hours among work and leisure
+
+ − Consider the role of income and substitution efects
+      1. Holding constant income, how does an increase in the hourly wage afect labor supply?
+      2. Holding constant the hourly wage, how does an increase in income afect labor supply?
+      3. What is the efect of an increase in hourly earnings on labor supply?
+
+
+
+
+                                                                                                25/52
+Context: The Earned Income Tax Credit (EITC)
+
+
+
+
+ − The EITC is a federal income subsidy for low wage workers—specifcally, a refundable tax credit
+
+ − As of December, 2023
+
+      □   About 23 million eligible workers and families received the federal EITC
+      □   Federal expenditures were $57 billion
+      □   Average beneft per household was $2,541
+
+
+
+
+                                                                                              26/52
+Federal EITC benefts schedule in 2023: Single parent, three children
+
+
+
+
+                                                                       27/52
+Federal EITC benefts schedule in 2023: Single parent, two children
+
+
+
+
+                                                                     28/52
+Federal EITC benefts schedule in 2023: Single parent, one child
+
+
+
+
+                                                                  29/52
+Federal EITC benefts schedule in 2023: Single parent, no children
+
+
+
+
+                                                                    30/52
+Federal EITC benefts schedule in 2023: Table
+
+
+
+
+                                               31/52
+Average EITC beneft paid in 2020 by number of children
+
+
+
+
+                                                         32/52
+Anti-poverty efects of EITC in 2019
+
+
+
+
+                                      33/52
+Modeling the efects of the EITC
+  on labor supply and leisure?
+
+
+
+
+                                  34/52
+Household PPF in consumption vs. leisure space
+
+
+
+
+                                                 35/52
+Household PPF in consumption vs. leisure space
+
+
+
+
+                                                 36/52
+Household PPF in consumption vs. leisure space
+
+
+
+
+                                                 37/52
+Household PPF in consumption vs. leisure space
+
+
+
+
+                                                 38/52
+Household PPF in consumption vs. leisure space
+
+
+
+
+                                                 39/52
+Household PPF in consumption vs. leisure space
+
+
+
+
+                                                 40/52
+Labor supply responses to the Earned Income Tax Credit:
+       Evidence from the Tax Reform Act of 1986
+
+               Eissa and Leibman, 1996
+
+
+
+
+                                                          41/52
+Comparison of EITC schedule in 1986 and 1988
+
+
+
+
+                                               42/52
+Summary statistics: Unmarried women, Ages 16 – 44
+
+
+
+
+                                                    43/52
+Labor force participation of unmarried women, 1981–1992
+
+
+
+
+                                                          44/52
+Labor force participation of unmarried men, 1981–1992
+
+
+
+
+                                                        45/52
+Dif-in-dif estimates: Labor force participation
+
+
+
+
+                                                  46/52
+Dif-in-dif estimates: Labor force participation
+
+
+
+
+                                                  47/52
+Dif-in-dif estimates: Labor force participation
+
+
+
+
+                                                  48/52
+Max EITC and LFP of unmarried women
+Contrasting women with vs. without children
+
+
+
+
+                                              49/52
+Max EITC and LFP of unmarried women without a high school diploma
+Contrasting women with vs. without children
+
+
+
+
+                                                               50/52
+Did EITC reduce hours worked? Unmarried women with and without kids
+
+
+
+
+                                                                51/52
+EITC was designed by economists, taking account of income and
+substitution efects
+
+
+ − The EITC was developed and enacted by conservative social policymakers in 1975, during the
+   Nixon Administration
+
+ − The EITC was initially quite popular with conservatives
+
+ − The EITC reform we analyzed in class today was enacted under the Reagan Administration in
+   1988
+
+ − The EITC was substantially expanded by the George H.W. Administration in 1990 and the
+   Clinton Administration in 1993
+
+ − At present, there is considerably more skepticism towards the EITC among conservative than
+   liberal social policymakers
+
+
+                                                                                                52/52
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

@@ -1,0 +1,718 @@
+--- PAGE 1 ---
+14.462 Advanced Macroeconomics II 
+Spring 2020 
+ 
+Robert M. Townsend 
+ 
+Syllabus 
+This version: 15 February 2020 
+ 
+ 
+Topics 
+Measurement, Analysis, and Design of Financial Systems - First Principles as a Foundation for Policy. 
+ 
+Course Logistics 
+ 
+Instructor: 
+E-mail: 
+  Robert M. Townsend 
+  rtownsend@mit.edu 
+Office: 
+E52-538 
+TA: 
+E-mail: 
+Andre Sztutman 
+sztutman@mit.edu 
+Lectures: 
+Tu Th 
+1:00-2:30 pm 
+E51-372 
+Recitations: 
+Fr 
+1:00-2:30 pm 
+E51-376 
+Office hours: 
+Mon 
+10:00-11:30 am 
+E52-548 
+ 
+ 
+Course Overview 
+ 
+This course will cover several topics related to liquidity and financial intermediation. The focus of the 
+course is on the design of financial contracts and markets, efficiency and policy interventions in a general 
+equilibrium context. Special topics include innovations made possible by new technology, e-money and e-
+platforms. 
+Lecture 1: Design, Regulation, and Policy with respect to Payment Systems and Financial Infrastructure: 
+Bitcoin and FinTech as examples of Technological Innovation, with Implications for Money and Financial 
+Intermediation, begging issues of What is Optimal 
+Lecture 2: Ledgers and Data Base Management, Integrated Financial Statements, and an Application to 
+Distributional and Regional Accounts 
+Lecture 3: E-money, Infrastructure and Liquidity Shortages, Financial and Trader Centrality, and 
+Optimized Liquidity Injections as Monetary Policy 
+Lecture 4: Encryption and Validation Protocols for E-messages Versus Smart Contracts and Mechanism 
+Design 
+
+
+--- PAGE 2 ---
+Lecture 5: Vision for Optimized Design of Financial Infrastructure using Distributed Ledger Technology: 
+Scrambling of Information and Partitioned Ledgers, Delegation to the Contract, Limiting Access to the 
+Outside Market, Single and Multiple-Colored Tokens as Decentralized Partitioned Ledgers, Commitment 
+to Optimized Sequential Service to Mitigate Runs  
+Lecture 6: Needed Financial Infrastructure: Innovations in Emerging Markets and Guidelines from Theory 
+for Optimal Infrastructure Design 
+Lecture 7: Dealing with Externalities of Payments Systems and Fire Sales: Designs for Optimized 
+Competition among Crypto Currencies and Market Structure to Remove Pecuniary Externalities 
+Lecture 8: Payment Systems: Problems and Issues to be Considered in Alternative Designs 
+Lecture 9: The Information Problem of Decentralized Monetary Exchange and of Equilibria with High-
+Velocity Circulating Private Debt: Regulation using Distributed Ledger Technology 
+Lecture 10: Money, Crypto Currency, and Public Debt as Bubbles: Implications for Indeterminacy, Fiscal 
+Policy, Liquidity Pricing and the Interest Rate 
+Lecture 11: Optimal Crypto Currency Policy and Optimal Monetary Policy: Observing Transactions 
+Patterns, Heterogeneity and Wealth Effects, and the Implications of Micro-Market Frictions 
+ 
+ 
+Requirements 
+ 
+The grade will be based on class participation (15%), two problem sets (40%) and referee report / 
+research proposal (45%), which should discuss in detail at least one of the papers marked with $.  
+The discussion should consist of a thorough critique of a paper or topic, as in a well written self-contained 
+referee report, and ideally would give ideas about how to build on that, as in a research proposal. 
+The research proposal should be presented on Friday, March 13 and Tuesday, March 17. Each 
+presentation will be allocated a 30-min slot. The time constraint will be strictly enforced. The write up 
+should extend the discussion and be 10 to 12-page long.  A write-up is due on March 29.  
+Required readings are marked with an asterisk (*). 
+ 
+LECTURE 1: 
+  
+ Design, Regulation, and Policy with respect to Payment Systems and Financial Infrastructure – 
+Bitcoin and FinTech as examples of Technological Innovation, with Implications for 
+Money and Financial Intermediation, begging issues of What is Optimal 
+ 
+$ Adrian, T., & Shin, H. S. (2010). The changing nature of financial intermediation and the financial crisis 
+of 2007–2009. Annu. Rev. Econ., 2(1), 603-618.  
+$ Ayyagari, M., Beck, T., & Martinez Peria, M. S. (2017). Credit growth and macroprudential policies: 
+preliminary evidence on the firm level. BIS Paper, (91a). 
+Briglevics, Tamás and Scott Schuh (2014). U.S. consumer demand for cash in the era of low interest 
+rates and electronic payments. Working Paper Series 1660, European Central Bank. 
+
+
+--- PAGE 3 ---
+ 
+$ Buchak, G., Matvos, G., Piskorski, T., & Seru, A. (2018). Fintech, regulatory arbitrage, and the rise of 
+shadow banks. Journal of Financial Economics, 130(3), 453-483. 
+ 
+Buiter, Willem H. (2009). Negative Nominal Interest Rates: Three ways to over- come the zero lower 
+bound. NBER Working Papers 15118. 
+ 
+Carstens, A. (2019). Central Banking and Innovation: Partners in the Quest for Financial Inclusion. The 
+seventeenth C.D. Deshmukh Memorial Lecture. 
+https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=18949 
+ 
+Chicago Board of Trade (1982). “Grains, Production, Processing, Marketing.” 
+ 
+Chodorow-Reich, G., Gopinath, G., Mishra, P., & Narayanan, A. (2020). Cash and the economy: 
+Evidence from India’s demonetization. The Quarterly Journal of Economics, 135(1), 57-103. 
+ 
+Eiger, Z. & Mandell, J. (2015).  P2P Lending Basics: How it Works, Current Regulations and 
+Considerations.  Morrison Foerster. https://media2.mofo.com/documents/150129p2plendingbasics.pdf 
+ 
+Gorton, G., & Winton, A. (2003). Financial intermediation. In Handbook of the Economics of Finance (Vol. 
+1, pp. 431-552). Elsevier. 
+ 
+$ Stavins, J., Schuh, S., & Greene, C. (2017). The 2015 Survey of Consumer Payment Choice: summary 
+results (No. 17-3). Federal Reserve Bank of Boston. https://www.bostonfed.org/-
+/media/Documents/Workingpapers/PDF/2017/rdr1703.pdf  
+ 
+$ Hildebrand, N. N. V. (2019). The Rise of Finance: 1850-2015. Three essays in economics. (Doctoral 
+dissertation, Massachusetts Institute of Technology). https://dspace.mit.edu/handle/1721.1/122104 
+ 
+Lakhani, K. R., & Iansiti, M. (2017). The truth about blockchain. Harvard Business Review, 95, 118-127.  
+ 
+$ Nakamoto, S. (2008). A peer-to-peer electronic cash system. Bitcoin  URL: https://bitcoin.org/bitcoin.pdf  
+ 
+$ Philippon, T. (2016). The fintech opportunity (No. w22476). National Bureau of Economic Research. 
+ 
+$ Piketty, T., & Zucman, G. (2014). Capital is back: Wealth-income ratios in rich countries 1700–
+2010. The Quarterly Journal of Economics, 129(3), 1255-1310. 
+ 
+$ Rogoff, K. S. (2017). The curse of cash: How large-denomination bills aid crime and tax evasion and 
+constrain monetary policy. Princeton University Press.Schuh and Stavins 2017 
+ 
+* Townsend, R. (forthcoming). Design and Regulation of Financial Infrastructure and Payments Systems. 
+MIT press  
+ 
+ 
+ 
+ 
+LECTURE 2: Ledgers and Data Base Management, Integrated Financial Statements, and an 
+Application to Distributional and Regional Accounts 
+ 
+$ Auten, G., & Splinter, D. (2019). Top 1 Percent Income Shares: Comparing Estimates Using Tax Data. 
+In AEA Papers and Proceedings (Vol. 109, pp. 307-11). 
+ 
+Awuku-Budu, C., Guci, L., Lucas, C. A., & Robbins, C. A. (2013). A first look at experimental personal 
+consumption expenditures by state. Briefing. Bureau of Economic Analysis. 
+ 
+
+
+--- PAGE 4 ---
+$ Batty, M., Bricker, J., Briggs, J., Holmquist, E., McIntosh, S., Moore, K. B., Reber, S., Shatto, M., 
+Sweeney, T. & Henriques, A. (2019). Introducing the distributional financial accounts of the United States. 
+ 
+Bizer David S. and Peter M. Demarzo (1992). “Sequential Banking” The Journal of Political Economy, vol. 
+100(1) pp. 41-61. 
+ 
+Bond, Philip (2004). "Bank and Nonbank Financial Intermediation," Journal of Finance, vol. 59(6), pages 
+2489-2529, December. 
+ 
+$ Bond, C. A., Martin, T., McIntosh, S. H., & Mead, C. I. (2007). Integrated macroeconomic accounts for 
+the United States. Survey of Current Business, 87(11), 14-31. 
+ 
+Boyd John H. and Edward C. Prescott (1985). “Financial Intermediary Coalitions” Journal of Economic 
+Theory, vol. 38(2), pp. 211-232. 
+ 
+Diamond, Douglas W. (1984). “Financial Intermediation and Delegated Monitoring” The Review of 
+Economic Studies, vol. 51(3). 
+ 
+$ Duffie, D., & Zhu, H. (2011). Does a central clearing counterparty reduce counterparty risk?. The 
+Review of Asset Pricing Studies, 1(1), 74-95. 
+ 
+$ Duffie, D. (2014). Financial Market Infrastructure: Too Important To Fail. Across the Great Divide: New 
+Perspectives on the Financial Crisis, 652, 251. 
+ 
+Green, Daniel, and Ernest Liu, 2015. “Credit Markets without Commitment,” Working Paper. 
+ 
+Hughes, Joseph P. and Loretta J. Mester (2011). “Who Said Large Banks Don’t Experience Scale 
+Economies? Evidence From a Risk-Return-Driven Cost Function,” Working Paper No. 11-27, Federal 
+Reserve Bank of Philadelphia. 
+ 
+$ Mallett, J. (2009). Limits on the Communication of Knowledge in Human Organisations. Studies in 
+Emergent Order 2: 1–18. 
+ 
+* Paweenawat, A. & Townsend, R.  (2019). The Impact of Isolationist Policy: Disentangling Real and 
+Financial Factors Through the Lens of Integrated Regional Financial Accounts. Working Paper. revised 
+Jan 2019.  
+ 
+$ Piketty, T., Saez, E., & Zucman, G. (2018). Distributional national accounts: methods and estimates for 
+the United States. The Quarterly Journal of Economics, 133(2), 553-609. 
+ 
+* Samphantharak, K., Schuh, S., & Townsend, R. M. (2018). Integrated household surveys: An 
+assessment of US methods and an innovation. Economic inquiry, 56(1), 50-80. 
+ 
+Samphantharak, K., & Townsend, R. M. (2010). Households as corporate firms: an analysis of household 
+finance using integrated household surveys and corporate financial accounting (No. 46). Cambridge 
+University Press. 
+ 
+$ Smith, M., Yagan, D., Zidar, O., & Zwick, E. (2019). Capitalists in the Twenty-first Century. The 
+Quarterly Journal of Economics, 134(4), 1675-1745. 
+ 
+$ Smith, M., Zidar, O., & Zwick, E. (2019). Top wealth in the united states: New estimates and 
+implications for taxing the rich. Unpublished manuscript. http://www.ericzwick.com/wealth/wealth.pdf  
+ 
+Townsend, R. (1978). “Intermediation with Costly Bilateral Exchange.” Review of Economic Studies 45 
+(3): 417–425. 
+ 
+
+
+--- PAGE 5 ---
+US Department of Commerce. Bureau of Economic Analysis. 1985. “An Introduction to National 
+Economic Accounting.” Methodology Paper Series MP-1. Washington, DC: GPO. 
+ 
+ 
+ 
+LECTURE 3: E-money, Infrastructure and Liquidity Shortages, Financial and Trader Centrality, and 
+Optimized Liquidity Injections as Monetary Policy 
+ 
+Allen, Franklin and Douglas Gale (2000). “Financial Contagion,” Journal of Political Economy, vol. 108(1), 
+pp. 1–33 
+ 
+Alvarez, F., & Lippi, F. (2009). Financial innovation and the transactions demand for 
+cash. Econometrica, 77(2), 363-402.  
+ 
+* Alvarez, F., Pawasutipaisit, A., & Townsend, R. M. (2018). Cash Management in Village Thailand: 
+Positive and Normative Implications. MIT Working Paper. 
+ 
+Bech, Moren L. and Enghin Atalay (2010). “The Topology of the Federal Funds Market,” Physica A: 
+Statistical Mechanics and its Applications, vol. 389(22), pp. 5223-5246. 
+ 
+Boss, Michael, Helmut Elsinger, Martin Summer and Stefan Thurner (2003). “The Network Topology of 
+the Interbank Market,” Quantative Finance, vol. 4(6), pp. 677-684. 
+ 
+* Chandrasekhar, A. G., Townsend, R., & Xandri, J. P. (2018). Financial Centrality and Liquidity 
+Provision (No. w24406). National Bureau of Economic Research. 
+ 
+$ Cocco, João F., Francisco J. Gomes and Nuno C. Martins (2009)."Lending relationships in the 
+interbank market," Journal of Financial Intermediation, vol. 18(1), pp. 24-48. 
+ 
+$ Duffie, D., Gârleanu, N., & Pedersen, L. H. (2005). Over‐the‐counter markets. Econometrica, 73(6), 
+1815-1847. 
+ 
+$ Freeman, Scott. 1996. “The Payments System, Liquidity, and Rediscounting.” American Economic 
+Review 86 (December): 1,126–38. 
+  
+$ Green, Edward J. 1999. “Money and Debt in the Structure of Payments.” Federal Reserve Bank of 
+Minneapolis Quarterly Review 23 (Spring): 13–29 
+ 
+$ Hendershott, T. & Madhavan, A. (2015). "Click or Call? Auction versus Search in the Over-the-Counter 
+Market," Journal of Finance, vol. 70(1), pp. 419-447, 02. 
+ 
+Jack, W., Suri, T., & Townsend, R. M. (2010). Monetary theory and electronic money: Reflections on the 
+kenyan experience. FRB Richmond Economic Quarterly, 96(1), 83-122. 
+ 
+Jaramillo et al. (2012), An Empirical Study of the Mexican Banking System Network and Its Implications 
+for Systemetic Risk 
+ 
+Kiyotaki, Nobuhiro and Randall Wright (1989). “On Money as a Medium of Exchange,” Journal of Political 
+Economy, vol. 97(4), pp. 927-954. 
+ 
+Lagos, R., & Wright, R. (2005). A unified framework for monetary theory and policy analysis. Journal of 
+political Economy, 113(3), 463-484. 
+ 
+$ Lagos, R., & Zhang, S. (2019). On money as a medium of exchange in near-cashless credit 
+economies (No. w25803). National Bureau of Economic Research. 
+ 
+
+
+--- PAGE 6 ---
+$ Longstaff, F. A. (2004). The Flight-to-Liquidity Premium in US Treasury Bond Prices. Journal of 
+Business, 77(3). 
+ 
+Miller, M. H., & Orr, D. (1966). A Model of the Demand for Money by Firms. The Quarterly journal of 
+economics, 80(3), 413-435.  
+ 
+$ Summer, M. (2013). Financial Contagion and Network Analysis, Annual Reviews of Financial 
+Economics, 5, 1–38. 
+ 
+Upper, Christian and Andreas Worms (2004). “Estimating bilateral exposures in the German interbank 
+market: Is there a danger of contagion?” European Economic Review, vol. 48(4), pp. 827-849. 
+ 
+$ Weill, P. O. (2007). Leaning against the wind. The Review of Economic Studies, 74(4), 1329-1354. 
+ 
+ 
+LECTURE 4: Encryption and Validation Protocols for E-messages Versus Smart Contracts and 
+Mechanism Design 
+ 
+$ Berlin, M., & Mester, L. J. (1999). Deposits and relationship lending. The Review of Financial 
+Studies, 12(3), 579-607. 
+ 
+Budish, E. (2018). The economic limits of bitcoin and the blockchain (No. w24717). National Bureau of 
+Economic Research. 
+ 
+$ Coles, P. A., & Shorrer, R. (2012). Correlation in the multiplayer electronic mail game. The BE Journal 
+of Theoretical Economics, 12(1). 
+ 
+$ Chwe, M. S. Y. (1995). Strategic reliability of communication networks.  
+http://www.chwe.net/michael/p.pdf 
+ 
+$ De Jaegher, K.J.M.. (2015). "Beneficial Long Communication in the Multi-Player Electronic Mail Game". 
+Working Papers 15-09, Utrecht School of Economics. <https://ideas.repec.org/p/use/tkiwps/1509.html> 
+ 
+$ Green, E. J., & Oh, S. N. (1991). Contracts, constraints and consumption. The Review of Economic 
+Studies, 58(5), 883-899. 
+ 
+Halpern, J. Y., & Moses, Y. (1990). Knowledge and common knowledge in a distributed 
+environment. Journal of the ACM (JACM), 37(3), 549-587. 
+ 
+* Harris, M., & Townsend, R. M. (1981). Resource allocation under asymmetric 
+information. Econometrica: Journal of the Econometric Society, 33-64. 
+ 
+Kocherlakota, N. R. (1996). Implications of efficient risk sharing without commitment. The Review of 
+Economic Studies, 63(4), 595-609. 
+ 
+$ Narayanan, A., Bonneau, J., Felten, E., Miller, A., & Goldfeder, S. (2016). Bitcoin and cryptocurrency 
+technologies: a comprehensive introduction. Princeton University Press. 
+ 
+* Morris, S., & Shin, H. S. (1997). Approximate common knowledge and coordination: Recent lessons 
+from game theory. Journal of Logic, Language and Information, 6(2), 171-190. 
+$ Prescott, Edward. (2003). “Communication in Models with Private Information: Theory and 
+Computation.” The Geneva Papers on Risk and Insurance Theory, 28 : 105–130. 
+
+
+--- PAGE 7 ---
+* Townsend, R. M. (1982). Optimal multiperiod contracts and the gain from enduring relationships under 
+private information. Journal of political Economy, 90(6), 1166-1186. 
+ 
+ 
+ 
+LECTURE 5:  
+Vision for Optimized Design of Financial Infrastructure using Distributed Ledger Technology: 
+Scrambling of Information and Partitioned Ledgers, Delegation to the Contract, Limiting Access to 
+the Outside Market, Single and Multiple-Colored Tokens as Decentralized Partitioned Ledgers, 
+Commitment to Optimized Sequential Service to Mitigate Runs 
+ 
+Bertolai, J. D., Cavalcanti, R. D. O., & Monteiro, P. K. (2014). Run theorems for low returns and large 
+banks. Economic Theory, 57(2), 223-252. 
+ 
+Budish, E., Cramton, P., & Shim, J. (2015). The high-frequency trading arms race: Frequent batch 
+auctions as a market design response. The Quarterly Journal of Economics, 130(4), 1547-1621. 
+ 
+Diamond, D. W., & Dybvig, P. H. (1983). Bank runs, deposit insurance, and liquidity. Journal of political 
+economy, 91(3), 401-419.  
+ 
+* Doepke, M., & Townsend, R. M. (2006). Dynamic mechanism design with hidden income and hidden 
+actions. Journal of Economic Theory, 126(1), 235-285.  
+ 
+Ennis, H. M. & Keister, T. (2008). "Run equilibria in a model of financial intermediation," Staff Reports 
+312, Federal Reserve Bank of New York. 
+ 
+$ Green, E. J., & Lin, P. (2003). Implementing efficient allocations in a model of financial 
+intermediation. Journal of Economic Theory, 109(1), 1-23. 
+ 
+Jacklin, Charles J. (1987). “Demand deposits, trading restrictions, and risk sharing,” Contractual 
+Arrangements in Intertemporal Trade. 
+ 
+Malinowski, Bronislaw (1922). “Argonauts of the Western Pacific: An Account of Native Enterprise and 
+Adventure in the Archipelagos of Melanesian New Guinea”. London: Routledge & Kegan Paul. 
+ 
+$ Narayanan, A., Bonneau, J., Felten, E., Miller, A., & Goldfeder, S. (2016). Bitcoin and cryptocurrency 
+technologies: a comprehensive introduction. Princeton University Press.  
+ 
+* Townsend, R. M. (1987). Economic organization with limited communication. The American Economic 
+Review, 954-971. 
+ 
+* Townsend, R. M. (1988). Information constrained insurance: the revelation principle extended. Journal 
+of Monetary Economics, 21(2-3), 411-450.  
+ 
+$ Zhu, Haoxiang (2013). “Do dark pools harm price discovery?,” Review of Financial Studies, vol. 27(3), 
+pp. 747-789. 
+ 
+ 
+ 
+LECTURE 6:  
+Needed Financial Infrastructure: Innovations in Emerging Markets and Guidelines from Theory for 
+Optimal Infrastructure Design 
+ 
+Acemoglu, Daron, & Zilibotti, Fabrizio (1997). “Was Prometheus Unbound by Chance? Risk, 
+Diversification, and Growth” The Journal of Political Economy, vol. 105(4) pp. 709-751 
+ 
+
+
+--- PAGE 8 ---
+$ Allen, Franklin & Gale, Douglas (2004). “Financial intermediaries and markets,” Econometrica, vol. 
+72(4), pp.1023-1061. 
+ 
+Bisin, A. (1998). General equilibrium with endogenously incomplete financial markets. Journal of 
+Economic Theory, 82(1), 19-45. 
+ 
+Kinnan, C., Samphantharak, K., Townsend, R. M., & Vera-Cossio, D. (2018). Networks and Risk Sharing 
+in Village Economies. Working paper, MIT. 
+  
+$ Pesendorfer, W. (1995). Financial innovation in a general equilibrium model. Journal of Economic 
+Theory, 65(1), 79-116. 
+ 
+* Prescott, E. C., & Townsend, R. M. (1984). General competitive analysis in an economy with private 
+information. International Economic Review, 1-20. 
+ 
+Prescott, E. C., & Townsend, R. M. (1984). Pareto optima and competitive equilibria with adverse 
+selection and moral hazard. Econometrica: Journal of the Econometric Society, 21-45. 
+ 
+Ru, Hong, & Townsend, R.M. (2019). Enhanced Informal Networks: Costly State Verification and Village 
+Fund Intervention. Working paper, MIT. 
+Samphantharak, Krislert, & Townsend, Robert M. (2018). Risk and Return in Village Economies. 
+American Economic Journal-Microeconomics 10 (1): 1–40. 
+ 
+* Townsend, R, & Xandri, J.P. (2019). Regulation and the Optimal Design of Financial Markets. Working 
+Papers 
+ 
+ 
+Vera-Cossio, Diego A. (2018). Targeting Credit through Community Members. Working paper, University 
+of California, San Diego. 
+ 
+ 
+ 
+ 
+LECTURE 7: : Dealing with Externalities of Payments Systems and Fire Sales : Designs for 
+Optimized Competition among Crypto Currencies and Market Structure to Remove Pecuniary 
+Externalities 
+ 
+$ Acharya, V., & Bisin, A. (2014). Counterparty risk externality: Centralized versus over-the-counter 
+markets. Journal of Economic Theory, 149, 153-182.Alvarez, Fernando & Jermann, Urban. (2000). 
+"Efficiency, Equilibrium, and Asset Pricing with Risk of Default," Econometrica, vol. 68(4), pp. 775-798. 
+ 
+Beviá, C., Corchón, L. C., & Wilkie, S. (2003). Implementation of the Walrasian correspondence by 
+market games. Review of Economic Design, 7(4), 429-442. 
+ 
+$ Bisin, Alberto & Gottardi, Piero. (2006). “Efficient Competitive Equilibria with Adverse Selection,” Journal 
+of political Economy, 114(3), pp.485-516. 
+ 
+$ DeMarzo, Peter M. (2005). "The Pooling and Tranching of Securities: A Model of Informed 
+Intermediation," Review of Financial Studies, vol. 18(1), pp. 1-35. 
+ 
+Du, S., & Zhu, H. (2017). What is the optimal trading frequency in financial markets?. The Review of 
+Economic Studies, 84(4), 1606-1651. 
+ 
+Dubey, P., & Sondermann, D. (2009). Perfect competition in an oligopoly (including bilateral 
+monopoly). Games and economic behavior, 65(1), 124-141. 
+ 
+
+
+--- PAGE 9 ---
+* Jain, A., & Townsend, R. M. (2018). The economics of platforms in a Walrasian framework. Working 
+paper, Massachusetts of Technology. 
+ 
+* Kilenthong, W. T., & Townsend, R. M. (2020). A market based solution for fire sales and other pecuniary 
+externalities. Working paper, Massachusetts of Technology. 
+ 
+$ Netzer, Nick and Florian Scheuer (2014). “A game theoretic foundation of competitive equilibria with 
+adverse selection,” International Economic Review, 55(2), pp. 399-422. 
+ 
+$ Newman, N., Bergquist, L. F., Immorlica, N., Leyton-Brown, K., Lucier, B., McIntosh, C., ... & 
+Ssekibuule, R. (2018, June). Designing and evolving an electronic agricultural marketplace in Uganda. 
+In Proceedings of the 1st ACM SIGCAS Conference on Computing and Sustainable Societies (pp. 1-11). 
+ 
+$ O'Hara, M., & Ye, M. (2011). Is market fragmentation harming market quality?. Journal of Financial 
+Economics, 100(3), 459-474. 
+ 
+Prescott, Edward C. & Townsend, Robert M. (2006). “Firms as Clubs in Walrasian Markets with Private 
+Information,” Journal of Political Economy, vol. 114(4), pp. 644-671. 
+ 
+Rothschild, Michael & Stiglitz, Joseph E. (1976). “Equilibrium in Competitive Insurance Markets: An Essay 
+on the Economics of Imperfect Information,” The Quarterly Journal of Economics, 90(4), pp.629-649. 
+ 
+$ Rustichini, A., Satterthwaite, M. A., & Williams, S. R. (1994). Convergence to efficiency in a simple 
+market with incomplete information. Econometrica: Journal of the Econometric Society, 1041-1063. 
+ 
+Spence, Michael (1973). “Job Market Signaling,” The Quarterly Journal of Eco- nomics, vol. 87(3), pp. 
+355-374. 
+ 
+Stiglitz, Joseph E. and Andrew Weiss, A (1981). “Credit rationing in markets with imperfect information,” 
+The American economic Review, vol. 71(3), pp.393-410. 
+ 
+$ Townsend, R. M. (1983, January). Theories of intermediated structures. In Carnegie-Rochester 
+Conference Series on Public Policy (Vol. 18, pp. 221-272). North-Holland. 
+ 
+Vulkan, N., Roth, A. E., & Neeman, Z. (Eds.). (2013). The handbook of market design. OUP Oxford. 
+ 
+$ Wilson, R. (1978). Competitive exchange. Econometrica: Journal of the Econometric Society, 577-585. 
+ 
+ 
+ 
+LECTURE 8: Payment Systems: Problems and Issues to be Considered in Alternative Designs 
+ 
+$ Afonso, G., & Shin, H. S. (2011). Precautionary demand and liquidity in payment systems. Journal of 
+Money, Credit and Banking, 43, 589-619.  
+ 
+Bank of Canada, Bank of England, & Monetary Authority of Singapore.  (2018). "Cross-border interbank 
+payments and settlements". https://www.mas.gov.sg/-/media/MAS/ProjectUbin/Cross-Border-
+Interbank-Payments-and-Settlements.pdf 
+ 
+$ Bech, Morten & Garratt, Rodney. (2017). Central Bank Cryptocurrencies. BIS Quarterly Review (Sept. 
+2017): 55–70. Accessed October 22, 2018: https://www.bis.org/publ/qtrpdf/r_qt1709f.pdf  
+ 
+Cipolla, Carlo M. (1956). Money, Prices, and Civilization in the Mediterranean World, Fifth to Seventeenth 
+Century. Princeton, NJ: Princeton University Press. 
+ 
+
+
+--- PAGE 10 ---
+$ Dandekar, P., Goel, A., Govindan, R. & Post, I. (2012). Liquidity in Credit Networks: A Little Trust Goes 
+a Long Way. Working paper, Stanford University. 
+ 
+De Roover, Raymond (1948). “Money, Banking and Credit in Mediaeval Bruges,” Medieval Academy of 
+America. 
+ 
+* Dubey, P. (1982). Price-quantity strategic market games. Econometrica: Journal of the Econometric 
+Society, 111-126. 
+ 
+$ Dubey, P., Geanakoplos, J., & Shubik, M. (2005). Default and punishment in general equilibrium 
+1. Econometrica, 73(1), 1-37. 
+ 
+$ Fleming, M. & Garbade, K. (2005). "Explaining settlement fails," Current Issues in Economics and 
+Finance, Federal Reserve Bank of New York, vol. 11, September 2005. 
+ 
+Garbade, K. D., Keane, F. M., Logan, L., Stokes, A. & Wolgemuth,J. (2010). "The introduction of the 
+TMPG fails charge for U.S. Treasury securities," Economic Policy Review, Federal Reserve Bank of New 
+York, October, pp. 45-71. 
+ 
+$ Garbade, Kenneth D., & Silber, William L.  (1979). “The Payment System and Domestic Exchange 
+Rates: Technological versus Institutional Change” Journal of Monetary Economics, vol. 5 (1), pp. 1-22. 
+ 
+$ Garratt, Rod, Antoine Martin, McAndrews, James J. & Nosal, Ed.  (2015)."Segregated balance 
+accounts," Staff Reports 730, Federal Reserve Bank of New York. 
+ 
+Garratt, Rodney (2019) “An Application of Shapley Value Cost Allocation to Liquidity 
+Savings Mechanisms”, working paper. 
+ 
+$ Güntzer, M., Jungnickel, D & Leclerc, M. (1998). Efficient Algorithms for the Clearing of Interbank 
+Payments. European Journal of Operational Research 106 (1): 212–219. 
+ 
+$ Jurgilas, M., & Martin, A. (2013). Liquidity-saving mechanisms in collateral-based RTGS payment 
+systems. Annals of Finance, 9(1), 29-60. 
+ 
+$ Keane, F. M., Martin, A., McMorrow, M., & Fleming, M. J. (2014). Measuring Settlement Fails (No. 
+20140919b). Federal Reserve Bank of New York. 
+http://libertystreeteconomics.newyorkfed.org/2014/09/measuring-settlement-fails.html  
+ 
+$ Kuussaari, Harri. (1996). Systemic Risk in the Finnish Payment System: An Empirical Investigation. 
+Bank of Finland Discussion Paper No. 3/96. 
+ 
+$ Martin, Antoine & McAndrews, James J.  (2008). “An economic analysis of liquidity saving 
+mechanisms”, Economic Policy Review, Federal Reserve Bank of New Work, September, pp. 25-39. 
+ 
+$ Morris, S., & Shin, H. S. (2018). Distributed ledger technology and large value payments: a global game 
+approach. mimeo, Princeton University, November. 
+ 
+$ Payments Canada. (2017). Project Jasper: A Canadian Experiment with Distributed Ledger Technology 
+for Domestic Interbank Payments Settlement. White paper prepared by Payments Canada, Bank of 
+Canada and R3, September 29, 2017. Accessed on October 19, 2018. 
+https://www.payments.ca/sites/default/files/29-Sep-17/jasper_report_eng.pdf  
+ 
+$ Piazzesi, M., & Schneider, M. (2018). Payments, credit and asset prices. 
+ 
+ 
+ 
+
+
+--- PAGE 11 ---
+LECTURE 9: The Information Problem of Decentralized Monetary Exchange and of Equilibria with 
+High-Velocity Circulating Private Debt: Regulation using Distributed Ledger Technology 
+ 
+Bagehot, Walter (1873). “Lombard Street: A Description of the Money Market”. Wiley Investment Classics, 
+April 1999. 
+ 
+$ Infante, S., Press, C., & Strauss, J. (2018). The Ins and Outs of Collateral Re-use. FEDS Notes. 
+https://www.federalreserve.gov/econres/notes/feds-notes/ins-and-outs-of-collateral-re-use-
+20181221.htm 
+ 
+* Ostroy, J. M., & Starr, R. M. (1974). Money and the Decentralization of Exchange. Econometrica: 
+Journal of the Econometric Society, 1093-1113. 
+ 
+Prescott, Edward S & Townsend, Robert M. (2006). "Private Information and Intertemporal Job 
+Assignments". Review of Economic Studies, vol. 73(2), pp. 531-548. 
+ 
+Schelling, T. (1960). The Strategy of Conflict. Harvard University Press.  
+ 
+Spector, M. & Townsend, R.M. (2020). Notes on Townsend Wallace coordination problem. Working 
+paper.  
+ 
+* Townsend, R. M., & Wallace, N. (1987). Circulating Private Debt: An Example with a Coordination 
+Problem. In Contractual Arrangements for Intertemporal Trade, Edward C. Prescott and Neil Wallace 
+(eds.), Minneapolis: University of Minnesota Press. 
+ 
+ 
+ 
+ 
+LECTURE 10: Money, Crypto Currency, and Public Debt as Bubbles: Implications for 
+Indeterminacy, Fiscal Policy, Liquidity Pricing and the Interest Rate 
+ 
+$ Abel, A. B., Mankiw, N. G., Summers, L. H., & Zeckhauser, R. J. (1989). Assessing dynamic efficiency: 
+Theory and evidence. The Review of Economic Studies, 56(1), 1-19. 
+ 
+$ Bassetto, Marco & Phelan, Christopher (2015). "Speculative runs on interest rate pegs," Journal of 
+Monetary Economics, vol. 73(C), pp. 99-114. 
+ 
+$ Bewley, T. (1980). The optimum quantity of money. Models of monetary economies, 169-210. 
+ 
+van Binsbergen, J. H., Diamond, W. F., & Grotteria, M. (2019). Risk-free interest rates (No. w26138). 
+National Bureau of Economic Research. 
+ 
+$ Blanchard, O. (2019). Public debt and low interest rates. American Economic Review, 109(4), 1197-
+1229. 
+ 
+Del Negro, Marco & Sims, Christopher A. (2015). “Central Bank Solvency and Inflation”, Liberty Street 
+Economics. 
+ 
+Diamond, P. A. (1965). National debt in a neoclassical growth model. The American Economic 
+Review, 55(5), 1126-1150. 
+ 
+$ Geerolf, F. (2013). Reassessing dynamic efficiency. manuscript, Toulouse School of Economics. 
+ 
+Krishnamurthy, A., & Vissing-Jorgensen, A. (2012). The aggregate demand for treasury debt. Journal of 
+Political Economy, 120(2), 233-267. 
+
+
+--- PAGE 12 ---
+ 
+Krishnamurthy, A., & Vissing-Jorgensen, A. (2015). "The impact of Treasury supply on financial sector 
+lending and stability," Journal of Financial Economics, vol. 118(3), pp. 571-600. 
+ 
+$ Martin, Alberto & Ventura, Jaume (2012). “Economic Growth with Bubbles”, 
+The American Economic Review, vol. 102, No. 6, pp. 3033-3058 
+ 
+Samuelson, P. A. (1958). An exact consumption-loan model of interest with or without the social 
+contrivance of money. Journal of political economy, 66(6), 467-482. 
+ 
+Santos, Manuel S. & Woodford, Michael (1997). “Rational Asset Pricing Bubbles,” Econometrica, vol. 
+65(1), pp. 19-57. 
+ 
+Shapley, Lloyd & Shubik, Martin (1977). “Trade Using One Commodity as a Means of Payment,” Journal 
+of Political Economy, 85(5), pp.937–968. 
+ 
+$ Singh, M. M. (2011). Velocity of pledged collateral: analysis and implications (No. 11-256). International 
+Monetary Fund. 
+ 
+* Tirole, J. (1985). Asset bubbles and overlapping generations. Econometrica: Journal of the Econometric 
+Society, 1499-1528. 
+ 
+US Department of the Treasury. Office of Debt Management. (2017). TRACE Data Update. Washington, 
+DC: GPO. 
+ 
+* Woodford, M. (1990). Public debt as private liquidity. The American Economic Review, 80(2), 382-388. 
+ 
+ 
+ 
+Lecture 11: Optimal Crypto Currency Policy and Optimal Monetary Policy: Observing Transactions 
+Patterns, Heterogeneity and Wealth Effects, and the Implications of Micro-Market Frictions 
+ 
+Armenter, Roc and Benjamin Lester (2015). “Excess Reserves and Monetary Policy Normalization,” 
+Working Paper. 
+ 
+Avalos, F., Ehlers, T., & Eren, E. (2019). “September stress in dollar repo markets: passing or 
+structural?” BIS Quarterly Review. https://www.bis.org/publ/qtrpdf/r_qt1912v.htm  
+ 
+$ Bianchi, Javier & Bigio, Saki. (2014). “Banks Liquidity Management and Monetary Policy,” Staff Report 
+503, Federal Reserve Bank of Minneapolis. 
+ 
+$ Buera, Francisco J. & Nicolini, Juan P. (2014). "Liquidity Traps and Monetary Policy: Managing a Credit 
+Crunch," Working Papers 714, Federal Reserve Bank of Minneapolis. 
+ 
+Gissler, Stefan, & Narajabad, Borghan (2017). "The Increased Role of the Federal Home Loan Bank 
+System in Funding Markets, Part 3: Implications for Financial Stability," FEDS Notes. Washington: Board 
+of Governors of the Federal Reserve System, October 18, 2017, https://doi.org/10.17016/2380-
+7172.2094. 
+ 
+Green, Edward J. (1999). “Money and Debt in the Structure of Payments,” Feder- al Reserve Bank of 
+Minneapolis, Quarterly Review 23. 
+ 
+Heller, Walter Perrin & Starr, Ross M.  (1976). “Equilibrium with Non-Convex Transactions Costs: 
+Monetary and Non-Monetary Economies,” The Review of Economic Studies, vol. 43(2), pp. 195-215. 
+ 
+
+
+--- PAGE 13 ---
+Lucas, Robert E. & Nicolini, Juan P.  (2015)."On the Stability of Money De- mand," Working Papers 718, 
+Federal Reserve Bank of Minneapolis. 
+ 
+$ Lucas Jr, R. E., & Stokey, N. L. (1983). Optimal fiscal and monetary policy in an economy without 
+capital. Journal of monetary Economics, 12(1), 55-93. 
+ 
+$ Mankiw, Gregory N. & Miron, Jeffrey A.  (1991). “Should the Fed Smooth Interest Rates? The Case of 
+Seasonal Monetary Policy,” Carnegie-Rochester Conference Series on Public Policy, vol. 34, pp. 41-70. 
+ 
+* Manuelli, R., & Sargent, T. J. (2010). Alternative monetary policies in a turnpike 
+economy. Macroeconomic dynamics, 14(5), 727-762.  
+ 
+$ Pozsar, Zoltan. (2019). Why the repo markets went crazy?. Odd Lots, BloombergMarkets. 
+https://www.bloomberg.com/news/audio/2019-11-08/why-the-repo-markets-went-crazy-podcast 
+$ Pozsar, Zoltan. (2019). Countdown to QE4?. Global Money Notes #26. Credit Suisse. https://research-
+doc.credit-suisse.com/docView?document_id=1081995001  
+$ Sargent, Thomas J. & Wallace, Neil. (1982). “The Real-Bills Doctrine versus the Quantity Theory: A 
+Reconsideration,” Journal of Political Economy, vol. 90(6), pp. 1212-1236. 
+* Townsend, R. M. (1980). Models of money with spatially separated agents. Models of monetary 
+economies, 265-303. 
+ 
+Townsend, Robert M. (1989). “Currency and Credit in a Private Information Economy,” Journal of Political 
+Economy, vol. 97(6), pp. 1323-1344. 
+ 
+Trejos, Alberto & Wright, Randall. (2014). “Search-Based Models of Money and Finance: An Integrated 
+Approach ”, Working Paper. 
+ 
+Wallace, Neil (2013). “Optimal Money Creation in “Pure Currency” Economies: A Conjecture,” Quarterly 
+Journal of Economics, vol. 129(1), pp. 259-274. 
+ 
+Woodford, Michael (1998). "Doing Without Money: Controlling Inflation in a Post-Monetary World," 
+Review of Economic Dynamics, vol. 1(1), pp. 173-219, January. 
+ 
+  
+ 

@@ -1,0 +1,1013 @@
+MITOCW | ocw_1404_lecture14_2020oct27.mp4
+
+            [SQUEAKING]
+
+
+            [RUSTLING]
+
+
+            [CLICKING]
+
+
+
+ROBERT      Welcome, everyone. Try to start on time. Are there any questions from last time? OK, we'll take a look at the
+TOWNSEND:   class syllabus. We did a theory lecture on Walrasian equilibria and 2x2x2 trade models in theory, last class.
+
+            Today, we're going to begin the first of two applications of that. You can see, in fact, on the reading list the
+            papers for today, which includes this thing with my Thai colleague, Archawa, which is taking the theory model
+
+            back to the Thai applications.
+
+
+            And there's an additional stared reading here, Dawkins, which is calibration, which we have done before with the
+
+            medieval villages and dynamics. And today, we're going to do it again. But that start reading does not appear
+
+            anywhere, particularly in the lectures. But still, there aren't a lot of new theorems and stuff in the lecture today,
+
+            mostly concepts. So I think you can get some time to look at the Dawkins starred article.
+
+
+            And on the class schedule-- so after the trade lecture application today and the one next Thursday. And then the
+            following week, on Tuesday, I'll conduct with you a review session of the material covered in the last 1/3 of the
+
+            class. So that's the way the schedule looks. Again, let me ask if there are questions. Otherwise, I'm going to turn
+
+            to the study guide and, in particular, the material from last time lecture 13.
+
+
+            So the first review question was, in addition to reviewing what it takes in general equilibrium terms to describe an
+
+            economy, what additional features do we need to put in there to describe a private ownership economy? And let
+
+            me see if-- Dixon, do you want to take a stab at that?
+
+
+AUDIENCE:   Yeah, so for general equilibrium [INAUDIBLE] we need like the consumers' like preferences and consumption set,
+
+            the firm technology, which is the production set, and then economy resources, which is endowment. But
+            additionally, for the private ownership, each consumer has their own endowment. And also, each consumer has a
+
+            complete ownership of the firm. So the firm is made out of consumer ownership.
+
+
+ROBERT      Good, OK. Yeah, each consumer has shares in firms. So those were the theta ij parameters. So if there are profits,
+
+TOWNSEND:   as in decreasing returns to scale, those profits get distributed back to households. So they own the returns on the
+
+            firm. So that's a great answer. Thank you so much. What is the potential difference between a Walrasian
+
+            equilibrium and a price equilibrium with transfers? Maria Sofia, do you want to try that one?
+
+
+AUDIENCE:   Yeah, so with the price equilibrium with transfers, we're looking to see if there exists some assignment of wealth
+
+            levels such that the economy will satisfy a set of constraints. But in general, a Walrasian equilibrium is a type of
+
+            price equilibrium with transfers, except we have the condition that the wealth is equal to-- I think it's the price
+
+            times the wealth plus the sum of the profits over the shares that the consumer has in various companies.
+
+
+ROBERT      Yes, that's right. So the Walrasian equilibrium works off of this private ownership economy. So we have the
+
+TOWNSEND:   valuation of the household's endowment plus the valuation of the profits that the household has a claim to. And
+            that is a wealth object. So technically, it looks like a price equilibrium with transfers, meaning that if we assign
+
+            that particular wealth, we're going to have an equilibrium.
+            The more general idea behind the price equilibrium with transfers, though, including the transfers part, is that the
+
+            wealth assignments that we give to households may be greater or less than the valuation of the wealth they
+
+            would have if we had restricted ourselves to private ownership. So what I didn't, I guess, emphasize very much is
+
+            there are going to be two welfare theorems that we will study in detail.
+
+
+            One is that the Walrasian equilibrium is pareto optimal. And for that part, we need private ownership only. And
+
+            the second is going to be that any pareto optimal allocation can be achieved with the suitable redistribution of
+
+            wealth. And that's the part where we're going to need this more general concept of price equilibrium with
+
+            transfers.
+
+
+            The ordering of the class was to introduce this Walrasian equilibrium notion, not dwell on the optimality of it, but
+            rather get into some applications and then. In a couple of weeks, we'll be back to those welfare theorems and
+
+            when they are true and when they can fail. So that's the ordering of the class.
+
+
+            And we got into the 2x2x2. All of this stuff at the beginning is kind of a review of the notation, where we have
+
+            minimizing the cost of achieving a unit output, given the vector of factor prices w. And we had the cost-
+
+            minimizing input values. And at the end of all that, I finally got around to asking, define what it means for the
+
+            production of good 1 to be relatively more intensive in factor 1 than the production of good 2. So [INAUDIBLE] see
+
+            if we can get some-- how about a volunteer for that one?
+
+
+AUDIENCE:   I can take this one. Yeah, so this means that for producing a unit of good 1 versus a unit of good 2, you need the
+
+            ratio of factor 1 to factor 2 that's used to produce one unit of good 1 is greater than the ratio of factor 1 to factor
+
+            2 in producing a unit of good 2.
+
+
+ROBERT      Excellent. Perfect answer. And then implicit, let me just add a little bit editorial, which is, it's defined over the
+
+TOWNSEND:   whole domain. So whatever those factor prices are, w1 in w2, it remains true that good one uses relatively more
+
+            factor 1 than factor 2 and vice versa. So it's a statement about the whole-- and we used that in the analysis in
+
+            class, when we were looking at the cost curves and what would happen if input prices moved. Can someone take
+
+            a stab at the Stolper-Samuelson theorem for the determination of input prices as output prices change?
+
+
+AUDIENCE:   I can.
+
+
+ROBERT      OK.
+
+TOWNSEND:
+
+
+AUDIENCE:   In this theorem, we assume that the model [INAUDIBLE] to modify [INAUDIBLE] then when the output price, like
+
+            the price of good 1, increases, then the intensive factors in producing the good 1 also increases. And another
+
+            factor, factor 2, that was not the intensive factor [INAUDIBLE] the price of this factor world goes down. Yeah.
+
+
+ROBERT      OK, that's good. Yup. So nominally, it's not a statement about international trade, although it is very useful in
+
+TOWNSEND:   that context. We're just basically doing some comparative static exercises of what would happen if these
+
+            exogenously given output prices are changing. What's going to happen to input prices? And then we did a graph.
+
+            We used those cost curves to illustrate it. I flagged the last question, but I really don't want to ask that one. I
+
+            want to ask something a little harder to answer.
+            If we had two countries, and each country had a representative consumer, and there are two goods, each of
+
+            which can be produced in both countries, and there were two factors that can be used in each good in each
+
+            country, we've got a lot of equations and unknowns. We've got the consumers' consumption levels of the two
+
+            goods, the input being used to produce outputs of the two goods, the outputs themselves of the two goods, and
+            the prices of each of the two inputs in both countries, et cetera, et cetera. Can someone tell me how we attack
+
+            this problem in class, in the sense of an algorithm? We broke it into pieces. Otherwise, it's a very high-
+
+            dimensional problem. If you remember the ordering--
+
+
+AUDIENCE:   [INAUDIBLE]
+
+
+ROBERT      Yeah, go ahead, please.
+
+TOWNSEND:
+
+
+AUDIENCE:   Yeah, I think that the way that we did this was kind of inductively, where I think that the way that we did this
+
+            was, first, pretend, basically, that it's just like the original 2x2 model. And then we solve for the what's supposed
+
+            to happen there. And then we built in the additional thing of-- I'm pretty sure we built in the different
+
+            endowments, I think, was the difference in the 2x2x2 versus the 2x2. But we solve for the smaller model, and
+
+            then we build it upwards to the bigger one.
+
+
+ROBERT      That's true. And what, in particular, did we focus on first in the smaller model?
+
+TOWNSEND:
+
+
+AUDIENCE:   I think the way that we did this was kind of the-- I don't think I remember this.
+
+
+ROBERT      OK, anyone else want to take an attempt at it? This is a difficult question to pose and hard to answer, because it
+
+TOWNSEND:   has to do with putting the pieces a lot of information in the lecture and taking a step backwards and thinking
+
+            about it globally. OK, well, it starts with this Stolper-Samuelson theorem. So at this point, early on in the lecture,
+
+            we were taking the prices of the goods p1 and p2, as given. We weren't trying to solve for that. I had not yet
+
+            introduced consumers either. We didn't even attempt to solve for the quantities. We merely wanted to find
+
+            equilibrium factor prices.
+
+
+            So for a given country-- you could think of it that way, a given economy-- we had the minimized cost of producing
+
+            one unit of good 1, the minimized cost of producing one unit of good 2. And that's in the space of input prices w1
+
+            and w2. So we're looking for an equilibrium. Therefore, the input prices should be the same regardless of
+
+            whether it's good 1 or good 2. So we looked at where those curves crossed, and that's the only point in the
+
+            diagram where we can both have common input prices of the two inputs and be on those curves, where the
+
+            curves crossed.
+
+
+
+            So that was the very, very first part. And then given those prices, we moved to a different space, which had
+
+            isoquants. So there, we have the unit output or any output, really, described by an isoquant, a different isoquant
+
+            for different quantities, and we had the inputs on the x-axis. So there, we solved for minimizing unit cost again,
+
+            but what's on the x and y-axis would be the input quantities. And we know that has to align with the factor prices
+
+            we already solved for. So there, we determine both the input quantities as well as the output quantities, where
+
+            both firm 1 and firm 2 could be in equilibrium.
+And then, finally, at the very end of the lecture, we zeroed out to consider two countries, not just one, each with a
+
+consumer. And those countries could be in autarky or potentially trading with one another. Both specifications
+
+would be legitimate general equilibrium environments, both autarky-- each country separately is one-- and then
+
+we traded another, except, obviously, with trade, consumption and production do not have to be the same,
+
+because the countries can export one thing and import another.
+
+
+Sorry, that's a rather long-winded summary. But again, it's not the easiest lecture, maybe potentially the hardest
+
+lecture in the whole series of lectures. So I thought I would take the time to elaborate a bit on what we were
+
+doing. OK, so that's the review. And we come to applying a very similar theory to actual data.
+
+
+So this is real and financial flows in Thailand and an outline. We're going to talk about villages again, but we're
+
+going to embed them in the local economy and also their relationship to the national economy, where we view
+
+the financial accounts, which you've seen once before when we did the Bitcoin part. We'll review them here--
+
+balance sheets, income statement, and cash flow-- then more general background on these village economies
+
+and heterogeneity within them. Then we'll take the village economy, as an entire economy, and come up with
+
+GDP and village income, the way we come up with national income and the National Income and Product
+
+Accounts.
+
+
+And then, finally, as a small open economy, we can look at flow of funds, balance of payments, how open or how
+
+closed is the economy. And then we come to this calibration part, which I already highlighted, with respect to the
+
+other starred reading, Dawkins et al. What does it mean to be calibrating a model, which they often did in the
+
+trade context, as we do here? And we'll look at model-predicted data and compare it directly to actual data and
+
+then look at some counterfactuals, like imposing tariffs and frictions.
+
+
+So last time end today, you could think of this question as, free trade, who are the winners and losers, tariffs,
+
+who are the winners and losers, and not in the abstract, as in last time, but actually here, in the context of a
+calibrated model. You'll actually see the impact on individual people living in these villages. And then when we
+
+get to the US, we'll do it all again on Thursday, which is a different context, but the same kind of theory.
+
+
+OK, so you've seen this before. Let me highlight the time map. We have these two provinces, Chachoengsao and
+
+Lopburi in the central area of the country, near, if not right on top of, Bangkok. And we have the other two,
+
+Buriram and Sisaket in the Northeast, a much more agrarian area of the country.
+
+
+This is Sisaket. I muttered something about not finding these monthly starred villages, but I knew where they
+
+were. And now I realize it's still very hard to read. But these Cheerio circles correspond to baseline survey done in
+
+1997. A subset of those villages were chosen from '98 onward, including the data that we're using. In which case,
+
+it's a monthly survey. So the Cheerio covers up the star and produces these green-like objects up here. So that's
+
+the cluster. So there are four villages in Sisaket that constitute the monthly data. And likewise, there are going to
+
+be four each in the other three provinces.
+OK so let's take Lopburi over here, and take a wage earner, and look at this actual household's income
+
+statement. So you've seen version of this before, and I remember asking you about it in the follow-up. We've got
+
+revenues and costs. In this case, this guy does a little bit of livestock, but mostly, it's wage labor. And in
+
+principle, could have had interest income, but didn't. And on the cost side, most of these costs are associated
+
+with livestock and in debt and actually has an interest expense, and then does consumption and subtracts that
+
+off of income and has some savings. So that's the income statement of household A, which we have these kinds
+
+of statements for roughly 800 households.
+
+
+Here's what happens over time. That labor income, which is the dominant source of income, falls and then
+
+gradually increases back up again. Other components are largely zero, although they started the business in the
+
+last year or two. Cultivation rises and then falls again. So trying this, that, or the other, but largely labor income.
+
+
+This same household has a balance sheet, which has liabilities on the right-hand side and assets on the left-hand
+
+side. Since those things don't balance, hopefully liabilities are smaller than assets, and the difference is net
+
+worth. So we have liabilities and net worth on the right-hand side and assets on the left. Assets consist of
+
+financial assets like cash and could have been a little bit of deposits in banks. And those are financial assets, and
+
+then we have real assets like livestock and so on, inventories, and we have other fixed assets, including
+
+household assets, OK?
+
+
+And you're wondering where I'm going with this. I'm deliberately highlighting things that are going to come up
+
+momentarily. And again, the balance sheet over time for this household, you can see wealth is going up, mostly
+
+because assets are going up. But toward the end, when the household started that business, they borrowed.
+
+Liabilities went up, and net worth actually went down. But anyway, this is over time.
+
+
+Finally, we have the statement of cash flow, which I highlighted when we talked about Bitcoin. We've got cash
+
+flow from production and cash flow from financing investment and consumption, and that produces a measure of
+
+cash flow from the flows, which has to sync up with the change in the cash and the balance sheet, which it does
+
+in these data.
+
+
+So next, I want to talk about diversity across the households, especially for the ones who are actually firms, who
+
+have decided to go into business. The types of activities, cultivation, farming business like retail outlets, trucking
+
+stuff around livestock, fish and shrimp. And this is like a Cobb-Douglas production function written out in logs. So
+
+delta k is the intensity of the capital good, and delta l is the intensity of the labor good. And what we want to see
+
+are those factor intensities.
+
+
+So in fact, if you look, cultivation is labor-intensive. It will fit the definition we reviewed at the beginning of class.
+
+Uses relatively more labor than capital because of the coefficients delta l and delta k. On the other extreme, the
+
+fish and shrimp uses almost no labor at all and uses tons of capital. So we've got capital and labor-intensive
+
+activities. We can try to make it simpler and talk about basically agricultural goods versus others called
+
+manufacturing. It really means non-agricultural.
+OK, the other thing sitting up here is this epsilon. This is quote, "an error term," but it actually contains not just
+
+noisy data, but a measurement of talent. So if we took the average for a particular household i, we took the
+
+average of these epsilons, they don't have to average out to 0. They average out to something that is common to
+
+the sector that household i has engaged in, a bar, and some other household-specific talent called z, OK? So
+
+there's a sector and household-specific talent variable that's wrapped up into these epsilons. Obviously, if you're
+
+talented, the epsilons are going to tend to be high, meaning output is going to be high, even controlling for
+
+capital and labor.
+
+
+So if you looked across the sectors at, quote, "sectoral productivity," they are pretty similar. The highest one here
+
+is livestock, the lowest one is business. Now, in terms of the household-specific productivities, there's a whole
+
+cross sectional dispersion of these zi's in each sector. And so this sigma is a characterization of the-- a bit like a
+
+variance of the distribution. The point being that each household has a particular z depending on the sector in
+
+which they reside, and they could be very talented or not talented at all, even though they're engaged in that
+
+activity. And these are estimated in the data. You're looking at the actual numbers.
+
+
+The other aspect of heterogeneity here, in addition to household talent, would be their wealth or, specifically,
+
+their fixed assets. That's why I emphasized it when we went through the balance sheet. And you can see the
+
+cross-sectional distribution in Lopburi, which is near Bangkok, versus the cross sectional distribution in Buriram,
+
+which has a lot more mass over here to the left, meaning low assets. So indeed, in the data, Lopburi near
+
+Bangkok has higher average fixed assets than does Buriram out in the Northeast.
+
+
+But again, it is the whole distribution. So a given household could have relatively little wealth or have a lot of
+
+wealth, even in Buriram. This actually is consistent with the Pauson, Townsend, Karaivanov paper, which was an
+
+application of mechanism design, where we talked about the talent of being a firm. Theta, I think, we had it
+
+there. And also, we talked about assets separately. And indeed, we talked about a limited liability constraint,
+
+which is coming up.
+
+
+So we have this cash thing, which, as I was saying, from your previous lecture, you know cash holdings don't
+
+behave very well. So we just impose what we see in the data, that cash holdings, that part of wealth that they're
+
+putting into cash, is fixed. It turns out that consumption is related to that. We imposed that consumption is equal
+
+to an intercept plus profits less that intercept. And gamma here has to do with omega, which is the fraction of
+
+savings that put into cash. I didn't put the algebra in, which I probably should have done, except all I want to say
+
+from this is the cash part of savings is just fitted to the model. It's not something we derived.
+
+
+So now I want to go back to those accounts and show you where gross national product comes from, except that,
+
+in this case, it's going to be village-level product and income. And then we'll go on to flow of funds, the balance
+
+sheet, balance of payments, and so on. So the top you've seen before. That's the statement of income, revenues
+
+less costs, but now we start subtracting things from both sides. For example, to get rid of capital gains, capital
+
+losses, and indemnity, we subtract them off, and then they appear with the opposite sign on the left-hand side.
+
+Likewise, we have expenses from production, which we subtract off of both sides. Hence, it disappears on the left
+
+hand side and reappears on the right, and it's subtracted.
+
+
+So we end up with revenues less expenses in production, which we call output. And on the left-hand side, we
+
+have the disposition of output. Output is used to pay interest. It's used to pay interest for capital. Normally, you
+
+would see wages paid to labor over here, and I'll come back to that momentarily. And the residual is profits.
+So all output gets paid, in the sense of paying hired factors or what's left over accruing to the business owner. So
+
+this is a classic decomposition of the national income accounts, from production or from inputs. We're really
+
+interested in international trade, so we're really interested, here, in how much is labor getting paid, how much of
+
+the interest being paid to capital, and so on as a function of output, just a bit like the 2x2x2 lecture.
+
+
+So if we're looking at output, remember, there are four villages in each province that were selected for the
+
+monthly data. Here, you can actually see output going down in Chachoengsao-- wiggling, but going down--
+
+whereas, in Buriram, output is going up. And these are the other two provinces. So another point to make is that
+
+output is different across different villages, even though they're nearby to one another.
+
+
+And also, you'll miss it if I don't point it out, probably, which is the scale in the Northeast, the maximum value is 6
+
+and 5, whereas, in the central, the maximum is 15 and 12. So yeah, villages near Bangkok have higher output
+
+than villages in the Northeast, but there remains heterogeneity across the villages, and you see the ups and
+
+downs.
+
+
+The shrimp ponds got hit with a bad shock that we've talked about previously in the network lecture under risk-
+
+sharing. So that's part of the decline in output in Chachoengsao. Buriram used to be a bunch of villages. We put
+
+rain gauges out there to measure waterfall and so on. And then it experienced a boom, and those villages were
+
+subsumed by the town. And you can see that expansion pretty dramatically in this output diagram.
+
+
+And as I was saying, we can decompose output into who gets it. And you can see here, wages, which is the
+
+darkest line, is the bigger part of the disposition of output in Buriram. In Sisaket, wages are not as much-- they're
+
+not trivial near Bangkok-- Chachoengsao and Lopburi. Instead, we have these two sectors, the labor-intensive
+
+agricultural sector and the capital-intensive manufacturing sector as sometimes having profit shares which are
+
+higher than the wages.
+
+
+Now we come to the savings investment account. We take the balance sheet at a point in time, and we take the
+
+first difference. So now we'll have the change in liabilities, the change the net worth on the right, change in
+
+financial and real physical assets on the left. We now go through this thing about subtracting items on the left
+
+and the right-hand side. We leave the change in net worth on the right-hand side and the disposition of that
+
+change into an increase in financial or real assets or a decrease in liabilities. So we can see they're managing
+
+their portfolio, in an accounting sense, as a function of, what do they do with savings. And likewise, if savings are
+
+negative because they consume more than they earn, then they have to draw that value out of something or
+
+borrow.
+
+
+
+So this is the allocation of savings across the four provinces. The darkest line here is savings, which is largely
+
+going up, although not entirely. Savings is going down and Chachoengsao, as you might have expected, since
+
+they got to finance those losses, that declining output from somewhere. They're preserving consumption by
+
+taking it out of savings. Likewise, they can save in the fixed assets, save in the financial assets.
+
+
+The thing that tracks the best overall-- tracks dark savings overall, the best-- is financial. And you can see in most
+
+of these diagrams, the black dotted lines are close to the solid black line. So financial assets increase when
+
+savings is positive, but these other real and physical stuff as well as gifts play a role.
+Gifts are not trivial in these economies, as you already know from thinking about insurance and so on. So all
+
+these things add up. Gifts, financial transfers, inventory, and so on add up to savings. But gifts could be negative,
+
+because they're not incoming, but they're outgoing. They're not saving it. They're giving it away. It's not always
+
+negative. Gifts are positive, in some instances. But in any event, they're not a trivial order of magnitude, and we
+
+will look at that subsequently again.
+
+
+In terms of financial flows, you've got something called the current account. For the US, for example, are they
+
+running a trade balance, or are they earning money from abroad? And likewise, for these villages, they export
+
+and import stuff. We take the trade balance as the difference if positive. Exports exceed imports. And likewise,
+
+some member of the household is in Bangkok and earning money and sending that money back home as a gift,
+
+that's factor income earned abroad. In China, people work in the Philippines and send money back home. So this
+
+is called the current account.
+
+
+Now, there are corresponding items, offsetting items, on the financial account. Basically, if you're running a trade
+
+surplus, you're acquiring claims on foreigners, which could be by holding their currency, holding their financial
+
+assets, or holding their real assets. And as we'll talk about next time, the US has been running a trade deficit with
+
+China, which means China is acquiring claims on the US, holding US treasuries, real estate, and so on. So the
+
+names change to protect the innocent, in the sense of we're not looking at countries here. We're looking at
+
+villages, but we're doing all the accounting for the villages the way it's done for countries, with exactly the same
+
+accounting identities.
+
+
+And the point of all of this is only to tell you where some of these things that you've heard of are coming from.
+
+From the ground up, from each and every household, we have the financial accounts-- income statement,
+
+balance sheet, and so on. We can add it up over all households in the village, as the sample allows, and get the
+
+village-level aggregates. This is for all of Thailand. Thailand was running a trade deficit, and foreigners were
+
+acquiring claims on Thailand until the 1997 financial crisis, in which case, things reversed. And they've been a bit
+
+unstable ever since.
+
+
+In this case, balance of payments are roughly a certain of GDP, maybe 10%. That's a big number. It's typically
+
+5%. So when we come to villages, you might ask, how big are these flows? And the answer is, typically, much
+
+bigger. For example, in Chachoengsao, the balance of payments, including the trade and the current account,
+
+can be as high as 20% of GDP. And Lopburi, likewise reaches 15% of GDP.
+
+
+So they are small open economies. These villages are engaged with the rest of the country. And in fact, we can
+
+break that down into the gifts, which I showed you a moment ago, as well as, here, the measure of openness in
+
+terms of trade, which is exports minus imports. So roughly, Chachoengsao near Bangkok, its imports and exports
+
+are almost matching one another. Whereas, out in the Northeast, the imports are a lot bigger than the exports.
+
+The imports are for production. They're inputs acquired for production, and they export a little bit of their output.
+
+They eat a lot of the rice that they produce and export less.
+
+
+I'm getting ready to show you the model. One, what about the relative price? At the beginning of this class, we
+
+talked about the price of good 1 the price of good 2. We have two sectors for simplicity, agriculture and
+
+manufacturing. So from the data, we can actually see, overall, that the price of the agricultural good is going up,
+
+the ratio is going down, from the standpoint of a typical village, with the possibility of imports and exports, just
+
+the way we had countries possibly exporting and importing to each other.
+In terms of the factor prices, remember the minimized cost curve? Well, this is over time. So we can see the wage
+
+rate and the interest rate, both adjusted to be in units of consumption. Hence, real values as a numerator. So in
+
+the areas near Bangkok, the blue and the red, we can see that wages tend to be higher than they are in the
+
+Northeast. Now, near Bangkok, you would think this is relatively capital-abundant, because they're pretty
+
+industrialized and short of labor. So indeed, the relative price of labor to capital is higher in the areas near
+
+Bangkok, reflecting the capital abundance and the relative shortage of labor.
+
+
+The reverse is true in the Northeast. And also, we can look at the interest rate, which is like the price of capital.
+
+And again, you can see that now the blue and the red are at the bottom, because places near Bangkok are
+
+capital-abundant. And so the interest rates tend to be low. We did this experiment for the Heckscher-Ohlin model.
+
+Countries that are relatively abundant in a factor should be exporting the good which uses that factor relatively
+
+intensively.
+
+
+So you can imagine that places near Bangkok that are abundant in capital will have a tendency to export the
+
+manufactured goods, because that's the one that's intensive in capital. What am I doing today? I'm just getting
+
+the labels to be realistic in actual context, realistic relative to last time. We learned the theory first. Now we're
+
+applying it, although with some modifications.
+
+
+The other thing you can see here is the interest rates are converging. They're getting really close to one another
+
+over time. So one imagines that if they could [INAUDIBLE] trade in inputs. Not just outputs. It's pretty easy to do
+
+that with a capital input. But the wage rates are not converging, so that's also a hint that, like the 2x2 model,
+
+we're not going to allow labor to be moving across borders.
+
+
+OK, so I'm going to show you the ingredients for a small open, economy and then I'm going to tell you what the
+
+difference is with a 2x2x2 that we did last time. So it is 2x2-- 2 goods, 2 factors-- although it's a village relative to
+
+the rest of the country. Different from last time, we're going to have financial frictions, like those borrowing-to-
+
+wealth ratios.
+
+
+There's a lot of agents in each village, and they differ in their wealth and ability levels. They can choose to be
+
+workers or they could become a firm. And if they're an entrepreneur, they could be in the manufacturing or
+
+agricultural sector. So that's one of the two 2s-- two goods, agriculture and manufacturing, two inputs, capital
+and labor, with the factor intensities different.
+
+
+Labor is owned by households and supplied inelastically, like it was last time. They get this wage w. Wealth is
+
+owned by households and supplied at an interest rate, but it's also changing over time. Unlike what we had last
+
+time, we've got dynamics in a way to save money over time. They can use their capital, or they can lend it out.
+
+So we have a borrowing and lending market, but that capital market is imperfect. Namely, you can't necessarily
+
+use an unlimited amount of capital k. You're bounded by your wealth. So that, for the third time today, is mention
+
+of the limited liability constraints.
+
+
+So the differences with last time, we have decreasing returns to scale, whereas, last time, in the theory lecture,
+
+we used and abused the fact that it was constant returns to scale-- hence, unit costs of production, which scale
+
+up and down depending on the level of production. Factor mobility is somewhat limited here, but the capital
+
+good moves around, unlike last time. We have financial variables here and real variables, whereas, last time, we
+
+only had real variables. And likewise, here, we have borrowing constraints. And last time, we didn't have any of
+
+that.
+But this model does have the different endowments of the factors. It does have the different factor intensities. It
+
+keeps the 2x2x2-- well, 2x2 anyway with small open economy. And so part of what you're going to see in the
+
+simulations reflects what we learned last time. And part of it is a bit different, because it has a few additional
+
+realistic features.
+
+
+Rather than take you through the entire model, I'll just give you the notation at the beginning. Each entrepreneur
+
+can produce sector a, which could be agriculture, but it's also manufacturing. A household has a certain talent
+
+level z and an initial capital stock. It will use its inputs, capital and higher labor, at its productivity level, selling it
+
+for the price of output. But it has to pay input costs for capital and labor, and the input prices are r and w.
+
+
+So you've seen this many times. This is just a statement of profits for a firm. It happens to be a firm owned and
+
+entirely operated by a given household, because the theta ij equals 1. And here's the borrowing constraint.
+
+Capital utilized is limited by the pre-existing stock of fixed assets [INAUDIBLE] this constant c could be greater
+
+than 1, which allows them to borrow, to acquire fixed assets and production greater than what they already own.
+
+
+Labor is non-negative. As in that paper with Anna Palson and Karaivanov they could choose to be a wage earner,
+
+put all their wealth-- lend it out, basically, earn interest on it, or they earn money from being a wage earner.
+
+Likewise, we have profits for agriculturalists and manufacturers. And they're, in principle, lending stuff out, but
+
+they could be borrowing some of it back to finance production.
+
+
+And then we have a utility over consumption of agriculture and manufactured goods, which looks this Cobb-
+
+Douglas thing, where these etas are cleverly chosen to allow us to talk about aggregate savings. Because, in fact,
+
+there's capital in manufacturing and capital in agriculture, and we don't want to keep having to refer to the
+
+distinction about where they're saving. So we come up with this ideal price index. Don't worry about it too much.
+
+It exists. That's all we need to know.
+
+
+OK, it's a small open economy. Households have their capital endowment. We fit a distribution that fits pretty
+
+well, relative to the histograms I've already shown you. We have the labor endowments. We know how much time
+
+they have. We give them a little bit of sleep and come up with how many units of labor they can supply over the
+
+year, which is fixed and exogenous. Then they have a savings rate. Which, again, as I already said, that was an
+
+omega. We fit to match the data.
+
+
+I mentioned that, in the context of the cash holdings, one could imagine having these households solve
+
+discounted expected utility maximization problems over their lifetime that adds a lot to the complication. So
+
+instead of doing that, we just basically impose from the data onto the households an estimated savings rate.
+
+
+Now, this is a kind of interesting diagram, because all these parameters, like the factor intensity numbers and
+
+everything else, are going to be calibrated, which I'll tell you about momentarily. And we will generate pictures
+
+like this. So I mentioned the calibration, only because you can draw any picture you want. But this is what it's
+
+going to look like after the work is done of estimation. Over here, we have low-wealth households versus high-
+
+wealth households. The other dimension of heterogeneity is low talent versus high talent. And you can see if
+
+they're not very talented, they're not going to go into either type of business. They're going to be workers.
+On the other hand, if talent reaches a higher level, they could decide to go into manufacturing or agriculture. And
+
+then for a given level of wealth, they may be constrained or unconstrained. Ironically, the more talented they
+
+are, given a certain borrowing constraint and their wealth, the more constrained they're going to be, because
+
+they would like to do more and they're not allowed to do it. And here, it actually moves from being constrained in
+
+manufacturing to being constrained in agriculture. So it's the really, really talented guys who are sticking on the
+
+farm, given the parameters that we estimated.
+
+
+This I've already said. We're going to have an open market for capital, but a closed market for labor. And again,
+
+that's because the interest rates are converging. So it looks like, in the end, at least, capital can be moved across
+
+provinces without a cost. Here's, finally, the calibration slide. We have to figure out the relative prices. We need
+
+the interest rate. We're going to take it as exogenous. The relative price of manufacturing versus agriculture
+
+we're going to take as exogenous and match it up with what we see in the data as exogenous. I'll come back to
+
+how we pick it in a minute. And the borrowing rates are exogenous.
+
+
+We stick in, for the interest rate, what we observe in the data. We don't know about this relative price of the
+
+borrowing limit, but we do have the profit sharing in each sector. So we move the relative prices to match the
+
+profit share. So for example, if agriculture has a price pa and we observe a large relative share of profits from
+
+agriculture, then we imagine that it's a relatively high price of the agricultural goods relative to the
+
+manufacturing goods and vice versa.
+
+
+Likewise, we're going to move the borrowing limit to match the observed wage rate. The point being that if they
+
+can't borrow very much, they're not going to have a very high scale of production. They're not going to hire a lot
+of labor. The demand for labor being low means the wage that has to clear the local market is going to be low.
+
+
+The bigger picture here is calibration. You have objects that matter a lot in the model. And how you pick them,
+
+well, here, we pick them by taking the data that we have and varying the parameters in the model in such a way
+
+that we can fit the model-generated data to the actual data. Doing that, we have to make a choice of which part
+
+of the actual data to use to calibrate which parameter. And again, read the Dawkins thing, and you'll see a
+
+discussion of this much more generally.
+
+
+OK, so let's look at what happens. How well are we doing? Oh, these economists, they come up with these
+
+models. God knows how well they predict, so I'll show you how well we're doing. This is, at the calibrated values
+
+for Lopburi, I believe-- doesn't say that on the slide-- the actual level of output and the predicted level of output--
+
+model-predicted. So we ran a successful experiment. If you think about the model as an experiment, populated
+
+by the parameters we calibrate, then we are able to take this stylized model, a la Lucas, and use it to interpret
+
+reality.
+
+
+This is pretty close for consumption, the actual being below the model. So in this case, they're consuming a little
+
+bit less than what the model says they might, despite our attempt to fit it to the data. And this is for assets,
+
+which is very, very close. Now, these last three figures are all aggregated across all the households in a given
+
+economy.
+OK, so having sort of-- oh, and this is cash holdings, which is one of our weak points. And we're pretty close for a
+
+while, and then cash holdings in the data still want to be higher than in the model. God knows why they want
+
+that cash. We're just still dumbfounded. That's the way they're saving over time, in the aggregate. Accumulating
+
+claims on foreigners? Yeah, that's the paper currency. It's a claim on the central bank, and they love. It doesn't
+
+bear interest or anything. But anyway, I'll stop complaining.
+
+
+OK, so having done pretty well with the aggregates, one hopes we've earned the right to talk about individual
+
+experiences. Now, needless to say, there are many households in a village and a non-trivial number of
+
+households in the sample. We're fitting the aggregates via calibration. I wouldn't expect perfect performance for
+
+each and every individual. That's too much to hope for, but let me show you how well we did with household a,
+
+that labor household in Lopburi that we featured at the beginning.
+
+
+So this is the actual darker line, labor income. I showed you this path before, actually, in wages. And they went
+
+into livestock a bit. They went into business and borrowed to do it. This is the actual model prediction, which is a
+
+lot flatter, but it's not that far off. It matches pretty well at the beginning and the end. This is consumption, which
+
+is horrible. So for this household, the actual numbers drop lower than what the model says it ought to be, and
+
+fixed assets is closer. We do pretty well with fixed assets, including at the individual household a level. And cash,
+
+again, under and over, going up, though, for both.
+
+
+OK, so I'm tempted to put this in the US context, because it may make it seem more real if you haven't been in
+
+Thai villages. What's the effect on farmers of restricted exports to China, when China retaliated? They came to an
+
+agreement, but, still, China's not purchasing as much. The other way around, what about manufactured goods
+
+coming in from China? What's the effect on wage-earners that produce the thing, which is now being imported,
+
+whereas, before, had been produced domestically? But we're going to talk about those things next time, but we
+
+can already answer questions like this for Thailand. If, for example, we take the actual estimated model and run
+
+counterfactuals, OK?
+
+
+So suppose we impose trade frictions within the country. What are tariffs going to do, basically? They hurt trade.
+
+So if a village had been exporting a lot of agricultural goods and importing a lot of manufactured goods, as in the
+
+Northeast, then the effect of a trade friction will increase the price of the thing that they have been buying, the
+
+import good, and decrease the price of the export good. Hurt both ways. We're going to do it by 1%.
+
+
+So we're going to take these calibrated prices that were used to match the payments to factors and profits and
+
+now vary them and see what happens. We're also going to do a financial experiment in the model. We're going to
+
+change the interest rate. So it's like we're going to impede financial flows. So again, the effect of it always hurts.
+
+So if the village had been a net lender, for example, then the effect of the financial friction is to make the interest
+
+rate lower, because lenders don't like low interest rates. We talked about that when we did the lecture on income
+
+and price effects for households in the two-good world.
+
+
+Anyway, so if they're lending, they're not going to it that the interest rate goes down. And likewise, if they had
+
+been borrowing, we would have gone the other way and make the loans more expensive. So that's the effect of
+
+the way we capture in the model, in order to run an experiment, the impact of trade frictions through tariffs
+
+and/or internal frictions and financial frictions.
+So now you want to see what happens. This is in Lopburi, and this is the effect of that 1% increase in trade
+
+frictions, making exports give less revenue. Imports now cost more. That's going to affect the production and
+
+profits from the manufactured good and the agricultural good. And in turn, remember the algorithm from last
+
+time that I reviewed? Those price changes are going to map into-- input quantities are going to map into relative
+
+factor price movements, OK?
+
+
+But there's a lot of diversity in these economies. As I've been saying, households differ by their initial level of
+
+capital. They differ also by their talent. So we have capital moving on the x-axis and the average skill level,
+
+pretty high skill level, and very high skill level. And then what's getting plotted here is the gains or losses. So it's
+
+a tariff, effectively. So you might expect losses. And in fact, these average or low skilled guys do suffer losses,
+
+arguably because they're wage earners, although you can see that. And the movement in production from the
+
+capital good and the labor-intensive good was such as to hurt the wage.
+
+
+So remember, we did Stolper-Samuelson, where an increase in the price causes an increase in the factor price of
+
+the good that is used relatively intensively. So despite all the differences with the 2x2 from last time, that
+
+ingredient is playing a role here. So these wage-earners are hurt, initially. But then, ironically, as we move in the
+
+cross section for a higher level of capital, they were actually producers, not wage-earners. And now the lower
+
+wage helps them, because it's a lowered cost of production. So their profits go up. Now they're winning, by a
+
+little less than 1%. And if they're really, really talented, they'd been producing at a higher scale all along, so the
+
+drop in wages is even better for them.
+
+
+OK, I'm trying to give you some intuition here, but I decided, because time was short, I wouldn't be able to
+
+actually prove all these assertions. I'm just asking you to imagine, from the 2x2x2 that we did last time, why it is
+
+we're seeing all this diversity here. The order of magnitude is, like, less than 1%. Here, it's 1%. So that's pretty
+
+small. But if you look at the financial frictions in Lopburi, in the sense that I described, you can see bigger
+
+numbers.
+
+
+First of all, you see winners and losers. You also see that it matters whether they were wage-earners or
+
+capitalists. But above all, you see that the high-skilled guys can benefit up to 10% from the increase in the
+
+interest rate that's associated with the financial friction, because the village had been borrowing, but some of
+
+those guys don't borrow. They lend. And likewise, there are other people here, the average-skilled guys, who are
+
+taking big losses of up to 10%.
+
+
+So again, one could imagine producing pictures like this. And if we go back to household a, what happens to a
+
+wage earner in the US with manufactured imports or a farmer in the Midwest with agricultural exports? What
+
+happens in Lopburi to that wage-earner under the trade friction or under the financial friction? They lose. He or
+
+she loses. That household loses.
+
+
+So we validated the model to try to make this realistic. It fit pretty well-- very well. At the aggregate level, it fit
+
+pretty well. At the individual level-- so if for some reason the Thai government had run this experiment or they
+
+had political issues that made the country more isolated, you could see the effect of that on individual
+
+households through the lens of the model. OK, any final questions? So again, we'll kind of do it all over again
+
+when we come to the US next time, next Thursday.
+

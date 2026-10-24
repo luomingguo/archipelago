@@ -1,105 +1,86 @@
 ---
-title: '15.060 数据、模型与决策'
+title: 15.060 数据、模型与决策
 type: course
-course: '15.060 数据、模型与决策'
+course: 15.060 数据、模型与决策
 course_id: '15.060'
 tags: [decision-analysis, probability-trees, linear-optimization, regression-models]
-status: stub
+status: complete
 source: 'https://ocw.mit.edu/courses/15-060-data-models-and-decisions-fall-2014/'
 ---
 
 # 15.060 数据、模型与决策
 
-> MIT Course 15 · Operations Research/Statistics · 课号 15.060
+> MIT Sloan School of Management · 核心必修课 · 授课教师：Prof. Dimitris Bertsimas / Prof. Robert Freund
 
 ## TL;DR
 
-- 课程构筑管理科学基础，将不确定性下的概率决策树与确定性线性优化深度融合。
-- 利用正态分布、离散概率与期望货币价值评估商业风险与信息价值（EVPI）。
-- 多元线性回归模型量化变量协变关系，支撑供应链、财务与运营管理中的科学预测。
+- 本课程构筑管理科学基石，将不确定性下的概率决策与确定性运筹优化深度统一。
+- 综合运用决策树、中心极限定理、蒙特卡洛仿真与多元回归解构商业风险。
+- 依托线性规划、影子价格、对偶理论与混合整数规划实现稀缺资源规范配置。
+- 贯通数据洞察与战略决策，赋能供应链、金融风控与收益管理实战。
 
-- **同一课程的其他编号 / Also listed as**: 15.730（MIT 目录中同一门课程的不同班级/项目编号）
+- **同一课程的其他编号 / Also listed as**: 15.730（MIT 目录中同一门课程的不同项目编号）
 
 ## 课程简介 / Description
 
-This course is designed to introduce first-year Sloan MBA students to the fundamental techniques of using data. In particular, the course focuses on various ways of modeling, or thinking structurally about decision problems in order to make informed management decisions.
+《数据、模型与决策》（Data, Models, and Decisions, DMD）是麻省理工学院斯隆管理学院 MBA 与管理科学硕士项目的核心奠基课程。在当今复杂、互联且高速变化的全球商业环境中，管理者必须学会在不完全信息与多重不确定性下做出高风险决策。
 
-## 讲义 / Lecture Notes
+本课程由国际优化与运筹学领军学者 Dimitris Bertsimas 教授与 Robert Freund 教授联合执教。全课有机融通了**数理统计与预测分析（数据）**、**运筹学与数学规划（模型）**以及**管理与组织落地（决策）**三大维度。通过引入肯德尔龙虾采购、Gentle Lentil 餐厅选址、Ontario Gateway 资本预算、Oilplus 取暖油预测、Filatoi Riuniti 纺织排产以及次贷危机 Money Tree 机构自救等一系列高保真商业案例，训练学生将模糊、喧嚣的现实挑战转化为严密的量化优化模型。
 
-- **1**
-  - Decision Analysis I - Kendall Crab & Lobster Case
-  - In this session, we introduce decision trees and the decision tree methodology from an intuitive point of view without any formal theory of probability. This easy-to-grasp model helps students to structure a decision problem, and also helps students see the need for a theory of probability in order to model uncertainty.
-  - In-class discussion of the Kendall Crab and Lobster case. Students prepare the following questions: What are the choices that Jeff Daniels faces? What are the sources of uncertainty in the case? What are the consequences of the various possible outcomes? What course of action would you recommend for Jeff Daniels?
-- **2**
-  - Decision Analysis II – Conditional Probabilities
-  - In this class session, we cover the laws of probability, including conditional probability and the arithmetic of conditional probability. We use probability tables instead of a "Bayes' Theorem" formula in order to keep the concepts as intuitive as possible.
-  - In-class discussion of the "Great Apps of Ann Arbor" case.
-- **3**
-  - Discrete Probability Distributions
-  - The next three classes lay the basic groundwork of probability distributions. We will see how data can be characterized as observed values of random variables, and we will study three important probability distributions: the uniform distribution, the binomial distribution, and the Normal distribution.
-  - In this first session, we cover discrete random variables and probability distributions, including the binomial distribution.
-- **4**
-  - Continuous Probability Distributions
-  - We cover linear functions of a random variable, covariance and correlation of two random variables, and sums of random variables. We show how these concepts lead to important use in finance and in operations. In the second part of this session, we introduce continuous random variables, the probability density function, and the cumulative distribution function. We cover the continuous uniform distribution and the Normal distribution in detail, showing how the Normal distribution arises in models of many management problems.
-- **5**
-  - The Normal Distribution
-  - In this class we continue our coverage of the Normal distribution. We cover sums of Normally distributed random variables and we then cover the Central Limit Theorem. The Central Limit Theorem points the way to statistical inference.
-- **6**
-  - Simulation I – The Gentle Lentil Case
-  - In this session we return to constructing and using models, in this case simulation models based on random number generators. We develop the key ideas of simulation with a prototypical management decision problem that necessitates combining different random variables. We show how simulation models are constructed, used, and analyzed in a management context.
-  - In-class discussion of the Gentle Lentil case.
-- **7**
-  - Regression Models I
-  - Linear regression is introduced as a method of prediction. We cover all of the basics of simple and multiple linear regressions.
-- **8**
-  - Simulation II – The Ontario Gateway Case
-  - In-class discussion of the Ontario Gateway case. Students perform the case analysis modeling assignment described at the end of the case and hand in a management memorandum.
-- **9**
-  - Regression Models II
-  - This class is the second of three sessions on linear regression models. Particular care is taken to ensure that students learn how to evaluate and validate a regression model. We also discuss warnings and issues that arise in using linear regression, and we cover extended regression modeling techniques such as nonlinear transformations and the use of dummy variables.
-- **10**
-  - Regression Illustrated
-  - In this class session we present examples of how one goes about constructing, solving, and interpreting regression models.
-  - Students prepare the analyses of two regression mini-cases, "Predicting Heating Oil Consumption at
-  - Oilplus
-  - " and "Executive Compensation" for in-class discussion.
-- **11**
-  - Quiz
-  - The 1.5-hour quiz takes place during regular class time. The quiz covers all of the material we have considered so far in the course. The quiz will be closed-book with no notes allowed. Students may use a non-communications-type calculator, but no communications devices (cellphones, graphing calculators) are allowed. We provide a sheet of formulas that are pre-posted on the course website before the quiz.
-- **12**
-  - Introduction to Linear Optimization Modeling
-  - In this session we will cover the basics of linear optimization, including formulations, key concepts, and graphical solution methods. We develop the basic concepts for constructing, solving, and interpreting the solution of a linear optimization model. We also present instructional material on using linear optimization in a spreadsheet.
-- **13**
-  - Solving and Analyzing Linear Optimization Models
-  - We will cover computer solution methods for linear optimization, basic sensitivity and economic analysis of a linear optimization model, as well as extensions of linear optimization and applied optimization modeling in general. In addition to standard topics, we also focus on shadow prices and the importance of sensitivity analysis of a linear optimization model as an adjunct to informed decision-making. As an optional topic, we will show how to model uncertainty in linear optimization using two-stage linear optimization under uncertainty.
-- **14**
-  - Filatoi Riuniti Case: Production Management
-  - In-class discussion of the Filatoi Riuniti case. We will see how to evaluate and interpret the solution output of a linear optimization model and to use this information to enhance informed decision-making.
-- **15**
-  - Introduction to Nonlinear Optimization
-  - In this class we focus on the extension of the linear optimization model to nonlinear optimization, stressing the key similarities and key differences between linear and nonlinear optimization models. We present instructional material on solving a nonlinear optimization model in a spreadsheet. We also focus on portfolio optimization as an important application of nonlinear optimization modeling in management.
-- **16**
-  - Introduction to Discrete Optimization
-  - In this class session we show how discrete optimization arises in the modeling of many management problems. We focus on binary optimization, integer optimization, and mixed-integer optimization models. We present instructional material on solving a discrete optimization model in a spreadsheet. We also illustrate how discrete optimization problems are solved, to give students a feel for the potential pros and cons of constructing large-scale discrete optimization models.
-- **17**
-  - International Industries Case: Strategic Investment Management
-  - In-class discussion of the International Industries case. We will see how to “make sense” out of the solution to a discrete optimization model and use the model to make more informed and more efficient management decisions.
-- **18**
-  - Integrative Case on the Financial Crisis
-  - In-class discussion of the integrative case on the Financial Crisis, "Money Tree Mortgage in Distress: Evaluating Alternative Funding Options." We will see how such integrative modeling can clarify and improve understanding and ability to make better management decisions.
-- **19**
-  - Dynamic Optimization for Retail Pricing
-  - This session covers dynamic optimization models, whose uses are vast: from power system pricing, to revenue management for airlines, hotels, car rental companies, to retail pricing, and even including military wargame modeling.
-  - We will have an in-class discussion and analysis of the case "Pricing Strategies for Power-Pro's MBA Laptop Bag" case and we will build and then solve an optimization model for determining optimal retails pricing.
-- **20**
-  - Summary and Look Ahead
-  - In this last class session, we will present some extensions of the concepts and modeling tools developed in the course. We will also discuss possible follow-on classes at Sloan and elsewhere on campus. Last but not least, we will reserve part of this session to provide guidance as you prepare for the Final Examination.
-- **21**
-  - Final Exam Review
-  - One or two 3-hour course / exam reviews will take place. We will review the most important aspects of the course.
-- **22**
-  - Final Exam
-  - The 3-hour final exam will cover the entire content of the course. The exam will be closed-book with no notes allowed. You may bring a calculator with you to the exam. You will also be given three pages of formulas that will be posted on the course website prior to the exam.
+## 讲义导航 / Lecture Notes
+
+课程完整覆盖 20 讲系统讲义，分为“不确定性决策与统计预测”与“确定性及离散优化决策”两大模块：
+
+### 第一部分：不确定性建模、概率推断与回归预测
+
+| 讲次 | 核心主题 (中英文对照) | 核心方法与理论模型 | 关联商业案例 / 应用场景 |
+| :--- | :--- | :--- | :--- |
+| **[Lec 1](lec1.md)** | [决策分析 I：肯德尔龙虾案例与不确定性决策树](lec1.md) | 决策树图元、EMV、反向归纳法、无差异敏感性分析 | 肯德尔海鲜采购与天气突变应对 |
+| **[Lec 2](lec2.md)** | [决策分析 II：条件概率与概率树](lec2.md) | 条件概率、贝叶斯反转表、完全信息价值 (EVPI/EVSI) | Great Apps 移动应用开发闭测验证 |
+| **[Lec 3](lec3.md)** | [离散概率分布、期望值与二项模型](lec3.md) | 随机变量、PMF/CDF、方差量纲、伯努利试验与二项分布 | 信用卡呼叫中心坐席话务拥堵分析 |
+| **[Lec 4](lec4.md)** | [连续随机变量、协方差与资产配置基础](lec4.md) | 连续 PDF 积分、线性变换、协方差与资产对冲定理 | 双资产投资组合风险分散与对冲 |
+| **[Lec 5](lec5.md)** | [正态分布特性与中心极限定理的应用边界](lec5.md) | 钟形曲线、标准化变量 Z、中心极限定理 (CLT)、肥尾警示 | 零售供应链安全库存与服务水平配置 |
+| **[Lec 6](lec6.md)** | [蒙特卡洛模拟 I：Gentle Lentil 餐厅收益建模](lec6.md) | 平均数缺陷 (Flaw of Averages)、逆变换采样、经验分布 | Gentle Lentil 素食餐厅开业与破产测算 |
+| **[Lec 7](lec7.md)** | [回归模型 I：普通最小二乘法与多元预测](lec7.md) | OLS 极小化准则、高斯-马尔可夫假定、BLUE、方差分解 | 零售门店营业面积与客流偏边际贡献 |
+| **[Lec 8](lec8.md)** | [蒙特卡洛模拟 II：Ontario Gateway 物流仿真](lec8.md) | 动态贴现现金流 (DCF)、复利增长率仿真、VaR/CVaR、龙卷风图 | Ontario Gateway 跨境物流枢纽扩建 |
+| **[Lec 9](lec9.md)** | [回归模型 II：模型检验、交互项与虚拟变量](lec9.md) | 残差图诊断、异方差、VIF 共线性检验、对数需求弹性 | 职场薪酬定性属性溢价与促销调节效应 |
+| **[Lec 10](lec10.md)** | [回归建模实战：取暖油预测与高管薪酬](lec10.md) | 采暖度日 (HDD)、非线性热损耗、规模弹性与治理假说 | Oilplus 能源调拨与 S&P500 高管薪酬剖析 |
+| **[Lec 11](lec11.md)** | [前半程量化决策方法综合评估与误差治理](lec11.md) | 方法选型矩阵、数据测量噪声、形式错设与古德哈特定律 | 抗肿瘤新药多阶段研发投产框架 |
+
+### 第二部分：运筹优化、数学规划与动态收益管理
+
+| 讲次 | 核心主题 (中英文对照) | 核心方法与理论模型 | 关联商业案例 / 应用场景 |
+| :--- | :--- | :--- | :--- |
+| **[Lec 12](lec12.md)** | [线性规划导论：管理决策建模、可行域与几何极点](lec12.md) | LP 代数标准型、凸多面体、等利润线、基本可行解极点定理 | 双产品车间多工序产能分配 |
+| **[Lec 13](lec13.md)** | [线性规划求解实务：电子表格建模与影子价格](lec13.md) | 四分法电子表格架构、影子价格、互补松弛性、允许变动区间 | 木工油漆工时加班审批与瓶颈调度 |
+| **[Lec 14](lec14.md)** | [生产运营案例：Filatoi Riuniti 纺织厂产能优化](lec14.md) | 自制与外协分包权衡 (Make-or-Buy)、工时生产力、资本开支 ROI | 意大利高定纱线多工序排产决策 |
+| **[Lec 15](lec15.md)** | [非线性规划与现代资产组合理论](lec15.md) | 海森矩阵半正定凸性、马科维茨二次规划 (QP)、有效前沿 | 股票债券均值-方差切线组合求解 |
+| **[Lec 16](lec16.md)** | [整数与混合整数规划：0-1 变量与逻辑约束](lec16.md) | 四舍五入陷阱、大 M 法固定成本联动、分支定界剪枝法则 | 厂房开工启停与排他先决条件建模 |
+| **[Lec 17](lec17.md)** | [战略投资决策：International Industries 案例](lec17.md) | 多阶段资本配给、近岸外包网络协同、离散重算分析 | 跨国制造工厂跨期资本开支组合遴选 |
+| **[Lec 18](lec18.md)** | [次贷危机综合案例：Money Tree 抵押机构流动性建模](lec18.md) | 违约逻辑回归、仓储信贷挤兑、资产负债匹配优化 | 次贷危机中非银信贷机构资产折价清偿 |
+| **[Lec 19](lec19.md)** | [动态规划与收益管理：零售与航空动态定价策略](lec19.md) | 易损资产管理、贝尔曼最优性方程、库存跨期机会成本 | Power-Pro 笔记本背包全生命周期调价 |
+| **[Lec 20](lec20.md)** | [数据模型决策贯通：从确定性优化到随机动态前沿](lec20.md) | 描述-预测-规范三阶梯、鲁棒优化 (Robust Optimization)、算法与领导力 | 应对不确定性世界的全景决策思维 |
+
+## 知识体系脉络与方法论演进
+
+15.060 的课程设计体现了麻省理工学院“知类通达（Mind and Hand / Mens et Manus）”的精神，将抽象的数学符号深度锻造成管理者的实战武器：
+
+```mermaid
+flowchart LR
+    A[不确定性表征: 概率/分布/仿真] --> B[规律挖掘与因果量化: 多元回归]
+    B --> C[确定性资源调配: 线性规划与对偶]
+    C --> D[离散与非线性扩展: 整数规划与马科维茨]
+    D --> E[跨期时序权衡: 动态规划与收益管理]
+    E --> F[前沿抗震架构: 鲁棒优化与两阶段决策]
+```
+
+全课在逻辑上呈现严密的递进关系：从最直观的单阶段风险（Lec 1-6）延伸至关联预测（Lec 7-11），进而跨入以数学规划为代表的规范性优化领域（Lec 12-14），最终通过非线性、离散与时序动态方程（Lec 15-20），攻克现代企业在战略投资、金融安全与动态市场中的高维决策难题。
+
+::: insight [我的理解：模型是沟通经验直觉与系统复杂度的唯一步道]
+在当今商业社会，许多初级分析师沉迷于追求更复杂的深度学习算法，而许多资深管理层则过度自负于过往经验。15.060 的核心价值，恰恰在于在“盲目崇拜算法”与“草莽凭感觉拍脑袋”之间搭建起一座坚不可摧的理性桥梁。
+
+每一个决策变量的定义，都是在厘清企业行动的自由度；每一条约束方程的建立，都是在诚实直面物理、法律与资本的边界；而目标函数的极值求解，则是全组织在共同战略使命下的最强合力。学习数据、模型与决策，不是为了消除商业世界的所有风险，而是为了在暴风雨来临时，我们能手握罗盘、心怀底线，做出最具尊严与智慧的行动决断。
+:::
 
 ---
 

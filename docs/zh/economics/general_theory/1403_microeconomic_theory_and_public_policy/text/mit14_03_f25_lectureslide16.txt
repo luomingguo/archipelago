@@ -1,0 +1,749 @@
+Revised November 2, 2025
+
+
+
+
+14.03/003 Microeconomic Theory & Public Policy
+Fall 2025
+
+
+Lecture slides 16. Why is free trade so controversial?
+
+David Autor (Prof), MIT Economics and NBER
+If international trade is so great,
+   why is it so controversial?
+
+
+
+
+                                      1/31
+Views on gain vs. threat of foreign trade shifted after 2020
+
+
+
+
+                                                               2/31
+Republicans historically more positive on trade–until mid 2000s
+
+
+
+
+                                                             3/31
+Why is free trade controversial?
+
+
+
+ − Free trade among consenting nations raises GDP in all of them
+
+ − So why isn’t it free trade universally beloved?
+
+      1. Economics is hard — people don’t get it
+
+      2. There’s another Second Welfare Theorem problem lurking here
+
+
+
+
+                                                                       4/31
+Trade necessarily creates winners and losers
+
+
+
+
+                                               5/31
+1. Trade and welfare for A and B under autarky
+                 Shelter (B)   (SB)NT
+                                                       B
+      Food (A)
+                                            CC
+
+
+
+
+                 -(ps/pF)NT
+
+                                 Z
+        (FA)NT                                         (FB)NT
+
+
+
+
+                                        E
+                                                       Food (B)
+           A                   (SA)NT        Shelter (A)
+                                                                  10/31
+2. Adding the possibility of international trade
+                 Shelter (B)   (SB)NT
+                                                                      B
+      Food (A)
+                                                           CC
+
+
+
+
+                                        -(ps/pF)T
+                 -(ps/pF)NT
+
+                                 Z
+        (FA)NT                                                        (FB)NT
+
+                                                    ZT,B
+
+                                                      E
+                                                                      Food (B)
+           A                   (SA)NT                       Shelter (A)
+                                                                                 11/31
+3. Trade and welfare for A and B under international trade
+                 Shelter (B)        (SB)NT          (SB)T
+                                                                            B
+      Food (A)
+                                                                 CC
+
+        (FA)T                       ZT,A
+
+
+                                              -(ps/pF)T
+                 -(ps/pF)NT
+
+                                      Z
+        (FA)NT                                                              (FB)NT
+
+                                                          ZT,B
+                                                                           (FB)T
+
+                                                            E
+                                                  E’
+                                                                            Food (B)
+           A                   (SA)T (SA)NT                       Shelter (A)          12/31
+4. Lumpsum transfers can make intn’l trade Pareto-improving
+                 Shelter (B)        (SB)NT          (SB)T
+                                                                            B
+      Food (A)
+                                                                 CC
+
+        (FA)T                       ZT,A
+
+
+                                              -(ps/pF)T
+                 -(ps/pF)NT
+
+                                      Z
+        (FA)NT                                                              (FB)NT
+
+                                                          ZT,B
+                                                                           (FB)T
+
+                                                            E
+                                                  E’
+                                                                            Food (B)
+           A                   (SA)T (SA)NT                       Shelter (A)
+                                                                                       13/31
+Trade and rural poverty in India —
+      Petia Topalova, 2010
+
+
+
+
+                                     14/31
+India’s
+     6 import tarifs  rapidly
+                 AMERICAN        cut
+                          ECONOMIC     in half,
+                                   JOURNAL: APPLIED 1992–1997
+                                                    ECONOMICS OCTOBER 2010
+
+
+            Panel A. Average nominal tariffs
+            120
+
+
+
+            100
+
+
+
+             80
+
+
+
+             60
+
+
+
+             40
+
+
+
+             20
+
+
+
+              0
+                     7   8   9   0   1   2   3   4   5   6   7   8   9   0   1
+                  198 198 198 199 199 199 199 199 199 199 199 199 199 200 200    15/31
+                   7    8    9   0    1    2   3   4   5    6    7   8    9    0   1
+                198 198   198 199 199   199 199 199 199 199   199 199 199   200 200
+
+Agricultural tarifs saw the sharpest fall
+          Panel B. Tariffs by broad industrial category
+          120
+
+
+
+                                                                        Cereals and oilseeds
+          100                                                           Agriculture
+                                                                        Mining & Mfg-K
+                                                                        Mining & Mfg-C
+
+
+           80
+
+
+
+
+           60
+
+
+
+
+           40
+
+
+
+
+           20
+
+
+
+
+            0
+                7         9         1          3            5       7          9         20
+            19 8        19 8      19 9      19 9          19 9   19 9       19 9            01
+                                                                                                 16/31
+                        Figure 1. Evolution of India’s Tariff and NTBs (Continued)
+Why so sudden?
+
+
+  “...the new policy package was delivered swiftly in order
+  to complete the process of changeover so as not to permit
+  consolidation of any likely opposition to implementation
+  of the new policies. The strategy was to administer a
+  ‘shock therapy’ to the economy...” — SK. Goyal, 1996
+
+
+                                                              17/31
+Was this policy Pareto-improving? Topalova 2010 provides a causal test
+
+
+ − Big idea: Exploit diferences in district-level exposure to tarif cuts to test how
+   these cuts causally afect poverty and consumption
+
+      □   Although all of India was subject to national tarif cuts, districts difered in their
+          ‘exposure’ according to their industrial specialization at that time
+      □   Districts with more agriculture are more ‘exposed’ because they are specialized in
+          producing goods facing big tarif cuts
+      □   Roughly 450 Indian districts, averaging 2m people per district. (Number of districts
+          and population have risen since paper was written)
+
+
+
+
+                                                                                             18/31
+                                Rural (N = 366)                 Urban (N = 62)
+Rural12areas were AMERICAN
+                  concentrated            in1999/00
+                           ECONOMIC JOURNAL:
+                           1987/88
+                                              farming,     extremely
+                                                APPLIED ECONOMICS
+                                                           1987/88
+                                                                              poor
+                                                                          OCTOBER
+                                                                            1999/00 2010
+                                            Mean      SD       Mean     SD      Mean      SD      Mean     SD
+       Poverty rate                             Table0.193
+                                            0.373      1—Descriptive
+                                                               0.242 Statistics
+                                                                       0.139    0.214    0.120    0.122   0.070
+       Log per capita consumption           5.054    0.246
+                                                     Rural (N =5.759
+                                                                366) 0.263      5.449    0.199    6.250
+                                                                                         Urban (N = 62)   0.217
+       Scaled tariff                        0.083    0.082     0.026   0.022    0.198    0.073    0.069   0.026
+       Unscaled tariff                         1987/88
+                                            0.883    0.096        1999/00
+                                                               0.305   0.061        1987/88
+                                                                                0.892    0.067       1999/00
+                                                                                                  0.312   0.038
+       NTB–share of free HS codes           0.010
+                                            Mean 0.017SD       0.038
+                                                               Mean 0.043
+                                                                        SD      0.018
+                                                                                 Mean 0.008
+                                                                                          SD      0.111
+                                                                                                  Mean 0.046
+                                                                                                           SD
+       FDI                                  0.000    0.000     0.219   0.118    0.000    0.000    0.286   0.104
+       Licensedrate
+       Poverty     industries               0.373 0.160
+                                            0.339    0.193     0.242 0.154
+                                                               0.091   0.139     0.214 0.128
+                                                                                0.394    0.120    0.122 0.130
+                                                                                                  0.117   0.070
+       Log  per of
+       Number     capita  consumption
+                      banks per             5.054 0.266
+                                            0.650    0.246     5.759 0.327
+                                                               0.785   0.263     5.449 0.290
+                                                                                0.703    0.199    6.250 0.331
+                                                                                                  0.843   0.217
+       Scaled
+          10,000tariff
+                    people                  0.083    0.082     0.026   0.022     0.198   0.073    0.069   0.026
+       Unscaled tariff                      0.883    0.096     0.305   0.061     0.892   0.067    0.312   0.038
+       NTB–share
+       Initial districtofcharacteristics
+                          free HS codes     0.010
+                                            Mean     0.017
+                                                      SD       0.038   0.043     0.018
+                                                                                Mean     0.008
+                                                                                          SD      0.111   0.046
+       FDI                                  0.000    0.000     0.219   0.118     0.000   0.000    0.286   0.104
+       Share
+       Licensedliterate
+                   industries               0.368
+                                            0.339 0.137
+                                                     0.160     0.091   0.154    0.622
+                                                                                 0.394 0.073
+                                                                                         0.128    0.117   0.130
+       Share   SC/ST
+       Number of      banks per             0.291
+                                            0.650 0.162
+                                                     0.266     0.785   0.327    0.157
+                                                                                 0.703 0.065
+                                                                                         0.290    0.843   0.331
+       Share   farming
+          10,000    people                  0.814    0.105                      0.159    0.070
+       Share manufacturing                  0.056    0.045                      0.217    0.077
+       Share
+       Initial mining
+               district characteristics     0.005
+                                            Mean 0.014SD                        0.013
+                                                                                 Mean 0.024
+                                                                                          SD
+       Share service                        0.065    0.037                      0.260    0.053
+       Share   literate
+       Share trade                          0.368
+                                            0.033    0.137
+                                                     0.020                       0.622
+                                                                                0.215    0.073
+                                                                                         0.033
+       Share transport
+       Share   SC/ST                        0.291 0.012
+                                            0.013    0.162                       0.157 0.025
+                                                                                0.083    0.065
+       Share construction
+       Share   farming                      0.814
+                                            0.013    0.105
+                                                     0.014                       0.159
+                                                                                0.053    0.070
+                                                                                         0.017
+       Share   manufacturing
+       Poverty rate    change in the 80s   −0.056    0.045
+                                            0.060 0.161                        − 0.225
+                                                                                 0.217 0.098
+                                                                                         0.077
+       Shareper
+       Log     mining
+                  capita consumption        0.005 0.178
+                                            0.321    0.014                       0.013 0.155
+                                                                                0.381    0.024                    19/31
+       Share   service
+          change    in the 80s              0.065    0.037                       0.260   0.053
+Calculating district-level tarif exposure
+ − We want to estimate the following statistical model
+
+                               ∆Yd = α + β∆Tariffd + γd + εd
+
+      □   If ∆Tariffd were constant across districts, this model would not be estimable
+          because β would be indistinguishable from α
+
+      □   But ∆Tariffd difers across districts because districts produce diferent
+          commodities
+                                             �
+                                               i Ld,i,1991 ∆Tariffi,91−99
+                               ∆Tariffd ≡            �
+                                                         i Ld,i,1991
+
+      □   where Ld,i,1991 is number of workers employed in district d in industry i in 1991
+                                                                                              20/31
+What should we expect to happen?
+
+
+Almost certain – will occur under any scenario
+
+ 1. Price of goods in previously tarif-protected sectors will fall in price (towards world
+    prices)
+ 2. Wages/earnings of workers in those sectors may also decline
+ 3. Consumer purchasing power will rise on average
+
+
+
+
+                                                                                       21/31
+What should we expect to happen?
+
+Good scenario – what could go right
+ 1. Rise in purchasing power ofsets drop in incomes in tarif-protected sectors —
+    leading to higher consumption
+
+ 2. Workers/households rapidly switch to new sectors, move to new districts
+
+Bad scenario – what could go wrong
+ 1. Rise in purchasing power does not ofset drop in incomes in tarif-protected sectors
+    — leading to lower consumption
+ 2. Workers/households do not rapidly switch to new sectors, districts
+
+                                                                                   22/31
+Urban 0
+     households
+           10
+                move
+                 20
+                     pretty
+                       40
+                            frequently,
+                              60    80
+                                        esp.90the rich
+                                                   100
+                                                       ones
+                                             Urban India
+        0.25
+
+
+         0.2
+
+
+        0.15
+
+
+         0.1
+
+
+        0.05
+
+
+          0
+               10          20           40           60           80           90          100
+
+                Figure 2. Probability of Having Moved within the Past 10 Years
+                           by Percentiles of Per Capita Consumption
+               (excluding migration within the same district and within the same sector)         23/31
+Ominously, rural households
+                 TOPALOVA:
+     VOL. 2 NO. 40
+              10     20
+                           FACTOR move
+                               40
+                                           very
+                                  IMMOBILITY
+                                        60
+                                                   infrequently
+                                             AND TRADE: POVERTY
+                                                  80       90
+                                                                IN INDIA
+                                                                     100
+                                                                                                        25
+
+                                                     Urban
+                                                      Rural India
+                                                            India
+             0.25
+              0.08
+
+
+              0.2
+              0.06
+
+             0.15
+
+              0.04
+               0.1
+
+              0.02
+             0.05
+
+
+                00
+                       10
+                      10           20
+                                  20            40
+                                               40            60
+                                                            60            80
+                                                                         80           90
+                                                                                      90          100
+                                                                                                  100
+                                                    Urban India
+              0.25     Figure 2. Probability of Having Moved within the Past 10 Years
+                                  by Percentiles of Per Capita Consumption
+                      (excluding migration within the same district and within the same sector)
+                                                                                                             24/31
+                0.2
+What actually happened?
+
+
+
+
+                          25/31
+           TOPALOVA:    FACTOR IMMOBILITY
+               Year indicators         Yes
+                                           AND TRADE:
+                                                  Yes
+                                                      POVERTY
+                                                           Yes
+                                                               IN INDIA
+  Steep fall in Data
+                prices
+                     sourceand wages in tarif-exposed
+                                          ASI       ASIindustries
+                                                                ASI
+
+                 N
+                 Table 7—Reallocation, 1,473
+                                       Prices, and 1,473
+                                                   Tariffs                               1,473            1
+                                                                             “Production    “Pro
+                Employment                    Log wholesale Log Log real   sector premium sector
+                   share              Capital share
+                                                price indexemployment
+                                                              workers wage   Log   capital u
+                                                                                rural”
+                 Panel(1)
+                       B. Prices            (2)                     (3)                    (4)
+                 Tariff                               0.096***      0.080***             0.131             0
+cation                                               [0.031]       [0.027]              [0.206]           [0
+                   0                   −0.001
+                 Production sector indicators          Yes    −0.036Yes               −0.115
+                                                                                          Yes
+                  [0.000]
+                 District indicators     [0.001]       No      [0.056]
+                                                                     No                 [0.109]
+                                                                                          No
+                 Year indicators                       Yes           Yes                  Yes
+or indicators    DataYes
+                      source               Yes        WPI        YesASI              NSS Yes
+                                                                                          schedule    NSS
+                                                                                     10, 38th, and    10, 4
+                     Yes                    Yes                    Yes                     Yes
+                                                                                      55th rounds      55th
+                     ASI                    ASI                    ASI                    ASI
+                 N                                    4,201            1,472              222
+                     1,473                 1,473                  1,473                  1,473 26/31
+                 Notes: Standard errors (in brackets) are clustered at the production sector level in panel
+24                       AMERICAN ECONOMIC JOURNAL: APPLIED ECONOMICS                               OCTOBER 2010
+     No efect on migration
+                      Table 5—Migration, Population, and Tariffs in Rural India
+
+                                                                                 All            Men
+                                                                                 (1)            (2)
+         Panel A. Dependent variable: share of in-migrants from outside district/sector
+         Tariff                                                             0.066              0.059
+                                                                           [0.071]            [0.091]
+         Panel B. Dependent variable: log population
+         Tariff                                                              − 0.006         − 0.014
+                                                                              [0.152]         [0.158]
+
+         N                                                                       728             728
+
+         Notes: Standard errors (in brackets) are clustered at the state-year level. Regressions are
+         weighted by the number of households in a district. Tariff is instrumented with traded tariff.
+         All regression include contols for district and year fixed effects and initial district conditions
+         that are interacted with the post-reform indicator (see notes to Table 3 for details). Data in
+         panel A are from the forty-third and fifty-fifth rounds of the NSS; data in panel B are from the     27/31
+         1991 and 2001 census.
+                       VOL.
+                       Tariff 2 NO. 4                        −
+                                                          TOPALOVA:
+                                                               0.221 FACTOR   − 0.600* −
+                                                                            IMMOBILITY AND  TRADE:4.478*
+                                                                                         2.908           − 1.93
+                                                                                                   POVERTY         − 0.
+                                                                                                            IN INDIA
+                                        [0.302] rural     [0.311]    IN INDIA [2.349] 15[1.794]
+                                                             POVERTY[1.756]                                         [1.
+Each VOL.
+      1%2 NO.ppt
+              4  fall TOPALOVA:
+                      in tarifs     raised
+                                FACTOR IMMOBILITY
+                                                        poverty
+                                                  AND TRADE:
+                                                                     by 0.24 ppts
+                    Traded tariff                            − 0.379
+                              Table 3A—Trade Liberalization,       Poverty, and Average Consumption in Rural In
+                  Table 3A—Trade Liberalization, Poverty, and [0.237]
+                                                              Average Consumption in Rural India
+                       NTB (share of free HSpost
+                                      Pre &   codes)     Pre &
+                                                 Pre & post     post
+                                                             Pre &  postPre
+                                                                          Pre&&post
+                                                                                 post Pre
+                                                                                       Pre&only
+                                                                                              post Pre
+                                                                                                    Pre& &   post
+                                                                                                           post Pre &Pre only
+                                                                                                                       post Pre &Pre     0.215 Pre & po
+                                                                                                                                   post& post
+       Data            Data               (1)        (2)     (1) (3)        (2)
+                                                                              (4)         (3)
+                                                                                          (5)          (6)(4)       (7) (5)     (8) (6) [0.380] (7)
+       Panel A. Dependent
+                    Panel variable: poverty variable:
+                                            rate
+                    PanelA. B.Dependent
+                               Dependent              poverty
+                                             variable: log
+                                       − 0.242*
+                                                              rate per capita consumption
+                                                           average
+                                                              − 0.710*** − 0.467* − 0.710***−−         − 0.424*
+       Tariff                                            − 0.242*                   0.038
+                                                                                     −
+                                                                                              0.479**       0.038− 0.381***
+                                                                                                                        − 0.479**  − 0.424*
+                                                                                                        [0.229]− 5.629**
+                    Tariff
+                    Tariff                                    0.015                             0.467*
+                                                                                                   6.011***
+                                                                                       0.419 [0.236]                          3.676**    0.
+                                        [0.122]                [0.250]    [0.247]  [1.000]                          [0.139]
+       Traded tariff                                  − 0.223**
+                                                                 [0.122]
+                                                                   [0.383]                 [0.250]        [1.861] [1.000]
+                                                                                              [0.771] [0.247]         [2.494] [0.236]
+                                                                                                                                  [1.484] [0.229]
+                                                                                                                                               [2.
+                       Traded
+                       Tradedtariff                                          − 0.223**
+                              tariff                   [0.084]                 − 0.265
+                                                                              [0.084]
+       NTB (share of free HS codes)                                              [0.428]               0.073
+                       NTB (share of free HS codes)                                                   [0.202]                    0.073
+                       NTB (share of free HS codes)                                                                                − 0.830*
+                                                                                                                                [0.202]
+       Panel B. Dependent variable: log average per capita consumption                                                              [0.478]
+       Tariff       Panel  B. traded
+                              Dependent − 0.055
+                                            variable: log average0.512    0.677* −  0.085     0.683*     0.657*             0.583**
+                    IV with            tariff
+                                         [0.353]
+                                                                 Noper capita
+                                                                [0.639]
+                                                                              consumption
+                                                                             No
+                                                                         [0.400]
+                                                                                         Yes [0.373] Yes[0.333]
+                                                                                   [0.463]
+                                                                                                                         Yes
+                                                                                                                           [0.216]
+                                                                                                                                       Yes         Y
+                          with traded tariff and initial − 0.055
+                     Tariff
+                     IV                                        No                  No       0.512No           No − 0.085 No 0.683*No 0.657*
+                                                                                                         0.677*
+       Traded tariff                                0.161 [0.353]                          [0.639]      [0.400]    [0.463]      [0.373]    [0.333]
+                         traded tariff             [0.207]
+                     Regiontariff
+                     Traded     indicators                     Yes                 Yes
+                                                                               0.161             Yes          Yes        Yes           Yes
+       NTB (share of free HS codes)                                                                  − 0.036
+                     Initial region indicators × post          No             [0.207]
+                                                                                   No            No [0.248] Yes          Yes           Yes
+                     Pre-reform trend × post                   No                  No            No           No         No            Yes
+                      tariff (share of free HS
+       IV with tradedNTB                    No codes) No        Yes               Yes         Yes        Yes      Yes          − 0.036
+                                                                                                                              Yes
+                     Other reforms controls
+       IV with traded tariff and initial    No        No
+                                                               No
+                                                                No
+                                                                                   No
+                                                                                   No         No
+                                                                                                 No      No
+                                                                                                              No No      NoYes[0.248]No
+          traded tariff
+                        IV with traded tariff Yes
+                         N
+       District indicators                                 Yes     No
+                                                                    127
+                                                                     Yes         No
+                                                                                  127
+                                                                                  Yes        Yes127
+                                                                                             NA          Yes126 Yes Yes125Yes Yes 124
+                                                                                                        Yes                               Yes 1
+                                   × posttariff No
+                        IV with traded
+       Initial district conditions              and initial No     No No         No
+                                                                                  Yes        No
+                                                                                             NA           No
+                                                                                                        Yes     Yes No    Yes No     28/31No
+
+                       Notes: Standard errors (in brackets)
+       Region indicators   traded  tariff      NA        NANA      NA                        Yes        NA      NA        NA
+                                                            are clustered at the state-year level. Regressions are weighte
+Household consumption fell as tarifs fell, esp in poorer HH’s
+                 AMERICAN ECONOMIC JOURNAL: APPLIED ECONOMICS                            OCTOBER
+
+
+        Table 6—Trade Liberalization and Per Capita Household Consumption
+                across the Consumption Distribution in Rural India
+
+                    10th          20th         40th         60th         80th         90th
+                  percentile    percentile   percentile   percentile   percentile   percentile
+                     (1)           (2)          (3)          (4)          (5)          (6)
+  Panel A. District level
+  Tariff              0.698**     0.673*       0.346        0.383        0.5          0.443
+                     [0.339]     [0.344]      [0.278]      [0.336]      [0.440]      [0.482]
+
+  N                  728           728          728          728          728          728
+  Panel B. Region level
+  Tariff             1.514***     1.287***     0.66         0.386        0.232        0.106
+                    [0.482]      [0.439]      [0.452]      [0.402]      [0.361]      [0.553]
+                                                                                                 29/31
+Bottom line of Topalova, 2010
+
+Consequences of ‘shock therapy’ were shockingly bad
+
+ 1. Prices and wages/incomes fell in tarif-exposed industries
+ 2. Poverty rose in tarif-exposed districts, especially rural agricultural districts
+ 3. Household consumption fell in tarif-exposed districts
+ 4. Household consumption fell by most in the poorest households
+ 5. Workers/households did not move away from tarif-exposed regions
+ 6. Workers/households did not move out of tarif-exposed sectors
+
+                                                                                       30/31
+Concluding thoughts
+The principle of comparative advantage is a fundamental economic insight — analogous
+to the welfare theorems
+
+ 1. First welfare theorem shows that free trade among individuals is Pareto-improving
+    (and leads to Pareto efcient allocations)
+ 2. The principle of comparative advantage says that allowing countries to trade
+    always raises welfare in both countries
+ 3. Key diference: International trade does not beneft all individuals in each country
+ 4. Trade opening without lumpsum transfers yields both winners and losers
+
+Second welfare theorem proves it is possible to make every citizen better of under trade
+than autarky — but only if combined with lump-sum transfers                          31/31
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

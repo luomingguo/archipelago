@@ -1,12 +1,11 @@
 ---
-title: '比例与计数数据推断'
+title: 比例与计数数据推断
 type: lecture
 lecture: 8
 tags: [proportions, chi-square-test, contingency-table, goodness-of-fit, multinomial-distribution]
 status: complete
 source: 'https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/resources/mit15_075jf11_chpt09a/'
 ---
-
 # Lec 8 比例与计数数据推断（Inferences for Proportions and Counts）
 
 > MIT 15.075J / ESD.07J · Statistical Thinking and Data Analysis · Fall 2011

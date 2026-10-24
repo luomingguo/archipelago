@@ -1,0 +1,420 @@
+Revised October 15, 2025
+
+
+
+
+14.03/003 Micro Theory & Public Policy,
+Fall 2025
+
+Lecture slides 11. Applied competitive analysis continued —
+The market for residential real estate brokers
+
+David Autor (Prof), MIT Economics and NBER
+Today
+
+
+
+− The two roles of prices in a market economy
+     1. The ‘right’ quantity
+     2. The ‘right’ allocation among buyers and sellers
+
+− The concept of ‘rent seeking’
+− The market for residential real estate brokers
+
+
+
+
+                                                          1/35
+What are economic rents?
+
+
+− Economic rent is any payment to an owner or factor of production in excess of the
+  costs needed to bring that factor into production
+
+− Rents occur at the margin — hence distinct from consumer or producer surpluses
+
+− Existence of rents often leads to ‘rent seeking’
+
+− But rent seeking is often costly in itself
+
+
+
+                                                                                2/35
+The U.S. residential real estate market
+        operates like a cartel
+
+
+
+
+                                          3/35
+4/35
+Real estate commissions and house prices in 1990
+                                                                                                   free entry                                                                       1085
+
+
+
+
+                                                                                                      Fig. 4.—Commission rates and price of housing in the CEX. Each point in the figure
+                                                                                                   is the average commission rate within intervals in housing price $10,000 wide. The su-
+                                                                                                   perimposed fit is taken from a household-level regression of commission rates on housing
+                                                                                                   prices (Np406).
+
+
+                The distribution of real estate
+    Fig. 2.—Distribution of commission rates in the United States. a, Distribution of com-
+ mission rates paid by consumers in a nationally representative survey of 934 home sellers   Average       house prices & average
+                                                                                               figure 4 suggests that there is no correlation between these two
+                                                                                               variables.     13
+
+
+
+                    commissions (in % pts)                                                      commissions                (inhouse
+                                                                                                                                 %increases
+                                                                                                                                        pts)one to one with the price
+ conducted by the FTC in 1979 and 1980. b, Distribution of commission rates as reported           What is quite remarkable is that if in fact commission rates are fixed,
+ in settlement documents of 5,000 home sales in 1979. The settlement documents are             the commission   from selling a
+ standardized HUD-1 forms.
+                                                                                                   of the house. For example, the commission paid for the sale of a
+                                                                                                   $500,000 house is $30,000, whereas the commission    from
+                                                                                                                                                     Hsieh  andselling a ’03
+                                                                                                                                                                 Moretti
+                                                                                                   $100,000 condo is only $6,000. Now, one could argue that the brokers
+                                                                                                   who deal with a $500,000 house are providing a completely different5/35
+                                                                                                   service than ones dealing with $100,000 condos. However, it does not
+Plickers Interlude #1
+© Realtor.com. All rights reserved. This content is excluded from our Creative Commons license. For more information, see
+https://ocw.mit.edu/help/faq-fair-use/
+       1104
+Citywide                            journal
+         broker earnings in 1990 v. 0.06 × of politicalPurchases
+                                            Σ(House     economy  in $)
+
+
+
+
+         Fig. 8.—Relationship between total earnings of brokers and 6 percent of the total value
+       of homes sold in 282 cities in 1990. Each bubble represents a metropolitan area. The size   Hsieh and Moretti ’03
+       of the bubble is proportional to the metropolitan area population. There are 282 met-
+The market for real estate brokers:
+   A simple (but subtle) model
+
+
+
+
+                                      9/35
+A simple model: Four assumptions
+ 1. There is an upward sloping supply of real estate brokers QR (w), where w is the
+    expected wage that a broker will earn if working
+
+
+
+
+                                                                                      10/35
+A simple model: Four assumptions
+ 1. There is an upward sloping supply of real estate brokers QR (w), where w is the
+    expected wage that a broker will earn if working
+ 2. Total commissions TC are equal to 6% of all real estate sales:
+    TC = 0.06 × Σ(House Purchases in $)
+
+
+
+
+                                                                                      10/35
+A simple model: Four assumptions
+ 1. There is an upward sloping supply of real estate brokers QR (w), where w is the
+    expected wage that a broker will earn if working
+ 2. Total commissions TC are equal to 6% of all real estate sales:
+    TC = 0.06 × Σ(House Purchases in $)
+ 3. Brokers do not afect the number of houses on the market, the price of housing, or
+    the likelihood that a house sells (all houses eventually sell)
+
+
+
+
+                                                                                      10/35
+A simple model: Four assumptions
+ 1. There is an upward sloping supply of real estate brokers QR (w), where w is the
+    expected wage that a broker will earn if working
+ 2. Total commissions TC are equal to 6% of all real estate sales:
+    TC = 0.06 × Σ(House Purchases in $)
+ 3. Brokers do not afect the number of houses on the market, the price of housing, or
+    the likelihood that a house sells (all houses eventually sell)
+ 4. The expected wage of a broker is equal to total commissions divided by the
+    number of brokers
+                   E[w] = [0.06 × Σ(House Purchases in $)]/QR (w)
+
+
+
+                                                                                      10/35
+Equilibrium in real estate broker market
+                         Definitions: TC0 = QH0×PH0×0.06, TC1 = QH0×PH1×0.06
+
+             Earnings
+            per broker                                                    QR(w)
+                   (w)
+
+
+
+
+           w0 = TC/QR0
+
+
+
+
+                                                                               w = TC/QR
+
+
+
+
+                                               QR0 = QH0                Realtors (R)
+                                                                                           11/35
+What happens in the broker market when house
+                 prices rise?
+
+
+
+
+                                               12/35
+Effect of house price increase on broker market
+                              Definitions: TC0 = QH0×PH0×0.06, TC1 = QH0×PH1×0.06
+
+             Earnings
+            per broker                                                         QR(w)
+                   (w)
+
+
+          W’0 = TC1/QR0
+                          B                           C
+
+
+                          A                           D
+           w0 = TC0/QR0
+
+                                                                                    w = TC1/QR
+
+
+                                                                                    w = TC0/QR
+
+
+
+
+                                                    QR0 = QH0                Realtors (R)
+                                                                                                 13/35
+Effect of house price increase on broker market
+                               Definitions: TC0 = QH0×PH0×0.06, TC1 = QH0×PH1×0.06
+
+             Earnings
+            per broker                                                          QR(w)
+                   (w)
+
+
+           W’0 = TC1/QR0
+                           B                          C
+           w1 = TC1/QR1
+
+                           A                           D
+           w0 = TC0/QR0
+
+                                                                                     w = TC1/QR
+
+
+                                                                                     w = TC0/QR
+
+
+
+
+                                                     QR0 = QH0 QR1,           Realtors (R)
+                                                               (QH=QH0)                           14/35
+Predictions: Efect of ∆Phouses on real estate brokers
+
+
+When house prices rise...
+
+ 1. More real estate brokers enter the market
+
+ 2. Houses sold per broker falls
+
+ 3. Earnings of brokers rise less than one-for-one with house prices
+
+
+
+
+                                                                       15/35
+Brokers as % of employed adults v. average
+house prices in 1980: Cross-city scatter plot
+                                      1980
+
+
+
+
+                                                Hsieh and Moretti ’03
+Brokers as % of employed adults v. average
+house prices in 1990: Cross-city scatter plot
+                                      1990
+
+
+
+
+                                                Hsieh and Moretti ’03
+∆ Brokers as % of employed adults v.
+ ∆ average house prices, 1980–1990
+
+
+
+
+                                       Hsieh and Moretti ’03
+Predictions: Efect of ∆Phouses on real estate brokers
+
+
+When house prices rise...
+
+ 1. More real estate brokers enter the market
+
+ 2. Houses sold per broker falls
+
+ 3. Earnings of brokers rise less than one-for-one with house prices
+
+
+
+
+                                                                       19/35
+Average Time on the Market vs. Average House Prices (1990)
+
+
+
+
+                                                       Hsieh and Moretti ’03
+Productivity: ∆[Houses Sold/Broker Hours] vs. ∆ House Prices
+
+
+
+
+                                                         Hsieh and Moretti ’03
+Predictions: Efect of ∆Phouses on real estate brokers
+
+
+When house prices rise...
+
+ 1. More real estate brokers enter the market
+
+ 2. Houses sold per broker falls
+
+ 3. Earnings of brokers rise less than one-for-one with house prices
+
+
+
+
+                                                                       22/35
+Broker Incomes: ∆[Broker Relative Earnings] vs. ∆ House Prices
+
+
+
+
+                                                          Hsieh and Moretti ’03
+Regression of ln (broker hourly earnings) on ln(Phouses) 1980,
+1990, 1980-90
+        Regression of ln∆(Broker Relative Earnings)) on ∆Phouses
+
+
+
+
+                                                               Hsieh and Moretti ’03
+                                                                             24/35
+Correlations between average house prices and demographic
+attributes of real estate brokers
+
+
+
+
+                                                                  25/35
+                                                    Hsieh and Moretti ’03
+ Okay – Brokers respond to incentives.
+So, what’s the economic problem here?
+
+
+
+
+                                         26/35
+Plickers Interlude #2
+Here’s what the REALTOR organization says about Realtors
+
+
+
+“The thing about Realtors: They wear a lot of diferent hats. Sure, they’re salespeople,
+but they actually do a whole heck of a lot to earn their commission. . . They spend their
+own money on marketing your home... And they’re working for you at nearly all hours
+of the day and night—whether you need more info on a home or just someone to talk
+to in order to feel at ease with the ofer you just put in.”
+
+
+
+
+                                                                                     28/35
+Effect of house price increase: Economic accounting
+                                Definitions: TC0 = QH0×PH0×0.06, TC1 = QH0×PH1×0.06
+
+             Earnings
+            per broker                                                           QR(w)
+                   (w)
+
+
+           W’0 = TC1/QR0
+                           B                           C
+           w1 = TC1/QR1    B’                          C’
+                                                                G
+                           A                            D
+           w0 = TC0/QR0
+
+                                                                                      w = TC1/QR
+
+
+                                                                                      w = TC0/QR
+
+
+
+
+                                                            E   F
+
+                                                      QR0 = QH0 QR1,           Realtors (R)
+                                                                (QH=QH0)                           29/35
+How should broker commissions be structured?
+
+
+
+
+                                               30/35
+                                                      THE WALL SfREET JOURNAL.
+
+                            Jury Finds Realtors Conspired to Keep
+                            Commissions High, Awards Nearly $1.8
+                            Billion in Damages
+                            The verdict, which hands loss to brokerages and industry trade
+                            association, could upend the home-sale industry
+
+
+© The Wall Street           By Laura Kusisto�. Nicole Friedman� and Shannon Najmabadi �
+                            Updated Oct. 31, 2023 3:55 pm ET
+
+Journal. All rights          P l:J /JA. CJ 148                 (f) Giftunlockedarticle   {) Listen (3min)
+
+
+reserved. This content is
+excluded from our
+Creative Commons
+license. For more
+information, see
+https://ocw.mit.edu/help/
+faq-fair-use/
+© The New York Times. All rights reserved. This content is excluded from our Creative Commons license. For more information, see
+https://ocw.mit.edu/help/faq-fair-use/
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

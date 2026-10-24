@@ -1,0 +1,80 @@
+Criteria for Success
+The presentation starts with the larger motivation for the work shown.
+The research shown in the slides concretely connects to the larger motivation.
+Experiments and their results are connected to the the larger motivation.
+Each slide tells a message.
+Each slide gives no more information than is required to support the message.
+The title text stands on its own, and most other text supports the visuals.
+The audience will take away the messages that achieve the presenter’s goals.
+Structure Diagram
+Identify Your Purpose
+Know your own goals as a presenter, and structure your presentation based on your goals. This will make it easier for your audience to follow your logic and identify the most important points when providing feedback.
+For example, if your goal is to get feedback from your colleagues on an experimental strategy, focus more on the experimental methods. Compare the advantages and disadvantages to alternatives. Explain why you think your proposed experimental design will give more useful results than other experimental designs would.
+By contrast, if your goal is to communicate a new scientific result, then you should focus on the results and broader implications rather than your methodology. Avoid talking about specific methods (e.g., say “I imaged the magnetic field” rather than “I imaged the fluorescence onto an EMCCD camera”). Say how your findings impact the broader motivation.
+In less formal settings, like a lab meeting, you can explicitly tell your audience what you’re looking for (e.g., “I’d appreciate critique of my experimental methods”).
+Analyze Your Audience
+Different audiences pay attention to different things. Engineers are interested in innovations, scientists are interested in broader scientific questions, venture capitalists want to hear about the real world impact. Your presentation should speak to and excite your audience.
+That being said, you probably know the subject material in your talk better than anyone, so what feels to you like a natural starting point for your presentation could easily feel baffling to others. Your presentation should start with one point that everybody cares about and move  step by step  logically toward what you actually did and why. This may seem like a waste. However, if you spend too much time on background material, you only waste a few minutes. If you spend too little time on background, your audience might not understand your work and the   entire   talk will be a waste.
+Additionally, when speaking you should constantly tie your current slide back to what you have already talked about. The audience needs to be reminded of the step by step story your presentation has followed so far. A famous MIT mathematician writes about presentations:
+“Every lecture should state one main point and repeat it over and over, like a theme with variations. An audience is like a herd of cows, moving slowly in the direction they are being driven towards. If we make one point, we have a good chance that the audience will take the right direction; if we make several points, then the cows will scatter all over the field. The audience will lose interest and everyone will go back to the thoughts they interrupted in order to come to our lecture.” —  Gian-Carlo Rota ,  “Ten Lessons I Wish I Had Been Taught”
+Another way to help your audience understand you is to avoid jargon, keeping in mind that the same words or images can be “useful detail” to one audience but “jargon” to another.
+Skills
+Connect your work back to broader motivations and hypotheses
+At the beginning of your talk, develop the broad context for your work and then lay out the motivating questions you aim to answer. The audience should understand how the answers to those questions will impact the broader context.
+When showing data, be clear about what that data has to say about those motivating questions. What do different experimental outcomes mean for those larger questions?
+Transitions between parts of the talk should also reference the larger motivating questions. A weak transition like “After taking this data we see the following peak temperature” doesn’t help orient the audience. A stronger version might be, “We see that the peak temperature is higher than predicted. Checking simulations we see that this is indicative of a nitrogen defect.” A slower, more deliberate transition will give your audience time to process what they just saw and figure out how to connect that information with the rest of your talk.
+“Introduce” your data
+Make sure your audience will be able to understand your data   before   you show it. They should know what the axes will be, what each point in the plot represents, and what pattern or signal they’re looking for. If you’re showing a common type of plot to an audience that’s familiar with that kind of plot (e.g., a g(2) plot to grad students who work on quantum information), there’s no need to worry. But if you show the data  before  the audience knows how to read it, then they’ll stop listening to you and instead scrutinize the figure, hoping that a knitted brow will help them understand.
+Example
+A simple way to do this is to introduce a figure one part at a time. For instance, in the example below I show simulated data. Then how it is expected it to evolve. Then the actual data. By building your slide up one piece at a time it becomes more comprehensible.
+Try visually explaining unfamiliar data.   For an audience unfamiliar with reading ODMR curves, first show a slide explaining how one can infer a magnetic measurement using simulations ( left ). In this way you can clearly see the effect a change in magnetic field produces. Then show the actual data ( right ).
+Each slide should convey a single point
+Keep your message streamlined. Make a single point per slide. This gives you control over the pace and logic of the talk and keeps everyone in the audience on the same page.
+The slide’s title should be the slide’s main takeaway. In other words, the audience should be able to follow your story just by reading the slide titles. Even if you completely forget what a slide is about, you can just read the title to convey most of what you had to for that slide.
+Context in presentation
+Weak title
+Strong title
+Why?
+Background slide
+“Thermal Images”
+“Thermal Images show that electronics suffer from thermal management issues”
+It highlights the most relevant point that motivates your work.
+Data slide
+“Fluorescence Measurements”
+“Fluorescence measurements show temperatures greater than 100 degrees”
+It states the finding rather than the method.
+Conclusions slide
+“Conclusions”
+Whatever the main conclusion was
+You said “In conclusion” with your words, tone, and body language. There’s no need to repeat it.
+Strong titles tell a message.   Strong titles tend to be full sentences, since you need a full sentence to tell a message. Weak titles tend to be nouns like “Background” or “Fluorescence Measurements.”
+Here’s one way to figure out what your slide’s title should be: have a friend look at it and say, “I don’t understand what the point of this slide is.” If you find yourself saying, “Well, the thing I’m trying to convey with this slide is   X  ,” then   X   should be the slide’s title.
+If a slide makes multiple points, try one of the following:
+Remove points that don’t come up later in the talk.
+Make multiple slides, each with their own message, title, and content.
+Make parts of the slide appear and disappear to display different pieces of content that together support the title’s message.
+Emphasize visuals over text
+When you put up a new slide, most people in the audience will stop listening to you and start reading the words on the slide. People understand simple visuals much faster than walls of text. Your audience should spend their time listening to you, not trying to read off your slide. Also, if your audience is reading you no longer can focus and guide them and confusion increases.
+If you’re reading lots of words off the slide, you’ve lost the audience’s attention.
+In the best case, a slide has only one complete sentence on it: the title. It’s OK to use terse statements to support and highlight secondary conclusions that aren’t already conveyed by the title. If you have a block of text on your slide, try one of the following:
+Replace the text with a picture.
+Break up the slide’s content into multiple slides that each make one point.
+Take the text off the slide and put it into your presenter notes.
+Make each figure as simple as possible while still conveying its message
+The purpose of a figure is to convey a message using visual evidence as support. Your audience usually gives you the benefit of the doubt and assumes that whatever you show in the figure is important for them to understand. If you show detailed data, your audience will get distracted by these details and miss the forest for the trees.
+A figure that’s effective in a presentation is usually  not  the one that came straight out of Matlab or the one that you made for a paper. Unlike when you’re reading an academic paper or scrutinizing your own data, your audience doesn’t have a long time to pore over the figure. To make the figure more effective, ask yourself what minimum number of details need to be shown for the figure to make its point. Remove anything that doesn’t help prove the point. Simplify data labels, and add emphasis using colors, arrows, or labels.
+Simplify labels and add emphasis.   The figure in the publication ( left ) is a 3D rendering of the paper’s concepts. This is good for a paper, but it isn’t so good for a presentation. The figure on the right shows the same information but removes the unnecessary dimension, simplifies the experimental setup, and is easy to interpret. [Adapted from Chen, Edward H et al .,  Nano Letters  (2013) doi:10.1021/nl400346k]
+Avoid jargon, both textual and visual
+One way to help your audience understand you is to avoid jargon. Discuss the concepts in terms that anyone in the audience could understand. Names of tools might be widely familiar, but they can distract from the main point. For example, AFM (atomic force microscopy) may not be a term that everyone knows.
+Keep in mind that “jargon” doesn’t only refer to words, but can also include equations, diagrams, or even units of measurement. While these visuals may be standard in subfield, they will often need to be simplified or reworked for your audience to readily understand.
+Prepare for the talking part of the talk
+It’s tempting to spend all your time preparing for a presentation by working on the slides, but the slides are only a visual aid for the presentation. The point of a presentation is to have a presenter! Otherwise you could just make beautiful slides, print them out, and have the audience read them.
+Keep your credibility and the audience’s attention by avoiding technical and procedural problems. Make sure that you can get the projector turned on, that your computer will show the slides, that you have your favorite slide clicker, that the slides look good under this lighting, etc. Try to get to the presentation venue early that day. Figure out where you’ll stand, how to get your computer and the project synched up, and so on.
+When actually presenting, stand still, face the audience, and keep gestures to a minimum. Laser pointers are distracting and hard to use. It’s better to make the important parts of the slide stand out on their own. Never turn your back to the audience. If you have clean, simple slides, this should happen automatically. Remember: this talk is about you and your audience,  not  about the slides.
+Before presenting, prepare for the question and answer part of the talk. Figure out what questions you are likely to get and prepare yourself to answer them. Prepare backup slides that are more technical that address a specific point. When you hear a question, wait patiently until the questioner has finished speaking. Then repeat the question and take a breath before answering. This timing will allow other audience members to understand the question and will give you some time to formulate a cogent, coherent response.
+&nbsp;
+Found this helpful? Feel free to spread the word by acknowledging the Comm Lab on your presentation with our  EECS Comm Lab logo .
+Content adapted by the  MIT Electrical Engineering and Computer Science Communication Lab  from an article originally created by the  MIT Biological Engineering Communication Lab .
+Contributors
+Christopher Foy
+Chris Musco

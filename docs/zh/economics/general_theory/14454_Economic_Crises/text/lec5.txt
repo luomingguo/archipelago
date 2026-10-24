@@ -1,0 +1,1727 @@
+Bubbles and Speculation
+14.454
+
+Ricardo J. Caballero
+MIT
+
+Economic Crises
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+1 / 51
+
+References
+
+1
+
+Tirole, J., “Asset Bubbles and Overlapping Generations,” Econometrica,
+53,(6), 1499-1528, November 1985.
+
+2
+
+Allen, F. and D. Gale, “Bubbles and Crises,” Economic Journal, 110:236-255,
+2000.
+Abreu D. and M. Brunnermeier, “Bubbles and Crashes,” Econometrica,
+71:173-204, 2003.
+
+3
+
+4
+
+Harrison J.M. and D.M. Kreps, “Speculative Investor Behavior in a Stock
+Market with Heterogeneous Expectations,” QJE 92, 323-336, 1978
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+2 / 51
+
+Recent events...
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+3 / 51
+
+Introduction
+
+Historical: Dutch Tulipmania, South Sea... Great Crash of 1929
+South Sea Bubble (1710-1720)
+Isaac Newton: 04/20/1720 sold shares at £ 7,000, proﬁting £ 3,500.
+Re-entered the market later — ended up losing £ 20,000
+“I can calculate the motions of the heavenly bodies, but not the madness of
+people”
+
+Japan boom-bust (a lost decade); EMEs, Nasdaq, real estate (all around the
+developed world), commodities?
+Where do they come from? What to do about them?
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+4 / 51
+
+A "Conservation Law" of Bubbles...
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+5 / 51
+
+Main Points
+
+Two broad (and polar) views:
+There is a shortage of store of value — bubbles help ﬁxing this problem
+Agents misbehave (either an agency problem or a behavioral problem)
+
+My view: These views are more intertwined than it may seem
+The former is about macro environments where there is shortage of assets
+The latter is about the location of bubbles
+“Irrational exuberance” and agency problems are more likely to arise when the
+macro conditions for bubbles are present
+E.g., Fed ﬂooded the market with liquidity during Covid, which led to all sort of
+weird asset appreciations (even for assets created as a joke!.. Dogecoin),
+supported by amateur social media narratives
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+6 / 51
+
+Asset shortages
+
+Read Tirole’s 1982 "On the possibility of speculation under RE" (EMA).... so
+you realize that rational bubbles are not easy to get...
+However, we know from Samuelson’s (1958) consumption-loan model that
+“bubbles” (i.e. assets with positive price but no intrinsic value) can exist in
+OLG structures (inﬁnite new traders in the horizon) and that they can be
+good
+“Money” in Samuelson’s model, but not for its transaction service but to store
+value. Pareto gain from solving dynamic ineﬃ ciency (no capital wasted to
+store value).
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+7 / 51
+
+A barebones version of Samuelson’s model
+
+OLG. Individuals live for two periods, they are born with an endowment wt
+Which they save in its entirety and only consume when old (hence we can
+index the generations welfare by ct,t +1 )
+There is no population growth, but the endowment grows at a rate γ.
+wt +1
+ct,t +1
+
+= (1 + γ)wt
+= (1 + rt )wt
+
+What is the interest rate in this economy?
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+8 / 51
+
+Mother nature...
+The answer depends on which assets are available to store value.
+Samuelson ﬁrst observed that the young could not save by lending to the old
+since the latter will not be around to repay them later (ﬁnancial market
+incompleteness). The only option of the young is to trade with “mother
+nature,” i.e. to invest in physical capital.
+Let’s simplify the technology side and assume that it has constant returns:
+π. That is, one unit of savings at t produce 1 + π at t + 1 (we could have a
+more standard f (k )... but main insights would be unchanged). It follows that
+the interest rate in this economy must be:
+rt = π
+
+and utility is:
+
+R.J. Caballero (MIT)
+
+UtMN = (1 + π )wt
+
+Bubbles and Speculation
+
+Economic Crises
+
+9 / 51
+
+Social contract
+
+Is there any other solution to this model? Consider a social contract by which
+the young give the entire endowment to their parents who then consume it.
+Under this social contract the welfare of generation t is:
+UtSC = (1 + γ)wt
+If γ > π, the social contract provides a higher utility than the market!
+How is this possible? In each period, the resources that the market economy
+devotes to investment, wt , exceed the resources that it obtains from such
+activity, (1 + π )wt −1 , wasting:
+
+(γ − π )wt −1
+The social contract stops this waste, and raises welfare for all
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+10 / 51
+
+Bubbles
+
+More broadly: the market economy is overaccumulating capital to facilitate
+store of value
+Does this mean that the market economy is suboptimal? Not necessarily.
+Naturally, if γ < π the market outperforms the social contract. But even if
+γ > π, the market can reach the same allocation as the social contract,
+provided we enlarge the saving options of the young to include one
+irreproducible and useless object with price Bt such that:
+Bt +1 = (1 + rt )Bt
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+11 / 51
+
+Welfare
+
+Let x ≡ B/w . Then
+xt + 1 =
+
+( 1 + rt ) Bt
+1 + rt
+Bt +1
+=
+=
+xt
+wt +1
+(1 + γ)wt
+1+γ
+
+If x < 1, then rt = π and the bubble vanishes asymptotically
+However, if x = 1, then rt = γ and we reproduce the social contract! That
+is, not only a bubble can exist, but it is also welfare enhancing.
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+12 / 51
+
+Final remarks
+
+There are two Pareto-rankable stationary equilibria (bubble better than
+fundamental); and a continuum of non-stationary equilibria that converge to
+the fundamental equilibrium that provide intermediate welfare (note: all these
+equilibria contain bubbles, but these become small relative to the economy
+Rational bubbles arise as a result of coordination across diﬀerent
+“generations.” They complete markets, and as such they are welfare
+enhancing. There is an extensive literature that replaces intergenerational
+frictions for more standard ﬁnancial frictions — pockets of dynamic
+ineﬃ ciency and bubbles can relax ﬁnancial constraints (collateral)
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+13 / 51
+
+Final remarks
+
+Bad rap: Basic theory sounds weird:
+Investment declines when bubbles arise... no longer so in models with, e.g.,
+ﬁnancial frictions (more on this later)
+Bubbles are welfare enhancing.... Yes, but most of the concern for bubbles is
+with the cost of crashes, which can perfectly well happen here since the bubbly
+equilibrium is just one of the possible equilibria, and hence the possibility of a
+crash is latent (more on this later)
+
+Next: other, less benign, reasons for bubbles...
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+14 / 51
+
+Risk shifting
+
+Allen-Gale (2000) — Bubbles and crises
+There is a pattern:
+Phase 1: ﬁnancial liberalization or some expansionary policy fuels a bubble
+Phase 2: the bubble bursts and asset prices collapse
+Phase 3: widespread defaults by leveraged asset buyers, leading to a banking
+and/or exchange rate crisis, and a persistent recession
+
+Main ingredient (this is all we’ll discuss here): Uncertainty about payoﬀs (real
+or ﬁnancial sector) can lead to bubbles in an intermediated ﬁnancial system
+(risk shifting)
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+15 / 51
+
+Model
+
+Two dates, t = 1, 2 and a single consumption good
+Two assets:
+Safe and in variable supply at a rate r
+Risky and in ﬁxed supply. Stochastic return is R per unit, with density h (R )
+and support [0, RMAX ]
+
+The return on the safe asset is determined by marginal product of capital:
+r = f 0 (x ) where x are units of the consumption good (standard assumptions
+on f )
+Non-pecuniary convex cost of investing in risky assets c (x ) (to restrict
+portfolio sizes )
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+16 / 51
+
+Model
+There is a continuum of small, risk neutral investors; idem for banks
+Investors have no wealth while banks have a ﬁxed amount B (which they
+supply inelastically). Only investors know how to invest, so banks’only
+choice is to lend to investors
+Banks and investors are restricted to use simple debt contracts
+Since investors can borrow as much as they want at the going rate, in
+equilibrium the contracted rate on loans must be equal to the riskless interest
+rate
+Symmetric eq. All investors are identical ex-post. Xs and XR are the
+representative investor’s holdings of the safe and risky assets
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+17 / 51
+
+Risk shifting
+Because banks use debt contracts and cannot observe investment decisions
+by borrowers, the latter do not bear the full cost of investment if the outcome
+is bad, while they get the beneﬁt if the outcome is good
+If representative investor buys Xs and XR , it borrows Xs + PXR (where P is
+rel. price of risky asset) and the repayment (if not bankrupt) is r (Xs + PXR )
+The liquidation value of the portfolio is rXs + RXR , so the payoﬀ for the
+investor is:
+max{(R − rP )XR , 0}
+and the decision problem is:
+max XR
+
+X R ≥0
+
+R.J. Caballero (MIT)
+
+Z R MAX
+
+R ∗ =rP
+
+(R − rP )h(R )dR − c (XR )
+
+Bubbles and Speculation
+
+Economic Crises
+
+18 / 51
+
+Equilibrium
+Market clearing conditions:
+XR
+XS + P
+r
+
+= 1
+= B
+= f 0 (XS ),
+
+the focs evaluated at the equilibrium are:
+RZMAX
+
+R ∗ =rP
+
+(R − rP )h(R )dR = c 0 (1)
+r = f 0 (B − P )
+
+from which we can solve for (r , P )
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+19 / 51
+
+P
+We can re-write the foc to get P:
+
+P
+
+=
+=
+
+R MAX
+R
+
+Rh (R )dR − c 0 (1)
+1 R ∗ =rP
+r
+Pr[R ≥ R ∗ ]
+
+
+1
+c 0 (1)
+∗
+E [R |R ≥ R ] −
+r
+Pr[R ≥ R ∗ ]
+
+Deﬁne the fundamental as the price an agent would be willing to pay in the
+absence of risk shifting, then:
+Pf =
+
+
+1�
+E [R ] − c 0 (1)
+r
+
+It is easy to show that, as long as Pr[R ≤ R ∗ ] > 0,
+P > Pf
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+20 / 51
+
+Proof
+
+rP Pr[R
+
+RZMAX
+
+∗
+
+≥ R ]=
+= rP f −
+
+R ∗ =rP
+∗
+ZR
+
+Rh (R )dR − c 0 (1)
+
+Rh (R )dR
+
+0
+
+> rP f − (rP )(1 − Pr[R ≥ R ∗ ])
+⇒
+rP > rP f
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+21 / 51
+
+Mean-Preserving Spread in h(R)
+
+Consider the case where the tails gain mass (and all the reallocation of the
+mass is within each region around R ∗ ). Then from the ﬁrst order condition:
+RZMAX
+
+R ∗ =rP
+
+(R − rP )h(R )dR = c 0 (1)
+
+we have that rP must rise (since otherwise LHS>RHS). And from:
+r = f 0 (B − P )
+we have that r and P move in the same direction, so P rises, while P f drops
+(since r rises), so the “bubble” increases (more risk shifting)
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+22 / 51
+
+Final remarks
+
+Due to risk shifting, P is higher than fundamental (bubble)
+The counterpart of the bubble is the bank losses... massive default if return
+below R ∗
+The “bubble” increases with risk itself, and so does the probability of a crisis
+(mean preserving spread)
+In a sense it is not a GE bubble, as the price of banks should go down... but it
+may well be that households are stuck... which takes us back to the standard
+model of RE bubbles in macro that highlights the shortage of assets..
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+23 / 51
+
+Information/“Behavioral”
+One example: Abreu and Brunnermeir
+Behavioral biases lead to bubbles (they take this as given)
+Assuming that rational arbitrageurs understand that the market will
+eventually collapse, will they still ride the bubble?
+Delayed arbitrage model (riding the bubble for a while may be optimal)
+A model of market timing
+Dispersion in exit strategies makes the bubble possible (“bad news travel
+slowly”)
+At some random time t0 price surpasses the fundamental value. Thereafter,
+rational arbitrageurs become sequentially aware that the price has departed
+from fundamentals. They don’t know whether they are early or late relative to
+others
+Bubble bursts when a suﬃ cient mass of arbitrageurs have sold out
+(coordination)
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+24 / 51
+
+The Setup
+In “Bubbles and Crashes,” they discuss an “irrational exuberance” episode
+where after same random date t0 the price continues to rise at some rate
+g > r , while the fundamental only rises at r
+The main economic forces in their EMA paper are also found in their simpler,
+JFE, paper: “Synchronization Risk and Delayed Arbitrage” (we will develop
+this one)
+There is a single risky asset with price pt and fundamental vt . Prior to the
+arrival of a shock at a random time t0 , the fundamental value is e rt and
+after that (1 + β̃)e rt , with β̃ taking values β and − β with equal prob., and
+F ( t0 ) = 1 − e − λ t 0
+Prior to the shock at t0 , pt = vt . After t0 the price deviates from
+fundamentals until full arbitrage takes place (the crash if − β, which we
+assume henceforth)
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+25 / 51
+
+The Setup
+
+There are two types of agents: rational arbitrageurs and behavioral traders
+The only role of the latter agents is to support the mispricing and maintain
+the price at pt = e rt as long as the selling pressure by rational arbitrageurs
+lies below a threshold κ (.)
+The focus of the paper is on the former agents. Arbitrageurs are ex-ante
+identical but receive information about the deviation sequentially (uniformly)
+between t0 and t0 + η
+An individual arbitrageur who learns about the change in fundamental at ti
+(denoted by t̂i ) thinks that t0 is distributed between ti and ti − η
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+26 / 51
+
+The Setup
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+27 / 51
+
+The Setup
+
+Arbitrageurs are risk neutral but the maximum short position is xi = −1.
+The “normal/neutral” position is xi = 0. Departing from this benchmark
+generates (“large”) holding costs of cpt |xi |
+The price correction occurs as soon as the aggregate order imbalance of all
+arbitrageurs exceeds κ (t − t0 ), with (reduced form from behavioral agents)
+κ (t − t0 ) = κ 0 [1 − (1/τ̄ )(t − t0 )]
+Motivation: The longer the mispricing persists, the smaller is the mass of
+behavioral traders that remain conﬁdent that the “price is right”
+Since there are no price changes, arbitrageurs cannot infer t0 from them
+while pressure is below κ (.)
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+28 / 51
+
+Market Timing and Delayed Arbitrage
+Arbitrageur t̂i speciﬁes a trading strategy as function of τ i = t − ti . A-B
+focus on trigger strategies such that the arbitrageur sets xi = 0 until a date
+ti + τ i∗ and xi = −1 after that (until the correction takes place)
+An arbitrageur that trades just before the correction achieves the highest
+payoﬀ. By postponing the trade she reduces holding costs but risks missing
+the arbitrage opportunity (Keynes: “beat the gun” terminology)
+Let h (t | t̂i ) be arbitrageur t̂i ’s perceived hazard rate that the price correction
+occurs in the next instant t. Thus, her estimate of a correction in the next
+(small) time interval Δ is h (t | t̂i )Δ, while the holding cost is cpt Δ
+The arbitrageur will trade if the expected beneﬁt βpt h (t | t̂i )Δ exceeds the
+expected cost of holding a short position (1 − h (t | t̂i )Δ)cpt Δ
+Of course the hazard rate depends on other arbitrageurs’trading strategies.
+A-B restrict attention to symmetric trigger strategy equilibria
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+29 / 51
+
+Abreu-Brunnermeier: Market Timing and Delayed
+Arbitrage
+
+If all arbitrageurs trade with a delay τ 0 , then the price correction occurs at
+t0 + ϕ(τ 0 ), where the latter is deﬁned implicitly from
+ϕ(τ 0 ) − τ 0
+= κ ( ϕ(τ 0 ))
+η
+
+Using the linear expression for κ (.), we have
+ϕ(τ 0 ) = τ̄
+
+R.J. Caballero (MIT)
+
+τ 0 + ηκ 0
+τ̄ + ηκ 0
+
+Bubbles and Speculation
+
+Economic Crises
+
+30 / 51
+
+Market Timing and Delayed Arbitrage
+
+Arbitrageur t̂i knows that, in equilibrium, the price correction will occur no
+later than ti + ϕ(τ 0 ) but after ti + ϕ(τ 0 ) − η
+Given the prior distribution on t0 , the latter observation yields a simple
+posterior:
+(
+0
+for t < ti + ϕ(τ 0 ) − η
+h (t |t̂i ) =
+λ
+for t ≥ ti + ϕ(τ 0 ) − η
+1 −exp {−λ(t + ϕ(τ 0 )−t ))}
+i
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+31 / 51
+
+Market Timing and Delayed Arbitrage
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+32 / 51
+
+Final Remarks
+Arbitrage is delayed. This is possible because mispricing is never common
+knowledge, which preserves the disagreement about the timing of price
+corrections
+The arbitrageur who becomes immediately aware of the mispricing at t0 knows
+that at t0 + η everyone knows about the mispricing. However, the trader who
+only becomes aware at t0 + η thinks that he might be the ﬁrst to hear of it
+and he does not know that all traders already know it. Hence, even if
+everybody knows of the mispricing at t0 + η, only the ﬁrst trader knows that
+everybody knows
+At t0 + 2η, even the last trader knows that everybody knows, but he does not
+know that everybody knows that everybody knows of the mispricing, and so on
+
+The main distinction with noise-traders is that most of the action comes from
+the rational traders. It is the uncertainty about the behavior of other rational
+traders that leads to delayed arbitrage (synchronization risk).
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+33 / 51
+
+Behavioral — Belief disagreements and overvaluation
+
+Two steps:
+Static: Belief disagreement and overvaluation
+Dynamic: Speculative bubbles (resale option value)
+
+Based on Alp’s notes on:
+Miller (1977)
+Harrison-Kreps (1978)
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+34 / 51
+
+Basic two period environment
+
+Consider a model with two periods, t ∈ {0, 1} single good (dollar)
+Traders have endowments at date 0, consume at date 1.
+Resources invested in two ways:
+Safe asset (storage): 1 dollar gives 1 + r dollars at t = 1.
+Risky asset: Supplied inelastically.
+Normalized supply of 1 unit (by other agents that sell).
+�
+
+Yields s dollars, where s is distributed N µtrue , σ2 .
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+35 / 51
+
+Benchmark with common beliefs
+
+First consider mass 1 of identical traders
+�
+
+Optimism: Traders believe s ∼ N µ, σ2 , where:
+µ > µtrue .
+
+They each have n dollars (suﬃ ciently large)
+They have CARA preferences, so mean-variance optimization:
+1
+max n (1 + r ) + x (µ − p (1 + r )) − θx 2 σ2 .
+x |
+{z
+} 2
+expected wealth at date 1
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+36 / 51
+
+Benchmark with common beliefs
+
+Traders’demand for the asset is given by:
+x=
+
+µ − p (1 + r )
+.
+θσ2
+
+The equilibrium requires, x = 1, which implies:
+µ − θσ2
+p=
+1+r
+|
+{z
+}
+
+>
+
+p true =
+
+market price
+
+µtrue − θσ2
+.
+1+r
+|
+{z
+}
+rational price
+
+Average optimism generates overvaluation.
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+37 / 51
+
+Benchmark with heterogeneous beliefs
+
+Suppose there are two groups, j ∈ {0, 1}
+Optimists, j = 0, and pessimists, j = 1, with mass 1/2 each
+�
+
+They have beliefs N µj , σ2 , where
+
+µ0 = µtrue + Δ and µ1 = µtrue − Δ.
+
+Note that we shut down average optimism
+As before, mean-variance preferences with θ
+What is the equilibrium price in this case?
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+38 / 51
+
+Benchmark with heterogeneous beliefs
+
+Traders’demand is given by:
+xj =
+
+µj − p (1 + r )
+.
+θσ2
+
+Aggregate demand is:
+
+µtrue − p (1 + r )
+.
+θσ2
+The equilibrium price is the rational price:
+x=
+
+p=
+
+µtrue − θσ2
+.
+1+r
+
+Heterogeneity, by itself, doesn’t generate overvaluation.
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+39 / 51
+
+Heterogeneity and short-selling constraints
+
+Suppose Δ > θσ2 so that
+µtrue − θσ2 > µ0 = µtrue − Δ
+What are the positions of optimists and pessimists?
+
+�
+
+Recall that: x 1 = µ1 − p (1 + r ) /θσ2 and p (1 + r ) = µtrue − θσ2
+x1 =
+
+θσ2 − Δ
+<0
+θσ2
+
+What if pessimists cannot short sell the asset?
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+40 / 51
+
+Heterogeneity and short-selling constraints
+
+With short selling constraints, demand is given by:
+µj − p (1 + r )
+x = max 0,
+θσ2
+j
+
+!
+
+.
+
+In equilibrium, pessimists constrained and out of the market:
+x 1 = 0.
+All of the supply is purchased by optimists
+What is the equilibrium price in this case?
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+41 / 51
+
+Equilibrium with short-selling constraints
+Market clearing requires, x 0 /2 = 1, which implies
+p
+
+=
+=
+=
+
+µ0 − 2θσ2
+1+r
+µtrue + Δ − 2θσ2
+1+r
+µtrue − θσ2 + (Δ − θσ2 )
+> p true .
+1+r
+
+Miller (1977): Heterogeneity + shorting restrictions =⇒ overvaluation
+Natural assumptions (for some markets)
+Policy: Restrictions on shortselling during crises.... (e.g., Naked CDS during
+European crisis)
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+42 / 51
+
+Harrison and Kreps (1978): Speculative bubbles
+
+Harrison-Kreps (1978): Miller mechanism in dynamic setting
+Heterogeneity and shorting restrictions as before
+In addition, identity of optimists changes over time
+Speculation: Optimists buy to sell to future optimists
+Price exceeds the pdv of even the most optimistic investor
+Known as a resale option value or a speculative bubble.
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+43 / 51
+
+Consider dynamic version of earlier model
+
+Consider the earlier model with more dates, t ∈ {0, 1, ..}
+There is new generation of traders at every date, t ∈ {0, 1, ..}
+At each date t, new traders (of mass 1) enter the market
+They have large endowments n, and preferences:
+∞
+
+∑
+
+t̃ =t
+
+
+
+t̃ −t
+1
+ct̃ .
+1+r
+
+For simplicity, they are risk-neutral, i.e., θ = 0.
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+44 / 51
+
+Heterogeneous beliefs about the risky asset
+As before, single risky asset in ﬁxed supply of 1 unit.
+As before, the asset cannot be short sold.
+(Log) dividends follow random walk:
+at +1 = at st +1 .
+Suppose a0 = 1 and st +1 ∼ F true with mean µtrue = 1.
+
+Within generation t, optimists, j = 0, and pessimists, j = 1.
+Beliefs about next shock, st +1 , given by F j with mean:
+µ0 = 1 + Δ and µ1 = 1 − Δ.
+
+But beliefs for {sn +k }k∞=2 are identical and given by F true .
+Optimism about only next shock. “This time is diﬀerent.”
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+45 / 51
+
+Heterogeneous buy-and-hold valuations
+
+Each trader believes (on average) at will move to at µj , and then randomly
+ﬂuctuate around that new level
+Buy-and-hold valuations for each generation t trader:
+v 0,hold ≡
+
+at (1 + Δ)
+at (1 − Δ)
+and v 1,hold ≡
+.
+r
+r
+
+Is the equilibrium price the same as one of these?
+If yes, which one? If not, how do we ﬁnd the equilibrium?
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+46 / 51
+
+Capital gains increase price beyond buy-and-hold
+Price is not the same as v 0,hold due to possibility of capital gains
+Under our assumptions future optimists that will enter at date t + 1 will be
+more optimistic than current optimists will be at t + 1
+Current optimists can, and will, sell the asset to future optimists
+So optimists’valuation (and thus, the equilibrium price) satisﬁes:
+⎛
+⎞
+pt =
+
+1 ⎜ 0
+⎟
+0
+⎝ Et [at +1 ] + Et [pt +1 ] ⎠ .
+| {z }
+1+r
+| {z }
+dividend gains
+
+capital gains
+
+Capital gains likely to be important. How do we ﬁnd them?
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+47 / 51
+
+Resale option value
+
+In this model, the current dividend, a, is a suﬃ cient statistic
+Let’s conjecture a recursive equilibrium with price p (a)
+At each date, the asset is priced by optimists at that date
+Recursive pricing equation:
+p (a )
+
+=
+=
+=
+
+R.J. Caballero (MIT)
+
+
+
+Z
+1
+a (1 + Δ ) +
+p (as ) dF 1
+1+r
+S
+
+
+Z
+1
+a (1 + Δ) + p (a) sdF 1
+1+r
+S
+1
+(a (1 + Δ) + p (a)(1 + Δ))
+1+r
+
+Bubbles and Speculation
+
+Economic Crises
+
+48 / 51
+
+Equilibrium features a resale option value
+
+To imply:
+p (a ) =
+
+a (1 + Δ )
+a (1 + Δ )
+.
+> v 0,hold =
+r
+r −Δ
+
+The diﬀerence captures the resale option value
+Could be quite large, e.g., if r is low and Δ is high
+Higher price level than buy-and-hold valuation of all current traders!
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+49 / 51
+
+Taking Stock
+
+There is a variety of mechanisms that can lead to asset overvaluations
+These overvaluations may have macroeconomic consequences through wealth
+eﬀects and credit expansion (e.g. by relaxing collateral constraints). This is
+our next topic.
+For the same reason, their crashes can have dire macroeconomic
+consequences (more on this later in the course)
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+50 / 51
+
+Appendix: Bubble Episodes (Brunnermeir - Schnabel)
+
+R.J. Caballero (MIT)
+
+Bubbles and Speculation
+
+Economic Crises
+
+51 / 51
+
+Speculative Growth and the AI “Bubble”
+Ricardo J. Caballero
+MIT and NBER
+
+Spring 2026
+
+Speculative growth: Caballero, Farhi & Hammour (2006)
+Motivation. US 1990s: Investment and output boomed; yet long-run real rates fell ≈ 200bp, explaining
+> 50% of the equity rise.
+Puzzle: How can expectations of a low long-run cost of capital be consistent with the high funding demand
+of a high-investment equilibrium?
+
+Central ingredient: the growth-funding feedback.
+Along the expansion path, the supply of e˙ective funding rises endogenously, more than o˙setting
+higher demand — lowering the cost of capital and validating high valuations ex ante.
+
+Two of the funding channels that seemed relevant for the US in the 1990s:
+I Procyclical fscal surpluses (surplus illusion)
+I Capital fows as relative foreign opportunities declined (US exceptionalism)
+
+CFH: the capital gains mechanism
+
+Model: Diamond (1965) OLG + adjustment costs
++ funding function s(k, r ) with a jump Δ at k o
+Multiple SS when feedback Δ is large enough:
+I k n : normal — low k, high r , low valuations
+I k s : speculative — high k, low r , high valuations
+
+The speculative-growth path
+From (k n , q = 1), coordinated optimism triggers q ↑. Economy rides the saddle path of
+k s with q > 1 throughout. High q sustains
+investment; funding feedback delivers low r ,
+validating the initial jump.
+
+Without adj. costs: multiple SS but unique equilibrium. The adj. cost creates capital gains, decoupling the return from the MPK.
+Intermediate adj. costs required (Prop. 2):
+Too small ⇒ q ≈ 1, no capital gains
+Too large ⇒ transition too costly
+
+I The crash is self-fulflling: pessimism returns to k n with no commensurate fundamental shock
+I Vs. Tirole (1985): investment and valuations comove positively — unlike standard rational bubbles
+
+Today’s debate: bubble or fundamentals?
+
+The investment boom is real
+I Big Four hyperscalers: > $600B capex committed for 2026 alone, up 62% YoY
+I Tech equipment & software near 4.4% of GDP
+— matching dot-com peak
+I AI stocks: dominant driver of S&P 500 returns
+since ChatGPT
+
+Fragility is in the air
+I CAPE ≈ 40: only the second time above this
+threshold in 155 years
+I The Nvidia Paradox: record earnings beat —
+stock fell 5%
+I Big tech issued $100B in bonds in early 2026;
+investors demanded record CDS protection
+
+This paper: the “bubble vs. fundamentals” framing is too rigid. Elevated valuations can be
+rational and fragile at the same time.
+
+The thesis
+AI technology can generate speculative-growth equilibria: elevated valuations support rapid
+capital accumulation and sustain a transition toward a high-capital steady state.
+Two AI-specifc features drive this:
+I AI capital performs labor tasks ⇒ expands e˙ective labor, fattens MPK
+I Gains accrue to capitalists whose saving rises with wealth ⇒ funding feedback, R ↓
+
+These equilibria are rational but fragile: they persist only as long as beliefs remain coordinated.
+A loss of confdence can precipitate a self-fulflling crash and reversal.
+
+A possibility argument: a coherent mechanism for the joint behavior of valuations, investment, wealth
+distribution, and interest rates — not a claim that current AI markets fully satisfy rational expectations.
+
+Roadmap
+
+1.
+
+Motivation
+
+CFH + AI context
+
+Speculative-growth mechanism; AI as a natural new application
+
+2.
+
+Model
+
+how AI generates the feedback
+
+Production (fat MPK), distribution (saving feedback), asset pricing
+
+3.
+
+The speculative-growth path
+
+equilibrium and dynamics
+
+Multiple steady states, high-q transition, time paths, crash
+
+4.
+
+Comparative statics
+
+Higher γ, fscal defcits, creative destruction
+
+what can derail it?
+
+This paper: AI provides the feedback naturally
+
+AI is a single primitive that can generate both the real-side and funding-side pieces of
+speculative growth.
+
+1. Production side
+
+2. Distribution side
+
+3. Adjustment costs
+
+AI substitutes for labor tasks. Effective labor expands with K , creating a fat MPK region.
+⇒ easier multiple steady states
+
+AI displaces labor income.
+Wealth shifts toward high and
+increasing-saving capitalists.
+⇒ saving ↑, R ↓
+
+Expensive investments and natural barriers to entry, but still
+plenty of investment.
+⇒ elevated q bridges transition
+
+Result: high valuations can be rational but fragile.
+
+Labor-like AI creates a fat MPK region
+
+rK
+Y = AKcα N 1−α ;
+
+Production:
+K = Kc + K`
+¯ ` } (e.g., Restrepo (2025))
+N = 1 + γ min{K` , K
+Region I (K < KAI ): no AI, K` = 0
+
+K
+rfat
+= αAb 1−α
+
+r K = αAK α−1
+No
+AI
+
+Region II (KAI ≤ K < Ksat ): interior FOC
+α
+Kc
+
+=
+
+(1−α)γ
+N
+
+⇒ r K = αAb 1−α ;
+
+b≡
+
+(1−α)γ
+α
+
+¯`
+Region III (K ≥ Ksat ): AI saturated, K` = K
+r K = αA(K − K̄` )α−1 (1 + γK̄` )1−α
+
+Flat
+MPK
+
+KAI
+
+AI
+sat.
+
+Ksat
+
+K
+
+In Region II: K` ↑ keeps Kc /N = 1/b constant ⇒ no diminishing returns
+
+Model: households and asset pricing
+Workers: hand-to-mouth, cw = w
+Capitalists:
+Z ∞
+max
+e −ρt [ln ct + λWt ] dt
+0
+
+⇒
+
+Capital: K̇ /K = ψ ln q − δ
+Asset pricing:
+K
+q̇
+− δ + r q(K )
+q
+
+| {z }
+
+cap. gain
+
+c = κW φ ,
+
+0<φ<1
+
+Key: saving rate rises with wealth (e.g., Straub
+2019)
+
+Euler equation:
+
+=R
+
+| {z }
+
+div. yield
+
+ċ
+= R − ρ + λc
+c
+
+Equilibrium rate:
+
+�
+φ R − κW φ−1 = R − ρ + λκW φ
+φ−1
+
+R(W ) = ρ−φκW 1−φ−λκW
+
+Funding feedback:
+
+φ
+
+K ↑ ⇒ W = qK ↑ ⇒ saving↑ ⇒ R ↓ ⇒ asset prices supported.
+
+A fat MPK region facilitates three steady states
+
+Steady-state condition:
+KL
+
+r K (K ) = [R ss (q̄K ) + δ]q̄,
+
+r K (K )
+[R ss +δ]q̄
+H
+
+KM
+
+I Left: “down-fat-down” r K
+I Right: strictly decreasing in K
+Multiplicity condition (necessary):
+
+K
+
+KAI
+
+Ksat
+
+ρ
+R ss (W ) = 1+λW
+
+K
+
+K
+[R ss (q̄KAI ) + δ]q̄ > rfat
+> [R ss (q̄Ksat ) + δ]q̄
+
+I q = q̄ at both stable SS, but market cap: q̄K H 
+q̄K L
+→ Appendix: stability
+
+Multiplicity needs a high-q transition path
+
+The stable manifold Wψs of (K H , q̄) must reach back to K L at elevated but plausible q.
+
+Too high adj. costs
+
+Too low adj. costs
+
+Intermediate adj. costs
+
+ψ too small
+
+ψ too large
+
+ψ ∈ (ψmin , ψmax )
+
+Weak response to q.
+Required q becomes too high.
+
+Capital adjusts too easily.
+Capital gains are too small.
+
+Capital gains sustain q > q̄.
+Accumulation remains gradual.
+
+No feasible reach-back.
+
+No q > q̄ bridge.
+
+Reach-back is feasible.
+
+Proposition 1. Reach-back requires intermediate adjustment costs: ψ ∈ (ψmin , ψmax ).
+Transverse reach-back at ψ ∗ persists locally.
+
+Formal analysis
+
+The speculative-growth path
+
+From (K L , q̄) to (K H , q̄)
+1. Optimism coordinates beliefs
+2. q jumps to q0 > q̄
+3. Investment booms
+4. AI deploys as K crosses KAI
+5. Wealth concentration lowers
+R
+
+High q is the mechanism,
+not a symptom: it makes the
+transition feasible.
+
+Rates can be high early and low later
+The same AI transition can generate high rates early and low rates later.
+
+Early phase
+
+Late phase
+
+Investment demand is strong.
+Consumption growth is high.
+
+Flat MPK raises wealth sharply.
+Saving rises with wealth.
+
+Implication: R can remain elevated.
+
+Implication: R falls sharply.
+
+Interpretation. An AI boom can coexist with high rates initially, even if the long-run implication is a lower
+funding rate.
+
+Interestingly, Andrews–Farboodi (2025) fnd empirically that positive news about AI progress lowers mediumrun interest rates — suggestive of the same pattern.
+
+Time paths along the speculative-growth trajectory
+
+Rt : high early; falls in Region II.
+Labor share:
+presses.
+
+fat, then com-
+
+Wages: stall in Region II; resume
+in Region III.
+Investment: jump, hump, mean reversion.
+
+The crash is belief-driven
+
+At (Kt , qt ) with qt > q̄, confdence weakens.
+q drops discretely to the low-K
+manifold.
+Investment collapses; capital decumulates; the economy returns
+to (K L , q̄).
+
+Self-fulflling: beliefs ↓ ⇒ q ↓
+⇒ beliefs are validated.
+No fundamental shock is required.
+
+Not a bubble — but fragile
+
+Not a bubble
+I Valuations consistent with fundamentals
+I Growth and wealth can ultimately validate
+them
+I q = q̄ at both stable SS
+I High q is the mechanism, not a symptom
+
+Fragile
+I Validation requires sustained confdence
+throughout a lengthy transition
+I A belief-driven drop in q can abort at any
+point
+I Crash requires no fundamental shock
+
+Key insight: A rational equilibrium can sustain the narratives that keep it alive.
+
+Discussion: higher γ can remove multiplicity
+
+As γ ↑: fat MPK rises ⇒ the low equilibrium disappears
+If γ keeps rising
+K
+eventually clears [R ss + δ]q̄ everyrfat
+where.
+K L and K M vanish; only K H survives.
+Speculative character disappears.
+
+If γ disappoints
+The fat MPK stays low. The high-K
+equilibrium may cease to exist.
+The boom unravels and the speculative
+path is abandoned.
+
+What can derail it?
+
+[R ss + δ]q̄ shifts up ⇒ the high equilibrium may disappear
+Large fscal defcits
+Wars, geopolitical shocks, or political redistribution compete for the saving that
+sustains low R at K H .
+E˙ect: [R ss + δ]q̄ shifts up.
+
+Too much creative destruction
+Obsolescence acts like an increase in δ.
+E˙ect: the high-K equilibrium may disappear.
+
+Conclusion
+
+1. Flat MPK
+
+2. Funding feedback
+
+3. Capital gains
+
+Labor-like AI forestalls diminishing returns and opens the
+door to multiple steady states.
+
+AI redistribution raises saving;
+wealth rises and R falls along
+the transition.
+
+Intermediate adjustment costs
+let elevated q fnance the path
+toward high K .
+
+Main implication: the boom can be rational yet fragile. Interest rates may be high early, fall
+sharply later, and reversals can be self-fulflling.
+
+A possibility argument, not a claim that current AI valuations satisfy rational expectations.
+
+Appendix
+
+Appendix: local stability
+
+Linearize around (K ∗ , q̄) with K predetermined, q a jump variable:
+∗
+
+J12 = ψKq̄ > 0,
+tr(J) = J22 > 0;
+
+J21 = −(r K )0 (K ∗ ) + q¯2 R 0 (W ∗ ),
+
+J22 = R ss + δ + ¯
+qR 0 (W ∗ )K ∗
+
+det(J) = −J12 · J21
+
+I At K L , K H : (r K )0 < 0 ⇒ det(J) < 0. Saddle points (stable).
+I At K M : (r K )0 = 0 (fat) ⇒ det(J) > 0, tr > 0. Unstable node.
+I Saddle + one predetermined variable ⇒ unique convergent path (saddle-path stability).
+
+Appendix: formal analysis of intermediate ψ
+
+Defnition. Wψs reaches back at elevated-plausible valuations if Wψs ∩ {K = K L , q ∈ [(1 +
+η)q̄, ¯
+Q]} 6= ∅.
+¯ Reach-back impossible.
+Lemma 1. ψ ≤ δ/ ln Q̄ ⇒ q̄ ≥ Q.
+Lemma 2. For ψ ≥ ψmax ≡ 2M(Q̄ ) ln(K H /K L )/[η ln(1 + η/2)], K reaches K H before q falls to q̄:
+overshoot contradiction. Reach-back impossible.
+Proposition 1. Reach-back requires ψ ∈ (ψmin , ψmax ). Transverse intersection at ψ ∗ persists locally
+(Stable Manifold Theorem + IFT).
+
+Appendix: numerical example
+
+Parameter
+A
+α
+γ
+K̄`
+ρ
+λ
+δ
+ψ
+
+TFP
+Capital share
+AI labor equiv.
+AI capacity
+Discount rate
+Wealth in utility
+Depreciation
+Inv. adjustment
+
+Value
+
+KAI = 0.266;
+1.017
+
+Ksat = 0.641;
+
+0.0729
+0.33
+1.85
+0.25
+0.08
+20
+0.05
+3.0
+
+K L = 0.224;
+
+K M = 0.384;
+
+K
+rfat
+≈ 0.058;
+
+K H = 0.790
+
+Multiplicity condition:
+0
+062}
+| .{z
+
+[R ss (KAI )+δ]q̄
+
+> 0
+058} >
+| .{z
+K
+rfat
+
+0
+056}
+| .{z
+
+[R ss (Ksat )+δ]q̄
+
+X
+
+q̄ ≈
+
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+14.454 Economic Crises
+Spring 2026
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+
+

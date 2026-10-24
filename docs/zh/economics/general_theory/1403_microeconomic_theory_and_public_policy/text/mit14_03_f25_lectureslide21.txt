@@ -1,0 +1,753 @@
+Revised November 30, 2025
+
+
+
+
+14.03/003 Microeconomic Theory & Public Policy Fall 2025
+
+
+Lecture Slides 21. Gender norms, market signaling, and ‘acting
+wife’
+
+David Autor (Prof), MIT Economics and NBER
+           VOL. 2 NO. 3                   BERTRAND ET AL.: DYNAMICS OF THE GENDER GAP                              237
+Men and women from top MBA programs have diferent careers
+                    1,202,604
+                                                                                           Male 90th percentile
+
+                     822,509
+
+
+
+
+                                                                       Female 90th percentile
+                     442,413
+                                                                                       Male mean
+
+                     302,584
+                                                                                            Female mean
+
+
+                                                                                       Male median
+
+                     162,755
+                                                                                    Female median
+
+                     111,314
+
+
+
+                                0     1     2    3     4    5     6    7     8     9      10    11   12    13
+                                                        Years since MBA
+
+                    Figure 1. Male and Female Mean, Median, and Ninetieth Percentile Annual Salaries
+                                            (2006 Dollars) by Years since MBA
+                                                                                                                 Bertrand, Goldin, Katz 2010
+           Notes: Web Appendix Table A5 contains the data points for a selected group of years since MBA. Nominal earn-                        1/26
+           ings in each year are converted into real earnings in 2006 dollars using the Consumer Price Index for All Urban
+           Consumers (CPI-U). The vertical axis uses a natural logarithm (ln) scale.
+          234      AMERICAN ECONOMIC JOURNAL: APPLIED ECONOMICS
+Men and women from top   MBA programs have diferent JULY          2010
+                                                                careers
+                        Table 1—Labor Supply by Gender and Number of Years since MBA Graduation:
+                                                  Descriptive Statistics
+
+                                                             Number of years since MBA graduation
+
+                                           0             1              3             6              9            ≥ 10
+            Share not working at all in current year
+              Female                      0.054        0.012          0.027          0.067         0.129          0.166
+              Male                        0.028        0.005          0.003          0.008         0.011          0.010
+            Share working full time/full-year (52 weeks and > 30 to 40 hours per week)
+              Female                      NA           0.89          0.84           0.78           0.69           0.62
+              Male                        NA           0.93          0.94           0.93           0.93           0.92
+            Cumulative share with any no work spell (until given year)
+              Female                    0.064          0.088           0.143         0.229         0.319          0.405
+              Male                      0.032          0.040           0.064         0.081         0.095          0.101
+            Cumulative years not working
+              Female                    0              0.050           0.118         0.282         0.569          1.052
+              Male                      0              0.026           0.045         0.069         0.098          0.120
+            Mean weekly hours worked for the employed
+              Female                    59.1           58.8            56.2          54.7           51.5          49.3
+              Male                      60.9           60.7            59.5          57.9           57.5          56.7
+            Share working part time (≤ 30 to 40 hours per week)
+              Female                    0.04           0.05           0.07           0.09          0.15           0.22
+              Male                      0.02           0.02           0.02           0.03          0.03           0.04
+            Share working fewer than 52 weeks
+              Female                     NA            0.07           0.07           0.09          0.06           0.06
+              Male                       NA            0.05           0.04           0.03          0.03           0.03
+                                                                                                                                              2/26
+                                                                                                                Bertrand,
+            Note: Individuals who do not work at all in a given year are excluded from those “working part time” and      Goldin, Katz 2010
+                                                                                                                     “working
+            fewer than 52 weeks” and are included as zeros in the definition of “working full time/full year.”
+    242                  AMERICAN ECONOMIC JOURNAL: APPLIED ECONOMICS                               JULY 2010
+A key proximate reason for gender-earnings gap: Career interruption
+                             Table 4—Gender Wage Gap by Years since MBA
+
+                                               Number of years since MBA receipt
+
+                            0             1             3             6               9              ≥ 10
+    1. With no           − 0.089       − 0.154       − 0.253       − 0.308         − 0.376         − 0.565
+       controls           [0.020]***    [0.025]***    [0.038]***    [0.056]***      [0.079]***      [0.045]***
+    With controls:
+    2. Pre-MBA           − 0.080       − 0.136       − 0.204       − 0.248         − 0.320         − 0.479
+       characteristics    [0.021]***    [0.026]***    [0.039]***    [0.057]***      [0.084]***      [0.045]***
+    3. Add MBA           − 0.054       − 0.103       − 0.154       − 0.180         − 0.257         − 0.446
+       performance        [0.021]***    [0.025]***    [0.037]***    [0.055]***      [0.082]***      [0.044]***
+    4. Add labor         − 0.053       − 0.093       − 0.134       − 0.143         − 0.181         − 0.312
+       market exp.        [0.021]**     [0.025]***    [0.037]***    [0.055]***      [0.082]**       [0.044]***
+    5. Add weekly        − 0.036       − 0.073       − 0.073       − 0.079         − 0.047         − 0.098
+       hours worked       [0.020]       [0.023]***    [0.036]**     [0.053]         [0.078]         [0.042]**
+    6. Add reason for    − 0.033       − 0.067       − 0.064       − 0.075         − 0.031         − 0.066
+       choosing job       [0.020]       [0.023]***    [0.035]       [0.053]         [0.079]         [0.042]
+    7. Add job setting   − 0.025       − 0.060       − 0.064       − 0.080           0.002         − 0.010
+       characteristics    [0.019]       [0.022]***    [0.032]**     [0.048]         [0.071]         [0.037]          3/26
+                                                                                       Bertrand, Goldin, Katz 2010
+Substantial earnings losses for women not men who become parents
+Denmark and Sweden
+             Figure 1: Child Penalties in Earnings in Scandinavian Countries
+
+                              
+                                                                             )LUVW&KLOG%LUWK
+
+
+
+
+              (DUQLQJV5HODWLYHWR(YHQW7LPH
+
+
+
+
+                                
+                                                                                                              /RQJ5XQ3HQDOW\
+                                                                                                              'HQPDUN
+                                                                                                            6ZHGHQ
+
+                                                                                                             
+                                                                                   (YHQW7LPH <HDUV
+
+                                                                            0HQ'HQPDUN              :RPHQ'HQPDUN                4/26
+                                                                            0HQ6ZHGHQ               :RPHQ6ZHGHQ
+Substantial earnings losses for women not men who become parents
+Austria and Germany
+                     Figure 3: Child Penalties in Earnings in German-Speaking Countries
+
+                                         
+                                                                                         )LUVW&KLOG%LUWK
+
+
+
+
+                         (DUQLQJV5HODWLYHWR(YHQW7LPH
+
+
+
+
+                                           
+                                                                                                                          /RQJ5XQ3HQDOW\
+                                                                                                                          $XVWULD
+                                                                                                                        *HUPDQ\
+
+                                                                                                                        
+                                                                                              (YHQW7LPH <HDUV
+
+                                                                                       0HQ$XVWULD              :RPHQ$XVWULD
+                                                                                       0HQ*HUPDQ\              :RPHQ*HUPDQ\
+                                                                                                                                                                      5/26
+                                                                                                                                                 Kleven et al. 2019
+    Notes: See the notes to Figure 1.
+   intensive margins.
+
+Substantial earnings losses for women not men who become parents
+United States and United Kingdom
+                    Figure 2: Child Penalties in Earnings in English-Speaking Countries
+
+                                        
+                                                                                      )LUVW&KLOG%LUWK
+
+
+
+
+                        (DUQLQJV5HODWLYHWR(YHQW7LPH
+
+
+
+
+                                          
+                                                                                                                      /RQJ5XQ3HQDOW\
+                                                                                                                      8QLWHG.LQJGRP
+                                                                                                                    8QLWHG6WDWHV
+
+                                                                                                                        
+                                                                                           (YHQW7LPH <HDUV
+
+                                                                             0HQ8QLWHG.LQJGRP              :RPHQ8QLWHG.LQJGRP
+                                                                             0HQ8QLWHG6WDWHV               :RPHQ8QLWHG6WDWHV                                  6/26
+                                                                                                                                                 Kleven et al. 2019
+Earnings penalties larger in countries with more traditional attitudes
+Evidence from the International Social Survey Program
+                   Figure 4: Estimated Child Penalties vs Elicited Gender Norms
+
+                                                                                                                 *HUPDQ\
+                                 
+
+
+
+
+                 /RQJ5XQ&KLOG3HQDOW\LQ(DUQLQJV
+                                                                                                                           $XVWULD
+
+
+
+                                                                                                   8QLWHG.LQJGRP
+
+
+
+
+                                        
+                                                                                            8QLWHG6WDWHV
+
+
+                                                                6ZHGHQ
+
+                                                          'HQPDUN
+                                                                                                            6ORSH  
+                                 
+                                                                                                                         
+                                                                    :RPHQ:LWK&KLOGUHQ8QGHU6FKRRO$JH                             7/26
+                                                             RU,Q6FKRRO6KRXOG6WD\DW+RPH )UDFWLRQ$JUHHLQJ
+‘Acting Wife’: Marriage Market
+ Incentives and Labor Market
+            Investments
+   Bursztyn, Fujiwara, and Pallais 2017
+Motivation
+
+− Overwhelming evidence
+     □ High-achieving women pay a career price on average for having a family
+     □ (Note: this doesn’t mean that they are/aren’t less happy)
+
+
+
+
+                                                                                9/26
+Motivation
+
+− Overwhelming evidence
+     □ High-achieving women pay a career price on average for having a family
+     □ (Note: this doesn’t mean that they are/aren’t less happy)
+
+
+
+− May pose a dilemma for women in business school MBA programs
+     □ Students in MBA programs are ambitious, high-achieving, career-focused
+     □ Most are also single
+
+
+
+
+                                                                                9/26
+Motivation
+
+− Overwhelming evidence
+     □ High-achieving women pay a career price on average for having a family
+     □ (Note: this doesn’t mean that they are/aren’t less happy)
+
+
+
+− May pose a dilemma for women in business school MBA programs
+     □ Students in MBA programs are ambitious, high-achieving, career-focused
+     □ Most are also single
+
+
+
+− Question of Bursztyn, Fujiwara, Pallais 2017 paper
+     □ Are MBA women penalized in the dating market for their ambition?
+     □ If so, do they partially conceal their ambition?
+
+
+                                                                                9/26
+Idea of paper
+
+
+− Test whether single women shade their ambitions publicly to avoid social penalties
+
+− Three parts to the study
+
+    1. Survey MBA women to ask whether they perceive a confict between
+       professional goals and public image
+    2. Ask questions about career goals, randomly varying whether this information
+       will be anonymous or visible to classmates
+    3. Ask questions about career goals in study groups, randomly varying whether
+       the gender composition of study group
+
+                                                                                 10/26
+endix Figure 1, was conducted during a required class (economics). It
+ ded as   motivational
+   First-year MBA        evidence
+                    cohort         to assess
+                           given short       (i) how
+                                       anonymous       often
+                                                  survey     single
+                                                         on work    women a
+                                                                 experience
+ ns beneficial to their careers to avoid appearing too ambitious or assertive
+whether single women avoid these actions more than other groups, in parti
+single women. Specifically, it asked:
+
+    In the last two years, are there behaviors or activities at your work that
+    could have helped you professionally that you didn’t undertake because
+    you might have looked too ambitious, assertive, or pushy?
+ e asked students who responded affirmatively to mark any of four beha
+ did not undertake for that reason: (i) speaking up at meetings, (ii) offeri
+e a presentation or sales pitch, (iii) asking for a leadership role in a team or
+e, and (iv) taking initiative in negotiating a raise or asking for a promotion
+ left space for students to write in other activities that they avoided, but no
+                                                                            11/26
+Survey of past behaviorsTHE AMERICAN ECONOMIC REVIEW
+ 3296                                                                                              NOVEMBER 2017
+
+
+
+    Table 2—Avoidance of Workplace Behaviors by Gender and Relationship Status (Survey Data)
+
+                                       Taking       Asking for
+                                     initiative in a leadership    Offering
+                                     negotiating     role in a    to make a Speaking
+                                    a wage raise team or task presentation      up at     Any
+                                    or promotion       force    or sales pitch meetings behavior Observations
+Single women                            63.5           40.4          25.0           51.9       73.1           52
+Non-single women                        39.4           24.2          15.2           33.3       60.6           33
+Single men                              25.3           23.0          18.4           27.6       43.7           87
+Non-single men                          30.3           23.6           6.7           29.2       50.6           89
+
+p-values of differences
+Single versus non-single women          0.030          0.129          0.284        0.095       0.234          85
+Single women versus others              0.000          0.014          0.031        0.002       0.002         261
+
+Notes: Data are from a survey administered to first-year MBA students in the fall of 2016. Each number in the first
+four rows of data is the percentage of the group indicated by the row that avoided the action indicated by the col-12/26
+umn in their previous two years of work, despite the fact that they believed it could help their careers because they
+                                                         p–value = 0.454                              Gr
+                                                                                                              40                        p–value = 0.071
+       Intriguing correlations: Comparing in-class versus written performance                                 20
+                             80
+                                                                                                                    77.51              71.39                            79.80             79.15
+3298                                  THE AMERICAN ECONOMIC REVIEW                       NOVEMBER 2017 0
+                                                                                                                       Participation                                 Exams and problem sets
+                     60Grades
+        Panel A. Women’s                                                                              Panel B. Men’s grades
+
+
+                     Grade
+           100                                                                                             100
+                              p–value = 0.005                          p–value = 0.496                                    p–value = 0.454                                     p–value = 0.071
+
+                80                                                                                            80
+                             40
+                60                                                                                            60
+
+       Grade                                                                                          Grade
+                40
+                             20                                                                               40
+
+
+                20                                                                                            20
+                                                     75.02           75.89                                                      82.91                         81.99
+                        77.51                71.39                 79.80          79.15
+                 0              0                                                                              0
+                                                                                                                     75.02             75.89                             82.91            81.99
+
+                             Participation                       Exams and problem sets                                   Participation                              Exams and problem sets
+        Panel B. Men’s grades
+                                                         Participation                                                   Exams andMarried
+                                                                                                                                    problem sets
+                                                                                                                                             Unmarried
+               100
+                               p–value = 0.454                           p–value = 0.071
+                                                                                    Married                             Unmarried                 Figure 1
+
+                80                                                                          Notes: Participation is the participation grade assigned by the instructor. Exams and Problem Sets is a weighted aver
+                                                                                            age of grades on the midterm exam, the final exam, and problem sets, where the weights are the ones used by instruc
+                                                                                         Figure 1
+                                                                                            tors in calculating the final grade. Both measures are out of 100. Whiskers show the 95 percent confidence interva
+                60                                                                          calculated from a regression of the outcome on an indicator for being unmarried using robust standard errors.
+
+        Grade
+                                                                                                                                                                                                     (continued
+  Notes:40Participation is the participation grade assigned by the instructor. Exams and Problem Sets is a weighted aver-           13/26
+
+  age of grades on the midterm exam, the final exam, and (  problem     sets, where
+                                                              insignificantly) positive.the weights
+                                                                                         Panel C      are 1
+                                                                                                 of Figure theshows
+                                                                                                                onesthat
+                                                                                                                     used by   instruc-
+                                                                                                                         unmarried women have
+                                                                                                                                                      70
+
+
+   Intriguing correlations: Comparing in-class versus written performance by                                                                                      Married         Unmarried
+
+
+                                                                                                                                                      65
+
+   cohort
+VOL. 107 NO. 11                                                          BURSZTYN ET AL.: ACTING WIFE                                                 3299
+                                                                                                                                                             65              70               75
+                                                                                                                                                                            Average exams and problem sets grade
+                                                                                                                                                                                                                 80           85         90
+
+
+
+
+        Panel C. Women's grades by cohort                                                                               Panel D. Men's grades by cohort
+
+                                       90                                                                                                             90
+
+
+
+                                                                        14
+                                       85                                                                                                             85
+
+
+
+
+         Average participation grade                                                                                    Average participation grade
+                                       80                                              15                                                             80                                               15
+                                                                                                                                                                                                                      14
+                                                                                              11                                                                                                                           13
+                                                                                               16                                                                                                                            11     12
+                                       75                                                        13 12                                                75
+
+
+                                                                                                   10
+                                       70                                                                                                             70
+                                                                                                                                                                                                                               16
+                                                                                                                                                                                                                             10
+                                                 Married         Unmarried                                                                                        Married         Unmarried
+
+
+                                       65                                                                                                             65
+
+                                            65              70               75          80              85       90                                         65              70                75                80           85         90
+                                                           Average exams and problem sets grade                                                                             Average exams and problem sets grade
+
+
+        Panel D. Men's grades by cohort                                                                                                                                                   Figure 1 (continued)                                14/26
+                                       90                                                                     Notes: Each dot plots the average non-participation grade (x-axis) and participation grade (y-axis) for either the
+ ons said that students’ career advisor would see their answers and that emp
+would  not. However,
+   Primary  experimentthe public version told students that “your” answers
+ scussed in the career class, while the private version told students that “
+ zed” answers will be discussed. Specifically, the instructions read:
+
+    The information on this survey will help the career office get to know you
+    and help it find the right fit for your first-year internship. This information
+    will not be shared with employers, so please express your true preferences,
+    not just what you think employers want to hear. This information will be
+    shared with your career advisor and [your/anonymized] answers will be
+    discussed during the [name of the career class].
+
+ practice, only deidentified survey answers were discussed in class, whi
+ stent with both set of instructions. This is a subtle treatment: to the extent
+  students did not read the instructions carefully or some students in the pu    15/26
+ VOL. 107 NO. 11                                          BURSZTYN ET AL.: ACTING WIFE                            3307
+
+Desired compensation
+
+                                              Women                                       Men
+                   180
+                            p-value = 0.030           p-value = 0.876   p-value = 0.906         p-value = 0.243
+
+                   150
+
+
+
+
+         $ thousands
+                   120
+
+                       90
+
+                       60
+
+                       30
+                            131.05   112.93           134.72 133.50     146.88 145.98           140.86   133.73
+                        0
+                                Single                  Non-single          Single                Non-single
+
+                                                             Private      Public
+
+
+
+                                      Figure 2. Desired Compensation (Primary Experiment)                           16/26
+  3308                                           THE AMERICAN ECONOMIC REVIEW                           NOVEMBER 2017
+
+Desired travel days per month
+                                              Women                                       Men
+                          25
+                               p-value = 0.005        p-value = 0.836   p-value = 0.252         p-value = 0.220
+
+                          20
+
+
+
+
+         Days per month
+                          15
+
+
+                          10
+
+
+                           5
+
+                               13.55   6.62           9.67   10.32      15.38   18.11            9.94   12.33
+                           0
+                                   Single              Non-single           Single                 Non-single
+
+                                                             Private       Public
+
+
+
+                                  Figure 3. Days per Month Willing to Travel (Primary Experiment)                  17/26
+                                                           BURSZTYN ET AL.: ACTING WIFE
+
+Desired hours per week
+                                               Women                                       Men
+                             p-value = 0.071           p-value = 0.035   p-value = 0.852         p-value = 0.063
+                        60
+
+
+
+
+       Hours per week
+                        45
+
+
+                        30
+
+
+                        15
+
+                             52.21   48.32             52.54   48.48     52.25     52.64         51.14   54.48
+                         0
+                                 Single                 Non-single           Single               Non-single
+                                                               Private    Public
+
+
+
+                                 Figure 4. Desired Weekly Hours of Work (Primary Experiment)                       18/26
+ 3310                                               THE AMERICAN ECONOMIC REVIEW                               NOVEMBER 2017
+“You tend to lead in your day-to-day interactions”
+                                                 Women                                          Men
+                           5
+                               p-value = 0.043           p-value = 0.792     p-value = 0.306          p-value = 0.391
+
+
+                           4
+
+
+
+
+        Agreement rating
+                           3
+
+
+                           2
+
+
+                           1
+
+                               3.87     3.48             3.89     3.84        3.69       3.84          3.75    3.86
+                           0
+                                   Single                 Non-single             Single                 Non-single
+                                                                 Private        Public
+
+
+                                                                                                                          19/26
+                                               Figure 5. Tendency to Lead (Primary Experiment)
+  calculated from regressions of students’ answers on an indicator for being in the public treatment using robust stan-
+“You    are Non-single
+ dard errors. more professionally            ambitious
+                       respondents are in a serious           than
+                                                    relationship,      yourengaged,
+                                                                  cohabiting, mostorrecent
+                                                                                     married. work
+
+colleagues”
+                                                  Women                                        Men
+                               5
+                                   p-value < 0.001        p-value = 0.472    p-value = 0.695         p-value = 0.846
+
+
+                               4
+
+
+
+
+            Agreement rating
+                               3
+
+
+                               2
+
+
+                               1
+
+                                   4.13    3.38           4.26    4.12       4.23       4.16          4.15    4.12
+                               0
+                                      Single               Non-single           Single                 Non-single
+                                                                   Private     Public
+                                                                                                                       20/26
+  VOL. 107 NO. 11                                                 BURSZTYN ET AL.: ACTING WIFE                            3311
+
+“You feel very comfortable in competitive environments”
+                                                   Women                                          Men
+                             5
+                                 p-value = 0.552           p-value = 0.711      p-value = 0.471         p-value = 0.999
+
+
+                             4
+
+
+
+
+          Agreement rating
+                             3
+
+
+                             2
+
+
+                             1
+
+                                 3.29     3.41             3.63     3.54        4.02      3.91           3.67     3.67
+                             0
+                                     Single                 Non-single              Single                 Non-single
+                                                                    Private      Public
+
+
+
+                                  Figure 7. Comfort in Competitive Environments (Primary Experiment)                         21/26
+  standard errors. Non-single respondents are in a serious relationship, cohabiting, engaged, or married.
+“You have above-average writing skills”
+                                                    Women                                         Men
+                              5   p-value = 0.586           p-value = 0.686     p-value = 0.856         p-value = 0.496
+
+
+                              4
+
+
+
+
+           Agreement rating
+                              3
+
+                              2
+
+                              1
+                                  3.84    3.97              4.11    4.04        3.90    3.93             3.82     3.70
+                              0
+                                      Single                 Non-single             Single                Non-single
+
+                                                                      Private           Public
+
+
+
+                                                 Figure 8. Writing Ability (Primary Experiment)                           22/26
+Benefcence
+
+   Students’ preferences heavily afect what jobs the career center views as good
+   fts for them. For example, the director of the career center told us that if
+   students reported desiring less travel, they would be steered away from consulting
+   (which commonly requires traveling four or more days per week), and if students
+   reported not wanting to work long hours, they should not be placed in investment
+   banking.
+
+   However, after the questionnaire was administered, the career center
+   decided not to use the questionnaire in placement since the large efects
+   of the public treatment would have harmed single women.
+
+                                                                                        23/26
+udents were placed into small groups of six or seven for other class activ
+   Secondary
+mmon          experiment
+       practice  in the course. They were asked to complete the questionn
+re they started the day’s group work and were told to move onto the rest o
+p work when finished. Specifically, the instructions read:
+
+    Please fill out the following questionnaire. There are no right or wrong
+    answers. Once you have finished the questionnaire, continue onto the rest
+    of the group work. If there is time at the end of class, the instructor will
+    circulate and discuss your answers with your small group. The forms will
+    be collected at the end of class.
+
+hus, students thought their answers would be seen by the career counselor
+ntially by the rest of their small group. While students likely believed that
+tionnaire did not have as high stakes as the primary experiment questionn
+ still had reason to believe the career center was interested in their answers24/26
+         3312                                                         THE AMERICAN ECONOMIC REVIEW                            NOVEMBER 2017
+
+Group gender composition and reported job preferences
+                                           1
+                                                     p-value = 0.067                p-value = 0.012                p-value = 0.949
+
+                                          0.8
+
+
+
+
+                   Share of respondents
+                                          0.6
+
+
+                                          0.4
+
+
+                                          0.2
+
+                                                     0.68      0.43                0.79       0.37                 0.42      0.43
+                                           0
+                                                Salary > Work hours         Promotion > Less travel     Social impact > Coworkers
+
+                                                                             Female peers             Male peers
+
+
+
+                                                   Figure 9. Group Gender Composition and Reported Job Preferences
+                                                               (Supplementary Experiment, Single Women Only)
+
+         Notes: Each set of bars represents the fraction of single women who reported a preference for (i) a job with a higher
+         salary over a job with shorter work hours, (ii) a job with better promotion opportunities over a job with less travel,
+         or (iii) a job with a social impact over a job with more interactions with coworkers. The “Female Peers” bars show
+         the mean for single women in all-female groups. The “Male Peers” bars are constructed by adding the treatment
+         effect of having male peers from a regression with section fixed effects to the female peer mean. Standard errors are                25/26
+         clustered at the group level. Only single women are included. Whiskers show the 95 percent confidence interval.
+Conclusion: Private information in major markets
+
+
+ − Asymmetric information is ubiquitous in markets for goods, services, and ‘non-priced’
+    transactions (e.g., marriage)
+
+ − These informational imperfections can create havoc
+      □   Financial crises
+      □   Distorted academic performance among women/men
+      □   Insurance market failures
+      □   Missing markets (e.g., earnings insurance, academic performance insurance, marital bliss
+          futures)
+
+
+                                                                                                     26/26
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

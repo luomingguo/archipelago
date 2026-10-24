@@ -1,0 +1,942 @@
+14.03/003 Micro Theory & Public Policy, Fall 2025
+
+
+Lecture 1. Introduction and a First Application
+
+David Autor (Prof), MIT Economics and NBER
+
+
+
+                                                  1
+What is 14.03/003 about?
+
+ ´ A class in modern applied economics as economists actually do it
+      ˝   Build models to form hypotheses, derive testable implications
+      ˝   Design research to test implications
+      ˝   Deploy data and experiments to verify or falsify those implications
+      ˝   Interpret fndings, improve thinking, refne research, design policy
+
+
+
+
+                                                                                2
+What is 14.03/003 about?
+
+ ´ A class in modern applied economics as economists actually do it
+      ˝   Build models to form hypotheses, derive testable implications
+      ˝   Design research to test implications
+      ˝   Deploy data and experiments to verify or falsify those implications
+      ˝   Interpret fndings, improve thinking, refne research, design policy
+
+ ´ Three themes
+
+     1. Economic theory and models – What they predict and why
+     2. Causality – What it is, how we establish it
+     3. Evidence – Testing theory, learning from data
+                                                                                3
+How we’ll learn from data
+
+ 1. Multiple research designs for drawing causal inferences from data
+       ˝ Diference-in-diference designs
+       ˝ Regression discontinuity designs
+       ˝ Instrumental variables designs
+       ˝ Randomized Controlled Trials (RCTs)
+
+
+
+
+                                                                        4
+How we’ll learn from data
+
+ 1. Multiple research designs for drawing causal inferences from data
+       ˝ Diference-in-diference designs
+       ˝ Regression discontinuity designs
+       ˝ Instrumental variables designs
+       ˝ Randomized Controlled Trials (RCTs)
+
+
+
+
+ 2. Randomized experiments, a.k.a. Randomized Controlled Trial (RCT)
+       ˝   Randomly allocating experimental units across the treatment groups.
+       ˝   Example: New Vaccine.
+
+
+
+
+                                                                                 5
+How we’ll learn from data
+
+ 1. Multiple research designs for drawing causal inferences from data
+       ˝ Diference-in-diference designs
+       ˝ Regression discontinuity designs
+       ˝ Instrumental variables designs
+       ˝ Randomized Controlled Trials (RCTs)
+
+
+
+
+ 2. Randomized experiments, a.k.a. Randomized Controlled Trial (RCT)
+       ˝   Randomly allocating experimental units across the treatment groups.
+       ˝   Example: New Vaccine.
+
+
+ 3. Quasi-experiments
+       ˝   Unintentionally creates conditions similar to a randomized experiment.
+       ˝   Example: Lottery.                                                        6
+Rules of the road
+Instructor and TAs
+
+
+ ´ Instructor: Prof. David Autor
+      ˝ Office hours Wednesdays, 2:30-4:00pm
+
+
+
+ ´ Class meetings: Monday & Wednesday, 10:30am - 11:55am,
+
+ Recitations: Fridays 9–10am, 10–11am,
+
+
+
+
+                                                            7
+Rules of the road
+Class material
+
+ 1. Syllabus: You need to read it!
+ 2. Lecture slides and lecture notes
+ 3. Research papers
+ 4. No required textbook. Two recommended reference books, available via online course reserves
+       ˝ Angrist, Joshua D. and Jorn-Stefen Pischke, Mastering ’Metrics: The Path from Cause to
+         Efect, Princeton: Princeton University Press, 2014
+       ˝ Banerjee, Samiran. Intermediate Microeconomics: A Tool-Building Approach, 2nd Edition,
+         New York: Routledge, 2021
+ 5. Plickers: In class polls, participation, attendance—mandatory
+ 6. Class participation: You’ll be doing that
+ 7. Tablets (iPad, etc.) are permitted in class—but no phones or laptops          8
+Rules of the road
+Grading rubric
+
+
+
+
+ 1. This is an interactive class: Attendance, participation, and in-class quizzes mandatory
+    20% of your grade (and yes, we do take attendance)
+
+ 2. Five problem sets: 20% (we count your best 4 of 5, drop one automatically)
+
+ 3. Two midterms and a fnal: 20% for each midterm, 20% for the fnal, 80 minutes per exam.
+    See class schedule for midterm dates; fnal date TBA
+
+
+
+
+                                                                                 9
+Plickers Interlude #1 and#2
+
+
+
+
+                              10
+Outline
+For today and next week
+
+ 1. Textbook model of competitive labor market.
+       ˝ Impact of minimum wage on employment in the textbook model.
+       ˝ Assumptions behind this model.
+
+ 2. Relax a key assumption: price-taking by frms.
+       ˝   Impact of min. wage on employment when employers have market power.
+       ˝   Testing the textbook model and alternatives.
+ 3. Natural experiments in economics.
+ 4. The Fundamental Problem of Causal Inference.
+ 5. Estimating causal efects using “Diferences-in-Diferences” (DD).
+ 6. The Card and Krueger minimum wage study.
+                                                                                 11
+ Competitive Equilibrium –
+Why Does it Arise, and When
+    Does it Go Wrong?
+
+                          12
+Equilibrium in competitive markets
+Baseline model
+
+
+ ´ Consider a (product) market with:
+       ˝ One good, e.g., tube socks
+       ˝ Traded at one price
+
+       ˝ With many consumers of the good
+
+       ˝ And with many producers of the good
+
+
+
+
+ ´ The market equilibrium is where supply equals demand.
+       ˝ Supply function Sppq: quantity of the good produced at price p.
+       ˝ Demand function Dppq: quantity of the good consumed at price p.
+
+
+                                                                           13
+Exogeneity and endogeneity
+
+
+Defnition (Exogenous)
+Determined outside the model
+
+Defnition (Endogenous)
+Determined by the model
+
+ ´ Only exogenous variables can be causes
+ ´ Endogenous variables are afected by exogenous variables — but not the other way around
+ ´ We’ll have much more to say about exogenous and endogenous variables—and causal
+   inference—as the semester goes on
+                                                                                14
+The Contentious Economics of the
+        Minimum Wage
+
+
+                             15
+Plickers Interlude #3
+
+
+
+
+                        16
+  Nominal and real value of federal minimum Wage, 1950–2024
+
+
+
+
+Image is in the public                                        17
+domain.
+                        I
+                                                                              -
+                             The U.S. Minimum Wage By State
+
+
+                                                                            --
+                             State minimum wage legislation as of Sep. 30, 2024*
+
+
+
+
+                                                                           --
+                                                                     ·OO• eGCDO
+                                                                   ------
+                                                                       ----      ·-- • 00
+
+                                                                    -
+                        e >$16.00       -
+                        e $13.01 -16.00
+                        e $10.01 -13.00
+                        e $7.26-10.00
+                        e $7.25
+
+                        MN/MO/MT/NY/NJ/OH/OK: Smaller employers can pay less. NYC: $16. Non-rural OR: $14.70-15.95
+                        * Federal minimum wage ($7.25) applies for qualifying employees in states
+                          with no state minimum wage or if state minimum wage is lower                                                      18
+                        Source: National Conference of State Legislatures
+© Statista. All rights reserved. This content is excluded from our Creative Commons license. For more information, see https://ocw.mit.edu/help/faq-fair-use/
+Textbook model of wages and employment
+Competitive labor market
+
+ ´ DL : Labor demand curve
+ ´ SL : Labor supply curve
+
+
+                             Wages
+                                                 SL
+
+
+
+
+                               w˚
+
+
+
+
+                                                DL     19
+                                     l˚   Employment
+Textbook model of wages and employment
+Competitive labor market
+
+                        Wages
+                                                SL
+
+
+
+
+                           w˚
+
+
+
+
+                                               DL
+                                  l˚     Employment
+
+
+ ´ Exogenous parameters are...?
+                                                      20
+ ´ Endogenous outcomes are...?
+Efect of a (binding) minimum wage
+
+               Wages
+                                                SL
+
+
+
+
+                  w˚
+
+
+
+
+                                               DL
+                                    l˚   Employment
+                                                      21
+Efect of a (binding) minimum wage
+
+               Wages
+                                                SL
+
+
+
+                wmin
+
+                  w˚
+
+
+
+
+                                               DL
+                                    l˚   Employment
+                                                      22
+Efect of a (binding) minimum wage
+
+               Wages
+                                                SL
+
+
+
+                wmin
+
+                  w˚
+
+
+
+
+                                               DL
+                            lmin    l˚   Employment
+                                                      23
+Efect of a (binding) minimum wage
+                    Wages
+                                                    SL
+
+
+
+                     wmin
+
+                      w˚
+
+
+
+
+                                                   DL
+                              lmin   l˚      Employment
+
+
+ ´ Wages:
+                                wmin ą w˚
+
+
+ ´ Employment:
+                                                          24
+                                 lmin ă l˚
+Plickers Interlude #4
+
+
+
+
+                        25
+Should we impose a minimum wage?
+
+ ´ Employment might fall
+ ´ Could total earnings increase? Depends on...
+
+
+
+
+                                                  26
+Should we impose a minimum wage?
+
+ ´ Employment might fall
+ ´ Could total earnings increase? Depends on...
+ ´ Depends on elasticity of demand at equilibrium (price sensitivity)
+
+
+
+
+                                                                        27
+Should we impose a minimum wage?
+
+ ´ Employment might fall
+ ´ Could total earnings increase? Depends on...
+ ´ Depends on elasticity of demand at equilibrium (price sensitivity)
+       ˝   Percentage change in quantity demanded when prices increase by one percent.
+                                                   Bl w
+                                              σ“         ż ´1.
+                                                    l Bw
+
+
+
+Defnition (Elasticity of Y with respect to X)
+The ratio of the proportional change in a variable Y caused by a given proportional change in
+a variable X.
+                                                                                   28
+Elasticity of demand in various markets
+
+
+
+
+                                          29
+Elasticity of demand in various markets
+
+
+
+
+                                          30
+Why might the minimum wage reduce employment?
+An individual frm’s perspective
+
+
+
+
+                                                31
+Why might employment fall?
+An individual frm’s perspective
+                            Wages
+
+
+
+
+                                                                SL
+                               w˚
+
+
+
+
+                                                                M RP L
+
+                                               l˚        Employment
+
+
+
+ ´ Each frm is a price-taker in the competitive model.
+ ´ Marginal Revenue Product of Labor (MRPL).
+                                                                                   32
+       ˝ What the marginal worker produces.
+       ˝ Decreasing in employment due to decreasing returns in the production function.
+Why might the imposition of a minimum wage cause employment to fall?
+ ´ Why is w˚ “ M RP L?
+ ´ Firm’s proft maximization problem:
+
+                                       max π “ p ¨ f plq ´ wplq ¨ l,
+
+
+      ˝   Assume that f 1 p¨q ą 0 and f 2 p¨q ă 0, and p is exogenous.
+
+
+
+
+                                                                         33
+Why might the imposition of a minimum wage cause employment to fall?
+ ´ Why is w˚ “ M RP L?
+ ´ Firm’s proft maximization problem:
+
+                                       max π “ p ¨ f plq ´ wplq ¨ l,
+
+
+      ˝   Assume that f 1 p¨q ą 0 and f 2 p¨q ă 0, and p is exogenous.
+
+ ´ FOC:
+                                  Bπ     Bf plq          Bwplq
+                                     “p¨        ´ wplq ´       ¨l “0
+                                  Bl       Bl             Bl
+
+    Rearranging:
+                                  M RP
+                                  hk ikLj wagehkofik            hk labor
+                                                     j hire ∆total
+                                                   new             ik jcosts
+                                     1                             1
+                                  pf plq “     wplq        `    w plql         34
+An individual frm’s perspective
+
+
+                                 M ik
+                                 hk RP L                       hklabor
+                                                    j hire ∆total
+                                                  new
+                                       j wagehkofik               ik jcosts
+                                     1                            1
+                                 pf plq “     wplq        `    w plql
+
+
+ ´ Third term is potentially important
+       ˝   Adding one worker could raise the cost of all other workers!
+
+ ´ Competitive model assumes
+
+                                        w1 plq “ 0 ðñ Price taking frms,
+
+    therefore, pf 1 plq “ w˚ .
+                                                                              35
+Plickers Interlude #5
+
+
+
+
+                        36
+Monopsonistic employer
+
+
+Defnition (Monopoly)
+One seller, many buyers
+
+Defnition (Monopsony)
+One buyer, many sellers
+
+ ´ More generally, a market where a buying agent is not a price-taker
+ ´ If a frm has labor market power—it is not a price-taker—its own demand for labor afects the
+   market wage
+ ´ Examples?
+                                                                                 37
+Monopsonistic employer
+
+
+
+
+ 1. SL is upward sloping for a monopsonist.
+ 2. If all workers receive the same wage, the marginal cost of a worker includes a raise given to all
+    inframarginal workers.                                                             38
+
+ 3. Thus, M CL is even more upward sloping than SL .
+Monopsonistic employer
+                          Wages
+
+
+                                                                     SL
+
+
+
+
+                                                                     M RP L
+
+                                                            Employment
+
+
+ 1. SL is upward sloping for a monopsonist.
+ 2. If all workers receive the same wage, the marginal cost of a worker includes a raise given to all
+    inframarginal workers.                                                             39
+
+ 3. Thus, M CL is even more upward sloping than SL .
+Monopsonistic employer
+                          Wages                          M CL
+
+
+                                                                     SL
+
+
+
+
+                                                                     M RP L
+
+                                                            Employment
+
+
+ 1. SL is upward sloping for a monopsonist.
+ 2. If all workers receive the same wage, the marginal cost of a worker includes a raise given to all
+    inframarginal workers.                                                             40
+
+ 3. Thus, M CL is even more upward sloping than SL .
+Monopsonistic employer
+                          Wages                          M CL
+
+
+                                                                     SL
+
+
+
+
+                             wm
+
+
+                                                                     M RP L
+
+                                              lm            Employment
+
+
+ 1. SL is upward sloping for a monopsonist.
+ 2. If all workers receive the same wage, the marginal cost of a worker includes a raise given to all
+    inframarginal workers.                                                             41
+
+ 3. Thus, M CL is even more upward sloping than SL .
+Monopsonistic employer
+                          Wages                           M CL
+
+
+                                                                     SL
+
+
+                              wc
+                             wm
+
+
+                                                                     M RP L
+                                              lm     lc     Employment
+
+
+ 1. SL is upward sloping for a monopsonist.
+ 2. If all workers receive the same wage, the marginal cost of a worker includes a raise given to all
+    inframarginal workers.                                                             42
+
+ 3. Thus, M CL is even more upward sloping than SL .
+  Raising the minimum wage on a monopsonistic employer
+                             Wages                     M CL
+
+
+                                                                SL
+
+
+                                wc
+                                wm
+
+
+                                                                M RP L
+                                             lm   lc     Employment
+
+
+
+
+                                                                         43
+
+1. SL is upward sloping for a monopsonist.
+Raising the minimum wage on a monopsonistic employer
+
+                          W                            M CL
+
+
+                                                              SL
+
+                        wmin
+                          wc
+                         wm
+
+
+                                                              M RP L
+                                          lm lmin lc     l    L
+ ´ Why did we get wmin ą wm , lmin ą lm ?
+      ˝ The frm is now a price-taker for labor at wmin                 44
+      ˝ Firm chooses lmin so that wmin “ M RP L
+Raising the minimum wage on a monopsonistic employer
+
+ ´ Does raising minimum wage to monopsonists always increase employment?
+
+
+
+
+                                                                           45
+Raising the minimum wage on a monopsonistic employer
+
+ ´ Does raising minimum wage to monopsonists always increase employment?
+
+                           W                       M CL
+
+
+                        wmin3
+                                                             SL
+
+                        wmin2
+
+
+                          wm
+                        wmin1
+                                                             M RP L
+
+                                        lm lmin2             L
+                                                                           46
+Relationship between labor supply elasticity and marginal cost of labor
+
+ ´ Why is w˚ “ M RP L?
+ ´ Firm’s proft maximization problem:
+
+                                       max π “ p ¨ f plq ´ wplq ¨ l,
+
+      ˝   Assume that f 1 p¨q ą 0 and f 2 p¨q ă 0, and p is exogenous.
+
+
+
+
+                                                                         47
+Relationship between labor supply elasticity and marginal cost of labor
+
+ ´ Why is w˚ “ M RP L?
+ ´ Firm’s proft maximization problem:
+
+                                       max π “ p ¨ f plq ´ wplq ¨ l,
+
+      ˝   Assume that f 1 p¨q ą 0 and f 2 p¨q ă 0, and p is exogenous.
+
+ ´ FOC:
+                                  Bπ     Bf plq          Bwplq
+                                     “p¨        ´ wplq ´       ¨l “0
+                                  Bl       Bl             Bl
+
+    Rearranging:
+                                  M RP
+                                  hk ikLj wagehkofik            hk labor
+                                                     j hire ∆total
+                                                   new             ik jcosts
+                                     1                             1
+                                  pf plq “     wplq        `    w plql
+                                                                               48
+Relationship between labor supply elasticity and marginal cost of labor
+                            M ik
+                            hk RP L                       hklabor
+                                               j hire ∆total
+                                             new
+                                  j wagehkofik               ik jcosts
+                                1                            1
+                            pf plq “     wplq        `    w plql
+ ´ Third term is critical for monopsonist
+
+ ´ Competitive model
+                                    w1 plq “ 0 ðñ Price taking frm
+ ´ Monopsonistic model
+                                   w1 plq ą 0 ðñ Monopsonistic frm
+
+
+
+
+                                                                         49
+Relationship between labor supply elasticity and marginal cost of labor
+                              M ik
+                              hk RP L
+                                    j wagehkofik            hklabor
+                                                 j hire ∆total
+                                               new             ik jcosts
+                                  1                            1
+                              pf plq “     wplq        `    w plql
+ ´ Third term is critical for monopsonist
+
+ ´ Competitive model
+                                       w1 plq “ 0 ðñ Price taking frm
+ ´ Monopsonistic model
+                                      w1 plq ą 0 ðñ Monopsonistic frm
+
+ ´ Re-arranging in terms of the elasticity of labor supply (σs )
+                                             ˆ           ˙       ˆ    ˙
+                                                    Bw l           1
+                              M RP L “ w 1 `                “w 1`
+                                                    Bl w           σs
+                                                                                            50
+  ´ If the firm is not a price taker (σs ă 8) in the labor market, then the wage it pays is strictly less than
+                                                                                                       MRPL.
+Testing for monopsony in the labor market
+
+
+
+ ´ Where would you expect to fnd monopsony power?
+
+
+
+
+                                                    51
+Testing for monopsony in the labor market
+
+
+
+ ´ Where would you expect to fnd monopsony power?
+
+      ˝   Company towns
+
+
+
+
+                                                    52
+Testing for monopsony in the labor market
+
+
+
+ ´ Where would you expect to fnd monopsony power?
+
+      ˝   Company towns
+      ˝   Very specialized labor markets (e.g., Tesla mechanics)
+
+
+
+
+                                                                   53
+Testing for monopsony in the labor market
+
+
+
+ ´ Where would you expect to fnd monopsony power?
+
+      ˝   Company towns
+      ˝   Very specialized labor markets (e.g., Tesla mechanics)
+      ˝   How about fast food restaurants located in nearby towns in New Jersey and Pennsylvania?
+
+
+
+
+                                                                                  54
+Testing for monopsony in the labor market
+
+
+
+ ´ Where would you expect to fnd monopsony power?
+
+      ˝   Company towns
+      ˝   Very specialized labor markets (e.g., Tesla mechanics)
+      ˝   How about fast food restaurants located in nearby towns in New Jersey and Pennsylvania?
+
+ ´ How do we test for monopsony in the labor market?
+
+
+
+
+                                                                                  55
+Testing for monopsony in the labor market
+
+ ´ Let’s suppose you fnd the following pattern:
+
+                            Avg Wage
+
+
+
+
+                                                                    MS
+
+                                                         OH
+                                                  PA
+                                            NJ
+
+
+
+
+                                                          Employment Rate
+
+
+ ´ Would this convince you that higher wage levels caused higher employment?   56
+Testing for monopsony in the labor market
+
+
+               Wage
+                                                         SM S
+
+                                               SOH
+                                     SP A
+                             SN J
+                                                           DM S
+
+                                                 DOH
+                                        DP A
+                                    DN J
+                                       Employment Rate
+                                                                  57
+Testing for monopsony in the labor market
+
+
+
+ ´ An empirical problem:
+       ˝   We do not ever see supply and demand curves
+       ˝   We observe only equilibrium wage and quantity employed.
+
+ ´ Cannot directly see if individual frms face upward sloping labor supply.
+ ´ How do we overcome this problem?
+
+
+
+
+                                                                              58
+Testing for monopsony in the labor market
+
+
+
+ ´ An empirical problem:
+       ˝   We do not ever see supply and demand curves
+       ˝   We observe only equilibrium wage and quantity employed.
+
+ ´ Cannot directly see if individual frms face upward sloping labor supply.
+ ´ How do we overcome this problem?
+       ˝ We need an experiment!
+       ˝ Specifcally, one in which wages are raised exogenously
+
+
+
+
+                                                                              59
+David Card and Alan B. Krueger, 1994 (American Economic Review)
+
+
+
+
+                                                                                                           60
+© David Card and Alan B. Krueger. All rights reserved. This content is excluded from our Creative Commons license.
+For more information, see https://ocw.mit.edu/help/faq-fair-use/
+Testing for monopsony in the labor market
+
+
+ ´ How do we use this ‘natural experiment’ to test the competitive model against
+   alternatives?
+
+
+
+
+                                                                          61
+Testing for monopsony in the labor market
+
+
+ ´ How do we use this ‘natural experiment’ to test the competitive model against
+   alternatives?
+
+ ´ Use key empirical implications
+
+      ˝   In the competitive model, an increase in the minimum wage always reduces employment:
+          wmin ÒÑ l Ó
+      ˝   In the monopsonistic model, an increase in the minimum wage may raise employment:
+          wmin ÒÑ l Ò
+      ˝   Downward sloping Ñ competitive market, upward sloping Ñ monopsony
+
+
+                                                                                 62
+Today’s concepts
+
+
+
+ ´ Experiments and quasi-experiments.
+ ´ Exogenous and endogenous variables.
+ ´ Supply, demand, elasticity.
+ ´ Competitive labor markets.
+ ´ Monopsonistic labor markets.
+ ´ Marginal revenues, marginal costs.
+
+
+
+
+                                         63
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

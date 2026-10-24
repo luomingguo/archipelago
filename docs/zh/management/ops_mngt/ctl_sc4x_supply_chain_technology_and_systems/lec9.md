@@ -1,12 +1,11 @@
 ---
-title: '供应链信息系统——APS、TMS 与 MES'
+title: 供应链信息系统——APS、TMS 与 MES
 type: lecture
 lecture: 9
 tags: [advanced-planning-systems, transportation-management, manufacturing-execution, warehouse-execution]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 9 供应链信息系统——APS、TMS 与 MES（Supply Chain Systems - Supply Chain Modules）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 9 讲  

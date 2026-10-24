@@ -1,12 +1,11 @@
 ---
-title: 'SQL 基础——数据类型、建库建表与 SELECT'
+title: SQL 基础——数据类型、建库建表与 SELECT
 type: lecture
 lecture: 3
 tags: [sql-basics, relational-database, ddl-statements, query-optimization]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 3 SQL 基础——数据类型、建库建表与 SELECT（Database Queries）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 3 讲  

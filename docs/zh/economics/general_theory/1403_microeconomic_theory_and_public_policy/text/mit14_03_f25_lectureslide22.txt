@@ -1,0 +1,908 @@
+Revised December 8, 2025
+
+
+
+
+14.03/003 Microeconomic Theory & Public Policy Fall 2025
+
+
+Lecture Slides 22. Crime, policy, and prejudice
+
+David Autor (Prof), MIT Economics and NBER
+   The United States has extraordinarily
+ high rates of violent crime & homicide —
+Though trending downward since early 1990s
+License CC BY-ND © Statista. All rights reserved. This content is excluded from our Creative Commons license. For more   2/66
+information, see https://ocw.mit.edu/help/faq-fair-use/
+3/66
+4/66
+Incarceration
+: Data from 2011, 2012, and 2013
+
+
+
+
+                                   6/66
+7/66
+Decades of prosecution & incarceration →
+ Large fraction of US adults have felony
+                 records
+Jacob Kang-Brown, Chase Montagnet, and Jasmine Heiss, 2021
+10/66
+  1806                                                                    S.K.S. Shannon et al.
+Prisoners and former prisoners in the U.S., 1948-2010
+
+
+
+
+                     Shannon, Uggen, Thompson, Schnittker, Wakefield, and Massoglia, 2017
+                                                                                              11/66
+Felons and ex-felons in the U.S, 1948 - 2010
+
+
+
+
+  Fig. 2 Growth of U.S. population with Uggen,
+                             Shannon,   prison and felony records,
+                                                Thompson,          1948–2010
+                                                            Schnittker, Wakefield, and Massoglia, 2017
+                                                                                                         12/66
+Racial disparity: Percent of U.S. adults with felony records, 1948-2010
+
+                                                                    African-Amer-
+                                                                      ican: 25%
+
+
+
+
+                                                                           Non-AA:
+                                                                             6%
+
+
+
+
+ Fig. 3 Percentage of U.S. adult population with prison and felony records by race, 1948–2010
+
+                       Shannon, Uggen, Thompson, Schnittker, Wakefield, and Massoglia, 2017
+ recidivism rates than prisoners,  such that a smaller percentage of former proba-13/66
+    How should employers screen
+job applicants with criminal histories?
+Basic regulations on screening/hiring workers with criminal histories
+
+ − Employers can consider criminal histories
+ − Employers cannot categorically refuse to consider workers with criminal histories —
+   except when hiring for certain types of jobs (banking, security clearance, childcare)
+ − In most states, employers can ask about criminal history (“the box”) on job
+   applications
+ − In all states, employers must obtain permission from applicant to perform criminal
+   background check. Can also decline to hire workers who refuse
+ − Criminal background checks are not free to employers. Employers usually run
+   background check last, when they are otherwise ready to hire
+ − Employers must notify workers if they are not hired because of fndings of criminal
+   background check
+                                                                                    15/66
+Ban the box, criminal records and
+ statistical discrimination: A feld
+             experiment
+  Amanda Agan and Sonja Starr, QJE 2017
+Criminal record checkbox on job app prior to contact with employer
+
+
+
+
+© Source unknown. All rights reserved. This content is excluded from our Creative Commons license. For more information, see
+                                                                                                                          17/66
+https://ocw.mit.edu/help/faq-fair-use/
+Assenting to a criminal background check after employer callback
+
+
+
+
+                                                                   18/66
+                                     bantheboxcampaign.org
+
+
+
+
+© Legal Services for Prisoners with Children. All rights reserved. This content is excluded from our Creative Commons license.
+For more information, see https://ocw.mit.edu/help/faq-fair-use/
+License CC BY-SA © National Employment Law Project. This content is excluded from our Creative Commons license. For
+more information, see https://ocw.mit.edu/help/faq-fair-use/
+Why many municipalities have ‘banned the box’
+
+− Strategy for reducing unemployment among minority men (unemployment rates
+  approximately double the national average)
+
+− The idea
+     □ Minority men disproportionately likely to have criminal convictions
+     □ A criminal record is a substantial employment barrier to employment
+
+     □ A policy that increases employment of people with criminal records should
+
+       disproportionately help minority men
+
+− Ban the box laws – how they work
+     □ Do not prohibit frms from checking criminal backgrounds
+     □ But force frms to defer criminal background check until after they’ve
+
+       considered the applicant using other criteria
+                                                                                   21/66
+Agan and Starr: Research question
+
+
+
+
+Do ban the box policies afect job opportunities among:
+
+ 1. Job applicants with criminal records
+
+ 2. Job applicants from demographic groups that disproportionately have criminal
+    records
+
+
+
+
+                                                                                   22/66
+Agan and Starr: Research design
+
+− New Jersey: BTB took efect on March 1, 2015
+     □ Pre-BTB period: January 31 and February 28, 2015
+     □ Post-BTB period: May 4 and June 12, 2015
+
+
+
+− New York City: BTB took efect on October 27, 2015
+   □ Pre-BTB period: June 10 and August 30, 2015
+
+   □ Post-BTB period: November 30, 2015 and March 31, 2016
+
+
+
+− RCT: ‘Audit Study’
+   □ Sent 15,000 fctitious online job applications to employers in New Jersey, New
+
+     York City
+     □   Sent in waves before and after each jurisdiction’s adoption of BTB policies
+                                                                                       23/66
+Research design continued
+
+
+− Sources of job listings
+     □   Large online job boards: snagajob.com, indeed.com
+     □   Websites of chain businesses
+
+− Types of jobs
+     □   Suitable for candidates with limited work experience, no post-secondary
+         education, and no specialized skills
+     □   Mostly non-supervisory: Team-member jobs at fast food and other restaurants,
+         grocery and convenience stores, other retail establishments
+
+                                                                                   24/66
+Research design continued
+
+
+− Types of applicants
+     □   Fictitious applicants: Males approximately age 21 to 22
+     □   Used ‘Resume Randomizer’ software to generate applicants
+
+− Randomization
+     □   Profles created in pairs, each consisting of one black and one white applicant
+     □   Pairs were assigned to the same store in the same time period
+     □   Applicants similar on all but the randomly assigned treatment dimensions
+
+
+                                                                                    25/66
+Research design continued
+
+
+
+Treatment dimensions
+ 1. Race
+ 2. Has felony criminal conviction or not
+     □   Conditional on conviction: Property crime or drug crime
+
+ 3. Has 1-year employment gap versus a 0- to 2-month gap
+ 4. Has a GED vs High School Diploma
+
+
+
+                                                                   26/66
+                AGAN & STARR, BAN THE BOX , CRIMINAL RECORDS, AND STATISTICAL DISCRIMINATION
+
+Conveying race with ‘distinctively’ white and Black names
+                A2. Names Used
+
+                Table A2.1: White and Black Names Used for Applicants
+                White Names                                        Black Names
+                First         %White Last             %White       First         %Black Last                  %Black
+                SCOTT         88.87     WEBER         94.37        TYREE         97.94     PIERRE             97.78
+                THOMAS        86.92     ESPOSITO      93.30        TERRELL       96.23     WASHINGTON         90.28
+                CODY          86.71     SCHMIDT       92.63        DAQUAN        96.04     ALSTON             88.96
+                RYAN          85.37     BRENNAN       92.45        JAQUAN        95.03     BYRD               85.50
+                NICHOLAS      84.99     MEYER         92.27        DARNELL       93.43     INGRAM             78.63
+                DYLAN         84.70     KANE          91.75        JAMAL         91.36     JACKSON            76.32
+                MATTHEW       83.97     HOFFMAN       91.38        MARQUIS       91.36     BANKS              75.68
+                JACOB         83.37     RYAN          89.98        JERMAINE      89.45     FIELDS             74.83
+                KYLE          82.93     WAGNER        89.96        DENZEL        89.27     BRYANT             74.49
+                TYLER         82.82     HANSEN        89.60        DWAYNE        88.89     WILLIAMS           74.22
+                SEAN          82.41     SNYDER        88.84        REGINALD      88.41     SIMMONS            72.45
+                DOUGLAS       81.93     ROMANO        88.84        TYRONE        86.75     CHARLES            72.33
+                SHANE         81.11     O'NEILL       88.72        MALCOLM       86.06     HAWKINS            70.81
+                JOHN          80.36     RUSSO         88.67        DARRYL        84.78     ROBINSON           70.70
+                STEPHEN       80.12     FOX           86.43        TERRANCE      84.12     JENKINS            70.50
+                                        SWEENEY       86.03        MAURICE       82.47     FRANKLIN           70.45
+                                        SULLIVAN      85.08        ISAIAH        74.06     JOSEPH             70.42
+                                                                   ELIJAH        72.35
+                Notes: The %race columns indicate the percentage of babies born in NJ between 1989 and 1996 with that
+                first or last name that were of that race (i.e. 88.87% of babies with the first name Scott are White).   27/66
+  Hiring, background screening,
+ and statistical discrimination —
+A conceptual model of ban the box
+Statistical discrimination
+
+
+ − Statistical discrimination
+      □   When rational decision-makers use aggregate group characteristics, such as
+          group averages, to evaluate individual personal characteristics
+      □   Note: No animus; purely making predictions based on available information
+      □   Assumption of statistical discrimination: Employers are solving this
+          problem correctly
+
+ − Broadly important point
+      □   Prediction is a critically important component of economic behavior
+      □   This will become more important in the Artifcial Intelligence era
+                                                                                   29/66
+A simple model of ban the box
+
+Model illustrates subtle economics of Ban the Box
+ − Setup
+     □ Firms may be generally reluctant to hire felons
+     □ If a ‘box’ is available, they may use it to screen out felons
+
+     □ ‘Ban the box’ disallows this option
+
+     □ But frms can still pay for more expensive background check
+
+
+ − What could happen?
+     1. No change but higher cost: Firms screen as before, but at greater cost
+     2. Success: Firms forego background checks, simply hire all applicants
+     3. Fail: Firms choose to not hire groups with high criminal background rates
+                                                                                    30/66
+A simple model of ban the box
+
+− Consider a frm looking to hire its next worker
+     □ The frm pays a fxed wage for a given position
+     □ Two groups of applicants: Group 1 (minority), Group 0 (non-minority)
+
+     □ Firm can directly observe whether an applicant is from Group 1 or Group 0
+
+
+
+− Firm prefers to hire Group 1 workers but is averse to hiring felons
+     □ A fraction λ of Group 1 workers are felons (F )
+     □ Assume (for simplicity only) that no Group 2 workers are felons
+
+
+
+− Denote frm’s payof as πi
+                                     π1N > π0 > π1F
+
+                                                                                   31/66
+Solution sequence
+
+ 1. Hiring with costless screening (everything observable)
+
+ 2. No background checking: Hiring where G ∈ 0, 1 is visible but not F
+ 3. Adding low-cost ‘box’ option
+      □ May lead frms to screen out felons that they would have otherwise hired
+      □ May allow frms to hire Group 1 applicants whom they otherwise would not
+
+        have hired
+ 4. Banning the box but allowing background checks
+      □ May raise costs with no change in outcomes
+      □ May cause frms to stop screening, just hire everyone
+
+      □ May cause frms to stop screening and stop hiring from Group 1
+
+
+                                                                                  32/66
+Baseline: Hiring with costless screening
+
+
+
+
+ − Equilibrium with full information
+     □   Firms will hire a non-felon if a non-felon from Group 1 is unavailable
+     □   Otherwise, will hire someone from Group 0
+
+
+
+
+                                                                                  33/66
+Hiring when frms cannot distinguish felons from non-felons
+− What if frms cannot distinguish felons vs non-felons?
+     □ No screening is available: frms don’t know F until after they’ve hired
+     □ Employers hire from Group 1 if the following holds (otherwise only Group 0)
+
+
+                                  (1 − λ)π1N + λπ1F > π0 ,
+− Felons hired more often when
+     □ Non-felons from Group 1 are very proftable (π1N large)
+                                                       F
+     □ Felons from Group 1 are not very unproftable (π1 reasonably close to π0 )
+
+     □ Felons are a modest proportion of Group 1 (λ small).
+
+
+− Employers will not hire from Group 1 when
+                                (1 − λ)π1N + λπ1F < π0
+     □ Here, employers statistically discriminate against Group 1 members
+                                                                                   34/66
+     □ Not out of animus; concern that too many have low productivity
+Adding a low-cost (not free) screening technology, AKA ‘the box’
+
+
+− A low cost screening technology becomes available
+     □   A checkbox where applicants must report a felony conviction
+
+− For each applicant screened with box, the frm pays a cost c
+     □   If applicant turns out to be a felon, frm screens a new applicant
+     □   Expected number of applicants per non-felon hire is 1/ (1 − λ)
+     □   Why? If 50% of applicants are felons, frms expect to screen two applicants to
+         get one non-felon
+
+
+                                                                                   35/66
+Adding a low-cost screening technology, AKA ‘the box’
+
+
+− Firms will use this screening technology if
+                                       c
+                              π1N −         > (1 − λ)π1N + λπ1F
+                                    (1 − λ)
+                                      c
+                            π1N −           > π1F
+                                  λ (1 − λ)
+− Firms screen if ∆π for non-felons v. felons is large enough to justify c
+
+     □   If λ = 0, then it’s never worth it to screen since there are no felons
+     □   If λ = 1, then it’s never worth it to screen because all applicants are felons
+     □   If λ ∈ (0, 1), it may be worthwhile to screen
+
+                                                                                          36/66
+Adding a low-cost screening technology, AKA ‘the box’
+Two additional subtleties
+ 1. Firms that were hiring all Group 1 might stop hiring felons
+                           c
+     □   If π1N > π1F + λ(1−λ) , frms will prefer use ‘the box’
+     □   Even if they would be willing to hire from Group 1 without the box, i.e., if
+         (1 − λ)π1N + λπ1F > π0
+
+ 2. Firms that didn’t hire from G1 might start hiring G1, screening out felons
+     □   If (1 − λ)π1N + λπ1F < π0 : Group 1 is too risky to hire without a screen
+     □   Here, frms may hire Group 1 using ‘the box’ but would not hire Group 1
+         otherwise
+                                   c
+                          π1N −          > π0 > (1 − λ)π1N + λπ1F ,
+                                (1 − λ)                                                 37/66
+A ‘ban the box’ policy: Three scenarios
+
+
+
+
+ − Box banned – illegal to ask applicants if they have a felony conviction
+     □   Firms can still do criminal background checks after interviewing
+     □   Cost of a criminal background check is c′ > c
+
+ − What could happen?
+
+
+
+
+                                                                             38/66
+A ‘ban the box’ policy: Three scenarios
+
+
+
+ − Scenario 1: Higher cost, but no change in hiring
+
+     □   The cost is not too high so frms pay c′ instead of c
+                                      c′
+                           π1N −           > π0 > (1 − λ)π1N + λπ1F .
+                                   (1 − λ)
+         Firms no longer use box, use c′ instead, hire same workers at greater cost
+
+
+
+
+                                                                                      39/66
+A ‘ban the box’ policy: Three scenarios
+
+
+ − Scenario 2: Policy success
+
+     □   Firms stop all criminal background checks, hire from both groups
+                                   c′
+                       π1N −             < π1F and (1 − λ)π1N + λπ1F > π0
+                               λ (1 − λ)
+
+     □   Box made screening felons not worth it
+     □   But G2 still worth hiring without any screen
+     □   Profts are lower, but policy succeeds
+
+                                                                            40/66
+A ‘ban the box’ policy: Three scenarios (cont.)
+
+ − Scenario 3: Policy backfre
+
+     □   The cost of criminal background checks for all applicants is too high
+         but non-screened applicants are perceived as too risky
+                                  c′
+                      π1N −             < π1F and (1 − λ)π1N + λπ1F < π0 .
+                              λ (1 − λ)
+
+   Firms exclusively hire group 0 applicants, not group 1 applicants
+     □   Workers harmed are Group 1 workers who are not felons
+     □   Felons were not going to be hired regardless (since (1 − λ)π1N + λπ1F < π0 )
+     □   Banning the box prevents non-felons from group 1 from being considered
+                                                                                    41/66
+Theory of ‘ban the box’ policy: Summary
+
+ 1. Policy helps Group 1 workers if it induces a pooling equilibrium
+
+     □   Employers choose to hire both felons and non-felons from Group 1 when it
+         becomes too expensive to use a screen to distinguish them
+
+ 2. Policy harms Group 1 workers if it induces a separating equilibrium
+
+     □   Employers hire only Group 0 workers because it’s too expensive to screen
+         Group 1 workers – but too risky to hire them without screening
+
+− If BtB causes separating eq’m, harms Group 1 workers who are not felons
+     □   This is the opposite of what ban the box advocates would intend
+     □   It is nevertheless a realistic — though by no means certain — possibility
+                                                                                     42/66
+Desmos example
+
+
+
+− https://www.desmos.com/calculator/kyvhuk4hz9
+
+− π1N = 10
+− π1F = 2
+− π0 = 6
+− λ ∈ [0, 1]
+− c ∈ (0, 5)
+
+
+
+
+                                                 43/66
+Desmos example: Parameter values
+
+
+
+
+                                   44/66
+Full information: π0 , π1 , πF visible
+
+
+
+
+                                         45/66
+No screening option: π0 vs. λ × πF + (1 − λ) × π0
+
+
+
+
+                                                    46/66
+No screening option, upper envelope: π0 vs. λ × πF + (1 − λ) × π0
+
+
+
+
+                                                                    47/66
+Adding screening option: c = 1
+
+
+
+
+                                 48/66
+Adding screening option, upper envelope: c = 1
+
+
+
+
+                                                 49/66
+Comparing: Box available, c = 1; to Box banned, c = 1.5
+
+
+
+
+                                                          50/66
+Evidence from Agan and Starr
+                AGAN & STARR, BAN THE BOX , CRIMINAL RECORDS, AND STATISTICAL DISCRIMINATION
+
+Conveying race with ‘distinctively’ white and Black names
+                A2. Names Used
+
+                Table A2.1: White and Black Names Used for Applicants
+                White Names                                        Black Names
+                First         %White Last             %White       First         %Black Last                  %Black
+                SCOTT         88.87     WEBER         94.37        TYREE         97.94     PIERRE             97.78
+                THOMAS        86.92     ESPOSITO      93.30        TERRELL       96.23     WASHINGTON         90.28
+                CODY          86.71     SCHMIDT       92.63        DAQUAN        96.04     ALSTON             88.96
+                RYAN          85.37     BRENNAN       92.45        JAQUAN        95.03     BYRD               85.50
+                NICHOLAS      84.99     MEYER         92.27        DARNELL       93.43     INGRAM             78.63
+                DYLAN         84.70     KANE          91.75        JAMAL         91.36     JACKSON            76.32
+                MATTHEW       83.97     HOFFMAN       91.38        MARQUIS       91.36     BANKS              75.68
+                JACOB         83.37     RYAN          89.98        JERMAINE      89.45     FIELDS             74.83
+                KYLE          82.93     WAGNER        89.96        DENZEL        89.27     BRYANT             74.49
+                TYLER         82.82     HANSEN        89.60        DWAYNE        88.89     WILLIAMS           74.22
+                SEAN          82.41     SNYDER        88.84        REGINALD      88.41     SIMMONS            72.45
+                DOUGLAS       81.93     ROMANO        88.84        TYRONE        86.75     CHARLES            72.33
+                SHANE         81.11     O'NEILL       88.72        MALCOLM       86.06     HAWKINS            70.81
+                JOHN          80.36     RUSSO         88.67        DARRYL        84.78     ROBINSON           70.70
+                STEPHEN       80.12     FOX           86.43        TERRANCE      84.12     JENKINS            70.50
+                                        SWEENEY       86.03        MAURICE       82.47     FRANKLIN           70.45
+                                        SULLIVAN      85.08        ISAIAH        74.06     JOSEPH             70.42
+                                                                   ELIJAH        72.35
+                Notes: The %race columns indicate the percentage of babies born in NJ between 1989 and 1996 with that    52/66
+                first or last name that were of that race (i.e. 88.87% of babies with the first name Scott are White).
+                BAN THE BOX, CRIMINAL RECORDS, AND DISCRIMINATION                                         13
+Summary statistics: Main research data
+                                                      TABLE I
+                      MEANS OF APPLICANT AND APPLICATION CHARACTERISTICS AND
+                                    CALLBACK RATES BY PERIOD
+
+                                                     Pre-BTB           Post-BTB          Combined
+
+                 Characteristics
+                  White                                0.502             0.497              0.500
+                  Conviction                           0.497             0.513              0.505
+                  GED                                  0.498             0.502              0.500
+                  Employment gap                       0.492             0.504              0.498
+                  Application has box                  0.366             0.036              0.199
+                 Results
+                   Callback rate                       0.109             0.125              0.117
+                   Interview req.                      0.060             0.067              0.063
+                 Callback rate by characteristics
+                   Black                     0.099                       0.111              0.105
+                   White                     0.120                       0.139              0.129
+                   GED                       0.106                       0.127              0.117
+                   HSD                       0.113                       0.122              0.118
+                   Emp. gap                  0.110                       0.126              0.118
+                   No emp. gap               0.109                       0.124              0.116
+                 N                                     7,245             7,392              14,637
+                                                                                                               53/66
+                     Notes. “Callback” means application received a personalized positive response from
+Interview 18
+           callback rates before Ban
+                       QUARTERLY     theOFBox by
+                                 JOURNAL         race and criminal status
+                                           ECONOMICS
+
+
+                       .15                                                      0.140
+                                        0.131
+                                                                                        0.125
+
+
+
+
+                Callback Rate
+                                                0.094
+                                0.086
+                                                                        0.083
+
+
+
+                           .1
+                       .05
+
+
+
+
+                       0
+                                   Box              No Box                 Box              No Box
+                                            Black                                   White
+                                                         Crime            No Crime
+
+
+                                                             FIGURE I
+             Callback Rates by Race, Crime, and Box: Preperiod Applications Only                     54/66
+  14              QUARTERLY
+Interview callback rates       JOURNAL
+                         pre-ban:      OF using
+                                  CompaniesECONOMICS
+                                                a ‘box’ prior to the ban
+                                                 TABLE II
+      CALLBACK RATES BY CRIME STATUS FOR STORES WITH THE BOX IN THE PRE-BTB
+                                     PERIOD
+
+                             No crime           Crime           Property           Drug          Combined
+
+  Callback rate                0.136             0.085            0.084            0.085            0.110
+  Callback black               0.131             0.086            0.091            0.081            0.109
+  Callback white               0.140             0.083            0.077            0.089            0.111
+  N                            1,319             1,336             703              633             2,655
+
+    Notes. Sample restricted to pre-BTB period applications where the application asked about criminal records.
+  Callback implies application received a personalized positive response from the employer.
+
+
+
+                                                                                                             55/66
+  that very few reflect early compliance with the New Jersey or
+Key fnding: BAN
+           Callback  rates
+                THE BOX,    pre v. post
+                         CRIMINAL       BTB
+                                  RECORDS, AND for companies 21
+                                              DISCRIMINATION using a ‘box’
+                                                                                          0.148
+                        .15                                                       0.141
+                                           0.134
+
+
+
+
+                                                   0.103
+
+
+                   Callback Rate
+                                                                          0.087
+                                   0.080
+
+
+                              .1
+
+                        .05
+
+
+
+
+                        0
+                                       Pre             Post                   Pre             Post
+                                               Black                                  White
+                                                              Crime         No Crime
+
+
+                                                              FIGURE II
+            Callback Rates by Race, Criminal Record, and Period: Balanced Box Removers
+                                               Only                                                  56/66
+
+            This figure compares callback rates before and after Ban the Box went into
+Callback   rates pre v. post BTB: Companies using a ‘box’ pre-ban
+ AGAN & STARR, BAN THE BOX , CRIMINAL RECORDS, AND STATISTICAL DISCRIMINATION
+
+
+
+ Table 5: Average Black-White Response Rate Differences by Race and Treated, Before and After
+ BTB Goes into Effect in NJ
+
+                                                     Treated          Not Treated           Diff
+          Black - White Callback Rate, Pre                -0.008              -0.027             0.019
+          Black - White Callback Rate, Post               -0.040              -0.022            -0.018
+          Diff                                             0.032              -0.005             0.037
+          Diff, Perfect Quad Sample                        0.038              -0.004             0.042
+ Notes: Each cell is a black-white response rate differential, measured in percentage points. The last line
+ restricts analysis to only those stores in the “perfect quad” sample, that is, stores for which we sent two
+ applications in the pre- and two in the post. The two outlined cells represent the raw difference-in-differences
+ in-differences in the full sample and the perfect quad sample.
+
+
+
+                                                                                                               57/66
+                      BAN THE BOX, CRIMINAL RECORDS, AND DISCRIMINATION                   23
+Triple-dif estimates: Box/No-box × Pre/Post × White/Non-White
+                                                TABLE V
+                    EFFECTS OF BAN THE BOX ON RACIAL DISCRIMINATION: TRIPLE DIFFERENCES
+
+                                                      (1)             (2)             (3)
+
+             Box Remover × post × white             0.039∗          0.040∗∗         0.035∗
+                                                    (0.020)         (0.018)         (0.018)
+             Post × white                           −0.002          −0.006          −0.006
+                                                    (0.014)         (0.012)         (0.013)
+             Box Remover × post                     −0.019          −0.011
+                                                    (0.023)         (0.019)
+             Box Remover × white                    −0.017          −0.021
+                                                    (0.015)         (0.014)
+             Box Remover                             0.016           0.009
+                                                    (0.028)         (0.024)
+             White                                  0.024∗∗         0.028∗∗          0.098
+                                                    (0.012)         (0.011)         (0.129)
+             Post                                    0.016           0.012          0.339∗∗
+                                                    (0.017)         (0.015)         (0.139)
+             N                                      11,188           14,637         14,637
+             Controls                                Yes              Yes            Yes
+             Center FE                                No              Yes            Yes
+             Chain FE                                 No               No            Yes
+             Post × chain FE                          No               No            Yes
+             White × chain FE                         No               No            Yes
+             Sample                                Balanced           Full           Full      58/66
+Summary of results
+
+                       Pre-B2B            Post-B2B
+           Applicants with a Criminal Record
+  Black applicants        8.0%             10.3%
+  White applicants        8.7%             14.8%
+
+
+          Applicants without a Criminal Record
+  Black applicants       13.4%             10.3%
+  White applicants       14.1%             14.8%
+                                                     59/66
+Statistical Discrimination Versus Stereotyping
+
+
+
+ − Statistical discrimination
+      □   When rational decision-makers use aggregate group characteristics, such as group averages,
+          to evaluate individual personal characteristics
+
+
+ − Stereotyping
+      □   When decision-makers with erroneous beliefs (i.e., not rational) use aggregate group
+          characteristics, such as group averages, to evaluate individual personal characteristics
+
+
+
+
+                                                                                                     60/66
+                      BAN THE BOX, CRIMINAL RECORDS, AND DISCRIMINATION                31
+Testing for statistical discrimination based on GED credential
+                                    TABLE VII
+                  EFFECTS OF BTB ON CALLBACKS OF GED HOLDERS VERSUS HS GRADS: TRIPLE
+                                             DIFFERENCES
+
+                                                   (1)            (2)             (3)
+
+               Box Remover × post × GED         −0.012          −0.010          −0.002
+                                                (0.025)         (0.019)         (0.019)
+               Post × GED                        0.021∗          0.009          −0.000
+                                                (0.013)         (0.010)         (0.009)
+               Box Remover × post                0.006           0.014
+                                                (0.030)         (0.024)
+               Box Remover × GED                 0.021           0.021
+                                                (0.022)         (0.015)
+               Box Remover                      −0.003          −0.012
+                                                (0.029)         (0.026)
+               GED                              −0.019∗         −0.012         0.401∗∗∗
+                                                (0.011)         (0.008)         (0.129)
+               Post                              0.004           0.005         0.473∗∗∗
+                                                (0.016)         (0.015)         (0.174)
+               N                                 11,188          14,637         14,637
+               Controls                           Yes             Yes            Yes
+               Center FE                           No             Yes            Yes
+               Chain FE                            No              No            Yes
+               Post × chain FE                     No              No            Yes
+               White × chain FE                    No              No            Yes
+               Sample                           Balanced          Full           Full       61/66
+  Response from the National
+Employment Law Project (NELP)
+        between March and October of 2013 were people with records. 45
+
+       In Durham County, North Carolina, the number of applicants     with criminal records
+                                                                  FACT SHEET | AUGUST 2016
+
+        recommended for hire has nearly tripled in the two years since its “ban the box” policy
+        passed, with the resulting number of hires increasing from 35 to 97. On average, 96.8
+                                 Research Supports Fair-Chance
+        percent of those with records recommended for hire ultimately get the job.46
+                                 Policies
+                                                   NELP’s conservative estimates indicate that roughly 70 million people in the United States have
+
+       Papers released in 2016 some
+                                  suggested       every year.that        racestudies find that
+                                                                                      disparities                  ina job
+                                        sort of a criminal record and nearly 700,000 people return to our communities from
+                                                                                                                                  callback or employment
+                                                                                 1
+
+                                  incarceration                Numerous research                      people require   combination of
+                                  family support, community assistance, and economic opportunity to stay out of the criminal
+                                  adoption
+        rates increased after the justice system.   Having of     ban-the-box
+                                                            access to employment                  policies.
+                                                                                    opportunities is a critical
+                                                                                                                       47 AswebNELP has argued, this
+                                                                                                                component of this
+                                  of support. A steady job provides not just financial resources, but also connections to society.
+        was the wrong conclusion.       48 A careful review of the papers reveals that there was an
+                                  Unfortunately, finding a job is all too difficult for many people with records. Men with criminal
+
+        increase in hiring for a a 2015
+                                majority  New York of        blacks           afterFoundation poll.
+                                                                                           ban-the-box                     policies were enacted. Ban-
+                                  records accounted for about 34 percent of the unemployed prime working age men surveyed in
+                                                       Times/CBS  News/Kaiser Family                        And the Great Recession
+                                                                                                                     2
+
+                                  made it even worse; for example, researchers found in one state that before the Recession, 40
+        the-box has demonstrated       success
+                                  percent of the   formerly and        should
+                                                             incarcerated were             bein 2008
+                                                                                employed, but     one         component
+                                                                                                         the proportion had dropped   of a comprehensive
+                                  to 10 percent.                3
+
+
+        fair-chance hiring proposal.       49    Unlawful racial discrimination by employers, such as the
+                                  While having a job—especially a ow-wage job—is not a guarantee that a formerly
+
+        stereotyping of black mencritical
+                                      asfamily supports
+                                              “criminals,”                   is incentives to
+                                                                                   responsible                     for    discrepancies in employment
+                                  incarcerated person will remain out of the criminal justice system, unemployment strains
+                                                             and provides financial               engage in illegal behaviors. Thus,
+                                  removing a barrier that cuts off employment opportunities before the hiring process even
+        rates between racial groups
+                                  begins, isand
+                                  records.
+                                                        should
+                                             critical to designing       not
+                                                                   a robust policy be      tolerated.
+                                                                                    platform to help                50 with
+                                                                                                     millions of Americans
+
+
+
+    License CC BY-SA © National Employment         Law on
+                                      Below is information  Project        Thisresearch
+                                                                studies that offer  contentand datais excluded
+                                                                                                    that support        fromthat
+                                                                                                                 the proposition our Creative Commons license. For
+    more information, see https://ocw.mit.edu/help/faq-fair-use/
+                                      removing unjust barriers to employment is good for individuals, families, and communities,
+                                      increases public safety, and contributes to a robust economy.
+ The news is not all bad —
+Discouraging research fndings
+    generate fresh ideas
+© Oxford University Press. All rights reserved. This content is excluded from our Creative Commons license. For more
+information, see https://ocw.mit.edu/help/faq-fair-use/
+                                         Misdemeanor Prosecution lill.lllll
+                                         Amanda Agan, Jennifer L Doleac, Anna Harvey
+
+                                         The Quarterly Journal of Economics, Volume 138, Issue 3, August 2023, Pages 1453-1505,
+                                         https://doi.org/ 10.1093/qje/qjad005
+                                         Published: 23 January 2023       Article history T
+
+
+                                         " Cite    /i> Permissions    -=! Share •
+
+
+                                           Abstract
+                                           Communities across the United States are reconsidering the public safety
+                                           benefits of prosecuting nonviolent misdemeanor offenses, yet there is little
+                                           empirical evidence to inform policy in this area. We report the first estimates of
+                                           the causal effects of misdemeanor prosecution on defendants I subsequent
+                                           criminal justice involvement. We leverage the as-if random assignment of
+                                           nonviolent misdemeanor cases to assistant district attorneys (ADAs) who
+                                           decide whether a case should be prosecuted in the Suffolk County District
+                                           Attorney's Office in Massachusetts. These ADAs vary in the average leniency of
+                                           their prosecution decisions. We find that for the marginal defendant,
+© Oxford University Press. All             nonprosecution of a nonviolent misdemeanor offense leads to a 53% reduction
+rights reserved. This content is           in the likelihood of a new criminal complaint and a 60% reduction in the
+                                           number of new criminal complaints over the next two years. These local average
+excluded from our Creative
+                                           treatment effects are largest for defendants without prior criminal records,
+Commons license. For more                  suggesting that averting criminal record acquisition is an important
+information, see                           mechanism driving our findings. We also present evidence that a recent policy
+https://ocw.mit.edu/help/faq-fair-use/     change in Suffolk County imposing a presumption of nonprosecution for
+                                           nonviolent misdemeanor offenses had similar beneficial effects, decreasing the
+                                           likelihood of subsequent criminal justice involvement.
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

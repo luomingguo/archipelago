@@ -1,0 +1,808 @@
+Runs, Panics, and Contagion
+14.454
+
+Ricardo J. Caballero
+MIT
+
+Economic Crises
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+1 / 41
+
+Regional Banks 2023
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+2 / 41
+
+Regional Banks 2023
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+3 / 41
+
+Regional Banks 2023
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+4 / 41
+
+References
+
+1
+
+2
+
+3
+
+Diamond, D.W. and P.H.Dybvig, “Bank Runs, Deposit Insurance, and
+Liquidity,” Journal of Political Economy, 91(3), 401-419, June 1983.
+Allen, F. and D. Gale, “Financial Contagion,” Journal of Political Economy,
+108:1-22, 2000
+(Intuition only) Caballero, R.J. and A. Simsek,“Fire Sales in a Model of
+Complexity,” Journal of Finance, 68(6), 2549-2587, 2013
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+5 / 41
+
+Main points
+
+The maturity transformation of banks builds on the LLN. As such, it is
+inherently fragile to an endogenous breakdown in heterogeneity (coordination
+failure)
+Contagion can arise from network eﬀects and ﬁre sales of common assets
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+6 / 41
+
+The Diamond-Dybvig model of bank runs
+
+Depository institutions as “pools of liquidity." They transform illiquid assets
+(long term inv.) into liquid liabilities (deposits).
+Danger: Bank runs (too many decide to use the “liquidity option" at the
+same time).
+Policy: Deposit insurance, LLR, suspension.
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+7 / 41
+
+The Diamond-Dybvig model of bank runs
+Continuum 1 of individuals each endowed with one unit of currency.
+t = 0, 1, 2
+At t = 0, individuals can either invest in short-run project with return equal
+to 1, or invest in a long-run project that yields a return R > 1 at t = 2.
+If liquidate the long-run project at t = 1, return is L < 1 only.
+At t = 1, fraction π of individuals gets liquidity shock and only value
+consumption at t = 1. The remaining fraction 1 − π is patient and only
+values consumption at t = 2. The liquidity shock is private information
+Ex-ante expected utility is
+U = πu (c1 ) + (1 − π )u (c2 ),
+where c1 is consumption in period 1 if impatient and c2 consumption in period 2
+if patient (consume at only one date); u 0 > 0; u” < 0; −cu 00 /u 0 > 1
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+8 / 41
+
+The Diamond-Dybvig model of bank runs
+
+t
+
+0
+
+1
+
+2
+
+Endowm.
+
+1
+
+0
+
+0
+
+Projects
+
+-1
+
+0
+
+R>1
+
+L<1
+
+1
+
+Liquidity shock
+(private inform.)
+U(c1)
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+U(c2)
+
+Economic Crises
+
+9 / 41
+
+Autarky
+
+Denote I ∈ [0, 1] the investment in the long-run project
+Under autarky, the individual solves:
+max U
+I
+
+c1
+c2
+
+= πu (c1 ) + (1 − π )u (c2 )
+= 1 − I + LI
+= 1 − I + RI
+
+Ex-post ineﬃ cient. Would like I = 1 if patient (c2 = R), I = 0 if impatient
+(c1 = 1).
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+10 / 41
+
+Ex-post Financial Market
+Bond at t = 1; p units of t1 goods for one t2 good.
+Impatient individuals buy t1 goods, so
+c1 = pRI + (1 − I ).
+Patient individuals buy t2 -goods, so
+c2 = RI +
+
+1−I
+.
+p
+
+The equilibrium price must satisfy
+L
+≤ p ≤ 1.
+R
+Equilibrium: p = 1/R; c1 = 1, c2 = R, I M = 1 − π.
+Better... but not great, since c2 >> c1
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+11 / 41
+
+Planner’s Problem
+
+Ex-post market leaves too much liquidity risk: c2 >> c1
+max U
+I
+
+= πu (c1 ) + (1 − π )u (c2 )
+
+c1
+
+=
+
+c2
+
+=
+
+u ( c2 )
+
+≥
+
+1
+(1 − I )
+π
+1
+RI
+1−π
+u ( c1 )
+
+Solution:
+u 0 (c1∗ ) = Ru 0 (c2∗ )
+(note that IC is not binding since c2 > c1 )
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+12 / 41
+
+Planner’s Problem: The Liquidity Insurance Component
+
+Insurance since: c1 > 1 and c2 < R
+Ru 0 (R )
+
+= u 0 (1) + Ru 0 (R ) − u 0 (1)
+Z R
+∂
+0
+= u (1) +
+[su 0 (s )]ds
+∂s
+1
+= u 0 (1) +
+
+Z R
+
+[u 0 (s ) + su”(s )]ds
+
+
+Z R
+su”(s )
+u 0 (s ) 1 + 0
+ds
+= u 0 (1) +
+u (s )
+1
+< u 0 (1)
+1
+
+Insurance follows from the fact that u 0 (c1∗ ) = Ru 0 (c2∗ ),
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+13 / 41
+
+Intermediation
+
+Can implement the planner’s solution
+Financial interm. oﬀers c1∗ or c2∗ in exchange for deposit such that:
+max U
+
+c
+s.t. πc1 + (1 − π ) 2 = 1
+R
+
+Bank saves πc1 to fulﬁll obligations.
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+14 / 41
+
+Run
+If many patient consumers withdraw early, nothing is left for those who wait.
+Second Nash equilibrium. Expectations can lead to bank run.
+Sequential servicing constraint (ﬁrst come, ﬁrst served) creates incentives
+to run early.
+Let λ ≥ π denote the mass of consumers that withdraw. Then, a deposit
+contract pays:
+ ∗
+
+πc1 + L(1 − πc1∗ ) ∗
+c1 = min
+, c1
+λ
+
+ ⎫
+⎧
+⎬
+⎨ R 1 − πc1∗ − L1 (λ − π )c1∗
+c2 = max
+,0
+⎭
+⎩
+1−λ
+Note that there is a λ < 1 such that IC is violated as c1 > c2 . If patient
+agents think such λ will realize, they run (and λ = 1, so it is self-fulﬁlling)
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+15 / 41
+
+Solutions...
+
+Deposit insurance, LLR, suspend convertibility (only ﬁrst (small) λ of agents
+that arrive to the bank get money).
+Before 1913 (Fed was founded), the US experienced many runs. During the
+great depression it took too long for the Fed to react.
+Subprime crisis. Runs on unprotected investment banks (repo market)
+Fixed exchange rates
+Remarks:
+Global games links runs to fundamentals
+Modern version in DM: short term debt instead of retail deposits
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+16 / 41
+
+Run on the Repo Market (Subprime crisis - Gorton and
+Metrick)
+
+The Panic of 2007-2008 was a run on the repo market (rather than on
+deposits)
+Repo (sale and repurchase): short term collateralized (often by securitized
+bonds) loans among ﬁnancial institutions
+Securitized-banking: Packaging and reselling loans (rather than making and
+holding loans), with repo-agreements as the main source of funding
+Repo haircuts jump as concern for liquidity of repo underlying markets
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+17 / 41
+
+Run on the Repo Market (Subprime crisis - Gorton and
+Metrick)
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+18 / 41
+
+Run on the Repo Market (Subprime crisis - Gorton and
+Metrick)
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+19 / 41
+
+Private credit (late 2024-2026?)
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+20 / 41
+
+Private credit (late 2024-2026?)
+
+Image created using ChatGPT. 2026. Ricardo Caballero.
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+21 / 41
+
+Financial Contagion
+
+“Small” shocks can spread through linkages
+Financial markets have all sort of linkages
+Allen and Gale (2000)
+[Caballero and Simsek (2013)]
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+22 / 41
+
+Financial Contagion
+
+Allen and Gale model captures: Small shocks, which initially aﬀect a few
+institutions, spread by contagion to the rest of the ﬁnancial sector
+D-D structure (sans the runs)+ interbank insurance markets (regional deposit
+shocks are insured through deposits crossholdings)
+Linkages can turn into a disaster if banks start liquidating cross holdings to
+generate liquidity
+The particular form of interconnectedness is very important (incomplete
+networks)
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+23 / 41
+
+Financial Contagion
+DD structure: Three dates, long term asset has return R at maturity and
+0 < r < 1 if liquidated prematurely.
+Four ex-ante identical regions: A, B, C, and D; each with its depositors a la
+DD (prob ω early consumer). Two (symmetric) states:
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+24 / 41
+
+Financial Contagion (ﬁrst best)
+Let the average fraction of early consumers be: γ ≡ (ω H + ω L )/2.
+
+x and y represent the percapita amount invested in the long and short asset,
+respectively (x + y ≤ 1)
+The planner ﬁrst maximizes average consumers utility subject to feasibility
+constraints:
+γc1 ≤ y ;
+(1 − γ)c2 ≤ Rx
+Then the planner (subject to same informational constraints as private
+sector) transfers from low to high liquidity demand regions:
+
+(ω H − γ)c1 = (γ − ω L )c1
+And at date 2 we reverse the ﬂow:
+
+(ω H − γ)c2 = (γ − ω L )c2
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+25 / 41
+
+Financial Contagion (decentralization)
+Each region has a continuum of identical banks; DD structure and deposit is
+not contingent on regional liquidity shock
+Interbank market to avoid costly liquidation of long term assets (banks
+exchange deposits at the ﬁrst date): z i = (ω H − γ)/2 of deposits in each
+other regions
+Suppose a bank needs liquidity (hit by ω H ), then it liquidates deposits in
+other regions. Its budget constraint at this date is:
+
+
+
+
+ωH − γ
+ωH − γ
+c1 = y + 3
+c1
+ωH +
+2
+2
+Which simpliﬁes to the planner’s constraint:
+γc1 = y
+A symmetric argument holds for the banks that have low liquidity demand
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+26 / 41
+
+Financial Contagion (Incompleteness)
+For example, banks in each region hold deposits only in adjacent region.
+
+Still can implement ﬁrst best:
+ω H c1 = y + ( ω H − γ ) c1
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+27 / 41
+
+Financial Contagion (Fragility)
+Suppose and unexpected (prob 0) aggregate event takes place:
+
+Main result: Incomplete network (example) does a lot worse in managing the
+aggregate shortage of liquidity
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+28 / 41
+
+Financial Contagion (Fragility)
+Assumptions: If bank cannot meet liquidity demand of impatient consumers,
+it must liquidate all long term assets and proceeds are split pro rata among
+all depositors (no ﬁrst come, ﬁrst served).
+Banks can be solvent, insolvent (meets depositors demand but only after
+liquidating some assets), or bankrupt
+Pecking order: short assets, deposits, long assets (assumptions about R, etc.)
+Liquidation value (all depositors must be treated equally):
+qA =
+
+y + rx + zq B
+1+z
+
+If B is solvent, then q B = c1 , if not, then we need a similar equation that
+now involves a q C , and so on
+Note that if A is bankrupt, D is hit hard since it has a large deposit in A
+(while in the complete network total cross-deposits are larger but individual
+deposits are smaller)
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+29 / 41
+
+Financial Contagion (Fragility)
+
+Buﬀer: Suppose a bank is insolvent (but not bankrupt), then the cash
+generated by the long term assets that can be liquidated and made available
+for early consumers without causing a run of patient consumers is:
+
+
+( 1 − ω ) c1
+b (ω ) ≡ r x −
+R
+where the term in squared brackets comes from
+R (x − [.]) = (1 − ω )c1
+Note that cross bank deposits do not enter this expression since once a bank
+withdraws on another bank, all cross-bank deposits are withdrawn, so they
+net (no aggregate liquidity is created from these deposits)
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+30 / 41
+
+Financial Contagion (Fragility)
+
+In region A the bank is short ec1 units of liquidity. It can meet this shortage
+without external help iﬀ :
+
+and recall that b 0 = (r /R )c1
+
+ec1 ≤ b (γ + e)
+
+If e is small, banks in A are insolvent but the other regional banks are spared.
+If e is large, the buﬀer is insuﬃ cient and q A < c1 , which means bank D
+experiences a loss. If D is insolvent, it pays on its cross-deposits c1 but it
+only receives q A . But if it is bankrupt, the whole network comes down!
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+31 / 41
+
+Financial Contagion (Fragility)
+Proof: Suppose for a moment that B does not go bankrupt so we get an
+upper bound for q A :
+y + rx + zc1
+qA =
+1+z
+Then a suﬃ cient condition for D to go bankrupt is:
+z ( c1 − q A ) > b ( γ )
+But if this is the case we know that
+qD ≤ qA
+So C must go bankrupt as well. But then B must be bankrupt (which in
+turn means q A < q A ), which means all banks are bankrupt and the only
+continuation equilibrium has:
+q i = y + rx < c1
+Important: Note that with the complete network the deposit of D (and any
+other region) on A would have been smaller, and hence it would have been
+harder for D (or any other region) to go bankrupt (and the same is true in a
+very incomplete network...)
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+32 / 41
+
+Caballero-Simsek Model (intuition only...)
+
+A model of the sudden rise in uncertainty and its interaction with asset ﬁre
+sales.
+Normal times: Banks collect information about their trading partners, which
+assures them of their soundness.
+Acute ﬁnancial distress in parts of the ﬁnancial network: Need to learn about
+the health of the trading partners of the trading partners...
+At some point, it becomes too complex (in the common language sense of
+“too complicated”):
+=⇒ Increase in banks’perceived uncertainty.
+=⇒ Fire sales and ﬂight to quality.
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+33 / 41
+
+Modeling outline
+
+Financial system is a network of interlinkages (as in Allen and Gale, 2000)).
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+34 / 41
+
+Modeling outline
+
+A surprise liquidity shock hits the network (at date 0 banks learn this shock is
+coming at date 1)
+Banks in distress withdraw their cross-loans, sell legacy assets, and cut back
+on new loans to meet the surprise liquidity shock.
+This leads to a partial domino.
+When shock is small, the domino is short and assets fetch their “fair price,”
+which keeps the domino eﬀect limited.
+When shock is large, the domino lengthens, perceived uncertainty rises,
+potential buyers withdraw, prices plummet, lengthening the domino....
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+35 / 41
+
+Known Network (no shock is “too big”)
+
+l (p )
+
+= y + (1 − y )p
+
+
+θ
+D (p ) =
+−1
+l (p )
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+36 / 41
+
+Known Network (no shock is “too big”)
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+37 / 41
+
+Small shock in an Unknown Network
+Banks don’t know the network structure.
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+38 / 41
+
+Large shock in an Unknown Network
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+39 / 41
+
+Large shock in an Unknown Network
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+40 / 41
+
+Final remarks
+Financial markets, and banks in particular, provide many services to the real
+sector and consumers
+But they are inherently fragile
+They rely extensively on statistical regularities, which human beings can
+quickly destroy when in panic mode
+They are embedded in a very complex and dynamic structure, which is bound
+to remain only partially understood, and this is in itself an enormous source of
+uncertainty and fears
+
+The real consequences of these crises can be enormous. Regulatory eﬀorts
+(sometime) help to slowdown the speed and shift the nature of the next
+crisis... but ﬁnancial panics and crises have been with us for centuries, and
+they will probably remain so, often mutating a little (for example from
+depositors runs to securitized banking runs), but the core recipe does not
+change much
+
+R.J. Caballero (MIT)
+
+Runs, Panics, and Contagion
+
+Economic Crises
+
+41 / 41
+
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+14.454 Economic Crises
+Spring 2026
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+
+

@@ -1,0 +1,617 @@
+--- Page 1 ---
+ 
+ 
+ 
+15.871 System Dynamics  
+Recitation#1  
+1
+
+--- Page 2 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+   
+ 
+A simple model that captures the dynamics  
+of an infectious disease‐ SARS  
+Historical data: SARSDATA.vdf 
+the incidence (rate at which new cases were
+‐the incidence (rate at which new cases were 
+reported, measured in people/day) 
+‐ cumulative prevalence (cumulative number 
+of cases reported, measured in people) for 
+SARS in Taiwan
+SARS in Taiwan 
+2
+
+--- Page 3 ---
+   
+   
+ 
+Step 1: Open A New Model
+Step 1: Open A New Model 
+3
+
+--- Page 4 ---
+   
+ 
+Step 2: Initial Settings
+Step 2: Initial Settings 
+4
+
+--- Page 5 ---
+   
+ 
+ 
+Step 3: Save As “SARS Tutorial F12” 
+Step 3: Save As SARS_Tutorial_F12  
+5
+
+--- Page 6 ---
+   
+ 
+Step 4: Load SARSDATA.vdf
+Step 4: Load SARSDATA.vdf 
+6
+
+--- Page 7 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+‐‐‐‐Warning
+Warning‐‐‐­
+• We willill compare our simulatition d t
+data to th
+the act
+l/hi
+ual/historical 
+data in this file, so variable names need to match EXACTLY  
+• SARSDATA has 2 variables, those names have to match: 
+– New Reported Cases 
+– Cumulatitive Reported C
+d Cases 
+7
+
+--- Page 8 ---
+   
+ 
+ 
+ 
+ 
+Step 5: Population Susceptible to SARS  
+(
+k)
+(stock)
+8
+
+--- Page 9 ---
+   
+ 
+ 
+ 
+ 
+Step 6: Population Infected with SARS  
+(
+k/l
+(stock/level)l) 
+9
+
+--- Page 10 ---
+   
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+Step 7: Infection Rate (flow/rate)
+Step 7: Infection Rate (flow/rate) 
+First click in center of 
+Then click in center of  
+this stock 
+this stock  
+10
+
+--- Page 11 ---
+   
+ 
+Step 8: Infectivity (auxilary)
+Step 8: Infectivity (auxilary)
+11
+
+--- Page 12 ---
+   
+ 
+ 
+Step 9: Add Causal Arrow
+Step 9: Add Causal Arrow
+12
+
+--- Page 13 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Step 10: Right‐click on Arrow “handle”  
+dd
+l
+to Add Polarity  
+13
+
+--- Page 14 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Step 11: Contacts Between Infected  
+and Uninfected People  
+14
+
+--- Page 15 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+Step 12: Complete the Rest  
+of the Model + Lab l
+bel the Loops  
+d l
+h
+15
+
+--- Page 16 ---
+ 
+ 
+ 
+ 
+ 
+Use comment tool to add labels
+Use comment tool to add labels 
+16
+
+--- Page 17 ---
+ 
+ 
+ 
+Step 13: Specify Equations
+Step 13: Specify Equations 
+17
+
+--- Page 18 ---
+a ab es
+S
+ode s a e c ass ed as e t e
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+   
+   
+ 
+       
+ 
+ 
+   
+ 
+Exogeneous and Endogeneous  
+Variablbles  
+•  Variables in SD models are classified as either 
+exogenous or endogenous: 
+– Exogenous variables are defined independent of other 
+variables of the model. 
+•  They are functions of time (i.e., Exogenous Variable = f(t)). 
+•  Of course the exogenous variables may be constants, in
+Of course the exogenous variables may be constants, in 
+which case they are called parameters. 
+– Endogenous variables are influenced by other  
+variables in the system
+variables in the system 
+•  Endogenous Variable = f(x, y, z), where x, y, z are other 
+variables in the model 
+18
+
+--- Page 19 ---
+ 
+ 
+ 
+ 
+Step 14: Define Infection Rate
+Step 14: Define Infection Rate
+19
+
+--- Page 20 ---
+ 
+ 
+ 
+ 
+ 
+ 
+Step 15: Define Population Susceptible  
+to SARS  
+20
+
+--- Page 21 ---
+ 
+ 
+ 
+ 
+Step 16: Define Susceptible Contacts
+Step 16: Define Susceptible Contacts 
+21
+
+--- Page 22 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Step 17: Define Contacts Between  
+Infected and Uninfected People  
+22
+
+--- Page 23 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Step 18: Define Probability of Contact  
+with Infected Person  
+23
+
+--- Page 24 ---
+ 
+ 
+ 
+ 
+Step 19: Define Total Population
+Step 19: Define Total Population 
+24
+
+--- Page 25 ---
+ 
+ 
+ 
+ 
+Step 20: Define Contact Frequency
+Step 20: Define Contact Frequency
+25
+
+--- Page 26 ---
+ 
+ 
+ 
+Step 21: Define Infectivity
+Step 21: Define Infectivity
+26
+
+--- Page 27 ---
+ 
+ 
+ 
+ 
+ 
+ 
+Step 22: Define Population Infected  
+with SARS  
+27
+
+--- Page 28 ---
+ 
+ 
+ 
+Time Out and Run
+Time Out and Run 
+28
+
+--- Page 29 ---
+ 
+Plotting Results
+Plotting Results 
+29
+
+--- Page 30 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Optional: Permanent Graph  
+Use: I/O Object or Custom Graph
+30
+
+--- Page 31 ---
+ 
+ 
+ 
+   
+ 
+Step 23: Add Variables in the Dataset
+Step 23: Add Variables in the Dataset
+31
+
+--- Page 32 ---
+ 
+ 
+ 
+ 
+ 
+   
+ 
+Step 24: Add Infection Rate  
+(
+h d
+bl )
+(as a shadow variable)
+32
+
+--- Page 33 ---
+ 
+ 
+ 
+ 
+ 
+ 
+Step 25: Add Causal Link and Polarity
+Step 25: Add Causal Link and Polarity 
+33
+
+--- Page 34 ---
+ 
+ 
+ 
+ 
+ 
+Step 26: Define New Reported Cases
+Step 26: Define New Reported Cases
+34
+
+--- Page 35 ---
+ 
+ 
+ 
+ 
+ 
+Step 27: Define Cumulative Reported  
+Cases  
+35
+
+--- Page 36 ---
+ 
+ 
+ 
+Step 28: Units Check
+Step 28: Units Check
+36
+
+--- Page 37 ---
+ 
+ 
+Step 29: Error!!!
+Step 29: Error!!!
+37
+
+--- Page 38 ---
+ 
+ 
+ 
+ 
+Step 30: Redefine Contact Frequency
+Step 30: Redefine Contact Frequency 
+38
+
+--- Page 39 ---
+ 
+ 
+ 
+ 
+ 
+ 
+Step 31: Units Check – A. O. K.
+Step 31: Units Check A. O. K.
+39
+
+--- Page 40 ---
+ 
+ 
+ 
+ 
+ 
+ 
+Step 32: Rename Case – “Base” and  
+Run  
+40
+
+--- Page 41 ---
+ 
+ 
+ 
+ 
+ 
+Step 33: Plot Cumulative Reported  
+Cases  
+41
+
+--- Page 42 ---
+ 
+ 
+ 
+ 
+ 
+Step 34: Try Lowering Contact  
+Frequency  
+42
+
+--- Page 43 ---
+ 
+ 
+ 
+ 
+Step 35: Change Run Name
+Step 35: Change Run Name
+43
+
+--- Page 44 ---
+ 
+ 
+ 
+ 
+Step 36: Displaying Multiple Runs
+Step 36: Displaying Multiple Runs 
+44
+
+--- Page 45 ---
+ 
+ 
+Step 37: Synthesim
+Step 37: Synthesim 
+45
+
+--- Page 46 ---
+Amazing!!!
+Amazing!!!
+46
+
+--- Page 47 ---
+MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+ 
+15.871 Introduction to System Dynamics
+Fall 2013
+ 
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.

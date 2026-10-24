@@ -1,0 +1,620 @@
+--- PAGE 1 ---
+14.462
+Spring, 2020
+Design, Regulation, and Policy with 
+respect to Payment Systems and 
+Financial Infrastructure
+Bitcoin and Fintech as Examples of Technological Innovation, with 
+Implications for Money and Financial Intermediation, Begging Issues 
+of What is Optimal
+(Lecture 1)
+Robert M. Townsend
+Elizabeth & James Killian Professor of Economics, MIT
+
+
+--- PAGE 2 ---
+New Technology
+Bitcoin, blockchain and distributed ledgers
+Implications for central banks 
+Fintech
+Implications for money and banking
+Implications for regulation 
+
+
+--- PAGE 3 ---
+Latest Technology: Bitcoin, Blockchain, 
+Distributed Ledgers
+Importance of distributed ledgers to information and contracts:  
+Iansiti and Lakhani (2017)
+“Contracts, transactions, and the records of them are among the 
+defining structures in our economic, legal, and political 
+systems.… And yet these critical tools and the bureaucracies 
+formed to manage them have not kept up with the economy’s 
+digital transformation. They’re like a rush-hour gridlock trapping 
+a Formula 1 race car.... With blockchain, we can imagine a world 
+in which contracts are embedded in digital code and stored in 
+transparent, shared databases, where they are protected from 
+deletion, tampering, and revision.”
+Definition 
+Distributed Ledger Technologies (DLT) refers to the processes and related 
+technologies that enable nodes in a network (or arrangement) to securely 
+propose, validate, and record state changes (or updates) to a synchronized 
+ledger that is distributed across the network’s nodes.  BIS (2017)
+
+
+--- PAGE 4 ---
+Examples
+Distributed Ledgers
+Digital Asset – with Australian Stock Exchange 
+Maersk - shipping logistics
+TReDS – accounts receivable platform in India
+Propy – title registries
+IBM: Walmart –food chain tracking to track contamination
+Digital currencies
+Ripple, Stellar 
+Tether, DAE, StableCoin
+JPMorgan Coin
+Utility Settlement Coin (USC) 
+CBDCs, central bank digital currency (Project Jasper and others)
+Digital assets
+Aspen coin
+Alt.Estate and Imbrex
+UMA (Universal Market Access) Beware of the hype
+4
+
+
+--- PAGE 5 ---
+But DLT comes with Hype and Fraud
+Beware of the hype
+Digital Assets and DTCC 
+Two hours every day to reconcile trades in repo, important  for monetary 
+policy
+Yet did not happen 
+Libra
+May happen, or not
+Fraud
+DAO, Decentralized Autonomous Organization – 50 million high-jacked
+Tether,  Stable Coin- not actually 100% backed by US$
+5
+
+
+--- PAGE 6 ---
+Controversy, a comment on innovation
+Satoshi Nakamoto (2008)
+“What is needed is an electronic payment system based on 
+cryptographic proof instead of trust, allowing any two willing 
+parties to transact directly with each other without the need for a 
+trusted third party.”
+Obvious reaction
+o BIS (2018): Decentralized technology of crypto currencies, however 
+sophisticated, is a poor substitute for the solid institutional backing of 
+money
+Nothing new, hence not important?
+Innovation vs. invention, yes, make this distinction 
+Adoption depends on context and other things, can happen well 
+after invention
+
+
+--- PAGE 7 ---
+Misleading Definitions
+“Decentralization”
+Mallet: The synchronization of so-called decentralized ledgers 
+actually requires centralization or coordination across nodes-
+“Disintermediation”
+They mean disruption, as a good thing
+At best, eliminate oligopoly markups
+It is intermediation = mediation, as in the economics of financial 
+platforms and money
+
+
+--- PAGE 8 ---
+However, Central Banks 
+Change Their Tune: Central 
+Bank Digital Currency
+
+
+--- PAGE 9 ---
+Rogoff (2016) The Curse of Cash
+https://altexploit.files.wordpress.com/2017/01/kenneth-s-rogoff-the-curse-of-cash-princeton-university-press-2016.pdf
+9
+
+
+--- PAGE 10 ---
+Survey Evidence in Rogoff (2016) 
+10
+
+
+--- PAGE 11 ---
+
+
+--- PAGE 12 ---
+
+
+--- PAGE 13 ---
+
+
+--- PAGE 14 ---
+
+
+--- PAGE 15 ---
+Alternative Means of Payment
+
+
+--- PAGE 16 ---
+
+
+--- PAGE 17 ---
+Statistics for the US
+Greene, Schuh and Stavins (2017) “The 2015 Survey of Consumer Payment Choice: Summary Results”
+https://www.bostonfed.org/publications/research-data-report/2017/the-2015-survey-of-consumer-payment-
+choice-summary-results.aspx
+17
+
+
+--- PAGE 18 ---
+Impact of Taking Away the Currency: 
+Chodorow-Reich et al (2019)
+18
+
+
+--- PAGE 19 ---
+Central Bank Digital Currency: Shift to 
+Embracing New Technology
+Sweden
+China
+Singapore
+South Africa
+Why do it, interest rates and quantity of it, role of traditional 
+infrastructure and reliance on banks for monetary policy, co-
+existence of CBDC and crypto currencies 
+Suberg (2020) “Europe Central Bank Proposes ‘Unattractive’ Rates 
+for Digital Currency” (https://cointelegraph.com/news/europe-
+central-bank-proposes-unattractive-rates-for-digital-currency)
+
+
+--- PAGE 20 ---
+Money and Banking
+Fintech, Implications for Intermediation, Official Views of BIS 
+and Central Banks, Regulation 
+
+
+--- PAGE 21 ---
+Outline
+Definitions of intermediation, go-between financial platforms,  
+media of exchange
+And financial sector flow of funds
+Patterns in the data over historical periods
+Key ratios in advanced countries and emerging markets
+Central banks and financial access: view from the BIS
+Fin tech, big tech, and IO 
+Fin tech in the US
+Fin tech and regulation, a drag on growth , cross country evidenced
+On the difficulty of getting it right
+
+
+--- PAGE 22 ---
+Some Standard Definitions: A distinction 
+without much of a difference
+Financial Intermediation
+From Wikipedia: 
+o A financial intermediary is an institution or individual that serves as a middleman among diverse 
+parties in order to facilitate financial transactions. Common types include commercial banks, 
+investment banks, stockbrokers, pooled investment funds, and stock exchange. Transformation of 
+maturity, risk and denomination. (https://en.wikipedia.org/wiki/Financial_intermediary)
+Gorton and Winton (2002):  The savings/investment process in capitalist economies is 
+organized around financial intermediation, making them a central institution of economic 
+growth. Financial intermediaries are firms that borrow from consumer/savers and lend to 
+companies that need resources for investment. In contrast, in capital markets investors 
+contract directly with firms, creating marketable securities. 
+Mediation: intervention in a process or relationship; intercession or go-between.
+matchmaker – messenger – intercessor – intermediate – medium – interagent
+Financial Platforms
+From Investopedia
+o P2P:  lending websites connect borrowers directly to investors. The site sets the rates and the terms 
+and enables the transaction. The process can be entirely automated or lenders and borrowers can 
+choose to haggle. (https://www.investopedia.com/terms/p/peer-to-peer-lending.asp)
+Media of Exchange
+From Investopedia
+o A medium of exchange is an intermediary instrument or system used to facilitate the sale, purchase 
+or trade of goods between parties. (https://www.investopedia.com/terms/m/mediumofexchange.asp)
+
+
+--- PAGE 23 ---
+Financial Sector Flows
+Measuring financial intermediation through national accounts
+Deepening over time in some but not other ratios 
+With disparities across countries in cross-section
+Bottom line: Questions about efficiency remain
+
+
+--- PAGE 24 ---
+Flow of Funds and Financial Sector
+Historical
+Flow of funds: calculated from financial accounts, balance sheets, and production 
+accounts. The difference between savings on the LHS, then on the RHS distinguish 
+real physical investment from acquisition of financial assets (or the reverse for 
+deficits and sales)
+The rise of finance: 1850-2015 (Nikolaus Hildebrand)
+For twelve advanced economies since 1850 
+Sample includes Australia, Canada, Denmark, France, Germany, Italy, Japan, 
+Norway, Spain, Sweden, Switzerland, the United Kingdom and the United States. 
+These countries make up for 55.3% of world gross domestic output in 1913 and 
+79.3% in 2000, and thus provide a representative cross-section of financial growth 
+and structure in advanced economies over the past 150 years.
+The financial part 
+o Currency and deposits (series on currency, current deposits, savings deposits and total 
+deposits),
+o Securities (series on corporate bonds, public debt and bank securities), 
+o Loans (series on bank loans and mortgages), 
+o Equities (stock market capitalization) 
+
+
+--- PAGE 25 ---
+Some Stable Ratios
+The share of investment that is externally funded through the 
+issuance of financial liabilities is the external financing ratio. It has 
+hovered at around 30-35% since at least 1890.
+External financing ratios measure the importance of external finance 
+for investment and are a proxy for financial frictions at the aggregate 
+level. …
+Obstacles remain evidently
+The costs of intermediation are roughly constant at around 1.7%-
+2.3% of intermediated assets. 
+Costs are not coming down
+The structure of financial assets is stable with a debt share of roughly 
+60% throughout the past two centuries.
+Similarly, at the aggregate level, the issuance of liquid, safe assets 
+compared to the issuance of risky assets by the financial sector is 
+quite stable
+
+
+--- PAGE 26 ---
+Other Ratios Grow or Explode
+Compared to national output, financial assets more than quintuple since 
+1860. They rise quickly from 90.5% of gross domestic product in 1860 to 
+239% in 1910, followed by stagnation throughout the 20th century. After 
+1980, financial asset-to-output ratios skyrocket, reaching 523% of gross 
+domestic product in 2009 compared to just 223% thirty years earlier.
+The average income share of finance industry - a measure for both the total 
+cost of finance and the size of the financial services industry - follows a 
+similar pattern, growing from 1.42% of gross domestic product in 1860, to 
+2.95% in 1913, and reaching 6.36% in 2009.
+Related:
+Piketty and Zucman (2014) “Capital Is Back: Wealth-income Ratios In Rich 
+Countries 1700–2010”
+o “How do aggregate wealth-to-income ratios evolve in the long run .using 1970–2010 
+national balance sheets recently compiled in the top eight developed economies. For 
+the United States, United Kingdom, Germany, and France, we are able to extend our 
+analysis as far back as 1700. We find in every country a gradual rise‘ of wealth-income 
+ratios in recent decades, from about 200–300% in 1970 to 400–600% in 2010. In effect, 
+today’s ratios appear to be returning to the high values observed in Europe in the 
+eighteenth and nineteenth centuries (600–700%).” 
+
+
+--- PAGE 27 ---
+Cross-Country: Advanced vs. Emerging 
+Market
+Recent Cross Country Evidence from BIS (https://www.bis.org/publ/cgfs62.pdf)
+List of jurisdictions used in this study: 
+Advanced economies (AEs): 
+o Australia (AU), Belgium (BE), Canada (CA), Denmark (DK), France (FR), 
+Germany (DE), Italy (IT), Japan (JP), the Netherlands (NL), New Zealand (NZ), 
+Norway (NO), Spain (ES), Sweden (SE), Switzerland (CH), the United Kingdom 
+(GB) and the United States (US) 
+Emerging market economies (EMEs):
+o Argentina (AR), Brazil (BR), Chile (CL), China (CN), Colombia (CO), the Czech 
+Republic (CZ), Hong Kong SAR (HK), Hungary (HU), India (IN), Indonesia (ID), 
+Israel (IL), Korea (KR), Malaysia (MY), Mexico (MX), Peru (PE), the Philippines 
+(PH), Poland (PL), Romania (RO), Russia (RU), Saudi Arabia (SA), Singapore 
+(SG), South Africa (ZA), Thailand (TH) and Turkey (TR) 
+
+
+--- PAGE 28 ---
+Countries over Time and Across Space
+Developed and deep capital markets can play a key role in financing 
+economic growth as well as influencing financial stability and the 
+transmission of monetary policy.
+As economies develop and investment projects become larger and more 
+complex, efficient resource allocation and risk-sharing are facilitated by the 
+information aggregation activity and variety of financial claims provided by 
+capital markets.
+There still remain significant differences in the size of capital markets 
+across economies. Indicatively, the largest equity, government bond and 
+corporate bond markets relative to GDP in advanced economies (AEs) are 
+approximately twice the size of those at the 75th percentile, which in turn 
+are twice the size of those at the 25th percentile. A similar pattern holds 
+across markets in emerging market economies (EMEs). 
+Fixed income markets have seen strong growth over the past two decades, 
+bringing current amounts outstanding closer to equity market capitalisation. 
+In terms of market functioning, market participants report the least 
+concerns about government securities markets and the greatest concerns 
+about markets for corporate bonds, with equities somewhere in between. 
+
+
+--- PAGE 29 ---
+Emerging Markets
+EME capital markets are catching up, but a gap relative to AE markets 
+remains.
+Overall, EME markets still appear less resilient to volatility than AE 
+markets. 
+In EME government securities markets, the instrument mix and liquidity 
+have improved. At the same time, EME corporate securities markets have 
+experienced a broad deepening. . . but still have less access to longer-
+maturity, local currency debt securities; and compared with AEs, fewer 
+small firms access EME equity markets. 
+Financial access as an explicit goal, the apparent need for financial 
+deepening and policies to that bring us back to technology as mentioned at 
+the outset
+G20- St. Petersburg, Japan meeting
+IMF, central banks and inequality
+Featured at upcoming Spring meetings of IMF in DC 
+Core functions of central banks in many countries now include financial 
+access in addition to price and output stability, growth, financial stability
+It is no longer just an afterthought
+
+
+--- PAGE 30 ---
+Speech by Agustín Carstens, General 
+Manager, Bank for International Settlements 
+Traditional tools and views
+My main thesis is that central banks and financial authorities can support and 
+promote financial inclusion, first and foremost, by pursuing their core 
+objectives. By watching over price stability, they ensure that money keeps its 
+value. By ensuring financial stability, they prevent financial institutions from 
+failing, and taking people’s savings with them. But most of all, central banks 
+promote trust. By reinforcing trust in the financial system and its institutions, 
+central banks bring ordinary people into the mainstream and help them reap its 
+benefits. In this way, the central bank can help to catalyse a more inclusive and 
+vibrant economy. 
+Yet it is not sufficient. 
+Other elements too are important.
+
+
+--- PAGE 31 ---
+New Technology and Financial Access
+New technology can play a crucial role in breaking down barriers for both citizens 
+and financial institutions. 
+The first barrier is “lack of trust” in the financial system, and particularly in money 
+and financial institutions. The second barrier is “high costs”. The third barrier is 
+“lack of documentation”. 
+Digital technology and big data, in particular, are key to overcoming the other 
+barriers to financial inclusion
+When it comes to cutting costs, web and smartphone-based financial services have 
+proved to be most effective. From M-Pesa in Kenya to Alipay in China and PayTM
+in India, technology has brought financial services literally to our fingertips. First, 
+digital technology offers the cheapest delivery channel for financial services. 
+Second, digital networks expand the circle of users, creating positive network 
+effects. Third, mass smartphone ownership lets financial service providers reach a 
+huge number of potential customers. Digital financial service platforms can thus be 
+scaled up at virtually zero marginal cost. In China, for instance, digital payment 
+platforms like AliPay let users seamlessly buy insurance or invest wallet balances 
+in mutual funds. Cost reductions could also be realized in cross-border services 
+such as remittances. The bank then uses transaction data to score and offer credit to 
+the farmers, who typically lack the documentation 
+
+
+--- PAGE 32 ---
+Infrastructure, Innovation and Regulation: 
+The Tension Once Again
+Yes, but what kind? 
+The tension: existing regulation is based on traditional definitions, 
+which are threatened
+To foster this process, central banks and financial authorities must 
+provide the right infrastructure. This includes hard or physical 
+infrastructure such as payment and settlement systems, as well as soft 
+or “contextual” infrastructure such as rules and guidelines that let the 
+full benefits of the technology be captured while protecting its users. 
+
+
+--- PAGE 33 ---
+The IO Issue: Big Tech
+Threats that new intermediations simply extract rent the way traditional intermediaries do
+Needless to say, there is a less benign side to new technology. One potential market failure is 
+excessive market concentration. 
+Entry: Once a large digital network is established, potential competitors have little scope to build 
+rival networks. The fixed cost of setting up a new network would be excessive. Also, dominant 
+platforms may seek to consolidate their position by raising the barriers to entry. When a network 
+operator owns a smartphone-based payment system, for example, it can charge potential 
+competitors, such as banks, a connection fee that will prevent new entrants from competing 
+effectively. Once they have a captive user base, dominant platforms can then jack up the price of 
+their financial services. So, although new technologies cut the cost barriers to financial inclusion, 
+market concentration can work in the opposite direction. 
+Data/Information: Second market failure arises from the control of customer data. When big tech 
+firms – such as Ant Financial, Tencent or Mercado Libre – collect detailed information about their 
+customers, they become – at least, to date – the sole owners of that data. This can be seen as a by-
+product of the services provided by big techs. Given that such data are free and non-rival – that is, 
+usable by many without loss of content – it would be socially desirable to share it. But big tech 
+firms have no incentive to do so. On the contrary, data give them an informational advantage over 
+competitors. Using privileged data, for example, they can assess a potential borrower’s 
+creditworthiness, and even a person’s reservation rate – the highest interest rate at which a 
+borrower would be willing to take out a loan. Based on this, a big tech firm can charge higher 
+lending rates, up to the individual reservation rates, extracting a larger share of the surplus from 
+its customers. Proprietary control of data thus amplifies big techs’ market power. 
+
+
+--- PAGE 34 ---
+Fintech in the US
+Mortgages
+Buchak et al (2017) “Fintech, Regulatory Arbitrage, and the Rise of 
+Shadow Banks” 
+
+
+--- PAGE 35 ---
+35
+
+
+--- PAGE 36 ---
+Market Place Exchanges in the US:
+P2P Platforms for Intermediation
+Morrison Foerster: “Lending Basics: How It Works, Current Regulations 
+and Considerations”
+Although the majority of P2P lending is for mortgages and credit card 
+refinancing, some P2P lending platforms focus on particular segments of 
+the consumer lending market, including small-business lending (OnDeck, 
+Funding Circle, Kabbage), student loans (SoFi, Kiva), low income 
+entrepreneurs (Kiva), and younger borrowers (Upstart). 
+P2P lending platforms typically issue loans in amounts ranging from 
+$1,000 to $35,000 with fixed interest rates and maturities of three to five 
+years – used to be some bidding, for loans, not lately.
+Before a loan is posted on a platform’s website, a prospective borrower 
+submits an application to the platform for consideration.
+The platform obtains a credit report on the applicant and uses this 
+information, along with other data (e.g., loan characteristics) in proprietary 
+models to assign a risk grade to the proposed loan and set an interest rate 
+corresponding to the assigned risk grade.
+If accepted, a loan request is posted on the platform’s website, where 
+investors can review all loans or search for specific loans that meet their 
+desired risk/return characteristics.
+
+
+--- PAGE 37 ---
+U.S. Regulatory View, a Bit of a Mess
+Consumer credit, whether bank-originated or otherwise, is subject to an extensive 
+web of federal and state laws, and participants in consumer credit markets are 
+subject to the authority of numerous federal and state regulators.
+Truth in Lending Act – Equal Credit Opportunity Act – Fair Credit Reporting Act –Gramm-
+Leach-Bliley Act – Electronic  Fund Transfer Act – Bank Secrecy Act – Fair Debt 
+Collection Practices Act  
+In addition to consumer credit regulations, the funding side of P2P lending 
+platforms is subject to SEC regulation. In Nov. 2008, the SEC issued a “cease and 
+desist” order to P2P lending platform Prosper Marketplace, indicating that notes 
+issued by Prosper were unregistered securities.
+Official acknowledgement of the confusing overlapping jurisdiction of multiple 
+regulatory agencies, including SEC, state securities regulators, state banking 
+regulators, FDIC and CFPB, with respect to P2P lending.
+GAO report outlined two approaches to the future regulation of P2P lending on the 
+federal level: a SEC-centered approach vs. a Consumer Financial Protection 
+Bureau, CFPB approach. the GAO did not make any firm recommendations  
+Recent OCC (Office of the Comptroller of the Currency) proposal to be regulator
+Bottom line issue to be considered
+Issues: diverse financial landscape, diverse products, scattered regulation: starting from a 
+“mess”, are we stuck or should we think more deeply
+
+
+--- PAGE 38 ---
+High Valued Financial Markets in the US: Shadow Banks
+Adrian-Shin (2010) “The Changing Nature of Financial Intermediation and the Financial 
+Crisis of 2007-09”
+Figure 1 is a stylized depiction of the financial system that channels funds from ultimate 
+lenders to ultimate borrowers. For the household sector, borrowing is almost always 
+intermediated through the banking system, broadly defined. At the end of 2008, U.S. household 
+sector mortgage liabilities amounted to approximately $10.6 trillion, and consumer debt 
+accounts amounted to another $2.5 trillion.
+•
+In the traditional model of financial intermediation, a bank takes in retail deposits from household savers 
+and lends out the proceeds to borrowers such as firms or other households. Figure 2 (see color insert) 
+depicts the archetypal intermediation function performed by a bank; in this case, the bank channels 
+household deposits to younger households who need to borrow to buy a house. Indeed, until recently, the 
+financial intermediation depicted in Figure 2 was the norm, and the bulk of home mortgage lending in the 
+United States was conducted in this way.
+38
+
+
+--- PAGE 39 ---
+High Value Financial Markets (cont.)
+Figure 6 illustrates one possible chain of lending relationships in a market-based financial 
+system, whereby credit flows from the ultimate creditors (household savers) to the ultimate 
+debtors (households who obtain a mortgage to buy a house).
+•
+In this illustration, mortgages are originated by financial institutions such as banks that sell individual 
+mortgages into a mortgage pool such as a conduit. The mortgage pool is a passive firm (sometimes called a 
+warehouse) whose only role is to hold mortgage assets. The mortgage is then packaged into another pool 
+of mortgages to form MBSs, which are liabilities issued against the mortgage assets. The MBSs might then 
+be owned by an asset-backed security (ABS) issuer who pools and tranches them into another layer of 
+claims, such as collateralized debt obligations. A securities firm (e.g., a Wall Street investment bank) might 
+hold collateralized debt obligations on its own books for their yield but will finance such assets by 
+collateralized borrowing through repurchase agreements (i.e., repos) with a larger commercial bank. In 
+turn, the commercial bank would fund its lending to the securities firm by issuing short-term liabilities, 
+such as financial commercial paper. Money market mutual funds would be natural buyers of such short-
+term paper, and, ultimately, the money market fund would complete the circle as household savers would 
+own shares of these funds.
+•
+Figure 6 illustrates that those institutions involved in the intermediation chain were precisely those that 
+were at the sharp end of the financial crisis that erupted in 2007.
+39
+
+
+--- PAGE 40 ---
+High Value Financial Markets (cont.)
+In Figure 4 (see color insert), bank-based holdings comprise the holdings of 
+commercial banks, savings institutions, and credit unions. Market-based holdings 
+are the remainder—i.e., the GSE mortgage pools, private-label mortgage pools, 
+and the GSE holdings themselves. Market-based holdings now constitute two-
+thirds of the $11 trillion total of home mortgages.
+•
+Although residential mortgages have been the most important element in the evolution 
+of securitization, the growing importance of market-based financial intermediaries is a 
+more general phenomenon that extends to other forms of lending
+40
+
+
+--- PAGE 41 ---
+Role of Central Bank as Financial Intermediary? A 
+Direct Effect? Good or Bad?
+Market-based Financial Intermediaries
+The increased importance of the market-based banking system has been mirrored by the growth 
+(and subsequent collapse) of the broker-dealer sector of the economy, the sector that includes 
+the securities firms. Broker-dealers are at the heart of the market-based financial system, as 
+they make markets for tradable assets, they originate new securities, and they produce 
+derivatives.
+Policy Response
+To the extent that the credit crunch resulted from a collapse of balance-sheet capacity in the 
+financial intermediary sector, the Federal Reserve’s policy response has been to counter the 
+collapse through direct interventions to replace the lost balance-sheet capacity. Figure 24 (see 
+color insert) is an illustration.
+41
+
+
+--- PAGE 42 ---
+Downside of Macro-Prudential Regulation and 
+Policies Toward Fintechs: Indirect Effects 
+Regulation can be constraining
+The fintech opportunity, lower costs, greater efficiency
+But will we meet the challenge, regulatory frameworks not changing
+Credit growth and macroprudential policies: preliminary evidence on 
+the firm level 
+“Credit growth and macroprudential policies: preliminary evidence 
+on the firm level” Ayyagari, Beck and Peria (2017) 
+(https://www.Bis.Org/publ/bppdf/bispap91a.Pdf) 
+Combining data on 1.3 million firms from 2002 to 2011 operating in 59 
+countries with changes in macroprudential regulations over this period, we 
+find some evidence that macroprudential policies are associated with lower 
+credit growth, especially for small firms with limited non-bank financing. We 
+also find an impact of macroprudential policies on young firms in emerging 
+markets. 
+Tradeoffs: Our results point to an important tradeoff in financial stability and 
+financial deepening. 
+
+
+--- PAGE 43 ---
+Philippon (2016) “The FinTech Opportunity”
+(https://www.nber.org/papers/w22476)
+And in this context, the latest wave, a revolution at hand, again?
+Do we have correct framework for regulation and policy?
+
+
+--- PAGE 44 ---
+Course Overview
+Lecture 1: Design, Regulation, and Policy with respect to Payment Systems and  Financial Infrastructure: Bitcoin and 
+FinTech as examples of Technological Innovation, with Implications for Money and Financial Intermediation, begging 
+issues of What is Optimal
+Lecture 2: Ledgers and Data Base Management, Integrated Financial Statements, and an Application to Distributional 
+and Regional Accounts
+Lecture 3: E-money, Infrastructure and Liquidity Shortages, Financial and Trader Centrality, and Optimized Liquidity 
+Injections as Monetary Policy
+Lecture 4: Encryption and Validation Protocols for E-messages Versus Smart Contracts and Mechanism Design
+Lecture 5: Vision for Optimized Design of Financial Infrastructure using Distributed Ledger Technology: Scrambling 
+of Information and Partitioned Ledgers, Delegation to the Contract, Limiting Access to the Outside Market, Single and 
+Multiple-Colored Tokens as Decentralized Partitioned Ledgers, Commitment to Optimized Sequential Service to 
+Mitigate Runs 
+Lecture 6: Needed Financial Infrastructure: Innovations in Emerging Markets and Guidelines from Theory for Optimal 
+Infrastructure Design
+Lecture 7: Dealing with Externalities of Payments Systems and Fire Sales: Designs for Optimized Competition among 
+Crypto Currencies and Market Structure to Remove Pecuniary Externalities
+Lecture 8: Payment Systems: Problems and Issues to be Considered in Alternative Designs
+Lecture 9: The Information Problem of Decentralized Monetary Exchange and of Equilibria with High-Velocity 
+Circulating Private Debt: Regulation using Distributed Ledger Technology
+Lecture 10: Money, Crypto Currency, and Public Debt as Bubbles: Implications for Indeterminacy, Fiscal Policy, 
+Liquidity Pricing and the Interest Rate
+Lecture 11: Optimal Crypto Currency Policy and Optimal Monetary Policy: Observing Transactions Patterns, 
+Heterogeneity and Wealth Effects, and the Implications of Micro-Market Frictions

@@ -1,0 +1,437 @@
+--- Page 1 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+15 871 Recitation #4
+15.871 Recitation #4 
+M d
+Modeliling Product Ad
+t Adoption 
+P
+d
+ti
+& Diffusion 
+Fall 2013  
+
+--- Page 2 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Agenda
+Agenda 
+• Adoption/Diffusion Models
+Adoption/Diffusion Models
+– Modified Bass Diffusion Model (starting Vensim model)  
+• Delays 
+– Response of a Delay (Ch 11.1‐11.2, more in H2) 
+• Stock Management 
+– Beer Game Stock Management Example 
+• Learning Curve (Ch 10, BD pg 337‐8) 
+• Partial Model Tests 
+• Robustness under Extreme Conditions 
+10/4/2013 
+2 
+
+--- Page 3 ---
+ 
+Historical Data: Upload vdf  
+VCR S l
+US
+VCR Sales, US 
+10/4/2013 
+3 
+
+--- Page 4 ---
+ 
++ +
++
+Bass Diffusion Model  
+Rate AR
+Rate AR
+B 
+Potential 
+Adopters P 
+Adoption 
++ 
+R
++ 
+Market 
++
+Saturation 
+Word of Mouth 
+Probability of 
++ 
+Contact with 
+Adoption from 
+Adoption from 
+Adopters PCA 
+-
+Advertising AA 
+Word of Mouth AW  
++  
++
++ 
+Advertising 
+Adoption 
+Effectiveness a 
+Fraction i 
++
+B
+Social 
+Contacts  
+Contacts SC 
+Market 
++ 
+with 
+Saturation 
+Total Population N 
+Adopters CA 
++ 
++ 
+Contact Rate c 
+Adopters  
+A  
+
+--- Page 5 ---
+Modified Bass Diffusion Model  
+
+--- Page 6 ---
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+Total Population, N  
+Population Not Willing
+Potential Adopters
+Adopters
+Population Not Willing 
+to Adopt, N – PWA  
+Potential Adopters 
+P 
+Adopters 
+A 
+=PNWA
+=PNWA 
+Population Willing to Adopt  
+PWA
+=PWA
+N
+INTEGRAL(Net Population Increase
+N = INTEGRAL(Net Population Increase, N0)
+Adopters = INTEGRAL(Adoption Rate, Initial Adopters)  
+Potential Adopters = MAX(0, Population Willing to Adopt – Adopters)   
+
+--- Page 7 ---
+ 
+ 
+Stock Management Structure
+Stock Management Structure 
+10/4/2013 
+7 
+
+--- Page 8 ---
+   
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+PART A INTERACTIVE : BEER GAME STOCK MANAGEMENT EXAMPLE  
+Draw the causal loop diagram (CLD) and write the equation for the “order rate” according to 
+assumptions that will be presented. 
+Please note that your CLD and equation for the “order rate” should be 
+“dimensionally consistent”. 
+Inventory 
+shipments 
+delivery 
+B
+order rate= ?  
+10/4/2013 
+8 
+
+--- Page 9 ---
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+PART A INTERACTIVE :  
+MAPPING OF A SIMPLE STOCK‐MANAGEMENT STRUCTURE  
+Draw the causal loop diagram (CLD) and write the equation for the “orders” according to the 
+assumptions below. Please note that your CLD and equation for the “orders” should be 
+“dimensionally consistent”.
+dimensionally consistent 
+Inventory 
+shipments 
+delivery
+ASSUMPTIONS: 
+• No delays in deliveries 
+• No returns 
+• Shipments are exogenous  
+• Firm adjusts orders to bring inventory in line with “desired inventory” 
+• Seeks to close any inventory gaps over a 2-week period. 
+HINT Wh t h
+ld
+i t
+th
+“
+d
+”
+i bl ?
+• HINT: What should go into the “orders” variable? 
+10/4/2013 
+9 
+
+--- Page 10 ---
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+Response of a Delay
+Response of a Delay 
+Product Retirement= DELAY N(Purchase Rate, Useful Life of Product, 0, 6)  
+10/4/2013 
+10 
+
+--- Page 11 ---
+   
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+PART B INTERACTIVE : PULSE RESPONSE OF A DELAY 
+Please sketch your best estimate of “retirements” after a pulse of purchases: 
+Installed Base 
+retirements 
+purchases 
+How does the Retirements flow look like? 
+Purchase Rate 
+Units/Year
+Units/Year
+10/4/2013 
+0
+0 
+Time 
+11 
+
+--- Page 12 ---
+   
+ 
+ 
+ 
+ 
+ 
+Price & Learning
+Price & Learning 
+Curve 
+Ch 10, BD pg 337‐8 
+10/4/2013 
+12 
+
+--- Page 13 ---
+f
+ 
+ 
+ 
+ 
+ 
+Basic Learning Curve Formulation  
+•  c0, E0 = initial unit costs and 
+cumulative experience 
+c   f (E )
+t 
+t
+t 
+Et esds
+t
+E  e ds
+ E 
+ 
+0  
+t  
+• 
+= learning curve strength 
+c   c  
+
+t 
+0 E
+ 
+0 
+
+(1 f )c  c (2E / E )  
+• Example:  For a learning curve
+0
+0 
+0
+0 
+with f=0.3, =0.5146
+or
+or 
+ ln(1 f ) / ln(2)  log2(1 f )  
+•  f= 0.3 implies a 30% cost 
+reduction for every doubling of
+reduction for every doubling of 
+cumulative experience (≈ 0.51) 
+
+--- Page 14 ---
+MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+ 
+15.871 Introduction to System Dynamics
+Fall 2013
+ 
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.

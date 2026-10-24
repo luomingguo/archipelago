@@ -1,0 +1,35 @@
+A faculty application package should be viewed as a coherent whole rather than a series of unrelated documents. All of the elements of your package should work together to clearly demonstrate  who you are as a researcher and why you would make a good addition to the faculty at the institution to which you are applying.
+In order to articulate this, consider first drafting a branding statement before writing the individual documents in your application. While a branding statement is not a document that you will be required to submit, you may wish to explicitly include language from this statement in your CV and/or research statement.
+A branding statement should reflect a vision which underpins your entire application’s story. It should bring together your past, current, and future work. To do so, summarize each of the following in 1-2 sentences:
+the general problem of your field
+the specific problem within that field that you are working on
+an achievement you have made towards solving that problem
+your vision for the future.
+After writing your branding statement, spend some time thinking about your brand, a short description that fills in the blank in the sentence: I am the _________ person. This brand should be narrow enough that it carves out a clear niche for you as a researcher but not so narrow that it only describes a specific project. Ideally, your brand will be unique to you; at a minimum, it should distinguish you from all but a few other researchers in your field.
+Too broad:  &#8220;I am the machine learning person.&#8221;
+There are LOTS of machine learning people &#8211; you need to distinguish yourself!
+Just right:  &#8220;I am the systems verification person.&#8221;
+This provides a clear niche while not limiting to a specific project.
+Too narrow:  &#8220;I am the person who developed XYZ software program.&#8221;
+This tells the reader nothing about what you will do in the future and likely not enough about what you&#8217;ve done in the past.
+While your brand may appeal mostly to people within your subfield, your branding statement should sufficiently explain your research’s impact so that it can capture the attention of the entire department.
+Use your branding statement and brand as a guide in writing all of the pieces of your faculty application package. The following articles explore each element of the faculty application in detail:
+Faculty App: Cover Letter
+Faculty App: Curriculum Vitae (CV)
+Faculty App: Research Statement
+Faculty App: Teaching Statement
+Faculty App: Diversity Statement
+Faculty Job Talk
+See also  this resource about faculty job talks  from MIT EECS.
+In  this blog , MIT postdoc and future Michigan faculty member Elizabeth Bondi-Kelly shares about her experience on the 2021-2022 EECS faculty job market.
+Note that faculty applications differ by field and by country. Be sure to check with someone who is familiar with the standards where you are applying.
+MIT EECS affiliates can    make an appointment    with a    Communication Fellow    to obtain feedback on any part of their faculty application package.
+Resources and Annotated Examples
+<img src="https://mitcommlab.mit.edu/eecs/wp-content/themes/mitcommlab-department/assets/img/icons/icon_pdf.gif"
+alt="Branding Statement Example" />
+Branding Statement Example
+This branding statement was written by a senior PhD student at MIT EECS
+124 KB
+Contributors
+Deanna Montgomery
+Tej Chajed

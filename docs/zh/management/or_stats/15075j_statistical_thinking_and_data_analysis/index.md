@@ -1,13 +1,12 @@
 ---
-title: '15.075J 统计思维与数据分析'
+title: 15.075J 统计思维与数据分析
 type: course
-course: '15.075J 统计思维与数据分析'
+course: 15.075J 统计思维与数据分析
 course_id: '15.075J'
 tags: [statistics, probability, data-analysis, statistical-inference, regression-analysis]
 status: complete
 source: 'https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/'
 ---
-
 # 15.075J 统计思维与数据分析（Statistical Thinking and Data Analysis）
 
 > MIT Sloan (15.075J) · MIT Engineering Systems Division (ESD.07J) · Fall 2011

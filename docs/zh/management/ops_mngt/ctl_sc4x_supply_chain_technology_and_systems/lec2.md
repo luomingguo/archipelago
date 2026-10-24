@@ -1,12 +1,11 @@
 ---
-title: '数据建模——关系模型、ER 图与键'
+title: 数据建模——关系模型、ER 图与键
 type: lecture
 lecture: 2
 tags: [data-modeling, relational-model, entity-relationship, primary-key]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 2 数据建模——关系模型、ER 图与键（Data Modeling）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 2 讲  

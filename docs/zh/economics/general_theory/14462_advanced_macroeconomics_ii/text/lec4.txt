@@ -1,0 +1,639 @@
+--- PAGE 1 ---
+14.462
+Spring, 2020
+Encryption and Validation Protocols 
+vs. Smart Contracts and Mechanism 
+Design
+(Lecture 4)
+Robert M. Townsend
+Elizabeth & James Killian Professor of Economics, MIT
+
+
+--- PAGE 2 ---
+Hybrids: On- and Off-Chain, Quasi-Private
+Nicholas Zhang (2019)
+No planner, but then Compiling and verify code on-chain is incredible costly. 
+Solution is do some things off-chain-
+Entire documents can be encrypted off-chain and accessed as reliable
+Messages, states in contract can be separate from ledgers for transfer of value
+Multiparty computation, share partial information, know system is functioning properly
+But in practice, mpc technology is still limited, hence quasi private, not going to extremes
+
+
+--- PAGE 3 ---
+Encryption Through History: Mesopotamia 
+Tokens
+Mesopotamia: Tokens put in clay envelopes  for shipping goods as a manifest
+Sealed – so tampering with one, the actual or the other, the message, would be 
+obvious
+If the sender and receiver of the shipment trusted each other, they could be 
+sure there was no tampering by not-trusted  parties in between. Tampering of 
+the invoice or theft of the shipment that took place in between would be 
+evident 
+o Writing on envelopes is developed, as an ultimate message system
+2
+(Fig. 3)
+
+
+--- PAGE 4 ---
+Tally Sticks: Medieval England
+The stick would be split in half, 
+down its length from one end to 
+the other, debtor vs. creditor 
+Because willow has a natural and 
+distinctive grain, the two halves 
+would match only each other 
+The original borrower was trusted 
+to repay, while the tally stick 
+provided a trustless record of the  
+promise to original lender and 
+then to third parties, a record to 
+the borrower that the holder was 
+presenting the original claim (no 
+double presentation of debt).
+PS: decision to convert to paper 
+and burn the sticks, fire destroyed 
+the houses of parliament
+
+
+--- PAGE 5 ---
+Contemporary, Private and Public Keys, Yet 
+the Double-Spend Problem Emerges
+Public and private keys ensure no one can transact on 
+someone else’s ID, impersonating a node. 
+Because the message or transaction can only be created 
+with the key combination, it is known the spender wishes 
+to unlock and spend the coin. 
+This brings commitment to the transaction, so it cannot be 
+undone or reneged upon later. 
+Double spending would be possible if two messages from 
+a given node were able to spend the same coin. With 
+internet latency, hard to know which transaction came first 
+and should be valid, as time stamps are not necessarily 
+chronological 
+Solutions in CS: based on Distributed Computing
+
+
+--- PAGE 6 ---
+Which Brings Us to Consensus Protocols
+Validators in a network must achieve consensus, approve next block of 
+transactions (block chain)
+Bitcoin and Ethereum use Proof of Work (PoW) in which nodes in a 
+network compete with computing power to solve cryptographic math 
+puzzles and reach consensus- effectively randomizing who validates
+Practical Byzantine Fault Toleration (PBFT) chooses a leader in round-
+robin fashion
+Nodes need to agree on a "membership list" of nodes to select from, picked by the 
+company
+Centralized consensus is achieved when over 66% of the nodes agree   
+Proof of Stake (PoS): The selected validators that suggest the next block 
+for approval are chosen at random, followed by multi-round voting 
+mechanisms with weights based on coin ownership
+Federated Byzantine Agreement (FBA): Each entity names others it trusts, 
+trust networks need not overlap
+Stellar’s FBA is free entry or open membership into validation 
+Issues with these protocols is subject of next section
+
+
+--- PAGE 7 ---
+A Bit More on Bitcoin
+One potential problem is that nodes as bad actors could violate the protocol and 
+propose the latest version of the ledger that they would like to become immutable, 
+e.g., knowingly containing the second of the double-spend transactions, while the 
+first was already used to acquire something else. To thwart this, under the Bitcoin 
+system, it is again as if one node were selected at random to certify a current new 
+candidate ledger. There are thus two keys to Bitcoin. One, this certification requires 
+time and energy. A proof-of-work algorithm requires a selectable amount of work 
+to find the random number that, when added to the set of transactions, creates the 
+hash.  Difficulty is controlled.   The discovered random number is then added to the 
+bottom of the block as the proof of puzzle solved, a certification of work done that 
+all can confirm easily. The work, costly use of electricity and equipment, limits 
+entry into validation. The second key to Bitcoin, and, a premise of computer 
+science more generally, is that most nodes are honest so the de facto randomly-
+selected miner is likely to be honest and follow the protocol. 
+Temporary multiplicity or fraud is possible if another branch containing new blocks 
+is created. But the conventional protocol is that the longest interim chain is 
+considered to be the valid one. To reinforce this, and not incidentally, here Satoshi 
+Nakamoto put some economics into the design of the computer science protocol. 
+Miners have incentives to mine the longest chain, as they are rewarded in Bitcoin 
+only if the block of transactions they validate becomes, eventually, part of the 
+immutable history. To repeat in crude terms: validators now have pecuniary 
+interests in the outcomes they are validating. 
+
+
+--- PAGE 8 ---
+Morris and Shin (1997) “Approximate Common Knowledge 
+and Co-ordination: Recent Lessons from Game Theory”
+
+
+--- PAGE 9 ---
+probabilistic version of the co-ordinated attack problem
+
+
+--- PAGE 10 ---
+Theorem:
+
+
+--- PAGE 11 ---
+1 −𝛿𝛿
+1 −𝜀𝜀
+1 −𝜀𝜀
+1 +
+1 −𝛿𝛿
+1 −𝜀𝜀𝜀𝜀× −𝑀𝑀
+
+
+--- PAGE 12 ---
+𝜀𝜀
+𝜀𝜀+ (1 −𝜀𝜀)𝜀𝜀=
+𝜀𝜀
+2𝜀𝜀−𝜀𝜀2 =
+1
+2 −𝜀𝜀> 1
+2
+
+
+--- PAGE 13 ---
+
+
+--- PAGE 14 ---
+
+
+--- PAGE 15 ---
+
+
+--- PAGE 16 ---
+
+
+--- PAGE 17 ---
+A Review of Some Arguments in Mechnism
+Design
+Messages
+Multiperiod tie ins
+Costly state verification
+Limited committment
+
+
+--- PAGE 18 ---
+Risk Sharing with Private Information on Crop Output
+Thus, imagine a pure exchange economy with one period; two agents, named 1
+and 2; and a K-dimensional vector of goods as endowments.
+The endowment of agent 1, e1(ε), is seen by agent 1 alone. That is, shocks are
+private to agent 1
+Let agent 1’s endowment be denoted parameter θ in some set Θ, realized with
+probability p(θ). Agent 1 is the stand-in for the villa
+Agent 2’s endowment is presumed to be public, for simplicity, some constant
+K-dimensional vector W. Agent 2 is the stand-in for the central monastery.
+Agents 1 and 2 agree ex ante to some resource allocation rule f(m) specifying a
+K-dimensional vector of commodity transfers from agent 1 to agent 2 given
+some message m sent by villa 1 to monastery 2, message m in a set of a priori
+feasible messages, M.
+Under this resource allocation scheme, villa 1 waits to see output vector θ before
+sending message m. Thus its decision problem is of the form, for every θ ∈Θ,
+maximize U1[θ −f(m)] by choice of m ∈M
+Robert M. Townsend (MIT)
+Fall 2018
+4 / 19
+
+
+--- PAGE 19 ---
+Suppose there exists a unique maximizing solution to this
+problem, denoted m∗(θ). Then, given θ,
+U1{θ −f[m∗(θ)]} ≥U1[θ −f(m)]
+(83)
+for all possible messages m ∈M.
+Evaluating the right hand side of (83) at m∗(eθ), the maximizing
+message agent 1 would have sent if his endowment vector had
+been eθ even though it is θ,
+U1{θ −f[m∗(θ)]} ≥U1{θ −f[m∗(eθ)]}
+(84)
+Now consider an alternative scheme in which villa 1 announces a
+value for its endowment vector directly, some arbitrary value of eθ
+in Θ, so that the message space is now the space of output
+possibilities Θ instead of arbitrary message space M (truth telling
+is not required).
+Robert M. Townsend (MIT)
+Fall 2018
+5 / 19
+
+
+--- PAGE 20 ---
+Suppose announced eθ effects transfers g(eθ) ≡f[m∗(eθ)], so that
+the transfer function is the direct function g(•) rather than the
+composite function f(•).
+Transfer function g(•) deﬁne a new mechanism.
+By substitution of the notation of g(•) into (84), at any particular
+θ ∈Θ, and for all alternative values eθ ∈Θ,
+U1[θ −g(θ)] ≥U1[θ −g(eθ)]
+(85)
+It is apparent from (85) that in the alternative mechanism, with
+message space Θ and transfer function g(•), villa 1 would "tell the
+truth," though, again, it is not required to do so.
+Announced values θ would coincide with actual values θ.
+Further, a parameter draw of θ thus would effect transfer
+g(θ) ≡f[m∗(θ)], so that the outcome under the original scheme
+would be sustained. Object g(θ) may be thought of as a
+parameter-contingent allocation, with θ now playing the role of the
+actual parameter value.
+Robert M. Townsend (MIT)
+Fall 2018
+6 / 19
+
+
+--- PAGE 21 ---
+Program 7: Maximize by choice of the lotteries π(τ|θ) the objective
+function
+λ 1 
+Σθp(θ)ΣτU1[θ −τ]π(τ | θ)
+
++λ 2 
+Σθp(θ)ΣτU2[W +τ]π(τ | θ)
+
+(93)
+subject to incentive constraints, for every actual value θ and counterfactual eθ
+ΣτU1[θ −τ]π(τ | θ) ≥ΣτU1[θ −τ]π(τ | eθ)
+(94)
+Constraints (94) can again be derived as endogenous
+Program 7 is concave so its solution can be easily characterized. In fact,
+Program 7 is a linear program, so that solutions can be computed
+numerically.
+The only binding constraint would have high-θ agents claiming on the
+margin to be low-θ agents, so we would not need to worry about the
+feasibility of low-θ agents claiming to be high anyway. With multiple
+goods, however, there remains the possibility that something can be
+accomplished with pretransfer displays.
+Robert M. Townsend (MIT)
+Fall 2018
+9 / 19
+
+
+--- PAGE 22 ---
+Optimal Multiperiod Tie-ins-2
+Program 8: Maximize by choice of lotteries over transfers τ at date 1,
+π1(τ|θ1), and lotteries over transfers τ at date 2, π2(τ|θ1,θ2), the
+objective function
+λ 1(Σθ1p(θ1)ΣτU1[θ1 −τ]π1(τ | θ1)
++βΣθ1p(θ1)Σθ2p(θ2 | θ1)ΣτU1[θ2 −τ]π2(τ | θ1,θ2))
+(95)
++λ 2(Σθ1p(θ1)ΣτU2[W1 +τ]π1(τ | θ1)
++βΣθ1p(θ1)Σθ2p(θ2 | θ1)ΣτU2[W 2 +τ]π2(τ | θ1,θ2))
+subject to incentive constraints at date 2, for every eθ1 announced at date
+1, and for every actual θ2 and announced eθ2 at date 2
+Robert M. Townsend (MIT)
+Fall 2018
+12 / 19
+
+
+--- PAGE 23 ---
+Optimal Multiperiod Tie-ins-3
+ΣτU1[θ2 −τ]π2(τ | eθ1,θ2)
+≥ΣτU1[θ2 −τ]π2(τ | eθ1, eθ2)
+(96)
+and the incentive constraints at date 1, for every actual θ1 and announced eθ1,
+ΣτU1[θ1 −τ]π1(τ | θ1)+βΣθ2p(θ2 | θ1)ΣτU1[θ2 −τ]π2(τ | θ1,θ2)
+≥ΣτU1[θ1 −τ]π1(τ | eθ1)+βΣθ2p(θ2 | θ1)ΣτU1[θ2 −τ]π2(τ | eθ1,θ2)
+(97)
+Constraint (96) ensures that agent 1 will tell the truth at date t = 2 no
+matter what happened or what was announced at date 1.
+Working backward from this, constraint (97) ensures that agent 1 will tell
+the truth at date t = 1.
+Again, "Revelation Principle" arguments ensure that these constraints
+can be imposed without loss of generality in the search for private
+information efﬁcient arrangements.
+Robert M. Townsend (MIT)
+Fall 2018
+13 / 19
+
+
+--- PAGE 24 ---
+Multiperiod Contracts
+Townsend (1982)
+Problem 5:
+max π[U(y ′ + F1(y ′)) + EU(y2 + F2(y ′))]
++ (1 −π)[U(y ′′ + F1(y ′′)) + EU(y2 + F2(y ′′))]
+subject to
+U(y ′ + F1(y ′)) + EU(y2 + F2(y ′))
+(10)
+≥U(y ′ + F1(y ′′)) + EU(y2 + F2(y ′′))
+U(y ′′ + F1(y ′′)) + EU(y2 + F2(y ′′))
+(11)
+≥U(y ′′ + F1(y ′)) + EU(y2 + F2(y ′))
+π[W −F1(y ′) + W −F2(y ′)] + (1 −π)[W −F1(y ′′)
+(12)
++ W −F2(y ′′) ≥2K.
+First two constraints are truth telling constraints, third is agent b′s IR
+constraint
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+19 / 55
+
+
+--- PAGE 25 ---
+Multiperiod Contracts
+Townsend (1982)
+From FOC we can see that optimal borrowing may not be zero
+When y1 = y′ but π is close to zero, agent a has little wealth at t = 1
+and expects to have much more wealth at t = 2 and will therefore
+borrow at t = 1 (and will conversely lend at t = 1 when income in
+period 1 is high)
+This two period contract allows for beneﬁcial trade between agents
+⇒welfare improvement over the single period contract
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+17 / 55
+
+
+--- PAGE 26 ---
+Multiperiod Contracts
+Townsend (1982)
+Theorem
+Either (10) or (11) must bind in a solution to problem 5.
+Proof: By contradiction. If borrowing and lending, then no incentive
+constraint is binding, in which case its the full info solution, which is not
+borrowing lending.
+Corollary
+There must be history dependence in the second period transfer, i.e.
+F2(y ′) ̸= F2(y ′′). This is the ”relationship” that captures private
+information
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+21 / 55
+
+
+--- PAGE 27 ---
+Examples of Relationships among Financial Institutions
+It is not immediately evident that long term contracts discussed
+above are regularly implemented in traditional credit markets
+Deposits and savings accounts do not directly resemble history
+dependent insurance based contracts
+However, Berlin and Mester (1999) ﬁnd that banks funded more
+heavily with core deposits provide more loan-rate smoothing in
+response to exogenous changes in aggregate credit risk
+evidence for a novel channel linking bank liabilities to relationship
+lending
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+26 / 55
+
+
+--- PAGE 28 ---
+Efficient Contract Allocation
+It is notmmediately evident that long term contracts discussed 
+above are regularly implemented in traditional credit markets
+Deposits and savings accounts do not directly resemble history
+dependent insurance based contracts
+However, Berlin and Mester (1999) ﬁnd that banks funded more
+heavily with core deposits provide more loan-rate smoothing in
+response to exogenous changes in aggregate credit risk
+evidence for a novel channel linking bank liabilities to relationship
+lending
+Robert Townsend (MIT)
+Multiperiod Contracts
+22 / 25
+
+
+--- PAGE 29 ---
+Relationships Among Broker Dealers
+”In the past, the common belief is if one dealer wins, the other has
+to lose....Large dealers are now the liquidity manufacturing plants and
+small dealers remain vital distribution engines..... Its all about the
+client and how they can service them properly in order to get business
+in the form of valuable inquiry (ﬂow). Every client inquiry does not
+need to be proﬁtable, but over time the aggregated inquiry needs to
+have a positive expected return- ... Inquiries vary according to the
+client and what they are paying the dealer for. ...Dealers take risk when
+they price a client transaction. .... Clients realize this and know that
+their business must take place in a form that over the long run will ﬁt
+the dealers model and have positive expected returns. If this isnt the
+case, their liquidity will ultimately be compromised. Our experience
+with ﬁxed income clients is that they are extremely thoughtful as to
+how they reward their dealers and have rich metrics to evaluate those
+relationships. They cherish and need to have relationships with both
+the large and small dealer for the beneﬁt of their business. Hence,
+clients develop a portfolio of dealer relationships that forms over time.
+”
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+27 / 55
+
+
+--- PAGE 30 ---
+Costly State Veriﬁcation
+Thus far we have operated under the premise that outputs of the villas
+were not directly observable, except of course in actual net transfers and
+perhaps in deliberate, pretransfer displays.
+Suppose that at some cost K in terms of forgone consumption, agent 2,
+the monastery, could observe or verify all of agent 1’s actual output.
+Agent 2 could audit or monitor agent 1.
+Supposing that this cost K might be considerable, we can still ask
+whether such auditing would take place.
+Retreat to the single-period setup. So let π(d | eθ) denote the probability
+of an audit conditioned on announced parameter eθ, either d = 1 for audit
+or d = 0 for no audit.
+Also, let π(τ | eθ, d = 0) denote the probability of transfer τ conditioned on
+announcement eθ and no audit and π(τ | eθ, θ, d = 1) denote the
+probability of transfer τ conditioned on announcement eθ, the fact of an
+audit, and revelation of actual parameter value θ.
+Robert M. Townsend (MIT)
+14.04 Intermediate Micro Theory: Lecture 8
+Fall 2018
+16 / 19
+
+
+--- PAGE 31 ---
+Program 9: Maximize by choice of probabilities
+π(d | eθ),π(τ | eθ,d = 0), π(τ | eθ,θ,d = 1)
+The objective function
+λ 1(Σθp(θ)[π(d = 0 | θ)Στπ(τ | θ,d = 0)U1[θ −τ]
++π(d = 1 | θ)Στπ(τ | θ,θ,d = 1)U1[θ −τ]])
+(105)
++λ 2(Σθp(θ)[π(d = 0 | θ)Στπ(τ | θ,d = 0)U2[W +τ]
++π(d = 1 | θ)Στπ(τ | θ,θ,d = 1)U2[W +τ −K]])
+Subject to incentive constraints, for all θ, eθ,
+π(d = 0 | θ)Στπ(τ | θ,d = 0)U1[θ −τ]
++π(d = 1 | θ)Στπ(τ | θ,θ,d = 1)U1[θ −τ]
+(106)
+≥π(d = 0 | eθ)Στπ(τ | eθ,d = 0)U1[θ −τ]
++π(d = 1 | eθ)Στπ(τ | eθ,θ,d = 1)U1[θ −τ]
+Robert M. Townsend (MIT)
+14.04 Intermediate Micro Theory: Lecture 8
+Fall 2018
+17 / 19
+
+
+--- PAGE 32 ---
+The π(τ | eθ,θ, d = 1) can be set equal to unity at τ values implying
+extreme values of consumption, zero or subsistence, for agent 1.
+These probabilities appear only on the right-hand side of the
+incentive constraints, or, to put it another way, they are never
+brought into the solution.
+The agent never lies about his parameter values. Still, audits can
+occur with positive probability. In this way the agent is threatened
+with off-equilibrium behavior.
+A striking feature of the solution to Program 9, or at least to similar
+programs, is that the probability of audits is positive even for
+relatively large values of audit cost K. Even rare, costly audits can
+help alleviate the incentive problems of nonﬁxed rentals, that is, of
+θ-contingent transfers.
+Robert M. Townsend (MIT)
+14.04 Intermediate Micro Theory: Lecture 8
+Fall 2018
+18 / 19
+
+
+--- PAGE 33 ---
+Environment
+Limited commitment literature: overview
+Pure exchange economy, I agents, one good
+Identical utility functions U(c) = E [P
+t βtu (ct)]
+with u : R+ →R strictly concave and C1
+Endowments:
+Uncertainty is described by a ﬁnite-state Markov process {zt}, taking
+values z ∈{1, . . . , Z}, with transition matrix Π. Let zt = (z0, . . . , zt)
+Individual endowments: ei,t (zt) = ϵi (zt) > 0
+Aggregate endowment: et (zt) = P
+i ϵi (zt)
+This endowment process allows for idiosyncratic and aggregate
+uncertainty, as well as serial correlation in shocks
+Write the utility corresponding to the stochastic consumption
+process {c}, starting at time t and history zt, as
+U (c)
+ zt
+=
+∞
+X
+s=t
+X
+zs∈Z s
+βt−su (cs (zs)) π
+ zs|zt
+14.462 (Lecture 4)
+Limited commitment
+5 / 34
+
+
+--- PAGE 34 ---
+Environment
+Feasible allocations
+Deﬁnition
+An allocation {ci}I
+i=1:
+is resource-feasible if
+IX
+i=1
+ci,t
+ zt
+= et
+ zt
+∀t, zt
+(RC)
+satisﬁes the participation constraints if
+U (ci)
+ zt
+≥U (ei)
+ zt
+∀t, zt, i
+(PC)
+is feasible if it is resource-feasible and satisﬁes the participation
+constraints
+is constrained eﬃcient if it is feasible, and not Pareto-dominated by
+another feasible allocation
+14.462 (Lecture 4)
+Limited commitment
+6 / 34
+
+
+--- PAGE 35 ---
+Smart Contracts -
+including Multiparty 
+Mechanisms
+fourth component
+18
+
+
+--- PAGE 36 ---
+Smart Contracts Implementing Solutions to  
+Mechanism Design Problems
+Contracts are on  distributed ledgers
+States of the system (as in balance sheet), controls as actions or messages 
+result in transitions (as in cash flows) –as in economics and engineering
+Messages are put on the ledgers, revelation principle and truth-telling
+Multi-period contracts: Past histories recorded become immutable, a series 
+of  incentive constraints
+Commitment in entering into the agreement and commitment to the way it 
+is carried out it out
+19
+
+
+--- PAGE 37 ---
+Incentives and the meaning of ‘Trust’
+Revelation principle: incentive constraints ensure agents 
+are honest (truth telling) and obedient (moral hazard)
+Per se we do not trust to carry out otherwise
+If there is limited commitment
+Need collateral, multi period contracts, or reputation 
+Unique implementation of mechanisms: Design can 
+prevent collusion
+So what is the CS community worrying about exactly?
+Faulty communications vs. nefarious behavior, a 
+distinction not made
+And what about equilibrium behavior under the protocol?  
+(a literature on bitcoin emerges)
+
+
+--- PAGE 38 ---
+Byzantine Generals Problem: In Computer 
+Science and Economics
+If enemy is prepared or generals do not  attack as a group, 
+failure
+The generals exchange messages with each other 
+If the number of potential traitors (faults) is known, and 
+all other nodes tell the truth, cross-checking a sufficient 
+number of messages is sufficient 
+oRequires “3f+1” replicas to be able to tolerate “f” 
+failing nodes
+New design: Second general not allowed to communicate back. First 
+attacks as long as informed enemy is unprepared
+Other designs: Sending of the same message along multiple paths, or 
+repeatedly along the same path , or one informed agent serves as a 
+“leader” relaying messages  
+Coles and Shorrer (2012) , Chwe 1995; De Jaegher and van Rooij 2011).
+
+
+--- PAGE 39 ---
+Hybrids in the Middle Ground: the pieces are 
+there from both sides
+From mechanism design
+Contracts with costly state verification are literally executed with 
+messages where, over some range of states, costly messages are 
+not used
+A version of the revelation principle works with no 
+communication at all and with noisy messages,
+o so one need not abandon mechanism design when facing the 
+reality of imperfect messaging (Prescott 2003) 
+From smart contracts (as in Corda)
+Validity consensus: Unique vs. non-unique consensus, Info-
+partitioned ledgers
+Notaries: one, or multiple trusting, or  multiple non-trusting 
+notaries
+Public and/or private nodes
+Oracles: Broadcast communication vs. selectively private 
+communication
+22
+
+
+--- PAGE 40 ---
+Hybrids: On- and Off-Chain, Quasi-Private
+Nicholas Zhang (2019)
+No planner, but then Compiling and verify code on-chain is incredible costly. 
+Solution is do some things off-chain-
+Entire documents can be encrypted off-chain and accessed as reliable
+Messages, states in contract can be separate from ledgers for transfer of value
+Multiparty computation, share partial information, know system is functioning properly
+But in practice, mpc technology is still limited, hence quasi private, not going to extremes

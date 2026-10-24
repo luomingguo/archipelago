@@ -1,0 +1,52 @@
+--- Page 1 ---
+ 
+Massachusetts Institute of Technology 
+Sloan School of Management 
+15.871 Introduction to System Dynamics 
+15.872 System Dynamics II 
+Fall 2013 
+ 
+Assignment 0 
+Download and install VensimPLE 
+ 
+Assigned: Wednesday 4 September 2013; Due: Monday 9 September 2013 
+There is nothing to turn in for this assignment. 
+ 
+ 
+ 
+ 
+ 
+ 
+Throughout the course we will use specialized software for mapping, modeling, and analyzing 
+complex dynamic systems. As discussed in the syllabus, there are several excellent system 
+dynamics software packages. In this course we will use the Vensim Personal Learning Edition 
+(VensimPLE) by Ventana Systems. The current version is 6.1. It is free for academic use and is 
+available for Windows and Mac.  
+ 
+VensimPLE comes with sample models, help engine, and Adobe Acrobat format User’s Guide, 
+all available from <http://vensim.com/free-download/>. 
+ 
+ 
+Download and install VensimPLE. Every student is required to download and install 
+VensimPLE on his or her own computer, but there is nothing to turn in for this assignment. If you 
+have any problems, attend recitation where one of the TAs may help. 
+You will use the software next week for Assignment 1.  
+ 
+Note: The disc that comes with the Business Dynamics textbook includes a version of 
+VensimPLE. However, the version available online is newer and has enhanced functionality. 
+Be sure to download the current version from the website listed above. All the Vensim 
+models on the textbook CD work will work with the new version.  
+ 
+ 
+
+--- Page 2 ---
+MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+ 
+15.871 Introduction to System Dynamics
+Fall 2013
+ 
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.

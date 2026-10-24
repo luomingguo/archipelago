@@ -1,12 +1,11 @@
 ---
-title: '供应链自动化'
+title: 供应链自动化
 type: lecture
 lecture: 13
 tags: [warehouse-automation, autonomous-mobile-robots, asrs-systems, automation-roi]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 13 供应链自动化（Supply Chain Automation）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 13 讲  

@@ -1,0 +1,772 @@
+--- PAGE 1 ---
+14.462
+Spring, 2020
+Vision for Optimized Design of 
+Financial Infrastructure using 
+Distributed Ledger Technology
+Scrambling of Information and Partitioned Ledgers, Delegation to the 
+Contract, Limiting Access to the Outside Market, Single and Multiple-Colored 
+Tokens as Decentralized Partitioned Ledgers, Commitment to Optimized 
+Sequential Service to Mitigate Runs 
+(Lecture 5)
+Robert M. Townsend
+Elizabeth & James Killian Professor of Economics, MIT
+
+
+--- PAGE 2 ---
+Information-Constrained Optimal Allocations
+Optimal learning as optimal scrambling and partitioned ledgers
+Delegation of resources to a “third party” or computer
+Role of commitment
+Limit access of the individual to the market 
+Tokens
+As decentralized ledgers
+Multi-colored coins and partitioned ledgers
+Implementing solutions to mitigate bank and market runs
+
+
+--- PAGE 3 ---
+Delegation to a Mediator and Scrambling
+Townsend 1982: Multiperiod contracts can facilitate beneﬁcial risk
+sharing when one agent has private information.
+Townsend (1987) studies a model where all agents have private
+information in a multiperiod economy
+Central mediator coordinates and implements contracts between
+agents
+Collects and pools endowments from agents
+Redistributes the pooled endowment in each period based on messages
+received
+Message space ≡space of agent types (revelation principle)
+Mediator seeks to construct an allocation rule which maximizes ex
+ante expected utility subject to truth telling constraints
+Mediator may choose allocation rules which keep certain agents
+uninformed of the types of the other agents - ”Scrambling”
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+29 / 55
+
+
+--- PAGE 4 ---
+Model
+Townsend (1987)
+Two agents a and b and two time periods t = 0 and t = 1
+In each period, both agents receive a deterministic endowment ei
+t
+with et = ea
+t + eb
+t known by both agents
+preferences are given by the objective function
+Ui(ci
+0, θi
+0) + βV i(ci
+1, θi
+1)
+ci
+0, ci
+1 is path for agent i′s consumption
+(θa
+0, θa
+1, θb
+0, θb
+1) comes from a ﬁnite set Θ which represents a
+consumption shock proﬁle for both agents
+θi
+t is revealed only to agent i at time t and is therefore private
+information
+Each element of (θa
+0, θa
+1, θb
+0, θb
+1) ∈Θ occurs with probability
+p(θa
+0, θa
+1, θb
+0, θb
+1)
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+30 / 55
+
+
+--- PAGE 5 ---
+Mediation
+Townsend (1987)
+Assume that there exists a mediator in this economy
+Collect information from the two agents and decide on how to split the
+endowment in each period based on the agents reports
+Construct an allocation rule that maximizes a weighted sum of the
+two agents ex ante expected utility
+Direct Revelation: Let the message space at t = 0 and t = 1 be the
+set of all possible θi
+0, and the set of all possible (θi
+0, θi
+1) respectively
+for each agent i
+Revelation Principle: Any equilibrium allocation of an arbitrary
+mechanism in a truthful equilibrium can be implemented as a truthful
+equilibrium of a direct revelation mechanism
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+31 / 55
+
+
+--- PAGE 6 ---
+Example: Optimal Learning as Optimal Scrambling
+Townsend (1987)
+The mediator may choose to ”scramble” messages
+Mediator may choose a distribution over consumption that, even
+given both agents reporting truthfully, one or both of the agents may
+not be able to discern with certainty the t = 0 type of the other
+agent given the observed c0
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+32 / 55
+
+
+--- PAGE 7 ---
+Example: Optimal Learning as Optimal Scrambling
+Townsend (1987)
+Set θb
+0 and θa
+1 to be constant
+only agent a is reporting at t = 0 and agent b is reporting at t = 1
+Preferences are given by
+Ua(ca
+0, θa
+0)
+=
+V a(ca
+1, θa
+1) = (ca
+t )θa
+t
+with θa
+0
+∈
+{0.2, 0.9}, θa
+1 = 0.30
+and
+Ub(cb
+0 , θb
+0)
+=
+V b(cb
+1 , θb
+1) = (cb
+t )θb
+t
+with θb
+0
+∈
+0.90, θb
+1 ∈{0.2, 0.9}
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+33 / 55
+
+
+--- PAGE 8 ---
+Example: Optimal Learning as Optimal Scrambling
+Townsend (1987)
+Parameters θa
+0 and θb
+1 have the following joint distribution
+(θa
+0, θb
+1) =
+
+
+
+
+
+
+
+(0.2, 0.9)
+with prob. 0.3
+(0.9, 0.9)
+with prob. 0.2
+(0.2, 0.2)
+with prob. 0.1
+(0.9, 0.2)
+with prob. 0.4
+
+
+
+
+
+
+
+ea
+t = eb
+t = 5 for t = 0, 1, β = .95, and λa = λb = 0.5
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+34 / 55
+
+
+--- PAGE 9 ---
+Example: Optimal Learning as Optimal Scrambling
+Townsend (1987)
+Private Information Solution
+θa
+0
+(ca
+0, cb
+0 )
+π(c0, θa
+0)
+θa
+0, θb
+1
+(ca
+1, cb
+1 )
+π(c1, θ
+0.2
+(1.75, 8.25)
+1.0
+(0.2, 0.2)
+(0.2, 0.9)
+(4.75, 5.25)
+(2.0, 8.0)
+1.0
+1.0
+0.9
+(0.0, 10.0)
+(1.75, 8.25)
+(3.25, 6.75)
+0.1159346
+0.0339681
+0.8544384
+(0.9, 0.2)
+(3.75, 6.25)
+1.0
+(0.9, 0.9)
+(1.0, 9.0)
+(10.0, 0.0)
+0.86106
+0.13839
+The allocation (ca
+0, cb
+0 ) = (1.75, 8.25) occurs with positive probability
+for either report of agent a
+When (ca
+0, cb
+0 ) = (1.75, 8.25) is observed, agent b remains uncertain of
+the type agent a reported in t = 0
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+35 / 55
+
+
+--- PAGE 10 ---
+Example: Optimal Learning as Optimal Scrambling
+Townsend (1987)
+Consider the full information solution:
+Full information Solution
+θa
+0
+(ca
+0, cb
+0 )
+π(c0, θa
+0)
+θa
+0, θb
+1
+(ca
+1, cb
+1 )
+π(c1, θa
+0,
+0.2
+(1.75, 8.25)
+1.0
+(0.2, 0.2)
+(0.2, 0.9)
+(2, 5, 7.5)
+(2.5, 7.5)
+1.0
+1.0
+0.9
+(0.0, 10.0)
+(3.25, 6.75)
+0.1042598
+0.8957402
+(0.9, 0.2)
+(3.75, 6.25)
+1.0
+(0.9, 0.9)
+(1.0, 9.0)
+(10.0, 0.0)
+0.891898
+0.108101
+The (ca
+0, cb
+0 ) = (1.75, 8.25) outcome is eliminated in the θa
+0 = 0.9
+branch
+b already knows agent a′s type and thus scrambling is unhelpful
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+36 / 55
+
+
+--- PAGE 11 ---
+Example: Optimal Learning as Optimal Scrambling
+Townsend (1987)
+Presence of the scrambling in the private information case keeps
+agent b uninformed of agent a′s type making her more hesitant to lie
+when (ca
+0, cb
+0 ) = (1.75, 8.25) is observed and θb
+1 = 0.2 is her type
+She may be in the θa
+0 = 0.9 case which has a positive probability of a
+very bad outcome of cb
+1 = 0
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+37 / 55
+
+
+--- PAGE 12 ---
+Garratt, Lee, Martin and Townsend (2019) “Who Sees the Trades? 
+The Effect of Information on Liquidity in Inter-dealer Markets”
+
+
+--- PAGE 13 ---
+Group Portfolio Management for Borrowing and Lending
+Contracts
+Townsend (1987)
+Consider an economy with one underlying consumption good and a
+continuum of households on the unit interval
+Each household has endowment of consumption good y(ε) at t = 0
+where ε is a random shock
+There is no endowment at t = 1 but there is a storage technology
+that allows consumption to be stored at t = 0 for a return of
+(1 −δ)K1(ε) at t = 1
+Planner’s problem is to construct a welfare optimizing allocation rule
+π0(c0, θ0, ε0) and π1(c1, θ0, θ1, ε) to maximize ex-ante expected
+utility
+For simplicity, assume that the t = 1 allocation rule must be
+independent of the realization of t = 0 consumption
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+42 / 55
+• Preference shocks are private, as in previous model and with storage here, as in 
+Diamond-Dybvig 
+
+
+--- PAGE 14 ---
+Group Portfolio Management for Borrowing and Lending
+Contracts
+Townsend (1987)
+Numerically solve this model with
+U(c, θ) = [cθ −1]/θ
+θ ∈{0.5, 0.9} drawn each period with probability 0.5 for each value
+β = 1 and δ = 0
+study the branch where y(ε) = 8
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+43 / 55
+
+
+--- PAGE 15 ---
+Group Portfolio Management for Borrowing and Lending
+Contracts
+Townsend (1987)
+The full information solution oﬀers full insurance in both periods
+independent of history
+The private information solution oﬀers less insurance, especially in
+t = 1
+Higher storage in the full information solution versus the private
+information solution (4 units stored versus 3.26 units stored)
+Private information solution displays under storage
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+45 / 55
+• With private information, incentives are more difficult in the 
+second period,  so front-end incentives
+
+
+--- PAGE 16 ---
+Group Portfolio Management for Borrowing and Lending
+Contracts
+Townsend (1987)
+If we decrease the productivity of storage and increase the impatience
+of agents setting (1 −δ) = 0.8 and β = 0.9
+Private solution over stores the consumption good because
+consumption in the private information case has intertemporal tie ins
+θ0 = 0.5 individuals receive more (expected) consumption in t = 1
+then θ1 = 0.9 individuals, which allows the incentive constraint to be
+satisﬁed
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+46 / 55
+• Private solution over stores the consumption good because 
+consumption in the private information case has intertemporal tie ins, 
+trying to create high-powered incentives
+
+
+--- PAGE 17 ---
+Group Portfolio Management with Many Agents and
+Hidden Storage
+Doepke and Townsend (2004)
+Previous models assume total income is veriﬁable at any given point
+in time
+Contract terms are contingent on the entire wealth of the agent
+Actual ﬁnancial agents do not tie all of their wealth to one contract
+Wealth levels are usually private information
+Example from Doepke and Townsend (2004)
+Optimal information constrained insurance can still provide sizable
+welfare beneﬁts when agents have access to hidden storage
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+47 / 55
+
+
+--- PAGE 18 ---
+Group Portfolio Management with Many Agents and
+Hidden Storage
+Doepke and Townsend (2004)
+Set up
+economy with three periods t = 0, 1, and 2 agents
+Unity continuum of risk averse agents with log utility and one risk
+neutral social planner
+Timeline for each period
+agents observe income realizations of et ∈{2.1, 2.3}
+agents makes a report to the planner of his income realization
+Planner oﬀers him a wealth transfer τt which is contingent on his
+current report and his past history of income reports
+planner also suggests an action at ∈{0, 0.3, 0.6} which is a suggestion
+of how much of the agents current wealth to store.
+agent chooses how much to consume and store
+In t = 1, 2 the probability of the high outcome increases linearly with
+storage at a rate R
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+48 / 55
+
+
+--- PAGE 19 ---
+Group Portfolio Management with Many Agents and
+Hidden Storage
+Doepke and Townsend (2004)
+social planner has access to a credit market which oﬀers a gross
+return of 1.05.
+planner seeks to choose an incentive compatible allocation rule that
+minimizes his expected transfers to the agent (subject to individual
+rationality constraints).
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+49 / 55
+
+
+--- PAGE 20 ---
+Group Portfolio Management with Many Agents and
+Hidden Storage
+Doepke and Townsend (2004)
+Results:
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+56 / 61
+
+
+--- PAGE 21 ---
+Group Portfolio Management with Many Agents and
+Hidden Storage
+Doepke and Townsend (2004)
+Second best solution
+oﬀers signiﬁcant beneﬁts over autarky when storage return is low
+decreasing in the return on storage for moderate R
+incentive compatibility constraints become tighter as the return on
+storage becomes larger and the optimal storage level is 0
+gain from the second best contract over the credit market outcome
+increases when R is further away from the credit market borrowing
+rate
+credit market rate is close to the storage rate =⇒agent has access to
+private insurance options which are very similar to what the planner
+can feasibly provide
+Robert Townsend (MIT)
+Advanced Macroeconomics
+06/15
+52 / 55
+
+
+--- PAGE 22 ---
+Decentralized Tokens Implementing Private 
+Partitioned Ledgers
+Risk-averse agent a is paired with a risk-neutral agent b initially, in 
+the first period at one of the two locations, and likewise for agents aʹ
+and bʹ at a second location in the first period. Townsend (l987)
+Agents a and aʹ make announcements to partners of their urgency to 
+consume, and to induce truth telling, if urgent today, they receive the 
+good but at the expense of getting less of it in the second period.   if 
+patient today, vice versa.
+In the second period, a and paired with bʹ and vice versa, aʹ with b. 
+Record all messages  of all parties and history on distributed ledger, 
+centralized and  illustrative of the scaling problem
+Solution: Tokens. Announced patient agents in the first period give 
+up goods and receive more tokens. Have incentives to reveal tokens 
+in second period, to get more consumption. Patient have less tokens
+Equivalently: Journal entries on ledgers, but partitioned and private, 
+when to share  own accounts  with selected others
+4
+
+
+--- PAGE 23 ---
+Multiperiod Private Information Solution
+Townsend (1987)
+
+
+--- PAGE 24 ---
+4 Agents, 2 Locations
+
+
+--- PAGE 25 ---
+Trade with Insurance (Townsend 1987)
+7
+
+
+--- PAGE 26 ---
+Multiple Colored Coins and Partitions 
+Multiple colored tokens on a private ledger, so that one can keep 
+track of the direction of trade in each good
+Intuition: Keep track of more dimensions
+Links to cryptography and the idea of colored coins 
+Narayanan et al (2016): Stamping on $ dollars bills a purchase for Yankee’s 
+tickets, or code on $ dollar bill to access info on a common ledger
+Coins are not necessarily fungible in the sense that coins can have 
+public verified histories, to trace ownership
+Colored tokens are a metaphor for “colored” entries on ledgers distinguishing 
+histories
+Free exchange of crypto currency with fiat money can undercut these 
+mechanisms
+8
+
+
+--- PAGE 27 ---
+Diamond and Dybvig (1983)
+Diamond and Dybvig (1983)
+Seminal model of bank runs
+The bank serves to provide insurance against liquidity shocks.
+The model features several equilibria. One eﬃcient equilibrium where
+everyone is truthful about their liquidity needs and one ineﬃcient
+equilibrium in which a panic occurs and everyone tries to withdraw
+their money early.
+Townsend (MIT)
+Bank Runs
+January 23, 2014
+2 / 56
+
+
+--- PAGE 28 ---
+Green and Lin (2003)
+Green and Lin (2003)
+Take sequential servicing constraint seriously. People can condition
+their actions on their arrival time at the bank and on their type, and
+the bank must make an allocation decision for each agent knowing
+only his stated type and the stated types of the agents who arrived
+before him.
+Look at a wider class of potential contracts than Diamond and Dybvig
+Finite number of agents with types drawn independently from one
+another. Even this creates aggregate uncertainty (the fraction of
+impatient agents is unknown ex ante). Note this contrasts with
+Diamond and Dybvig.
+Townsend (MIT)
+Bank Runs
+January 23, 2014
+11 / 56
+
+
+--- PAGE 29 ---
+Green and Lin (2003)
+Model Setup
+Finite set of players I = {1, ..., I} I < ∞
+2 dates T = 0, 1
+Each agent has an endowment of 1 unit that they deposit in the bank
+at the beginning of period 0.
+Agents learn their types privately at the beginning of period 0
+Preferences u(ci
+0, ci
+1; ωi) are as in Diamond and Dybvig
+Probability of impatience (ωi = 0) is P drawn independently
+Set of possible states is Ω= {0, 1}I with generic element
+ω = (ω1, · · · , ωI) ∈Ω
+As before, a generic allocation vector a has an element ai
+j which
+denotes i’s allocation in period j
+Townsend (MIT)
+Bank Runs
+January 23, 2014
+12 / 56
+
+
+--- PAGE 30 ---
+Green and Lin (2003)
+Case 2: Sequential Service Constraint
+Now players will show up one at a time, and the bank will be forced
+to make a decision about their period 0 consumption for each player
+only knowing the reported types of the players who came before them.
+Assuming the bank can recalculate how much to give depositors after
+each depositor shows up (and placing some restrictions on preferences
+v), Green and Lin show that the ex interim eﬃcient mechanism has a
+unique, truthful equilibrium.
+Townsend (MIT)
+Bank Runs
+January 23, 2014
+19 / 56
+
+
+--- PAGE 31 ---
+Green and Lin (2003)
+Sequential Service Constraint
+The idea is that agents show up at the bank one at a time and report
+their types. The bank must determine the allocation of each agent as
+a function of their stated type and the stated types of those who
+came before the current agent.
+An allocation rule
+→a : M →R2I
++ satisﬁes the sequential service
+constraint if
+→a
+i
+0(m) is a function only of m1, · · · , mi
+That is the i’the component of the period 0 allocation must only be a
+function of the stated types of the agents who arrived earlier than
+agent i and i’s own stated type.
+Let F ′ be the set of all allocation functions that satisfy sequential
+service and feasibility
+Townsend (MIT)
+Bank Runs
+January 23, 2014
+21 / 56
+
+
+--- PAGE 32 ---
+Green and Lin (2003)
+The Unique Equilibrium
+Theorem (4)
+When M = M1 × · · · × MI is as above and ⃗a is as in lemmas 2 and 3 that
+there is a unique BNE and in that BNE everyone tells the truth.
+The proof is largely omitted but the intuition is as follows. We will
+proceed by backwards induction. The last agent is going to have a
+dominant strategy to tell the truth, as he will get more in period 1 by
+reporting patience than in period 0 by reporting impatience no matter
+what the others have reported.
+Townsend (MIT)
+Bank Runs
+January 23, 2014
+31 / 56
+
+
+--- PAGE 33 ---
+Green and Lin (2003)
+Intuition Continued
+Our inductive step is to show that assuming all future agents will tell the
+truth, agent i will receive more in expectation (in period 1) by reporting
+patience than he will get for sure in period 0 if he reports impatience.
+Thus a patient agent will tell the truth. (Recall that impatient agents
+always tell the truth, as when an agent reports patience his period 0
+consumption is 0.)
+Thus truth telling is the unique surviving strategy of iterated deletion of
+strictly dominated strategies, and is therefore the unique BNE.
+Townsend (MIT)
+Bank Runs
+January 23, 2014
+32 / 56
+
+
+--- PAGE 34 ---
+Green and Lin (2003)
+Recap
+Assuming the bank can recalculate how much to give depositors after
+each depositor shows up (and placing some restrictions on preferences
+v), Green and Lin show that the ex interim eﬃcient mechanism has a
+unique, truthful equilibrium.
+Note though, that their backwards induction proof relies on type
+independence of the agents. Had types not been independent, then
+the bank’s forecast of the probability of future sequences of types
+π(s) would need to be conditioned on past reports, and hence would
+be sensitive to lies by previous agents. Then the simple backwards
+induction argument would not work. Intuition for why this fails is
+provided in the following paper.
+Townsend (MIT)
+Bank Runs
+January 23, 2014
+35 / 56
+
+
+--- PAGE 35 ---
+Ennis and Keister (2009)
+Preliminaries
+They also specify a functional form for v so that they can derive the
+analytical form of the ex interim eﬃcient allocation.
+v(ai
+0, ai
+1; ωi) =
+1
+1−γ (ai
+0 + ωiai
+1)1−γ γ > 1
+They specify uncertainty to allow for correlation as follows: Pk is the
+set of all type vectors with k patient agents.
+Formally Pk = {ω ∈Ω: θ∗(ω) = k}.
+Let πk be the probability that there are k patient agents, and the
+probability of some ω ∈Pk is
+πk
+#Pk
+That is, all permutations are equally likely conditional on there being
+k patient agents.
+One special case of this probability distribution is independence.
+Suppose there are three agents and the probability that any agent is
+patient is .5, with independent draws. Then π0 = π3 = .125
+π1 = π2 = .375 P0 = {(0, 0, 0)} , P1 = {(1, 0, 0), (0, 1, 0), (0, 0, 1)}
+and so on.
+Townsend (MIT)
+Bank Runs
+January 23, 2014
+37 / 56
+
+
+--- PAGE 36 ---
+Calvacanti and Monteiro (2011)
+The Mechanism
+The Calvacanti and Monteiro mechanism is ⃗˜α deﬁned as follows:
+For some (arbitrarily small) ϵ > 0 and for each player i, pick
+0 < ai < ϵ
+For i < I ⃗˜αi(b, t) =
+
+
+
+
+
+⃗αi(b)
+if bi = 1
+⃗αi(b)
+if bi = 0 and gi = 0
+⃗αi(b) + (−ai, Rai)
+if bi = 0 and gi = 1
+For i = I ⃗˜αI = ⃗αI(s)
+Townsend (MIT)
+Bank Runs
+January 23, 2014
+54 / 56

@@ -1,12 +1,11 @@
 ---
-title: '产品开发经济学'
+title: 产品开发经济学
 type: lecture
 lecture: 14
 tags: [product-development-economics, npv-analysis, sensitivity-analysis, cost-of-delay, financial-modeling]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 14 产品开发经济学（Product Development Economics）
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  

@@ -1,0 +1,847 @@
+14.03/003 Micro Theory & Public Policy, Fall 2025
+
+
+Lecture slides 4. Consumer preference and the theory of choice
+
+David Autor (Prof), MIT Economics and NBER
+Announcements
+ − This Wednesday
+     □ Read for in-class class discussion:
+       Bleemer, Zachary, and Aashish Mehta. “Will studying economics make you rich? A
+       regression discontinuity analysis of the returns to college major.” American Economic
+       Journal: Applied Economics 14, no. 2 (2022): 1-22
+     □ What’s the question of the paper?
+
+     □ What’s the main methodology for answering that question?
+
+     □ What are the key fndings?
+
+     □ What questions does this leave you with
+
+     □ Apologies: No Autor ofce hours this Weds
+
+
+ − Next Monday (9/22) — How much do low-income families value health insurance?
+     □   Read for in-class discussion:
+         Finkelstein, Amy, Nathaniel Hendren, and Mark Shepard. “Subsidizing health insurance for
+         low-income adults: Evidence from Massachusetts.” American Economic Review 109, no. 4
+         (2019): 1530-1567                                                                     1/55
+Utility Maximization and Consumer Choice
+The axioms of consumer preference theory
+
+
+
+
+The axioms of consumer preference theory were developed for three purposes:
+
+ 1. Portray rational behavior
+ 2. Mathematical representation of utility functions
+ 3. Derive “well-behaved” demand curves
+
+
+
+
+                                                                              3/55
+Utility functions: Cardinal and ordinal
+
+A consumer’s utility from consumption of a given bundle A is determined by a personal utility
+function.
+
+Cardinal utility function
+ − U (A) is a cardinal number: U : consumption bundle −→ R measured in “utils”
+
+Ordinal utility function
+ − U provides a “ranking” or “preference ordering” over bundles.
+
+
+              
+               AP B
+    U:(A,B)−→   BP A
+                AI B
+              
+
+
+                                                                                          4/55
+Cardinal vs. ordinal utility functions
+
+
+ − Problems with cardinal utility functions
+
+      1. Difcult to fnd the appropriate measurement index (metric)
+
+      2. Invite us to make interpersonal comparisons of utility, which is problematic. Want to focus
+         on intrapersonal choices
+
+
+ − Using unit-free ordinal utility functions avoids these problems
+
+
+ − Surprisingly, we can build a lot of theoretical structure using only ordinal properties of utility
+   functions
+
+
+
+                                                                                                        5/55
+Axiom 1: Completeness
+
+
+
+Axiom 1: Preferences are complete (“completeness”)
+ − For any two bundles A and B, a consumer can establish a preference ordering.
+
+
+ 1. A P B
+ 2. B P A
+ 3. A I B
+
+
+
+
+                                                                                  6/55
+Axiom 2: Transitivity
+
+
+
+
+Axiom 2: Preferences are transitive (“transitivity”)
+
+ − For any consumer if A P B and B P C then it must be that A P C.
+
+ − Consumers are consistent in their preferences
+
+
+
+
+                                                                     7/55
+Axiom 3: Completeness, transitivity, and continuity
+
+
+
+
+Axiom 3: Preferences are continuous (“continuity”)
+
+ − If A P B and C lies within an ε radius of B then A P C.
+
+ − We need continuity to derive well-behaved demand curves.
+
+
+
+
+                                                              8/55
+Axioms: Completeness, transitivity, and continuity
+
+
+ − Axiom 1: Preferences are complete (“completeness”)
+ − Axiom 2: Preferences are transitive (“transitivity”)
+ − Axiom 3: Preferences are continuous (“continuity”)
+
+
+
+Theorem
+If Axioms 1–3 are obeyed, then we can defne a cardinal utility function that represents the individual’s
+preference.
+
+     (Note: this theorem should be interpreted as an “as if” statement. We do not believe that
+     consumers literally have utility functions)
+
+
+                                                                                                    9/55
+Indiference curves
+
+
+
+ − The indiference curve IC(U ) is the set of consumption bundles that generate utility level U for a
+   utility function U
+
+ − An Indiference Curve Map is a sequence of indiference curves defned over every utility level:
+
+                                        {IC(0), IC(ε), IC(2ε), ...}
+
+    with a small positive value for ε
+
+
+
+
+                                                                                                 10/55
+3D indiference curve map – Autor will attempt to draw
+
+
+
+
+                                                        11/55
+Indiference curves
+
+
+
+
+                     12/55
+Indiference curves
+                 y
+
+
+
+
+                                                        IC3
+                                                      IC2
+                                                    IC1
+                                                      x
+                     IC3 −→ Utility level U3 
+                                             
+                     IC2 −→ Utility level U2 U3 > U2 > U1
+                     IC1 −→ Utility level U1 
+                                             
+                                                              13/55
+Axiom 4: Non-satiation (never get enough)
+
+We usually use two additional axioms
+ − Introduced to refect observed behavior and to simplify
+ − But, they are not necessary for a theory of rational choice
+
+Axiom 4: Non-Satiation
+ − Given two bundles X and Y , if XA = XB and YA > YB then A P B, regardless of the levels of
+   XA , XB , YA , YB
+
+
+ − Implications:
+      1. The consumer always places positive value on more consumption
+      2. Indiference curve map stretches out endlessly
+
+                                                                                          14/55
+Axiom 5: Diminishing marginal rate of substitution
+
+
+
+ − “The more of something you have, the less you value a bit more of it (relative to alternatives)”
+
+       □   Captures, what we believe, is a fundamental feature of human preferences
+       □   Role in consumer theory:
+             ≫   Makes the mathematics of consumer theory much simpler
+             ≫   Avoids consumers spending all their money on one good
+
+
+ − Need to defne Marginal Rate of Substitution frst
+
+
+
+
+                                                                                                 15/55
+Marginal rate of substitution
+Defnition (Marginal rate of substitution)
+MRS measures willingness to trade one bundle for another
+
+Example
+ − Bundle A = (1 cup of coldbrew, 12 pieces of sushi)
+ − Bundle B = (2 cups of coldbrew, 8 pieces of sushi)
+ − Let’s say that the consumer is indiferent between these two bundles
+ − Consumer is indiferent to having 4 fewer pieces of sushi for 1 more cup of coldbrew
+
+                     M RS(cups of coldbrew for sushi) = |−4|
+                                           CB            ∆Sushi
+                                  M RS                ≡
+                                          Sushi U =ū     ∆CB U =ū
+ − MRS is measured along an indiference curve and may vary along an indiference curve
+                                                                                         16/55
+ − MRS is defned relative to some bundle (starting point)
+Marginal rate of substitution
+
+ − By defnition, utility is constant along an indiference curve:
+
+                                   ¯
+                                   U     = U (x, y)
+                                           ∂U       ∂U
+                                   0     =     dx +    dy
+                                           ∂x       ∂y
+                                   0     = M Ux dx + M Uy dy
+                                   dy      M Ux
+                                 − dx    =        = MRS of x for y
+                                           M Uy
+
+
+ − MRS of x for y is the marginal utility of x divided by the marginal utility of y (holding total
+   utility constant), which is equal to −dy/dx.
+ − “How much y do you need to compensate for a unit loss in x?”
+                                                                                                     17/55
+Marginal rate of substitution
+ − MRS must always be evaluated at some particular point
+
+
+                       y
+
+
+
+
+                                        A
+                               y2
+                                                    B
+                                    4       1           C
+                                                4
+                                                            x   18/55
+Axiom 5: Diminishing marginal rate of substitution
+Axiom 5: The MRS of x for y decreases as x increases relative to y
+ − The ratio M Ux /M Uy is decreasing in x
+
+                        y
+
+
+
+                                                 Diminishing MRS
+                                                      y for x
+
+
+
+
+                             Diminishing MRS
+                                  x for y
+
+
+                                                                     x   19/55
+Convexity and MRS
+
+
+ − Diminishing MRS implies that consumers prefer diversity in consumption
+ − A convex utility function exhibits diminishing MRS
+
+
+Defnition
+A function U (x, y) is convex if for any arguments (x1 , y1 ) and (x2 , y2 ) where
+(x1 , y1 ) ̸= (x2 , y2 ):
+
+            U (αx1 + (1 − α)x2 , αy1 + (1 − α)y2 ) ≥ αU (x1 , y1 ) + (1 − α)U (x2 , y2 ),
+
+where α ∈ (0, 1).
+
+
+                                                                                            20/55
+Example of convex utility function
+A utility function U (·) exhibits diminishing MRS if the indiference curves of U (·) are convex.
+
+                        y
+
+
+
+                         y2
+
+
+
+                         y∗
+
+
+                         y1
+
+                              x2          x∗           x1            x
+                                                                                            21/55
+Example of non-convex utility function
+
+                  y
+
+
+                  y2
+
+
+
+
+                  y1
+
+
+
+                            x2           x1   x
+
+                                                  22/55
+Example of concave utility function
+
+ − Suppose you love coldbrew and sushi, but dislike consuming them together
+
+                         Sushi
+
+
+
+
+                                                                       U3
+                                                                  U1
+                                                             U0
+
+                                                              Coldbrew
+ − If your indiference curves were concave as above, you should not diversify consumption
+                                                                                            23/55
+Back to Indiference Curves
+
+
+Properties of indiference curves
+
+ 1. Every consumption bundle lies on some indiference curve
+    (Axiom 1: Completeness)
+
+ 2. Indiference curves are smooth
+    (Axiom 3: Continuity)
+
+ 3. Indiference curves are convex
+    (Axiom 5: Diminishing MRS)
+
+ 4. Indiference curves cannot intersect ...
+
+
+                                                              24/55
+Non-crossing of indiference curves
+ − Proof: say two indiference curves intersect:
+                          Good Y
+
+
+
+                                         C
+                                   D
+
+
+
+
+                                                                 A
+
+
+                                                            B
+                                                                      Good X
+                                                  P
+ − According to these indiference curves, (i) A       B (by non-satiation), (ii) B I C, (iii) C P D (by
+   non-satiation), (iv) D I A
+ − By transitivity, A P D and A I D, which is a contradiction                                       25/55
+Cardinal vs ordinal utility
+
+
+
+ − Utility function U (x, y) = f (x, y) is cardinal
+       □   It reads of “utils” as a function of consumption
+       □   But, choices are inherently ordinal
+
+
+ − We’d like to relax the notion of utility functions to make them ordinal rather than cardinal
+       □   That is, we want ‘same preferences’ but we don’t care about units
+
+
+ − What does it mean for two utility functions to have the “same preferences”?
+
+
+
+
+                                                                                                  26/55
+Monotone transformation
+
+Q: How do we preserve properties of utility that we care about and believe in without
+imposing cardinal properties?
+We say that a utility function is defned only up to a positive monotone transformation
+
+Defnition (Monotone Transformation)
+Let I be an interval on the real line (R) then: g : I −→ R is a monotone transformation if g
+is a strictly increasing function on I.
+
+If g(·) if a positive monotone transformation of f (·), we will say they g(·) and f (·) are
+identical for purposes of utility theory
+If g(x) is diferentiable and monotone, then g ′ (x) > 0 ∀x
+
+                                                                                              27/55
+Monotone and non-monotone transformations
+Examples
+
+
+Let y be defned on R, and let x be defned as:
+ 1. x = 2y + 1 YES
+ 2. x = exp(y) YES
+ 3. x = abs(y) NO
+ 4. x = y 3 YES
+ 5. x = − y1 YES
+ 6. x = max(y 2 , y 3 ) NO
+ 7. x = 2y − y 2 NO
+
+
+                                                28/55
+Monotone Transformation of a Utility Function
+
+
+
+ − If U2 (.) is a monotone transformation of U1 (.), then:
+
+      1. U2 (.) = f (U1 (.)) where f (.) is monotone in U1
+      2. U1 and U2 exhibit identical preference rankings
+      3. MRS of U1 (U ) and U2 (U ) are the same
+      4. U1 and U2 are equivalent for consumer theory
+
+
+ − Example: U (x, y) = xα y β (Cobb-Douglas)
+
+
+
+
+                                                             29/55
+Cobb-Douglas example: Monotone transformation
+ − What is the MRS along an indiference curve U0 ?
+
+
+                              U0 = xα0 y0β
+                             dU0 = αxα−1
+                                     0   y0β dx + βx0α y0β−1 dy
+                        dy               αxα−1
+                                           0   y0β        α y0   ∂U/∂x
+                                   = −                =        =
+                        dx U =U0         βxα0 y0β−1       β x0   ∂U/∂y
+
+
+ − Consider now a monotonic transformation of U :
+
+
+                                U 1 (x, y) = xα y β
+                                U 2 (x, y) = ln(U 1 (x, y))
+                                      U 2 = α ln x + β ln y
+                                                                         30/55
+Cobb-Douglas example: Monotone transformation
+
+
+ − What is the MRS of U 2 along an indiference curve?
+
+
+                                     U02 = ln U0 = α ln x0 + β ln y0
+                                            α       β
+                                   dU02 =     dx + dy = 0
+                                           x0      y0
+                             dy            α y0    ∂U/∂x
+                           −             =       =
+                             dx U 2 =U02   β x0    ∂U/∂y
+
+
+ − which is the same as we derived for U 1
+ − This is actually just an application of the chain rule
+
+
+                                                                       31/55
+Why monotone transformations preserve the MRS
+
+How we know that monotonic transformations always preserve the MRS of a utility function?
+
+ − Let U = f (x, y) be a utility function
+ − Let g(U ) be a monotonic transformation of U = f (x, y) and diferentiable
+ − The MRS of g(U ) along an indiference curve where U0 = f (x0 , y0 ) and g(U0 ) = g(f (x0 , y0 ))
+ − By totally diferentiating this equality we can obtain the MRS.
+
+                          dg(U0 )    =   g ′ (f (x0 , y0 ))fx (x0 , y0 )dx + g ′ (f (x0 , y0 ))fy (x0 , y0 )dy
+
+                   dy                    g ′ (f (x0 , y0 ))fx (x0 , y0 )   fx (x0 , y0 )   ∂U/∂x
+               −                     =     ′
+                                                                         =               =
+                   dx g(U )=g(U0 )       g (f (x0 , y0 ))fy (x0 , y0 )     fy (x0 , y0 )   ∂U/∂y
+
+     which is the MRS of the original function U (x, y)
+
+                                                                                                                 32/55
+Utility maximization
+Utility maximization subject to budget constraint
+
+ − Maximize utility subject to budget constraint
+       □   Utility function (preferences)
+             ≫   Consumer wants to maximize U (x)
+       □   Budget constraint
+             ≫   Has a maximum $ amount that he/she can spend
+       □   Price vector
+             ≫   Total possible purchases depend on price of goods
+       □   We know that the consumer can make a choice because of completeness
+
+
+ − Characteristics of the solution
+       □ Budget exhaustion (non-satiation)
+       □ For most solutions: psychic trade-of = monetary payof
+
+             ≫   Psychic trade-of is MRS
+             ≫   Monetary trade-of is the price ratio
+                                                                                 34/55
+Consumer’s problem
+ − Utility maximization corresponds to point A
+      □ The slope of the budget set is equal to − ppxy
+      □ The slope of each indiference curves is given by the MRS
+
+ − Every bundle is on some indiference curve (completeness)
+
+
+
+
+                                                                   35/55
+Interior solutions
+ − Two types of solutions: Interior solutions and corner solutions
+
+
+                                         IC3
+                         y         IC2
+                             IC1
+
+
+
+
+                                                                     x   36/55
+     Oddball cases —
+We won’t be focusing on these
+Corner solutions
+ − Vertical indiference curves implies that the consumer is indiferent to the consumption of good y
+
+                         y
+
+
+
+
+                                                                        x
+                                                                                               38/55
+Integer constraints
+ − Another type of “corner” solution can result from indivisibilities/integer constraints
+       □   Only two bundles are feasible
+
+                          y
+                           10
+                                                I = 500
+                                               px = 450
+                                                py = 50
+
+
+
+
+                              1
+
+
+                                           1                               x                39/55
+Non-negativity constraints — Autor will attempt to draw
+
+
+
+
+                                                          40/55
+      Utility maximization
+The math you’ve been waiting for!
+Mathematical solution to the Consumer’s Problem
+ − Problem:
+                                               max U (x, y)
+                                               x,y
+                                               s.t. px x + py y ≤ I
+
+
+ − Lagrangian version:
+                         max L(x, y, λ)   =     max U (x, y) + λ(I − px x − py y)
+                         x,y,λ                  x,y,λ
+
+
+ − First-order conditions (FOC):
+                                          ∂L
+                                   1.            =      Ux − λpx = 0
+                                          ∂x
+                                          ∂L
+                                   2.            =      Uy − λpy = 0
+                                          ∂y
+                                          ∂L
+                                   3.            =      I − px x − py y = 0
+                                          ∂λ                                        42/55
+Mathematical solution to the Consumer’s Problem
+
+                                      ∂L
+                               1.           = Ux − λpx = 0
+                                      ∂x
+                                      ∂L
+                               2.           = Uy − λpy = 0
+                                      ∂y
+                                      ∂L
+                               3.           = I − px x − py y = 0
+                                      ∂λ
+
+
+ − Equation (3) states that the consumer spends all of her money (‘budget exhaustion’)
+
+ − Rearranging (1) and (2):
+                                                Ux   px
+                                                   =
+                                                Uy   py
+      □   Q: What does this expression mean intuitively ?
+      □   The psychic trade-of is equal to the monetary trade-of between the two goods   43/55
+Mathematical solution to the Consumer’s Problem
+
+                                    ∂L
+                               1.        = Ux − λpx = 0
+                                    ∂x
+                                    ∂L
+                               2.        = Uy − λpy = 0
+                                    ∂y
+                                    ∂L
+                               3.        = I − px x − py y = 0
+                                    ∂λ
+
+
+ − Notice that:
+                                           Ux
+                                                =   λ
+                                           px
+                                           Uy
+                                                =   λ
+                                           py
+
+ − What is the meaning of λ?                                     44/55
+An example problem
+Utility maximization: An example problem
+
+ − Consider the following example problem:
+                                                          1       3
+                                             U (x, y) =     ln x + ln y
+                                                          4       4
+
+ − Notice that this utility function satisfes all axioms:
+      1. Completeness, transitivity, continuity
+      2. Non-satiation: Ux = 41x > 0 for all x > 0. Uy = 43y > 0 for all y > 0
+      3. Diminishing marginal rate of substitution:
+            ≫   Along an indiference curve: U
+                                            ¯ = 1 ln x0 + 3 ln y0 .
+                                                4         4
+
+            ≫   Totally diferentiate: 0 = 4x10 dx + 4y30 dy.
+
+            ≫   Yields marginal rate of substitution − dx
+                                                       dy
+                                                          |U¯ = U
+                                                                Uy
+                                                                  x    4y0
+                                                                    = 12x 0
+                                                                            .
+
+                                                                                 46/55
+Utility maximization: An example problem
+ − Example values: px = 1, py = 2, I = 12. Write the Lagrangian for this utility function given
+   prices and income:
+
+                                            max U (x, y)
+                                            x,y
+                    s.t. px x + py y ≤ I
+                                       1       3
+                                  L =    ln x + ln y + λ(12 − x − 2y)
+                                       4       4
+
+
+                                       ∂L          1
+                                1.           =       −λ=0
+                                       ∂x         4x
+                                       ∂L          3
+                                2.           =       − 2λ = 0
+                                       ∂y         4y
+                                       ∂L
+                                3.           = 12 − x − 2y = 0
+                                       ∂λ                                                         47/55
+Utility maximization: An example Problem
+
+                                      1         3
+                              L =        ln x + ln y + λ(12 − x − 2y)
+                                      4         4
+                            ∂L         1
+                     1.           =        −λ=0
+                            ∂x        4x
+                            ∂L         3
+                     2.           =        − 2λ = 0
+                            ∂y        4y
+                            ∂L
+                     3.           = 12 − x − 2y = 0
+                            ∂λ
+
+ − Rearranging (1) and (2), we have
+                                         2/4x       2
+                                                =
+                                         3/4y       3
+                                           Ux       px
+                                                =
+                                           Uy       py
+                                                                        48/55
+An Example Problem
+
+
+
+ − We have:
+                                            1     3       2
+                                      λ=      ∗
+                                                = ∗ ⇒ x∗ = y ∗ .
+                                           4x    8y       3
+
+ − Now using the budget constraint:
+                                                2 ∗         8
+                                x + 2y = 12 ⇒     y + 2y ∗ = y ∗ = 12
+                                                3           3
+
+
+ − And therefore: y ∗ = 4.5, x∗ = 3
+
+
+
+                                                                        49/55
+Interpreting the Lagrange multiplier (λ) —
+ The mathematics of ‘bang for the buck’
+Interpretation of λ, the Lagrange multiplier
+ − At the solution, the following conditions will hold:
+                                ∂U/∂x1   ∂U/∂x2         ∂U/∂xn
+                                       =        = ... =        =λ
+                                  p1       p2             pn
+                  ∗
+ − So what is dU
+               dI ? Return to Lagrangian:
+                        L   =    U (x, y) + λ(I − px x − py y)
+
+                       dL              ∂x∗       ∂x∗             ∂y ∗       ∂y ∗
+                            =     Ux       − λpx          + Uy        − λpy        +λ
+                       dI              ∂I        ∂I              ∂I         ∂I
+ − Recall that
+                                            Ux   Uy
+                                               =    =λ
+                                            px   py
+ − Substituting for λ at optimal choices, we get that
+                                                   dL   ∂L
+                                              λ=      =
+                                                   dI   ∂I
+                                                                                        51/55
+ − This is the envelope theorem at work!
+Interpretation of λ, the Lagrange multiplier
+
+
+ − λ equals the “shadow price” of the budget constraint
+      □   Additional utils that could be obtained with the next dollar of consumption
+      □   Note that this shadow price is not uniquely defned since it corresponds to the marginal
+          utility of income in “utils”
+
+
+ − We could have concluded that dL/dI = λ directly using the envelope theorem:
+
+                                             dU ∗   ∂L
+                                                  =    =λ
+                                              dI    ∂I
+
+
+
+
+                                                                                                    52/55
+Corner solutions and the Lagrangian
+ − When at a corner solution, a point of tangency need not exist
+                             y
+
+
+
+
+                                             U0    U1   U2
+
+
+
+
+                                                                   x
+
+
+ − Need to modify Lagrangian to include “non-negativity constraints”:
+                                             x ≥ 0, y ≥ 0
+                                                                        53/55
+The road ahead — in consumer theory
+The road ahead – In consumer theory
+
+
+
+
+                                      55/55
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

@@ -1,0 +1,121 @@
+--- Page 1 ---
+PART B. Mapping Stock and Flow Networks 
+ 
+ 
+A manufacturing plant such as an oil refinery or assembly line has many thousands of 
+machines and tools that require maintenance. The goal of maintenance is to maximize 
+equipment availability (up time) while keeping maintenance costs low. Consider all the 
+pumps in a chemical manufacturing plant. A typical plant might have several thousand 
+pumps. Pumps are either running, in working condition and available to run if needed, 
+broken down and awaiting repair, under repair, or taken down for preventive maintenance. 
+Map the stock and flow structure relating these various states.  
+ 
+ 
+ 
+PART D. Modeling Goal-Seeking Processes 
+ 
+HVAC system maintains constant temperature of the room. At some point in time, due to 
+the peak load in the grid, the electricity goes out and the temperature in the room starts 
+rising until it reaches the outside level. Consider for simplicity that outside temperature is 
+constant and equal to 90F.  Waiting for utility company to fix the blackout, people begin to 
+record the temperature in the room.  
+Time after electricity went out, hr 
+Temperature inside the room, F 
+0 
+70 
+10 
+80 
+20 
+85 
+ 
+ 
+What information can you get from this table? Hint: think about half-life. 
+1) Build a simple Vensim model simulating the process of increasing temperature in the 
+room following exponential decay process.  
+2) Using the same model, predict what would happen to the same room in wintertime if 
+the heating were broken. Assume initial room temperature is 70F and the outside 
+temperature is constant and is 30F. In how many hours would the room temperature 
+reach 50F? 
+ 
+ 
+1
+
+--- Page 2 ---
+PART C: Dynamics of Accumulation 
+ 
+Graphically integrate the inflow and outflow rates: Draw the behavior of the stock called Level, 
+given the rates Inflow and Outflow. Provide a short explanation for the behavior you draw. 
+ 
+ 
+ 
+ 
+2
+
+--- Page 3 ---
+PART B SOLUTION: 
+Pumps are either running, in working condition and available to run if needed, 
+broken down and awaiting repair, under repair, or taken down for preventive 
+maintenance.  
+ 
+ 
+ 
+ 
+ 
+Running
+Pumps
+Working and
+Available
+Pumps
+Broken and
+Awaiting
+Repair
+Under Repair
+Pumps in
+Prev Maint
+Take Down for
+PM
+Return to Service
+from PM
+Break Down Rate
+Repair Starts
+Return to Service
+from Repair
+Putting in Service
+Putting in Reserve
+Return to Reserve
+from Repair
+Reserve Sent to
+PM
+3
+
+--- Page 4 ---
+PART C SOLUTION:  
+ 
+ 
+ 
+ 
+4
+
+--- Page 5 ---
+PART D. SOLUTION 
+Half-life of the temperature increase is 10 hours (from the table, as initial gap was 
+20F and half of it was closed in 10 hours, second line is confirmation of this). We 
+know that  
+       ( )            
+      
+→            
+    
+ 
+5
+
+--- Page 6 ---
+MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+ 
+15.871 Introduction to System Dynamics
+Fall 2013
+ 
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.

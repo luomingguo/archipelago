@@ -1,12 +1,11 @@
 ---
-title: '供应链可视性'
+title: 供应链可视性
 type: lecture
 lecture: 11
 tags: [supply-chain-visibility, track-and-trace, control-tower, rfid-technology]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # Lec 11 供应链可视性（Supply Chain Visibility）
 
 > 对应 MIT CTL.SC4x · Supply Chain Technology and Systems · 第 11 讲  

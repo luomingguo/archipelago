@@ -1,0 +1,870 @@
+14.03/003 Micro Theory & Public Policy, Fall 2025
+
+
+Lecture Slides 2 and 3. The Minimum Wage Debate: Theory
+Meets Causal Inference
+
+David Autor (Prof), MIT Economics and NBER
+Reminders
+
+
+
+
+ − Make a name card if you don’t already have one
+
+ − Register your Plickers card.
+
+ − Pset 1 due Thursday, 9/18 at 11:59 EST late submissions not accepted
+
+
+
+
+                                                                          1/65
+Outline
+
+ 1. ✓ Textbook model of competitive labor market
+      □   Impact of minimum wage on employment in the textbook model
+      □   Assumptions behind this model
+ 2. Relax a key assumption: price-taking by frms
+      □   Impact of min. wage on employment when employers have market power
+      □   Testing the textbook model and alternatives
+ 3. Natural experiments in economics
+ 4. The Fundamental Problem of Causal Inference
+ 5. Estimating causal efects using “Diferences-in-Diferences” (DD)
+ 6. The Card and Krueger minimum wage study
+ 7. A word on the methodology of economics
+
+                                                                               2/65
+Monopsonistic employer
+
+
+Defnition (Monopoly)
+One seller, many buyers
+
+Defnition (Monopsony)
+One buyer, many sellers
+
+ − More generally, a market where a buying agent is not a price-taker
+ − If a frm has labor market power—it is not a price-taker—its own demand for labor afects the
+   market wage
+ − Examples?
+
+
+                                                                                                 3/65
+Monopsonistic employer
+                          Wages
+
+
+                                                                     SL
+
+
+
+
+                                                                     M RP L
+
+                                                            Employment
+
+
+ 1. SL is upward sloping for a monopsonist.
+ 2. If all workers receive the same wage, the marginal cost of a worker includes a raise given to all
+    inframarginal workers.
+                                                                                                        4/65
+ 3. Thus, M CL is even more upward sloping than SL .
+Monopsonistic employer
+                          Wages                          M CL
+
+
+                                                                     SL
+
+
+
+
+                                                                     M RP L
+
+                                                            Employment
+
+
+ 1. SL is upward sloping for a monopsonist.
+ 2. If all workers receive the same wage, the marginal cost of a worker includes a raise given to all
+    inframarginal workers.
+                                                                                                        5/65
+ 3. Thus, M CL is even more upward sloping than SL .
+Monopsonistic employer
+                          Wages                          M CL
+
+
+                                                                     SL
+
+
+
+
+                             wm
+
+
+                                                                     M RP L
+
+                                              lm            Employment
+
+
+ 1. SL is upward sloping for a monopsonist.
+ 2. If all workers receive the same wage, the marginal cost of a worker includes a raise given to all
+    inframarginal workers.
+                                                                                                        6/65
+ 3. Thus, M CL is even more upward sloping than SL .
+Monopsonistic employer
+                          Wages                           M CL
+
+
+                                                                     SL
+
+
+                              wc
+                             wm
+
+
+                                                                     M RP L
+                                              lm     lc     Employment
+
+
+ 1. SL is upward sloping for a monopsonist.
+ 2. If all workers receive the same wage, the marginal cost of a worker includes a raise given to all
+    inframarginal workers.
+                                                                                                        7/65
+ 3. Thus, M CL is even more upward sloping than SL .
+Raising the minimum wage on a monopsonistic employer
+                          Wages                           M CL
+
+
+                                                                     SL
+
+
+                              wc
+                             wm
+
+
+                                                                     M RP L
+                                              lm     lc     Employment
+
+
+ 1. SL is upward sloping for a monopsonist.
+ 2. If all workers receive the same wage, the marginal cost of a worker includes a raise given to all
+    inframarginal workers.
+                                                                                                        8/65
+ 3. Thus, M CL is even more upward sloping than SL .
+Raising the minimum wage on a monopsonistic employer
+
+                            W                            M CL
+
+
+                                                                SL
+
+                         wmin
+                           wc
+                           wm
+
+
+                                                                M RP L
+                                            lm lmin lc     l    L
+ − Why did we get wmin > wm , lmin > lm ?
+      □   The frm is now a price-taker for labor at wmin
+      □   Firm chooses lmin so that wmin = M RP L                        9/65
+Raising the minimum wage on a monopsonistic employer
+
+ − Does raising minimum wage to monopsonists always increase employment?
+
+                           W                       M CL
+
+
+                        wmin3
+                                                             SL
+
+                        wmin2
+
+
+                          wm
+                        wmin1
+                                                             M RP L
+
+                                        lm lmin2             L
+
+
+                                                                           10/65
+Efect of a minimum wage
+Monopsony vs. competitive market
+
+                Min.Wage                Competitive Market
+                                           Monopsony
+
+
+
+
+                      wc∗
+
+                      ∗
+                     wm
+
+
+                                    ∗
+                                   lm         lc∗    Employment
+
+                                                                  11/65
+Relationship between labor supply elasticity and marginal cost of labor
+
+ − Why is w∗ = M RP L?
+
+ − Firm’s proft maximization problem:
+
+                                         max π = p · f (l) − w(l) · l,
+
+      □   Assume that f ′ (·) > 0 and f ′′ (·) < 0, and p is exogenous.
+
+ − FOC:
+                                  ∂π     ∂f (l)          ∂w(l)
+                                     =p·        − w(l) −       ·l =0
+                                  ∂l      ∂l              ∂l
+
+    Rearranging:
+                                   M RP L     wage of new hire       ∆total labor costs
+                                     ′
+                                   pf (l) =        w(l)          +        w′ (l)l
+
+                                                                                          12/65
+Relationship between labor supply elasticity and marginal cost of labor
+ − Third term is critical for monopsonist
+                                  M RP L     wage of new hire       ∆total labor costs
+                                     ′
+                                  pf (l) =        w(l)          +        w′ (l)l
+
+ − Competitive model
+                                     w′ (l) = 0 ⇐⇒ Price taking frm
+ − Monopsonistic model
+                                    w′ (l) > 0 ⇐⇒ Monopsonistic frm
+
+ − Re-arranging in terms of the elasticity of labor supply (σs )
+
+                                                      ∂w l                         1
+                                M RP L = w 1 +                      =w 1+
+                                                      ∂l w                         σs
+
+ − If the frm is not a price taker (σs < ∞) in the labor market, then the wage it pays is strictly less
+   than MRPL.                                                                                      13/65
+Testing for monopsony in the labor market
+
+ − Let’s suppose you fnd the following pattern:
+
+                            Avg Wage
+
+
+
+
+                                                                    MS
+
+                                                         OH
+                                                  PA
+                                            NJ
+
+
+
+
+                                                          Employment Rate
+
+
+ − Would this convince you that higher wage levels caused higher employment?
+                                                                               14/65
+Testing for monopsony in the labor market
+
+
+               Wage
+                                                         SM S
+
+                                               SOH
+                                     SP A
+                             SN J
+                                                           DM S
+
+                                                 DOH
+                                        DP A
+                                    DN J
+                                       Employment Rate
+
+
+                                                                  15/65
+Testing for monopsony in the labor market
+
+
+ − A profound empirical problem
+      □   We do not ever see supply and demand curves
+      □   We observe only equilibrium wage and quantity employed
+      □   Cannot directly see if individual frms face upward sloping labor supply
+
+ − How do we overcome this problem?
+      □   We need an experiment!
+      □   What do we need that experiment to change exogenously?
+      □   We need an experiment in which minimum wages are raised exogenously at a subset of frms
+
+
+
+                                                                                             16/65
+David Card and Alan B. Krueger, 1994 (American Economic Review)
+
+
+
+
+© David Card and Alan B. Krueger. All rights reserved. This content is excluded from our Creative Commons license. For more17/65
+information, see https://ocw.mit.edu/help/faq-fair-use/
+Testing for monopsony in the labor market
+
+
+ − How do we use this ‘natural experiment’ to test the competitive model against
+   alternatives?
+
+ − Use key empirical implications
+
+      □   In the competitive model, an increase in the minimum wage always reduces employment:
+          wmin ↑→ l ↓
+      □   In the monopsonistic model, an increase in the minimum wage may raise employment:
+          wmin ↑→ l ↑
+      □   Downward sloping → competitive market
+      □   Upward sloping → monopsony
+
+
+                                                                                              18/65
+Efect of a minimum wage
+Monopsony vs. competitive market
+
+                Min.Wage                Competitive Market
+                                           Monopsony
+
+
+
+
+                      wc∗
+
+                      ∗
+                     wm
+
+
+                                    ∗
+                                   lm         lc∗    Employment
+
+                                                                  19/65
+What is a “Causal Efect” —
+And how do we measure it?
+Correlations vs. causal efects
+
+
+ − Correlations are all around us and are often mistaken for causal relationships
+       □   Correlations are useful for making predictions about things that are associated
+       □   Example: people with high income tend to be healthier than average — an association
+       □ It does not follow that if you raised someone’s income, they’d get healthier, or if their health
+         improved, their income would rise
+       □ These things could happen, but the correlations are not informative about the causal efects
+
+
+
+ − Science advances by revealing cause and efect—the efect of action X on outcome Y
+       □   Causal questions are harder to answer than correlational questions
+       □   This is because causal efects can never be measured directly
+       □   Causal questions intrinsically concern a counterfactual state
+
+
+                                                                                                     21/65
+What is a causal efect?
+
+ − Imagine two potential outcomes Yi ∈ {Y0i , Y1i } for every unit i
+
+ − i could be a water molecule, a person, a country, etc.
+
+ − Which outcome of Yi is realized depends upon on the variable Xi
+
+       □   if Xi = 0, then Yi = Yi0
+       □   if Xi = 1, then Yi = Yi1
+
+ − We say that the causal efect of Xi on Yi is
+
+                                             Ti = Y1i − Y0i ,
+
+    where Ti stands for the Treatment Efect of Xi on Yi
+
+
+
+                                                                       22/65
+The fundamental problem of causal inference (FPCI)
+ − The causal efect of Xi on Yi is
+                                              Ti = Y1i − Y0i ,
+    where T stands for Treatment Efect
+
+ − Problem
+
+       □   We observe only
+                                           Yi = Y1i Xi + Y0i (1 − Xi )
+
+       □   We never observe both {Y1i , Y0i } and hence cannot calculate Y1i − Y0i
+
+ − We therefore can never measure the causal efect of Xi on Yi
+
+
+Defnition (Fundamental Problem of Causal Inference)
+It’s not possible to observe the value Y1i and Y0i for the same unit i,
+−→ We cannot measure the causal efect of X on Y for unit i
+                                                                                     23/65
+     Mission Impossible I —
+Assume ‘Stability’ + ‘Reversibility’
+Work-around I: Postulate stability and reversibility
+ − Claim: If the causal efect of Xi on Yi is
+
+      1. Temporally stable: the same at every point in time, and
+      2. Reversible (memoryless): Undoing the cause reverses the efect
+          Y1i,t = Y1i ∀ t, and Yoi,t = Yoi ∀ t
+      □   We can therefore observe Y1i − Y0i by repeatedly changing Xi from 0 to 1
+      □   The causal efect of Xi on Yi is → Ti = (Yi |Xi = 1) − (Yi |Xi = 0)
+ − Issues?
+      □   Temporal stability and causal transience cannot be tested
+      □   These assumptions may not always be plausible
+
+ − Examples/counter-examples:
+      □   Water from ice to steam and back
+      □   Treatment for high cholesterol for patient i                               25/65
+ Mission Impossible II —
+Assume ‘Unit Homogeneity’
+Work-around II: Postulate unit homogeneity (interchangeability)
+
+
+
+ − If the following is true
+      □   Y1i and Y0i are identical for all i
+      □   Implies that Y1i = Y1 ∀ i and Y0i = Y0 ∀ i
+
+ − Then
+      □   The causal efect of Xi on Yi is simply the diference:
+
+                                                Ti = T = Y1i − Y0j ∀i ̸= j
+
+
+
+
+                                                                             27/65
+Work-around II: Postulate unit homogeneity (interchangeability)
+
+ − If the following is true
+       □   Y1i and Y0i are identical for all i
+       □   Implies that Y1i = Y1 ∀ i and Y0i = Y0 ∀ i
+
+ − Then
+       □   The causal efect of Xi on Yi is simply the diference:
+
+                                                 Ti = T = Y1i − Y0j ∀i ̸= j
+
+
+ − Examples/counterexamples
+
+       □   Water molecules
+       □   Treatment for high cholesterol for patient i
+
+ − This is plausible only under certain laboratory conditions
+                                                                              28/65
+Mission Impossible III — Adjust the target
+          and run experiments
+Work-around III: Adjust the target, and run experiments
+
+
+We will never learn a causal efect for a specifc person
+
+ − For human subjects, neither (1) temporal stability and causal transience nor (2) unit homogeneity
+   are ever plausible
+
+
+Must acknowledge that we cannot estimate
+
+                                  Ti = Y1i − Y0i for a person i
+
+Instead, we estimate population efects
+
+
+
+                                                                                                30/65
+Estimating Average Treatment Efect on the Treated (ATT)
+
+ − Average Treatment Efect on the Treated
+
+                                    T ∗ = E [Y1 − Y0 |X = 1] ,
+ − One idea
+
+      □   Compare E [Y |X = 1] and E [Y |X = 0] to form
+
+                                      T̃ = E [Y |X = 1] − E [Y |X = 0]
+
+ − Is this a good idea?
+
+      □   Consider cholestorol treatment drug
+      □   We want to identify a set of treatment/control people for whom the counterfactual
+          outcomes are comparable
+
+                                                                                              31/65
+Treatment-control balance
+    (‘exchangeability’)
+Estimating ATT
+ − Want to identify a set of treatment/control people for whom the counterfactual
+   outcomes are comparable
+
+ − Treatment-control balance (exchangeability):
+
+                                      E [Y1 |X = 1] = E [Y1 |X = 0]
+                                      E [Y0 |X = 1] = E [Y0 |X = 0]
+      □   Where E[·] is the expectation operator
+      □   E[·] denotes the mean (i.e., expected value) of a random variable (RV).
+      □   And E[·|Condition] denotes the expected value of the RV in cases where the Condition
+          is true.
+
+ − If treatment and control groups are balanced, we can say that assignment to treatment is
+   ignorable and the groups are exchangeable
+      □   You could swap the treatment and control groups (before the experiment) and get the same
+          treatment efect estimate (on average)                                                33/65
+Estimating ATT
+
+ − Treatment-control balance (exchangeability):
+
+                                     E [Y1 |X = 1] = E [Y1 |X = 0]
+                                     E [Y0 |X = 1] = E [Y0 |X = 0] .
+
+ − If these conditions are satisfed, then we can use the diference for the treatment and control
+   group:
+
+                     E [Y1 |X = 1] − E [Y0 |X = 0] = E [Y1 |X = 1] − E [Y0 |X = 1]
+                                                   = T∗
+
+ − Notice that this substitution requires the treatment-control balance condition:
+                                     E [Y0 |X = 0] = E [Y0 |X = 1] .
+
+
+
+                                                                                                   34/65
+What if the treatment-control balance condition is not satisfed?
+
+
+
+
+ − What if compare cholesterol drug-takers to non-takers without a randomized experiment
+
+
+                                   E [Y1 |X = 1] ≶ E [Y1 |X = 0]?
+                                   E [Y0 |X = 1] ≶ E [Y0 |X = 0]?
+
+
+
+
+                                                                                           35/65
+What if the treatment-control balance condition is not satisfed?
+ − In the cholesterol example, what would we expect for treatment control balance or imbalance?
+                                     E [Y1 |X = 1] ≶ E [Y1 |X = 0]?
+                                     E [Y0 |X = 1] ≶ E [Y0 |X = 0]?
+
+ − In the cholesterol example, the treatment-control balance condition is likely violated
+                                      E [Y1 |X = 1] > E [Y1 |X = 0]
+                                      E [Y0 |X = 1] > E [Y0 |X = 0]
+
+ − Therefore, what would we get if we calculated
+                                    T̃ = E [Y |X = 1] − E [Y |X = 0]?
+
+ − Re-write:
+                     E [Y1 |X = 1] − E [Y0 |X = 0] = E [Y1 |X = 1] − E [Y0 |X = 1]
+                                                                   T∗
+                                                   + {E [Y0 |X = 1] − E [Y0 |X = 0]}
+                                                                   Bias                       36/65
+Implementing the statistical solution using randomization
+ − Randomly assigned 100 of 200 high cholesterol patients to D = 1 and half to D = 0
+ − Randomization guarantees that
+
+
+                                    E [Y1 |D = 1] = E [Y1 |D = 0]
+                                    E [Y0 |D = 1] = E [Y0 |D = 0] .
+
+ − Therefore, Treatment-Control Balance should be satisfed (groups are exchangeable)
+ − Now, consider
+
+                                T̂ = E [Y1 |D = 1] − E [Y0 |D = 0]
+                                   = E [Y1 |D = 1] − E [Y0 |D = 1]
+                                   + {E [Y0 |D = 1] − E (Y0 |D = 0)}.
+                                                  bias =0
+
+ − Randomization allowed us to estimate the counterfactual outcome for the treated group   37/65
+Average Treatment Efect on the Treated (ATT)
+     vs. Average Treatment Efect (ATE)
+Population treatment efects
+
+
+
+ − Average Treatment Efect for the Treated (ATT):
+
+                                       T ∗ = E [Y1 − Y0 |X = 1] ,
+
+    ATT is the causal efect of the treatment on the people who received the treatment
+
+ − Average Treatment Efect (ATE):
+                                           T † = E [Y1 − Y0 ] .
+    ATE is the causal efect one would notionally obtain if everyone were treated
+
+
+
+
+                                                                                        39/65
+Population treatment efects
+
+
+
+ATT and ATE are distinct
+
+ − The treatment efect of a cholesterol drug given to patients with high cholesterol is not likely to
+   equal the treatment efect of a cholesterol drug given to everyone
+
+ − Often, the ATE is not of interest because we would never consider treating people who don’t
+   need treatment
+
+ − But there are exceptions...
+
+
+
+
+                                                                                                  40/65
+Bottom Line
+
+
+ − Human behavior rarely satisfes temporal stability + causal transience or unit homogeneity
+
+ − In contrast, so long as we can randomize, a statistical solution is likely to work (though not
+   always)
+
+ − To solve the Fundamental Problem of Causal Inference in economics:
+       □ If feasible or practical, we use randomized experiments
+       □ Sometimes, quasi-experiments deliver just the experiment we need
+       □ In still other cases, we fnd ingenious workarounds—instrumental variables, regression
+         discontinuity. (We’ll talk about these later this term)
+
+
+
+                                                                                                    41/65
+The quintessential, classic
+   ‘Quasi-experiment’
+The quintessential quasi-experiment: Vietnam draft lottery
+
+
+
+
+ © Bettman/Getty. All rights reserved. This content is excluded from our Creative Commons license. For more information, see 43/65
+ https://ocw.mit.edu/help/faq-fair-use/
+Vietnam random number draft lottery sequence in 1972
+
+
+
+
+                                                       44/65
+Draft probability and earnings of men from 1951-1993 birth cohorts at ages 25–27
+
+
+
+
+                                                                                   45/65
+Contrasting earnings of draft eligible/ineligible (due to lottery) men, 1966–1984
+
+
+
+
+                                                                                    46/65
+‘Diference-in-Diference’ estimation
+Diference-in-diference estimation
+
+
+ − Often, we don’t simply measure the level of Y but it’s change as a function of X (the treatment)
+   and time
+
+ − For example, if we have a treatment and control group, we can form:
+
+                                              Before   After   Change
+                                 Treatment    Yjb      Yja     ∆Yj
+                                 Control      Ykb      Yka     ∆Yk
+
+
+ − Why do we want to make a pre-post comparison?
+
+
+
+                                                                                               48/65
+Diference-in-Diference Estimation
+ − Formally, assume we observe two groups before treatment
+
+                                                Yjb = αj .
+                                                Ykb = αk .
+
+
+ − Later, we observe that only group j received the treatment
+
+                                 Yja = αj + δt + T, and Yka = αk + δt
+
+
+ − So, if we take the frst diference for Yj , we get:
+
+                                 ∆Yj = Yja − Yjb = (αj − αj ) + δt + T
+
+
+                                     ∆Yj − ∆Yk = T + δt − δt = T.
+
+ − Diference-in-diferences potentially deals with the confounding efect of time   49/65
+© Federal Reserve Bank of Philadelphia. All rights reserved. This content is excluded from our Creative   50/65
+Commons license. For more information, see https://ocw.mit.edu/help/faq-fair-use/
+Card and Krueger (1994)
+
+
+
+
+                          51/65
+Card and Krueger (1994)
+
+
+
+
+                          52/65
+Card and Krueger (1994)
+
+
+
+
+                          53/65
+Card and Krueger (1994)
+
+ − What we observe
+
+                                   Before     After     ∆
+                              NJ   YN,1992    YN,1993   ∆YN = T + δ
+                              PA   YP,1992    YP,1993   ∆Yp = δ
+
+
+ − Diference-in-diference estimator (DD):
+
+                                        T̂ = ∆YN − ∆YP
+                                             =T +δ−δ
+                                             =T
+
+
+
+                                                                      54/65
+Card and Krueger (1994)
+
+
+
+
+                          55/65
+Card and Krueger (1994)
+
+
+
+
+                          56/65
+Card and Krueger (1994)
+
+
+
+ − Table 3 in the paper shows “Per store employment”
+
+                                       Before    After     ∆
+                                NJ     20.44     21.03     ∆Yn = +0.59
+                                PA     23.33     21.37     ∆Yp = −2.16
+
+ − Card and Krueger T̂ = 0.59 − (−2.16) = 2.76 with a standard error of 1.36
+      □   Therefore, it is statistically signifcant at the 5 percent level since the t-statistic is ≈ 2.0
+
+
+
+
+                                                                                                            57/65
+Card and Krueger (1994)
+
+
+
+
+                          58/65
+Interpretations?
+Card and Krueger (1994)
+
+
+
+
+                          60/65
+Methodology of economics — or why economic theory?
+
+
+
+ − Positive Economics
+      □   The study of “what is.”
+      □   Build models to make sense of, and generalize, the phenomena we observe
+
+
+ − Normative Economics
+      □   Assessing “what ought to be done.”
+
+
+
+
+                                                                                    61/65
+Strengths and Weaknesses
+
+
+ − Strengths
+      □   Rigorous and internally consistent
+      □   Cohesive: theory/methods built on frst principles
+      □   Refutable: makes strong, testable (refutable) predictions
+      □   Practical: will help you to better understand how the world works.
+
+
+ − Weaknesses
+
+      □   “Economics is marked by a startling crudeness in the way it thinks about individuals and
+          their motivations...”— Paul Krugman
+      □   Strong, simplifying assumptions that are often unpalatable and cannot be completely right
+
+                                                                                                 62/65
+But there are strengths in this weakness
+
+
+ − We have a model of “the world” – and it’s generally too complicated to analyze in its totality,
+   considering all factors at once
+
+ − A simplifed, highly stylized depiction of the world can be quite helpful
+
+ − “The test of the validity of a model is the accuracy of its predictions about real economic
+   phenomena, not the realism of its assumptions”—Milton Friedman
+
+ − “A hypothesis is important if it explains much by little”—Milton Friedman
+
+ − Our approach: simple models, signifcant insights
+
+
+
+                                                                                                 63/65
+Three signifcant insights of economic approach
+
+ 1. Economics is about “people doing the best with what they have.”
+      □   We start from the premise that people are trying to make the best choices for themselves
+ 2. Equilibrium
+      □   The market ‘aggregates’ individual choices to produce collective outcomes—equilibria
+      □   Sometimes equilibria are spectacularly diferent from individual intentions
+ 3. We can evaluate properties of equilibrium using the criterion of efciency
+      □   A stunning insight: under some key conditions, the market will produce efcient outcomes
+      □   And, theory provides insight into why this may or may not occur
+      □   Moreover, it may provide guidance on how to get to a better outcome
+      □   ‘Market failure’ is an opportunity to use economics to address the root of the problem, e.g.,
+          bad incentives, externalities, tragedy of the commons, coordination failure, hidden
+          information
+                                                                                                   64/65
+© Source unknown. All rights reserved. This content is excluded from our Creative Commons license. For more information, see 65/65
+https://ocw.mit.edu/help/faq-fair-use/
+MIT OpenCourseWare
+https://ocw.mit.edu/
+
+
+14.03/14.003 Microeconomic Theory and Public Policy
+Fall 2025
+
+
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms.
+

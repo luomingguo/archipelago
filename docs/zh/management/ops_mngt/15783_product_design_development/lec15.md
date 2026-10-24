@@ -1,12 +1,11 @@
 ---
-title: '产品成本与商业模式'
+title: 产品成本与商业模式
 type: lecture
 lecture: 15
 tags: [product-costing, business-model-canvas, target-costing, dfma, unit-economics]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
 # Lec 15 产品成本与商业模式（Product Cost and Business Models）
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  

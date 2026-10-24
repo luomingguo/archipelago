@@ -1,0 +1,383 @@
+--- Page 1 ---
+ 
+ 
+ 
+15.871 System Dynamics  
+Recitation#2  
+1
+
+--- Page 2 ---
+–
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+     
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Most Popular Mistakes done by SD  
+students  
+• Students most often do the following mistakes:  
+– Insufficient documentation: Listing of model
+equations ***** (not required for this assignment) 
+Missing polarities***
+Missing polarities 
+– Label/name feedback loops*** 
+– Handing in a very long HW, but not addressing some
+parts of the question**, hoping the TA will forget 
+about it ;) 
+• e.g. “How large is the epidemic now?” 
+• Brevity is a virtue in HW submission 
+– Using very unrealistic values for parameters* 
+• e.g. probabilities are usually defined btw (0.0‐1.0)
+e.g. probabilities are usually defined btw (0.0 1.0) 
+2
+
+--- Page 3 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+How to document “equation listing” 
+How to document equation listing  
+Equations for your model 
+Left hand side of Vensim main screen, click on “DOCUMENT ALL” to copy all Vensim 
+3
+
+--- Page 4 ---
+ 
+ 
+    
+ 
+ 
+ 
+ 
+ 
+Most Popular Questions: I can’t open the SARS DATA  
+4
+
+--- Page 5 ---
+ 
+ 
+ 
+ 
+ 
+    
+ 
+ 
+Debugging Units Check Errors
+Debugging Units Check Errors 
+‐ Default Model Settings
+Default Model Settings ‐ Correct Model Settings
+Correct Model Settings
+5
+
+--- Page 6 ---
+ 
+ 
+ 
+Debugging Units Check Errors
+Debugging Units Check Errors 
+6
+
+--- Page 7 ---
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Floating Point Error
+Floating Point Error
+•  It may be a couple of things. You may have unrealistic values for some of 
+the parameters e g infectivity Check your time step dt of the
+the parameters, e.g. infectivity. Check your time step, dt ,of the 
+simulation. Make sure value of probabilities are defined btw 0‐1.  
+– E.g. setting “infectivity” to a start value of 20 (by assuming 20%), instead of 0.2 
+7
+
+--- Page 8 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Population infected max value
+Population infected max value 
+•  Q‐ We noticed that when we increase the initial value of 
+“Population infected with SARS”, its final value after 
+simulation is 350 plus the initial value. 
+– Thi
+This appears to be incorrect because th
+the fifinal value sh
+ld
+hould 
+be 350. 
+•  A‐ If the initial value is a small number (e.g. 1‐10) it may not 
+be seen as a big problem. However one way to solve it is to 
+d fi
+ili
+i bl
+h i i i l
+l
+f
+h I f
+d
+define an auxiliary variable as the initial value for the Infected 
+population, e.g. “init infected”, and to reinitialize the Total 
+population to (=350‐”init infected”) 
+8
+
+--- Page 9 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+   
+ 
+A simple model that captures the dynamics  
+of an infectious disease‐ SARS  
+Historical data: SARSDATA.vdf 
+the incidence (rate at which new cases were
+‐the incidence (rate at which new cases were 
+reported, measured in people/day) 
+‐ cumulative prevalence (cumulative number 
+of cases reported, measured in people) for 
+SARS in Taiwan
+SARS in Taiwan 
+9
+
+--- Page 10 ---
+MIT OpenCourseWare
+http://ocw.mit.edu
+ 
+ 
+15.871 Introduction to System Dynamics
+Fall 2013
+ 
+ 
+ 
+For information about citing these materials or our Terms of Use, visit: http://ocw.mit.edu/terms.

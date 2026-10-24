@@ -1,0 +1,94 @@
+Criteria for Success
+A successful email&#8230;
+Has a concise  subject line , in the format of “General Description: Desired Action”
+Has a  greeting  at the beginning and a  closing  at the end
+Sets an appropriate level of  formality  for the conversation
+Either:
+States a desired  action  that should be taken within a  deadline , or
+Concisely relays information
+Is addressed only to the people who need to do the desired action
+Contains as little text as possible apart from the above
+Identify your purpose
+To identify your purpose it is important to understand the life of your fellow engineers and scientists. Most get emails regularly, with a new email coming about every 5 minutes. Because emails are the dominant method of communicating, it’s essential to write emails that accommodate recipients’ limited mental bandwidth, time and even the medium in which they often view email: the cell phone. This means that you need to do some up-front planning before hitting “send.” What is the purpose of this email? What do you want your recipient(s) to do?
+Analyze your audience
+Think clearly about your audience when planning, because this will influence:
+How much background information needs to be included?
+What is the appropriate tone of the email?
+If you’re CC’ing people who are new to the conversation, it becomes even more important to provide background information to orient everyone to the conversation. This is again where a good subject line comes in (see “Write a clear subject line” below for more information).
+Further, your audience will determine the tone of your email. If you&#8217;re writing to your PI, you should probably be more formal/professional than if you&#8217;re writing to your best friend. If in doubt, be more formal.
+Skills
+Write a clear subject line
+With emails constantly flying into everyone’s inboxes, only a fraction of them actually get read. A good subject line is key to
+convince people they need to actually pay attention to an email, and
+ask that an action be taken by someone.
+Here are some example subject lines:
+Worse
+Better
+Characterization of EG sample needed by Friday
+EG Diamond: Characterization needed by Friday
+“Characterization of EG sample needed by Friday” is an email that summarizes an action that needs to happen. A better subject line would be: “EG Diamond: Characterization needed by Friday,” where a global tag has been included to improve future search ability. Then when you want to look up all actions on this diamond you can search EG Diamond and have a list of all emails that this diamond was involved in.
+Worse
+Better
+Lunch, today?
+Lunch, today? [EOM]
+Sometimes everything we want to say could be included in the subject line, such as “Lunch, today? [EOM]”. (EOM stands for “End of Message.”) This is a fine email as it states everything quickly and efficiently, while the [EOM] tag lets the recipient know the email doesn’t have to be opened.
+Avoid run-on subject lines
+Subject Line:  Have you seen this paper
+Main Body:  It&#8217;s about magnetic imaging
+The run-on subject line is where the subject line runs into the main body of the email. This subject line is hard to read on a cell phone and is less likely read. As in the example above, this blurs the boundary between the subject line and the main body by using a sentence that stretches between the two. If in the future you wanted to remember what paper was referenced it would be much harder to find.
+Use brackets to help categorize emails
+Use brackets to categorize your message or denote it as urgent.  Some example subject lines are:
+[Urgent] Need someone to turn off the laser
+[Please Reply] Meeting Next Week
+State an action with a deadline
+Sending an email with a clear action also improves the signal to noise of your email. When describing actions you can consider using a list and/or using  bold  to bring attention to what needs to be done. Be as specific as possible about what needs to be done to avoid the need for follow-up emails.
+You should also be specific about  who  needs to perform the action. It is well known that when action is required of a collective, it is less likely to be done than when you assign it to someone. When many people get told simultaneously, there is this subtle feeling that someone “else” will do it.
+(The metaphor of &#8220;signal-to-noise ratio&#8221; comes from Jean-luc Doumont&#8217;s book  Trees, Maps, and Theorems .)
+Write openings and closings with the appropriate level of formality
+A greeting sets the right tone immediately, and avoids your emails sounding like demands. This may be unusual for some cultures, but for Americans especially a lack of a greeting can be off-putting.
+Openings
+Closings
+Formal:
+To Whom It May Concern:
+Dear [name]
+Formal:
+I look forward to hearing from you.
+Thank you,
+Sincerely,
+Informal:
+Hi [name],
+Hi all,
+Hey,
+Good morning,
+Informal:
+Hope to hear from you soon.
+Best,
+Take care,
+See you tomorrow,
+Include your title under your name if you feel it lends credibility to your message.
+Choose the right address type for different recipients
+There are three types of recipients: TO, CC, and BCC.
+Appropriate recipients
+To:
+people directly associated with your email&#8217;s purpose
+often the people you&#8217;re asking to  do something
+All emails should have at least one TO recipient, even if it&#8217;s yourself—nobody likes getting emails addressed to &#8220;undisclosed recipients.&#8221;
+CC  (carbon copy):
+people who are tangentially related to your purpose, or
+people who you would like to  see  the email but don&#8217;t necessarily need to act on it
+BCC  (blind carbon copy):
+if you want to send the email to someone but hide their email address from all other recipients
+This is often used when you want to include someone in an email thread but worry that this may change the tone or message in a way that is not intended.
+Be brief. One email should state one action where possible.
+Use numbered lists and bullet points to avoid long paragraphs.
+If you must communicate multiple actions…
+Use a list, or
+Send multiple emails
+Proofread before sending.
+Double-check to make sure you have…
+the correct recipient list
+no missing words (prepositions often get lost) or other confusing errors
+all necessary attachments or links
+Be especially careful to eliminate typos and errors when emailing someone new or sending a job application or other email where recipients are likely to judge your competence.
+Contributors
+Chris Musco

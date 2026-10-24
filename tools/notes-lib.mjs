@@ -217,7 +217,7 @@ export async function walkNotes(dir) {
     for (const e of await fs.readdir(d, { withFileTypes: true })) {
       const full = path.join(d, e.name)
       if (e.isDirectory()) {
-        if (e.name === 'public' || e.name.startsWith('.') || e.name === 'node_modules') continue
+        if (e.name === 'public' || e.name.startsWith('.') || e.name === 'node_modules' || e.name === 'transcripts') continue
         await rec(full)
       } else if (e.isFile() && e.name.endsWith('.md')) {
         out.push(full)

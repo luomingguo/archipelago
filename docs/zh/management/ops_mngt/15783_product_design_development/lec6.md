@@ -1,13 +1,12 @@
 ---
-title: '用生成式AI支持创新'
+title: 用生成式AI支持创新
 type: lecture
 lecture: 6
 tags: [generative-ai, prompt-engineering, concept-generation, ai-assisted-design]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-
-# Lec 6 用生成式AI支持创新
+# Lec 6 用生成式 AI 支持创新
 
 > MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
 > 核心参考：MIT 15.783 Class 7 Syllabus; Harvard Business Review (2025), *Eight Prompts for Creativity*; Christian Terwiesch & Karl Ulrich, *Research on LLMs in Innovation*

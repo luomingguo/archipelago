@@ -1,13 +1,12 @@
 ---
-title: 'CTL.SC4x 供应链技术与系统 (Supply Chain Technology and Systems)'
+title: CTL.SC4x 供应链技术与系统 (Supply Chain Technology and Systems)
 type: course
-course: 'CTL.SC4x 供应链技术与系统 (Supply Chain Technology and Systems)'
-course_id: CTL.SC4x
+course: CTL.SC4x 供应链技术与系统 (Supply Chain Technology and Systems)
+course_id: 'CTL.SC4x'
 tags: [supply-chain-systems, database-modeling, enterprise-resource-planning, supply-chain-analytics]
 status: complete
 source: 'https://mitxonline.mit.edu/courses/course-v1:MITxT+CTL.SC4x/'
 ---
-
 # CTL.SC4x 供应链技术与系统 (Supply Chain Technology and Systems)
 
 > MIT Center for Transportation & Logistics · MITx MicroMasters SCM · 课号 CTL.SC4x / 15.762J
