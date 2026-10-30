@@ -14,3 +14,7 @@ design/**/.thumbnail
 design/uploads/
 .agent
 *.pdf
+
+ocw.mit.edu*
+transcripts*
+text*

@@ -34,20 +34,20 @@ function withoutCodeFences(source: string): string {
   for (let index = 0; index < lines.length; index += 1) {
     const match = /^([ \t]*(?:[-*+]|\d+[.)])?[ \t]*)(`{3,}|~{3,})(.*)$/.exec(lines[index]);
     if (!match) {
-      if (marker) lines[index] = '';
+      if (marker) lines[index] = ' '.repeat(lines[index].length);
       continue;
     }
     const currentMarker = match[2][0];
     if (!marker) {
       marker = currentMarker;
       length = match[2].length;
-      lines[index] = '';
+      lines[index] = ' '.repeat(lines[index].length);
     } else if (currentMarker === marker && match[2].length >= length) {
       marker = '';
       length = 0;
-      lines[index] = '';
+      lines[index] = ' '.repeat(lines[index].length);
     } else {
-      lines[index] = '';
+      lines[index] = ' '.repeat(lines[index].length);
     }
   }
   return lines.join('\n');
@@ -55,13 +55,36 @@ function withoutCodeFences(source: string): string {
 
 export function sourceHeadings(source: string): SourceHeading[] {
   const seen = new Map<string, number>();
+  const emptyRanges = emptyConceptSections(source);
   return [...withoutCodeFences(source).matchAll(/^(#{1,6})[ \t]+(.+)$/gm)].flatMap((match) => {
     const text = plainHeading(match[2]);
     const base = slugifyHeading(text);
     if (!base) return [];
     const count = seen.get(base) ?? 0;
     seen.set(base, count + 1);
+    if (emptyRanges.some(([start, end]) => match.index! >= start && match.index! < end)) return [];
     return [{ depth: match[1].length, text, slug: count ? `${base}-${count}` : base }];
+  });
+}
+
+/** Only the fixed concept scaffold may hide empty sections; preserve all source text and IDs. */
+export function emptyConceptSections(source: string): [number, number][] {
+  const headings = [...withoutCodeFences(source).matchAll(/^##[ \t]+(.+)$/gm)];
+  const expected = ['问题情境', '概念界定', '解释与依据', '边界与辨析', '提取与迁移', '关联与来源', 'TL;DR'];
+  if (headings.map((h) => h[1].trim()).join('|') !== expected.join('|')) return [];
+  // Locate section boundaries without treating fenced examples as headings.
+  const lines = source.split('\n');
+  const masked = withoutCodeFences(source).split('\n');
+  const positions: number[] = [];
+  let offset = 0;
+  for (let i = 0; i < lines.length; i++) {
+    if (/^##[ \t]+/.test(masked[i])) positions.push(offset);
+    offset += lines[i].length + 1;
+  }
+  return positions.flatMap((start, i) => {
+    const end = positions[i + 1] ?? source.length;
+    const content = source.slice(start, end).replace(/^#{2,6}[ \t]+.*$/gm, '').replace(/<!--[\s\S]*?-->/g, '').trim();
+    return content ? [] : [[start, end] as [number, number]];
   });
 }
 
@@ -90,5 +113,8 @@ export function remarkStableHeadingIds() {
         },
       };
     });
+    const emptyRanges = emptyConceptSections(source);
+    tree.children = tree.children.filter((node: any) => !emptyRanges.some(([start, end]) =>
+      node.position?.start?.offset >= start && node.position?.start?.offset < end));
   };
 }

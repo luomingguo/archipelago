@@ -7,7 +7,7 @@
 
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import { DOCS_DIR, NOTE_TYPES, C, stringifyFrontmatter, courseName } from './notes-lib.mjs'
+import { DOCS_DIR, NOTE_TYPES, CONCEPT_HEADINGS, C, stringifyFrontmatter, courseName } from './notes-lib.mjs'
 
 const argv = process.argv.slice(2)
 const flags = {}
@@ -95,7 +95,7 @@ const fm = {
   title,
   type: noteType,
   ...(lecture ? { lecture } : {}),
-  tags: [],
+  ...(noteType === 'concept' ? {} : { tags: [] }),
   status: 'draft',
   ...(flags.source ? { source: String(flags.source) } : {}),
 }
@@ -131,21 +131,6 @@ const bodies = {
 ## 与现有知识的连接
 
 （链接到相关 lecture、concept、paper 或 project。）`,
-  concept: `## 定义与边界
-
-（给出可独立理解的定义，并说明不属于它的情况。）
-
-## 直觉与机制
-
-（解释为什么成立、如何运作。）
-
-## 例子与反例
-
-（至少各给一个。）
-
-## 关系
-
-（前置概念、相邻概念和应用场景。）`,
   assignment: `## 任务与约束
 
 （问题、输入输出、限制条件和完成标准。）
@@ -180,7 +165,9 @@ const bodies = {
 
 const h1 = lecture ? `# Lec ${lecture} ${title}${en}` : `# ${title}${en}`
 const crumb = `> ${course}${lecture ? ` · Lecture ${lecture}` : ''}`
-const content = `${stringifyFrontmatter(fm)}${h1}
+const content = noteType === 'concept'
+  ? `${stringifyFrontmatter(fm)}${h1}\n\n${CONCEPT_HEADINGS.map((heading) => `## ${heading}`).join('\n\n')}\n`
+  : `${stringifyFrontmatter(fm)}${h1}
 
 ${crumb}
 

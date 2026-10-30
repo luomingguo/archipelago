@@ -16,6 +16,7 @@
     "site:verify": "npm --prefix frontend run verify:dist && DIST_DIR=$PWD/frontend/dist npm --prefix rag run verify",
     "site:verify:pages": "DOCS_BASE=/archipelago/ npm --prefix frontend run verify:dist",
     "notes:lint": "node tools/notes-lint.mjs",
+    "notes:verify-concept": "node --import ./rag/node_modules/tsx/dist/loader.mjs tools/verify-concept.mjs",
     "notes:fix": "node tools/notes-fix.mjs",
     "notes:new": "node tools/notes-new.mjs"
   }

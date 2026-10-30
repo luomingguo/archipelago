@@ -2,7 +2,7 @@
 title: 内存模型的历史演进
 type: lecture
 lecture: 22
-tags: [memory-models, cache-oblivious, external-memory, io-complexity, algorithms]
+tags: [memory-models, cache-oblivious, external-memory, io-complexity]
 status: complete
 ---
 # Lec 22 内存模型的历史演进（History of Memory Models）

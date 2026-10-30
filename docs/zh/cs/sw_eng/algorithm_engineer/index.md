@@ -1,67 +1,145 @@
 ---
-title: Introduction
+title: 6.5060 算法工程
+course: 6.5060 算法工程
+course_id: '6.5060'
 type: course
-course: 算法工程
-tags: []
+tags: [algorithm-engineering, cache-oblivious, parallel-algorithms, graph-processing, performance-engineering]
 status: complete
+source: https://jshun.csail.mit.edu/6506-f25/
 ---
-# Introduction
 
-6.5060/6.827 Algorithms Engineering
-## Prerequisites
+# 6.5060 / 6.827 算法工程（Algorithm Engineering）
 
-This is a graduate-level course where we will cover research in algorithm engineering. Advanced undergraduates may enroll if they have taken 6.122 (6.046) and 6.106 (6.172)
+## TL;DR
 
-## Course Description
+- **理论与实践的闭环弥合**：超越传统渐近复杂度分析与平坦 RAM 假设，构建涵盖“算法设计 → 理论分析 → 软硬协同实现 → 实验评测 → 理论反哺”的现代算法工程完整生命周期。
+- **高维系统与硬件感知模型**：深入探究并行计算（Work-Span 模型与工作窃取调度）、层次存储（缓存无关模型、外存 I/O 复杂度、写高效 B-ε 树）与非易失内存等复杂物理约束。
+- **大规模图计算与现代数据系统**：系统涵盖单机/分布式图处理框架（Ligra、GraphChi、PowerGraph）、空间局部性优化（GraphIt DSL）、轻量压缩（SIMD 向量化解压）及纯函数式流式图系统。
 
-This is a research-oriented course on algorithm engineering, which will cover both the theory and practice of algorithms and data structures. Students will learn about models of computation, algorithm design and analysis, and performance engineering of algorithm implementations. We will study the design and implementation of sequential, parallel, cache-efficient, external-memory, and write-efficient algorithms for fundamental problems in computing. Many of the principles of algorithm engineering will be illustrated in the context of parallel algorithms and graph problems. Students will read and present research papers, write paper reviews, complete problem sets, participate in classroom discussions, and complete a semester-long research project. Class time will consist of lectures, student presentations, and group project meetings. This course is suitable for graduate students or advanced undergraduates who have taken 6.122 (6.046) and 6.106 (6.172). Mathematical maturity and familiarity with algorithm analysis and performance engineering will be assumed. Lectures will consist of instructor and student presentations. Lecture attendance is required and participation counts toward the grade.
+## 课程介绍
 
-## Textbook
+### 先修课程
 
-[Introduction to Algorithms, 4th Edition](http://mitpress.mit.edu/9780262046305/introduction-to-algorithms) by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein (CLRS)
+- [6.1220 算法的设计与分析（Design and Analysis of Algorithms）](../../tcs/61220_design_and_analysis_of_algos/index.md)：熟练掌握渐近分析、动态规划、分治法、高级数据结构与理论复杂度下界。
+- [6.1060 软件性能工程（Software Performance Engineering）](../software_performance_engineer/index.md)：熟悉现代处理器体系结构、缓存层次、C/C++ 底层内存布局、SIMD 向量化与基准评测。
+- [6.1020 软件构造基础（Elements of Software Construction）](../element_of_software_construction/index.md)：具备中大型系统的规格设计、抽象屏障维护与防御性编程素养。
 
-[Algorithm Engineering: Bridging the Gap Between Algorithm Theory and Practice](https://www.springer.com/us/book/9783642148651)
+### 官方对课程描述的翻译
 
-[Networks, Crowds, and Markets](https://www.cs.cornell.edu/home/kleinber/networks-book/) by David Easley and Jon Kleinberg
+这是一个以顶级前沿研究为导向的算法工程高级研究生课程，全面涵盖算法与数据结构的深层理论与工业工程实践。学生将系统学习真实的计算模型、前沿算法设计与渐近分析，以及面向现代硬件底层的算法实现性能工程。
 
-[A list of papers related to graph analytics](https://people.csail.mit.edu/jshun/graph.shtml)
+课程系统研究计算基础问题在顺序、多核并行、缓存高效（Cache-Efficient）、缓存无关（Cache-Oblivious）、外部存储（External-Memory）以及写高效（Write-Efficient）环境下的算法设计与系统实现。算法工程的核心方法论与优化原则将在大规模并行算法、高性能图分析系统与海量数据处理场景中得到深度展现。学生将研读顶级学术会议（STOC, FOCS, SODA, PPoPP, OSDI, VLDB, SIGMOD）经典论文，完成严密的算法设计推导与性能工程实测。
 
-## Schedule
+课程的四大核心支柱：
+1. **多核并行与调度理论**：建立 Work-Span 抽象，掌握 Fork-Join 动态多线程模型与工作窃取（Work-Stealing）理论界限，构建 Work-Efficient 的并行算法。
+2. **存储感知与缓存无关范式**：摆脱对特定硬件缓存大小 $M$ 和块大小 $B$ 的硬编码依赖，利用分治分块在任意复杂存储体系中自适应达成最优 I/O 传输。
+3. **海量图计算引擎与领域专用架构**：从单机内存到外存、再到分布式集群，剖析 Direction-Optimizing、Propagation Blocking、拓扑重排序与领域专用语言（GraphIt DSL）的极致工程实现。
+4. **轻量级压缩与数据系统加速**：利用现代 CPU 的 SIMD 向量化并行度，结合纯函数式持久化树（Aspen、PaC-trees），在极低延迟下支撑高并发写入与复杂实时分析。
 
+### 参考书籍
 
+**经典教材与学术专著**：
+- Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein. *Introduction to Algorithms* (CLRS, 4th Edition). MIT Press.（涵盖第 26 章多线程并行算法）
+- Matthias Müller-Hannemann, Stefan Schirra (Eds.). *Algorithm Engineering: Bridging the Gap Between Algorithm Theory and Practice*. Springer, 2010.（算法工程方法论权威专著）
+- David Easley, Jon Kleinberg. *Networks, Crowds, and Markets: Reasoning About a Highly Connected World*. Cambridge University Press, 2010.（网络分析与图结构基础）
+- Guy E. Blelloch, Bruce M. Maggs. *Parallel Algorithms*. CMU Technical Report.
+- Jeffrey Scott Vitter. *Algorithms and Data Structures for External Memory*. Foundations and Trends in Theoretical Computer Science, 2008.
 
+## 课程知识体系
 
+### 模块全景架构
 
-| Date          | Topic                                              | Speaker                                  | Required Reading                                             | Optional Reading                                             |
-| ------------- | -------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Tuesday 2/7   | Course Introduction                                | Julian Shun                              | [Algorithm Engineering - An Attempt at a Definition](https://link.springer.com/chapter/10.1007/978-3-642-03456-5_22)  [A Theoretician's Guide to the Experimental Analysis of Algorithms](https://pdfs.semanticscholar.org/2db5/3cdcf4ba7c67321c022954c2b2be9c8a40bd.pdf)  [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture1.pdf) | [Algorithm Engineering: Bridging the Gap Between Algorithm Theory and Practice](https://www.springer.com/us/book/9783642148651) <br /> [A Guide to Experimental Algorithmics](https://www.cambridge.org/us/academic/subjects/computer-science/algorithmics-complexity-computer-algebra-and-computational-g/guide-experimental-algorithmics)  <br />[Algorithm engineering: an attempt at a definition using sorting as an example](https://dl.acm.org/citation.cfm?id=2790237)  <br /><br />[Algorithm Engineering for Parallel Computation](https://link.springer.com/chapter/10.1007/3-540-36383-1_1)  <br />[Distributed Algorithm Engineering](https://link.springer.com/chapter/10.1007%2F3-540-36383-1_10)  <br />[Experimental algorithmics](https://dl.acm.org/citation.cfm?doid=1297797.1297818)  <br />[Programming Pearls](https://dl.acm.org/citation.cfm?id=318199) <br /> [Smoothed analysis of algorithms: Why the simplex algorithm usually takes polynomial time](https://dl.acm.org/citation.cfm?doid=990308.990310) |
-| Thursday 2/9  | Parallel Algorithms                                | Julian Shun                              | [Parallel Algorithms](https://www.cs.cmu.edu/~guyb/papers/BM04.pdf)  [Thinking in Parallel: Some Basic Data-Parallel Algorithms and Techniques (Chapters 4-8)](http://www.umiacs.umd.edu/users/vishkin/PUBLICATIONS/classnotes.pdf)  CLRS Chapter 26 (Parallel Algorithms)  [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture2.pdf) | [Prefix Sums and Their Applications](https://www.cs.cmu.edu/~guyb/papers/Ble93.pdf)<br />  [Algorithm Design: Parallel and Sequential](http://www.parallel-algorithms-book.com/)  [Introduction to Parallel Algorithms](https://books.google.com/books/about/An_Introduction_to_Parallel_Algorithms.html?id=10DKwwEACAAJ)  [Scheduling <br />Multithreaded Computations by Work Stealing](https://dl.acm.org/citation.cfm?id=324234)  [Thread Scheduling for Multiprogrammed Multiprocessors](https://link.springer.com/article/10.1007/s00224-001-0004-z)  [Multidimensional Included and Excluded Sums](https://epubs.siam.org/doi/10.1137/1.9781611976830.17)  [Work-Efficient Parallel Algorithms for Accurate Floating-Point Prefix Sums](https://ieeexplore.ieee.org/document/9286240)  [Problem Based Benchmark Suite](https://www.cs.cmu.edu/~pbbs/) |
-| Tuesday 2/14  | Cache-Oblivious Algorithms                         | Charles Leiserson                        | [Cache-Oblivious Algorithms](https://dl.acm.org/citation.cfm?id=2071383)  [Cache-Oblivious Algorithms and Data Structures](http://erikdemaine.org/papers/BRICS2002/paper.pdf)  [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture3.pdf) | [Engineering a cache-oblivious sorting algorithm](https://dl.acm.org/citation.cfm?id=1227164)  [Cache Oblivious Distribution Sweeping](https://dl.acm.org/citation.cfm?id=684422)  [Cache-oblivious databases: Limitations and opportunities](https://dl.acm.org/citation.cfm?id=1366105)  [An Optimal Cache-Oblivious Priority Queue and Its Application to Graph Algorithms](https://epubs.siam.org/doi/10.1137/S0097539703428324)  [Cache-Oblivious B-Trees](https://epubs.siam.org/doi/10.1137/S0097539701389956)  [Cache-oblivious streaming B-trees](https://dl.acm.org/citation.cfm?doid=1248377.1248393)  [An experimental comparison of cache-oblivious and cache-conscious programs](https://dl.acm.org/citation.cfm?id=1248394) |
-| Thursday 2/16 | Cilk                                               | Alexandros-Stavros Iliopoulos            | [The Implementation of the Cilk-5 Multithreaded Language](https://dl.acm.org/doi/10.1145/277652.277725)  [Scheduling Multithreaded Computations by Work Stealing](https://dl.acm.org/citation.cfm?id=324234)  [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture4.pdf) | [Thread Scheduling for Multiprogrammed Multiprocessors](https://link.springer.com/article/10.1007/s00224-001-0004-z)  [The Data Locality of Work Stealing](https://link.springer.com/article/10.1007/s00224-002-1057-3) |
-| Tuesday 2/21  | No class                                           |                                          |                                                              |                                                              |
-| Thursday 2/23 | Stencil Computations                               | Rezaul Chowdhury                         | [Cache oblivious stencil computations](https://dl.acm.org/doi/10.1145/1088149.1088197)  [Fast Stencil Computations using Fast Fourier Transforms](https://dl.acm.org/doi/10.1145/3409964.3461803)  [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture5.pdf) | [The cache complexity of multithreaded cache oblivious algorithms](https://dl.acm.org/doi/10.1145/1148109.1148157)  [The pochoir stencil compiler](https://dl.acm.org/doi/10.1145/1989493.1989508) |
-| Tuesday 2/28  | Shared-Memory Graph Processing                     | Julian Shun                              | [A Simple and Practical Linear-Work Parallel Algorithm for Connectivity](https://people.csail.mit.edu/jshun/connectedComponents.pdf) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture6-1.pdf)  Chapters 7-8 of [Shared-Memory Parallelism Can Be Simple, Fast, and Scalable](https://dl.acm.org/citation.cfm?id=3018787) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture6-2.pdf) | [Direction-Optimizing Breadth-First Search](https://dl.acm.org/citation.cfm?id=2389013)  [Parallel Graph Decompositions Using Random Shifts](https://dl.acm.org/citation.cfm?id=2486180)  [Shared Memory Graph Frameworks](https://people.csail.mit.edu/jshun/graph.shtml#shared)  Chapter 14 of [Networks, Crowds, and Markets](https://www.cs.cornell.edu/home/kleinber/networks-book/) |
-| Thursday 3/2  | Storage Systems                                    | Martin Farach-Colton                     | [Don't thrash: how to cache your hash on flash](https://dl.acm.org/doi/10.14778/2350229.2350275)  [SplinterDB: Closing the Bandwidth Gap for NVMe Key-Value Stores](https://www.usenix.org/system/files/atc20-conway.pdf) | [The input/output complexity of sorting and related problems](https://dl.acm.org/citation.cfm?id=48535)  [Algorithms and Data Structures for External Memory](https://www.ittc.ku.edu/~jsv/Papers/Vit.IO_book.pdf) |
-| Monday 3/6    | Problem Set due today                              |                                          |                                                              |                                                              |
-| Tuesday 3/7   | Software Productivity Tools for Fork-Join Programs | Charles Leiserson                        | [Efficient detection of determinacy races in Cilk programs](https://dl.acm.org/doi/10.1145/258492.258493)  [The Cilkprof Scalability Profiler](https://dl.acm.org/doi/10.1145/2755573.2755603)  [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture8.pdf) |                                                              |
-| Thursday 3/9  | Pre-proposal Meeting                               |                                          |                                                              |                                                              |
-| Tuesday 3/14  | Sorting Algorithms                                 | Christopher Rinard  Julian Shun          | [Engineering In-place (Shared-memory) Sorting Algorithms](https://dl.acm.org/doi/10.1145/3505286) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture9-1.pdf)  [Theoretically-Efficient and Practical Parallel In-Place Radix Sorting](https://people.csail.mit.edu/jshun/RegionsSort.pdf) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture9-2.pdf) | [Super Scalar Sample Sort](https://link.springer.com/chapter/10.1007/978-3-540-30140-0_69)  [Parallel Merge Sort](https://epubs.siam.org/doi/abs/10.1137/0217049)  [Parallelism in Randomized Incremental Algorithms](https://arxiv.org/abs/1810.05303)  [Optimal and sublogarithmic time randomized parallel sorting algorithms](https://epubs.siam.org/doi/abs/10.1137/0218041)  [A comparison of sorting algorithms for the connection machine CM-2](https://dl.acm.org/citation.cfm?id=113380)  [Efficient implementation of sorting on multi-core SIMD CPU architecture](https://dl.acm.org/citation.cfm?id=1454171)  [Sorting Data on Ultra-Large Scale with RADULS](https://link.springer.com/chapter/10.1007/978-3-319-58274-0_20)  [Even Faster Sorting of (Not Only) Integers](https://link.springer.com/chapter/10.1007/978-3-319-67792-7_47)  [Highly scalable parallel sorting](https://ieeexplore.ieee.org/document/5470406)  [A Memory Bandwidth-Efficient Hybrid Radix Sort on GPUs](https://dl.acm.org/citation.cfm?id=3064043)  [Designing efficient sorting algorithms for manycore GPUs](https://ieeexplore.ieee.org/document/5161005)  [TritonSort: A Balanced Large-Scale Sorting System](https://www.usenix.org/legacy/events/nsdi11/tech/full_papers/Rasmussen.pdf)  [A comprehensive study of main-memory partitioning and its application to large-scale comparison- and radix-sort](https://dl.acm.org/citation.cfm?id=2610522)  [Practical Massively Parallel Sorting](https://dl.acm.org/citation.cfm?id=2755595)  [Engineering a Multi-core Radix Sort](https://link.springer.com/chapter/10.1007/978-3-642-23397-5_16)  [PARADIS: An Efficient Parallel Algorithm for In-place Radix Sort](http://www.vldb.org/pvldb/vol8/p1518-cho.pdf)  [Parallel In-Place Algorithms: Theory and Practice](https://arxiv.org/abs/2103.01216)  [Sort Benchmark](http://sortbenchmark.org/) |
-| Thursday 3/16 | Shared-Memory Graph Algorithms                     | Eeshan Tripathii  Ethan LaBelle          | [Parallel Graph Decompositions Using Random Shifts](https://dl.acm.org/citation.cfm?id=2486180) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture10-1.pdf)  [Ordering heuristics for parallel graph coloring](https://dl.acm.org/doi/10.1145/2612669.2612697) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture10-2.pdf) | [Improved Parallel Algorithms for Spanners and Hopsets](https://dl.acm.org/citation.cfm?id=2755574)  [Theoretically Efficient Parallel Graph Algorithms Can Be Fast and Scalable](https://arxiv.org/abs/1805.05208)  [High-Performance Parallel Graph Coloring with Strong Guarantees on Work, Depth, and Quality](https://ieeexplore.ieee.org/document/9355236) |
-| Friday 3/17   | Project Proposal due today                         |                                          |                                                              |                                                              |
-| Tuesday 3/21  | Distributed Graph Frameworks                       | Jesse Yang  Richard Sollee               | [Pregel: A System for Large-Scale Graph Processing](https://dl.acm.org/citation.cfm?id=1807184) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture11-1.pdf)  [PowerGraph: Distributed Graph-Parallel Computation on Natural Graphs](https://www.usenix.org/system/files/conference/osdi12/osdi12-final-167.pdf) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture11-2.pdf) | [Distributed Memory Graph Frameworks](https://people.csail.mit.edu/jshun/graph.shtml#distributed) |
-| Thursday 3/23 | Single-Machine Graph Frameworks                    | Julian Shun  CJ Quines  Nikola Samardzic | [Scalability! But at what COST?](https://www.usenix.org/system/files/conference/hotos15/hotos15-paper-mcsherry.pdf) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture12-1.pdf)  [GraphChi: Large-Scale Graph Computation on Just a PC](https://www.usenix.org/system/files/conference/osdi12/osdi12-final-126.pdf)* [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture12-2.pdf)  [Executing Dynamic Data-Graph Computations Deterministically Using Chromatic Scheduling](https://dl.acm.org/doi/abs/10.1145/2896850)* [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture12-3.pdf)  (Pick one of the starred papers to write your review on.) | [Shared Memory Graph Frameworks](https://people.csail.mit.edu/jshun/graph.shtml#shared)  [External Memory Graph Frameworks](https://people.csail.mit.edu/jshun/graph.shtml#external) |
-| Tuesday 3/28  | Spring Break                                       |                                          |                                                              |                                                              |
-| Thursday 3/30 | Spring Break                                       |                                          |                                                              |                                                              |
-| Tuesday 4/4   | Locality in Graph Processing                       | Isabelle Quaye  Kevin Tong               | [Reducing Pagerank Communication via Propagation Blocking](https://ieeexplore.ieee.org/document/7967173) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture13-1.pdf)  [Making Caches Work for Graph Analytics](https://ieeexplore.ieee.org/document/8257937) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture13-2.pdf) | [GraphIt: A High-Performance DSL for Graph Analytics](https://people.csail.mit.edu/jshun/graphit.pdf) [Locality Optimizations](https://people.csail.mit.edu/jshun/graph.shtml#locality)  [Shared Memory Graph Frameworks](https://people.csail.mit.edu/jshun/graph.shtml#shared) |
-| Thursday 4/6  | Subgraph Finding                                   | Deniz Sert  Collin Warner                | [GraphMineSuite: Enabling High-Performance and Programmable Graph Mining Algorithms with Set Algebra](http://www.vldb.org/pvldb/vol14/p1922-besta.pdf) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture14-1.pdf)  [ProbGraph: High-Performance and High-Accuracy Graph Mining with Probabilistic Set Representations](https://www.computer.org/csdl/proceedings-article/sc/2022/544400a600/1I0bSZsbhVC) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture14-2.pdf) | [Subgraph Finding](https://people.csail.mit.edu/jshun/graph.shtml#subgraph) |
-| Tuesday 4/11  | Graph Compression and Reordering                   | Eric Wang  Nick Dow                      | [Log(graph): a near-optimal high-performance graph representation](https://dl.acm.org/doi/10.1145/3243176.3243198) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture15-1.pdf)  [Locality Analysis of Graph Reordering Algorithms](https://ieeexplore.ieee.org/document/9668301) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture15-2.pdf) | [An Experimental Analysis of a Compact Graph Representation](https://www.cs.cmu.edu/~guyb/papers/BBK04.pdf)  [Compact Representations of Separable Graphs](https://dl.acm.org/citation.cfm?id=644108.644219)  Chapter 8 of [Shared-Memory Parallelism Can Be Simple, Fast, and Scalable](https://dl.acm.org/citation.cfm?id=3018787)  [Graph Compression](https://people.csail.mit.edu/jshun/graph.shtml#compression)  [Graph Partitioning and Reordering](https://people.csail.mit.edu/jshun/graph.shtml#partitioning) |
-| Thursday 4/13 | Compression                                        | Krit Boonsiriseth  Giorgi Kldiashvili    | [Decoding billions of integers per second through vectorization](https://onlinelibrary.wiley.com/doi/pdf/10.1002/spe.2203) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture16-1.pdf)  [Techniques for Inverted Index Compression](https://dl.acm.org/doi/10.1145/3415148) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture16-2.pdf) | [An Experimental Study of Bitmap Compression vs. Inverted List Compression](https://dl.acm.org/citation.cfm?id=3064007)  [Stream VByte: Faster byte-oriented integer compression](https://www.sciencedirect.com/science/article/pii/S0020019017301679)  [Roaring bitmaps: Implementation of an optimized software library](https://onlinelibrary.wiley.com/doi/abs/10.1002/spe.2560)  [SIMD compression and the intersection of sorted integers](https://onlinelibrary.wiley.com/doi/abs/10.1002/spe.2326)  [A General SIMD-Based Approach to Accelerating Compression Algorithms](https://dl.acm.org/citation.cfm?doid=2737814.2735629)  [Lightweight Data Compression Algorithms: An Experimental Survey](http://openproceedings.org/2017/conf/edbt/paper-146.pdf)  [Compact inverted index storage using general-purpose compression libraries](https://onlinelibrary.wiley.com/doi/abs/10.1002/spe.2556)  [An Extended Compression Format for the Optimization of Sparse Matrix-Vector Multiplication](https://ieeexplore.ieee.org/document/6327187)  [SparseX: A Library for High-Performance Sparse Matrix-Vector Multiplication on Multicore Platforms](https://dl.acm.org/citation.cfm?doid=3175005.3134442) |
-| Tuesday 4/18  | Dynamic Graph Algorithms  Midterm report due today | Temi Taylor  Thomas Bergamaschi          | [A New Parallel Algorithm for Connected Components in Dynamic Graphs](https://ieeexplore.ieee.org/document/6799108) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture17-1.pdf)  [Work-Efficient Parallel Union-Find](https://onlinelibrary.wiley.com/doi/full/10.1002/cpe.4333) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture17-2.pdf) | [Dynamic Graph Algorithms](https://people.csail.mit.edu/jshun/graph.shtml#streaming)  [Streaming Graph Frameworks](https://people.csail.mit.edu/jshun/graph.shtml#streamingframeworks) |
-| Thursday 4/20 | Transactional Memory                               | Luka Govedic  Elie Cuevas                | [Software transactional memory](https://link.springer.com/article/10.1007/s004460050028) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture18-1.pdf)  [A simple deterministic algorithm for guaranteeing the forward progress of transactions](https://www.sciencedirect.com/science/article/abs/pii/S0306437915301307) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture18-2.pdf) |                                                              |
-| Tuesday 4/25  | Aggregation                                        | Anton Ni  Adam Janicki                   | [Cache-Efficient Aggregation: Hashing Is Sorting](https://dl.acm.org/citation.cfm?id=2747644) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture19-1.pdf)  [Efficient Sorting, Duplicate Removal, Grouping, and Aggregation](https://dl.acm.org/doi/10.1145/3568027) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture19-2.pdf) | [A Top-Down Parallel Semisort](https://people.csail.mit.edu/jshun/semisort.pdf)  [Multi-Core, Main-Memory Joins: Sort vs. Hash Revisited](http://www.vldb.org/pvldb/vol7/p85-balkesen.pdf)  [Main-Memory Hash Joins on Modern Processor Architectures](https://ieeexplore.ieee.org/document/6778794)  [Sort vs. Hash Join Revisited for Near-Memory Execution](http://homepages.inf.ed.ac.uk/bgrot/pubs/JOIN_ASBD15.pdf)  [Many-query join: efficient shared execution of relational joins on modern hardware](https://dl.acm.org/citation.cfm?id=3282999)  [An Experimental Comparison of Thirteen Relational Equi-Joins in Main Memory](https://dl.acm.org/citation.cfm?id=2882917)  [Optimal and sublogarithmic time randomized parallel sorting algorithms](https://epubs.siam.org/doi/abs/10.1137/0218041) |
-| Thursday 4/27 | Functional Trees                                   | Julian Shun                              | [Low-Latency Graph Streaming Using Compressed Purely-Functional Trees](https://people.csail.mit.edu/jshun/aspen.pdf) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture20-1.pdf)  [PaC-trees: supporting parallel and compressed purely-functional collections](https://dl.acm.org/doi/abs/10.1145/3519939.3523733) | [Streaming Graph Frameworks](https://people.csail.mit.edu/jshun/graph.shtml#streamingframeworks) |
-| Tuesday 5/2   | Graph Neural Networks                              | Steven Raphael  Helen Yang               | [LightNE: A Lightweight Graph Processing System for Network Embedding](https://dl.acm.org/doi/10.1145/3448016.3457329) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture21-1.pdf)  [Accelerating Training and Inference of Graph Neural Networks with Fast Sampling and Pipelining](https://proceedings.mlsys.org/paper/2022/file/35f4a8d465e6e1edc05f3d8ab658c551-Paper.pdf) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture21-2.pdf) | [Marius: Learning Massive Graph Embeddings on a Single Machine](https://www.usenix.org/system/files/osdi21-mohoney.pdf)  [ThunderRW: An In-Memory Graph Random Walk Engine](http://vldb.org/pvldb/vol14/p1992-sun.pdf)  [Random Walks on Huge Graphs at Cache Efficiency](https://dl.acm.org/doi/10.1145/3477132.3483575)  [Graph Representation Learning Book](https://www.cs.mcgill.ca/~wlh/grl_book/)  [CS224W: Machine Learning with Graphs (Stanford course)](http://web.stanford.edu/class/cs224w/) |
-| Thursday 5/4  | Random Number Generation and Multidimensional Sums | Maximo Machado  Derrick Liang            | [Deterministic parallel random-number generation for dynamic-multithreading platforms](https://dl.acm.org/doi/10.1145/2145816.2145841) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture22-1.pdf)  [Multidimensional Included and Excluded Sums](https://epubs.siam.org/doi/10.1137/1.9781611976830.17) [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture22-2.pdf) |                                                              |
-| Tuesday 5/9   | Progress in algorithms: the big trends             | Neil Thompson                            |                                                              | [How Fast Do Algorithms Improve?](https://ieeexplore.ieee.org/document/9540991)  [Building the algorithm commons: Who discovered the algorithms that underpin computing in the modern enterprise?](https://onlinelibrary.wiley.com/doi/full/10.1002/gsj.1393) |
-| Thursday 5/11 | Revisiting Matrix Multiplication                   | Tao Schardl                              | [Slides](https://people.csail.mit.edu/jshun/6506-s23/lectures/lecture24.pdf) |                                                              |
-| Tuesday 5/16  | Project Presentations  Final report due today      |                                          |                                                              |                                                              |
+本课程围绕现代硬件体系与大规模计算问题展开，突破经典算法“图灵机/单机平坦 RAM”的理论假定，建立起从计算模型、微架构适配到大规模系统落地的五大进阶模块：
+
+- **模块一：算法工程方法论与并行基础（Lec 1 ~ Lec 5）**
+  确立“设计—分析—实现—评测—反哺”的实验算法学研究闭环。建立 Work-Span（工作量与跨度）有向无环图模型；在 Cilk 运行时中理解基于双端队列的工作窃取调度；探讨理想缓存模型下的缓存无关（Cache-Oblivious）分治策略，并将其延伸至模板计算的时空梯形切分。
+- **模块二：共享内存图处理与底层存储系统（Lec 6 ~ Lec 10）**
+  深入多核多线程环境下的图计算母题。以 Ligra 框架为载体，推导 Direction-Optimizing BFS 的 Push/Pull 双向转换边界；直面闪存与 NVMe 时代的不对称读写开销，分析写高效 B-ε 树与 SplinterDB 键值引擎；运用 Cilksan 与 Cilkprof 工具链实现确定性竞态检测，并对 IPS4o 与并行基数排序开展深度评测。
+- **模块三：分布式与单机图处理架构（Lec 11 ~ Lec 15）**
+  跨越单机与集群的算力边界。对比 Pregel 顶点中心模型与 PowerGraph 的 GAS 抽象；反思分布式集群的虚荣指标（COST），展示单机外存系统 GraphChi 的滑动窗口机制；借助 Propagation Blocking 优化图遍历的空间局部性，利用 GraphMineSuite 集合代数加速子图匹配，并以 Log(graph) 和拓扑重排序最大化访存命中率。
+- **模块四：轻量压缩、动态图与现代并发（Lec 16 ~ Lec 20）**
+  面向极限吞吐与动态演进。借助 SIMD AVX2/AVX-512 向量化指令实现数十亿整数每秒的极速解压（StreamVByte、Roaring Bitmaps）；分析流式动态图上的并行并查集；探讨软件事务内存（STM）与硬件事务内存（HTM）；辨析 Hash 与 Sort 在现代大内存多核架构下的聚合与连接性能；运用纯函数式树（Aspen、PaC-trees）实现兼具只读快照与高并发更新的实时流系统。
+- **模块五：图神经网络与计算前沿大趋势（Lec 21 ~ Lec 24）**
+  立足现代智能化与后摩尔时代。针对图神经网络（GNN）设计基于分层采样与流水线的软硬协同加速架构；实现动态多线程环境下的高质量确定性并行随机数生成；复盘后摩尔时代硬件专业化（ASIC/GPU/TPU）演进对算法工程范式带来的颠覆性重构；以矩阵乘法为例，全景串联寄存器分块、缓存分块、SIMD 向量化与并行调度的性能工程极致实践。
+
+各模块之间的演进与理论映射关系如下图所示：
+
+```mermaid
+flowchart TD
+  subgraph M1["方法论与并行基础"]
+    P1["算法工程闭环 (Methodology)"] --> P2["Work-Span 并行计算模型"]
+    P2 --> P3["Cilk 运行时与工作窃取"]
+    P2 --> P4["缓存无关模型 (Cache-Oblivious)"]
+    P4 --> P5["模板计算时空梯形分块"]
+  end
+
+  subgraph M2["共享内存与现代存储"]
+    S1["Ligra 共享内存图框架 (Push/Pull)"] --> S2["现代存储 (B-ε 树 & SplinterDB)"]
+    S2 --> S3["Fork-Join 生产工具 (Cilksan / Cilkprof)"]
+    S3 --> S4["高性能并行排序 (IPS4o / Radix)"]
+    S4 --> S5["随机移位分解与启发式图着色"]
+  end
+
+  subgraph M3["单机与分布式图架构"]
+    G1["分布式图系统 (Pregel / PowerGraph)"] --> G2["单机外存与 COST 反思 (GraphChi)"]
+    G2 --> G3["传播阻塞与 GraphIt 领域专用语言"]
+    G3 --> G4["子图匹配 (GraphMineSuite / ProbGraph)"]
+    G4 --> G5["拓扑重排序与图压缩 Log(graph)"]
+  end
+
+  subgraph M4["向量化、动态图与纯函数树"]
+    C1["SIMD 向量化压缩 (StreamVByte)"] --> C2["并行动态图算法 (并查集)"]
+    C2 --> C3["事务内存 (STM / HTM 确定性前向)"]
+    C3 --> C4["大内存聚合与连接 (Sort vs Hash)"]
+    C4 --> C5["纯函数式流式图系统 (Aspen / PaC-trees)"]
+  end
+
+  subgraph M5["智能系统与前沿演进"]
+    F1["图神经网络系统 (采样流水线)"] --> F2["确定性并行随机数生成"]
+    F2 --> F3["算法演进大趋势 (后摩尔时代红利)"]
+    F3 --> F4["矩阵乘法工程极致复盘 (SIMD/分块)"]
+  end
+
+  M1 ==> M2
+  M2 ==> M3
+  M3 ==> M4
+  M4 ==> M5
+```
+
+上述模块体现了算法工程的核心世界观：理论复杂度是算法潜能的上界，而硬件物理特性是性能落地的刚性约束。只有将数学设计、体系结构适配与实验验证融为一体，才能锻造出真正具有工业竞争力的算法系统。
+
+### 讲义全景清单
+
+| 讲次 | 核心主题与算法 | 讲义链接 | 关键机制与核心理论收益 |
+| :--- | :--- | :--- | :--- |
+| **Lec 01** | 课程导论与算法工程方法论 | [lec1.md](./lec1.md) | 算法工程研究闭环、实验算法学准则、微架构基准测量陷阱与理论反哺 |
+| **Lec 02** | 现代并行算法与计算模型 | [lec2.md](./lec2.md) | Work-Span DAG 模型、贪心调度定理、并行前缀和（Prefix Sums）与分治 |
+| **Lec 03** | 缓存无关算法设计 | [lec3.md](./lec3.md) | 理想缓存模型、高瘦缓存假设、转置与矩阵乘法分治、I/O 复杂度证明 |
+| **Lec 04** | Cilk 运行时与工作窃取调度 | [lec4.md](./lec4.md) | Cilk 语言原语、双端队列双向并发、工作窃取调度时空界限分析 |
+| **Lec 05** | 模板计算与时空分块优化 | [lec5.md](./lec5.md) | 空间局部性与时间局部性融合、时空梯形切分、Pochoir 编译器技术 |
+| **Lec 06** | 共享内存图处理与 Ligra 框架 | [lec6.md](./lec6.md) | 顶点子集与边映射原语、Direction-Optimizing BFS、Push/Pull 自适应切换 |
+| **Lec 07** | 现代存储系统与写高效数据结构 | [lec7.md](./lec7.md) | NVMe 闪存非对称读写、B-ε 树缓冲机制、SplinterDB 键值存储引擎 |
+| **Lec 08** | Fork-Join 生产力分析工具 | [lec8.md](./lec8.md) | 串行语义等价性、Cilksan SP-bags 确定性竞态检测、Cilkprof 性能剖析 |
+| **Lec 09** | 高性能并行排序算法 | [lec9.md](./lec9.md) | Super Scalar Sample Sort、并行就地基数排序（Regions Sort）、IPS4o |
+| **Lec 10** | 共享内存图算法：分解与着色 | [lec10.md](./lec10.md) | 随机移位图分解、并行启发式图着色、Work-Span 强保证排序启发式 |
+| **Lec 11** | 分布式图计算框架 | [lec11.md](./lec11.md) | BSP 同步屏障、Pregel 顶点计算、PowerGraph GAS 模型与顶点切分优化 |
+| **Lec 12** | 单机图系统与 COST 指标反思 | [lec12.md](./lec12.md) | McSherry COST 评价指标、GraphChi 滑动窗口、色数调度与外存流水线 |
+| **Lec 13** | 图计算局部性优化与 GraphIt DSL | [lec13.md](./lec13.md) | 传播阻塞（Propagation Blocking）、算法逻辑与调度解耦、GraphIt 编译优化 |
+| **Lec 14** | 子图匹配与图挖掘系统 | [lec14.md](./lec14.md) | 模式匹配与团查找、GraphMineSuite 集合代数抽象、ProbGraph 概率集合表示 |
+| **Lec 15** | 图压缩与拓扑重排序 | [lec15.md](./lec15.md) | Log(graph) 紧凑图编码、Degree/BFS 拓扑重排、差分压缩 CSR 与访存局部性 |
+| **Lec 16** | 轻量级数据压缩与 SIMD 向量化 | [lec16.md](./lec16.md) | SIMD-BP128 整数解压、StreamVByte 字节对齐、Roaring Bitmaps 倒排索引 |
+| **Lec 17** | 并行动态图算法与并查集 | [lec17.md](./lec17.md) | 动态边流更新、Work-Efficient 并行并查集、随机连接与扁平化机制 |
+| **Lec 18** | 事务性内存设计与实现 | [lec18.md](./lec18.md) | 软件事务内存（STM）、读写版本日志、确定性前向推进保证与 HTM 边界 |
+| **Lec 19** | 高效数据聚合：排序 vs 哈希 | [lec19.md](./lec19.md) | 缓存敏感型聚合、并行 Semisort、现代大内存下 Sort 与 Hash Join 性能论战 |
+| **Lec 20** | 纯函数式树与低延迟图流系统 | [lec20.md](./lec20.md) | 结构共享、Aspen 流式图架构、PaC-trees 并行压缩纯函数式树构建 |
+| **Lec 21** | 图神经网络系统架构与加速 | [lec21.md](./lec21.md) | 图拓扑聚合与稠密张量混合负载、LightNE 嵌入、采样流水线与显存优化 |
+| **Lec 22** | 确定性并行随机数与多维求和 | [lec22.md](./lec22.md) | 基于计数器的并行 RNG（Philox）、动态多线程可重现性、多维前缀和 |
+| **Lec 23** | 算法演进大趋势与后摩尔红利 | [lec23.md](./lec23.md) | 经典硬件红利终结、软硬协同专业化、算法演进速率测算与开源公共资产 |
+| **Lec 24** | 终极复盘：矩阵乘法的工程演进 | [lec24.md](./lec24.md) | Strassen 理论极限与常数瓶颈、多级分块、AVX-512 向量化与现代工程极致 |
+
+## 官方资源
+
+- [MIT 6.5060 Fall 2025 官方主页（Julian Shun）](https://jshun.csail.mit.edu/6506-f25/)
+- [MIT 6.5060 Spring 2023 官方归档](https://people.csail.mit.edu/jshun/6506-s23/)
+- [MIT CSAIL 算法工程与并行计算研究组](https://jshun.csail.mit.edu/)
+- [Problem Based Benchmark Suite (PBBS 算法基准库)](https://www.cs.cmu.edu/~pbbs/)

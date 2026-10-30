@@ -183,7 +183,7 @@ const learningPaths = sourceLearningPaths ? {
         </div>
       </header>
 
-      {!hasTldr && <section class="lecture-summary" aria-labelledby="summary-heading"><h2 id="summary-heading">摘要</h2><p>{summary}</p></section>}
+      {!hasTldr && entry && typeOf(entry) !== 'concept' && <section class="lecture-summary" aria-labelledby="summary-heading"><h2 id="summary-heading">摘要</h2><p>{summary}</p></section>}
 
       {contentEntries.length > 1 && (
         <section class="sequence-grid" aria-label="同课程前后关系">

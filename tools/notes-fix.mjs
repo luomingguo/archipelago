@@ -383,7 +383,7 @@ async function buildFrontmatter(rel, meta, body, existing, docsDir, log) {
     fm.type = meta.inferredType
     log('fm', `补 type=${meta.inferredType}`)
   }
-  if (meta.isContentPage && !fm.tags) fm.tags = []
+  if (meta.isContentPage && fm.type !== 'concept' && !fm.tags) fm.tags = []
   if (!fm.status) {
     const placeholder = /尚未补齐|占位页|TODO|待补充/.test(body)
     fm.status = bodyLen < 200 || placeholder ? 'stub' : /TODO|待补充/.test(body) ? 'draft' : 'complete'
