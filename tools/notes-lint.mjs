@@ -10,7 +10,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import {
-  DOCS_DIR, NOTE_TYPES, TAG_RE, C,
+  DOCS_DIR, NOTE_TYPES, CONCEPT_HEADINGS, TAG_RE, C,
   splitFrontmatter, stripCodeFences, stripMathBlocks, extractHeadings,
   sections, isVagueHeading, walkNotes, classify, fenceRanges, FENCE_RE,
 } from './notes-lib.mjs'
@@ -56,6 +56,7 @@ async function lintFile(file, docsDir) {
 
   const { fm, body } = splitFrontmatter(raw)
   const isStub = fm?.status === 'stub'
+  const isConcept = (fm?.type ?? meta.inferredType) === 'concept'
 
   // ── frontmatter ──────────────────────────────────────────────
   if (!fm) {
@@ -89,9 +90,9 @@ async function lintFile(file, docsDir) {
       }
       const tags = Array.isArray(fm.tags) ? fm.tags : []
       if (tags.length === 0) {
-        out.push(f('warning', 'no-tags', 'tags 为空，需人工补 2–5 个跨文档概念键'))
+        if (!isConcept) out.push(f('warning', 'no-tags', 'tags 为空，需人工补 2–5 个跨文档概念键'))
       } else {
-        if (tags.length < 2) out.push(f('warning', 'few-tags', `只有 ${tags.length} 个 tag；通常应为 2–5 个`))
+        if (!isConcept && tags.length < 2) out.push(f('warning', 'few-tags', `只有 ${tags.length} 个 tag；通常应为 2–5 个`))
         if (tags.length > 7) out.push(f('error', 'too-many-tags', `${tags.length} 个 tags，超过上限 7`))
         const duplicates = tags.filter((tag, i) => tags.indexOf(tag) !== i)
         if (duplicates.length) out.push(f('error', 'duplicate-tags', `tags 重复：${[...new Set(duplicates)].join(', ')}`))
@@ -114,6 +115,21 @@ async function lintFile(file, docsDir) {
   const h1s = hs.filter((h) => h.level === 1)
   const h2s = hs.filter((h) => h.level === 2)
   const tldrs = h2s.filter((h) => h.text.trim().toLowerCase() === 'tl;dr')
+  const conceptSections = sections(body).filter((s) => s.level === 2)
+  if (isConcept) {
+    const migrationLevel = flags['strict-concept'] ? 'error' : 'warning'
+    if (JSON.stringify(h2s.map((h) => h.text)) !== JSON.stringify(CONCEPT_HEADINGS)) {
+      out.push(f(migrationLevel, 'concept-structure', `concept 的 H2 必须依次为：${CONCEPT_HEADINGS.join(' → ')}；正文允许留空`))
+    }
+    if (fm?.status === 'complete') {
+      for (const heading of ['概念界定', '解释与依据', 'TL;DR']) {
+        const section = conceptSections.find((s) => s.text === heading)
+        if (!section || !section.raw.replace(/^#{1,6}[^\n]*$/gm, '').trim()) {
+          out.push(f(migrationLevel, 'concept-incomplete', `complete concept 必须完成「${heading}」；未完成请使用 draft`))
+        }
+      }
+    }
+  }
 
   if (h1s.length === 0) {
     out.push(f('error', 'no-h1', '没有 H1'))
@@ -136,9 +152,10 @@ async function lintFile(file, docsDir) {
       out.push(f('warning', 'no-tldr', '缺唯一的「## TL;DR」摘要'))
     } else {
       if (tldrs.length > 1) out.push(f('error', 'multi-tldr', `出现 ${tldrs.length} 个「## TL;DR」`, tldrs[1].line))
-      if (h2s[0] !== tldrs[0]) out.push(f('error', 'tldr-position', '「## TL;DR」必须是正文第一个 H2', tldrs[0].line))
+      if (h2s[0] !== tldrs[0] && h2s.at(-1) !== tldrs[0]) out.push(f('error', 'tldr-position', '「## TL;DR」必须是正文第一个或最后一个 H2', tldrs[0].line))
+      if (tldrs.some((h) => h.text !== 'TL;DR')) out.push(f('error', 'tldr-title', '摘要标题必须严格写为 TL;DR'))
       const tldr = sections(body).find((s) => s.level === 2 && s.text.trim().toLowerCase() === 'tl;dr')
-      if (tldr) {
+      if (tldr && !(isConcept && fm?.status === 'draft' && !tldr.ownLen)) {
         const bullets = (tldr.own.match(/^\s*[-*+]\s+\S/gm) ?? []).length
         if (bullets < 3 || bullets > 5) {
           out.push(f('warning', 'tldr-bullets', `TL;DR 建议 3–5 条要点，当前 ${bullets} 条`, tldr.line))
@@ -152,7 +169,8 @@ async function lintFile(file, docsDir) {
   const secs = sections(body).filter((s) => s.level >= 2)
   for (const s of secs) {
     const isTldr = s.level === 2 && s.text.trim().toLowerCase() === 'tl;dr'
-    if (!isTldr && s.level >= 2 && isVagueHeading(s.text)) {
+    const isCourseStdHeading = meta.isCourseIndex && ['课程描述', '课程内容全景'].includes(s.text.trim().replace(/^[\d.、\s]*/, ''))
+    if (!isTldr && !(isConcept && CONCEPT_HEADINGS.includes(s.text)) && !isCourseStdHeading && s.level >= 2 && isVagueHeading(s.text)) {
       out.push(f('warning', 'vague-heading', `标题无主题词：${s.text}`, s.line))
     }
     // 代码占比
@@ -166,7 +184,7 @@ async function lintFile(file, docsDir) {
 
   // 文件以标题结尾
   const lastNonEmpty = body.split('\n').filter((l) => l.trim()).at(-1) ?? ''
-  if (/^#{1,6}\s/.test(lastNonEmpty)) {
+  if (!isConcept && /^#{1,6}\s/.test(lastNonEmpty)) {
     out.push(f('error', 'ends-with-heading', `文件最后一行是标题，内容断在这里：${lastNonEmpty.trim()}`))
   }
 

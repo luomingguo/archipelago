@@ -41,7 +41,7 @@ async function findRepoRoot(start) {
 
 async function walkMarkdown(dir, out = []) {
   for (const entry of await fs.readdir(dir, { withFileTypes: true })) {
-    if (entry.name.startsWith('.')) continue
+    if (entry.name.startsWith('.') || entry.name === 'transcripts' || entry.name === 'public' || entry.name === 'node_modules') continue
     const full = path.join(dir, entry.name)
     if (entry.isDirectory()) await walkMarkdown(full, out)
     else if (entry.isFile() && entry.name.endsWith('.md')) out.push(full)
@@ -106,6 +106,7 @@ const notesLibUrl = pathToFileURL(path.join(repoRoot, 'tools', 'notes-lib.mjs'))
 const {
   TAG_RE,
   NOTE_TYPES,
+  CONCEPT_HEADINGS,
   extractHeadings,
   sections,
   splitFrontmatter,
@@ -173,7 +174,8 @@ for (const file of files) {
   else issues.push(issue('error', 'type-path-mismatch', local, `type=${fm.type}，路径职责为 ${expected}`))
 
   const tags = Array.isArray(fm.tags) ? fm.tags : []
-  const tagsValid = tags.length >= 2 && tags.length <= 7 && new Set(tags).size === tags.length && tags.every((tag) => TAG_RE.test(tag))
+  const isConcept = (fm.type ?? expected) === 'concept'
+  const tagsValid = (!('tags' in fm) || Array.isArray(fm.tags)) && tags.length >= (isConcept ? 0 : 2) && tags.length <= 7 && new Set(tags).size === tags.length && tags.every((tag) => TAG_RE.test(tag))
   if (tagsValid) coverage.validTags++
   else if (!Array.isArray(fm.tags) || tags.length === 0) {
     issues.push(issue('required', 'no-tags', local, '缺 2–5 个小写 kebab-case 概念 tags'))
@@ -193,14 +195,29 @@ for (const file of files) {
 
   if (!isStub) {
     const h2s = extractHeadings(body).filter((heading) => heading.level === 2)
+    if (isConcept) {
+      if (JSON.stringify(h2s.map((h) => h.text)) !== JSON.stringify(CONCEPT_HEADINGS)) {
+        issues.push(issue('required', 'concept-structure', local, 'concept 应保留七个固定 H2，TL;DR 最后，内容可空'))
+      }
+      if (fm.status === 'complete') {
+        for (const heading of ['概念界定', '解释与依据', 'TL;DR']) {
+          const section = sections(body).find((s) => s.level === 2 && s.text === heading)
+          if (!section || !section.raw.replace(/^#{1,6}[^\n]*$/gm, '').trim()) {
+            issues.push(issue('required', 'concept-incomplete', local, `complete concept 缺「${heading}」正文`))
+          }
+        }
+      }
+    }
     const exact = h2s.filter((heading) => heading.text === 'TL;DR')
-    if (exact.length === 1 && h2s[0] === exact[0]) {
+    if (exact.length === 1 && (h2s[0] === exact[0] || h2s.at(-1) === exact[0])) {
       const tldr = sections(body).find((section) => section.level === 2 && section.text === 'TL;DR')
       const bullets = tldr ? (tldr.own.match(/^\s*[-*+]\s+\S/gm) ?? []).length : 0
-      if (bullets >= 3 && bullets <= 5 && (tldr?.ownLen ?? 0) <= 700) coverage.tldr++
+      if ((isConcept && fm.status === 'draft' && !tldr?.ownLen) || (bullets >= 3 && bullets <= 5 && (tldr?.ownLen ?? 0) <= 700)) coverage.tldr++
       else issues.push(issue('required', 'bad-tldr-content', local, `TL;DR 应有 3–5 条要点且不超过 700 字符，当前 ${bullets} 条`))
     } else if (exact.length > 1) {
       issues.push(issue('error', 'multi-tldr', local, `出现 ${exact.length} 个 ## TL;DR`))
+    } else if (exact.length === 1) {
+      issues.push(issue('error', 'tldr-position', local, 'TL;DR 必须是第一个或最后一个 H2'))
     } else {
       const alias = h2s.find((heading) => heading.text.toLowerCase() === 'tl;dr')
       issues.push(issue('required', alias ? 'bad-tldr-heading' : 'no-tldr', local, alias ? '标题必须精确写成 ## TL;DR' : '缺 ## TL;DR'))

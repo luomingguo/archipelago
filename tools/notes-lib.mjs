@@ -9,6 +9,8 @@ import path from 'node:path'
 
 export const DOCS_DIR = 'docs'
 
+export const CONCEPT_HEADINGS = ['问题情境', '概念界定', '解释与依据', '边界与辨析', '提取与迁移', '关联与来源', 'TL;DR']
+
 /** 页面在知识库中的主要职责；与 NOTESTYLE.md 的内容契约保持一致。 */
 export const NOTE_TYPES = new Set([
   'course', 'lecture', 'paper', 'concept', 'assignment', 'project',
@@ -20,7 +22,7 @@ export const TAG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 /** 无信息量的章节标题。命中即报 warning —— 它们在 embedText 的上下文头里不可分。 */
 export const VAGUE_HEADINGS = new Set([
   '总览', '小结', '摘要', 'outline', '总结', '本讲总结', '本讲小结', '引言',
-  '介绍', '大纲', '课程描述', '背景', '概述', '简介', '前言', '写在前面',
+  '介绍', '大纲', '背景', '概述', '简介', '前言', '写在前面',
   'summary', 'overview', 'introduction', 'intro', 'fqa', 'faq',
 ])
 

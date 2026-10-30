@@ -15,7 +15,8 @@ Audit exactly one course directory and give a decisive, evidence-backed result. 
 
 ## Editor-owned heading structure
 
-- Treat heading levels and section boundaries as editorial decisions. Do not report skipped levels, deep headings, headings with no standalone paragraph, or any heading arrangement as an audit finding.
+- Treat heading levels and section boundaries as editorial decisions, except the explicit fixed H2 templates in NOTESTYLE.md. For concept, check the seven fixed H2 names and order; do not impose H3–H6 hierarchy or standalone paragraphs under parent headings.
+- Concept tags are optional; omitted tags count as compliant, not as populated metadata. TL;DR may be first or last globally and is last in the concept template. Empty concept draft sections (including TL;DR) are valid; complete concepts must fill 概念界定、解释与依据 and TL;DR. Do not interpret empty optional sections as incomplete content.
 - Do not infer compliance, completeness, `status`, or RAG readiness from section length, document length, character counts, or line counts. The explicit TL;DR limits in `NOTESTYLE.md` are the only length contract.
 - Do not recommend promoting, demoting, splitting, or merging headings to satisfy chunk sizes. RAG parses H2–H6 individually, preserves H2/H3 ancestry in breadcrumbs, and may split long body text internally without changing Markdown.
 
@@ -42,7 +43,7 @@ npm run notes:lint -- '<course-directory>'
 The linter accepts a directory and recursively checks its Markdown files. Separate its findings into:
 
 - blocking content errors;
-- mandatory migration rules such as `no-type`, `no-tags`, `no-tldr`, `course-metadata`, and `repeated-course-metadata`;
+- mandatory migration rules such as `no-type`, `no-tags` (non-concept only), `no-tldr`, `concept-structure`, `concept-incomplete`, `course-metadata`, and `repeated-course-metadata`;
 - quality recommendations such as `code-heavy`, `vague-heading`, `image-alt`, and `no-insight`.
 
 Never classify legacy length or hierarchy rules such as `long-section`, `short-section`, `too-short`, `empty-section`, `heading-skip`, or `deep-heading` as findings; they are outside the current content contract.
@@ -64,7 +65,7 @@ Lead with one sentence: `<课程目录>：合格 / 待迁移 / 不合格。`
 Then provide:
 
 1. Inventory by page type and stub count.
-2. Coverage as exact fractions for explicit `type`, valid tags, TL;DR, and child metadata inheritance.
+2. Coverage as exact fractions for explicit `type`, tags contract compliance, TL;DR contract compliance, and child metadata inheritance. Explain that valid concept omissions and empty draft summaries count as compliant, not as supplied tags or usable RAG summaries.
 3. Blocking or mandatory findings grouped by rule, with affected-file counts and representative clickable paths.
 4. Quality recommendations, kept separate so they do not obscure mandatory work.
 5. A prioritized migration order: course `index.md` first, then high-value lectures, then paper/concept/assignment/project pages.
