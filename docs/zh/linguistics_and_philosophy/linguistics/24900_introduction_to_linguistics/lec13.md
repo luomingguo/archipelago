@@ -41,7 +41,7 @@ graph TD
 
 
 
-## 约束理论 Principle C
+## 约束理论 C 原则（Principle C）
 
 请观察以下两句完全合语法的日常英语：
 
@@ -200,8 +200,7 @@ Sentence 4: Mary slapped the anteater.      (玛丽掌掴了食蚁兽 - 及物�
 
 - *glorf* 声明：“我需要一个介词短语，我不管介词是 *under*、*through* 还是 *beside*，但我**唯一的天条是：这个介词短语前面必须由程度副词 *right* 来修饰**！（你可以说 *She glorfed them right under the tree*，但绝不能说 *She glorfed them under the tree*）。”
 
-**在全人类所有语言中，存在类似 *glorf* 这样的动词吗？**  
-**绝对没有！零存在！**
+**在全人类所有语言中，存在类似 *glorf* 这样的动词吗？**  **绝对没有！零存在！**
 
 乔姆斯基在 1965 年提出了著名的**选择局部性定理（Locality of Selection）**：
 
@@ -227,9 +226,7 @@ Sentence 4: Mary slapped the anteater.      (玛丽掌掴了食蚁兽 - 及物�
 
 ## 6. 论元（Argument）vs 附加语（Adjunct）：羽毛万能定律
 
-现在，我们要剖析一个极其关键的二分法：
-
-思考介词短语 **with a feather**（用一根羽毛）：
+现在，我们要剖析一个极其关键的二分法：思考介词短语 **with a feather**（用一根羽毛）：
 
 - 你可以说：*tickle the child with a feather*（用羽毛呵痒小孩）；
 - 也可以说：*devour the child with a feather*（用羽毛吞食小孩……虽然诡异，但绝对合语法！）；
@@ -263,8 +260,7 @@ classDiagram
 
 ## 7. 终极大招：双介词短语裁决实验与民主表决
 
-论元与附加语在树形拓扑上的真正本质差异究竟是什么？  
-我们来看这句充满欺骗性的句子：
+论元与附加语在树形拓扑上的真正本质差异究竟是什么？  我们来看这句充满欺骗性的句子：
 
 $$\text{“I decided on the boat on the plane.”}$$
 
@@ -297,4 +293,8 @@ graph TD
     end
 ```
 
-### 
+为什么是读法 1？
+因为：**紧挨在动词后面的那个介词短语 `[on the boat]`，必须优先充当动词的论元（选定船）；而外围的第二个介词短语 `[on the plane]`，只能作为附加语状语（在飞机上）！**
+
+在二元合并的算法中：
+$$\text{优先满足中心语的内在论元需求，最后才能在外围层层包裹可选的附加语！}$$
