@@ -41,11 +41,13 @@ flowchart LR
 
 当非基变量 $x_j$ 增加 $\theta$ 时，全局目标函数 $z = c^T x = c_B^T x_B + c_j x_j$ 会发生怎样的变化？
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 z(\theta) &= c_B^T (x_B^* - \theta B^{-1} A_j) + c_j \theta \\
 &= c_B^T x_B^* + \theta \left( c_j - c_B^T B^{-1} A_j \right) \\
 &= z^* + \theta \cdot \bar{c}_j
-\end{aligned}$$
+\end{aligned}
+$$
 
 ::: definition 检验数（Reduced Cost）
 对于任意变量 $j \in \{1,\dots,n\}$，其检验数 $\bar{c}_j$ 定义为：

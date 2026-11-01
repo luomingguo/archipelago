@@ -29,11 +29,13 @@ $$C \bullet X = \operatorname{tr}(C X) = \sum_{i=1}^n \sum_{j=1}^n C_{ij} X_{ij}
 给定对称矩阵 $C, A_1, \dots, A_m \in \mathbb{S}^n$ 与资源向量 $b \in \mathbb{R}^m$。
 标准型原半正定规划表述为：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min_{X \in \mathbb{S}^n} \quad & \operatorname{tr}(C X) \\
 \text{s.t.} \quad & \operatorname{tr}(A_i X) = b_i, \quad i = 1, \dots, m \\
 & X \succeq 0
-\end{aligned}$$
+\end{aligned}
+$$
 :::
 
 约束 $X \succeq 0$ 意味着对任意向量 $z \in \mathbb{R}^n$，二次型 $z^T X z \ge 0$。
@@ -80,10 +82,12 @@ $$S = C - B^T A^{-1} B \succeq 0$$
 将该不等式移项变形：
 $$-(q^T x + r) - x^T P x \ge 0 \iff -(q^T x + r) - x^T (P^{1/2})^T I^{-1} (P^{1/2} x) \ge 0$$
 根据舒尔补引理，这**百分之百充要等价于一个极其优美的仿射分块 LMI**：
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
 I & P^{1/2} x \\
 (P^{1/2} x)^T & -(q^T x + r)
-\end{bmatrix} \succeq 0$$
+\end{bmatrix} \succeq 0
+$$
 原本非线性的二次曲面，通过增加内部辅助维度，直接被“拉平”成了一个严格线性的矩阵不等式！
 :::
 

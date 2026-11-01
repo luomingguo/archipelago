@@ -55,11 +55,13 @@ flowchart LR
 
 哈佛商学院詹姆斯·赫斯克特、赖希赫尔德与萨瑟在 1994 年共同奠定了现代组织管理学最重要的理论丰碑——**服务利润链（Service-Profit Chain）**。它用严格的因果链条，打通了从员工心智到股东回报的价值循环：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \text{内部服务质量} &\longrightarrow \text{员工满意度} \longrightarrow \text{员工忠诚度与生产率} \\
 &\longrightarrow \text{卓越外部服务价值} \longrightarrow \text{客户终身满意度} \\
 &\longrightarrow \text{客户忠诚与口碑} \longrightarrow \text{企业营收高增长与超额利润！}
-\end{aligned}$$
+\end{aligned}
+$$
 
 ::: definition [净推荐值（Net Promoter Score, NPS）]
 赖希赫尔德发明的商业量化度量指标。仅询问客户一个极简问题：“在 0 至 10 分的刻度上，您有多大意愿向朋友或同事推荐我们？”

@@ -89,7 +89,8 @@ flowchart TD
 
 计算经营活动现金流量净额（CFO）：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \text{CFO} &= 200,000 \quad (\text{净利润}) \\
 &\quad + 40,000 + 10,000 \quad (\text{加回非现金折旧摊销}) \\
 &\quad - 5,000 \quad (\text{剔除资产处置收益}) \\
@@ -99,7 +100,8 @@ $$\begin{aligned}
 &\quad + 20,000 \quad (\text{应付增加加回}) \\
 &\quad - 10,000 \quad (\text{应付工资减少扣减}) \\
 &= 235,000 \text{ 元}
-\end{aligned}$$
+\end{aligned}
+$$
 
 ## 重大非现金投资与筹资活动披露
 

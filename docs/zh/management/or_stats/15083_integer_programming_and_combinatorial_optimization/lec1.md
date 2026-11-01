@@ -25,11 +25,13 @@ status: complete
 
 **整数线性规划（Integer Linear Programming, ILP）**的形式化定义为：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 z_{\text{IP}} = \min_{x} \quad & c^T x \\
 \text{s.t.} \quad & A x \ge b \\
 & x \in \mathbb{Z}^n \quad (\text{或 } x \in \{0, 1\}^n)
-\end{aligned}$$
+\end{aligned}
+$$
 
 若部分变量为整数、部分变量为连续实数，则称为**混合整数规划（Mixed-Integer Programming, MIP）**。
 

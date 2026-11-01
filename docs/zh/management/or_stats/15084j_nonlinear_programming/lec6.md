@@ -21,11 +21,13 @@ status: complete
 在第 1 到 5 讲中，我们探索的无约束优化世界是平坦自由的欧氏空间 $\mathbb{R}^n$。在开集中，我们可以沿着任意 $360^\circ$ 的方向迈出无穷小步伐。
 
 然而在现实世界中，一切决策都受制于物理与技术边界：
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min_{x \in \mathbb{R}^n} \quad & f(x) \\
 \text{s.t.} \quad & g_i(x) \le 0, \quad i = 1, \dots, m \quad &&\text{(不等式约束)} \\
 & h_j(x) = 0, \quad j = 1, \dots, l \quad &&\text{(等式约束)}
-\end{aligned}$$
+\end{aligned}
+$$
 
 当最优解 $x^*$ 落在可行域 $\Omega$ 的边界上时，负梯度方向 $-\nabla f(x^*)$ 往往指向可行域的外部！我们绝不能指望 $\nabla f(x^*) = 0$。
 如何在任意非线性曲面约束边界上建立形式化的极值微分法则？这必须从**切锥（Tangent Cone）**几何建立起严格公理。

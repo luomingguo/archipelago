@@ -39,20 +39,20 @@ flowchart TD
 
 ### 优雅的代数推导过程
 设当前连续 LP 松弛已经达到最优，在最终单纯形表中，某一行基变量 $x_i$ 的方程形式为：
-$$x_i + \sum_{j \in N} ar{a}_{ij} x_j = ar{b}_i$$
-假设常数项 $ar{b}_i$ 为非整数（例如 $ar{b}_i = 4.7$）。
-我们将所有实数系数拆解为其**整数部分 $\lfloor \cdot floor$ 与小数分数部分 $f \in [0, 1)$ 之和**：
-- $ar{a}_{ij} = \lfloor ar{a}_{ij} floor + f_{ij}, \quad 0 \le f_{ij} < 1$
-- $ar{b}_i = \lfloor ar{b}_i floor + f_i, \quad 0 < f_i < 1$
+$$x_i + \sum_{j \in N} \bar{a}_{ij} x_j = \bar{b}_i$$
+假设常数项 $\bar{b}_i$ 为非整数（例如 $\bar{b}_i = 4.7$）。
+我们将所有实数系数拆解为其**整数部分 $\lfloor \cdot \rfloor$ 与小数分数部分 $f \in [0, 1)$ 之和**：
+- $\bar{a}_{ij} = \lfloor \bar{a}_{ij} \rfloor + f_{ij}, \quad 0 \le f_{ij} < 1$
+- $\bar{b}_i = \lfloor \bar{b}_i \rfloor + f_i, \quad 0 < f_i < 1$
 
 将原方程重写：
-$$x_i + \sum_{j \in N} \left( \lfloor ar{a}_{ij} floor + f_{ij} ight) x_j = \lfloor ar{b}_i floor + f_i$$
+$$x_i + \sum_{j \in N} \left( \lfloor \bar{a}_{ij} \rfloor + f_{ij} \right) x_j = \lfloor \bar{b}_i \rfloor + f_i$$
 移项整理，将整数部分归于左侧，小数部分归于右侧：
-$$x_i + \sum_{j \in N} \lfloor ar{a}_{ij} floor x_j - \lfloor ar{b}_i floor = f_i - \sum_{j \in N} f_{ij} x_j$$
+$$x_i + \sum_{j \in N} \lfloor \bar{a}_{ij} \rfloor x_j - \lfloor \bar{b}_i \rfloor = f_i - \sum_{j \in N} f_{ij} x_j$$
 
 ::: theorem 戈莫里割的判定不等式
 现在，我们审视任何一个合法的**整数解**：
-1. 观察等式左边：由于 $x_i$ 与 $x_j$ 都是整数，且 $\lfloor \cdot floor$ 全为整数，因此**等式左边在任何合法整数解下必然是一个纯整数！**
+1. 观察等式左边：由于 $x_i$ 与 $x_j$ 都是整数，且 $\lfloor \cdot \rfloor$ 全为整数，因此**等式左边在任何合法整数解下必然是一个纯整数！**
 2. 观察等式右边：由于 $f_i < 1$ 且所有 $f_{ij} \ge 0, x_j \ge 0$，因此等式右边必然**严格小于 1**（即 $f_i - \sum f_{ij} x_j \le f_i < 1$）；
 3. **关键飞跃**：一个小于 1 的整数，其最大取值最多只能是多少？**只能小于或等于 0！**
 :::
@@ -67,7 +67,7 @@ $$f_i - \sum_{j \in N} f_{ij} x_j \le 0 \iff \sum_{j \in N} f_{ij} x_j \ge f_i$$
 ## 单纯形转轴的无缝衔接：对偶单纯形法的妙用
 
 当我们向原单纯形表中追加一条全新的割平面约束时：
-$$-\sum_{j \in N} f_{ij} x_j + s_{	ext{cut}} = -f_i \quad (	ext{其中 } -f_i < 0)$$
+$$-\sum_{j \in N} f_{ij} x_j + s_{\text{cut}} = -f_i \quad (\text{其中 } -f_i < 0)$$
 此时，右端项为负数，但目标函数行（Row 0）的所有检验数依然满足最优性条件（全非正）！
 
 ```mermaid

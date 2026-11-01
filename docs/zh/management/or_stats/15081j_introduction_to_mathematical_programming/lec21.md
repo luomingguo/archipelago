@@ -46,16 +46,19 @@ flowchart TD
 其核心思想是：**不再分别求解原问题或对偶问题，而是将原变量 $x \in \mathbb{R}^n$、松弛变量 $s \in \mathbb{R}^n$ 与对偶变量 $p \in \mathbb{R}^m$ 视为一个平等的复合大系统！**
 
 中心路径方程定义了一个非线性方程组系统 $F(x, p, s) = 0$：
-$$F(x, p, s) = \begin{bmatrix}
+$$
+F(x, p, s) = \begin{bmatrix}
 A x - b \\
 A^T p + s - c \\
 X S \mathbf{1} - \sigma \mu \mathbf{1}
-\end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}, \quad (x > 0, s > 0)$$
+\end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}, \quad (x > 0, s > 0)
+$$
 其中 $X = \operatorname{diag}(x_1, \dots, x_n)$，$S = \operatorname{diag}(s_1, \dots, s_n)$，$\mu = \frac{x^T s}{n}$ 为平均对偶间隙，$\sigma \in [0, 1]$ 为居中向心参数（Centering Parameter）。
 
 对这个非线性系统应用多元微积分的**牛顿-拉夫逊方法（Newton-Raphson Method）**，在当前点 $(x, p, s)$ 处展开一阶雅可比线性方程组：
 
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
 A & 0 & 0 \\
 0 & A^T & I \\
 S & 0 & X
@@ -67,7 +70,8 @@ S & 0 & X
 A x - b \\
 A^T p + s - c \\
 X S \mathbf{1} - \sigma \mu \mathbf{1}
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 通过高斯块消元，第三行给出：$\Delta s = -X^{-1} S \Delta x - s + \sigma \mu X^{-1} \mathbf{1}$。
 代入第二行并左乘 $A$ 矩阵，最终整个巨型系统被紧凑归结为一个对称正定的**正规方程组（Normal Equations）**：

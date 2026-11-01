@@ -52,11 +52,13 @@ flowchart TD
 设向量映射 $Y = g(X) = (g_1(X), \dots, g_n(X))^T$ 在开集上是一对一双射，且连续可微。
 
 定义映射 $g$ 的**雅可比矩阵（Jacobian Matrix）**：
-$$J_g(x) = \frac{\partial(g_1, \dots, g_n)}{\partial(x_1, \dots, x_n)} = \begin{bmatrix}
+$$
+J_g(x) = \frac{\partial(g_1, \dots, g_n)}{\partial(x_1, \dots, x_n)} = \begin{bmatrix}
 \frac{\partial g_1}{\partial x_1} & \dots & \frac{\partial g_1}{\partial x_n} \\
 \vdots & \ddots & \vdots \\
 \frac{\partial g_n}{\partial x_1} & \dots & \frac{\partial g_n}{\partial x_n}
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 在多元微积分与微分几何中，雅可比矩阵的行列式绝对值 $|\det J_g(x)|$ 精确度量了超立方体体积微元在高维非线性扭曲映射下的**局部高阶体积缩放比**！
 

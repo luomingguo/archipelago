@@ -43,11 +43,13 @@ flowchart TD
 
 ::: definition 临界锥 (Critical Cone)
 设 $(x^*, \mu^*, \lambda^*)$ 满足 KKT 条件。临界锥 $C(x^*, \mu^*)$ 定义为满足以下条件的切向量集合：
-$$C(x^*, \mu^*) = \left\{ d \in \mathbb{R}^n \;\middle|\; \begin{aligned}
+$$
+C(x^*, \mu^*) = \left\{ d \in \mathbb{R}^n \;\middle|\; \begin{aligned}
 \nabla h_j(x^*)^T d &= 0, \quad \forall j = 1, \dots, l \\
 \nabla g_i(x^*)^T d &= 0, \quad \forall i \in A(x^*) \text{ 且 } \mu_i^* > 0 \\
 \nabla g_i(x^*)^T d &\le 0, \quad \forall i \in A(x^*) \text{ 且 } \mu_i^* = 0
-\end{aligned} \right\}$$
+\end{aligned} \right\}
+$$
 :::
 
 注意观察不等式约束的精妙划分：

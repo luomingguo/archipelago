@@ -20,11 +20,13 @@ status: complete
 
 考虑标准型最小化线性规划（称为原问题 Primal LP, $P$）：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 z^* = \min_{x} \quad & c^T x \\
 \text{s.t.} \quad & A x = b \\
 & x \ge 0
-\end{aligned}$$
+\end{aligned}
+$$
 
 假设我们要向企业的投资委员会证明：当前生产计划的最小总成本 $z^*$ 无论如何也不可能低于 1000 万元。我们如何给出一个无可辩驳的数学证据？
 
@@ -43,10 +45,12 @@ $$c^T x = p^T b + (c^T - p^T A) x \ge p^T b$$
 既然每个合法的 $p$ 都提供一个下界，为了获得**最紧致、最逼近真实极限的终极下界**，我们理应将这个下界推到极致——极大众化 $p^T b$！
 这就自然引出了原问题对应的**对偶规划（Dual LP, $D$）**：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 w^* = \max_{p} \quad & p^T b \\
 \text{s.t.} \quad & A^T p \le c
-\end{aligned}$$
+\end{aligned}
+$$
 
 ```mermaid
 flowchart TD

@@ -87,10 +87,12 @@ flowchart TD
 | **5** | 101,888 | 6,112 | 8,000 | 1,888 | 0 | **100,000** |
 
 第 1 年末溢价摊销会计分录：
-$$\begin{aligned}
+$$
+\begin{aligned}
 \text{借：财务费用 - 利息支出 (Interest Expense)} \quad 6,506 & \\
 \text{借：应付债券溢价 (Premium on Bonds Payable)} \quad 1,494 & \quad / \quad \text{贷：银行存款 (Cash)} \quad 8,000
-\end{aligned}$$
+\end{aligned}
+$$
 溢价的摊销冲减了每年的利息费用，真实体现了发行人在第 0 天超额获得资金的利差红利。
 
 ## 债务提前清偿（Early Extinguishment of Debt）损益核算
@@ -110,12 +112,14 @@ $$\text{清偿利得或损失} = \text{清偿日债券账面净值 (Carrying Val
 - 回购付现：$91,000$ 美元；
 - 产生提前清偿利得：$95,026 - 91,000 = 4,026$ 美元；
 - 会计分录：
-  $$\begin{aligned}
+  $$
+  \begin{aligned}
   \text{借：应付债券面值 (Bonds Payable)} \quad 100,000 & \\
   & \text{贷：应付债券折价 (Discount on Bonds)} \quad 4,974 \\
   & \text{贷：银行存款 (Cash)} \quad 91,000 \\
   & \text{贷：债务提前清偿利得 (Gain on Extinguishment)} \quad 4,026
-  \end{aligned}$$
+  \end{aligned}
+  $$
 :::
 
 ## 我的理解

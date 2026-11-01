@@ -38,8 +38,8 @@ flowchart TD
 在进行股权计算时，初涉资本市场的创业者最常犯的错误就是混淆“投前估值”与“投后估值”的概念，并在期权池设定中惨遭暗算：
 
 ::: definition 基础估值恒等式
-$$	ext{投后估值（Post-Money Valuation）} = 	ext{投前估值（Pre-Money Valuation）} + 	ext{本轮新增投资额（Investment Amount）}$$
-$$	ext{投资人持股比例（Investor Ownership \%）} = rac{	ext{本轮投资额}}{	ext{投后估值}}$$
+$$\text{投后估值（Post-Money Valuation）} = \text{投前估值（Pre-Money Valuation）} + \text{本轮新增投资额（Investment Amount）}$$
+$$\text{投资人持股比例（Investor Ownership \%）} = \frac{\text{本轮投资额}}{\text{投后估值}}$$
 :::
 
 ### 经典陷阱：期权池洗牌（Option Pool Shuffle）
@@ -86,7 +86,7 @@ graph TD
 ```
 
 ### 广义加权平均（Broad-based Weighted Average）的标准数学公式
-$$CP_2 = CP_1 	imes \left( rac{A + B}{A + C} ight)$$
+$$CP_2 = CP_1 \times \left( \frac{A + B}{A + C} \right)$$
 其中：
 - $CP_2$：本轮调整后的全新有效转换价格；
 - $CP_1$：调整前的原始转换价格；

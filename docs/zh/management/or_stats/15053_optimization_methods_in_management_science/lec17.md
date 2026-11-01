@@ -43,9 +43,9 @@ graph TD
 初学整数规划的工程师在对 TSP 进行建模时，往往会写出如下极度直觉的模型：
 - 设 0-1 决策变量 $x_{ij} \in \{0, 1\}$ 表示是否直接从城市 $i$ 旅行至城市 $j$；
 - **每个城市必须且只能离开一次**：$\sum_{j=1, j 
-eq i}^n x_{ij} = 1, \quad orall i$；
+\neq i}^n x_{ij} = 1, \quad \forall i$；
 - **每个城市必须且只能进入一次**：$\sum_{i=1, i 
-eq j}^n x_{ij} = 1, \quad orall j$；
+\neq j}^n x_{ij} = 1, \quad \forall j$；
 - 目标：$\min \sum_{i} \sum_{j} c_{ij} x_{ij}$。
 
 这个模型表面上看完美无缺，但在求解器中运行后，得出的结果往往令人哭笑不得：
@@ -65,8 +65,10 @@ flowchart LR
 ### 1. DFJ 子回路消除约束（Dantzig-Fulkerson-Johnson, 1954）
 1954 年，丹齐格、富尔克森与约翰逊三位巨擘提出了运筹学史上最经典的割集消除约束：
 对于城市全集 $V$ 的**任意一个真子集 $S \subset V$（满足 $2 \le |S| \le n-1$）**，回路中离开子集 $S$ 的边数必须至少为 1 条：
-$$\sum_{i \in S} \sum_{j 
-otin S} x_{ij} \ge 1, \quad orall S \subset V, \quad 2 \le |S| \le n-1$$
+$$
+\sum_{i \in S} \sum_{j 
+otin S} x_{ij} \ge 1, \quad \forall S \subset V, \quad 2 \le |S| \le n-1
+$$
 
 ```mermaid
 flowchart TD
@@ -84,12 +86,14 @@ flowchart TD
 ### 2. MTZ 位序标记约束（Miller-Tucker-Zemlin, 1960）
 1960 年，米勒、塔克与赞姆林提出了另一种极其优雅的多项式级连续位序标记法：
 引入连续辅助变量 $u_i \in \mathbb{R}$，表示城市 $i$ 在整个漫长旅行路线中所处于的**先后访问次序号**（令出发城市 $u_1 = 1$）：
-$$u_i - u_j + n \cdot x_{ij} \le n - 1, \quad orall i, j \ge 2, \quad i 
-eq j$$
+$$
+u_i - u_j + n \cdot x_{ij} \le n - 1, \quad \forall i, j \ge 2, \quad i 
+\neq j
+$$
 - **若 $x_{ij} = 0$**（未走边 $(i, j)$）：约束退化为 $u_i - u_j \le n - 1$，由于位序差值天然小于 $n$，约束自动失效；
 - **若 $x_{ij} = 1$**（直接从 $i$ 走到 $j$）：约束瞬间收紧为 $u_j \ge u_i + 1$！**即后续城市的访问序号必须严格递增！**
 
-由于一个孤立的小圈子必须不断循环递增，最终必然出现 $u_{	ext{start}} > u_{	ext{end}} > \dots > u_{	ext{start}}$ 的严格递增自相矛盾，从而在代数上彻底消灭了任何不经过起点 1 的小回路！MTZ 仅需增加 $O(n)$ 个变量和 $O(n^2)$ 条约束，是小规模快速建模的利器。
+由于一个孤立的小圈子必须不断循环递增，最终必然出现 $u_{\text{start}} > u_{\text{end}} > \dots > u_{\text{start}}$ 的严格递增自相矛盾，从而在代数上彻底消灭了任何不经过起点 1 的小回路！MTZ 仅需增加 $O(n)$ 个变量和 $O(n^2)$ 条约束，是小规模快速建模的利器。
 
 ## 近似算法的巅峰：克里斯托菲德斯算法（Christofides）
 

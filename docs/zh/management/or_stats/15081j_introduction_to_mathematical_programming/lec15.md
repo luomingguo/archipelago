@@ -22,11 +22,13 @@ status: complete
 
 考虑如下两阶段混合规划问题：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min_{x, y} \quad & c^T x + f(y) \\
 \text{s.t.} \quad & A x + B y \ge b \\
 & x \ge 0, \quad y \in Y
-\end{aligned}$$
+\end{aligned}
+$$
 
 其中 $Y \subset \mathbb{R}^p$ 可以包含复杂的离散整数约束（如 $y \in \{0, 1\}^p$）。
 如果将 $x$ 和 $y$ 混在一起同时求解，离散变量的组合爆炸会导致分支定界树规模呈灾难性扩张。

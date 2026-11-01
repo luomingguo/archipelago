@@ -58,11 +58,13 @@ $$\bar{a}_i^T x + \max_{\{z_i \mid |z_{ij}| \le 1, \sum |z_{ij}| \le \Gamma_i\}}
 利用我们在第 9 讲学到的对偶理论，为子问题的约束引入对偶变量 $p_i$ 与 $q_{ij}$。由于强对偶定理，子问题的最大值严格等于其对偶问题的最小值。
 将对偶系统的最小化并入外层主问题，我们奇迹般地得到了一个**完全确定性、尺寸仅线性增加的等价线性规划（Robust Counterpart LP）**：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \bar{a}_i^T x + \Gamma_i p_i + \sum_{j=1}^n q_{ij} &\le b_i \\
 p_i + q_{ij} &\ge \hat{a}_{ij} |x_j|, \quad \forall j \\
 p_i, q_{ij} &\ge 0
-\end{aligned}$$
+\end{aligned}
+$$
 
 无需任何概率假设，仅通过引入几个对偶变量，多面体扰动就被彻底驯服为标准线性规划！
 

@@ -38,11 +38,13 @@ source: 'https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2
 
 由此我们获得了语言学界通用的**三行标准行间标注格式（Leipzig Glossing Rules）**：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 &\text{第 1 行（原文）：} && \text{X!oo} && \text{kuulduud} && \text{bii} \\
 &\text{第 2 行（逐词对齐标注）：} && \text{X!oo} && \text{linguist} && \text{is} \\
 &\text{第 3 行（整句翻译）：} && \text{‘X!oo 是个语言学家。’}
-\end{aligned}$$
+\end{aligned}
+$$
 
 从这组简单的数据中，我们已经发现了火星语的第一条句法规律：与英语的 SVO（主-谓-宾）语序不同，火星语将动词“是”（bii）放在句末，表现为 **SOV 语序**！
 

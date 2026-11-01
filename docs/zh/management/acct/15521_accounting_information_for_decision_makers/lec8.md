@@ -123,10 +123,12 @@ flowchart TD
 ### 方法 3：交互代数分配法 (Reciprocal Method)
 利用联立方程组完全刻画 S1 与 S2 的全口径虚拟互惠成本总量：
 
-$$\begin{cases}
+$$
+\begin{cases}
 S_1 = 100,000 + 0.10 \times S_2 \\
 S_2 = 80,000 + 0.20 \times S_1
-\end{cases}$$
+\end{cases}
+$$
 
 将第二式代入第一式进行代数求解：
 $$S_1 = 100,000 + 0.10 \times (80,000 + 0.20 S_1)$$

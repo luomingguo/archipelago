@@ -22,11 +22,13 @@ status: complete
 
 线性规划的标准形式（Standard Form）通常表述为：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min_{x} \quad & c^T x \\
 \text{s.t.} \quad & A x = b \\
 & x \ge 0
-\end{aligned}$$
+\end{aligned}
+$$
 
 其中 $c \in \mathbb{R}^n$ 为成本向量，$A \in \mathbb{R}^{m \times n}$ 为约束矩阵（通常假设 $\operatorname{rank}(A) = m < n$），$b \in \mathbb{R}^m$ 为资源限制向量。任何包含不等式约束 $\le$ 或自由变量（Unrestricted in Sign, Free Variables）的线性规划，都可以通过引入非负松弛变量（Slack Variables）$s \ge 0$ 或变量拆分 $x = x^+ - x^-$（$x^+, x^- \ge 0$）等价映射为标准型。
 
@@ -54,11 +56,13 @@ $$\min_{x} \quad \max_{k=1,\dots,K} \{c_k^T x + d_k\} \quad \text{s.t.} \quad A 
 
 我们引入标量辅助变量 $z \in \mathbb{R}$（Epigraph Variable），将原问题精确转化为包含 $K$ 个线性不等式的等价标准 LP：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min_{x, z} \quad & z \\
 \text{s.t.} \quad & z \ge c_k^T x + d_k, \quad \forall k = 1, \dots, K \\
 & A x \ge b
-\end{aligned}$$
+\end{aligned}
+$$
 
 ::: example 切比雪夫近似与 L1 回归的等价线性规划
 在超定方程组 $A x \approx b$ 的鲁棒拟合中，最小化最大绝对残差（Chebyshev / $L_\infty$ 范数）：

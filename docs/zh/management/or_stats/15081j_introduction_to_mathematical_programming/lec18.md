@@ -23,11 +23,13 @@ status: complete
 然而，维克多·克利（Victor Klee）与乔治·明蒂（George Minty）在 1972 年构造了一个震惊世界的**扭曲超立方体（Klee-Minty Cube）**反例：
 
 考虑 $n$ 维空间中的变形扰动多胞形：
-$$\begin{aligned}
+$$
+\begin{aligned}
 \max \quad & x_n \\
 \text{s.t.} \quad & 0 \le x_1 \le 1 \\
 & \varepsilon x_{i-1} \le x_i \le 1 - \varepsilon x_{i-1}, \quad \forall i=2,\dots,n
-\end{aligned}$$
+\end{aligned}
+$$
 
 如果单纯形法采用丹齐格原始的“贪心挑选最负检验数”规则，由于多面体顶点的几何扭曲，算法将被狡猾地诱导**遍历该超立方体的全部 $2^n$ 个几何顶点**！
 这意味着单纯形法的最坏时间复杂度是指数级的：$\mathcal{O}(2^n)$。

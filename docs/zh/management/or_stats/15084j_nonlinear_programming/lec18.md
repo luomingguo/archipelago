@@ -22,11 +22,13 @@ status: complete
 
 考虑通用的非线性规划问题（称为原问题 Primal Problem, $P$）：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 p^* = \min_{x \in X} \quad & f(x) \\
 \text{s.t.} \quad & g_i(x) \le 0, \quad i = 1, \dots, m \\
 & h_j(x) = 0, \quad j = 1, \dots, l
-\end{aligned}$$
+\end{aligned}
+$$
 
 其中集合 $X \subset \mathbb{R}^n$ 可以包含简单的盒状上下界或甚至离散整数约束。
 如果我们将复杂的技术约束 $g_i(x) \le 0$ 与 $h_j(x) = 0$ 拿掉，将其以带权惩罚的形式直接搬进目标函数中，就构成了经典的**拉格朗日函数（Lagrangian Function）**：

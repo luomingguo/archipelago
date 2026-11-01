@@ -53,12 +53,14 @@ flowchart LR
 
 ::: definition 厄米特标准型 (Hermite Normal Form, HNF)
 对于任意满行秩整数矩阵 $A \in \mathbb{Z}^{m \times n}$（$m \le n$），必然存在一个单模矩阵 $U \in \mathbb{Z}^{m \times m}$，使得乘积矩阵 $H = U A$ 呈现如下**唯一的下三角规范形式**：
-$$H = \begin{bmatrix}
+$$
+H = \begin{bmatrix}
 h_{11} & 0 & 0 & \dots & 0 \\
 h_{21} & h_{22} & 0 & \dots & 0 \\
 \vdots & \vdots & \ddots & & \vdots \\
 h_{m1} & h_{m2} & \dots & h_{mm} & 0
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 满足：
 1. 对角线元素严格为正：$h_{ii} > 0$；
 2. 非对角线元素非负且被对角线严格压制：$0 \le h_{ij} < h_{ii}$（$\forall j < i$）。
