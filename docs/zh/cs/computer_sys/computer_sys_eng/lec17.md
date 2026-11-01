@@ -2,7 +2,7 @@
 title: Logging
 type: lecture
 lecture: 17
-tags: []
+tags: [write-ahead-logging, crash-recovery, aries, checkpoints]
 status: complete
 ---
 # Lec 17 Logging
@@ -13,7 +13,15 @@ status: complete
 
 上个 lec 我们介绍了用影子复制实现原子性，但是它性能表现不太好，因为即便很小的改动都需要替换整个文件。本节课介绍用日志实现原子性，接下来我们看到，如何在不损失性能的情况下实现原子性。这种机制叫**日志记录**(logging)。
 
-**思考题**
+## TL;DR
+
+- **预写式日志（WAL）黄金法则**：数据页原地写回磁盘前，对应操作日志必须先刷盘（保 Undo）；事务宣告提交前，COMMIT 日志必须先刷盘（保 Redo）。
+- **ARIES 三阶段崩溃恢复**：分析阶段划分胜者组与败者组，重做阶段重现历史（Repeating History），撤销阶段倒序回滚未提交修改并写入补偿日志（CLR）实现幂等恢复。
+- **检查点与模糊截断**：通过非静止模糊检查点（Fuzzy Checkpointing）记录脏页表与活跃事务表，后台平滑刷盘实现安全日志截断，避免重启时全量扫描历史日志。
+
+---
+
+## 思考题
 
 - 日志基础（不考虑 cell 存储、缓存）
   - 每种类型的日志记录（例如 UPDATE、COMMIT）包含了哪些内容？
@@ -43,13 +51,13 @@ status: complete
 
 假如执行到 T3 发生 crash 了， 如下图所示，我们需要一种方法将 A 的恢复到先前提交到值，即 80。
 
-![截屏 2024-07-02 10.27.22](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66836592462f7.png)
+![预写式日志写入与单元存储结构](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66836592462f7.png)
 
 每当开始一个事务时候，我们会分配一个事务 ID，并且你会看到有 2 种不同状态的记录，update 和 commit 。我们可以看到，只写入发生改变的值。并且要注意到下面的记录都是通过追加操作进行的，这种变化会反映到磁盘上。这样为何能提供原子性呢？下面，我们先看如何利用日志来读取的。
 
 当我们执行到的第二个事务的第一个行表达式时，即 write(A, read(A)-20)， 我们会从的倒叙开始遍历记录，直到到达起始点，找到了我们感兴趣的 A 的值。
 
-![image-20250323153813669](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e8a83993f.png)
+![预写日志记录与操作提交时序](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e8a83993f.png)
 
 ```python
 commits = []
@@ -81,7 +89,7 @@ def read(log, var):
 			return r.new_value
 ```
 
-![截屏 2024-07-02 13.19.52](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66838e02709e0.png)
+![基于恢复协议重放历史与撤销败者](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66838e02709e0.png)
 
 这样一来，即便 T3 执行过程中出现 crash，日志仍然是正确的，未提交的更新不会被读取，这就是“预写日志”的含义。一般来说，写入日志这个操作数据量很小，可以视为在一个扇区写入，因此这是安全的。当然，如果因为某些原因需要大于一个扇区，还有其他方法可供选择。其他方法涉及到在记录上放校验和，如果记录只提交了一半，会向你发出警告。
 
@@ -137,54 +145,74 @@ def recover(log):
 
 ----
 
-## **添加缓存**
+## **添加缓存与恢复协议（Buffer Cache & Recovery）**
+
+为了进一步释放性能，操作系统与数据库在物理单元存储（Cell Storage）与应用程序之间引入了**易失性内存缓冲区（Buffer Cache）**。读操作优先命中内存，写操作仅在内存中标记脏页（Dirty Pages）并异步刷盘，彻底消除了每次写操作等待磁盘机械寻道的同步物理延迟。
+
+### 缓存管理策略的四象限抉择
+
+引入内存缓存后，系统设计者面临两个关键维度的取舍（Haerder & Reuter 经典分类）：
+
+1. **窃取策略（Steal vs. No-Steal）**：
+   - **No-Steal**：未提交事务修改的脏页严禁写回磁盘；
+   - **Steal（允许窃取）**：若内存紧张，允许将未提交事务的脏页刷入磁盘以腾出空间。**代价：磁盘被污染，恢复时必须具备撤销（Undo）能力**。
+2. **强刷策略（Force vs. No-Force）**：
+   - **Force**：事务提交时必须将所有相关脏页同步刷入磁盘才算成功；
+   - **No-Force（无需刷盘）**：事务提交时脏页继续缓存在内存中。**代价：断电时已提交数据在内存中丢失，恢复时必须具备重做（Redo）能力**。
+
+高性能工业级数据库（如 PostgreSQL、MySQL InnoDB）一致采用 **Steal + No-Force** 组合，以此换取极限吞吐，这也倒逼恢复系统必须同时支持 Undo 与 Redo。
 
 ```python
 def read(var):
- 	if var in cache:
-  	return cache[var]
- 	else:
- 		# may evict(驱逐) others from cache to cell storage
- 		cache[var] = cell_read(var)
- 		return cache[var]
+    if var in cache:
+        return cache[var]
+    else:
+        # 若缓存已满，根据置换算法将某些脏数据驱逐（evict）至单元存储
+        cache[var] = cell_read(var)
+        return cache[var]
 
 def write(var, value):
-	log.append(current_tid, update, var, read(var), value)
-	cache[var] = value
-  
-def flush(): # called "occasionally"
-  cell_write(var, cache[var]) for each var
-  
+    # 铁律：先写日志落盘，再写内存缓存
+    log.append(current_tid, update, var, read(var), value)
+    cache[var] = value
+
+def flush():
+    # 后台守护线程周期性批量刷盘
+    for var in dirty_vars:
+        cell_write(var, cache[var])
 ```
 
->  问题： 在系统崩溃时，是否可能会有一些应该在存储中的更新却没有写入？那么是否也有一些不应该在存储中的更改却已经写入？
+### 崩溃恢复的两阶段遍历推演
 
-> 假设 T1 提交后我们已经将缓存刷回了,  但是从那以后没有再刷回了，此时如果发生 crash，会发生什么？
+当系统在缓存尚未完全刷盘时遭遇突然断电，单元存储将陷入两难困境：
+- **胜者数据缺失**：某些已提交的事务（胜者），其新值尚未刷入物理单元存储，断电导致内存中的修改丢失；
+- **败者脏数据残留**：某些未提交的事务（败者），由于内存置换策略（Steal）其未完成的脏数据已被提前写回单元存储，造成持久化数据被污染。
 
-```python 
-def recover(log):
-  commits = []
-  for record r in log[len(log)-1] .. log[0]:
-    if r.type == COMMIT:
-    	commits.add(r.tid)
-    if r.type == UPDATE and r.tid not in commits:
-    	cell_write(r.var, r.old_val) # undo
-```
-
-我们困难点在于修复单元存储，他会以两种方式出错，一种是 A，B 的值都是错误的。我们之前的做法是倒序向前扫描的，目的为了撤销任何未提交的更新，之所以能做到这个，是因为日志和单元存储是保持同步的。当我们现在的情况是，T2 已经提交了，但是我们并没有更新单元存储。上面的恢复过程并没有将哪些提交重新纳入单元存储中。实际上我们要对日志进行 2 次便利，首先向后回溯以移除未提交的更新，然后向前推进提交已经确认的更新。除了 crash 外，可能因为代码问题需要中断（abort）事务，因此不管怎样都要去了解这个过程
+为了恢复一致性，恢复算法必须完整遍历日志，分为两个严密方向的扫描过程：
 
 ```python
 def recover(log):
-  commits = []
-  for record r in log[len(log)-1] .. log[0]:
-    if r.type == COMMIT:
-    	commits.add(r.tid)
-  if r.type == UPDATE and r.tid not in commits:
-  	cell_write(r.var, r.old_val) # undo
-  for record r in log[0] .. log[len(log)-1]:
-  	if r.type == UPDATE and r.tid in commits:
-  		cell_write(r.var, r.new_value) # redo
+    commits = set()
+    # 第一次遍历：从日志末尾倒序向前扫描，收集所有胜者事务并撤销败者
+    for record r in reversed(log):
+        if r.type == COMMIT:
+            commits.add(r.tid)
+        if r.type == UPDATE and r.tid not in commits:
+            # Undo：将未提交败者的旧值（old_val）原地写回单元存储
+            cell_write(r.var, r.old_val)
+    
+    # 第二次遍历：从日志开头正序向后扫描，重放已提交事务
+    for record r in log:
+        if r.type == UPDATE and r.tid in commits:
+            # Redo：将已提交胜者的新值（new_value）写入单元存储
+            cell_write(r.var, r.new_value)
 ```
+
+#### 两阶段扫描的逻辑必然性
+1. **逆向扫描撤销（Undo Pass）**：
+   从崩溃点反向回溯至日志头部，通过逆向提取未提交事务的原始历史旧值（`old_val`），将单元存储中被提前污染的数据项逐一回退，直到消灭所有活跃事务的中间残留；
+2. **正向扫描重放（Redo Pass）**：
+   从日志起始处顺流向前推进，重新执行所有带有 `COMMIT` 标记的已提交操作，将最新计算结果（`new_value`）强制安装入单元存储，确保对客户端承诺的持久性 100% 兑现。在此基础之上，现代 ARIES 算法进一步确立了「重现历史」原则。
 
 ## Checkpoint
 
@@ -243,7 +271,7 @@ def recover(log):
 
 这两个步骤——**LOG**（记录日志）和**INSTALL**（安装数据）——构成了**WRITE_NEW_VALUE**接口的一种实现方式。图 9.17 进一步说明了这种两步实现。其核心思想是：日志是操作结果的权威记录，而单元存储仅仅是一个参考副本。如果单元存储中的数据丢失，可以通过日志进行重建。**将副本安装到单元存储的目的是为了加速日志记录和数据读取的过程。**
 
-![image-20250323151758387](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e8b329aaf.png)
+![日志存储与单元存储两步写入架构](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e8b329aaf.png)
 
 ## 如何处理 Cache 为非写直通的？
 
@@ -251,6 +279,10 @@ def recover(log):
 
 第一个关注点在于日志本身，在被安装到 cell 存储之前，Change 日志要直写，但允许 Cell 存储在方便时进行安装。这意味，如果系统崩溃， 则无法保证任何特定的安装实际上已经迁移到非易失性存储。最坏的情况是，无法利用检查点，并且必须再次回到日志的开头进行安装。为了避免这点，通常的做法是将 flush 缓存作为每个 checkpoint 记录的一部分。可不幸的是，flush 缓存和记录 checkpoint 可能存在并发，但是这个挑战是可以克服的，但复杂性会增加。
 
-有些系统甚至更进一步追求性能。一个流行的技术，将日志写入易失性缓冲区，并且仅在提交 All-or-Nothing 操作时将整个缓冲区写入到非易失性存储器。这种方法允许系统将多个更改记录与**事务结果记录**（**OUTCOME** 记录）合并为一个同步写操作，从而减少磁盘的随机写次数。这种方法表面上看**违反了 WAL 协议**，因为在系统崩溃时，缓冲区中的日志可能尚未写入非易失性存储，导致某些更改无法恢复。但可以通过对**单元存储的缓存**进行更精细的管理来解决这个问题。关键思路就是，按照顺序对每个日志记录进行编号，并使用其日志记录的序列号标记单元存储中的每个记录。当系统强制 flush 日志时，它都会告诉缓存管理器它写入的最后一个日志记录的序列号，并且缓存管理器会小心，永远不会协会任何带有更高日志序列号的缓存记录。
+有些系统甚至更进一步追求性能。一个流行的技术，将日志写入易失性缓冲区，并且仅在提交 All-or-Nothing 操作时将整个缓冲区写入到非易失性存储器。这种方法允许系统将多个更改记录与**事务结果记录**（**OUTCOME** 记录）合并为一个同步写操作，从而减少磁盘的随机写次数。这种方法表面上看**违反了预写日志（WAL）协议**，因为在系统崩溃时，缓冲区中的日志可能尚未写入非易失性存储，导致某些更改无法恢复。但可以通过对**单元存储的缓存**进行更精细的管理来解决这个问题。关键思路就是，按照顺序对每个日志记录进行编号，并使用其日志记录的序列号标记单元存储中的每个记录。当系统强制 flush 日志时，它都会告诉缓存管理器它写入的最后一个日志记录的序列号，并且缓存管理器会小心，永远不会协会任何带有更高日志序列号的缓存记录。
 
-## 论文阅读： MapReduce
+## 预写日志与崩溃恢复总结
+
+::: insight 架构师见解：ARIES 重现历史与补偿日志（CLR）的幂等防线
+现代数据库崩溃恢复的巅峰之作 ARIES 确立了「重现历史（Repeating History）」的设计哲学：在 Redo 阶段，恢复引擎甚至连未提交事务的修改也原样在磁盘上执行一遍，将物理系统精确还原至崩溃前瞬间；随后在 Undo 阶段倒序回滚所有败者事务。更关键的是，回滚操作本身会写入补偿日志记录（Compensation Log Record, CLR）并记录待撤销指针 UndoNextLSN。即便系统在执行恢复操作的途中遭遇二次停电崩溃，再次重启时也能凭借 CLR 跳过已撤销部分，彻底消除崩溃递归死锁，捍卫了恢复机制的终极幂等性。
+:::

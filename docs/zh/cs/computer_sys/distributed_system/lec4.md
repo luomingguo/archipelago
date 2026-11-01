@@ -7,6 +7,8 @@ status: complete
 ---
 # Lec 4 Paxos
 
+> 课件：[Primary-Backup Replication (l-vm-ft.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-vm-ft.txt)；论文：[VMware FT (2010)](https://pdos.csail.mit.edu/6.5840/papers/vm-ft.pdf)
+
 问题的背景： 容错地"达成一致"——要用复制做高可用、表现得像单台机一样强一致。难点是脑裂：主备在网络分区时，两边都以为对方挂了、都自封 primary，破坏一致性。根因——机器无法区分"对方崩了"与"网络断了"，只能观察到"请求没回应"。在 ~1989 年前，自动容错切换被认为不可能（只能人工介入，而人又成了单点）。
 
 ## TL;DR

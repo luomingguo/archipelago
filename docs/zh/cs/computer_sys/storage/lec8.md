@@ -2,18 +2,23 @@
 title: 磁盘阵列组织
 type: lecture
 lecture: 8
-tags: []
+tags: [raid, data-redundancy, parity, flash-reliability, disk-failure]
 status: complete
 ---
 # Lec 8 磁盘阵列组织
 
+## TL;DR
+
+- **透明硬件虚拟化**：廉价磁盘冗余阵列（RAID）利用条带化（Striping）聚合多物理盘吞吐带宽，通过镜像（Mirroring）或奇偶校验（Parity）抵御单盘损坏，向上层操作系统提供完全透明的线性块设备接口。
+- **经典架构三元权衡**：RAID-0 追求极致并发但零容错；RAID-1 镜像可靠但容量与带宽折半；RAID-4 存在单一校验盘瓶颈；RAID-5 分布式轮转奇偶校验化解热点，但在随机小写下仍承受“读旧数据+读旧校验+写新数据+写新校验”的四倍小写惩罚（Small Write Penalty）。
+- **生产环境可靠性实证**：Google 针对真实数据中心海量固态硬盘的长达六年实证研究推翻了多项理论假设：不可纠正位错误（UBER）高度普遍且呈长尾分布，擦写循环（P/E）并非唯一决定因素，工作时限与制造瑕疵对芯片故障率具有更深远的影响。
+
+## 阅读资料
+
 - [*Operating Systems: Three Easy Pieces, CH38-RAIDs*](http://pages.cs.wisc.edu/~remzi/OSTEP/file-raid.pdf)
-
-- [*RAID: High-performance, Reliable Secondary Storage, 1994*](lec9-RAID-High-performance, Reliable Secondary Storage.pdf)
-
-- [*Disk Failures in the Real World: What Does an MTTF of 1,000,000 Hours Mean to You?*](./lec8-Disk Failures in the Real World- What Does an MTTF of 1,000,000 Hours Mean to You?.pdf)
-
-- [*Flash Reliability in Production: The Expected and the Unexpected, fast16*](./lec8-Flash Reliability in Production- The Expected and the Unexpected.pdf)
+- [*RAID: High-performance, Reliable Secondary Storage, 1994*](https://course.ece.cmu.edu/~ece746/papers//papers/chen94.pdf)
+- [*Disk Failures in the Real World: What Does an MTTF of 1,000,000 Hours Mean to You?*](https://www.usenix.org/legacy/events/fast07/tech/full_papers/schroeder/schroeder.pdf)
+- [*Flash Reliability in Production: The Expected and the Unexpected, fast16*](https://www.usenix.org/system/files/conference/fast16/fast16-papers-schroeder.pdf)
 
 我们希望磁盘更快、更大、也更可靠，如何做到这样的存储技术？关键技术是什么？有哪些权衡？
 
@@ -125,7 +130,7 @@ Disk0  Disk1  Disk2  Disk3
 
 上面的例子中，我们做了一个简化的假设，每次只在一块磁盘上放 1 个数据块（比如 4KB），然后再切换到下一块磁盘，实际系统并不是这样的。例如，我们可以这样分布数据，如下图，每个磁盘在切换到下一块磁盘之前，会先写入 2 个 4KB 数据
 
-![image-20260307164626996](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260307164626996.png)
+![RAID-0 条带化分布与块大小（Chunk Size）及条带（Stripe）物理映射示意图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260307164626996.png)
 
 因此，chunk size（块组大小） = 8KB； 一个 stripe = 4 个 chunk = 32KB 数据
 
@@ -389,7 +394,7 @@ disk0 + disk2  (block10 + parity)
 
 总共：4 次 I/O，这就是：Parity RAID 的写入成本。
 
-## 本讲小结
+## RAID 等级性能与容量权衡对比
 
 下表总结了不同 RAID 的能力：
 
@@ -463,3 +468,11 @@ SSD 中主要有 3 类错误。
 9. 相比硬盘，SSD 更少被替换，但用户可见问题更多，例如不可纠正错误。
 10. 坏块数量具有明显分布特征。 要么非常多，要么非常少。
 11. 坏块和坏芯片出现率很高，30%–80% 的 SSD 会产生至少一个坏块；2%–7% 的 SSD 会出现至少一个坏芯片。坏芯片映射机制（bad chip remapping）非常重要。
+
+## 我的理解
+
+::: insight
+**RAID 的不朽价值在于“用软件冗余定义硬件边界”**：
+1988 年 Patterson 等人提出 RAID 时，初衷是用大量“廉价、脆弱的小磁盘”替代昂贵的大型机专有磁盘。当时学术界最担心的是：磁盘数量翻了十倍，系统整体平均无故障时间（MTTF）是不是暴跌十倍？
+RAID 给出的精妙回答是否定的——通过引入代数校验方程（XOR 奇偶校验与纠删码），RAID 彻底颠覆了“系统可靠性取决于最脆弱硬件部件”的传统硬件观。系统不再假设物理设备永远不坏，而是接受故障的必然性，在架构层面构建恢复闭环。这种“在不信任物理单点的前提下构建极致确定性”的设计哲学，随后演化为现代数据中心一切分布式存储系统的共同精神内核。
+:::

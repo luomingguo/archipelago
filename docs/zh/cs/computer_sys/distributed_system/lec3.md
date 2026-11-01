@@ -7,6 +7,8 @@ status: complete
 ---
 # Lec 3 谷歌文件系统（GFS）
 
+> 课件：[GFS (l-gfs.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-gfs.txt)；论文：[The Google File System (2003)](https://pdos.csail.mit.edu/6.5840/papers/gfs.pdf)
+
 ## TL;DR
 
 - GFS 面向大规模批处理设计，采用单一 Master + 多个 Chunkserver 架构，文件切分为 64MB 大 Chunk 并三副本存储。

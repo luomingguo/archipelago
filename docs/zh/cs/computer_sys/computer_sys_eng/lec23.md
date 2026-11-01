@@ -1,159 +1,223 @@
 ---
-title: 安全通道
+title: '安全通道与公钥基础设施'
 type: lecture
 lecture: 23
-tags: []
+tags: [secure-channels, diffie-hellman, public-key-infrastructure, tls-handshake]
 status: complete
 ---
-# Lec 23 安全通道
 
-> 阅读参考书 §11.3-11.5
+# Lec 23 安全通道与公钥基础设施
 
-思考题
+> 课程：MIT 6.1800 Computer Systems Engineering  
+> 参考材料：Saltzer & Kaashoek 教材第 11 章（§11.3–11.5）、IETF RFC 8446 (TLS 1.3) 及官方授课大纲
 
-- 给定一个结合了加密、MAC（消息认证码）和签名的协议，判断它是否提供了机密性（confidentiality） 和/或 完整性（integrity），以及它是否能够抵御重放攻击和反射攻击。
-  - 你不需要理解加密/解密、MAC 或签名/验证背后的数学原理。我们只会问你关于将这些函数作为构建模块的方案。你应该理解它们提供的属性以及它们如何在安全通道中正确使用，但不需要理解，例如，加密提供机密性但不提供完整性的数学原因。
-- 给定 p 和 g，在两方之间执行 Diffie-Hellman 密钥交换
-- 解释对 Diffie-Hellman 密钥交换的攻击
-- 解释如何用公钥密码学来验证用户身份，包括证书的创建和分发方式
-- 你不需要理解 TLS 握手细节，尽管你应该能够识别其中的熟悉元素（序列号、密钥等）
+## TL;DR
 
-## 引入
+- **安全通道三大契约**：在不可靠且充满窃听篡改的公开网络中，必须同时捍卫机密性（Confidentiality）、完整性（Integrity）与端点真实性（Authenticity）。
+- **混合加密工程实践**：以非对称算法协商临时对称密钥，利用硬件加速的对称 AEAD（如 AES-GCM）保障海量数据吞吐；纯 Diffie-Hellman 缺乏端点认证，易遭中间人（MitM）拦截。
+- **PKI 证书链与前向保密**：依靠预埋根 CA 数字签名背书绑定公钥与域名；TLS 1.3 采用 1-RTT 极速握手并强制使用临时 ECDHE，实现单次会话私钥销毁的前向保密性（PFS）。
 
-到目前为止，我们已经处理了对手尝试在服务器上访问数据的问题。现在我们的对手开始从外部，即从网络中观察数据。
+---
 
-有些数据包的有效载荷可能会反映出你正在干嘛， 即使你看不懂 Header 信息。有时，流量很容易与 个人 联系起来，无论是在数据包头还是数据包数据中.
+## 引入：公开网络下的威胁模型
 
-![image-20250909143621857](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250909143621857.png)
+到目前为止，我们主要处理对手在服务器本地访问数据的问题。从本讲开始，对手转移到了**网络内部**，能够直接观察、截获和注入网络流量。
 
-今天我们将重点讨论如何保护 数据包数据免受攻击者攻击
+即使传输的数据未被直接逆向，数据包的有效载荷大小、频率与通信模式也会出卖用户的隐私：
 
-- 下一节，我们将讨论如何保护元信息（例如数据包头）免受攻击者攻击
+![网络流量中可识别的用户行为模式](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250909143621857.png)
 
-**策略**：提供机密性（攻击者无法获知消息内容）和完整性 （攻击者无法篡改数据包而不被发现）。
+::: definition 安全通道威胁模型
+- **策略目标**：提供机密性（攻击者无法获知消息明文）和完整性（攻击者无法篡改数据包而不被即刻察觉）。
+- **对手能力**：完全掌控底层物理通信链路，可被动窃听流量、主动篡改或重放报文、以及伪造虚假源 IP 注入恶意数据包。
+:::
 
-**威胁模型**： 攻击者可以观察网络数据、篡改数据包并插入自己的数据包。
+---
+
+## 消息机密性与混合密码系统
+
+机密性通过密码学转换将明文变换为伪随机密文：
 
 ```js
 encrypt(key, message) -> 密文
 decrypt(key, 密文) -> message
-/*
-encrypt(34fbcbd1, "hello, world") = 0x47348f63a679 
-26cd393d4b93c58f78c 
-decrypt(34fbcbd1, "0x47348f63a67926cd393d4b93c58f7 
-8c") = hello, world
-*/
-
 ```
 
-性质：给定密文（ciphertext），几乎不可能在不知道 key 的情况下获取 message。
+性质：给定密文（ciphertext），在不知道密钥 $key$ 的情况下，计算上无法获取原始消息 $message$。
 
-![image-20250909144158679](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250909144158679.png)
+![加密与解密对称密钥管道](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250909144158679.png)
 
-攻击者无法确定消息，但可能 能够巧妙地修改密文，以便将其解密为 不同的消息
+::: pitfall 加密不等于完整性
+纯粹的加密（如某些分组密码模式）**只能提供机密性，绝不保证完整性**！攻击者即便无法解密消息，也可以通过翻转密文中的特定比特（Bit-Flipping Attack），导致解密后的明文按攻击者预期改变。因此，机密性必须与完整性认证绑定。
+:::
 
-## 认证消息
+### 对称加密 vs 非对称加密
 
-区别于机密性
+1. **对称加密（Symmetric Cryptography）**：
+   - 加密与解密使用同一把密钥（如 AES-256、ChaCha20）；
+   - **优势**：依托 CPU 硬件指令（AES-NI），吞吐量极高（数 GB/s）；
+   - **痛点**：全网 $N$ 个通信方需要维护 $O(N^2)$ 对密钥，面临**密钥分发难题（Key Distribution Problem）**。
+2. **非对称加密（Asymmetric Cryptography / 公钥体系）**：
+   - 密钥成对出现：公钥 $pk$ 彻底公开，私钥 $sk$ 本地严密保管；
+   - **优势**：消除了预共享秘密的刚性要求；
+   - **痛点**：计算复杂度高，性能比硬件对称加密慢 1000 倍以上。
+3. **混合密码系统（Hybrid Cryptosystem）**：
+   - 在连接初始阶段利用非对称算法在两端协商出一把临时的**对称会话密钥（Session Key）**；
+   - 随后切换至对称加密传输海量数据，兼顾安全性与极致吞吐。
 
-基于 Key 的认证模型
+---
 
-签名和认证的性质
+## 认证消息与完整性（MAC）
 
-Key 分布
+为了防范篡改，系统必须为消息附加认证标签：
 
-## 消息机密性
+::: definition 消息认证码（MAC / HMAC）
+消息认证码是通信双方利用共享对称密钥 $K$ 对消息 $M$ 生成的防伪校验标签：
+$$\text{MAC} = \text{HMAC}(K, M) = H\Big((K \oplus opad) \parallel H((K \oplus ipad) \parallel M)\Big)$$
+接收方收到消息与 MAC 后，在本地重新计算比对。若中间人篡改了 $M$ 的任意比特，由于缺乏密钥 $K$，无法生成合法的 MAC，篡改行为被即刻识破。
+:::
 
-## 安全协议
+现代工业标准全面转向 **AEAD（Authenticated Encryption with Associated Data，如 AES-GCM）**，在单次硬件流水线中同时完成加密与认证标签计算。
 
-在前面的章节中，我们发现在远程服务进行身份验证（authenticating）时，需要保护主体的密码，同时也需要安全地分发密钥等。安全协议可以实现这些目标。安全协议是一种消息交换过程，旨在让相互不信任的各方达成某个目标。在涉及两方的安全协议中，通常采用"来回交换"模式（back-and-forth pattern）。某些安全协议涉及两个以上的参与方，这种情况下，协议的模式可能会更加复杂。例如，密钥分发通常至少需要三个参与方（两个主体和一个受信任的第三方）。
+---
 
-标准的网络协议通常假设通信双方是合作的，并且彼此信任。然而，在设计安全协议时，我们假设协议中的某些参与方可能是对手（adversaries）。
+## 迪菲-赫尔曼密钥协商（Diffie-Hellman Key Exchange）
 
-### 用例：密钥分发问题
+在完全公开的信道中，双方如何在众目睽睽之下凭空协商出相同的共享秘密？
 
-为了说明安全协议的必要性，我们研究两个用于密钥分发的协议。我们已经看到，密钥分发基于名称发现协议（name discovery protocol），而该协议始于受信任的物理交付。因此，我们假设 Alice 曾与 Charles 线下见过面，Charles 也曾与 Bob 线下见过面。那么，问题来了：是否存在这样一个协议，使得 Alice 和 Bob （他们从未见过面）能够在不受信任的网络上安全地交换密钥？
+### 数学原理：离散对数难题
 
-**公钥方案**相对更简单。假设 Alice 和 Bob 都已经知道 Charles 的公钥（因为他们分别见过），Charles 都知道 Alice 和 Bob 各自的公钥。如果这两者都信任 Charles，那么可以通过 Charles 来交换密钥。具体协议流程：
+迪菲-赫尔曼算法的单向性完全根植于初等数论中有限域乘法群的算术不对称性。
+通信双方首先公开商定两个公共参数：一个极大素数 $p$（在现代密码学中通常为 2048 位以上大素数），以及有限域 $\mathbb{Z}_p^*$ 上的一个本原元（生成元）$g$。任何攻击者或监听者都可以自由观察到 $p$ 和 $g$ 的数值。
 
-1. Alice 向 Charles 发送请求（不需要加密或签名）：Alice $\rightarrow$ Charles: {"请给我 Bob 的密钥"}
+协议的执行流程分为私钥选择、公钥推导与终极密钥合成三个严密步骤：
 
-他无法确认消息是否真的来自 Alice，因为网络协议的源地址目标地址不经过身份认证
+```text
+Alice (本地私钥 a)                              Bob (本地私钥 b)
+计算公钥: A = g^a mod p                        计算公钥: B = g^b mod p
+         │                                              │
+         ├─── 公开发送公钥 A ───────────────────────────>│
+         │<─── 公开发送公钥 B ───────────────────────────┤
+         │                                              │
+计算共享秘密:                                   计算共享秘密:
+S_A = B^a mod p = (g^b)^a mod p                 S_B = A^b mod p = (g^a)^b mod p
+                = g^(ab) mod p                                  = g^(ab) mod p
+```
 
-2. Charles 回复 Alice： Charles $\rightarrow$ Alice: {"要与 Bob 通信，请使用公钥$K_{Bpub}$"}$_{Cpriv}$
+#### 计算复杂度的非对称性分析
 
-这里，$\{M\}_k$记号表示使用密钥 k 对消息 M 进行签名。这个例子中，消息使用了 Charles 的私钥（Cpriv）进行签名，消息中包含了 Bob 的公钥 Bpub。当 Alice 收到这条消息后，她可以通过 Charles 的公钥（Cpub）进行验证。如果验证成功，则说明这条消息确实来自 Charles，不会被篡改。
+1. **正向计算极其迅捷**：
+   对于合法参与者 Alice 而言，给定底数 $g$、素数 $p$ 以及随机挑选的私钥 $a$，通过**快速模幂算法（Repeated Squaring / 模重复平方律）**，仅需 $O(\log a)$ 次乘法运算即可在数微秒内完成公钥 $A = g^a \pmod p$ 的计算；
+2. **逆向反解极其困难**：
+   对于网络中间的窃听者 Eve，虽然她完整监听了公开参数 $p, g$ 以及双向公钥 $A, B$，但若想求得私钥 $a$，必须在有限域中求解**离散对数（Discrete Logarithm Problem, DLP）**。对于经过精心挑选的强素数，目前人类已知最快的数域筛法（General Number Field Sieve）在经典计算机上的渐进时间复杂度也是次指数级的，在现实时间尺度内根本无法暴力破解；
+3. **代数对称性闭合**：
+   Alice 与 Bob 最终独立计算出的数值在模算术指数律下严格相等：$(g^b)^a \equiv (g^a)^b \equiv g^{ab} \pmod p$。双方在没有向信道泄露哪怕一个比特私钥的前提下，安全生成了强随机的共享秘密 $S$。该秘密随后通过 HKDF 等单向密钥派生函数处理，直接作为对称加密算法的主密钥使用。
 
-为了说明缺乏明确性（explicit）可能带来的问题，假设前面提到的消息 2 编程以下版本
+### 纯 Diffie-Hellman 的致命死穴：中间人攻击（MitM）
 
-2. Charles 回复 Alice： Charles $\rightarrow$ Alice: {"请使用公钥$K_{Bpub}$"}$_{Cpriv}$
+::: pitfall 纯 Diffie-Hellman 缺乏身份认证
+若攻击者 Eve 能够控制链路，她可在中间截断公钥交换：
+- Eve 与 Alice 协商密钥 $K_{AE} = g^{ae}$；
+- Eve 与 Bob 协商密钥 $K_{EB} = g^{be}$；
+Alice 以为自己在与 Bob 通信，实则双方都在与 Eve 独立加密通信，Eve 可解密篡改所有流量！  
+**结论：任何密钥交换协议必须依赖可信身份认证机制。**
+:::
 
-Alice 无法确定 KBpub 是谁的公钥，这时，一个恶意的对手 Lucifer（曾与 Charles 见过面，但是不知道 Lucifer 是恶意的）可以利用这点发动攻击。攻击方式如下：
+---
 
-1. Lucifer 向 Charles 请求自己的公钥：Lucifer $\rightarrow$​ Charles: {"请给我 Lucifer 的密钥"}
-2. Charles 回复 Lucifer： Charles $\rightarrow$ Lucifer: {"请使用公钥$K_{Lpub}$"}$_{Cpriv}$​
-3. Alice 请求 Bob 公钥： Alice $\rightarrow$ Charles: {"请给我 Bob 的密钥"}
+## 公钥基础设施（PKI）与数字证书
 
-这时，Lucifer 拦截 Charles 的回复，并用**之前存下的回复替换掉它**，然后转发给 Alice
+为了证明“某个公钥确实属于目标实体”，系统引入了受信任的第三方——**证书颁发机构（Certificate Authority, CA）**。
 
-4. （伪造） $\rightarrow$ Alice： {"请使用公钥$K_{Lpub}$"}$_{Cpriv}$
+### 数字证书（X.509）
 
- Charles 的公钥可以验证这条消息的签名，但 Alice 误以为 KLpub（Lucifer 的公钥）是 Bob 的公钥。Lucifer 如果能拦截 Alice 发送给 Bob 的消息，他就可以冒充 Bob。
+CA 为实体签发数字证书，其本质是一份由 CA 私钥签名的数字身份证：
 
-如何防止这种攻击？ 如同前面所说，保持明确性，要与 Bob 通信，请使用公钥 KBpub。
+$$\text{Certificate} = \Big\{\text{Subject: mit.edu}, \text{PublicKey: } K_{\text{pub}}, \text{Validity}, \text{Issuer: DigiCert}\Big\}_{sk_{\text{CA}}}$$
 
-回到正确的协议，当 Alice 收到 Charles 的回复后，她可以使用自己的私钥签名任何想要发送给 Bob 的消息，并且使用 Bob 的公钥加密该消息；Bob 的回复也可以采用相同的方法，即 Bob 通过类似的方式从 Charles 那里获取 Alice 的公钥。
+任何持有 CA 公钥的人都可以验证证书签名，从而确认公钥归属。
 
-> 为什么 Bob 不能直接把公钥发给 Alice？
+### 树状信任链与根证书库
 
-Bob 无法 通过不安全的信道直接发送自己的公钥给 Alice，即使他对公钥进行签名也不行。原因是：Alice 无法相信 一个由未知公钥签名的消息，即公钥自己证明自己的身份是不可信的。如果 Alice 收到 Charles 签名的消息（类似消息 2），她就可以相信该消息的真实性，前提是她信任 Charles 能够谨慎地进行公钥绑定。
+```mermaid
+flowchart TD
+    Root["根证书 (Root CA, 自签名)<br>硬编码于操作系统与浏览器的 Trust Store 中"]
+    Intermediate["中级证书 (Intermediate CA)<br>由 Root CA 私钥签名担保"]
+    Leaf["服务器叶子证书 (Leaf Cert, mit.edu)<br>由 Intermediate CA 私钥签名担保"]
 
-Charles 作为证书颁发机构（CA），这样的消息（消息 2）被称为证书，它包含 Bob 的名字和公钥，证明 Bob 和该公钥之间的绑定关系。如果 **Bob 事先从 Charles 那里获得了这份证书**，他也可以直接**把这份证书发送给 Alice**，而不需要 Alice 额外向 Charles 询问 Bob 的公钥。在该协议中，Charles 的角色是证书颁发机构（Certificate Authority, CA），负责验证公钥的归属并提供可信的公钥分发服务。这种基于证书的公钥分发方法，后来发展为公钥基础设施（PKI），并被广泛应用于 SSL/TLS 证书、电子签名 等安全通信场景
+    Root ==>|"签名认证"| Intermediate
+    Intermediate ==>|"签名认证"| Leaf
+```
 
-### 设计安全协议
+操作系统与浏览器出厂时预埋了受信任根 CA 的公钥库。当访问服务端时，服务端提供完整证书链，客户端递归向上验证至受信任根证书，粉碎了中间人伪造公钥的企图。
 
-安全协议除了底层密码学转换所面临的攻击外，还容易受到几种攻击。
+---
 
-- 已知密钥攻击，攻击者获取了之前使用的某个密钥，然后利用这些信息来确定新的密钥。
-- 重放攻击：攻击者记录了会话的一部分，并在稍后重新播放这些部分，希望接收方将重放的消息视为新消息
-- 冒充攻击：攻击者冒充协议中的其他参与方。这种攻击的一个常见版本是中间人攻击，攻击者在两个参与方之间中继消息，冒充每个参与方与对方通信，并在消息传递过程中读取它们。
-- 反射攻击：攻击者记录了会话的一部分，并将其重放给最初发送该消息的一方。使用共享密钥的协议有时容易受到这种特殊类型的重放攻击
+## 安全协议的设计陷阱与用例演进
 
-### 认证协议
+在设计安全协议时，即使底层密码算法完备，协议交互逻辑的微小疏漏也会引发严重攻击。
 
-为了说明设计安全协议时遇到的问题，我们将介绍两个简单的认证协议。第二个协议使用了质询-响应机制
+### 攻击类型归纳
+- **已知密钥攻击**：攻击者利用旧会话密钥破解后续通信；
+- **重放攻击（Replay Attack）**：记录有效历史密文并在稍后重新注入；
+- **冒充与中间人攻击（Impersonation / MitM）**：伪装通信参与方进行流量拦截与欺骗；
+- **反射攻击（Reflection Attack）**：将一端发送的数据重放给发送方自身。
 
-### 一个错误的密钥交换协议
+### 显式设计原则（Be Explicit Principle）
 
-质询-响应协议（challenge-response protocol）在 SSL/TLS 之上运行时，假设 SSL/TLS 能够建立一个机密且经过认证的通信信道，而这需要通信双方能够在不受信任的网络上安全地交换密钥。这种密钥交换是可行的，但必须谨慎处理。我们考虑两种不同的密钥交换协议。第一个协议是不正确的，而第二个（据目前所知）是正确的。这两个协议的目标相同，即让双方使用公钥系统协商一个共享密钥，该密钥可用于加密通信。
+以一个错误的密钥交换协议为例：
 
-在第一个协议中，有三方参与：Alice、Bob 和证书授权机构（CA）。协议流程如下：
+1. Alice $\rightarrow$ CA: `{"请给我 Alice 和 Bob 的证书"}`
+2. CA $\rightarrow$ Alice: `{"这里是证书：", {Alice, A_pub, T}_CApriv, {Bob, B_pub, T}_CApriv}`
+3. Alice $\rightarrow$ Bob: `{"提议密钥：", {Alice, A_pub, T}_CApriv, {K_AB, T}_Apriv}^Bpub`
+4. Alice $\Rightarrow$ Bob: `{"业务数据", T}^K_AB`
 
-1. Alice $\rightarrow$ CA: {"请给我 Alice 和 Bob 的证书"}
-2. CA $\rightarrow$ Alice：{"这里是是证书：", {Alice， A$_{pub}$， T}$_{CApriv}$, {Bob， B$_{pub}$， T}$_{CApriv}$}
+::: pitfall 违反显式原则的漏洞
+注意消息 3 中 Alice 提议的共享密钥 `{K_AB, T}_Apriv`。该签名**只包含密钥和时间戳，未明确绑定 Bob 的身份标识**！  
+恶意对手 Bob 收到该消息后，可以将其原封不动嵌套进自己发给 Charles 的消息中，声称自己是 Alice。Charles 验证 Alice 的签名通过，误以为在与 Alice 共享密钥，造成严重越权。  
+**显式设计原则要求：所有签名与加密必须在语义中完整固化双方主体标识与上下文意图。**
+:::
 
-这个协议中，CA 返回了 Alice 和 Bob 的证书，这个证书将名称绑定到了各自的公钥，每个证书斗殴一个时间戳来判断证书是否是新鲜的，并且由 CA 签名。拿到 CA 提供的证书后，Alice 构造一个加密消息发送给 Bob：
+---
 
-3. Alice $\rightarrow$ Bob: {"这是我的证书和一个提议的密钥: ", " {Alice， A$_{pub}$， T}$_{CApriv}$",  {K$_{AB}$, T}$_{Apriv}$}$^{Bpub}$
+## 现代传输层安全标准：TLS 1.3 握手时序
 
-该消息包含 Alice 的证书以及她提议的共享密钥（$K_{AB}$）。Bob 可以使用 CA 的公钥验证 Apub 是否确实来自 Alice。共享密钥$K_{AB}$由 Alice 使用她的私钥签名，Bob 可以用$A_{pub}$验证其真实性。该消息整体使用 Bob 公钥加密，因此只有 Bob 能够读取$K_{AB}$，随后 Alice 用$K_{AB}$加密消息发送给 Bob：
+现代互联网的基石协议 **TLS 1.3（RFC 8446）** 摒弃了老旧协议冗余，实现了 **1-RTT 单往返握手** 与全生命周期的高强度防护：
 
-4. Alice ⇒ Bob：{"这是我的消息：", …… T}$^{K_{AB}}$
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Client as 客户端
+    participant Net as 不可信公开网络
+    actor Server as 服务器 (mit.edu)
 
-这个协议存在什么问题？提示：注意 Alice 在消息 3 中只对部分内容进行了签名，而不是对整条消息签名。请记住，我们应该假设协议的某些参与方可能是攻击者。
+    Client->>Server: 1. ClientHello<br>• 支持加密套件 (如 TLS_AES_256_GCM_SHA384)<br>• 客户端随机数 ClientRandom<br>• 【KeyShare】携带临时 ECDH 公钥 g^a
+    
+    Note over Server: 服务器收到 g^a 后生成临时私钥 b，<br>瞬间计算出会话密钥 K = g^(ab) mod p!
+    
+    Server->>Client: 2. ServerHello (公开发送服务器临时公钥 g^b)
+    Server->>Client: 3. 【密文】EncryptedExtensions
+    Server->>Client: 4. 【密文】Certificate (发送 X.509 官方证书链)
+    Server->>Client: 5. 【密文】CertificateVerify (服务端用证书私钥对全握手转录签名)
+    Server->>Client: 6. 【密文】Finished (全握手 HMAC 校验)
 
-这个协议存在潜在问题的原因应该是显而易见的，因为它违反了 **显式设计原则**（be explicit design principle）。协议的核心部分出现在消息 3 中，其中包含 Alice 提议的共享密钥：{K$_{AB}$, T}$_{Apriv}$， Alice 告诉 Bob，KAB 在时间 T 时是 Alice 和 Bob 之间的合适的密钥。但是缺少**Alice 和 Bob 的名字**。这意味着这段消息的解释取决于对话的上下文。因此，Bob 可以利用这部分消息伪装成 Alice。例如，Bob 可以向 Charles 发送一条消息，声称自己是 Alice，并提议使用 KAB 进行加密通信。
+    Note over Client: 客户端计算 K = g^(ab) mod p!<br>验证证书链合法性与 CertificateVerify 签名
+    Client->>Server: 7. 【密文】Finished
+    
+    Note over Client,Server: 握手圆满完成 (1-RTT)! 开始全速传输应用数据
+```
 
-假设 Bob 想冒充 Alice 与 Charles 进行通信，他可以按照以下步骤操作：
+### TLS 1.3 极速握手的关键设计拆解
 
-1. Bob $\rightarrow$ CA ：{"请给我 Bob 和 Charles 的证书"}
-2. CA $\rightarrow$ Bob：{"这里是证书：", {Bob, B$_{pub}, T'$}$_{CApriv}$，{Charles, C$_{pub}$, T'}$_{CApriv}$}
-3. Bob $\rightarrow$ Charles：{"这是我的证书和一个提议的密钥: ", " {Alice， A$_{pub}$， T}$_{CApriv}$",  {K$_{AB}$, T}$_{Apriv}$}$^{Cpub}$
+相较于早期版本需要 2 个完整的网络往返（2-RTT）才能建立加密通道，TLS 1.3 在体系结构上做出了三个颠覆性改进：
 
-Bob 精心构造了消息 3， 他在消息中放入了 Alice 的证书（这是他从与 Alice 交谈时获取的），而不是提议一个新的密钥，他直接插入了 Alice 签名的 KAB 提议。Charles 无法判断这条消息 3 并非来自 Alice。事实上，他会认为这条消息确实是 Alice 发送的，因为{KAB, T} 是用 Alice 的私钥签名的。因此，Charles 误以为他拥有了一个仅与 Alice 共享的密钥，但实际上 **Bob 也掌握了 KAB**
+1. **预判式密钥共享（KeyShare）**：
+   在老旧版本中，客户端首先发送支持的算法清单，服务器选定后再在第二个往返中交换密钥参数；TLS 1.3 中，客户端在第 1 步的 `ClientHello` 报文中便直接**乐观推测**常用曲线（如 X25519），并将自己的临时公钥 $g^a$ 随报文一并发出。服务端收到后能立即在本地计算出会话密钥，直接将握手延迟削减一半；
+2. **握手元数据强制加密**：
+   从第 3 步 `EncryptedExtensions` 开始，所有后续控制报文均已处于对称会话密钥的强力加密保护之下。包括服务端证书链在内的所有身份标识，网络监听者在物理光纤中再也无法看到明文，彻底封堵了基于服务端证书实施的流量指纹追踪；
+3. **防篡改转录签名（Transcript Hash Signature）**：
+   在第 5 步与第 6 步中，服务端使用长期私钥对**此前网络中交互的所有原始报文的累积加密哈希值**进行数字签名，客户端亦发送 `Finished` 校验。任何试图在握手早期降级加密套件或篡改随机数的中间人，都会导致双方转录哈希失配，从而被协议底层强制熔断。
 
-然后，Bob 可以向 Charles 发送消息：
-
-1. Bob ⇒ Charles：{"请把商业机密计划发给我。——你亲爱的 Alice"}KAB
-
-这个攻击的一个 **基本前提** 是，攻击者（Bob）**在某些方面是受信任的**。因为 Alice **必须先与 Bob 进行通信**，Bob 才能利用这次对话的结果冒充 Alice。这个问题的根源：缺乏显式性。这个案例表明，**试图通过加密来实现身份认证是一个基本上错误的做法**，因此现在这种方法已被认为是不安全的设计原则
+::: insight 前向保密性（Perfect Forward Secrecy, PFS）
+在 TLS 1.3 中，所有传统的静态 RSA 密钥交换被彻底废止，强制采用**临时椭圆曲线迪菲-赫尔曼（ECDHE）**。每次连接的私钥 $a, b$ 仅暂存于内存，**连接关闭后即刻销毁**。即使未来攻击者窃取了服务端的长期证书私钥，也因历史临时私钥的不可逆销毁，永远无法解密此前录制拦截的历史通信流量。
+:::

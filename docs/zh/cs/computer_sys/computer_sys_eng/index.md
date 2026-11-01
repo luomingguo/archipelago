@@ -3,12 +3,19 @@ title: 6.1800 计算机系统工程
 type: course
 course: 6.1800 计算机系统工程
 course_id: '6.1800'
-tags: []
+tags: [operating-systems, computer-networks, distributed-systems, system-security, computer-systems]
 status: complete
 ---
 # 6.1800 计算机系统工程
 
 [6.1800 | Spring 2026 | Schedule (mit.edu)](https://web.mit.edu/6.1800/www/)
+
+## TL;DR
+
+- MIT 6.1800（原 6.033）围绕“控制复杂度、保障容错、实现伸缩与纵深防御”四大主线展开，横跨单机操作系统、计算机网络、分布式系统与系统安全四大基石。
+- 操作系统通过虚拟内存、线程控制块（TCB）与虚拟机监视器（VMM）实现处理器与内存的强模块化虚拟隔离。
+- 计算机网络坚守端到端论据（End-to-End Argument），依托 BGP 层次化路由与 TCP 拥塞控制维系全球异构互联。
+- 分布式系统基于 WAL 预写日志、2PC 与共识算法在不可靠组件之上构筑原子事务与容错副本；安全体系以最小权限与加密信道抵御低级利用与网络对抗。
 
 ## 先行条件
 
@@ -18,7 +25,7 @@ status: complete
 
 ## 课程描述
 
-![image-20250909163506060](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250909163506060.png)
+![MIT 6.1800 官方课程大纲与四大主题架构示意图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20250909163506060.png)
 
 6.033 课程旨在全面覆盖计算机科学和工程中的关键领域，具体包括以下四个方面：
 
@@ -158,6 +165,8 @@ Saltzer, Jerome H., and M. Frans Kaashoek. *Principles of Computer System Design
 
 - 为什么我们需要原子交换操作来实现锁？
 
+[lec4.md](./lec4.md)
+
 ## Lec 5 线程技术加强模块化
 
 > 阅读参考书 §5.5, §5.6
@@ -235,7 +244,7 @@ Saltzer, Jerome H., and M. Frans Kaashoek. *Principles of Computer System Design
 
 ## Lec 8 计算机网络介绍
 
-![截屏 2024-07-04 16.17.54](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66865ab93619e.png)
+![计算机网络分层体系结构：应用层、传输层、网络层与链路层](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66865ab93619e.png)
 
 随着系统的发展，我们需要考虑，如何将一组链路加入到网络中。
 

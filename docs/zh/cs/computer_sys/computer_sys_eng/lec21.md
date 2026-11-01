@@ -1,34 +1,54 @@
 ---
-title: '安全介绍&身份认证'
+title: '安全介绍与身份认证'
 type: lecture
 lecture: 21
-tags: []
+tags: [authentication, password-hashing, rainbow-tables, challenge-response]
 status: complete
 ---
-# Lec 21 安全介绍&身份认证
 
-> 阅读参考书 §11.2
+# Lec 21 安全介绍与身份认证
 
-## 思考题
+> 课程：MIT 6.1800 Computer System Engineering  
+> 参考材料：Saltzer & Kaashoek 教材第 11 章（§11.2）及官方授课大纲
 
-- 解释哈希函数的基本性质，并将其与各种密码存储方案联系起来（例如，哈希函数的抗碰撞性如何帮助我们存储密码？）。
-- 我们的目标（policy）是什么？我们的假设/ 威胁模型（thread model）是什么？
-- 你不需要理解哈希函数背后的数学原理，感兴趣的话可以 wiki SHA-2。我们关注的是将哈希函数作为一种加密基础原语，用于构建更安全的系统。
-- 解释攻击者如何用彩虹表破解用户的密码，即使系统存储的是哈希后的密码；给定一张彩虹表，尽可能多地恢复用户密码
-- 解释”慢“哈希函数的好处
-- 解释攻击者如何采用彩虹表破解（部分）用户密码，即使系统存储的是使用慢哈希函数处理后的代码；给定一张彩虹表，尽可能多地恢复密码
-- 解释盐化哈希如何缓解彩虹表攻击。
-- 针对上述任意密码存储方案，实现用户身份验证（即实现 `check_password` 函数）
-- 解释 Cookie 和 challenge-response 协议所解决的问题
-- 身份验证的目标是什么？
+**开场白**
 
-## 计算机系统安全模型
+在前面的 20 讲中，我们建立了一套极其完备的工程武器库：
 
-保护计算机系统免受攻击的核心问题是身份认证。系统在执行操作前需要回答以下问题：
+- 我们抵御了物理磁盘损坏（RAID）；
+- 我们抵御了机器断电死机（WAL & 崩溃恢复）；
+- 我们抵御了网络链路丢包与拥塞（TCP & RED）；
+- 我们甚至抵御了网络分区与服务器硬件起火（Raft 共识）。
 
-1. **真实性（Authenticity）**：声明的身份是否真实？
-2. **完整性（Integrity）**：请求是否由该主体发出，未被篡改？
-3. **授权（Authorization）**：该主体是否有权限执行该操作？
+但是，请大家注意前面所有容错假设的一个共同潜台词：我们此前面对的敌人，始终是“无意识的大自然物理规律”。然而，从今天开始，真实世界中最狡黠、最富有智慧、最有耐心的人类恶意攻击者（Adversaries / Hackers）正式登场。
+
+## 系统安全的三大支柱
+
+任何一个安全系统，都在捍卫这三项神圣属性：
+
+- **机密性（Confidentiality）**：只有授权主体能够读取数据，抵御窃听与信息泄露；
+- **完整性（Integrity）**：只有被合法授权的实体才能修改数据；任何未经授权的篡改都会被瞬间精准察觉（防篡改、防伪造）；
+- **可用性（Availability）**：合法的用户随时能够正常访问和使用系统资源（防死锁、防拒绝服务攻击）
+
+简称**CIA三元祖（CIA Triad）**
+
+
+## 威胁模型
+
+在评估任何系统安全之前，**第一句必须问的话永远是：你的威胁模型是什么？**
+
+- 谁是攻击者？（是隔壁宿舍好奇的同学？是一个有组织的跨国网络犯罪集团？还是拥有数十亿美元算力与超级计算机的国家级情报机构？）
+- 攻击者的物理能力是什么？（他能不能窃听公共 Wi-Fi 信号？他能不能伪造任意 IP 数据包？他能不能物理拆开服务器芯片量测电压？）
+
+
+1883 年，密码学家奥古斯特·柯克霍夫提出了密码学最伟大的原则：
+
+*“一套安全系统的保密性，绝对不能依赖于算法或设计架构本身的隐蔽保密；算法细节完全可以公之于众，系统的终极安全必须仅仅维系在密钥（Key）的机密性之上！”*
+
+在工程上，试图通过“不公开源码”、“自己发明一套神秘的私有加密逻辑”来求得安全的做法，被称为**隐蔽式安全（Security through Obscurity）**，在黑客面前是纯粹的掩耳盗铃，不出三个月就会被逆向工程彻底攻破！
+
+
+---
 
 ## 认证的基本概念
 
@@ -37,173 +57,159 @@ status: complete
 1. **会面阶段（Rendezvous）**：个人访问权威机构，建立身份标识符，并商定认证方法。
 2. **身份验证阶段（Verification of Identity）**：主体提交身份凭证，系统验证其真实性。
 
-身份认证方法：
+身份认证凭据通常基于三类要素：
+- **记忆信息**（Something you know）：密码、PIN 码、加密私钥；
+- **持有物品**（Something you have）：磁条卡、智能硬件令牌、手机短信/TOTP；
+- **生物特征**（Something you are）：指纹、面容、声纹。
 
-- **生物特征**（指纹、人脸等）
-- **持有物品**（磁条卡、智能卡）
-- **记忆信息**（密码、PIN 码、加密密钥）
+---
 
 ## 逐步改进的密码存储方案
 
 ### 版本 1——明文存储
 
-![截屏 2024-07-01 17.55.10](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66827d0628b11.png)
+![明文密码存储架构图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66827d0628b11.png)
 
-验证用户身份接口
+验证用户身份接口：
 
 ```python
 # 第一个版本，明文存储到服务器上
-check_password(username, inputted_password):
-  stored_password = account_table[username]
-  return stored_password == inputted_password
+def check_password(username, inputted_password):
+    stored_password = account_table[username]
+    return stored_password == inputted_password
 ```
 
-**问题**： 攻击者能够直接读取到用户密码的
+::: pitfall 明文存储的灾难
+一旦数据库发生 SQL 注入泄露或遭遇物理失窃（拖库），全网所有复用该密码的用户账户将瞬间遭到毁灭性打击。
+:::
 
 ---
 
 ### 版本 2——哈希存储
 
-计算机系统中最常用的身份验证的方法——基于密码，
+为了解决密码直接存储带来的弱点，可以采用密码的加密哈希值而非明文存储密码。
 
-这种方式有显著的缺点，存储在系统中的密码副本称为攻击者的目标。为了解决密码直接存储带来的弱点，可以采用密码的加密哈希值而非明文存储密码。
+**加密哈希函数**将任意长的字节数组 $M$ 映射到固定长度的值 $V$（例如 SHA-256），具有如下**性质**：
 
-**加密哈希函数**，将任意长的字节数组 M 映射到固定长度的值 V，将会有如下**性质**：
+- **确定性（Deterministic）**：对于给定的输入 $M$，很容易计算出 $V \leftarrow H(M)$；
+- **单向性（Pre-image Resistance）**：已知 $V$，在计算上无法反推出明文 $M$；
+- **次原像抗性（Second Pre-image Resistance）**：给定 $M$，难以找到另一输入 $M' \neq M$ 使得 $H(M) = H(M')$；
+- **抗碰撞性（Collision Resistance）**：难以在全域找到任意两个不同的输入 $M_1 \neq M_2$ 使得 $H(M_1) = H(M_2)$。
 
-- **确定性**，对于给定的输入 M，很容易计算出 V <- H(M)， H 是哈希函数
-- **单向性**，如果只知道 V，很难计算出 M
-- 难以找到另外一输入 M'使得 H(M) = H(M')， 这也是很困难的
-- **抗碰撞性**。计算出的哈希值 v 尽可能短，但需要保证足够长，来保持很低的哈希冲突的概率（即让第 3 点成立），典型的大小是 160-256 个比特
-
-这种设计的难点在于如何设计这样的加密哈希函数，特别是性质 3。SHA(secure hash algorithms)为该方式一种解决方案。像大多数加密函数一样，是计算上安全的。它们的设计使得破解它们在计算上是不可行的，而不是不可能的。其理念是，如果破解一个特定函数很长很长时间，那么我们可以认为这个函数是安全的。像这类加密哈希函数少之又少，而且仅存的哈希函数的存在也都是被大众所知的。
-
-验证用户身份接口
+验证用户身份接口：
 
 ```python
-# 第2版本
-check_password(username, inputted_password):
- stored_hash = accounts_table[username]
- inputted_hash = hash(inputted_password)
- return stored_hash == inputted_hash
+# 第 2 版本：单向哈希
+def check_password(username, inputted_password):
+    stored_hash = accounts_table[username]
+    inputted_hash = hash(inputted_password)
+    return stored_hash == inputted_hash
 ```
 
-> 这样一来，一个攻击者在只获得用户 3 密码的哈希值的情况下，是否能推断出用户 3 的实际密码？
+> **思考**：攻击者在只获得哈希值的情况下，是否能推断出用户的实际密码？  
+> 理论上无法直接反推，但攻击者可以使用**彩虹表（Rainbow Table）**发起空间换时间的离线攻击。
 
-不能， 现在攻击者无法直接从表中读取密码，也不能通过反转哈希函数来获得密码。
+![彩虹表哈希映射预计算攻击](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66827bd757025.png)
 
-But,
-
-**问题**： 攻击者可以采用“**彩虹表**”攻击。 攻击者可以预先创建一个表格，将密码映射到它们的哈希值，并将这些信息保存起来。这样做的目的是为了在需要时快速地通过比较哈希值来确定用户的密码。这种预先计算和存储哈希值的方式称为“**彩虹表**”攻击。
-
-![截屏 2024-07-01 17.50.04](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66827bd757025.png)
-
-> [!NOTE]
->
-> 冷知识，在我手提电脑上算 1000 万个哈希值，也只需要 8 秒上下 。
-
-因为用户而言，总会有人设置一些比较简单的密码，比如 tfboy，这样以来，可以通过常用的几个哈希函数将其映射（“彩虹表”），我只需要将获取到的哈希值与彩虹表对比，看是否命中。命中了，我就知道用什么哈希函数，及其密码了。
-
-----
-
-### 版本 3——慢哈希函数
-
-其他地方可能叫密钥派生函数（key derivation functions）
-
-**慢哈希函数**，将任意长的字节数组 M 映射到固定长度的值 V，将会有如下**性质**：
-
-- **确定性**，如果 x1=x2 则 H(x1) = H(x2)
-- **单向性**，给定 x，很容易但却**很慢**计算出 H(x)，但是知道 H(x)(x 除外)，但是很难推出 x
-  - 之前是纳秒级，现在是秒级
-- **抗碰撞性**。如果 x1 ≠ x2, 则 H(x1) = H(x2)的概率非常低，可视为 0
-
-验证用户身份接口
-
-```python
-# 第三个版本
-check_password(username, inputted_password):
- stored_hash = accounts_table[username]
- inputted_hash = slow_hash(inputted_password)
- return stored_hash == inputted_hash
-```
-
-> 对于慢哈希函数方案，攻击者是否可以像以前一样生成彩虹表？对较少的密码来说是否可行？
-
-攻击者可以尝试生成彩虹表，但由于每次计算的时间较长，他们能覆盖的密码数量会受到极大限制。
-
-**我们希望使得攻击者即使对于常见密码也很难预先计算出哈希值**。这又该怎么做呢？
-
-办法： 添加随机数混淆
-
-### 版本 4——加盐哈希（Salted Hashing）
-
-我们对每个用户关联一个随机数，我们称之为“盐值”(salt)，这些盐以明文形式存储，它们不是一个秘密。我们将密码和盐值进行拼接，然后进行哈希处理存储
-
-![截屏 2024-07-01 19.21.38](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6682914d7f4cd.png)
-
-验证用户身份接口
-
-```python
-# 第四个版本
-check_password(username, inputted_password)
- stored_hash = accounts_table[username].hash
- salt = accounts_table[username].salt
- inputted_hash = slow_hash(inputted_password | salt)
- return stored_hash == inputted_hash
-```
-
-> 对于加盐哈希方案，攻击者是否可以像以前一样生成彩虹表？
-
-为了预先计算出哈希表，即使只是最常见的密码，攻击者也需要为每一个可能的盐制作一个单独的表；这是不可行的。
-
-要针对特定用户——比如 user1——攻击者可以读取 user1 的盐，然后使用该盐制作一个表。user1 的密码越常见，越有可能被破解，他们事先不知道盐，就不太可能预先计算这个表。
+因为人类倾向于设置常见弱密码（如 `123456`、`password`），攻击者可预先将全球最常见数千万个密码的哈希值全部计算并落盘。一旦拖库成功，仅需常数级查表即可瞬间还原大量弱密码。
 
 ---
 
-## Cookie 机制与身份验证
+### 版本 3——慢哈希函数（Key Derivation Functions）
 
-为了密码最小化曝光，Cookies 允许用户在一段时间内不需要身份验证，来避免重复提交密码
+标准哈希函数（如 SHA-256）在硬件中设计为**追求极速**（单核每秒计算数百万次），这使得 GPU 与 ASIC 矿机能每秒穷举数十亿个候选密码。
 
-这里我们需微调一下我们的威胁模型： 对手可以观察到 cookie，并尝试获取用户的密码，或者获取足够的信息以便创建长时间有效的 cookie。![截屏 2024-07-01 20.01.35](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66829aa64db65.png)
+**慢哈希函数**引入可调节工作量因子（Work Factor），故意让单次哈希计算耗费数十至数百毫秒计算资源：
 
-首先我们了解他的大致流水，可看出 cookie 就是服务器给用户的身份凭证。
+- **确定性**：输入一致则输出一致；
+- **计算阻滞**：引入大量循环迭代（如 PBKDF2 的数万次迭代）；
+- **内存硬度（Memory-Hardness）**：如 Argon2 与 scrypt，强行要求占用数兆至数十兆 RAM，封杀专用芯片并行穷举。
 
-为了解释 cookie 长什么样，我们首先需要知道服务器有一个与其绑定的唯一密钥 server_key，并并以不需要担心它的存储安全性为前提。
-
-```text
-cookie = {user, expiration, H(server_key|user|expiration)}
+```python
+# 第 3 版本：慢哈希函数
+def check_password(username, inputted_password):
+    stored_hash = accounts_table[username]
+    inputted_hash = slow_hash(inputted_password)
+    return stored_hash == inputted_hash
 ```
 
-防范措施：
+> **评估**：慢哈希函数限制了彩虹表构建的速度，但对于最常见的数百个极弱密码，攻击者依然可以耗费算力预计算。
 
-- 限制 cookie 过期时间
-- 绑定用户设备信息
-- 采用 HTTPS 保护 cookie 传输
+---
 
-## 挑战-响应协议
+### 版本 4——加盐哈希（Salted Hashing）
 
-针对网络钓鱼攻击，我们可以采取哪些防范？ 挑战-响应协议（challenge-response protocols）是一种身份验证方法，其特点是在不传输密码的情况下验证用户身份。这些协议通常涉及服务器向客户端发送一个挑战（challenge），而客户端则根据事先协商好的算法和密钥生成一个响应（response），用于证明其身份的有效性。
+为了彻底摧毁彩虹表的复用价值，系统对每个用户分配一个密码学安全的随机值——**盐（Salt）**。盐以明文形式公开存储在账户表中，它不是秘密。
 
-为了便于说明， 我们设想服务器仅存储用户名和密码。首先，不是客户端发送账号密码，而是我们的服务器先发送一个随机数 458653，这是一个挑战，客户端会回复他们的密码和随机数串联后得出的 hash 值。在服务器端，可以计算出相同的 hash 值则通过。
+![加盐哈希架构图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6682914d7f4cd.png)
 
-![xian](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6682999544fc4.png)
+验证用户身份接口：
 
-这里我们再微调一下我们的威胁模型： 对手经营着一个服务器，并尝试说服用户在他们的服务器发送密码
+```python
+# 第 4 版本：加盐慢哈希
+def check_password(username, inputted_password):
+    stored_hash = accounts_table[username].hash
+    salt = accounts_table[username].salt
+    inputted_hash = slow_hash(inputted_password + salt)
+    return stored_hash == inputted_hash
+```
 
-![截屏 2024-07-01 20.01.26](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66829a9d36276.png)
+::: theorem 加盐防御彩虹表的数学机制
+若盐的长度为 64 位（约 $1.8 \times 10^{19}$ 种可能），攻击者要使用彩虹表，就必须为全网每一个独立盐单独构建一张覆盖常见词汇的哈希表。全域彩虹表的空间复杂度由 $O(P)$ 骤升至 $O(P \times 2^{64})$，这在物理存储上是不可能的，黑客被迫退化为针对单人的高成本在线暴力试错。
+:::
 
-**优势**：避免密码在网络中直接传输，防止中间人攻击。
+---
 
-有没有替代密码登陆方案？
+## Cookie 机制与会话凭证保护
 
-- 密码管理器，但是你需要付诸对密码管理器编写者的信任。
-- 使用用户的唯一物理特性，例如面部、声音、指纹等
-- 双因素认证（2FA）（额外设备验证）
+为了减少密码的网络暴露频次，HTTP 使用 Cookie 维持认证会话状态，避免重复提交密码。
 
-## 设计安全协议的原则
+![Cookie 会话管理流水线](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66829aa64db65.png)
 
-1. 认证主体身份与服务身份。
-2. 密码不通过网络传输。
-3. 限制每个会话的认证凭据使用。
-4. 采用消息认证机制（如 HMAC）防止篡改。
+服务器利用仅自己知晓的机密密钥 `server_key` 为用户生成带有有效期的防伪会话凭证：
 
-​
+```text
+cookie = {user, expiration, HMAC(server_key, user || expiration)}
+```
+
+::: definition 现代 Web Cookie 三大防御属性
+1. **`Secure`**：强制浏览器仅在底层为 HTTPS 的加密通道中传输该 Cookie，免疫明文 Wi-Fi 抓包窃听；
+2. **`HttpOnly`**：禁止客户端 JavaScript 脚本读取该 Cookie（`document.cookie` 不可见），阻断 XSS 漏洞盗取会话；
+3. **`SameSite`（Strict / Lax）**：限制第三方站点跨站携带本站 Cookie，从源头粉碎跨站请求伪造（CSRF）。
+:::
+
+---
+
+## 质询-应答协议（Challenge-Response Protocols）
+
+在不安全的公开信道中，如何向对端证明“我知道密码 $K$”，却**绝不在信道上发送任何明文密码**？
+
+质询-应答协议通过引入一次性随机数（Nonce）实现证明：
+
+![质询应答协议基本交互流程](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6682999544fc4.png)
+
+1. 客户端发起登录：“我是 Alice”；
+2. 服务端生成单次随机数 $R$（Challenge）发送给客户端；
+3. 客户端利用共享秘密 $K$ 计算：$\text{Response} = H(K \parallel R)$ 发回；
+4. 服务端在本地独立计算对比，一致则认证成功。
+
+![钓鱼服务器与恶意假冒威胁模型](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66829a9d36276.png)
+
+::: insight 作者见解与机制辨析
+质询-应答协议的核心价值在于**将密码知识的证明转化为基于 Nonce 的临时不可逆签名**。网络窃听者截获了 $R$ 和 $H(K \parallel R)$，不仅无法反解 $K$，而且无法在下一轮认证中重放（Replay Attack），因为服务端的下一轮 Challenge 必为全新的不可预测随机数。
+:::
+
+---
+
+## 设计安全认证协议的核心原则
+
+1. **双向认证**：不仅用户需要认证服务器，客户端也必须校验服务端合法性，防范钓鱼中继；
+2. **零密码网络明文暴露**：优先采用质询-应答或基于公钥的挑战签名机制；
+3. **凭据生命周期受限**：会话 Token 设置严格过期时限并引入滑动失效；
+4. **强完整性校验**：所有敏感会话凭据均需结合加密哈希（HMAC）防范篡改。
+
+## TL;DR
+
+- **威胁模型先行**：安全系统设计必须首先确立攻击者能力与信任边界，严格遵循柯克霍夫原则（Kerckhoffs's Principle），绝不依赖算法隐蔽。
+- **密码加盐粉碎彩虹表**：明文随机盐（Salt）强制使每个用户的预计算映射独立，消除了跨用户的空间换时间字典攻击；配合慢哈希函数（bcrypt/Argon2）抵御硬件暴力破解。
+- **最小暴露与凭证隔离**：HTTP Cookie 需配置 `Secure`、`HttpOnly` 与 `SameSite` 防止网络嗅探与 XSS 窃取；质询-应答（Challenge-Response）协议实现零密码网络暴露认证。

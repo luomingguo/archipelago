@@ -14,7 +14,7 @@ status: complete
 - 线性一致 vs 顺序一致：线性一致要求顺序尊重真实墙时；顺序一致只要求看起来串行，不要求实时序。
 - 高可用与强一致根本折中：最终一致（Dynamo/Cassandra）任意副本读写、吞吐高但有陈旧；线性一致（Spanner/S3）须等副本、可用性受限。
 
-> 课件：[Consistency and Linearizability (l-linearizability.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-linearizability.txt)；论文：[Linearizability (Herlihy & Wing)](https://pdos.csail.mit.edu/6.5840/papers/p463-herlihy.pdf)（读到 §3.1）；[FAQ](https://pdos.csail.mit.edu/6.5840/papers/linearizability-faq.txt)
+> 课件：[Consistency and Linearizability (l-linearizability.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-linearizability.txt)；论文：[Linearizability (Herlihy & Wing)](https://pdos.csail.mit.edu/6.5840/papers/p463-herlihy.pdf)（读到 §3.1）；[FAQ](https://pdos.csail.mit.edu/6.5840/papers/linearizability-faq.txt)  
 
 ## 课件精讲：一致性模型与线性一致性
 

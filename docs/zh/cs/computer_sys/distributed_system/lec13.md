@@ -10,6 +10,7 @@ status: complete
 > 课件：[Chain Replication (l-cr.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-cr.txt)；论文：[CR (2004)](https://pdos.csail.mit.edu/6.5840/papers/cr-osdi04.pdf)；[FAQ](https://pdos.csail.mit.edu/6.5840/papers/cr-faq.txt)
 >
 > 本讲两条线：① **链式复制**（本讲正题，强一致 + 负载分摊的主备变体）；② **VMware FT**（一个机器指令级的主备复制案例，见文末「附」）。
+>
 
 ## TL;DR
 

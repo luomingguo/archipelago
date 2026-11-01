@@ -15,8 +15,8 @@ status: complete
 
 ## 课程资料与概述
 
-**LEC 15:** [Big Data: Spark](http://nil.csail.mit.edu/6.824/2022/notes/l-spark.txt), [video](https://youtu.be/qXb5rDGqFdc)
-**Preparation:** Read [Spark (2012)](http://nil.csail.mit.edu/6.824/2022/papers/zaharia-spark.pdf) ([FAQ](http://nil.csail.mit.edu/6.824/2022/papers/spark-faq.txt)) ([Question](http://nil.csail.mit.edu/6.824/2022/questions.html?q=q-spark&lec=15))
+**LEC 15:** [Big Data: Spark](http://nil.csail.mit.edu/6.824/2022/notes/l-spark.txt), [video](https://youtu.be/qXb5rDGqFdc)  
+**Preparation:** Read [Spark (2012)](http://nil.csail.mit.edu/6.824/2022/papers/zaharia-spark.pdf) ([FAQ](http://nil.csail.mit.edu/6.824/2022/papers/spark-faq.txt)) ([Question](http://nil.csail.mit.edu/6.824/2022/questions.html?q=q-spark&lec=15))  
 
 Bigtable 的开源版本（如 HBase）
 

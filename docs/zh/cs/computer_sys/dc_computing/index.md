@@ -5,9 +5,6 @@ course: 6.S984 数据中心计算
 course_id: '6.S984'
 tags: []
 status: complete
-titleTemplate: 公开课
-description: Ron的计算机课堂
-layout: doc
 ---
 # 6.S984 数据中心计算
 ## 先行条件
