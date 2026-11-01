@@ -2,7 +2,7 @@
 title: 事务（原子性+隔离性）
 type: lecture
 lecture: 16
-tags: []
+tags: [transactions, atomicity, shadow-copies, copy-on-write]
 status: complete
 ---
 # Lec 16 事务（原子性+隔离性）
@@ -10,6 +10,14 @@ status: complete
 > 阅读参考书 §9.1，§9.2.1，§9.2.2
 
 系统工程设计有两个策略，一个是 all-or-nothing 原子性、另外一个是 before-or-after 原子性，他们都提供了很强的模块化性质，隐藏了一个事实——原子步骤实际上包含了很多步骤。
+
+## TL;DR
+
+- **事务两大契约**：全或无（All-or-Nothing / 原子性）抵御崩溃使复合操作不留残局；前或后（Before-or-After / 隔离性）抵御并发保证交错执行等价于某种串行顺序。
+- **原子性黄金法则**：“永远不要就地修改唯一的副本！”影子复制（Shadow Copies / COW）在副本上涂写，通过底层物理扇区指针的单次原子翻转完成不可逆的提交跃迁（Commit Point）。
+- **写放大与并发瓶颈**：影子复制虽然崩溃安全，但导致严重的写放大（修改 8 字节需重写整文件或级联向上复制树结构）与磁盘碎片化，倒逼高性能数据库转向预写式日志（WAL）。
+
+---
 
 ## 本讲导览
 
@@ -20,7 +28,7 @@ status: complete
 
 原子性是很多计算机系统领域需要的性质，包括数据库、硬件架构、OS 的接口等等。
 
-![image-20250310113546166](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e8724ab8c.png)
+![事务抽象与多层模块化关系](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e8724ab8c.png)
 
 我们的目标是**用不可靠的组件构建可靠的系统**。我们希望构建能够服务众多客户端、存储大量数据、性能良好的系统，同时保持高可用性。处理故障的高层次过程是识别故障、检测/遏制故障并处理故障。在课堂上，我们将构**建一套抽象方法**，使这个过程更易于管理。
 
@@ -55,7 +63,7 @@ def tranfer(bank_file, account_a, account_b, amount):
 
 目录条目是文件系统中的一个结构，用于将文件名映射到相应的 inode，文件名为 "bank_file" 的文件与 inode 1 相关联。
 
-![截屏 2024-07-02 01.44.14](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e877bf83a.png)
+![影子复制与主块指针原子切换](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e877bf83a.png)
 
 在这个例子中，我们有三件事情正在发生。
 
@@ -103,7 +111,7 @@ def recover(disk):
 
 应用无关是模块设计的一个目标：我们希望在不涉及应用逻辑正确性的前提下，单独论证 before-or-after 原子性的机制是正确的。确实存在这样的一种正确性概念，：如果所有并发操作的执行结构都保证是某种纯串行执行的可能结果，那么我们就认为这些操作的协调是正确的。
 
-![image-20250310155903560](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e87ad12e9.png)
+![树状文件系统写时复制层级级联](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e87ad12e9.png)
 
 我们不需要严格按照图 9.5 某条特定路径遍历中间状态。相反，系统可以沿着虚线轨迹，经过某些中间状态，甚至这些状态本身并不符合应用定义下的正确性要求。
 
@@ -172,17 +180,17 @@ def AUDIT():
 
 图 9.6 展示了几乎正确的伪代码实现。
 
-![image-20250311090604541](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e8801bab5.png)
+![前或后隔离性时序与并发穿插](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e8801bab5.png)
 
 如果发生系统崩溃，他的实现行为又该如何。假设在前面有一个记录已经正确写入到 all-or-nothing 扇区（换句话说，三个副本都相同），这时有人调用`ALL_OR_NOTHING_PUT`更新了，目标就是即便发生崩溃，通过调用`ALL_OR_NOTHING_GET`也能得到一个一致且完整的版本记录。假设系统在顺利完成 S2 的写入之前就崩溃了，这样导致 S1 或者 S2 损坏，这种情况下，`ALL_OR_NOTHING_GET` 读取 S1 和 S2 时会发现它们的值不同，无法确定哪个是正确的。但由于系统是**fail-fast（快速失败）**的，S3 还未被`ALMOST_ALL_OR_NOTHING_PUT`修改，仍然包含旧值。假设 `ALMOST_ALL_OR_NOTHING_PUT `在成功写入 S2 之后才崩溃，这种情况下，崩溃可能损坏 S3，但 S1 和 S2 都包含新值。因此`ALL_OR_NOTHING_GET`可以安全返回 S1 的值。
 
 这种设计有什么问题吗？ `ALMOST_ALL_OR_NOTHING_PUT`假设它在开始执行时，S1、S2 和 S3 的数据完全一致的。但之前崩溃可能会破坏这一假设，导致后续的 PUT 和 GET 出错。假设`ALMOST_ALL_OR_NOTHING_PUT`在写入 S3 时候崩溃，下一次调用`ALL_OR_NOTHING_GET`时发现 S1 = S2，按预期返回 S1 的值。一个新线程这时候调用`ALMOST_ALL_OR_NOTHING_PUT`，但在写入 S2 时崩溃，现在 S1 ≠ S2，返回了已损坏的 S3。
 
-![image-20250311094319067](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e8834af32.png)
+![并发转账竞争条件与数据不一致](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e8834af32.png)
 
 如何修复这个问题。在`ALL_OR_NOTHING_PUT`必须确保在更新前，S1、S2 和 S3 三个扇区的数据完全相同。为此引入一个`CHECK_AND_REPAIR` 过程（如图 9.7），大致逻辑，比较 S1、S2 和 S3 的数据，如果不相同，则强制变相同，仅需要处理 7 种可能的数据状态。
 
-![image-20250311094648000](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e88ca99d9.png)
+![串行执行与交错执行结果对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6852e88ca99d9.png)
 
 阅读该表的方法如下：如果三个扇区 **S1、S2 和 S3** 都包含“旧”值，则数据处于 状态 1，如果三个副本相同，要么是状态 1 要么是状态 7，因此`CHECK_AND_REPAIR`直接返回，如果不满足，但 S1 和 S2 相同，那么数据一定在状态 5 或 6，此时令 S3 的值与 S1、S2 一致，直接返回。如果 S2 和 S3 相同，则数据一定在状态 2 或 3、此时令 S1 与 S2、S3 一致，剩下的可能性是状态 4，此时 S2 是损坏的，S1 包含新值，S3 仍然是旧值，此时如何选择是任意的，在该算法中选择将 S1 复制到 S2 和 S3，保持三者一致。
 
@@ -231,8 +239,12 @@ ALL_OR_NOTHING_PUT 和 ALL_OR_NOTHING_GET 这两个示例展示了一种**特殊
 
 事务通过提供**原子性和隔离性**来保护数据一致性，使得系统在处理并发操作和故障时更加可靠和易于管理。事务的这些特性简化了并发控制，减少了手动管理并发和故障恢复的复杂性
 
-![截屏 2024-07-02 10.06.55](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/668360c74ec72.png)
+![两阶段锁与事务隔离边界](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/668360c74ec72.png)
 
 **原子性**：通过影子拷贝实现了单个用户和文件的原子性，但这种方法的性能很差，无法扩展到大规模系统。
 
 **隔离性**：目前还没有实现有效的隔离性。粗粒度锁虽然简单但性能差，而细粒度锁虽然性能好但实现复杂且难以推理。
+
+::: insight 影子复制与原地修改的终极抉择
+影子复制（COW）将原子性完全寄托在“非原地覆写”之上，其崩溃安全性极其优雅，因而在 ZFS、Btrfs 等现代快照文件系统中大放异彩。然而，在事务处理数据库中，海量离散小写入（如修改单行字段）若全量复制上层数据块与 B+ 树祖先路径，将产生灾难性的写放大与磁盘碎片。为了兼顾原地修改（In-Place Update）的高性能与崩溃一致性，计算机科学演化出了下一讲的主角——**预写式日志（WAL）**。
+:::

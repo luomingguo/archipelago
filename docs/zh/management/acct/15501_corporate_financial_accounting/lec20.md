@@ -85,7 +85,8 @@ flowchart TD
    $$\text{商誉} = \text{支付总对价 } (776,048) - \text{取得的可辨认净资产公允价值 } (525,000) = 251,048 \text{ 美元}$$
 
 **编制复合日记账分录**：
-$$\begin{aligned}
+$$
+\begin{aligned}
 \text{借：固定资产 (PP\&E)} \quad 400,000 & \\
 \text{借：存货 (Inventory)} \quad 200,000 & \\
 \text{借：使用权资产 (ROU Asset)} \quad 99,363 & \\
@@ -96,7 +97,8 @@ $$\begin{aligned}
 & \text{贷：预计负债 - 诉讼准备} \quad 50,000 \\
 & \text{贷：租赁负债 (Lease Liability)} \quad 99,363 \\
 & \text{贷：递延所得税负债 (DTL)} \quad 25,000
-\end{aligned}$$
+\end{aligned}
+$$
 借方合计：$974,363 + 251,048 = 1,225,411$（含折价）；贷方合计：$1,225,411$。全表严格借贷自洽。
 :::
 

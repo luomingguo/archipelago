@@ -24,14 +24,16 @@ source: 'https://ocw.mit.edu/courses/24-901-language-and-its-structure-i-phonolo
 
 ::: definition 通用响度数值阶层（Sonority Hierarchy）
 自然语言全部音段沿声能开放度划分为六大离散级别：
-$$\begin{array}{rcl}
+$$
+\begin{array}{rcl}
 \text{低元音 / 中高元音 (Vowels)} & \mathbf{6} & [a, e, i, o, u] \\
 \text{滑音 / 半元音 (Glides)} & \mathbf{5} & [j, w] \\
 \text{流音 (Liquids: r, l)} & \mathbf{4} & [r, l] \\
 \text{鼻音 (Nasals)} & \mathbf{3} & [m, n, \eta] \\
 \text{擦音 / 嘈吵音 (Fricatives)} & \mathbf{2} & [s, z, f, v, \theta] \\
 \text{塞音 / 破裂音 (Stops)} & \mathbf{1} & [p, t, k, b, d, g]
-\end{array}$$
+\end{array}
+$$
 :::
 
 ---

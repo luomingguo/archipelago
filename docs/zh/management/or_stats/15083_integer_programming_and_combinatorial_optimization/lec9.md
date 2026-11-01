@@ -26,11 +26,13 @@ status: complete
 拉格朗日松弛（Lagrangian Relaxation）的核心理念是：**将那些让人头疼的“硬约束”从约束集合中剥离出来，乘以乘子 $\lambda$ 作为惩罚项直接搬进目标函数中，留下极其纯净的、多项式易解的子问题独立求解！**
 
 考虑整数规划：
-$$\begin{aligned}
+$$
+\begin{aligned}
 z_{\text{IP}} = \min_{x} \quad & c^T x \\
 \text{s.t.} \quad & A x \ge b \quad &&\text{(硬耦合约束 Complicating)} \\
 & x \in X = \{x \in \mathbb{Z}_+^n \mid D x \ge d\} \quad &&\text{(易解离散子集 Easy)}
-\end{aligned}$$
+\end{aligned}
+$$
 
 引入非负拉格朗日乘子向量 $\lambda \ge 0$：
 $$L(\lambda) = \min_{x \in X} \left\{ c^T x + \lambda^T (b - A x) \right\} = \lambda^T b + \min_{x \in X} (c - A^T \lambda)^T x$$

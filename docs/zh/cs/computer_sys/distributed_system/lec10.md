@@ -13,7 +13,7 @@ status: complete
 - 核心纪律：**绝不在持锁时发 RPC**；并发发 AppendEntries/RequestVote，收到回复后重检 term/state 是否已变。
 - 调试方法：开 `-race`，统一格式日志（源/目的/opcode/term/role），对失败用例反复重跑，对照论文 Figure 2 分析。
 
-> 课件：[Q&A Lab 3A+B (l-raft-QA.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-raft-QA.txt)
+> 课件：[Q&A Lab 3A+B (l-raft-QA.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-raft-QA.txt)  
 
 本讲是 Raft 实验（3A 选举、3B 日志复制）的实现答疑，把 [[lec7]] 的 Raft 协议落到代码工程上。核心是两件事：**怎么组织并发结构**、**怎么调试**。
 

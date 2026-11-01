@@ -2,7 +2,7 @@
 title: 底层攻击 (Low-level Exploits)
 type: lecture
 lecture: 22
-tags: []
+tags: [buffer-overflow, stack-smashing, return-oriented-programming, speculative-execution]
 status: complete
 ---
 # Lec 22 底层攻击 (*Low-level Exploits*)
@@ -10,6 +10,14 @@ status: complete
 > 主题：砸栈、熔断、信任信任 —— smashing stacks, melting down, trusting trust
 > 课程：MIT 6.1800 Computer Systems Engineering
 > 结构依据 `s22.pdf`，技术细节补充自 Aleph One《Smashing the Stack for Fun and Profit》、Pincus & Baker《Beyond Stack Smashing》、Ken Thompson《Reflections on Trusting Trust》。
+
+---
+
+## TL;DR
+
+- **砸栈控制流劫持**：利用栈向下生长而缓冲区向上填充的结构特性，越界覆盖函数返回地址（Saved EIP）；防御体系由栈金丝雀（Canary）、硬件不可执行栈（DEP/NX）与地址空间随机化（ASLR）共同构成。
+- **微架构推测侧信道**：Meltdown 绕过内核特权保护，利用分支预测推测执行抢跑加载数据，并在 CPU 缓存状态留下微架构物理痕迹，通过 Flush+Reload 纳秒级时延差恢复机密。
+- **工具链终极信任悖论**：Ken Thompson 的自复制编译器后门证明纯源码审计无法证明二进制安全性，信任必须延伸至构建工具链全流程。
 
 ---
 
@@ -339,6 +347,10 @@ retry:
 ---
 
 ## 4. 全讲总结
+
+::: insight 架构师见解：物理现实对软件抽象的逆袭
+底层系统安全最深刻的教训在于：**所有高级软件抽象（类型系统、地址空间、指令原子性）都建立在物理硬件的实现假设之上**。当冯·诺依曼架构将数据与代码混置，当超标量流水线为了速度推测执行指令，物理微架构的副作用（CPU 缓存、分支预测表）就会无情穿透软件层构建的虚幻沙箱。真正稳固的系统防御，必须依靠软硬件协同设计（如硬件级类型标签、页表物理隔离）消除隐蔽通道。
+:::
 
 ::: theorem 推论（贯穿三条主线的主旋律）
 - **攻防是螺旋升级的**：每实现一个防御（NX、ASLR、KPTI）就会出现反制（return-to-libc、堆溢出、其它瞬态执行攻击）。底层攻击尤其阴险 (*insidious*)。

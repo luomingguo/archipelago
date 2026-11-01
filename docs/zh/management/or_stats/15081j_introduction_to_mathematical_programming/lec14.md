@@ -20,11 +20,13 @@ status: complete
 
 在跨国制造集团、大型电网调度与全球航运网络中，系统的约束矩阵往往呈现出极具特征的**块角形结构（Block-Angular Structure）**：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min \quad & c_1^T x_1 + c_2^T x_2 + \dots + c_K^T x_K \\
 \text{s.t.} \quad & A_1 x_1 + A_2 x_2 + \dots + A_K x_K = b_0 \quad &&\text{(全局耦合约束 Coupling Constraints)} \\
 & D_k x_k = b_k, \quad x_k \ge 0, \quad \forall k=1,\dots,K \quad &&\text{(各子系统独立技术约束)}
-\end{aligned}$$
+\end{aligned}
+$$
 
 在这个系统中，$K$ 个独立工厂或业务单元各拥有专属的生产线约束 $D_k x_k = b_k$；如果没有第一行的全局耦合约束（例如集团总预算配额、共享港口码头吞吐上限），整个问题可以完美拆解为 $K$ 个互不干扰的小规模 LP 并行求解。
 然而，正是因为存在 $b_0$ 这组耦合约束，迫使所有子系统死死捆绑在一起。如果直接拼装成一个超大规模整体矩阵，变量和约束量级将瞬间击穿求解器内存。
@@ -54,12 +56,14 @@ $$x_k = \sum_{j=1}^{J_k} \lambda_k^j x_k^j, \quad \sum_{j=1}^{J_k} \lambda_k^j =
 
 将上述极点凸组合代入原目标函数与全局耦合约束，我们获得了一个全新的**完全主规划（Full Master Problem）**：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min_{\lambda} \quad & \sum_{k=1}^K \sum_{j=1}^{J_k} \left( c_k^T x_k^j \right) \lambda_k^j \\
 \text{s.t.} \quad & \sum_{k=1}^K \sum_{j=1}^{J_k} \left( A_k x_k^j \right) \lambda_k^j = b_0 \\
 & \sum_{j=1}^{J_k} \lambda_k^j = 1, \quad \forall k=1,\dots,K \\
 & \lambda_k^j \ge 0
-\end{aligned}$$
+\end{aligned}
+$$
 
 仔细端详这个主规划：
 - **行数被极度压缩**：原问题中成千上万条子系统约束 $D_k x_k = b_k$ 全部消失了！主问题只剩下 $m_0$ 条耦合约束和 $K$ 条凸组合归一化等式，总约束仅有 $m_0 + K$ 条；

@@ -46,12 +46,14 @@ flowchart LR
 $$p_{ij} = \mathbb{P}(X_{n+1} = j \mid X_n = i) = \mathbb{P}(X_1 = j \mid X_0 = i)$$
 
 将所有状态之间的单步转移概率排列为矩阵，得到**随机转移矩阵（Stochastic Transition Matrix）**：
-$$P = \begin{bmatrix}
+$$
+P = \begin{bmatrix}
 p_{11} & p_{12} & \dots & p_{1M} \\
 p_{21} & p_{22} & \dots & p_{2M} \\
 \vdots & \vdots & \ddots & \vdots \\
 p_{M1} & p_{M2} & \dots & p_{MM}
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 转移矩阵必须恪守两大公理刚性：
 1. **元素非负**：$p_{ij} \ge 0$；

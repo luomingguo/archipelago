@@ -31,11 +31,13 @@ $$\mathbb{S}_+^n = \left\{ X \in \mathbb{S}^n \mid X \succeq 0 \right\}$$
 定义矩阵弗罗贝尼乌斯内积：$C \bullet X = \operatorname{tr}(C^T X) = \sum_{i=1}^n \sum_{j=1}^n C_{ij} X_{ij}$。
 半正定规划的标准形式为：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min_{X \in \mathbb{S}^n} \quad & C \bullet X \\
 \text{s.t.} \quad & A_i \bullet X = b_i, \quad \forall i = 1, \dots, m \\
 & X \succeq 0
-\end{aligned}$$
+\end{aligned}
+$$
 :::
 
 ```mermaid

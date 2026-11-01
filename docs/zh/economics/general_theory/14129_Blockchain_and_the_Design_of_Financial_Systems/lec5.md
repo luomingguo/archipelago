@@ -82,10 +82,12 @@ sequenceDiagram
 
 ::: definition 原子结算（Atomic Settlement）与 DvP
 在可编程智能合约中，资产的转移与资金的清偿被封装在同一个区块链事务内部。**交割即支付（Delivery versus Payment, DvP）**通过原子性保证：
-$$\text{State Transition} = \begin{cases} 
+$$
+\text{State Transition} = \begin{cases} 
 (\text{Securities} \to \text{Buyer}) \land (\text{Cash} \to \text{Seller}), & \text{若双方资产余额均满足} \\
 \text{Revert to Original State}, & \text{若任意一方条件不满足}
-\end{cases}$$
+\end{cases}
+$$
 系统内生消除了“付了钱拿不到货”或“交了货收不到钱”的赫斯塔特风险（Herstatt Risk / Settlement Risk）。交易与结算的时间差被彻底压缩为零，从根本上消灭了交易失败。
 :::
 

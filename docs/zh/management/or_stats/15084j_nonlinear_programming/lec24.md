@@ -20,10 +20,12 @@ status: complete
 
 在第 21 讲中，我们从广义锥规划视角推导了半正定规划的标准原对偶对：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \text{(Primal SDP)} \quad & p^* = \min_{X \in \mathbb{S}^n} \quad \operatorname{tr}(C X) \quad \text{s.t.} \quad \operatorname{tr}(A_i X) = b_i, \; i=1,\dots,m, \quad X \succeq 0 \\
 \text{(Dual SDP)} \quad & d^* = \max_{y \in \mathbb{R}^m} \quad b^T y \quad \text{s.t.} \quad \sum_{i=1}^m y_i A_i + S = C, \quad S \succeq 0
-\end{aligned}$$
+\end{aligned}
+$$
 
 根据迹运算的线性性质：
 $$\operatorname{tr}(C X) - b^T y = \operatorname{tr}\left( \left( \sum_{i=1}^m y_i A_i + S \right) X \right) - \sum_{i=1}^m y_i \operatorname{tr}(A_i X) = \operatorname{tr}(S X)$$
@@ -50,12 +52,14 @@ flowchart TD
 
 考虑如下经典的 SDP 病态反例：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min_{X \in \mathbb{S}^2} \quad & X_{11} \\
 \text{s.t.} \quad & 2 X_{12} = 1 \\
 & X_{22} = 0 \\
 & X = \begin{bmatrix} X_{11} & X_{12} \\ X_{12} & X_{22} \end{bmatrix} \succeq 0
-\end{aligned}$$
+\end{aligned}
+$$
 
 分析这个原规划的可行域：
 矩阵 $X \succeq 0$ 要求其主子式非负，即 $X_{11} X_{22} - X_{12}^2 \ge 0$。

@@ -5,100 +5,109 @@ lecture: 14
 tags: [optimistic-concurrency-control, rdma, distributed-transaction, nvram, two-phase-commit]
 status: complete
 ---
-# Lec 14 乐观并发控制：FaRM
+# Lec 14 乐观并发控制：FaRM架构深度剖析
 
-## TL;DR
-- FaRM 用 **NVRAM**（电池+SSD 保证非易失）消灭磁盘写，用**单边 RDMA + 内核旁路**消灭网络/CPU 开销，使分布式事务延迟降至 **58µs**。
-- **OCC（乐观并发控制）** 让读操作无锁、直接通过单边 RDMA 读取，提交时才进入 LOCK → VALIDATE → COMMIT-BACKUP → COMMIT-PRIMARY 四阶段。
-- LOCK 阶段用原子 CAS 在对象头（版本号最高位为锁标志）完成"检查版本 + 检查锁 + 置锁"，保证可串行化；VALIDATE 阶段只需一次单边重读，速度更快。
-- 提交点为写下第一个 COMMIT-PRIMARY 之时；崩溃恢复依赖 LOCK+COMMIT-BACKUP 已覆盖所有副本这一不变量。
-- 局限：OCC 在高冲突负载下会大量中止重试；数据必须全装 RAM；仅限单数据中心。
 
-## 阅读材料与概述
+**开场白**
 
-> **阅读材料**
->
-> - 论文：Dragojević et al., *No compromises: distributed transactions with consistency, availability, and performance* (FaRM, SOSP 2015)
-> - 课程讲义：6.5840 `l-farm.txt`、`farm-faq.txt`
->
-> **一句话总览（TL;DR）**：FaRM（*Fast Remote Memory*）追求**单数据中心内每秒数百万笔分布式事务**、单笔延迟仅几十微秒。它的做法是同时榨干三个瓶颈——用 **NVRAM** 消灭磁盘写、用 **单边 RDMA + 内核旁路** 消灭网络/CPU 开销、用 **乐观并发控制（*Optimistic Concurrency Control, OCC*）** 让读操作无需服务器 CPU 参与。OCC 与单边 RDMA 是天作之合：读不加锁，提交时再"验证"是否有冲突。
+今天我们研读的论文是微软研究院关于 **FaRM（Fast Remote Memory）** 的工作。
+
+这是我们在分布式事务与多副本复制序列中的最后一篇论文。在此之前，我们探讨过的系统（如 GFS、ZooKeeper、Spanner、Aurora）都把网络 RPC、磁盘 I/O 寻道以及内核协议栈开销视为理所当然的物理前提。但在 FaRM 中，微软的工程师们向我们展示了一种全新的可能性：  **如果在单数据中心内将硬件压榨到极致，分布式 ACID 事务的延迟能够被压缩到什么地步？**
+
+FaRM 给出的答案是：**单事务延迟仅需 5 到 10 微秒（$\mu s$）！集群每秒吞吐量突破数百万次事务！**
 
 > [!NOTE]
 > FaRM 目前仍是微软研究院的**研究原型**，未投生产，但其理念可能影响未来架构。顺带回答你笔记里的问题——**公司为何公开前沿论文而非保密**：① 核心团队多有学术背景（博士），视传播创新为使命、希望获业界认可；② 论文能展示"这里在做有趣的智力工作"，从而**吸引顶尖人才**；③ 借技术影响力**建立行业标准**。当然，公司只会公开自己软件中极小的一部分。
 
----
 
-## 1. 背景与目标
+## 三大性能武器
 
-我们读 FaRM，是为了看"事务 + 复制 + 分片"的**又一种取法**——这仍是开放的研究领域。它的两个独特之处：**乐观并发控制**，以及**对 RDMA 网卡巨大性能潜力的压榨**。
+为了达成这个看似天方夜谭的指标，FaRM 彻底颠覆了三项传统硬件假设：
 
-**整体设定**：全部在**单数据中心**内；用 ZooKeeper 实现的**配置管理器（*Configuration Manager, CM*）** 选定各分片的主/备；数据按分片做主备复制（`P1/B1`、`P2/B2`…），只要每个分片至少存活一个副本即可恢复（即 $f+1$ 副本容 $f$ 故障）。事务客户端跑在服务器上，其事务代码充当 **两阶段提交（*2PC*）** 的**事务协调者（*Transaction Coordinator, TC*）**。
-
-> [!IMPORTANT]
-> 目标是**百万级分布式事务/秒**，于是单笔时间预算只有**几十微秒**——这个量级下，任何一次磁盘写（SSD ~100µs）、一次传统 RPC（~10µs）、一次系统调用/中断/上下文切换都贵得离谱。FaRM 的全部设计都是在和"微秒"赛跑。
-
----
-
-## 2. 三大性能武器
-
-高性能来自分片到很多台机器（评测用 90 台），外加下面三件事同时做对。
-
-### 2.1 数据全装进 RAM（消灭磁盘读）
-
-数据集必须能装进所有机器 RAM 的总和，因此读永远不碰磁盘。
-
-### 2.2 NVRAM：非易失内存（消灭磁盘写）
-
-::: definition 📘 定义：NVRAM（Non-Volatile RAM）
-写只落到 RAM（~200ns）而非磁盘（HDD ~10ms / SSD ~100µs），消灭持久化写这个巨大瓶颈。但 RAM 断电即失，靠下述机制变"非易失"：
-:::
-
-为什么不能简单地"写到 $f+1$ 台机器的 RAM"就算持久？因为**断电故障并不独立**——它可能同时击中 100% 的机器。FaRM 的做法：
-
-```text
-每个机架配电池(UPS)，可撑机器运行几分钟
-  → 电源硬件在主电源失效时通知软件
-  → 软件停止所有事务处理
-  → 软件把 FaRM 的 RAM 内容写入 SSD（可能花几分钟）
-  → 机器关机
-重启后：FaRM 从 SSD 读回内存镜像 —— 这就是"非易失 RAM"
+```mermaid
+graph TD
+    Hardware[FaRM 底层硬件铁三角]
+    Hardware --> H1["1. 全内存架构 + NVRAM<br/>(无磁盘 I/O 寻道, UPS 掉电保护防丢失)"]
+    Hardware --> H2["2. 内核旁路 (Kernel Bypass)<br/>(DPDK 零拷贝, 用户态直通网卡, 消除中断)"]
+    Hardware --> H3["3. 单边 RDMA (One-sided RDMA)<br/>(网卡固件直通远端 PCIe 内存, 远程 CPU 零开销!)"]
+    
+    style H1 fill:#ffe6cc,stroke:#333
+    style H2 fill:#d5e8d4,stroke:#333
+    style H3 fill:#cce5ff,stroke:#333,stroke-width:2px
 ```
 
-> [!TIP]
-> 若崩溃**不是**断电（FaRM/内核 bug、CPU/内存硬件错误）导致软件来不及写 SSD 怎么办？——这类**单机崩溃靠复制兜底**。前提假设：**除断电外的崩溃必须相互独立**。所以 DRAM 严格说并非完全非易失，正因如此才要把每个 region 复制到多台机器并配快速恢复协议。（用 SSD 而非机械盘是为了快：HDD 会让断电时写盘和恢复时读回都慢 ~10×，需要更大电池和更多耐心。）
+### 1. 纯内存与非易失内存（NVRAM）
 
-NVRAM 消灭了持久化写瓶颈，只剩**网络**和 **CPU** 两个瓶颈。
+数据绝不存放在传统机械硬盘或常规 SSD 上，所有数据必须完整容纳在集群所有机器的物理 RAM 中；
 
-### 2.3 单边 RDMA + 内核旁路（消灭网络/CPU 开销）
+为了解决掉电易失性，FaRM 的服务器配备了**电池后备电源（UPS / Battery-Backed NVRAM）**。当机房遭遇突发停电时，UPS 能保证机器持续供电数分钟，网卡与操作系统在此期间将 RAM 中的脏数据高速刷入板载 SSD，重启后直接载入，**使内存写入具备物理磁盘级别的持久性（Durability）**！
 
-为什么网络常是瓶颈？单 DC 内光速延迟很低，但**网络数据处理的 CPU 成本很高**。传统 RPC over TCP over LAN 要经过：系统调用 → 拷贝消息 → 中断 → 上下文切换……每包 CPU 成本让小消息 RPC 很难超过每秒几十万次，而线速（如 10 Gbps）通常并非瓶颈。FaRM 用两招破局：
+### 1.2 内核旁路（Kernel Bypass）
 
-::: definition
-**📘 定义：内核旁路（Kernel Bypass）与单边 RDMA（One-sided RDMA）**
+在传统 Linux/Windows 网络中，一个数据包到达网卡：
 
-**内核旁路**：应用直接和网卡（NIC）交互，无系统调用、无内核；NIC 直接 DMA 进出用户态 RAM；FaRM 软件**轮询（polling）** DMA 区域收发消息（专门钉住 CPU 核做轮询，省掉中断/系统调用/用户-内核拷贝/上下文切换）。
+1. 触发硬件中断；
+2. CPU 上下文切换进入内核态；
+3. 内核 TCP/IP 协议栈解析、校验和、滑动窗口处理；
+4. 数据从内核缓冲区拷贝到用户进程内存。
 
-**单边 RDMA**：一台机器的应用借 RDMA 网卡**直接读写另一台机器的内存，完全不惊动对方 CPU**；按缓存行原子读取。一台服务器吞吐 10M+ ops/s，延迟 ~5µs；单次单边读/写最快可低至 1/18 µs。
-:::
+这一套流程下来，至少消耗数十微秒的 CPU 周期！  
+FaRM 采用类似 DPDK 的**内核旁路技术**：应用进程直接映射网卡寄存器，用户态代码轮询内存队列，网卡直接将数据 DMA 到应用内存，**消灭所有操作系统内核调用与上下文切换**！
+
+
+### 1.3 杀手锏：单边 RDMA（One-sided Remote Direct Memory Access）
+
+这是 FaRM 最核心的技术灵魂。
+
+传统的两边网络通信（Two-sided RPC，如 `send`/`recv`）要求目标机器的 CPU 必须唤醒并执行代码来解析请求、组装结果并回复。  而 **单边 RDMA（One-sided RDMA Read/Write）** 则完全不同：一台机器的应用借 RDMA 网卡**直接读写另一台机器的内存，完全不惊动对方 CPU**；按缓存行原子读取。一台服务器吞吐 10M+ ops/s，延迟 ~5µs；单次单边读/写最快可低至 1/18 µs，跨网络读写内存块仅需 **$2 \sim 5$ 微秒**！
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant SrcApp as 本地发起端应用 (Source App)
+    participant SrcNIC as 发起端 RDMA 网卡
+    participant Network as 数据中心高速交换机
+    participant DstNIC as 目标端 RDMA 网卡
+    participant DstRAM as 目标端物理内存 (Target RAM)
+    participant DstCPU as 目标端 CPU (Target CPU)
+    
+    SrcApp->>SrcNIC: 发起单边 RDMA 读指令: Read(target_addr, 64B)
+    SrcNIC->>Network: 发送 RDMA 硬件报文
+    Network->>DstNIC: 抵达目标端网卡
+    
+    rect rgb(230, 255, 230)
+    Note over DstNIC, DstRAM: 【单边硬件特权】<br/>目标端网卡通过 PCIe 总线直接 DMA 读写物理 RAM!
+    DstNIC->>DstRAM: 读取 target_addr 处的物理缓存行
+    DstRAM-->>DstNIC: 返回 64 字节数据
+    end
+    
+    Note over DstCPU: ★ 目标端 CPU 处于完全静默状态!<br/>0 周期消耗, 0 中断, 甚至完全不知道有人读了内存!
+    
+    DstNIC->>Network: 将数据打包为 ACK 硬件报文
+    Network->>SrcNIC: 响应报文抵达发起端
+    SrcNIC->>SrcApp: DMA 写入发起端应用内存
+    Note over SrcApp: 耗时仅 2~5 微秒!
+```
+
 
 > [!NOTE]
 > FaRM 也会用 RDMA 来实现一种"类 RPC"：发送方用 RDMA 把请求**写入**接收方正在轮询的内存区，接收方同样方式回复——这比传统 RPC 快得多（无中断、无用户/内核切换）。FaRM 的 **LOCK** 阶段就是这样用 RDMA 的；而 **VALIDATE** 阶段用的是纯**单边读**。
 
----
 
-## 3. 为什么是乐观并发控制（OCC）？
+## 为什么是乐观并发控制（OCC）？
 
-并发控制两大流派：
+上一讲我们刚刚学完严格两阶段锁（Strict 2PL）。很自然地，大家会问：  
 
-|      | 悲观（两阶段锁 2PL）                | 乐观（OCC）                                        |
-| ---- | ----------------------------------- | -------------------------------------------------- |
-| 读   | 首次使用即**加锁**，持有到提交/中止 | **不加锁**直接读                                   |
-| 写   | 就地修改                            | 提交前**不安装**，本地缓写                         |
-| 冲突 | 造成等待/延迟                       | 提交时**验证**：无冲突则提交，有冲突则**中止重试** |
+> “我们能不能直接在 RDMA 之上跑两阶段锁？读数据之前先加锁，写数据之前也加锁？”
 
-::: insight ✅ 关键结论：FaRM 选 OCC 的根本原因
-OCC 的"读不加锁"让 FaRM 可以用**单边 RDMA 读**取数据——服务器 CPU **完全不必参与读**。而此前我们见过的协议（查/置锁、查租约、确认已持久化）都要求服务器**主动参与**，与单边 RDMA 不兼容。"乐观"赌的是**冲突很少**：若冲突频繁，OCC 会产生大量中止，性能反而崩。
-:::
+**答案是：如果使用 2PL，单边 RDMA 的核心性能优势将荡然无存！**
+
+为什么？
+
+1. **单边读是‘被动裸读’**：单边 RDMA 只能从远端物理地址读取几个字节，**它无法在目标机器上原子地执行复杂的‘加锁逻辑’**；
+2. **锁检查迫使唤醒 CPU**：如果每次读取数据都必须先确认锁状态或注册读锁，你就必须向远端 CPU 发送传统的 RPC 请求，远端 CPU 必须介入排队。这样一来，单边 RDMA 绕过 CPU、微秒级响应的最大优势就被硬生生废弃了！
+
+因此，FaRM 必须寻找一种**完全允许单边裸读、读操作绝不主动加锁**的并发控制体系——这就是 **乐观并发控制（Optimistic Concurrency Control, OCC）**！
 
 ---
 
@@ -253,3 +262,8 @@ LOCK（WAL+RPC，CAS 原子置锁）→ VALIDATE（只读对象单边重读）�
 
 - **超高速分布式事务**：硬件异构（NVRAM、RDMA）但未来可能普及；性能不仅来自硬件，更来自**同时**优化网络、持久化、CPU 三者（前人多只优化其一），以及大量用单边 RDMA 替代完整 RPC。
 - **对你（分布式 SaaS）的可借鉴点**：① 若自配电池/UPS，可改造你的 Raft / k-v 服务利用电池做快速持久化；② OCC 适合**读多写少、冲突稀疏**的负载（很多 SaaS 读路径符合）；③ "用版本号 + 原子 CAS 做无锁校验"是高并发计数/库存场景的通用模式；④ FaRM 只在"需要每秒百万级事务"时才划算——几千 TPS 直接用成熟的 MySQL 即可。
+
+
+## TL;DR
+
+FaRM（*Fast Remote Memory*）追求**单数据中心内每秒数百万笔分布式事务**、单笔延迟仅几十微秒。它的做法是同时榨干三个瓶颈——用 **NVRAM** 消灭磁盘写、用 **单边 RDMA + 内核旁路** 消灭网络/CPU 开销、用 **乐观并发控制（*Optimistic Concurrency Control, OCC*）** 让读操作无需服务器 CPU 参与。OCC 与单边 RDMA 是天作之合：读不加锁，提交时再"验证"是否有冲突。

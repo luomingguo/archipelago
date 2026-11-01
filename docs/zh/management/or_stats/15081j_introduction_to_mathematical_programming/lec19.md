@@ -24,12 +24,14 @@ status: complete
 设完全图 $G = (V, E)$ 包含 $n$ 个城市。我们希望寻找一条总距离最短的哈密顿回路（Hamiltonian Cycle）。
 丹齐格、富尔克森与约翰逊（DFJ）在 1954 年提出了著名的子回路消除多面体松弛：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min_{x} \quad & \sum_{e \in E} c_e x_e \\
 \text{s.t.} \quad & \sum_{e \in \delta(i)} x_e = 2, \quad \forall i \in V \quad &&\text{(每个城市度数为 2)} \\
 & \sum_{e \in \delta(S)} x_e \ge 2, \quad \forall S \subset V, \; 2 \le |S| \le n-2 \quad &&\text{(子回路消除约束 Subtour Elimination)} \\
 & 0 \le x_e \le 1
-\end{aligned}$$
+\end{aligned}
+$$
 
 注意看第二条**子回路消除约束**：它要求对于城市的任意非平凡真子集 $S$，跨越 $S$ 边界的边数至少为 2，以防止旅行商在几个局部城市内部打转。
 然而，集合 $S$ 的可能子集数量高达 $2^{n-1} - 1$！对于仅有 100 个城市的微型网络，约束数量就已经超过了 $10^{30}$ 条，远超宇宙中已知基本粒子的总和！

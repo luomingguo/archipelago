@@ -36,7 +36,7 @@ flowchart TD
 ## 二选一约束（Either-Or Constraints）的大 M 标准化
 
 设系统面临两大约束条件，现实要求**必须满足其中至少一个（可以都满足，但绝不能两个都违背）**：
-$$f(x) \le 0 \quad 	ext{或者} \quad g(x) \le 0$$
+$$f(x) \le 0 \quad \text{或者} \quad g(x) \le 0$$
 直接联立求解要求两者同时成立，显然破坏了“二选一”的自由度。
 
 ### 大 M 标准转化模板
@@ -74,8 +74,10 @@ sequenceDiagram
 商业决策中最具杀伤力的是因果条件命题：**“如果发生事件 A，则必须发生事件 B”**（$A \implies B$）。
 
 设命题 A 对应线性不等式 $f(x) > 0$，命题 B 对应线性不等式 $g(x) \le 0$。根据形式数理逻辑的经典等价法则：
-$$(A \implies B) \iff (
-eg A \lor B) \iff (	ext{非 A 或者 B})$$
+$$
+(A \implies B) \iff (
+eg A \lor B) \iff (\text{非 A 或者 B})
+$$
 即：“要么命题 A 不发生（$f(x) \le 0$），**或者**命题 B 强制发生（$g(x) \le 0$）”。
 
 命题瞬间被规约为了我们刚刚征服的“二选一”约束！

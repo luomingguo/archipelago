@@ -2,14 +2,21 @@
 title: 文件系统的组织
 type: lecture
 lecture: 5
-tags: []
+tags: [virtual-file-system, vfs-architecture, vnode, file-descriptors, system-calls]
 status: complete
 ---
 # Lec 5 文件系统的组织
 
+## TL;DR
+
+- **分层抽象体系**：操作系统通过虚拟文件系统（VFS）构建通用抽象屏障，将硬件块存储向上暴露为统一的线性字节流（文件）与树形命名空间（目录），彻底屏蔽具体文件系统的底层差异。
+- **内核句柄三级架构**：进程私有文件描述符表（FD Table）索引系统级打开文件表（Open File Table），后者维护文件偏移量并指向内存中的持久化节点（vnode/inode），原生支撑 `fork()` 与 `dup()` 的多进程偏移共享。
+- **面向对象多态模型**：`vnode` 与 `vnodeops` 构成内核级对象多态接口，`vfs` 与 `vfsops` 维系文件系统挂载树拓扑，使得本地磁盘与远程网络文件系统能够以一致的 POSIX 语义无缝协作。
+
+## 阅读资料
+
 - [UNIX Internals: The New Frontiers, CH8]()
   - 国内 FAi《深入理解 UNIX 系统内核》
-
 - [Practical File System Design with the Be File System, CH2](https://scispace.com/pdf/practical-file-system-design-with-the-be-file-system-4wxjpr341a.pdf)
 - [Operating Systems: Three Easy Pieces, CH39](http://pages.cs.wisc.edu/~remzi/OSTEP/file-intro.pdf)
 
@@ -187,7 +194,7 @@ off_t lseek(int fildes, off_t offset, int whence);
 
 这种情况下，该文件会在打开文件表中有一个独立表项，即使另外一个进程读取同一个文件，也有各自独立的表项。因此，每次对文件的逻辑读/写入都是相互独立的。每个进程访问文件时都有自己的 current offset（当前偏移量）。但是，一些特殊情况下，多个文件描述符会共享同一个打开文件表项，其中一种是`fork()`，当多个进程共享一个 file table entry 时， ref 会增加，只有当两个进程都关闭文件或退出时，这个表项次会被删除。
 
-![image-20260310150134558](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260310150134558.png)
+![fork 与 dup 系统调用下进程文件描述符表与内核打开文件表项（Open File Table）共享关系图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260310150134558.png)
 
 有时候共享打开文件表项是有用的，例如多个进程协同完成任务，可以同时写入同一个输出文件——共享 offset，不需要额外同步。另一种共享 open file table entry 的方式是：`dup()`、`dup2()`、`dup3()`
 
@@ -272,80 +279,54 @@ rename("foo.txt.tmp", "foo.txt");
 
 ### 获取文件信息
 
-可以使用两个系统调用获取这些信息：
+在 UNIX 系统中，应用程序无需打开文件即可查询其元数据，内核提供了 `stat()` 与 `fstat()` 系统调用：
+- `stat(const char *path, struct stat *buf)`：根据文件路径解析 Inode 并填充属性；
+- `fstat(int fd, struct stat *buf)`：直接利用已打开的文件描述符获取底层 Inode 属性，跳过路径解析。
 
-```sh
-stat(path)
-fstat(fd)
-```
-
-它们会把信息写入一个结构体`stat`
+内核将元数据填充至 `struct stat` 结构体中，该结构体直接映射了文件系统 Inode 的核心属性：
 
 ```c
 struct stat {
-    dev_t st_dev;       // 文件所在设备
-    ino_t st_ino;       // inode 编号
-    mode_t st_mode;     // 文件权限
-    nlink_t st_nlink;   // 硬链接数量
-    uid_t st_uid;       // 所有者用户ID
-    gid_t st_gid;       // 所有者组ID
-    dev_t st_rdev;      // 特殊设备ID
-    off_t st_size;      // 文件大小（字节）
-    blksize_t st_blksize; // 文件系统 I/O 块大小
-    blkcnt_t st_blocks; // 占用块数量
-    time_t st_atime;    // 最后访问时间
-    time_t st_mtime;    // 最后修改时间
-    time_t st_ctime;    // 元数据改变时间
+    dev_t st_dev;         // 文件所在设备的主/次设备号
+    ino_t st_ino;         // 文件在所在设备上的唯一 Inode 编号
+    mode_t st_mode;       // 文件类型与访问权限标志位
+    nlink_t st_nlink;     // 指向该 Inode 的硬链接计数
+    uid_t st_uid;         // 所有者用户 ID
+    gid_t st_gid;         // 所有者组 ID
+    dev_t st_rdev;        // 若为字符或块设备文件，记录其设备号
+    off_t st_size;        // 文件的逻辑字节大小
+    blksize_t st_blksize; // 适合进行高效 I/O 的首选块大小（通常为 4KB）
+    blkcnt_t st_blocks;   // 分配给该文件的 512 字节块总数（反映真实磁盘占用）
+    time_t st_atime;      // 最后数据读取访问时间
+    time_t st_mtime;      // 最后数据内容修改时间
+    time_t st_ctime;      // 最后元数据状态改变时间
 };
 ```
 
-大多数文件系统会把这些信息保存在 `inode`结构里，它是文件系统中的持久化数据结构，里面保存：
-
-- 文件大小
-- 权限
-- 时间
-- 数据块的位置等信息
-
-重要的是，inode 在磁盘上，为了提高性能，活跃的 inode 会缓存到内存
+值得注意的是，`st_size` 与 `st_blocks` 的比值能够揭示出文件系统的高级特性。例如，对于包含大段未分配零字节的“稀疏文件（Sparse File）”，其逻辑大小 `st_size` 可能高达数 GB，但实际物理分配的 `st_blocks` 却可能接近于 0。活跃访问的 Inode 会被内核 Inode Cache 常驻在内存中，从而避免重复的磁盘读取。
 
 ### 删除文件
 
-用的是`unlink`而不是 delete、remove，原因是在 UNIX 文件系统中，文件不等于文件名，文件名 只是目录的一个链接。`unlink()` 做的事情其实是删除 inode 的链接。
+UNIX 接口使用 `unlink()` 系统调用删除文件，其名称精确反映了内部机制：在文件系统中，文件本身由 Inode 实体唯一代表，而目录项中的文件名仅仅是指向该 Inode 的一个“硬链接”。`unlink()` 执行时仅递减 Inode 的硬链接引用计数 `st_nlink` 并删除当前目录项；只有当引用计数降为 0 且当前没有进程打开该文件时，文件系统才会真正释放其数据块与 Inode 结构。
 
 ### 创建目录
 
-你 不能直接写入目录。目录的格式被视为 文件系统元数据（metadata），文件系统负责保证目录数据的完整性。你只能通过 间接操作 更新目录，例如在目录中创建文件、目录或其他对象。
-
-使用系统调用：
+普通应用程序无法像常规文件那样通过 `write()` 直接写入目录内容。因为目录的二进制排布直接关系到文件系统的命名空间完整性，任何格式破坏都会导致级联故障。因此，目录内容必须由内核完全接管，用户只能通过专用的系统调用间接修改：
 
 ```c
 mkdir(const char *pathname, mode_t mode);
 ```
 
-命令行工具：
-
-```sh
-mkdir foo
-```
-
-strace 观察：
-
-```sh
-strace mkdir foo
-mkdir("foo", 0777) = 0
-```
+执行 `mkdir("foo", 0777)` 时，内核会在父目录数据块中分配一个新的目录项，分配一个新的 Inode 节点，并在该新建目录内自动初始化包含两条基础记录：指向自身 Inode 的 `.`（当前目录）以及指向父目录 Inode 的 `..`（父目录）。
 
 ### 读取目录
 
-程序 `ls` 就是这样做的。可以使用三类系统调用：
+命令行工具（如 `ls`）遍历目录时，依赖于 POSIX 标准目录流操作库接口：
+- `opendir()`：根据路径打开目录并返回 `DIR*` 流指针；
+- `readdir()`：迭代读取下一个目录项结构 `struct dirent`；
+- `closedir()`：关闭流并释放内核与用户态资源。
 
-```c
-opendir()   // 打开目录
-readdir()   // 读取目录条目
-closedir()  // 关闭目录
-```
-
-示例程序：
+典型遍历实现模式如下：
 
 ```c
 DIR *dp = opendir(".");
@@ -359,17 +340,19 @@ while ((d = readdir(dp)) != NULL) {
 closedir(dp);
 ```
 
+底层每一次调用 `readdir()` 都会解码目录数据块中的一条目录项结构：
+
 ```c
 struct dirent {
-    char d_name[256];      // 文件名
-    ino_t d_ino;           // inode 编号
-    off_t d_off;           // 下一个目录条目偏移
-    unsigned short d_reclen; // 记录长度
-    unsigned char d_type;    // 文件类型
+    char d_name[256];        // 用户可读的文件名称字符串
+    ino_t d_ino;             // 对应的 Inode 编号
+    off_t d_off;             // 目录流内部下一个条目的物理偏移
+    unsigned short d_reclen; // 当前目录项记录的字节长度
+    unsigned char d_type;    // 文件类型标识（如 DT_REG 常规文件、DT_DIR 目录）
 };
 ```
 
-提示：目录条目本身信息很少，只是 **名字 ↔ inode 映射**，若需要更多信息（如文件大小），可以对每个文件调用 `stat()`。
+由于目录数据块内部仅保存最基础的 `(文件名, Inode 编号)` 映射，`readdir()` 返回的信息十分精简。如果应用程序需要进一步获取文件详细大小、修改时间或访问权限，必须针对每个条目额外调用 `stat()`，这也正是大型目录下执行 `ls -l` 导致大量随机 Inode 读 I/O 的根本原因。
 
 ### 删除目录
 
@@ -486,19 +469,20 @@ rw-r--r--
 chmod 600 foo.txt # 结果: rw------- （只有文件所有者可以读写）
 ```
 
-## 文件系统的相关对象
+## 虚拟文件系统抽象：VFS、vnode 与对象模型
 
-在现代操作系统中，为了支持多种不同的文件系统（如 ext4、XFS、NTFS、BFS 等），内核设计了 **VFS（Virtual File System）抽象层**。VFS 将文件系统无关的操作与具体文件系统实现分离，使得内核可以通过统一接口访问各种文件系统，而无需关心底层实现细节。****
+在现代操作系统中，为了同时支持多种异构文件系统（如 ext4、XFS、NFS、Btrfs 等），内核引入了 **VFS（Virtual File System）虚拟文件系统抽象层**。VFS 将面向用户的 POSIX API 与底层具体介质驱动解耦，构成一个精巧的 C 语言面向对象多态系统。
 
-`vnode` 是 VFS 的核心抽象对象，用于表示一个文件系统中的文件或目录。vnode 不能独立存在，通常通过文件实例化生成。`vnode` 的 `v_op` 和 `v_data` 字段将通用接口与文件系统实现联系起来。
+`vnode`（Virtual Node）是 VFS 层的核心对象，代表内存中打开的一个文件或目录。与磁盘上特定格式的 `inode` 不同，`vnode` 是独立于文件系统实现的通用容器：
 
-![image-20260310162052619](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260310162052619.png)
+![虚拟文件系统（VFS）中 vnode、vnodeops 与底层具体文件系统私有数据结构关联图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260310162052619.png)
 
-`v_data`：指向文件系统私有数据结构（opaque pointer），例如：inode（如 ext4）、rnode（如 NFS）或者 BFS 特有结构等等，由于它是不透明的，文件系统无关代码不能直接访问，但文件系统内部可以通过类型转换访问它。
+- `v_data`：指向底层具体文件系统的私有数据指针（Opaque Pointer）。例如在 ext4 中它指向内存中的 `ext4_inode_info`，在 NFS 中指向远程 `rnode`，在 ZFS 中指向 `znode`；
+- `v_op`：指向操作虚函数表 `vnodeops`，定义了该节点支持的所有操作入口。
 
-`v_op`：指向一个 `vnodeops` 结构，定义了文件的操作接口（如 open、read、write、lookup 等）。
+### vnodeops 操作向量
 
-### vnodeops 结构
+`struct vnodeops` 充当了文件对象的操作虚函数表，封装了针对单个文件的全套操作契约。每一个具体的文件系统实现（如 ext4 或 NFS）都必须在编译期静态实例化一个 `vnodeops` 结构体，并用自身特有的内部处理函数填充对应的函数指针：
 
 ```c
 struct vnodeops {
@@ -509,24 +493,45 @@ struct vnodeops {
     int (*vop_lookup)(struct vnode *dvp, char *name, struct vnode **vpp, struct componentname *cn);
     int (*vop_create)(struct vnode *dvp, char *name, struct vattr *vap, struct vnode **vpp);
     int (*vop_remove)(struct vnode *dvp, struct vnode *vp, char *name);
-    ...
+    int (*vop_mkdir)(struct vnode *dvp, char *name, struct vattr *vap, struct vnode **vpp);
+    int (*vop_rmdir)(struct vnode *dvp, struct vnode *vp, char *name);
 };
 ```
 
-当上层调用 `open()`, `read()`, `write()` 等系统调用时，VFS 会找到对应文件的 vnode。VFS 通过 `v_op` 调用文件系统的具体实现函数，从而完成操作。这样，内核可以统一处理文件操作，而无需了解底层文件系统细节。
+各关键操作接口的职责明确：
+- `vop_lookup`：在目录 `dvp` 中检索名为 `name` 的子项，并返回对应的子 `vnode` 指针；
+- `vop_read` / `vop_write`：使用 `struct uio` 结构支持分散/聚集 I/O（Scatter/Gather I/O），将数据在内核缓冲区与用户地址空间之间安全拷贝；
+- `vop_create` / `vop_remove`：在底层存储中原子创建或销毁文件记录；
+- `vop_open` / `vop_close`：供特定底层系统（如需要网络鉴权或建立会话的分布式存储）执行初始化检查与资源清理。
 
-### vfs 层结构
+当上层执行 `read(fd, buf, len)` 时，内核通过进程描述符表找到打开文件表项，进而定位目标 `vnode`，最终通过函数指针间接跳转执行 `vp->v_op->vop_read(vp, ...)`。这种面向对象的运行时多态分发机制，彻底解耦了抽象调用与具体执行。
 
-像 vnode 一样，vfs 对象有只想起私有数据和操作向量的指针。`vfs_data` 指向每个文件系统吃藕的不透明的数据结构。不像 vnode，vfs 对象和私有数据结构通常被分开分配。 `vfs_op`字段指向一个`vfsops`结构，其具体形式如下
+### VFS 挂载点与实例管理
+
+如果说 `vnode` 抽象了“单个文件”，那么 `vfs` 对象（在 Linux 中称为 `super_block`）则抽象了“整个已挂载的文件系统实例”。
+
+![VFS 挂载点结构（vfs 与 vfsops）与文件系统实例挂载树拓扑图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260310163121826.png)
+
+每个已挂载的文件系统都持有一个专有的 `vfs` 实例，其 `vfs_op` 字段指向操作向量表 `struct vfsops`：
 
 ```c
 struct vfsops {
-  int (*vfs_mount)();
-  int (*vfs_unmount)();
-  int (*vfs_root)();
-  int (*vfs_statvfs)();
-  int (*vfs_sync)();
-}
+    int (*vfs_mount)(struct vfs *vfsp, char *path, caddr_t data);
+    int (*vfs_unmount)(struct vfs *vfsp, int mflag);
+    int (*vfs_root)(struct vfs *vfsp, struct vnode **vpp);
+    int (*vfs_statvfs)(struct vfs *vfsp, struct statvfs *sbp);
+    int (*vfs_sync)(struct vfs *vfsp, int flag);
+};
 ```
 
-![image-20260310163121826](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260310163121826.png)
+- `vfs_mount` / `vfs_unmount`：负责解析超级块，初始化文件系统内存驱动并接入命名空间树；
+- `vfs_root`：获取该文件系统卷的根目录 `vnode`，作为跨文件系统路径跳转的锚点；
+- `vfs_sync`：周期性扫描脏缓存，将该文件系统的未持久化元数据与数据页集体刷入持久存储。
+
+## 我的理解
+
+::: insight
+**VFS 是 UNIX 哲学中“一切皆文件”理念的工程基石**：
+VFS 的精妙之处在于它在没有任何高级语言面向对象（OOP）语法支持的纯 C 语言时代，仅凭“指针结构体 + 操作函数向量”就完美构建出了多态抽象层。
+上层系统调用（open/read/write）只与通用的 `vnode` 与文件描述符打交道，完全不知晓数据究竟存储在本地机械硬盘的 FFS 分区、NVMe SSD 的 F2FS 区域，还是跨越千万里的远程 NFS/AFS 服务器。这种彻底的关注点分离，不仅使得 Linux 能够原生容纳数十种截然不同的文件系统，更确立了软件工程中“通过增加一层间接抽象解决一切系统异构性”的经典典范。
+:::

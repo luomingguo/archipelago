@@ -120,11 +120,13 @@ graph TD
 
 ::: example 冰岛语非主格主语
 在冰岛语中，某些特定心理动词强制要求主语携带与格（Dative）或宾格（Accusative）：
-$$\begin{aligned}
+$$
+\begin{aligned}
 &\text{Mér} & &\text{líkar} & &\text{hesturinn.} \\
 &\text{Me.DAT} & &\text{likes} & &\text{the horse.NOM} \\
 &\text{“我喜欢这匹马。”}
-\end{aligned}$$
+\end{aligned}
+$$
 尽管 *Mér*（我）在表层呈现为与格，但多项严谨的句法测试（移位、反身代词绑定、省略测试）证明：**它百分之百占据着真正的句法主语位置（$[Spec, TP]$）**！
 :::
 

@@ -52,11 +52,13 @@ flowchart TD
 答案在于**到最优解集的欧氏距离在单调缩减**！
 
 考察当前点到任意最优解 $\mu^*$ 的平方距离：
-$$\begin{aligned}
+$$
+\begin{aligned}
 \|\mu_{k+1} - \mu^*\|_2^2 &= \|\Pi(\mu_k - \alpha_k g_k) - \Pi(\mu^*)\|_2^2 \\
 &\le \|\mu_k - \alpha_k g_k - \mu^*\|_2^2 \\
 &= \|\mu_k - \mu^*\|_2^2 - 2 \alpha_k g_k^T (\mu_k - \mu^*) + \alpha_k^2 \|g_k\|_2^2
-\end{aligned}$$
+\end{aligned}
+$$
 
 根据第 17 讲次梯度的定义式：$g_k^T (\mu^* - \mu_k) \le \psi(\mu^*) - \psi(\mu_k) \le 0$，即：
 $$g_k^T (\mu_k - \mu^*) \ge \psi(\mu_k) - \psi^* > 0$$

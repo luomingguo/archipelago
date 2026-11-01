@@ -7,6 +7,8 @@ status: stub
 ---
 # Lec 5 Golang
 
+> 课件：[Go, Threads, and Raft](https://pdos.csail.mit.edu/6.5840/notes/l-raft_qa.txt)
+
 ## TL;DR
 
 - Go 无类型层次结构、无继承：类型通过实现方法隐式满足接口（无需显式声明），接口通常只有 1–2 个方法，便于事后抽象与解耦。

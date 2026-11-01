@@ -23,11 +23,13 @@ status: complete
 - **战术运营流（Second-Stage Operational $x$）**：连续实数变量，涉及物资在既定网络中的具体流动分配（例如卡车每日运单、电网每小时潮流分配）。
 
 考虑标准的混合整数规划架构：
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min_{x, y} \quad & f^T y + c^T x \\
 \text{s.t.} \quad & B y + A x \ge b \\
 & y \in Y \subset \mathbb{Z}_+^p, \quad x \ge 0
-\end{aligned}$$
+\end{aligned}
+$$
 
 如果把离散变量 $y$ 与成百上千个连续变量 $x$ 混在一起同时交给分支定界求解器，离散分支树会因为连续变量的拖累而膨胀到数千万个节点。
 雅克·本德斯（Jacques F. Benders）在 1962 年洞察到：**如果我们先把战略离散决策 $y$ 固定下来，剩下的关于运营变量 $x$ 的子问题，就是一个极易求解的纯连续线性规划！**

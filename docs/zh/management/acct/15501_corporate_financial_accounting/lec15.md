@@ -70,11 +70,13 @@ flowchart LR
 在资本市场均衡时，债券的发行价格严格等于其未来全部预期现金流入按市场利率折现的现值总和：
 
 ::: theorem 债券定价主方程 (Master Bond Pricing Equation)
-$$\begin{aligned}
+$$
+\begin{aligned}
 \text{债券理论价格 (Bond Price)} &= \text{未来各期利息的现值 (PV of Coupons)} + \text{到期还本的现值 (PV of Par)} \\
 &= \sum_{t=1}^n \frac{M \cdot c}{(1 + r)^t} + \frac{M}{(1 + r)^n} \\
 &= (M \cdot c) \times \left[ \frac{1 - (1 + r)^{-n}}{r} \right] + M \times (1 + r)^{-n}
-\end{aligned}$$
+\end{aligned}
+$$
 :::
 
 ### 三大定价关系矩阵

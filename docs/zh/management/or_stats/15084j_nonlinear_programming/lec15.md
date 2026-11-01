@@ -21,10 +21,12 @@ status: complete
 在第 14 讲中我们从势函数视角审视了内点法。然而，现代商业优化界（如 Mosek, Gurobi, Xpress）实际采用的核心代码，百分之百是**原对偶路径跟踪内点法（Primal-Dual Path-Following Interior-Point Method）**。
 
 考虑标准型线性规划及其对偶：
-$$\begin{aligned}
+$$
+\begin{aligned}
 \text{(Primal)} \quad & \min \; c^T x \quad \text{s.t.} \quad A x = b, \; x \ge 0 \\
 \text{(Dual)} \quad & \max \; b^T p \quad \text{s.t.} \quad A^T p + s = c, \; s \ge 0
-\end{aligned}$$
+\end{aligned}
+$$
 
 根据第 7 讲学到的 KKT 条件，最优解充要满足：
 $$A x = b, \quad A^T p + s = c, \quad X S \mathbf{1} = 0, \quad (x \ge 0, s \ge 0)$$
@@ -36,7 +38,8 @@ $$F_\mu(x, p, s) = \begin{bmatrix} A x - b \\ A^T p + s - c \\ X S \mathbf{1} - 
 
 对其应用标准的**牛顿-拉夫逊方法（Newton-Raphson Method）**，在当前点 $(x, p, s)$ 处线性化求解切线方向：
 
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
 A & 0 & 0 \\
 0 & A^T & I \\
 S & 0 & X
@@ -48,7 +51,8 @@ S & 0 & X
 r_b \\
 r_c \\
 X S \mathbf{1} - \sigma \mu \mathbf{1}
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 其中 $r_b = A x - b$ 为原可行性残差，$r_c = A^T p + s - c$ 为对偶可行性残差，$\sigma \in [0, 1]$ 为向心居中因子。
 

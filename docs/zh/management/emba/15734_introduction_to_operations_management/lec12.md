@@ -47,13 +47,13 @@ flowchart LR
     UCL --- CL --- LCL
 ```
 
-### 均值-极差控制图（$ar{X}-R$ 图）数学构建
+### 均值-极差控制图（$\bar{X}-R$ 图）数学构建
 
 对连续工序进行定时小样本抽样（每次抽取样本容量 $n = 4 \sim 5$ 件，共抽取 $m$ 组）：
-1. **$ar{X}$ 图（监控流程中心均值漂移）**：
-   $$	ext{CL} = ar{ar{X}} = rac{1}{m} \sum_{i=1}^m ar{X}_i, \quad 	ext{UCL} = ar{ar{X}} + A_2 ar{R}, \quad 	ext{LCL} = ar{ar{X}} - A_2 ar{R}$$
+1. **$\bar{X}$ 图（监控流程中心均值漂移）**：
+   $$\text{CL} = \bar{\bar{X}} = \frac{1}{m} \sum_{i=1}^m \bar{X}_i, \quad \text{UCL} = \bar{\bar{X}} + A_2 \bar{R}, \quad \text{LCL} = \bar{\bar{X}} - A_2 \bar{R}$$
 2. **$R$ 图（监控流程内部离散离差波动）**：
-   $$	ext{CL} = ar{R} = rac{1}{m} \sum_{i=1}^m R_i, \quad 	ext{UCL} = D_4 ar{R}, \quad 	ext{LCL} = D_3 ar{R}$$
+   $$\text{CL} = \bar{R} = \frac{1}{m} \sum_{i=1}^m R_i, \quad \text{UCL} = D_4 \bar{R}, \quad \text{LCL} = D_3 \bar{R}$$
    （$A_2, D_3, D_4$ 为由样本量 $n$ 决定的标准工程系数）。
 
 ::: pitfall 混淆“控制界限”与“规格公差”
@@ -75,16 +75,18 @@ flowchart TD
 ```
 
 ### 1. 潜在过程能力指数 $C_p$（衡量波动宽度）
-$$C_p = rac{	ext{客户允许公差范围}}{	ext{系统自然波动宽度}} = rac{	ext{USL} - 	ext{LSL}}{6\sigma}$$
+$$C_p = \frac{\text{客户允许公差范围}}{\text{系统自然波动宽度}} = \frac{\text{USL} - \text{LSL}}{6\sigma}$$
 - $C_p < 1.0$：过程能力严重不足，即使完全对准中心，也必定持续产出次品；
 - $C_p = 1.33$：传统工业合格基准线（允许公差是实际自然离散度的 1.33 倍）；
 - $C_p \ge 2.0$：六西格玛制造卓越标准。
 
 ### 2. 实际过程能力指数 $C_{pk}$（修正中心偏移）
 实际制造中，均值 $\mu$ 往往偏离规格中心点（Offset）：
-$$C_{pk} = \min \left( rac{	ext{USL} - \mu}{3\sigma}, rac{\mu - 	ext{LSL}}{3\sigma} 
-ight) = C_p (1 - k)$$
-其中 $k = rac{|\mu - 	ext{Target}|}{(	ext{USL} - 	ext{LSL})/2}$ 代表中心偏移系数。$C_{pk}$ 永远小于等于 $C_p$。唯有当 $C_{pk} \ge 1.33$ 时，生产线才能被准许大批量交付。
+$$
+C_{pk} = \min \left( \frac{\text{USL} - \mu}{3\sigma}, \frac{\mu - \text{LSL}}{3\sigma} 
+\right) = C_p (1 - k)
+$$
+其中 $k = \frac{|\mu - \text{Target}|}{(\text{USL} - \text{LSL})/2}$ 代表中心偏移系数。$C_{pk}$ 永远小于等于 $C_p$。唯有当 $C_{pk} \ge 1.33$ 时，生产线才能被准许大批量交付。
 
 ## 六西格玛哲学与 DMAIC 改善循环
 

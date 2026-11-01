@@ -55,11 +55,13 @@ $$K^* = \{y \mid \langle y, x \rangle \ge 0, \; \forall x \in K\}$$
 
 **标准型原锥规划（Primal Conic Problem）**写作：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min_{x} \quad & \langle c, x \rangle \\
 \text{s.t.} \quad & A x = b \\
 & x \in K \quad (\text{即 } x \succeq_K 0)
-\end{aligned}$$
+\end{aligned}
+$$
 
 为约束引入乘子向量 $y \in \mathbb{R}^m$ 与对偶松弛变量 $s$：
 $$L(x, y) = \langle c, x \rangle - \langle y, A x - b \rangle = \langle b, y \rangle + \langle c - A^* y, x \rangle$$
@@ -67,11 +69,13 @@ $$L(x, y) = \langle c, x \rangle - \langle y, A x - b \rangle = \langle b, y \ra
 
 由此，直接导出**标准型对偶锥规划（Dual Conic Problem）**：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \max_{y} \quad & \langle b, y \rangle \\
 \text{s.t.} \quad & A^* y + s = c \\
 & s \in K^* \quad (\text{即 } s \succeq_{K^*} 0)
-\end{aligned}$$
+\end{aligned}
+$$
 
 ## 3. 自对偶性（Self-Duality）与 SOCP / SDP 实例
 

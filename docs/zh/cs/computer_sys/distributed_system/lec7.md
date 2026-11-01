@@ -7,6 +7,8 @@ status: complete
 ---
 # Lec 7 容错复制：Raft（二）持久化、快照与只读租约
 
+> 课件：[Raft (2) (l-raft2.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-raft2.txt)；论文：[In Search of an Understandable Consensus Algorithm (2014)](https://pdos.csail.mit.edu/6.5840/papers/raft-extended.pdf)
+
 ## TL;DR
 
 - **状态持久化**：`currentTerm`、`votedFor` 与 `log[]` 必须在响应 RPC 前强制落盘，其余状态崩溃重启后可由日志重放或多数派通信安全重建。

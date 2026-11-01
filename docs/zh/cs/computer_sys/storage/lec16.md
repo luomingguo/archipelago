@@ -2,56 +2,93 @@
 title: LSM 树及其应用
 type: lecture
 lecture: 16
-tags: []
+tags: [lsm-tree, sstable, compaction, bloom-filter, write-amplification]
 status: complete
 ---
 # Lec 16 LSM 树及其应用
 
-- [LSM-Tree](https://www.cs.umb.edu/~poneil/lsmtree.pdf)
-- [Ren13](https://course.ece.cmu.edu/~ece746/papers//papers/tablefs.pdf)
-  - 使用 LSM-Tree 存储元数据的开山之作
-- [Zheng20](https://www.pdl.cmu.edu/PDL-FTP/Storage/ACMToS-0920.pdf)
-  - 中文翻译 https://zhuanlan.zhihu.com/p/673943952
+## TL;DR
 
-## 引入
+- **写入密集型存储范式转移**：针对传统 B 树在海量写场景下的随机寻道与页分裂瓶颈，LSM-Tree（日志结构合并树）将随机更新拦截在内存中完成有序化，转化为磁盘上的大批量顺序追加合并，实现吞吐量数量级提升。
+- **分层解耦与滚动归并**：经典两组件架构通过内存组件 $C_0$ 缓冲写入，并利用后台滚动归并（Rolling Merge）连续下刷至磁盘驻留组件 $C_1$；现代系统演化为 Leveled/Tiered 多级 SSTable 结构，并配合布隆过滤器（Bloom Filter）将点查 I/O 压制至常数级。
+- **前沿元数据系统落地**：CMU TableFS 将本地文件系统目录与 Inode 打包存入嵌入式 LSM 树，消除海量小文件随机读写；DeltaFS 则将 LSM 范式推广至百亿亿次（Exascale）超算分布式瞬态元数据管理。
 
-试想在一个高性能事务系统的场景下，比如银行系统（TPC-A），每笔交易都会写入一条 History 记录，还要更新 History 表的索引（比如按`account_id`），如果用 B 树，每插入一条记录，需要找到 B-tree 中对应的位置（随机 I/O），可能出发页分裂（为了维护 B-Tree 索引），从而需要修改多个节点，I/O 成本翻倍；而现在介绍一种基于磁盘的数据结构，叫 Log-Structured Merge-Tree（LSM-Tree），LSM-tree 的关键思想是不要每次都更新磁盘索引，而是先放到内存里，攒一批再写。优势在于 LSM 树大幅减少磁头移动。非常适用于写入操作远多于查询的系统，比如监控数据、时间序列数据、日志系统。
+## 阅读资料
 
-传统事务日志主要用于回滚和系统恢复，系统只需要偶尔查看最近的一小段日志，并且恢复时通常是顺序读取日志即可。但随着系统处理的业务越来越复杂、事务持续时间越来越长，用户有时需要实时查看过去发生过哪些操作。因此，为了能够快速查询大量历史日志，日志建立索引就变得越来越重要。虽然历史表和日志都包含时间序列数据，但 LSM-tree 的索引键并不假设具有完全相同的时间顺序。为了获得效率提升，唯一需要的假设是：更新的频率远高于查询的频率。
+- Patrick O'Neil, Edward O'Neil, Gerhard Weikum
+  [*The Log-Structured Merge-Tree (LSM-Tree)*](https://www.cs.umb.edu/~poneil/lsmtree.pdf), Acta Informatica 33, 351–385 (1996)
+- Kai Ren, Garth Gibson (CMU PDL)
+  [*TABLEFS: Enhancing Metadata Efficiency in the Local File System*](https://course.ece.cmu.edu/~ece746/papers//papers/tablefs.pdf), USENIX ATC 2013
+- Qing Zheng et al. (CMU PDL)
+  [*DeltaFS: Exascale File Systems for Transient Datasets*](https://www.pdl.cmu.edu/PDL-FTP/Storage/ACMToS-0920.pdf), ACM Transactions on Storage, 2020
 
-下面两个示例都依赖于 “五分钟法则”（Five Minute Rule）：如果某个磁盘页被访问得很频繁，就把它放到内存里，这样可以省掉磁盘 I/O；如果访问很少，那就没必要占用内存。如果一个磁盘页平均每 60 秒就会被访问一次（或更频繁）， 那么把它缓存到内存是划算的。为什么是 60 秒？因为这是“内存成本”和“磁盘 I/O 成本”的一个经济平衡点。所以这个规则叫“五分钟法则”（后来随着硬件变化变成约 60 秒）
+## 引入：B 树在写入密集型负载下的困局
 
-EX1.1： TPC-A 系统的基本 I/O 成本。
+在高性能联机事务处理（OLTP）和日志监控场景中，系统往往面临持续不断的高频写入。例如在标准的银行 TPC-A 基准测试中，每笔交易除了向账户表扣款外，还必须向历史审计表（History Table）追加一条流水记录，并为该流水建立复合索引（如基于 `Account-ID` 和时间戳 `Timestamp`）。
 
-假设一个典型的银行交易系统，系统负载——1000TPS，每个事务做更新 3 个表的操作，Branch 表（1000 行）、Teller 表（十万行）以及 Account 表（1 亿行），在 History 表写一条记录 `(Account-ID, Branch-ID, Teller-ID, Delta, Timestamp)`，假设 Branch 表完全在内存，Teller 表完全在内存，Account 表，每行 100B，则总大小为`100M * 100B = 10GB`，1 亿条记录随机访问，再次访问同一个页的间隔时间是 `10GB / 4KB(page size) / TPS = 10 M / 1K = 2500s`  > 5 分钟，所以 Account 表不值得被缓存。
+如果采用传统的 **B 树 / B+ 树** 组织磁盘索引，每一次新纪录插入都会遭遇严峻挑战：
+1. **随机 I/O 惩罚**：由于新插入记录的索引键分布离散，系统必须将离散的叶子节点磁盘页从外存读入内存缓冲区；
+2. **写放大与页分裂**：一旦目标叶子页存满，将触发级联节点分裂（Page Split），导致多次离散的脏页回写；
+3. **“五分钟法则（Five Minute Rule）”失灵**：Gray 和 Putzolu 提出的经济学平衡点指出，如果一个磁盘页在一定周期（历史上约为 5 分钟，现代约为 60 秒）内无法被再次访问，将其长期驻留在昂贵的 DRAM 中是不经济的。对于拥有数亿条历史记录的大型索引，绝大多数叶子节点在内存缓冲区中的命中率无限趋近于零，导致几乎每次写操作都会转化为真实的物理磁盘寻道。
 
-现在，每个事务大约需要 两次磁盘 I/O： 一次是 读取所需的 Account 记录所在的页（我们认为访问的页已经在缓冲区中的情况非常少，因此可以忽略）； 另一次是 将之前的一个脏的 Account 页写回磁盘，以便在缓冲区中腾出空间用于新的读取（这是系统在稳态运行时必须发生的行为）。因此，在 1000 TPS（每秒 1000 个事务） 的情况下，大约会产生 2000 次磁盘 I/O 每秒。每个磁盘臂（disk arm）每秒可以完成 25 次 I/O，那么要支持 2000 次 I/O 每秒，就需要 80 个磁盘臂（actuators）。
+以 1000 TPS 的系统为例，维护一个 5.76 亿条记录的历史 B 树索引，每天将产生数千次物理磁盘 I/O，需要耗费数十乃至上百个机械磁盘臂（Disk Arms）才能满足吞吐需求。B 树在本质上是**读优化**的数据结构，它将就地更新（In-place Update）的昂贵代价完全推给了写入路径。
 
-EX1.2： 给 History 表建立一个传统 B-tree 索引
+## 两组件 LSM-Tree 架构与滚动归并
 
-History 表记录交易历史：
+针对这一物理矛盾，Patrick O'Neil 等人于 1996 年提出了 **Log-Structured Merge-Tree (LSM-Tree)**。其核心洞察是：**将对磁盘的细碎随机写入，推迟并在内存中缓冲排序，随后利用归并排序的思想，转化为对磁盘大块连续区域的顺序流式追加**。
 
-```text
-(Account-ID, Branch-ID, Teller-ID, Delta, Timestamp)
-```
+### $C_0$ 与 $C_1$ 双组件模型
 
-用户典型查询如下，查询某个账户最近的交易记录。
+在最经典的二组件模型中，LSM 树由两个结构清晰的组件构成：
+- **内存组件 $C_0$**：完全常驻于 DRAM 内存中的有序动态数据结构（通常采用红黑树、AVL 树或跳表 SkipList）。所有新到来的插入、更新和删除（写入墓碑标记）首先追加写入磁盘上的预写式日志（WAL）以保证故障持久性，随后直接在内存中的 $C_0$ 完成插入与排序，延迟仅为纳秒级；
+- **磁盘驻留组件 $C_1$**：持久化保存在物理外存上的高效有序索引树（结构类似于连续排布的 100% 满填充 B 树）。$C_1$ 的节点大小通常设置为多页物理块（如 64KB 到数 MB），以充分榨取磁盘顺序流式传输的最高带宽。
 
-```sql
-Select *
-from History
-where Acct-ID = ?
-and Timestamp > ?
-```
+### 滚动归并（Rolling Merge）过程
 
-如果没有索引，需要扫描整个 History 表随着历史记录增长，这几乎不可能接受。所以必须建立索引：`(Acct-ID, Timestamp)`
+当内存中的 $C_0$ 组件达到预设的容量阈值时，系统触发后台清理流程，通过**滚动归并（Rolling Merge）**将数据迁移到磁盘驻留的 $C_1$ 组件：
+1. **并发游标驱动**：滚动归并进程维护两个逻辑游标，分别指向 $C_0$ 树的最小节点和 $C_1$ 树的当前外存叶子节点；
+2. **多路流式归并**：类似于经典外排归并排序，游标按升序遍历 $C_0$ 和 $C_1$。遇到相同的键时，用 $C_0$ 中的最新版本覆盖旧记录（若为墓碑则彻底清除）；
+3. **批量顺序写出**：归并产生的新排序数据被连续组装并写入新分配的连续外存块，形成全新的 $C_1$ 节点，同时原子释放旧的 $C_1$ 节点空间。
 
-论文假设只保留 20 天，每天 8 小时的业务时间。总记录数：
+通过这种设计，磁头在归并期间仅进行长距离的大块顺序读写，原本分散在全盘各处的数万次微小随机寻道被压缩为一次高效的批量流式 I/O。
 
-```text
-1000(TPS) * 3600 * 8 * 20 = 576, 000, 000 =5.76亿条记录
-```
+## 现代多层 LSM 树扩展与读优化
 
-假设每条索引项是 16 B，总大小就是 `576 M * 16B = 9.2GB`，页数就是`9.4GB/4KB = 230万`个叶子页。Five Minute Rule 再次出现，因为`2,300,000/ 1000(TPS) = 2300sec = 38minutes`，所以索引页不会常驻内存，结果就是磁盘需求翻倍。B-Tree 对写入非常不友好。
+随着数据规模暴增至 TB/PB 级别，单一的 $C_1$ 组件会导致归并周期过长。现代 LSM 树存储引擎（如 Google LevelDB、RocksDB、Cassandra）将其推广为**多层级结构（Multi-component / Leveled Hierarchy）**：
 
-## 两组件 LSM-tree
+1. **MemTable 与 Immutable MemTable**：
+   - 活跃写入进入内存 MemTable；
+   - 饱和后冻结为只读的 Immutable MemTable，同时开辟新的 MemTable 接收写入，后台线程异步将 Immutable MemTable 顺序刷盘生成 Level 0 的不可变文件（Sorted String Table, SSTable）。
+2. **SSTable 与两类 Compaction 策略**：
+   - **Size-Tiered Compaction**：每一层包含多个大小相近的 SSTable。当某一层的文件数达到阈值，触发归并合并为一个更大的 SSTable 放入下一层。该策略写入放大（WAF）极低，适合写密集型高吞吐场景；
+   - **Leveled Compaction**：除 Level 0 外，每一层内部的所有 SSTable 键范围严格互不重叠。当第 $L$ 层总容量超出上限时，选取一个 SSTable 与第 $L+1$ 层中有重叠键范围的所有 SSTable 归并。该策略空间放大极低，且能极好地限制点查延迟。
+3. **读路径与布隆过滤器（Bloom Filter）**：
+   - 读取操作必须自顶向下遍历：MemTable $\rightarrow$ Immutable MemTable $\rightarrow$ Level 0 $\rightarrow$ Level 1 $\dots$；
+   - 为了避免在各层未命中 SSTable 上浪费随机 I/O，LSM 树为每个 SSTable 在内存中维护紧凑的**布隆过滤器（Bloom Filter）**。若布隆过滤器判定目标键不存在，则 100% 确认无需读取该磁盘块，从而将单次点查的物理 I/O 次数严格压制在常数级别（通常 $\le 1$ 次）。
+
+## 真实系统应用案例：TableFS 与 DeltaFS
+
+LSM 树的高吞吐追加特性不仅革新了数据库存储引擎，更深刻重塑了现代文件系统的元数据架构。
+
+### TableFS：化解本地文件系统小文件元数据风暴
+
+在海量微小文件（如小图片、源文件）场景下，传统本地文件系统（ext4、XFS）因频繁的 Inode 寻道和目录项锁竞争出现吞吐断崖。CMU Parallel Data Lab 提出的 **TableFS（USENIX ATC'13）** 给出了激进解法：
+- 将传统文件系统底层的目录项数组和 Inode 树完全抛弃，转而在上层嵌入一个经过定制的 LevelDB 引擎；
+- 目录结构被扁平化编码为键值对：Key 为 `(parent_inode_id, filename)`，Value 为紧凑序列化的 Inode 属性元数据；
+- 小于阈值（如 4KB）的小文件数据直接作为 Value 与元数据一起内联存入 LSM 树，大文件数据则以对象形式存储在底层简单对象库中；
+- 借助 LSM 树对小键值的极致写入合并，TableFS 在保持完整 POSIX 目录语义的同时，将文件创建与目录遍历速度提升了 2 到 10 倍。
+
+### DeltaFS：超算万亿级瞬态数据的极速吸收
+
+在百亿亿次（Exascale）高性能计算（HPC）模拟中，数万个计算节点可能在几毫秒内同时向文件系统倾倒海量中间检查点文件。传统集中式元数据服务器会瞬间崩溃。CMU 与 LANL 合作研发的 **DeltaFS（ACM ToS'20）** 将 LSM 树去中心化分布至所有计算节点：
+- 在每个计算节点的本地节点存储中嵌入瞬态 LSM 树；
+- 计算节点向本地 LSM 树无锁极速写入元数据与检查点小文件，彻底消除中心化网络锁与目录协调；
+- 模拟结束后，各节点后台流式归并（Merge）并将全局元数据有序推向并行底层持久存储，支撑起了万亿级文件的瞬时高通量产生。
+
+## 我的理解
+
+::: insight
+**LSM 树展示了存储系统设计中“用时间换空间、用批量换吞吐”的最优工程解**：
+计算机系统的物理定律决定了：在任何介质上，顺序写入的带宽始终远超随机写入。B 树为了维护完美的读局部性与原地检索树形结构，在写入时付出了极其惨重的随机 I/O 代价。
+LSM 树的伟大之处在于它彻底放弃了“原地维护完美结构”的执念。它承认写入瞬间的结构不完美，允许数据在内存中先沉淀，通过后置异步的归并排序逐步清理熵增。这种“Append-Only + 后台 Compaction”的架构范式，不仅完美契合了机械硬盘减少磁臂移动的物理天性，更与现代 NAND 闪存“写前必擦、顺序写入寿命最高”的底层契约产生了跨时代的深刻共鸣。
+:::

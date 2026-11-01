@@ -7,6 +7,8 @@ status: complete
 ---
 # Lec 6 容错复制：Raft（一）选主与日志对齐
 
+> 课件：[Raft (1) (l-raft.txt)](https://pdos.csail.mit.edu/6.5840/notes/l-raft.txt)；论文：[In Search of an Understandable Consensus Algorithm (2014)](https://pdos.csail.mit.edu/6.5840/papers/raft-extended.pdf)
+
 ## TL;DR
 
 - **复制状态机（RSM）**：通过一致的日志全序驱动确定性状态机，只要多数派存活即可持续提供线性一致服务。

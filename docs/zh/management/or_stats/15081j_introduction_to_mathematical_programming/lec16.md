@@ -26,11 +26,13 @@ status: complete
 
 **经典最小费用流模型（Minimum Cost Network Flow, MCNF）**写作：
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \min_{x} \quad & \sum_{(i, j) \in E} c_{ij} x_{ij} \\
 \text{s.t.} \quad & \sum_{\{j \mid (i, j) \in E\}} x_{ij} - \sum_{\{j \mid (j, i) \in E\}} x_{ji} = b_i, \quad \forall i \in V \quad &&\text{(节点流量平衡约束)} \\
 & 0 \le x_{ij} \le u_{ij}, \quad \forall (i, j) \in E \quad &&\text{(弧容量上下界约束)}
-\end{aligned}$$
+\end{aligned}
+$$
 
 用矩阵形式紧凑表述：
 $$\min_{x} \quad c^T x \quad \text{s.t.} \quad A x = b, \quad 0 \le x \le u$$
