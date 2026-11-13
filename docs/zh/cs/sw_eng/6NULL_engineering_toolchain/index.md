@@ -85,29 +85,22 @@ flowchart TD
 
 ### 结构化编排讲义清单
 
-1. [01 课程导论与 Shell 交互基石（Course Overview & Shell）](./01-course-shell.md)：课程定位与动机、Unix 哲学、标准 I/O 重定向、管道串联、文件系统导航与基本命令行指令。
-2. [02 命令行环境与自动化编排（Command-line Environment）](./02-command-line-environment.md)：参数解析与通配扩展（Globbing）、标准流与管道并行机理、环境变量生命周期、进程状态与 POSIX 信号、SSH 远程作业。
-3. [03 现代开发环境、Vim 与 Dotfiles 自动化（Development Environment & Tools）](./03-dev-environment-and-tools.md)：Vim 模式编辑语言体系（动作、动词与修饰符）、自定义键映射与配置哲学、Dotfiles 版本化管理与环境一键重现。
-4. [04 程序调试、追踪与性能剖析（Debugging and Profiling）](./04-debugging-and-profiling.md)：科学排错假设法、可逆调试器（Record-Replay Debugging / rr）、系统调用拦截（strace）、eBPF 动态内核探测、内存 Sanitizers 与 CPU/内存火焰图。
-5. [05 版本控制：Git 数据模型与高级工作流（Version Control & Git）](./05-version-control-and-git.md)：Git 内部内容寻址数据库（Blob、Tree、Commit、Tag）、DAG 历史图谱模型、分支合并与交互式 Rebase、代码暂存与状态恢复。
-6. [06 代码打包、容器隔离与制品分发（Packaging & Shipping Code）](./06-packaging-and-shipping-code.md)：多语言依赖地狱与虚拟环境、可重现构建（Reproducible Builds）、Docker 容器镜像轻量封装、语义化版本（SemVer）与发布流水线。
-7. [07 智能体编程范式（Agentic Coding）](./07-agentic-coding.md)：大语言模型工作机理与 Token 窗口、AI 协同编码（Copilot / 交互式助手）、自主智能体（Agent）工作流、上下文注入、安全性隐私防线与工程批判性审查。
-8. [08 超越代码：协作沟通与开源礼仪（Beyond the Code）](./08-beyond-the-code.md)：单向技术写作（Commit 规范、PR 描述、RFC 文档）、双向代码评审（Code Review）艺术、开源社区协作生态与 AI 生成内容的交互礼仪。
-9. [09 代码质量工程：检查、测试与 CI/CD（Code Quality）](./09-code-quality.md)：代码格式化器（Formatters）、静态语法检查器（Linters）、单元测试与模糊测试（Fuzzing）、Pre-commit 门禁、GitHub Actions 自动化集成流水线。
+1. [01 课程导论与 Shell 交互基石（Course Overview & Shell）](./lec1.md)：课程定位与动机、Unix 哲学、标准 I/O 重定向、管道串联、文件系统导航与基本命令行指令。
+2. [02 命令行环境与自动化编排（Command-line Environment）](./lec2.md)：参数解析与通配扩展（Globbing）、标准流与管道并行机理、环境变量生命周期、进程状态与 POSIX 信号、SSH 远程作业。
+3. [03 现代开发环境、Vim 与 Dotfiles 自动化（Development Environment & Tools）](./lec3.md)：Vim 模式编辑语言体系（动作、动词与修饰符）、自定义键映射与配置哲学、Dotfiles 版本化管理与环境一键重现。
+4. [04 程序调试、追踪与性能剖析（Debugging and Profiling）](./lec4.md)：科学排错假设法、可逆调试器（Record-Replay Debugging / rr）、系统调用拦截（strace）、eBPF 动态内核探测、内存 Sanitizers 与 CPU/内存火焰图。
+5. [05 版本控制：Git 数据模型与高级工作流（Version Control & Git）](./lec5.md)：Git 内部内容寻址数据库（Blob、Tree、Commit、Tag）、DAG 历史图谱模型、分支合并与交互式 Rebase、代码暂存与状态恢复。
+6. [06 代码打包、容器隔离与制品分发（Packaging & Shipping Code）](./lec6.md)：多语言依赖地狱与虚拟环境、可重现构建（Reproducible Builds）、Docker 容器镜像轻量封装、语义化版本（SemVer）与发布流水线。
+7. [07 智能体编程范式（Agentic Coding）](./lec7.md)：大语言模型工作机理与 Token 窗口、AI 协同编码（Copilot / 交互式助手）、自主智能体（Agent）工作流、上下文注入、安全性隐私防线与工程批判性审查。
+8. [08 超越代码：协作沟通与开源礼仪（Beyond the Code）](./lec8.md)：单向技术写作（Commit 规范、PR 描述、RFC 文档）、双向代码评审（Code Review）艺术、开源社区协作生态与 AI 生成内容的交互礼仪。
+9. [09 代码质量工程：检查、测试与 CI/CD（Code Quality）](./lec9.md)：代码格式化器（Formatters）、静态语法检查器（Linters）、单元测试与模糊测试（Fuzzing）、Pre-commit 门禁、GitHub Actions 自动化集成流水线。
 
 ---
 
-## 官方视频课堂实录（Transcripts）
+## 官方视频课堂实录与学习支持
 
-本课程配备经过精心人工对齐的逐字稿实录库，真实复刻 MIT 讲师的现场讲解、命令行演练与即兴问答：
+本课程建议配合 MIT 讲师的现场讲解、命令行演练与即兴问答同步学习：
 
-- **英文原版实录**：位于 `transcripts/en/`，提供原汁原味的课堂英文听力与技术词汇对照。
-- **精翻中译实录**：位于 `transcripts/zh/`，对口语化表达进行了通顺典雅的书面化润色，保留讲者情感与幽默细节。
-
----
-
-## 官方资源与学习支持
-
+- **官方配套视频**：MIT CSAIL 官方 YouTube 频讲堂（[@MissingSemester](https://www.youtube.com/@MissingSemester)）。
 - **MIT 官方课程主页**：[missing.csail.mit.edu/2026/](https://missing.csail.mit.edu/2026/)
-- **MIT CSAIL 官方 YouTube 频道**：[@MissingSemester](https://www.youtube.com/@MissingSemester)
 - **代码与课件仓库**：[github.com/missing-semester/missing-semester](https://github.com/missing-semester/missing-semester)
