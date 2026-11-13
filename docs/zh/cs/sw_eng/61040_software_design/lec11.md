@@ -1,692 +1,339 @@
 ---
-title: 理解同步
+title: 视觉设计 · 软件设计
 type: lecture
 lecture: 11
-tags: [synchronization, concept-design, web-architecture, causal-modeling, execution-flow]
+tags: [visual-design, layout, typography, color-theory, design-critique]
 status: complete
-source: 'https://61040-fa25.github.io/assets/lecture-notes/understanding-synchronizations.pdf'
+source: 'https://61040.github.io/fa26/lectures/visual-design.pdf'
 ---
-# Lec 11 理解同步
+# Lec 11 视觉设计（Visual Design）
 
-官方课件：[Understanding Synchronizations](https://61040-fa25.github.io/assets/lecture-notes/understanding-synchronizations.pdf)。
+官方课件：[Visual Design](https://61040-fa25.github.io/assets/lecture-notes/visual-design-lec-export.pdf)。
 
-本节目标：
+本节 Lec 的目标：
 
-- 理解 Web 端应用的架构：关于服务器
-- 理解事情如何发生：执行流及其构成
-- 理解和实现同步（*synchronization*）
-
-放在一起就是说，
-
-概念为我们提供了有用的独立构建模块，每个模块都能独立运行，并且可以单独理解。但是，
-
-- 我们如何将它们组合起来呢？
-- 入口点在哪里？
-- 一个完整的应用程序是怎么样的？
+- **理解** 视觉设计的核心要素——如何通过**布局**让界面易于理解； 如何运用**字体**排版，让界面兼具美感和逻辑清晰； 色彩如何影响界面的可用性和审美体验
+- **实践** 学会在视觉设计中识别并综合运用这三大要素
 
 ## TL;DR
 
-- 当同一个 Concept Action 可以由多个 Route 触发时，把后续业务逻辑写进 Route 会造成重复、分散和分层耦合。
-- Synchronization 用 `when / where / then` 分别声明触发行为、状态条件和后续动作，使跨 Concept 的因果关系只定义一次。
-- 将 HTTP 请求建模为 `Requesting` Concept 后，Express 只承担连接外部世界的适配职责，应用核心可以保持为扁平的 Concepts + Syncs。
-- 同步引擎使用 Frame 保存一次执行中的变量绑定；`when` 建立绑定，`where` 扩展或筛选绑定，`then` 据此执行动作并自然表达跨 Concept Join。
+- 视觉设计首先承担引导和节奏功能：布局、尺寸、对齐与留白应让层级和下一步行动能够被快速扫描，而不只是装饰界面。
+- 字体排印通过字号、x 高度、字重、对齐和行间关系建立信息层级；大段正文应优先保证稳定起点和连续阅读。
+- 颜色同时受媒介、周边颜色和人眼感知影响；调色不能只操作 RGB 数值，还要检查对比度、语义一致性与使用情境。
+- 设计批评应描述目标、观察和影响，再提出可执行改进；组件库能提高一致性与速度，但不能替代有意图的视觉判断。
 
-## 理解 Web 应用
+## 理论篇
 
-典型的 Web 应用可以理解成如下：
+### 什么是好的视觉设计
 
-![简单点 Web 应用架构](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260611095559799.png)
+好的视觉设计不仅仅是让界面"看起来漂亮"，更重要的是：
 
-- Client：用户使用的浏览器，负责展示和交互。
-- Server：接收请求、执行应用逻辑、返回结果。
-- Database：持久化保存应用的数据。
+- 引导（*Guiding*）： 通过传达结构、表达元素的相对重要性、建立元素之间的关系来引导用户。
+- 节奏（*Pacing*）：吸引用户进入应用， 帮助用户定位当前位置，指示下一步操作路径。
 
-这里一个关键问题是：**Frontend 到底“活”在哪里？最终用户看到的 HTML 是在哪里生成的？**
+⚠ 视觉设计的挑战：它是**主观的**，涉及权衡取舍，不可能让每位用户都完全满意。但至少应做到：让用户清楚知道如何完成他们需要做的事。
 
-### Frontend 的三种形式
+🎯 **核心目标：**使界面自解释（*self-explanatory*）——在设计所用元素的前提下，清晰传达用户如何最好地实现他们的目标。
 
-**1. Server-based**
+![缺少清晰操作线索的自动门示例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6669550493fd5.png)
 
-Frontend 主要在 Server。服务器从数据库获取数据、执行逻辑，然后生成最终 HTML 发送给浏览器。
+上图又是自动门，都是拉门的、但是又没有拉环的设计，让人有点摸不着头脑。
 
-```text
-Client → request → Server → Database
-                    ↓
-              generate HTML
-                    ↓
-Client ← HTML ← Server
-```
+### 布局
 
-即：
+布局的核心原则：
 
-> Server 负责生成页面，Client 主要负责显示。
+- 对于网格系统，将元素对齐到网格，常用 12 列网格，配合页边距（*margin*）和列间距（*gutter/alley*）保证结构一致
+- 尺寸= 层级： 元素大小传达重要性。大区域 = 主要操作（如搜索栏）；小区域 = 同等级的次要内容（如浏览网格）。
+- 空白区分组： 留白可在视觉上区分不同的内容组，无需边框或分隔线，减少视觉噪音。
 
-**2. Client-based**
+<div style="background: #fff7e6; border-radius:12px; padding: 12px 18px;">
+<p>Margin： 页面两侧的外边距，保护内容不贴边；</p>
+<p>Gutter / Alley： 列与列之间的间距；</p>
+<p>标准 12 列：可灵活组合（1+11、4+8、6+6 等），适配多种布局需求</p>
+</div>
 
-Frontend 主要在 Client，典型代表是 **SPA（Single-Page Application）**。
+![十二列网格中的边距与列间距](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603073758091.png)
 
-浏览器先获得较大的 JavaScript bundle，之后由客户端自己执行前端逻辑、更新页面；Server 主要提供数据。
+-----
 
-```text
-Client → request data → Server → Database
-Client ←    data     ← Server
+**用留白区分内容组**
 
-Client:
-JS + data → generate/update UI
-```
+![通过留白区分两组内容的布局对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603073901170.png)
 
-即：
+不加留白：两组内容视觉上融合，用户难以区分边界，认知负担增加。
 
-> Server 主要返回 Data，Client 自己生成和更新页面。
+加入留白后： 无需边框，两组内容（Group 1 / Group 2）自然分离，结构清晰。
 
-React、Vue 这类 SPA 通常属于这种模式。
+----
 
-**3. Database-based**
+**用户如何浏览布局（*Navigation*）**
 
-HTML 本身也可以直接作为数据存储起来，常见于简单的静态网站。
+F 型扫描模式（*F-Pattern*）： 用户不会逐字阅读页面，而是**优先扫描**。
 
-```text
-Database
-   ↓
-stored HTML
-   ↓
-Server → Client
-```
+研究表明：
 
-这里所谓 “frontend in database” 并不是数据库真的在运行前端，而是最终 HTML 已经被存储起来，而不是每次动态生成。
+<div style="border:1px solid #ddd;border-radius:16px;overflow:hidden;margin:16px 0;">
+<table style="width:100%;border-collapse:collapse;">
+<tr>
+<td style="width:25%;background:#e8f3ee;padding:20px;font-weight:bold;color:#2e8b57;border-right:1px solid #ddd;">起点</td>
+<td style="padding:20px;">从页面左上角开始，向右水平扫描第一行</td>
+</tr>
+<tr>
+<td style="padding:20px;font-weight:bold;color:#666;border-top:1px solid #ddd;border-right:1px solid #ddd;">第二行</td>
+<td style="padding:20px;border-top:1px solid #ddd;">向下移动，再次向右扫描，但范围通常比第一行短</td>
+</tr>
+<tr>
+<td style="padding:20px;font-weight:bold;color:#666;border-top:1px solid #ddd;border-right:1px solid #ddd;">竖向扫描</td>
+<td style="padding:20px;border-top:1px solid #ddd;">沿左边缘垂直向下浏览，形成「F」形轨迹</td>
+</tr>
+<tr>
+<td style="background:#e8f3ee;padding:20px;font-weight:bold;color:#2e8b57;border-top:1px solid #ddd;border-right:1px solid #ddd;">设计建议</td>
+<td style="padding:20px;border-top:1px solid #ddd;">重要内容放左侧；避免居中对齐大段文字（左对齐更易扫描）</td>
+</tr>
+</table>
+</div>
 
-### Server：API、HTTP 与 REST
+举几个例子：
 
-#### API：Client 与 Server 的接口
+![页面内容的 F 型扫描布局示例一](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66696c2f7eea9.png)
 
-Client 不需要知道 Server 内部如何实现，只通过 API 与 Server 交互：
+![页面内容的 F 型扫描布局示例二](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66696c7236734.png)
 
-```text
-Client ── Request ──→ Server
-Client ←─ Response ── Server
-```
+### 字体排印
 
-Web API 通常建立在 HTTP 之上，并经常按照 REST 风格组织。
+字体排印（*Typography*）的几个术语
 
-#### HTTP：Request / Response 的通信协议
+| 术语                             | 定义                                                         | 设计建议                                                     |
+| :------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| 字号（*font size / point size*） | 字体的整体大小，从顶部到底部的测量值                         | 不同字体相同字号，视觉大小不同                               |
+| x 高度（*x-height*）             | 小写字母"x"的高度，衡量字体的视觉大小                        | 小屏幕/低分辨率场景，优先选 x 高度大的字体（如 Lucida Grande） |
+| 字重（*Weight*）                 | 字体笔画的粗细                                               | light / regular / semi-bold / bold / extra-bold / black，通过字重建立层级 |
+| 衬线 vs 无衬线                   | Serif（如 Baskerville）有装饰性笔画；Sans-serif（如 Gill Sans）无装饰 | 两者可读性差异极小，选择主要影响**风格和调性**               |
 
-HTTP（*Hypertext Transfer Protocol*）是一种 Client 与 Server 通信的协议，核心模式就是：
+![字号、字重与 x 高度形成的字体排印差异](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083032112.png)
 
-```text
-Request → Server → Response
-```
+----
 
-一个 HTTP Request 大致包含：
+文字对齐与空白
 
-```html
-GET / HTTP/1.1
-Host: www.example.com
+左对齐（推荐）：符合 F 型扫描习惯，易于快速扫读；课程名等列表信息的最佳对齐方式
 
-<optional body>
-```
+居中对齐（谨慎使用）： 每行起点不固定，扫描困难；适合标题、短文字、对称布局；大段正文避免使用
 
-其中包括请求方法、目标地址、Headers，以及可选的 Body。
+排版中的层级示例（课程列表）
 
-Server 返回 HTTP Response：
+第一种，无层级， 课程号 + 课程名 + 教授名全部挤在一行，难以扫描
 
-```html
-HTTP/1.1 200 OK
-Content-Type: text/html
+<img src="https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083248922.png" alt="课程信息缺少视觉层级的排版示例" style="zoom:200%;" />
 
-<html><body><p>hi</p></body></html>
-```
+第二种， 教授名换行，但课程号和名称仍混在一起
 
-Response 同样包含状态信息、Headers 和 Body。
+![只通过换行区分课程信息的排版示例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083143005.png)
 
-> HTTP 规定的是 Client 和 Server **如何交换 Request / Response**。
+第三种， 课程号加大加粗，课程名用正常字重，教授名用浅色字重，三层信息一目了然
 
-------
+![用字号、字重和颜色建立课程信息层级](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083343052.png)
 
-#### REST：如何组织 API
+### 色彩
 
-REST（Representational State Transfer）不是 HTTP 本身，也不等于 API，而是一种**利用 HTTP 操作资源和管理状态的设计风格**。
+#### 加色混合 vs 减色混合
 
-常见映射：
+- 加色混合（*Additive*）：用于数字显示屏。使用红、绿、蓝（RGB）三原色叠加，颜色相加变亮。 例：红 + 蓝 = 紫
+- 减色混合（*Subtractive*）：用于印刷、电子纸。使用 CMYK 颜料，颜色相加变暗（吸收光线）
 
-| 操作   | HTTP Method     |
-| ------ | --------------- |
-| Create | `POST`          |
-| Read   | `GET`           |
-| Update | `PUT` / `PATCH` |
-| Delete | `DELETE`        |
+![RGB 加色混合与 CMYK 减色混合对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083537751.png)
 
-例如：
+<div style="background:#fff5f5;border:1px solid #f2a0a0;border-radius:16px;padding:20px 28px;color:#c00;font-size:20px;line-height:1.8;margin:16px 0;"> ✕ RGB 有两大缺陷： ① 不符合我们自然表达颜色的方式； ② 并非感知均匀（perceptually uniform）——数值变化相同，但人眼感受到的变化不一致。 </div>
 
-```sql
-GET    /users/34
-POST   /users
-PATCH  /users/34
-DELETE /users/34
-```
+#### 颜色感知效应
 
-REST 的价值之一是**解耦 Client 与 Server**：双方只要遵守约定好的 API，就不必了解对方内部实现。
+同步对比（*Simultaneous Contrast*）： 两种颜色并排时会相互影响感知。Josef Albers 实验证明：同一颜色在不同背景下看起来完全不同。设计时需考虑颜色的**上下文环境**。
 
-一个很好记的区别是：
+![相同颜色在不同背景下产生的同步对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083842817.png)
 
-> **HTTP 是通信规则；REST 是利用 HTTP 设计 API 的方式；API 是 Client 与 Server 之间暴露的接口。**
+贝佐德效应（*Bezold Effect*）： 在颜色周围加深色边框，会使该颜色看起来更深。相同的颜色值，因边框不同而产生不同的视觉感受。
 
-### Express：在 Server 中实现这些东西
+![边框改变中心颜色感知的贝佐德效应](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083947455.png)
 
-Express 把前面的概念落实到代码：
+#### 颜色三属性
 
-- 接收 HTTP Request
-- 根据 HTTP Method + Route 匹配处理逻辑
-- 读取请求参数
-- 执行 Server 逻辑
-- 返回 HTTP Response
+- 色调（*Hue*）： 我们通常所说的"颜色"本身：红、绿、蓝、黄等
+- 饱和度（*Saturation*）： 颜色的"纯度"——含灰程度。饱和度越低，越接近灰色。
+- 明度（*Lightness*）： 颜色的明暗程度。从暗到亮的连续变化。
 
-例如：
+##### 色温：暖色 vs 冷色
 
-```ts
-app.get('/', (req, res) => {
-  res.send('hello world')
-})
-```
+![暖色与冷色的色温对比示例一](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603084142901.png)
 
-可以理解为：
+![暖色与冷色的色温对比示例二](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603084222389.png)
 
-```text
-GET + "/"
-    ↓
-匹配到对应 handler
-    ↓
-执行函数
-    ↓
-Response: "hello world"
-```
+##### 色彩和谐
 
-这里 `app.get()` 对应 HTTP 的 `GET`，`'/'` 是 Route。
+色彩和谐（*Color Harmonies*）
 
-#### 路由参数
+- 互补色（*Complementary*）
+  - ✓高对比度，视觉冲击强
+  - ✓吸引注意力
+  - ✗不适合正文，阅读疲劳
+- 类似色（*Analogous*）
+  - ✓ 自然和谐，在自然界中常见
+  - 选一个主色，其余为辅助/点缀色
+  - 注意保证足够对比度
+- 分裂互补（*Split Complementary*）
+  - ✓ 类似互补色效果
+  - ↑ 相邻颜色张力更小，更好驾驭
+- 三角色 / 矩形色（*Triadic / Tetradic*）
+  - 三角色：色环上均匀分布的三色
+  - 矩形/正方形：四色组合
+  - 更复杂，需控制好主次关系
 
-Route 可以包含动态参数，用 `:` 表示：
+### 设计批评框架
 
-```ts
-app.get('/users/:userId/books/:bookId', (req, res) => {
-  res.send(req.params)
-})
-```
+用这三个问题框架，进行建设性而非破坏性的设计反馈：
 
-如果请求：
+- **I like**: 指出设计中有效的部分，肯定已有的成功决策
+- **I wish**：以期望而非批评的口吻，指出可以改进的方向
+- **What if ?** ：提出探索性建议，激发设计者思考新的可能性
 
-```text
-/users/34/books/8989
-```
+### 视觉设计速查表
 
-Express 会解析为：
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border: 2px solid #2b6cb0; border-radius: 16px; overflow: hidden; max-width: 800px; margin: 20px auto; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
 
-```ts
-req.params = {
-  userId: "34",
-  bookId: "8989"
-}
-```
+  <div style="background-color: #2b6cb0; color: #ffffff; padding: 18px 24px; font-size: 22px; font-weight: bold; text-align: left;">
+    Visual Design Cheatsheet — 界面自解释目标
+  </div>
+  <div style="display: flex; flex-direction: row; min-height: 400px; line-height: 1.6;">
+    <div style="flex: 1; padding: 24px; border-right: 1px solid #e2e8f0;">
+      <h3 style="color: #2b6cb0; font-size: 20px; margin-top: 0; margin-bottom: 8px; font-weight: bold;">布局（Layout）</h3>
+      <p style="color: #4a5568; font-style: italic; margin-bottom: 12px; font-size: 15px;">视觉组件如何组织和分组</p>
+      <ul style="padding-left: 20px; color: #2d3748; font-size: 15px; margin: 0;">
+        <li>将元素对齐到网格</li>
+        <li>尺寸大小传达层级重要性</li>
+        <li>留白区区分内容组</li>
+        <li>用户优先扫描，从左上角开始</li>
+        <li>遵循 F 型扫描路径</li>
+      </ul>
+    </div>
+    <div style="flex: 1; padding: 24px; border-right: 1px solid #e2e8f0;">
+      <h3 style="color: #2b6cb0; font-size: 20px; margin-top: 0; margin-bottom: 8px; font-weight: bold;">字体排印（Typography）</h3>
+      <p style="color: #4a5568; font-style: italic; margin-bottom: 12px; font-size: 15px;">编排文字使语言易读且美观</p>
+      <ul style="padding-left: 20px; color: #2d3748; font-size: 15px; margin: 0;">
+        <li>字号因字体而异；小屏可用较大 x 高度</li>
+        <li>衬线 vs 无衬线对可读性影响极小</li>
+        <li>左对齐比居中更容易扫描</li>
+        <li>留白区区分文字段落</li>
+        <li>字重建立信息层级</li>
+      </ul>
+    </div>
+    <div style="flex: 1; padding: 24px;">
+      <h3 style="color: #2b6cb0; font-size: 20px; margin-top: 0; margin-bottom: 8px; font-weight: bold;">色彩（Color）</h3>
+      <p style="color: #4a5568; font-style: italic; margin-bottom: 12px; font-size: 15px;">提升美感、建立氛围、传达分组</p>
+      <ul style="padding-left: 20px; color: #2d3748; font-size: 15px; margin: 0;">
+        <li>相邻颜色会相互影响感知</li>
+        <li>颜色由色调、饱和度、明度定义</li>
+        <li>数字界面用 RGB 或 hex 表达</li>
+        <li>利用色轮定义调色板（Color Harmonies）</li>
+      </ul>
+    </div>
+  </div></div>
 
-因此 `:userId`、`:bookId` 不是固定字符串，而是 URL 中需要提取出来的变量。
-
-## 一个请求的生命
-
-假设社交应用里出现了一条新的 `Post`。创建 Post 的来源其实可能很多：
-
-```text
-用户主动发帖 → Post.new
-上传照片 → 自动 Post.new
-Bot → Post.new
-其他功能 → Post.new
-```
-
-而 `Post.new` 发生之后，又可能触发很多事情：
-
-```text
-Post.new
-├── 给用户确认
-├── 查询 Followers
-├── 通知 Followers
-├── 更新推荐算法
-├── 内容分析
-└── 广告 / 支付系统……
-```
-
-也就是说，真正重要的业务关系不是：
-
-> “用户访问了哪个 Route？”
-
-而是：
-
-> **“某个行为发生以后，还应该发生什么？”**
-
-### 传统 Route 写法
-
-例如普通用户发帖：
-
-```text
-POST /posts/:user_id
-
-→ Session：检查登录
-→ Post.new
-→ Following：获取 followers
-→ Notification.notify
-→ *新增 Algorithm.update*
-```
-
-如果上传图片也会自动创建 Post：
-
-```text
-POST /images/:user_id
-
-→ Image.new
-→ Post.new
-→ Following：获取 followers
-→ Notification.notify
-→ *新增 Algorithm.update*
-```
-
-问题出现了：只要 `Post.new` 有多个来源，所有 Post 创建后的逻辑都必须在每条 Route 里重复。漏掉任何一个 Route，系统行为就不一致。
-
-### 为什么这是设计问题？
-
-之前 Synchronization 的定义是声明式的：
-
-```text
-when A happens
-where B is true
-then C happens
-```
-
-例如：
-
-```text
-when Post.new(post)
-then Algorithm.update(post)
-```
-
-它表达的是一个**全局成立的因果关系**：
-
-> 不管 `Post.new` 是从哪个 Route、哪个功能产生的，只要它发生，就应该更新 Algorithm。
-
-但如果把逻辑写死在 Route：
-
-```text
-Route A
-→ Post.new
-→ Algorithm.update
-
-Route B
-→ Post.new
-→ Algorithm.update
-```
-
-你实际上是在不同地方反复实现同一条 Sync，而不是声明一次规则，让它始终成立。
-
-### 三个问题
-
-**1. 线性重复**
-
-一个 Route = 一条线性执行流程。同一个行为从不同 Route 产生，就会复制相同逻辑。
-
-**2. 结果/影响 分散**
-
-`Post.new` 会导致什么结果，散落在不同 Route 中。想知道完整行为必须到处找代码，维护困难。
-
-**3. 分层耦合**
-
-所有业务行为都挂在 Router / Server 下面：
-
-```text
-Router
-├── Route A
-│   ├── Post
-│   ├── Following
-│   └── Notification
-│
-└── Route B
-    ├── Image
-    ├── Post
-    ├── Following
-    └── Notification
-```
-
-Router 逐渐变成一个知道所有业务规则的“大总管”，Concept 之间也无法真正独立。
-
-### 解决方法
-
-更理想的思路是把两件事情分开：
-
-```text
-Route
-↓
-负责让某个 Action 发生
-
-Post.new
-↓
-Syncs
-├── Notification...
-├── Algorithm.update
-└── Moderation...
-```
-
-例如：
-
-```text
-when Post.new(post)
-then Algorithm.update(post)
-```
-
-这样无论：
-
-```text
-POST /posts → Post.new
-```
-
-还是：
-
-```text
-POST /images → Image.new → Post.new
-```
-
-一旦 `Post.new` 真正发生，同一条 Sync 都会自动适用。
+## 实践篇
 
 ::: insight
-Route 描述“请求从哪里进入系统”，Sync 描述“一个行为发生后应该触发什么行为”。如果把 Sync 逻辑直接写进每个 Route，同一业务规则就会被重复实现，导致逻辑分散、耦合和维护困难。更好的目标是：业务因果关系只声明一次，与触发它的具体 Route 解耦。
+视觉层级本质上是把产品的优先级编码进空间：尺寸、位置、留白和对比度都在替用户决定先看什么。因而“看起来统一”不是终点；如果最显眼的元素与用户的首要任务不一致，再精致的组件库也只是在稳定地放大错误优先级。
 :::
 
-## 用概念贯通全线
+### Vue 进阶
 
-老师主张：**软件 = 概念 + 同步**
+官方教程入口：https://vuejs.org/tutorial
 
-问题是：传统 Web App 里还有一个很大的 Server / Express，它负责 HTTP、Route、Request/Response。那这个 Server 算什么？如果它是一个特殊的中心层，不就又形成了层级结构，破坏了前面强调的 扁平架构 吗？
+### 核心指令速查表
 
-老师的解决办法是：连请求本身也建模成一个 Concept。
+| 指令             | 简写     | 用途                                                    | Tutorial 步骤 |
+| :--------------- | :------- | :------------------------------------------------------ | :------------ |
+| `ref / reactive` | —        | 创建响应式变量。`ref` 用于基本类型；`reactive` 用于对象 | Step 2        |
+| `v-bind:attr`    | `:attr`  | 将 HTML 属性绑定到动态 JS 变量，实现运行时赋值          | Step 3        |
+| `v-on:event`     | `@event` | 绑定事件监听器，触发时调用对应函数                      | Step 4        |
+| `v-if / v-else`  | —        | 条件渲染：根据变量值决定渲染哪个区块                    | Step 5        |
+| 组件嵌套         | —        | 父子组件构成层级树结构，类似 DOM 树                     | Step 11       |
+| `defineProps`    | —        | 父组件向子组件传递数据（Props）                         | Step 12       |
+| `defineEmits`    | —        | 子组件向父组件发送数据（Emits）                         | Step 13       |
 
-这一抽象不是为了用 Concept 取代 HTTP，而是为了划清边界：HTTP 负责把外部输入送进系统，`Requesting` 记录请求及其响应状态，其他 Concepts 则继续封装各自的业务能力。这样，协议适配与业务因果关系可以分别演化。
+### 视觉设计分析
 
-### 请求概念化
+### 前端设计库
 
-`Requesting` 是对 Request/Response 周期的具象化（reification）：每个请求成为可追踪的状态记录，包含方法、输入参数和最终输出。外部适配层通过 system action 发起请求，系统内部再通过普通 Sync 把请求连接到业务 Concepts。
+代表性工具：[Vuetify](https://vuetifyjs.com/en/)（Vue 生态中最流行的 Material Design 组件库）。
 
-这条边界让业务 Concepts 不必知道 Express、URL 或 HTTP Method，也让传输协议可以替换而不改变核心因果规则。反过来，`Requesting` 只负责表达外部请求的生命周期，不吸收认证、发帖或通知等业务职责。
+当我们知道什么是好的视觉设计之后，下一个问题是： 如何在代码中实现它？ 前端设计
 
-API Server 的本质其实就是处理：
+## Rec 8：Visual Design Study 与前端设计库
 
-```text
-外部 Request → 系统处理 → Response
-```
+官方课件：[More Vue + Visual Design Study + Visual Design Libraries](https://61040-fa25.github.io/assets/recitation_notes/61040-rec7.pdf)（2025 年 10 月 23 日）。
 
-因此可以把 Request/Response 抽象成一个普通的 `Requesting` 概念：
+### 什么是"视觉设计研究"（Visual Design Study）
 
-```text
-Concept Requesting
+**定义**：一份视觉设计研究，探索色彩、布局、字体排印、图像等视觉选择，如何影响人们"看到什么、理解什么、感受到什么"。
 
-Purpose:
-响应来自系统外部的请求
+**为什么要做**：目的是训练"设计师之眼"（*designer's eye*）——把前面讲的布局/字体/色彩这些抽象原则，放进具体案例里检验"什么有效、什么无效"。做完之后你会获得：
 
-State:
-Request
-  - method
-  - input parameters
-  - output parameters
+- **视觉素养**：学会分析字体、色彩、布局是如何共同起作用的
+- **设计词汇**：能用"高对比度调色板""高 x 高度""强对齐"这类具体语言描述"为什么好看"，而不是只会说"好看"
+- **灵感素材库**：收集可供自己设计时参考的视觉资料
+- **有意图的设计选择**：能为自己选的颜色、字体说出理由，而不是凭直觉
+- **模式识别能力**：在不同媒介、不同风格中发现反复出现的设计策略
 
-Actions:
-system request(method, parameters) → request
-respond(request, parameters)
-```
+### 三步做法
 
-这里最重要的是 `system request`：它表示这个 Action **由系统外部触发**。
+1. **收集灵感素材**：从海报、游戏、音乐专辑封面等任意视觉媒介中收集参考图（课件示例用了乐队 Parquet Courts 几张专辑封面：*Wide Awake!* 的鲜艳撞色插画风、*Human Performance* 的蓝色几何构图、*Neo-Politans* 的自然主题拼贴）
+2. **组织成拼贴图并做批注**：把收集到的素材拼在一起，针对色彩标注主色、色彩关系与调色板选择（例如"冷蓝配三级色的绿与黄，营造都市自然感"）；针对字体排印标注字体、字号、位置、内容传达的情绪（例如"全大写、字距紧密，传递兴奋与混乱感，呼应封面内容"；"文字被切块打散分布在封面各处，传递失落感"）
+3. **反思**：综合笔记，写出你学到了什么。课件示例的反思是：*Wide Awake!* 用大胆的互补色营造出适合朋克乐队的强烈能量感；转向 *Human Performance* 更冷的蓝绿黄色调，情绪随之软化为更安静的都市氛围；两张专辑的字体排印手法（紧凑大写 vs. 疏离破碎）恰好分别呼应了各自的情绪基调。
 
-例如：
+这个流程也正是 Assignment 4b/期末项目里"Visual Design Study"交付物（两页带标注的参考图收集）所要求的做法。
 
-```text
-HTTP GET /users
-        ↓
-Requesting.request("getUser")
-        ↓
-其他 Concepts + Syncs
-        ↓
-Requesting.respond(...)
-        ↓
-HTTP Response
-```
+### 前端设计库（UI Component Libraries）
 
-### 那 Express 去哪里了？
+知道了什么是好的视觉设计之后，下一个问题是：怎么在代码里实现它？答案之一是使用**前端设计库**——预先写好、可直接复用的 UI 组件集合。Vue 生态里最常用的是 [Vuetify](https://vuetifyjs.com/en/)（一个"不需要设计技能"的开源 UI 库，提供大量精心设计好的 Vue 组件：按钮、卡片、列表、芯片标签、分割线、折叠面板等），此外还有 Chakra UI、MUI、Ant Design、React-Bootstrap 等（多数面向 React 生态）。
 
-Express 仍然存在，但它不再承载业务逻辑，而只是**系统与外部世界之间的适配层 / side effect**。
+**优点**：
 
-```javascript
-app.get("/users", async (req, res) => {
-    const response =
-        await Requesting.request({
-            method: "getUser"
-        })
-})
-```
+- 开箱即用大量样式和组件，减少从零造轮子的工作量
+- 可复用组件保证界面视觉一致性（同一个 `v-btn` 在全站表现一致）
+- 生成的代码更"可移植"，方便自己和协作者维护
 
-Route 只负责：
+**缺点**：
 
-**HTTP 请求 → 转换成 `Requesting.request` → 等待结果 → 返回 HTTP Response**，真正的业务行为仍然由 Concepts + Syncs 完成。
+- 定制化可能很麻烦：想要"按钮不是灰色的"，往往要一路深入到主题配置（如 Material Design 的 `md.sys.color.primary` token）才能改动，改一个小细节可能牵涉一整套设计系统
+- 组件默认样式可能和布局冲突（例如某些组件默认 `width: 100%`，在 flex 容器里会导致溢出问题，需要额外覆盖）
+- 库本身可能过时或与所用框架版本不兼容（社区里常见"Vuetify 2 升级到 3 几乎没法迁移"这类抱怨）
 
-::: insight
-不仅业务功能被建模为 Concept，连 Request/Response 这样的基础系统行为也可以 Concept 化；Express 等框架退化为连接外部世界的适配层，使应用核心真正保持为 Concepts + Syncs，而不需要一个承载业务逻辑的中心 Server。
-:::
+选择是否使用设计库，本质上是"开发速度与视觉一致性"和"精细控制与长期维护成本"之间的权衡。
 
-## Sync 的本质
+### Vue 补充：组件通信（Props 与 Emits）
 
-传统 Route 把业务写成一条条线性执行流程，但同一个行为可能从不同 Route 产生。例如 `Post.new` 既可能来自用户主动发帖，也可能来自上传图片后自动创建。如果把“通知关注者、更新算法”等后续逻辑直接写进 Route，就会造成重复，而且每增加一种触发方式，都需要修改多个地方。
+延续 Lec 13 的响应式基础，这次习题课补充了父子组件之间双向传递数据的两种机制：
 
-Synchronization 的核心是把这种流程拆成独立的「因果规则」：
+- **Props（父传子）**：父组件通过属性绑定把数据传给子组件，子组件用 `defineProps` 声明要接收的字段：
+  ```vue
+  <!-- Parent.vue -->
+  <ChildComp :msg="greeting" />
 
-```text
-when A 发生
-where B 条件成立
-then C 发生
-```
+  <!-- Child.vue -->
+  <script setup>
+  const props = defineProps({ msg: String })
+  </script>
+  ```
+- **Emits（子传父）**：子组件通过 `defineEmits` 声明自己会触发哪些事件，调用 `emit(...)` 把数据"发射"回父组件；父组件用 `@事件名` 监听：
+  ```vue
+  <!-- Child.vue -->
+  <script setup>
+  const emit = defineEmits(['response'])
+  emit('response', 'hello from child')
+  </script>
 
-也就是：**Sync 描述 Cause → Effect，而不是描述一整条执行流程。**
+  <!-- Parent.vue -->
+  <ChildComp @response="(msg) => childMsg = msg" />
+  ```
 
-例如创建 Post 有不同原因：
-
-```text
-sync UserPost
-when Request.userPost(user, post)
-where Session: user logged in
-then Post.new(post, author: user)
-
-sync ImagePost
-when Request.newImage(image, user)
-then Post.new(post: image, author: user)
-```
-
-但无论 Post 是怎么创建出来的，只要 `Post.new` 发生，后续规则都可以统一声明：
-
-```text
-sync NotifyFollowers
-when Post.new(post, author: user)
-where Following: follower follows user
-then Notifying.notify(follower, post)
-
-sync AlgorithmUpdate
-when Post.new(post, author: user)
-then Algorithm.update(post, user)
-```
-
-这样新增一个后续效果时，只需要增加一个 Sync，不需要修改所有能够创建 Post 的 Route。
-
-### 多个 `when`
-
-一个 Sync 也可以要求多个 Action 属于**同一次执行 Flow**：
-
-```text
-sync NotifyFollowers
-when Request.userPost(user, post)
-		 Post.new(post, author: user)
-where Following: follower follows user
-then Notifying.notify(user:follower, post)
-```
-
-这里不是简单说“这两个 Action 曾经发生过”，而是要求它们处于由 Sync 形成的**同一个因果执行图（DAG）**中。因此可以区分“用户主动发帖产生的 `Post.new`”和“上传图片产生的 `Post.new`”。
-
-### 设计上的变化
-
-过去：
-
-```text
-Route / Sync
-→ Action A
-→ Action B
-→ Action C
-→ Action D
-```
-
-Sync 本质上仍像一份线性的 recipe。
-
-现在：
-
-```text
-Concepts + 独立 Syncs
-
-A → B
-B → C
-B → D
-C → E
-```
-
-应用因此变得更 **flat**：不再由一个巨大的 Route 控制整个流程，而是由独立 Concepts + 独立因果规则组合起来。
-
-::: insight
-核心：Concept 定义局部行为，Sync 定义行为之间的因果关系；每条因果关系只声明一次，并可以独立增加、修改和理解。
-:::
-
-## 实现同步
-
-Synchronization Engine 将声明式的 Sync：
-
-```text
-sync NotifyWhenReach10
-
-when
-  Button.clicked(kind: "increment_counter", by: user)
-  Counter.increment()
-
-where
-  Counter.count >= 10
-
-then
-  Notification.notify("Reached 10", to: user)
-```
-
-转化为实际执行过程：
-
-**`when` 匹配 Actions → `where` 查询/过滤状态 → `then` 触发 Actions**
-
-### Frames：同步执行的上下文
-
-Sync 使用 **Frame** 保存一次匹配中的变量绑定，例如：
-
-```text
-{ user: "xavier", count: 10 }
-```
-
-`Frames` 则是一组可能的绑定。三个阶段实际上都在围绕 Frames 工作：
-
-- `when`：匹配发生过的 Actions，建立变量绑定
-- `where`：通过 query/filter 扩展或筛选 Frames
-- `then`：对最终每个 Frame 执行 Action
-
-### Frames 可以自然实现 Join
-
-例如删除 Post 时，同时删除它的所有 Comments：
-
-```text
-sync DeleteComments
-
-when
-  Post.delete(post)
-
-where
-  Comment: comment.target = post
-
-then
-  Comment.delete(comment)
-```
-
-`Post.delete(p1)` 首先产生：
-
-```text
-{ post: p1 }
-```
-
-`where` 查询 `p1` 的 Comments 后，将一个 Frame 扩展为多个：
-
-```text
-{ post: p1, comment: c1 }
-{ post: p1, comment: c2 }
-{ post: p1, comment: c3 }
-```
-
-因此 `then` 自然执行：
-
-```text
-Comment.delete(c1)
-Comment.delete(c2)
-Comment.delete(c3)
-```
-
-对应 TypeScript：
-
-```javascript
-const DeleteComments = ({ post, comment }: Vars) => ({
-  when: actions(
-    [Post.delete, { post }, { post }],
-  ),
-
-  where: (frames: Frames) =>
-    frames.query(
-      Comment._getByTarget,
-      { target: post },
-      { comment }
-    ),
-
-  then: actions(
-    [Comment.delete, { comment }]
-  )
-})
-```
-
-> **核心：Frame 是 Sync 中变量绑定的上下文。`when` 建立 Frames，`where` 扩展/过滤 Frames，`then` 消费 Frames 执行动作；因此跨 Concept 的查询和 Join 可以直接通过 Sync 表达。**
-
-Web 应用架构一直在变化。传统以 Server / Express Router 为中心的架构容易把认证、业务逻辑、通知等 concerns 耦合在 Route 中。Concept Design 的做法是把这些行为重新抽象出来：例如将 API 的本质提取为 `Request` Concept，再通过独立的 `when / where / then` Synchronizations 连接 Concepts，从而形成更扁平的架构。课程提供的轻量 TypeScript Synchronization Engine，就是这套模型的实现。
-
-## Concept 与 Sync 的本质
-
-**Concept 不只是设计模式或代码结构，而是试图描述“软件中真正发生的事情”**，与具体实现方式无关。例如无论底层使用 Express、REST 还是其他技术，外部向系统提出请求这件事都可以抽象成 `Request`。
-
-**Synchronization 也不只是模块组合机制，而是在描述因果关系（cause → effect）：**
-
-```text
-when  发生了什么行为
-where 在什么状态/条件下
-then  会导致什么行为
-```
-
-### 理解软件的两个维度
-
-任何关于软件的问题，都可以沿两个轴分析：
-
-|          | 结果                         | 影响                           |
-| -------- | ---------------------------- | ------------------------------ |
-| **行为** | `when`：什么 Action 触发     | `then`：触发哪些 Actions       |
-| **信息** | `where`：什么 State/条件成立 | Concept Action：如何改变 State |
-
-因此在 `Concepts + Syncs = Software` 的模型中，**所有因果关系都有明确的位置**：行为的原因来自 `when`，信息条件来自 `where`，对行为的影响写在 `then`，对信息状态的改变封装在 Concept Actions 内。
-
-### 最终目标
-
-这套架构追求三个基本原则：
-
-- **增量性**：Concept / Sync 可以逐个添加，每个只负责一件事。
-- **完整性**：加入新的 Concept / Sync 不应破坏已有功能。
-- **透明性**：能够直接阅读系统，追踪“什么导致了什么”。
+组件树的通信原则是：数据只能沿父子关系流动——父到子用 props，子到父用 emits，不存在跨层级的隐式共享状态；这与本课程"概念之间不共享状态、只能通过显式 Sync 通信"的设计哲学是一致的道理，只是发生在前端组件树这个更小的尺度上。

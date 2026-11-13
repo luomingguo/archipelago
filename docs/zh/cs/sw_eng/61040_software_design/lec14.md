@@ -1,339 +1,177 @@
 ---
-title: 视觉设计
+title: 价值敏感设计 · 软件设计
 type: lecture
 lecture: 14
-tags: [visual-design, layout, typography, color-theory, design-critique]
-status: complete
-source: 'https://61040-fa25.github.io/assets/lecture-notes/visual-design-lec-export.pdf'
+tags: [value-sensitive-design, stakeholder-analysis, accessibility, technology-ethics]
+status: draft
+source: 'https://61040.github.io/fa26/lectures/vsd.pdf'
 ---
-# Lec 14 视觉设计
+# Lec 14 价值敏感设计（Value-Sensitive Design）
 
-官方课件：[Visual Design](https://61040-fa25.github.io/assets/lecture-notes/visual-design-lec-export.pdf)。
-
-本节 Lec 的目标：
-
-- **理解** 视觉设计的核心要素——如何通过**布局**让界面易于理解； 如何运用**字体**排版，让界面兼具美感和逻辑清晰； 色彩如何影响界面的可用性和审美体验
-- **实践** 学会在视觉设计中识别并综合运用这三大要素
+[上一讲](./lec17.md)用用户测试检查目标用户能否理解并使用产品；这一讲把评价范围扩展到未直接使用产品的人、产品进入社会后的长期后果，以及设计所选择和放大的价值。
 
 ## TL;DR
 
-- 视觉设计首先承担引导和节奏功能：布局、尺寸、对齐与留白应让层级和下一步行动能够被快速扫描，而不只是装饰界面。
-- 字体排印通过字号、x 高度、字重、对齐和行间关系建立信息层级；大段正文应优先保证稳定起点和连续阅读。
-- 颜色同时受媒介、周边颜色和人眼感知影响；调色不能只操作 RGB 数值，还要检查对比度、语义一致性与使用情境。
-- 设计批评应描述目标、观察和影响，再提出可执行改进；组件库能提高一致性与速度，但不能替代有意图的视觉判断。
+- “做出人们想要的东西”并不能保证产品值得做；需求洞察和同理心若只面向购买者，仍会遗漏间接伤害、长期影响与社会成本。
+- 价值敏感设计（*Value Sensitive Design*，VSD）用四个维度扩大设计视野：利益相关者、时间、普及性与价值。
+- Waze 说明优化直接用户的效率可能把成本转嫁给居民；无障碍案例说明未经目标群体参与的“好意”会失效，而消除边缘群体的障碍常能让更多人受益。
+- 再挪用与主动不使用要求设计者考虑发布后的非预期用途、拒绝使用的权利，以及数据创建、使用、撤回和删除的完整生命周期。
+- 软件不具中立性：设计选择编码价值与优先级，采用规模会放大这些选择，而被广泛采用的软件又会反过来塑造社会规范。
 
-## 理论篇
+## 为什么“做出人们想要的东西”还不够
 
-### 什么是好的视觉设计
+创业和产品设计常以“Make something people want”为目标。但“有人想要”只证明产品具有吸引力，并不能回答它是否会伤害使用者、旁观者或社会。课件以电子烟产品和科技从业者反思行业后果的材料开场，指出一个局限：**需求发现（*need finding*）和同理心建立（*empathy building*）本身并不够**。
 
-好的视觉设计不仅仅是让界面"看起来漂亮"，更重要的是：
+传统设计研究往往聚焦产品被购买和使用的**即时情境**：直接用户想完成什么任务，界面是否好用，功能是否满足需求。这个视角容易遗漏两类问题：
 
-- 引导（*Guiding*）： 通过传达结构、表达元素的相对重要性、建立元素之间的关系来引导用户。
-- 节奏（*Pacing*）：吸引用户进入应用， 帮助用户定位当前位置，指示下一步操作路径。
+1. 产品会怎样影响没有购买、甚至没有接触产品的人？
+2. 新鲜感消退并融入社会后，产品会产生什么长期、规模化后果？
 
-⚠ 视觉设计的挑战：它是**主观的**，涉及权衡取舍，不可能让每位用户都完全满意。但至少应做到：让用户清楚知道如何完成他们需要做的事。
-
-🎯 **核心目标：**使界面自解释（*self-explanatory*）——在设计所用元素的前提下，清晰传达用户如何最好地实现他们的目标。
-
-![缺少清晰操作线索的自动门示例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/6669550493fd5.png)
-
-上图又是自动门，都是拉门的、但是又没有拉环的设计，让人有点摸不着头脑。
-
-### 布局
-
-布局的核心原则：
-
-- 对于网格系统，将元素对齐到网格，常用 12 列网格，配合页边距（*margin*）和列间距（*gutter/alley*）保证结构一致
-- 尺寸= 层级： 元素大小传达重要性。大区域 = 主要操作（如搜索栏）；小区域 = 同等级的次要内容（如浏览网格）。
-- 空白区分组： 留白可在视觉上区分不同的内容组，无需边框或分隔线，减少视觉噪音。
-
-<div style="background: #fff7e6; border-radius:12px; padding: 12px 18px;">
-<p>Margin： 页面两侧的外边距，保护内容不贴边；</p>
-<p>Gutter / Alley： 列与列之间的间距；</p>
-<p>标准 12 列：可灵活组合（1+11、4+8、6+6 等），适配多种布局需求</p>
-</div>
-
-![十二列网格中的边距与列间距](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603073758091.png)
-
------
-
-**用留白区分内容组**
-
-![通过留白区分两组内容的布局对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603073901170.png)
-
-不加留白：两组内容视觉上融合，用户难以区分边界，认知负担增加。
-
-加入留白后： 无需边框，两组内容（Group 1 / Group 2）自然分离，结构清晰。
-
-----
-
-**用户如何浏览布局（*Navigation*）**
-
-F 型扫描模式（*F-Pattern*）： 用户不会逐字阅读页面，而是**优先扫描**。
-
-研究表明：
-
-<div style="border:1px solid #ddd;border-radius:16px;overflow:hidden;margin:16px 0;">
-<table style="width:100%;border-collapse:collapse;">
-<tr>
-<td style="width:25%;background:#e8f3ee;padding:20px;font-weight:bold;color:#2e8b57;border-right:1px solid #ddd;">起点</td>
-<td style="padding:20px;">从页面左上角开始，向右水平扫描第一行</td>
-</tr>
-<tr>
-<td style="padding:20px;font-weight:bold;color:#666;border-top:1px solid #ddd;border-right:1px solid #ddd;">第二行</td>
-<td style="padding:20px;border-top:1px solid #ddd;">向下移动，再次向右扫描，但范围通常比第一行短</td>
-</tr>
-<tr>
-<td style="padding:20px;font-weight:bold;color:#666;border-top:1px solid #ddd;border-right:1px solid #ddd;">竖向扫描</td>
-<td style="padding:20px;border-top:1px solid #ddd;">沿左边缘垂直向下浏览，形成「F」形轨迹</td>
-</tr>
-<tr>
-<td style="background:#e8f3ee;padding:20px;font-weight:bold;color:#2e8b57;border-top:1px solid #ddd;border-right:1px solid #ddd;">设计建议</td>
-<td style="padding:20px;border-top:1px solid #ddd;">重要内容放左侧；避免居中对齐大段文字（左对齐更易扫描）</td>
-</tr>
-</table>
-</div>
-
-举几个例子：
-
-![页面内容的 F 型扫描布局示例一](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66696c2f7eea9.png)
-
-![页面内容的 F 型扫描布局示例二](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66696c7236734.png)
-
-### 字体排印
-
-字体排印（*Typography*）的几个术语
-
-| 术语                             | 定义                                                         | 设计建议                                                     |
-| :------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| 字号（*font size / point size*） | 字体的整体大小，从顶部到底部的测量值                         | 不同字体相同字号，视觉大小不同                               |
-| x 高度（*x-height*）             | 小写字母"x"的高度，衡量字体的视觉大小                        | 小屏幕/低分辨率场景，优先选 x 高度大的字体（如 Lucida Grande） |
-| 字重（*Weight*）                 | 字体笔画的粗细                                               | light / regular / semi-bold / bold / extra-bold / black，通过字重建立层级 |
-| 衬线 vs 无衬线                   | Serif（如 Baskerville）有装饰性笔画；Sans-serif（如 Gill Sans）无装饰 | 两者可读性差异极小，选择主要影响**风格和调性**               |
-
-![字号、字重与 x 高度形成的字体排印差异](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083032112.png)
-
-----
-
-文字对齐与空白
-
-左对齐（推荐）：符合 F 型扫描习惯，易于快速扫读；课程名等列表信息的最佳对齐方式
-
-居中对齐（谨慎使用）： 每行起点不固定，扫描困难；适合标题、短文字、对称布局；大段正文避免使用
-
-排版中的层级示例（课程列表）
-
-第一种，无层级， 课程号 + 课程名 + 教授名全部挤在一行，难以扫描
-
-<img src="https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083248922.png" alt="课程信息缺少视觉层级的排版示例" style="zoom:200%;" />
-
-第二种， 教授名换行，但课程号和名称仍混在一起
-
-![只通过换行区分课程信息的排版示例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083143005.png)
-
-第三种， 课程号加大加粗，课程名用正常字重，教授名用浅色字重，三层信息一目了然
-
-![用字号、字重和颜色建立课程信息层级](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083343052.png)
-
-### 色彩
-
-#### 加色混合 vs 减色混合
-
-- 加色混合（*Additive*）：用于数字显示屏。使用红、绿、蓝（RGB）三原色叠加，颜色相加变亮。 例：红 + 蓝 = 紫
-- 减色混合（*Subtractive*）：用于印刷、电子纸。使用 CMYK 颜料，颜色相加变暗（吸收光线）
-
-![RGB 加色混合与 CMYK 减色混合对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083537751.png)
-
-<div style="background:#fff5f5;border:1px solid #f2a0a0;border-radius:16px;padding:20px 28px;color:#c00;font-size:20px;line-height:1.8;margin:16px 0;"> ✕ RGB 有两大缺陷： ① 不符合我们自然表达颜色的方式； ② 并非感知均匀（perceptually uniform）——数值变化相同，但人眼感受到的变化不一致。 </div>
-
-#### 颜色感知效应
-
-同步对比（*Simultaneous Contrast*）： 两种颜色并排时会相互影响感知。Josef Albers 实验证明：同一颜色在不同背景下看起来完全不同。设计时需考虑颜色的**上下文环境**。
-
-![相同颜色在不同背景下产生的同步对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083842817.png)
-
-贝佐德效应（*Bezold Effect*）： 在颜色周围加深色边框，会使该颜色看起来更深。相同的颜色值，因边框不同而产生不同的视觉感受。
-
-![边框改变中心颜色感知的贝佐德效应](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603083947455.png)
-
-#### 颜色三属性
-
-- 色调（*Hue*）： 我们通常所说的"颜色"本身：红、绿、蓝、黄等
-- 饱和度（*Saturation*）： 颜色的"纯度"——含灰程度。饱和度越低，越接近灰色。
-- 明度（*Lightness*）： 颜色的明暗程度。从暗到亮的连续变化。
-
-##### 色温：暖色 vs 冷色
-
-![暖色与冷色的色温对比示例一](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603084142901.png)
-
-![暖色与冷色的色温对比示例二](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260603084222389.png)
-
-##### 色彩和谐
-
-色彩和谐（*Color Harmonies*）
-
-- 互补色（*Complementary*）
-  - ✓高对比度，视觉冲击强
-  - ✓吸引注意力
-  - ✗不适合正文，阅读疲劳
-- 类似色（*Analogous*）
-  - ✓ 自然和谐，在自然界中常见
-  - 选一个主色，其余为辅助/点缀色
-  - 注意保证足够对比度
-- 分裂互补（*Split Complementary*）
-  - ✓ 类似互补色效果
-  - ↑ 相邻颜色张力更小，更好驾驭
-- 三角色 / 矩形色（*Triadic / Tetradic*）
-  - 三角色：色环上均匀分布的三色
-  - 矩形/正方形：四色组合
-  - 更复杂，需控制好主次关系
-
-### 设计批评框架
-
-用这三个问题框架，进行建设性而非破坏性的设计反馈：
-
-- **I like**: 指出设计中有效的部分，肯定已有的成功决策
-- **I wish**：以期望而非批评的口吻，指出可以改进的方向
-- **What if ?** ：提出探索性建议，激发设计者思考新的可能性
-
-### 视觉设计速查表
-
-<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border: 2px solid #2b6cb0; border-radius: 16px; overflow: hidden; max-width: 800px; margin: 20px auto; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-
-  <div style="background-color: #2b6cb0; color: #ffffff; padding: 18px 24px; font-size: 22px; font-weight: bold; text-align: left;">
-    Visual Design Cheatsheet — 界面自解释目标
-  </div>
-  <div style="display: flex; flex-direction: row; min-height: 400px; line-height: 1.6;">
-    <div style="flex: 1; padding: 24px; border-right: 1px solid #e2e8f0;">
-      <h3 style="color: #2b6cb0; font-size: 20px; margin-top: 0; margin-bottom: 8px; font-weight: bold;">布局（Layout）</h3>
-      <p style="color: #4a5568; font-style: italic; margin-bottom: 12px; font-size: 15px;">视觉组件如何组织和分组</p>
-      <ul style="padding-left: 20px; color: #2d3748; font-size: 15px; margin: 0;">
-        <li>将元素对齐到网格</li>
-        <li>尺寸大小传达层级重要性</li>
-        <li>留白区区分内容组</li>
-        <li>用户优先扫描，从左上角开始</li>
-        <li>遵循 F 型扫描路径</li>
-      </ul>
-    </div>
-    <div style="flex: 1; padding: 24px; border-right: 1px solid #e2e8f0;">
-      <h3 style="color: #2b6cb0; font-size: 20px; margin-top: 0; margin-bottom: 8px; font-weight: bold;">字体排印（Typography）</h3>
-      <p style="color: #4a5568; font-style: italic; margin-bottom: 12px; font-size: 15px;">编排文字使语言易读且美观</p>
-      <ul style="padding-left: 20px; color: #2d3748; font-size: 15px; margin: 0;">
-        <li>字号因字体而异；小屏可用较大 x 高度</li>
-        <li>衬线 vs 无衬线对可读性影响极小</li>
-        <li>左对齐比居中更容易扫描</li>
-        <li>留白区区分文字段落</li>
-        <li>字重建立信息层级</li>
-      </ul>
-    </div>
-    <div style="flex: 1; padding: 24px;">
-      <h3 style="color: #2b6cb0; font-size: 20px; margin-top: 0; margin-bottom: 8px; font-weight: bold;">色彩（Color）</h3>
-      <p style="color: #4a5568; font-style: italic; margin-bottom: 12px; font-size: 15px;">提升美感、建立氛围、传达分组</p>
-      <ul style="padding-left: 20px; color: #2d3748; font-size: 15px; margin: 0;">
-        <li>相邻颜色会相互影响感知</li>
-        <li>颜色由色调、饱和度、明度定义</li>
-        <li>数字界面用 RGB 或 hex 表达</li>
-        <li>利用色轮定义调色板（Color Harmonies）</li>
-      </ul>
-    </div>
-  </div></div>
-
-## 实践篇
-
-::: insight
-视觉层级本质上是把产品的优先级编码进空间：尺寸、位置、留白和对比度都在替用户决定先看什么。因而“看起来统一”不是终点；如果最显眼的元素与用户的首要任务不一致，再精致的组件库也只是在稳定地放大错误优先级。
+::: definition 价值敏感设计
+价值敏感设计（*Value Sensitive Design*，VSD）是一种把人类价值系统地纳入技术设计的方法。它不只评估直接用户的一次交互，还考察利益相关者、时间、普及性和价值冲突。
 :::
 
-### Vue 进阶
+VSD 不是在产品完成后补一份“伦理检查表”，而是在定义问题、选择指标、设计默认值和决定数据生命周期时扩大判断范围。
 
-官方教程入口：https://vuejs.org/tutorial
+## VSD 的四个分析维度
 
-### 核心指令速查表
+| 维度 | 核心问题 | 课件给出的检查方向 |
+| --- | --- | --- |
+| **利益相关者（Stakeholders）** | 谁直接或间接受到技术影响？ | 直接/间接利益相关者、非目标使用、儿童、能力差异、转手使用、一人多重角色 |
+| **时间（Time）** | 新鲜感消退、技术被适应和融入社会后会怎样？ | 长期健康与福祉、持续友谊、工作的未来、适应、非使用、淘汰、再挪用 |
+| **普及性（Pervasiveness）** | 当很多人、地区或文化都采用它时，会出现什么系统效应？ | 广泛使用、不同地域、跨国边界、文化差异、政治现实 |
+| **价值（Values）** | 哪些价值受到影响，应优先保障什么？ | 获取利益相关者的价值、识别关键价值、选择目标价值、评价价值体验、价值张力与价值感知 |
 
-| 指令             | 简写     | 用途                                                    | Tutorial 步骤 |
-| :--------------- | :------- | :------------------------------------------------------ | :------------ |
-| `ref / reactive` | —        | 创建响应式变量。`ref` 用于基本类型；`reactive` 用于对象 | Step 2        |
-| `v-bind:attr`    | `:attr`  | 将 HTML 属性绑定到动态 JS 变量，实现运行时赋值          | Step 3        |
-| `v-on:event`     | `@event` | 绑定事件监听器，触发时调用对应函数                      | Step 4        |
-| `v-if / v-else`  | —        | 条件渲染：根据变量值决定渲染哪个区块                    | Step 5        |
-| 组件嵌套         | —        | 父子组件构成层级树结构，类似 DOM 树                     | Step 11       |
-| `defineProps`    | —        | 父组件向子组件传递数据（Props）                         | Step 12       |
-| `defineEmits`    | —        | 子组件向父组件发送数据（Emits）                         | Step 13       |
+四个维度不是四种互斥的问题，而是四次“拉远镜头”：利益相关者扩大**人的范围**，时间扩大**观察周期**，普及性扩大**系统规模**，价值则明确**用什么标准判断结果**。
 
-### 视觉设计分析
+## 利益相关者：优化给谁，成本又由谁承担
 
-### 前端设计库
+### Waze 效应：直接用户的捷径，居民区的车流
 
-代表性工具：[Vuetify](https://vuetifyjs.com/en/)（Vue 生态中最流行的 Material Design 组件库）。
+导航软件 Waze 为驾驶者计算更快的路线。驾驶者是直接利益相关者；被车流穿过的居民区住户并不使用这项功能，却要承受噪声、拥堵与安全风险，因此是间接利益相关者。
 
-当我们知道什么是好的视觉设计之后，下一个问题是： 如何在代码中实现它？ 前端设计
+课件中的居民描述了两个后果：原本安静的街道逐渐像高速公路；狭窄道路涌入大量车辆后，邻里会面对鸣笛、堵塞甚至司机冲突。Waze 联合创始人 Uri Levine 则从另一种价值立场回应：道路属于公共领域，人人都有权使用；Waze 通过重新分配车流改善整体交通。
 
-## Rec 8：Visual Design Study 与前端设计库
+这不是一个只靠“禁止绕行”就能解决的简单问题，而是几组价值的冲突：
 
-官方课件：[More Vue + Visual Design Study + Visual Design Libraries](https://61040-fa25.github.io/assets/recitation_notes/61040-rec7.pdf)（2025 年 10 月 23 日）。
+| 直接用户重视的价值 | 间接利益相关者重视的价值 |
+| --- | --- |
+| 出行效率、路线选择、公共道路的使用权 | 居住安全、安宁、社区生活与成本分配的公平 |
 
-### 什么是"视觉设计研究"（Visual Design Study）
+![Waze 导航界面、居民区车流与居民证言](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260917160836919.png)
 
-**定义**：一份视觉设计研究，探索色彩、布局、字体排印、图像等视觉选择，如何影响人们"看到什么、理解什么、感受到什么"。
+课件把问题留给设计者，而没有给出唯一答案：
 
-**为什么要做**：目的是训练"设计师之眼"（*designer's eye*）——把前面讲的布局/字体/色彩这些抽象原则，放进具体案例里检验"什么有效、什么无效"。做完之后你会获得：
+1. Waze 可以怎样修改设计，把间接利益相关者纳入决策？
+2. 受影响的居民可以采取什么行动表达或保护自己的利益？
 
-- **视觉素养**：学会分析字体、色彩、布局是如何共同起作用的
-- **设计词汇**：能用"高对比度调色板""高 x 高度""强对齐"这类具体语言描述"为什么好看"，而不是只会说"好看"
-- **灵感素材库**：收集可供自己设计时参考的视觉资料
-- **有意图的设计选择**：能为自己选的颜色、字体说出理由，而不是凭直觉
-- **模式识别能力**：在不同媒介、不同风格中发现反复出现的设计策略
+::: insight
+利益相关者分析的关键不是列一份“所有可能的人”，而是追踪产品优化目标造成的成本转移：谁得到收益，谁承担风险，谁能修改规则，谁连表达意见的入口都没有。
+:::
 
-### 三步做法
+### 能力差异：从 Disability Dongle 到路缘坡效应
 
-1. **收集灵感素材**：从海报、游戏、音乐专辑封面等任意视觉媒介中收集参考图（课件示例用了乐队 Parquet Courts 几张专辑封面：*Wide Awake!* 的鲜艳撞色插画风、*Human Performance* 的蓝色几何构图、*Neo-Politans* 的自然主题拼贴）
-2. **组织成拼贴图并做批注**：把收集到的素材拼在一起，针对色彩标注主色、色彩关系与调色板选择（例如"冷蓝配三级色的绿与黄，营造都市自然感"）；针对字体排印标注字体、字号、位置、内容传达的情绪（例如"全大写、字距紧密，传递兴奋与混乱感，呼应封面内容"；"文字被切块打散分布在封面各处，传递失落感"）
-3. **反思**：综合笔记，写出你学到了什么。课件示例的反思是：*Wide Awake!* 用大胆的互补色营造出适合朋克乐队的强烈能量感；转向 *Human Performance* 更冷的蓝绿黄色调，情绪随之软化为更安静的都市氛围；两张专辑的字体排印手法（紧凑大写 vs. 疏离破碎）恰好分别呼应了各自的情绪基调。
+无障碍设计要求团队把**能力差异（*variation in human ability*）**当作正常的人类差异，而不是少数用户的例外情况。
 
-这个流程也正是 Assignment 4b/期末项目里"Visual Design Study"交付物（两页带标注的参考图收集）所要求的做法。
+课件引用 Liz Jackson 提出的 **Disability Dongle**：设计者在没有充分理解残障人士真实生活、也没有让他们参与决策时，做出外形新奇、看似善意，却昂贵、不可用或根本没有解决真实问题的辅助产品。问题不在“关心残障人士”这件事，而在于设计者替目标群体定义了问题和成功标准。
 
-### 前端设计库（UI Component Libraries）
+与之相对的是**路缘坡效应（*curb-cut effect*）**：路缘缓坡最初用于消除轮椅使用者的通行障碍，也方便了推婴儿车、搬运行李、骑自行车和使用推车的人。为被忽视的群体移除障碍，有时会改善所有人的体验。
 
-知道了什么是好的视觉设计之后，下一个问题是：怎么在代码里实现它？答案之一是使用**前端设计库**——预先写好、可直接复用的 UI 组件集合。Vue 生态里最常用的是 [Vuetify](https://vuetifyjs.com/en/)（一个"不需要设计技能"的开源 UI 库，提供大量精心设计好的 Vue 组件：按钮、卡片、列表、芯片标签、分割线、折叠面板等），此外还有 Chakra UI、MUI、Ant Design、React-Bootstrap 等（多数面向 React 生态）。
+![Disability Dongle 的轮椅原型与批评](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260917160944668.png)
 
-**优点**：
+![“路缘坡效应”示意图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260917161000143.png)
 
-- 开箱即用大量样式和组件，减少从零造轮子的工作量
-- 可复用组件保证界面视觉一致性（同一个 `v-btn` 在全站表现一致）
-- 生成的代码更"可移植"，方便自己和协作者维护
+::: pitfall
+“更多人都能用”不是跳过残障用户研究的理由。路缘坡效应成立的前提，是先准确解决原本被排除群体的障碍；若需求本身判断错误，通用设计的口号只会掩盖失败。
+:::
 
-**缺点**：
+## 时间：产品发布以后还会发生什么
 
-- 定制化可能很麻烦：想要"按钮不是灰色的"，往往要一路深入到主题配置（如 Material Design 的 `md.sys.color.primary` token）才能改动，改一个小细节可能牵涉一整套设计系统
-- 组件默认样式可能和布局冲突（例如某些组件默认 `width: 100%`，在 flex 容器里会导致溢出问题，需要额外覆盖）
-- 库本身可能过时或与所用框架版本不兼容（社区里常见"Vuetify 2 升级到 3 几乎没法迁移"这类抱怨）
+时间维度要求设计者越过发布日和短期指标，观察技术从新奇事物变成基础设施的过程。用户会适应产品、改变社会规范、拒绝使用它，也可能把它改造成设计者从未预想的工具。
 
-选择是否使用设计库，本质上是"开发速度与视觉一致性"和"精细控制与长期维护成本"之间的权衡。
+### 再挪用：用户会重新定义工具
 
-### Vue 补充：组件通信（Props 与 Emits）
+**再挪用（*reappropriation*）**是指用户把已有技术用于原设计目的之外的活动。课件用 Excel 展示“可塑软件”（*malleable software*）：电子表格除了记账和计算，还被用来制作像素画、《龙与地下城》角色卡，甚至数字音频工作站。
 
-延续 Lec 13 的响应式基础，这次习题课补充了父子组件之间双向传递数据的两种机制：
+更激进的例子是 Omar Rizwan 的 [TabFS](https://omar.website/tabfs/)。它把浏览器标签页映射为文件和目录，于是用户可以用熟悉的文件系统工具操作浏览器。例如：
 
-- **Props（父传子）**：父组件通过属性绑定把数据传给子组件，子组件用 `defineProps` 声明要接收的字段：
-  ```vue
-  <!-- Parent.vue -->
-  <ChildComp :msg="greeting" />
+```bash
+# 列出所有标签页标题
+cat mnt/tabs/by-id/*/title.txt
 
-  <!-- Child.vue -->
-  <script setup>
-  const props = defineProps({ msg: String })
-  </script>
-  ```
-- **Emits（子传父）**：子组件通过 `defineEmits` 声明自己会触发哪些事件，调用 `emit(...)` 把数据"发射"回父组件；父组件用 `@事件名` 监听：
-  ```vue
-  <!-- Child.vue -->
-  <script setup>
-  const emit = defineEmits(['response'])
-  emit('response', 'hello from child')
-  </script>
+# 关闭标题包含 Stack Overflow 的标签页
+rm mnt/tabs/by-title/*Stack_Overflow*
+```
 
-  <!-- Parent.vue -->
-  <ChildComp @response="(msg) => childMsg = msg" />
-  ```
+网页的 `body.html` 也可以在代码编辑器中直接修改。TabFS 的价值不只是提供三个新命令，而是改变了可组合性：一旦标签页成为文件，现有的 shell、编辑器和自动化工具都能参与重新定义浏览器的用途。
 
-组件树的通信原则是：数据只能沿父子关系流动——父到子用 props，子到父用 emits，不存在跨层级的隐式共享状态；这与本课程"概念之间不共享状态、只能通过显式 Sync 通信"的设计哲学是一致的道理，只是发生在前端组件树这个更小的尺度上。
+> **待补图 3（课件第 28–38 页）**：Excel 的像素画、角色卡和音频工作站，以及 TabFS 将标签页暴露为目录的界面。可拆成“通用工具的非预期用途”和“TabFS 的机制”两张图。
+>
+> ![价值敏感设计：利益相关者识别矩阵图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260917161229365.png)
+
+::: insight
+设计者无法枚举产品未来的全部用途。与其把再挪用只当作滥用或边缘行为，不如区分两种情况：需要边界约束的伤害性用途，以及揭示真实需求、值得通过开放格式和可组合接口支持的创造性用途。
+:::
+
+### 非使用：拒绝技术也需要被设计
+
+产品团队通常问“怎样促进采用”，但 VSD 还要求问：个人或社会是否应当选择**不使用（*non-use*）**这项技术？课件以人脸识别为例，展示城市禁令、社会组织的反对，以及平台提供的识别设置。
+
+一个“关闭人脸识别”的开关并没有自动解决问题，因为它留下了数据生命周期上的开放问题：
+
+- 关闭设置后，系统是不再计算人脸模板，还是只停止用模板提供自动建议？
+- 人脸模板应在照片上传、用户被标记，还是用户同意标记时创建？
+- 用户撤回许可后，过去已经生成的人脸模板是否删除？
+
+> **待补图 4（课件第 39–43 页）**：城市禁用人脸识别的新闻标题、EFF 反对材料、Facebook 人脸识别设置，以及课件列出的三个开放设计问题。
+>
+> ![价值敏感设计：长期扩散与系统效应图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260917161316681.png)
+
+这组问题说明，“退出”不能只被实现成界面状态。真正的非使用权会约束数据是否收集、何时计算、如何使用、能否撤回，以及撤回后是否真正删除。
+
+## 普及性：局部效率可能制造系统负担
+
+课件用文字自动补全的发展说明**普及性（*pervasiveness*）**：从 Nokia 手机的预测输入，到 Smart Compose、Smart Reply 和现代手机的预测文本，单次写作变得越来越快。
+
+若只观察一个人写一封邮件，这显然是效率提升；当所有人都能更快发邮件时，系统层面却可能出现相反结果：
+
+1. 发送一封邮件的成本下降，社会中的邮件总量上升；
+2. 回复变得容易，人与人之间“应当尽快回应”的规范随之增强；
+3. 每个人节省了单次写作时间，却可能收到更多邮件并承受更高的持续响应压力。
+
+> **待补图 5（课件第 46–48 页）**：T9、Smart Compose / Smart Reply 与手机预测文本的演进图，以及“更容易发送—总量增加—响应压力上升”的悖论。
+>
+> ![价值冲突与设计权衡矩阵图](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260917161330677.png)
+
+::: insight
+普及性要求把成功指标从“单次交互是否更快”提升到“整个系统的总负担是否下降”。如果功能会改变他人的行为和社会预期，只测本地效率就可能把系统性反效果误判为成功。
+:::
+
+## 价值：设计必须明确自己在优先什么
+
+课件把价值定义为：**人们在生活中认为重要的事物**，例如自主、社区、合作、民主化、环境可持续、公平与尊严。
+
+价值维度不是让团队选几个好听的词写进愿景，而是完成一条可检验的设计链：
+
+1. **获取利益相关者的价值**：让直接和间接利益相关者表达什么对他们重要。
+2. **识别受到影响的关键价值**：说明某个功能、默认值或数据实践会改变什么。
+3. **选择希望保障的价值**：承认取舍，明确哪些价值在冲突时优先。
+4. **评价价值体验**：检查用户和受影响群体是否真的感受到这些价值。
+5. **处理价值张力与感知差异**：同一个设计可能被不同群体理解为自由、控制、公平或侵扰。
+
+Waze 案例中的效率与社区安宁、人脸识别中的便利与隐私、自动补全中的个人效率与集体负担，都不是技术参数之间的纯工程权衡。它们要求团队说明“对谁的什么价值负责”，再把答案落实为路线规则、默认设置、权限、数据保留策略和发布指标。
+
+## 软件不具中立性
+
+课件用四步因果链收束整讲：
+
+1. 开发软件包含大量或大或小的设计选择与权衡；
+2. 每个选择都隐含地编码了设计者的价值与优先级；
+3. 产品被采用后，这些价值会在更大范围内应用；
+4. 被规模化的设计选择又会反过来塑造人的价值、行为与社会规范。
+
+因此，“软件不具中立性”不是说每个结果都由设计者完全控制，也不是要求设计者准确预测未来，而是要求团队对可见的影响范围、价值冲突和可纠正机制承担责任。
+
+::: insight
+把 VSD 落到产品规格时，每个价值判断至少应改变一项可执行内容：需要参与研究的群体、必须评估的伤害、默认值、数据生命周期、申诉与退出机制，或足以阻止发布的指标。若分析没有改变任何设计决定，它仍只是口号。
+:::

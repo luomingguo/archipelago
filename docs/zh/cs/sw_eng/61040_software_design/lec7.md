@@ -1,245 +1,446 @@
 ---
-title: 设计 AI 驱动的交互 I
+title: 模块化案例研究 · 软件设计
 type: lecture
 lecture: 7
-tags: [human-ai-interaction, mental-model, llm-reasoning, wireframing]
+tags: [software-design, prd, concept-design, data-model]
 status: complete
-source: 'https://61040-fa25.github.io/assets/lecture-notes/designing_ai_powered_interactions_part_1.pdf'
+source: 'https://61040.github.io/fa26/lectures/design-case-studies.pdf'
 ---
-# Lec 7 设计 AI 驱动的交互 I
+# Lec 7 模块化案例研究（Design Case Studies）
 
-官方课件：[Designing AI-powered Interactions, Part 1](https://61040-fa25.github.io/assets/lecture-notes/designing_ai_powered_interactions_part_1.pdf)。
-
-本节 Lec 的目标是：
-
-- **掌握** 与聊天模型和推理模型交互的基本知识，以便在项目中设计 AI 功能
-- **理解** 与 LLM 有效交互的障碍：幻觉、心智模型不匹配等
-- **下节课—— 在聊天之上交互**： UI 抽象掉 LLM 的推理
-
-LLM 使 AI 功能开发变得前所未有地容易——但设计出真正好用的 AI 功能仍然极具挑战性。
+- 通过 Zoom 和 Spotify 的案例，**加深对模块化重要性的理解**
+- **理解 概念模块化 对代码的影响**，理解 concept 的功能如何“横切”（cross-cut）传统的代码组织结构
+- **识别概念设计中的协同效应** 当两个 concept 组合时，可以产生大于各自价值简单相加的效果
 
 ## TL;DR
 
-- Prompt + Completion 把表达需求、补足上下文和判断答案的负担都交给用户，因此只是 AI 产品交互的起点，而不是完整方案。
-- 幻觉、上下文不透明和心智模型错配不能仅靠“更强模型”解决；界面必须提供来源、局部修正、撤销和人工接管等可供性。
-- 推理模型可能提升复杂任务质量，但展示完整推理并不天然可信；应按用户行动需要提供简短理由、来源或可编辑中间结果。
-- 线框图把抽象概念变成可测试的用户旅程；概念之间即使有外部依赖，也只有满足单向、非对称和可独立复用等条件时才应形成内部依赖。
+- 分析异常行为时，应沿“观察不一致 → 推断隐藏 Concept → 明确 purpose/state/actions → 拆分职责 → 用 Sync 重组”的路径定位问题。
+- Zoom 说明 Counting、Expiration、Cancellation 等关注点可以横切传统对象分类，不能因为共享同一组按钮就塞进一个 Reaction 概念。
+- Spotify 的 Folder、Library/Playlist 与 Queue 案例分别揭示抽象不匹配、职责混合和心理模型失效；熟悉名称必须对应可预测行为。
+- 清晰的 purpose、独立的 Concepts 与显式 Synchronization 能同时提升通用性、熟悉性、模块化和可预测性。
 
-## AI 产品落地的背景
+## 回顾模块化的标准
 
-2025 关于 AI 工具的 MIT 报告指出，
+| 标准 | 好的表现 | 失败信号 |
+| --- | --- | --- |
+| 分离 separation | 一个概念只服务一个关注点 | 不相关功能被绑成一个动作或设置 |
+| 完整 completeness | 同一关注点的状态、动作与规则在同一概念内 | 完成一个简单任务必须到多处“拼”操作 |
+| 独立 independence | 概念可理解、测试、演进而不要求另一个概念存在 | 模块 A 无法在不调用/窥探 B 的情况下工作 |
 
-- 个体层面已有真实收益：员工用 ChatGPT、Claude 等通用工具写作、检索、分析、编程，效率常有提升。
-- 企业层面却出现“GenAI 鸿沟”：大多数试点没能形成可量化的收入增长、成本下降或利润改善；报告样本中，约 5% 项目实现了快速的 P&L 层面价值。
+三者会互相拉扯：不要为了“拆得细”而把一个完整行为切碎；也不要为了“方便调用”把独立概念硬塞在一起。
 
-- 高 ROI 更常在后台运营：如采购、财务、合规、客服流程、供应链与内部知识流程，而不是预算最集中的销售和营销内容生成。
-- 成功企业往往不是从零自建炫目的模型，而是选定明确、可衡量的工作流痛点，采用能与企业数据和流程结合、能持续迭代的方案。
+![模块化设计的分离、完整与独立三项标准](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260830025503607.png)
 
-## 基础交互范式：Prompt + Completion
+## 案例：Zoom 的即时表达
 
-最直接的模式是用户输入 prompt，系统立即展示 completion。它适合泛化问答、客服、辅导等开放任务，但把“如何表述问题、如何补足上下文、如何判断答案”都推给了用户。它强大，却是产品交互的最低层封装。
+![Zoom 会议中的举手、表情与主持人控制](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260830025540289.png)
 
-### 主要陷阱
+“举手”、表情反应、会议主持人的队列管理看似都是按钮，却至少包含两种关注点：**参与者表达一个短暂信号**，以及 **主持人管理需要回应的人**。如果把它们混成即时表达（*Reaction*），就容易产生异常行为：互动的寿命、是否可撤回、主持人是否需要处理、后来加入者是否看得到，都没有清晰归属。
 
-- **事实幻觉（*Hallucinations*）**：模型面对错误前提（如询问不存在的 MIT 校区）不会主动质疑，反而以自信、工整的语言继续编造合理假象。
-  - 启示： 不能将模型的自信度与条理性作为可信度指标。
+| 反应类型                   | 自动消失 | 计数  | 主持人可取消 |
+| -------------------------- | -------- | ----- | ------------ |
+| Emoji 表情                 | ✓        | （✓） | —            |
+| Yes / No 是/否             | —        | ✓     | ✓            |
+| Slow / Speed 慢一点/快一点 | —        | ✓     | ✓            |
+| Away 暂时离开              | —        | （✓） | （✓）        |
+| Hand 举手                  | —        | （✓） | ✓            |
 
-- **上下文不透明（*Lack of Context*）**：很多错误源于模型缺少任务所需的背景信息（例如用户提问中的代词“it”指代不明）
-- **心智模型错配（*Mismatched Mental Models*）**：用户脑中对系统的理解与 AI 的真实能力产生偏差。
-- **过度自动化**：系统替用户作出价值判断，导致难以撤销的后果。
+其中：
 
-### 关于心智模型的观察 ——Don Norman
+- **✓** = 是
+- **（✓）** = 是，但设计上**可能不应该如此**
+- **—** = 否
 
-1. 心智模型是不完整的（Incomplete）
+**Reaction Types 的互斥关系**
 
-2. #### 人们“运行”模型的能力是有限的（Limited）：人们并不喜欢在每一次操作前都进行细致的思考与推导。
+| Reaction 类型      | Emoji 表情 | Yes / No 是/否 | Slow / Speed 慢/快 | Away 离开 | Hand 举手 |
+| ------------------ | ---------- | -------------- | ------------------ | --------- | --------- |
+| Emoji 表情         | ✓          | —              | —                  | —         | —         |
+| Yes / No 是/否     | —          | ✓              | （✓）              | （✓）     | （✓）     |
+| Slow / Speed 慢/快 | —          | （✓）          | ✓                  | （✓）     | （✓）     |
+| Away 离开          | —          | （✓）          | （✓）              | ✓         | （✓）     |
+| Hand 举手          | —          | （✓）          | （✓）              | （✓）     | ✓         |
 
-3. 心智模型是不稳定的（Unstable）：人们容易遗忘系统的具体细节。
+其中：
 
-4. 心智模型缺乏清晰的边界（No firm boundaries）：相似的设备与操作之间极易发生相互混淆。
+- **✓** = 可以同时存在
+- **（✓）** = Zoom 目前允许同时存在，**但作者认为可能不应该允许**
+- **—** = 不适用 / 不同时存在
 
-5. 心智模型是“非科学的”（"Unscientific"）：即使知晓更好的替代方案，人们仍会维持某些“迷信式”的行为习惯。
+![splitting into coherent concepts](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260830030810305.png)
 
-6. 心智模型是追求认知节省的（Parsimonious）：人们宁愿付出额外的物理操作，来换取心智思考负担的减轻。
-
-### 迭代困境：缺乏修正可供性
-
-Prompt → Completion 的一个重要问题是：模型第一次生成错了以后，用户不一定知道该怎么修正它。例如让模型生成 MIT 6.1040 的课堂图片，结果生成成了卡通风格。
-
-![让模型生成 MIT 6.1040 的课堂图片](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260901052454741.png)
-
-用户只能再次用自然语言解释：“我们的课程根本不是这样，为什么是卡通？”模型再追问真实课堂、建筑、风格等信息。问题不是「不能修改」，而是：**系统缺少明确的 可供性（*Affordance*），告诉用户“你可以改什么、应该怎么改”**。用户必须自己摸索 Prompt，承担大量交互成本。
-
-::: definition 可供性
-告诉用户“你可以改什么、应该怎么改”
-:::
-
-### 人-AI 对交互鸿沟
-
-![交互鸿沟](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260901053203039.png)
-
-交互鸿沟并非单向存在，而是用户与 LLM 双向映射的系统性问题：
-
-| **维度**                      | **用户侧的鸿沟（User → AI）**                                | **模型侧的鸿沟（LLM → User）**                               |
-| ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 评估鸿沟 (Gulf of Evaluation) | **“它到底把我的要求理解成什么了？”** 无法看清模型当前的内部假设、上下文与风格判定 | **“这个用户现在到底想要什么？”** 从简短模糊的 Prompt 中推断真实意图与隐含约束 |
-| 执行鸿沟 (Gulf of Execution)  | **“我该如何 Prompt 才能修正它？”** 知道想要的目标，但不知道如何用 Prompt 准确触发 | **“我应该采取怎样的行为与风格回应？”** 已知目标，但需要决定采用何种语气、格式与边界 |
-
-### 用户建模与价值对齐
-
-![LLM 也有用户模型](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260901053337969.png)
-
-AI 的最终输出并非纯客观结果，而是对用户的推断，即用户模型（*User Model*） + 模型内化价值（Aligned Values） 的复合体现。
-
-- 用户建模的两大混杂因素：
-
-  1. 个体异质性：用户的目标、文化背景、审美与价值观千差万别，不存在普适的“默认用户”。
-  2. 模型非中立性：模型经过预训练与 Alignment（如遵循 Model Spec 中“追求客观、尊重自主性”的规则），本身带有行为倾向。
-
-- 集体对齐：
-
-  - 面对无标准答案的争议问题，价值决策不能仅由少数开发者垄断，亦不能无原则迎合单方面偏好。
-
-  - 对齐的实质平衡：
-
-    $$\text{个人偏好} \times \text{社会普遍价值} \times \text{安全合规规范} \times \text{事实准确性}$$
-
-## 推理模型：Prompt + Reasoning +Completion
-
-推理模型把基础模式改为 **prompt → reasoning → completion**
-
-Reasoning 最直接的优势是提高模型处理复杂任务的能力。尤其适合需要：多步骤推理、数学 / 逻辑、复杂代码、图表理解、规划、多约束问题的任务。
-
-在给最终输出前，模型会花时间生成计划、检查或中间推理。它可能在复杂问题上更有效，但不是可靠性的保证；幻觉、上下文缺失、心智模型错配和难以迭代仍然存在。
-
-### 是否展示推理过程？
-
-Reasoning 还有一个看起来很诱人的优势：
-
-> 我们似乎可以看到模型是「怎么得到答案的」。
-
-如果展示 **Chain-of-Thought（CoT）**，用户可能看到模型经过了哪些步骤、考虑了哪些因素。
-
-理想情况下：**Reasoning → 用户理解模型 → 更准确的 Mental Model**，也就是说，它可能缩小前面讲过的 Gulf of Evaluation： “模型到底为什么给我这个答案？”
-
-读取 chain-of-thought（CoT）在和模型共同调试、结果不符合预期时常有帮助。但课件提醒它不是可信的“内心记录”：推理文本是否完整反映模型过程、模型是否有动机如实呈现，都是开放问题。
-
-因此不要默认把完整推理过程塞进 UI。需要判断：
-
-- 用户真正需要的是完整步骤、简短理由、来源，还是可编辑的中间结果？
-- 展示会增加信任，还是让用户被冗长、难核验的文字迷惑？
-- 是否应仅在用户主动展开或出现异常时展示？
-
-课件的类比是：你未必希望汽车的引擎盖完全透明。解释必须能帮助用户行动，而非只让系统看起来“更会思考”。
-
-#### 最有价值的场景：调试和协作
-
-当你正在和模型**协作**，但模型一直没有产生你想要的结果时，查看 Reasoning 往往非常有帮助。
-
-因为你可能发现：
-
-```text
-用户真正意图
-↓
-模型理解错误
-↓
-错误推理
-↓
-错误结果
-```
-
-这时候 Reasoning 可以成为一种 **debugging interface**，例如你发现模型误解了某个约束，就可以直接纠正。
-
-### 延迟、成本与过度思考
-
-推理消耗的 token 越多，通常等待越久、费用越高。设计要按任务权衡正确性和快速迭代：**搜索灵感、反复修改文案的场景可能优先速度**；高价值、复杂且可核验的任务才值得等待更长推理。还要防范 **over-thinking**：课件举例，简单的“把网页字体改成红色”也可能被模型扩展成大量无关改动；更慢、更长的推理并不必然更好。
-
-## Rec 4：用户旅程与 UI 线框图（Wireframing）
-
-官方课件：[Rec 4 — User journeys and UI sketching](https://61040-fa25.github.io/assets/recitation_notes/61040-Rec4-Slides.pdf)。这次习题课把"设计 AI 功能"从抽象原则落到具体操作：如何把发散出来的功能想法收敛成可实现的概念，再画成线框图（*wireframe*）验证用户旅程。
-
-### 发散与收敛：从功能到概念
-
-课程的设计流程分两个阶段：**发散设计**（*divergent design*）先不加评判地产生大量想法，**收敛设计**（*convergent design*）再挑选、组合、精炼出可执行的方案。
-
-发散阶段常用的三种技巧：
-
-- **头脑风暴（brainstorming）**：合作产生尽可能多的点子，先不批评。可以借助几个具体问题打开思路：**缺口分析**（gap analysis）——现有应用里缺了什么？**可行性**（viability）——是否需要临界规模？内容由谁生产？收入从哪来？**类比**（analogies）——有没有类似的应用或功能可以借鉴？
-- **横向思考（lateral thinking）**：故意选一个"糟糕"的点子并认真推演下去，用来暴露和挑战团队的隐藏假设，聚焦在问题里被忽视的那一面。
-- **搜寻灵感**：去实体书店、图书馆翻书，在互联网上"钻兔子洞"，专门留意不寻常的东西。
-
-### 依赖关系：判断"允许内部依赖"的标准
-
-收敛阶段要决定概念之间能否有内部依赖（*internal dependency*，即一个概念的实现直接引用/调用另一个概念）。课程区分两种依赖：
-
-- **外部依赖**：从使用场景的角度看，某个功能在概念上需要另一个功能先存在（比如"评论"在概念上依赖"帖子"存在）。
-- **内部依赖**：从软件实现的角度看，一段代码直接调用或引用了另一段代码。
-
-这两种依赖彼此独立，不能混为一谈——有外部依赖不代表就该写成内部依赖（这正是本课程用 Sync 而非直接调用来连接概念的原因）。当确实需要允许"A 使用 B"这种内部依赖时，课程给出四条同时成立的判据：
-
-1. A 因为使用了 B 而变得本质上更简单
-2. B 并不会因为被 A 使用而变得更复杂（即 B 不能反过来使用 A）
-3. 存在一个只包含 B、不包含 A 的有用子集
-4. 不存在一个只包含 A、不包含 B 的有用子集
-
-简言之：依赖必须是单向的、非对称的，且被依赖者要能独立、完整地"站得住"。
-
-### 什么是线框图（Wireframe）
-
-**定义**：线框图是用来表现网站或其他用户界面"骨架结构"的示意图或视觉草稿。
-
-**为什么要画线框图**：
-
-- **更快的交互原型与迭代设计**：把界面写成代码往往比画出来慢得多；先画线框图，能在任何代码定型之前就收集反馈、反复修改
-- **更好地预演使用场景和交互**：概念设计阶段通常很抽象，很难预见真实使用中会出现的问题；一旦做成线框图，设计变得具体，这些潜在问题更容易被发现和解决
-- **更一致、更刻意的重复元素使用**
-
-本课程对线框图的定位：主要用来表达**布局、功能与用户体验**，色彩和美观等视觉细节相对次要（那是 Lec 14"视觉设计"要解决的问题）——目标是让线框图具体到足以让看的人靠想象力补完"这个网页最终会长什么样、用起来是什么感觉"。工业界的线框图有时会做到"高保真"（*high-fidelity*），几乎和最终成品视觉上一致。
-
-即便将来主要写代码而不做设计，学习画线框图仍然有价值：
-
-- 能更好地和设计师/产品经理协作，甚至因为具备技术视角而为创意过程贡献新的想法
-- 你可能随时被临时要求承担"设计师"的角色——比如想快速把一个新想法可视化出来收集反馈；或者是做个人项目、没有专门设计团队时，自己动手会快得多
-- 线框图本身是一种原型（prototyping）：正如可以用 MVP 或纸面原型测试设计一样，也可以用线框图提前测试设计——概念设计阶段太抽象，难以预见真实使用中的问题；做成线框图后问题会更容易暴露和解决
-
-### Figma 实操
-
-**Figma** 是本课程使用的线框图工具，也是工业界的标准工具之一；除了线框图，它还能做平面设计、原型交互、图表可视化等。用学生邮箱注册可以免费升级到 Education 计划（享受专业版的全部权益）。
-
-习题课通过搭建一个简化版 YouTube 首页，带练了 Figma 的核心概念：
-
-- **Frame（画框）**：设计的容器，通常用来表示一个"页面"；画框之间可以互相嵌套
-- **插入与操作形状/文字**
-- **组件（Components）**：**主组件**（main component）定义了组件的属性；**实例**（instance）是主组件的副本，可在设计中复用——修改主组件会联动更新所有实例，这与前端开发里"组件化"的思路完全一致
-- **图层（Layers）**：每个对象都是一个图层，多个对象可以编组成更"概念化"的图层单位
-- **用户交互（Prototype → Interactions）**：用来定义界面之间的交互跳转流程，这正是本课程线框图要呈现的关键内容之一——一组交互构成一条"用户流程"（*user flow*）
-- **插件（Plugins）**
-
-### 相关链接
-
-- [Figma 官方博客：如何画线框图](https://www.figma.com/blog/how-to-wireframe/)
-- [Figma 101 入门课程](https://designlab.com/figma-101-course/introduction-to-figma/)
-- [组件使用指南](https://help.figma.com/hc/en-us/articles/360038662654-Guide-to-components-in-Figma)
-- [原型与交互流程指南](https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma)
-
-## 配套作业：Assignment 2 — Functional Design
-
-**截止日期**：2025 年 9 月 28 日 23:59。官方作业页：[Assignment 2](https://61040-fa25.github.io/assignments/assignment-2)。
-
-这个作业要求学生把 Assignment 1 里选定的问题，转化为具体的**功能设计**（*functional design*）：确定核心用户、梳理用户旅程、并用本讲学的线框图技巧把交互流程画出来——在真正开始写代码之前，先把"这个应用长什么样、怎么用"想清楚、画出来，验证功能边界是否合理、是否真的覆盖了用户的核心需求。
-
-## 本讲的设计检查清单
-
-1. 这个功能真的适合开放聊天，还是用户需要更受约束的结构化输入/输出？
-2. 用户知道模型有哪些资料、不能做什么、输出是否可能错误吗？
-3. 用户看到错误后，能否低成本地修正、局部重做、撤销或转给人工？
-4. 默认的推荐、排序、语气和安全边界是否反映了可被用户调整的价值选择？
-5. 若采用推理模型，额外质量是否值得其等待、成本与认知负担？
-
-## 从模型能力到可协作界面的结论
-
-prompt + completion 是很有力的起点，但不是完整产品。Lec 7 的核心是：用准确的心智模型、可修正的界面、清晰的上下文和价值可控性，把不可预测的模型能力变成用户能安全协作的功能。下一讲会进一步讨论如何用结构化输入输出和 agent 模式超越纯聊天。
+![splitting into coherent concepts menue](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260830030846843.png)
 
 ::: insight
-AI 交互设计的最小单位不应是“一次回答”，而应是一个可恢复的协作回合：用户能看见系统采用了什么输入、修改局部结果，并在模型越界前收回控制权。以这个标准看，解释文本只有在帮助核验或下一步行动时才有价值；单纯增加篇幅反而可能制造新的自动化偏差。
+Zoom 案例说明 concept modularity 可以横切传统的对象/类型划分：Counting、Expiration、Cancellation、Disjointness 等功能跨越多个 Reaction Types，因此应被视为独立 concerns，而不是重复嵌入各个 Reaction Type。
 :::
+
+## 案例：Spotify
+
+Spotify 的 Folder、Library、Playlist 与 Queue 说明，界面中熟悉的名称如果对应了混杂职责，用户仍然无法形成稳定的心理模型。
+
+### Spotify 暴露出的核心问题
+
+![playing with spotify folders](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260831001904400.png)
+
+Spotify 中一些功能之所以让人感到困惑，并不只是 UI 或命名问题，而是因为：
+
+> **UI 呈现的熟悉 Concept，与系统真正实现的 Concept 不一致。**
+
+典型表现：
+
+- Folder 看起来像通用文件夹，实际更接近 `PlaylistFolder / PlaylistTree`
+- Queue 看起来像传统 FIFO 队列，实际混合了手动队列、当前播放上下文和推荐流
+- Library、Playlist 之间的关系不清楚时，一个操作可能产生用户没有预期的副作用
+
+最终形成：
+
+> **概念边界模糊 → 职责混合 → 隐藏副作用 → 行为不一致 → 用户无法形成稳定心理模型 → 非预期行为**
+
+------
+
+### Folder：UI 概念 ≠ 实际概念
+
+Spotify Folder 的行为：
+
+| 放入 Folder 的内容             | 结果                        |
+| ------------------------------ | --------------------------- |
+| Playlist                       | ✓ 直接放入                  |
+| Album / Song                   | ⚠️ 自动创建 Playlist，再放入 |
+| Podcast / Artist / Liked Songs | ✗ 不支持                    |
+
+这带来一个问题：Folder 到底是通用内容容器，还是 Playlist 专用容器？
+
+如果它是普通 `Folder<Item>`，Album、Song、Podcast 等理论上都应该可以直接加入。
+
+如果它实际上是 `PlaylistFolder`，那么用户把 Album / Song 拖进去时，系统偷偷创建 Playlist，又引入了用户没有表达过的意图。
+
+#### 概念设计问题
+
+UI 使用了用户熟悉的：**Folder**
+
+用户自然套用文件系统心智模型：
+
+> Folder = 可以容纳各种 Item 的容器。
+
+但实际功能更接近：
+
+**PlaylistTree**
+
+> Folder = 组织 Playlist 的层级结构。
+
+因此，这不仅是命名问题，而是**用户理解的 Concept 与实际 Concept 不匹配**。
+
+#### 泛化
+
+一种更通用的抽象是：
+
+```text
+Folder[Item]
+```
+
+这样同一个 concept 可以支持：
+
+`Folder<Song>`、`Folder<Album>`、`Folder<Playlist>`、`Folder<Podcast>`。
+
+相比 `PlaylistFolder`，它具有更好的：
+
+**flexibility · reuse · independence · predictability**
+
+但 Genericity 并不是越高越好。
+
+如果真正的 Purpose 是：
+
+> organize playlists for playback
+
+那么 `PlaylistFolder` 完全可能是合理设计。
+
+**关键不是“越通用越好”，而是 Concept 的抽象层级必须与 Purpose 一致。**
+
+### Playlist 与 Library：相似数据，不同 Purpose
+
+二者都引用 Song，但一个用于组织播放顺序，另一个用于保存内容；相似数据结构不能代替 purpose 的区分。
+
+#### Playlist
+
+```text
+concept Playlist [User, Song]
+Purpose：organize songs into listening lists
+state
+  User → set<Playlist>
+  Playlist → seq<Song>
+
+actions
+  add(p, song)
+  remove(p, song)
+```
+
+Playlist 的核心是：**组织歌曲形成播放列表。**
+
+![Playlist 与 Library 的状态和动作对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260831002100283.png)
+
+#### Library
+
+```text
+concept Library [User, Song, Album]
+Purpose: save songs & albums for easy access
+state
+  User → set<Song>
+  User → set<Album>
+  Album → set<Song>
+
+actions
+  save(user, song/album)
+  discard(user, song/album)
+```
+
+Library 的核心是：**保存内容，方便以后访问。**
+
+虽然两者都涉及 Song，但 Purpose 完全不同，因此应该是两个独立 Concepts。
+
+#### 为什么分开很重要？
+
+假设 `Song X` 同时存在于：
+
+```text
+Library + Playlist A + Playlist B
+```
+
+执行：
+
+```text
+Library.discard(Song X)
+```
+
+是否应该同时导致：
+
+`Playlist.remove(Song X)`？
+
+**不应该由 Library 或 Playlist 内部偷偷决定。**
+
+如果产品确实需要这种联动，应通过 **Synchronization** 明确规定。
+
+因此：
+
+> **Concept 管自己的 State / Actions；跨 Concept 行为由 Synchronization 连接。**
+
+这样可以避免一个 Concept 暗中修改另一个 Concept 的状态。
+
+------
+
+### Queue：熟悉名称掩盖了多个 Concepts
+
+传统 Queue 的心理模型很简单：
+
+> **FIFO — First In, First Out**
+
+例如：
+
+```text
+enqueue A → enqueue B → enqueue C
+```
+
+用户自然预期：
+
+```text
+A → B → C
+```
+
+但 Spotify 的 Queue 页面实际上同时出现：
+
+- Now Playing
+- Next in Queue
+- Next From: Album / Playlist / Context
+
+也就是说，Spotify 所谓的“Queue”实际上混合了至少三种不同职责。
+
+#### 更清晰的 Concept 分解
+
+把手动排队、上下文供给和当前播放状态拆开后，每个 Concept 都能拥有单一 purpose 与可预测动作。
+
+##### Queue
+
+![Spotify Queue 手动歌曲顺序的状态模型](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260831002134337.png)
+
+负责用户明确要求“接下来播放什么”。
+
+```text
+state
+  User → seq<Song>
+Purpose: let users manually select song order
+actions
+  enqueue(user, song)
+  dequeue(user)
+  clear(user)
+```
+
+##### Feed
+
+负责从当前上下文持续提供歌曲，例如：
+
+Album、Playlist、Autoplay、Radio、Recommendation。
+
+```text
+state
+  User → seq<Song>
+Purpose: provide a continuing stream of songs
+actions
+  populate(...)
+  dequeue(user)
+```
+
+##### PlayingSong
+
+```text
+state
+  User → optional Song
+Purpose： play songs
+actions
+  set(user, song)
+  start(user)
+  ends(user)
+```
+
+### 三个概念通过同步协作
+
+当当前歌曲结束：
+
+**① Queue 不为空**
+
+```text
+PlayingSong.ends → 取 Queue 第一首 → PlayingSong.set → Queue.dequeue
+```
+
+即：
+
+> **用户手动选择的 Queue 优先。**
+
+**② Queue 为空**
+
+```text
+PlayingSong.ends → 取 Feed 第一首 → PlayingSong.set → Feed.dequeue
+```
+
+即：
+
+> 没有手动排队内容时，再从当前播放上下文继续提供歌曲。
+
+因此可以理解成：
+
+```text
+Manual Queue ──┐
+               ├─→ PlayingSong
+Context Feed ──┘
+```
+
+优先级：
+
+**Manual Queue → Contextual Feed → Autoplay / Recommendation**
+
+这比把所有机制都塞进一个 `Queue` Concept 更清晰。
+
+------
+
+### Spotify Queue 为何显得无法预测？
+
+问题来自**用户心理模型与系统模型不一致**。
+
+用户看到：
+
+> Queue
+
+自然理解成：
+
+> FIFO
+
+但实际系统同时包含：
+
+> Manual Queue + Context Feed + Autoplay / Recommendation
+
+于是产生各种疑问：
+
+- Add to Queue 的歌什么时候播放？
+- 点击另一首歌后 Queue 会发生什么？
+- 换一个 Album 后原来的下一首去哪了？
+- Autoplay 什么时候接管？
+- 为什么同时存在 `Next in Queue` 和 `Next from ...`？
+
+因此：**不是某个按钮设计得不好，而是一个 familiar concept「Queue」承担了多个不同 mechanisms。**
+
+### Spotify 案例体现的 Modularity
+
+Spotify 中可以识别出多个相对独立的 Concepts：
+
+| Concept         | Purpose                |
+| --------------- | ---------------------- |
+| **Library**     | 保存内容方便访问       |
+| **Playlist**    | 组织歌曲               |
+| **Folder**      | 组织内容/Playlist      |
+| **Queue**       | 用户指定接下来播放什么 |
+| **Feed**        | 持续提供上下文歌曲     |
+| **PlayingSong** | 控制当前歌曲播放       |
+
+好的 Concept 应该：
+
+> **Purpose 明确 → State 自洽 → Actions 围绕 Purpose**
+
+Concept 之间需要合作时：
+
+> **通过 Synchronization 显式连接。**
+
+而不是：
+
+```text
+Folder → secretly creates Playlist`
+`Library → secretly modifies Playlist`
+`Queue → secretly handles autoplay
+```
+
+否则 Concept 就开始相互侵入，模块化逐渐消失。
+
+------
+
+### Synergy：为什么拆开反而更强？
+
+这里还有一个很重要的点：**模块化不是单纯把东西拆碎。**
+
+独立 Concept 组合之后，可以产生单个 Concept 没有的能力：
+
+```text
+Queue + Feed + PlayingSong
+```
+
+组合后形成：
+
+> **既尊重用户手动选择，又能持续自动播放的完整体验。**
+
+这就是 **Synergy（协同价值）**：
+
+> 两个或多个 Concept 组合后的价值，大于各自价值的简单相加。
+
+因此优秀的 Concept Design 不是追求：
+
+> 每个 Concept 孤立存在。
+
+而是：
+
+> **Concept 内部独立，Concept 之间通过清晰的 Synchronization 产生组合能力。**
+
+### 最终设计原则
+
+Spotify 案例最终可以归纳成四个目标：
+
+- **Genericity**：Concept 尽可能建立在真正需要的抽象之上，而不是绑定不必要的具体类型。
+
+- **Familiarity**：Concept 应尽量符合用户已有的心理模型；如果叫 `Queue`，行为最好符合用户对 Queue 的理解。
+
+- **Modularity**：不同 Purpose 应属于不同 Concept，避免职责互相侵入。
+
+- **Predictability**：用户理解 Concept 后，应能够推断系统下一步会发生什么。
+
+四者最终共同服务于：  **让用户通过理解 Concept，而不是记忆大量特殊规则，来预测产品行为。**
+
+## 配套工作
+
+- **Recitation 3 — Modularity Examples**：用案例练习上述三条标准；官方课件：[Rec 3](https://61040-fa25.github.io/assets/recitation_notes/61040-Rec3-Slides.pdf)。
+- **Pset 2 — Modular Design**（9 月 21 日截止）：将概念设计按模块化标准改进；[作业页](https://61040-fa25.github.io/assignments/problem-set-2)。

@@ -1,12 +1,12 @@
 ---
-title: 开始设计 · 软件设计
+title: 创新与问题框架 · 软件设计
 type: lecture
 lecture: 1
-tags: [startup, software-design, prd, failure-mode, cognition, problem-framing]
+tags: [startup, software-design, prd, failure-mode, problem-framing]
 status: complete
-source: 'https://61040-fa25.github.io/assets/lecture-notes/problem-framing.pdf'
+source: 'https://61040.github.io/fa26/lectures/how-to-innovate-no-builds.pdf'
 ---
-# Lec 1 开始设计
+# Lec 1 创新与问题框架（How to Innovate & Problem Framing）
 
 本节目标：
 
