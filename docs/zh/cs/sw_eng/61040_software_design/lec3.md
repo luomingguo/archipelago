@@ -1,12 +1,12 @@
 ---
-title: 设计行为 · 软件设计
+title: 设计概念行为 · 软件设计
 type: lecture
 lecture: 3
 tags: [software-design, prd, concept-design, data-model]
 status: complete
-source: 'https://61040-fa25.github.io/assets/lecture-notes/L03-designing-behavior.pdf'
+source: 'https://61040.github.io/fa26/lectures/designing-a-concept.pdf'
 ---
-# Lec 3 设计行为
+# Lec 3 设计概念行为（Designing a Concept & Behavior）
 
 官方课件：[Designing Behavior](https://61040-fa25.github.io/assets/lecture-notes/L03-designing-behavior.pdf)。设计行为，而不是代码、算法或页面跳转；概念设计要描述用户可观察到的状态变化。
 

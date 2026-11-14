@@ -1,12 +1,12 @@
 ---
-title: 概念设计 · 软件设计
+title: 概念设计导论 · 软件设计
 type: lecture
 lecture: 2
 tags: [startup, software-design, prd, concept-design]
 status: complete
-source: 'https://61040-fa25.github.io/assets/lecture-notes/L02-introducing-concepts.pdf'
+source: 'https://61040.github.io/fa26/lectures/intro-to-concepts.pdf'
 ---
-# Lec 2 概念设计
+# Lec 2 概念设计导论（Introduction to Concept Design）
 
 官方课件：[Introduction to Concept Design](https://61040-fa25.github.io/assets/lecture-notes/L02-introducing-concepts.pdf)。
 

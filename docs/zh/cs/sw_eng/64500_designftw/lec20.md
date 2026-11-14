@@ -1,208 +1,196 @@
 ---
-title: 'Web API'
+title: 'Web API 与组件架构'
 type: lecture
 lecture: 20
-tags: [http, web-api, ajax, rest, cors]
-status: draft
+tags: [http, web-api, ajax, rest, web-components, vue-components]
+status: complete
+source: https://designftw.mit.edu/lectures/
 ---
-# Lec 20 Web API
+
+# Lec 20 Web API 与现代组件架构（Web APIs & Component-Based Architecture）
 
 ## TL;DR
 
-- HTTP 用方法、路径、参数、头部与响应组织客户端和服务器通信，安全方法与幂等性约束影响重试行为。
-- AJAX 允许页面在不整体刷新时请求数据，REST 风格则用资源与统一接口组织 API。
-- 跨域预授权在浏览器发送敏感请求前检查服务器许可，Vue 组件进一步把数据、模板与行为封装为界面单元。
-- 源笔记仍未说明客户端最初如何获得授权令牌，因此身份验证流程尚不完整。
+- **HTTP 协议与方法语义**：HTTP 通过请求动词、状态码、头部和报文体构筑客户端与服务端的通信管道，安全方法（Safe）与幂等方法（Idempotent）的语义约束决定了接口调用的重试与缓存策略；
+- **AJAX 与 RESTful 架构**：AJAX 彻底终结了全页刷新的交互历史，REST 架构通过将瞬态会话状态下沉至客户端，实现了无状态、高扩展且面向资源的服务解耦；
+- **基于 Token 的安全授权机制**：客户端通过初始认证获取经数字签名的不可伪造令牌（如 JWT / Bearer Token），并在后续无状态请求中通过 Authorization 头部携带，彻底消除服务端的会话负担；
+- **组件化架构演进**：界面设计从早期宏观的“关注点分离（HTML/CSS/JS 拆分）”演变为“按独立自治组件分离”，配合 Web Components 原生标准与现代响应式框架，将复杂 UI 封装为声明式自闭合构件。
 
+---
 
-## HTTP
+## 1. HTTP 协议基础与交互语义
 
-1990 年代，通过 HTTP 与 Web 服务器进行交互。与最初 Tim Berners Leed 定义的方法类似，提供了 6 个主要方法：
+自 1990 年代万维网诞生以来，浏览器与后端服务器之间的每一次数据往来均依托超文本传输协议（Hypertext Transfer Protocol, HTTP）。
 
-- OPTIONS： 告诉我你的信息
-- GET
-- POST： 上传新资源
-- PUT： 替换已存在资源
-- PATCH： 修改资源
-- DELETE
+与最初 Tim Berners-Lee 定义的极简规范相比，现代 HTTP 确立了语义严密的请求方法集合：
 
-### 请求参数
+- **`GET`**：向服务器请求获取指定资源（纯读取操作）；
+- **`POST`**：向服务器提交数据，通常用于创建全新的下级资源；
+- **`PUT`**：使用请求体中的完整内容，全新替换目标 URL 处的已有资源；
+- **`PATCH`**：对已存在资源的某些局部字段应用差量修改；
+- **`DELETE`**：指示服务器永久移除目标 URL 处的资源；
+- **`OPTIONS`**：向服务器询问该资源所支持的通信选项与跨域权限（CORS 预检）。
 
-请求包含：
+### 1.1 请求与响应报文解剖
 
-- URL
-- BODY： PUT、POST、PATCH 的内容
-- 头部：
-  - Referer： 该请求的页面
-  - Accept： 接受的资源类型（text,pdf, json 等等）
-  - Cookie
-
-响应包含：
-
-- 状态码
-- Body
-- 头部：
-  - Content-Type
-  - Set-Cookie
-  - Location：  **告诉客户端去其他地方获取资源**
-
-### 幂等与安全方法
-
-这是对 HTTP 方法副作用的两种重要描述：
-
-- 安全： 没有副作用
-  - 例如 GET，只是获取资源，不改变服务器状态
-  - OPTIONS 也是安全的
-- 幂等：每次调用产生相同的副作用，重复执行不会改变结果
-  - PUT，重复执行仍然是替换为相同内容
-  - DELETE，删除一次后再删仍然“无变化”，因为资源已经不存在
-- 既非安全也非幂等：每次调用都会产生不同的副作用
-  - POST，每次都会创建一个不同的新资源
-  - PATCH，每次应用修改（如累加操作），可能累积效果
-
-### HTML 请求例子
-
-```html
-get请求
-<a href="http://.../echo?myname=David..."></a>
-post请求
-<form method="post" action="http://.../echo?rulArg=newUser">
-  Input: <input name="textbox" type="text">
-</form>
-
+```mermaid
+flowchart LR
+    subgraph Request ["HTTP 请求报文 (Request)"]
+        R1["方法与路径: GET /api/v1/users HTTP/1.1"]
+        R2["请求头: Host, Accept, Authorization, Cookie"]
+        R3["请求体 (Body): JSON 序列化数据 (POST/PUT)"]
+        R1 --> R2 --> R3
+    end
+    
+    subgraph Response ["HTTP 响应报文 (Response)"]
+        S1["状态行: HTTP/1.1 200 OK / 404 Not Found"]
+        S2["响应头: Content-Type, Set-Cookie, Cache-Control"]
+        S3["响应体 (Body): HTML / JSON / 图像二进制数据"]
+        S1 --> S2 --> S3
+    end
+    
+    Request --> |"网络传输 (TCP/TLS)"| Response
 ```
 
-## AJAX
+- **请求包含**：
+  - **URL / Path**：目标资源的绝对路径与查询参数（Query Parameters）；
+  - **Body**：`POST`, `PUT`, `PATCH` 携带的具体业务数据载荷；
+  - **Headers（头部）**：`Referer`（来源页面）、`Accept`（客户端声明能接收的 MIME 类型，如 `application/json`）、`Cookie` 与认证凭据。
+- **响应包含**：
+  - **Status Code（状态码）**：`2xx` 成功、`3xx` 重定向、`4xx` 客户端错误（如 401 未认证、403 无权限、404 不存在）、`5xx` 服务端崩溃；
+  - **Headers**：`Content-Type`（响应载荷格式）、`Set-Cookie`（指令客户端保存会话）、`Location`（指示客户端重定向的目标 URL）。
 
-在 90 年代 Web 应用主要运行在服务器端，用户执行操作时，需要提交表单，为了看到更新，需要不断刷新页面，浏览器仅仅负责显示结果和接受用户输入。
+### 1.2 幂等性（Idempotence）与安全性（Safety）
 
-一个洞察：许多操作只改变界面的一小部分，许多操作只改变界面的一小部分，为什么还要每次都让服务器参与？
+理解 HTTP 方法的物理副作用，是设计稳健 API 与处理网络重试的关键：
 
-首先 AJAX 是异步的，使用 Promise 机制，JS 在客户端进行计算，以及 XML 作为数据序列化格式（现在已经被 json 替代）
+| 语义分类 | 严格学术定义 | 包含的 HTTP 方法 | 网络工程影响 |
+| :--- | :--- | :--- | :--- |
+| **安全方法（Safe）** | 操作**绝不引起服务器任何状态改变**，纯粹用于只读检索。 | `GET`, `HEAD`, `OPTIONS` | 可以被代理服务器、CDN 和浏览器无条件安全缓存。 |
+| **幂等方法（Idempotent）** | **执行一次与连续执行 $N$ 次产生的服务端副作用完全相同**。 | `GET`, `PUT`, `DELETE` | 当遇到网络超时或丢包时，**客户端可以自动安全重试**，绝不会造成数据多次累加！ |
+| **非安全且非幂等** | 每次调用都会在服务端产生新的、累积的状态变化。 | `POST`, `PATCH`（取决于具体实现） | 遇到网络中断时**绝不能盲目自动重试**，否则可能导致用户银行卡被重复扣款两次。 |
 
-![image-20251017181015263](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20251017181015263.png)
+---
 
-**WebAPI**
+## 2. AJAX 与异步 Web API 的诞生
 
-最初，网站是为人类访问而设计的。现在，代码也可能希望与网站交互，一个想法：让代码获取网页并操作它？
+在 1990 年代，Web 应用几乎完全运行在服务器端。当用户点击一个按钮时，浏览器必须提交一个完整的 `<form>` 表单，整张网页白屏数秒，等待后端重新渲染整张 HTML 页面并全量回传刷新。
 
-问题：
+### 2.1 局部更新的洞察：AJAX 革命
 
-- 网页大多是为人类展示而布局的
-- 人类根据背景知识可以理解其中含义
-- 人类能理解不规范的文本
-- HTML 中充满了无关的展示信息
-- 计算机希望获得可机器读取的内容
-- 让代码通过发送鼠标点击来触发操作，非常笨拙
+工程师们很快发现了一个核心痛点：用户的大多数交互往往**仅仅修改了屏幕上极其微小的一块局部区域**（例如点赞数增加 1、列表动态追加一条评论），为什么还要每次都强迫整张页面白屏重载？
 
-**封装（Encapsulation）**
+![AJAX 异步局部更新与传统全页同步刷新对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20251017181015263.png)
 
-1. 应用 API 调用被封装在 HTTP API 调用中
-2. 你的代码将应用 API 调用转换为可通过 HTTP 发送的数据
-3. 将你的 JSON 对象“打印”成字符串，以便通过 HTTP 传输
-   1. 浏览器将 HTTP API 调用封装为网络流量
-   2. 将字符串编码并拆分为网络数据包中的字节
-   3. HTTP 调用被封装在 TCP 网络流量中
-4. 服务器接收到网络流量，服务器提取出 HTTP 调用，交给 Web 服务器处理
-5. Web 服务器提取应用 API 调用，交给应用程序处理
+2005 年，**AJAX（Asynchronous JavaScript and XML）** 范式横空出世：
+1. JavaScript 在后台通过 `XMLHttpRequest`（现代统一采用 `fetch()`）发起异步网络请求；
+2. 浏览器主线程绝不阻塞，用户可以继续流畅滚动浏览页面；
+3. 后端返回精简的结构化数据（早期使用 XML，如今全面采用 **JSON**）；
+4. JavaScript 接收到 JSON 数据后，仅仅使用 DOM API 精准修改相关 DOM 节点。
 
-**封装库**
+### 2.2 API 调用的分层封装（Encapsulation）
 
-- 客户端代码依赖服务器功能
-- 不应该关心如何构造 HTTP 消息
-- 通常会创建一个封装库，为每个 Web API 方法提供对应的 JavaScript 方法
-- 客户端代码调用封装库
-- 封装库的职责：
-  - 接收参数
-  - 生成并发送 HTTP 请求
-  - 接收并解析 HTTP 响应
-  - 将 JSON 数据返回给客户端代码
-- 由于封装库依赖异步（async）的 HTTP 调用，封装库的方法通常也是 **异步的**
+在现代软件工程中，业务代码绝对不应该充斥着底层的网络请求拼装逻辑。工业级架构采用清晰的分层封装：
 
-## RESTful API
+```mermaid
+flowchart TD
+    App["业务层 UI 组件 (如 ProfileCard.vue)"] --> |"直接调用业务方法 api.getUserProfile(id)"| ClientLib["客户端 API 封装库 (API Client)"]
+    ClientLib --> |"接收参数，组织请求头与 JSON 载荷"| Fetch["浏览器 Fetch / HTTP 协议栈"]
+    Fetch --> |"TCP/IP 字节流传输"| Network["互联网路由"]
+    Network --> Server["后端网关与 Web 服务器"]
+    Server --> |"解析 HTTP 报文，反序列化 JSON"| BusinessLogic["后端业务逻辑与数据库检索"]
+```
 
-在许多传统服务中，服务器会记住与客户端的会话状态：
+客户端 API 封装库的核心职责：
+- 隐藏构造 HTTP 消息的低级细节；
+- 统一拦截并注入认证令牌（Auth Token）；
+- 统一解析并格式化服务端错误，向上层返回强类型的结构化 Promise 对象。
 
-- 用户是谁
-- 用户在活动中进行到哪一步
-- 接下来做什么
+---
 
-很多信息都是短暂的（ephemeral），用户关闭页面后就不再需要，服务器维护这些状态带来了很大负担：
+## 3. RESTful 架构风格：让服务器摆脱会话包袱
 
-- 服务器无法知道用户已经离开
-- 必须为每个曾访问过的用户一直保存状态
+在早期的状态化（Stateful）Web 服务中，服务器必须在内存中苦苦记忆与每一个客户端的会话状态（Session State）：
+- 当前登录的用户是谁？
+- 该用户在向导中走到了第 3 步还是第 4 步？
+- 接下来该执行哪个动作？
 
-**解决方案**
+**有状态服务的致命弊端**：服务器根本无法知道用户是否已经悄悄关闭了浏览器，必须为数以百万计的访客在内存中长期保留状态，导致服务器横向扩展（Scale-out）极难实现。
 
-- **表示性状态转移（REpresentational State Transfer, REST）**
-- 将所有短暂状态保存在客户端
-- 每次方法调用都必须包含服务器提供该方法所需的全部状态
-- 服务器仍然保存 持久状态
-  - 例如：你的文件上传、购买记录
+### 3.1 REST 的无状态核心哲学（Statelessness）
 
-**与对象交互**
+Roy Fielding 提出的 **REST（Representational State Transfer）** 架构彻底解决了这一难题：
+- **瞬态会话状态全部转移到客户端保管**；
+- **服务器保持彻底的“无状态（Stateless）”**：每一次来自客户端的请求，必须完整包含服务器处理该请求所必需的**所有上下文信息与授权凭证**；
+- 服务器只需专注管理持久化资源（Persistent Resources，如数据库中的订单记录、用户信息），任何一台后端的无状态服务器均可任意接管处理来自任何客户端的请求。
 
-- `put(partialObject, session)`
-  - partialObject: No URL -> create, URL -> replace
-  - session: 通过登录后得到
-- `delete(objectOrUrl, session)`
-- `patch(jsonPatch, objectOrUrl, session)`
-- `get(objectOrUrl, schema, session)`
+---
 
-## 安全预授权
+## 4. 基于令牌（Token）的现代安全预授权
 
-2010 年代
+在无状态的 RESTful 架构中，客户端不能再依赖服务端的内存 Session。那么，客户端如何证明自己拥有执行某项受保护操作的权限？
 
-基于令牌（Token）的授权
+### 4.1 Token 授权的闭环生命周期
 
-- 给客户端发放一种“令牌（token）”，表示客户端被授权可以执行某个操作。
-- 经典例子：**用户名和密码**
-  - 用来识别客户端身份，
-  - 服务器据此判断是否有权限。
-- 在 **REST** 模型中：客户端每次请求时都要附带这个令牌。
-- 但还需要解决一个问题：**客户端最初是如何获得这个令牌的？**（此处仍待补充）
-- 如果令牌是**不可伪造的**，它就可以作为客户端被授权的**证明**。
-- 但如果令牌被**盗取**，那么窃取者就可以**冒充合法用户**。
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as 用户
+    participant Client as 客户端 (Vue/React 单页应用)
+    participant AuthServer as 认证授权中心 (Auth Server)
+    participant ResourceServer as 业务资源服务器 (Resource API)
+    
+    User->>Client: 1. 输入账号与密码
+    Client->>AuthServer: 2. POST /auth/login (凭据交换)
+    AuthServer->>AuthServer: 3. 校验密码，生成非对称加密签名的 JWT 令牌
+    AuthServer-->>Client: 4. 返回 Token (形如 Bearer eyJhbGciOi...)
+    
+    Note over Client: 客户端将 Token 安全保存在内存中
+    
+    Client->>ResourceServer: 5. GET /api/orders (请求头携带 Authorization: Bearer <Token>)
+    ResourceServer->>ResourceServer: 6. 验证签名防伪，提取用户 ID 与角色权限
+    ResourceServer-->>Client: 7. 确认无误，返回受保护的订单数据
+```
 
-## 组件式开发
+1. **令牌的获取（Token Issuance）**：
+   - 客户端最初通过用户名/密码凭据、第三方 OAuth 2.0（如 Google/GitHub 授权登录）向认证端点发起一次性握手；
+   - 认证中心在验证凭据合法后，向客户端签发经过密码学私钥签名的**令牌（如 JSON Web Token, JWT）**；
+2. **防伪与自包含特性**：
+   - 令牌由三部分构成：头部（Header）、载荷（Payload，包含过期时间、用户 ID、角色列表）与数字签名（Signature）；
+   - 由于只有官方服务器掌握私钥，客户端任何篡改载荷的行为都会导致签名失效，因此令牌是**不可伪造的授权证明**；
+3. **每次请求的主动附带**：
+   - 客户端在后续发起的每一个 RESTful 请求中，通过 HTTP 头部自动附带：
+     ```http
+     Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+     ```
 
-### Vue 组件的封装目标
+---
 
-![image-20260514021054740](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260514021054740.png)
+## 5. 组件化架构革命：按组件分离 vs. 按关注点分离
 
-在早期，网站通常在设计中大量使用原生的按钮、列表、输入框等基础控件。但在如今，界面的很大一部分往往由大量文本、图片、符号和图形组成，并对它们应用复杂的样式设计来构建。当我们开始放置大量元素时，HTML 代码会变得非常庞大。理想情况下，我们希望将所有 HTML 代码（以及任何相关的逻辑）封装起来，这样我们就可以在应用程序中轻松地重复使用这张卡片（如下图），而无需每次都复制粘贴所有这些 div 元素。
+在早期的 Web 理念中，“关注点分离（Separation of Concerns）”被刻板地理解为**文件物理技术类型的分离**：
+- 所有的 HTML 放在一个巨大的 `index.html`；
+- 所有的样式写在一个巨大的 `style.css`；
+- 所有的脚本写在一个庞大的 `main.js`。
 
-![image-20260514021308406](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260514021308406.png)
+### 5.1 传统模式在大型应用中的崩溃
+
+当界面变得极其庞大时，修改一个卡片标题的字号，需要程序员在 3,000 行的 CSS 文件中全局搜索类名，且提心吊胆生怕破坏了其他页面的相同样式；当删除一个不再使用的按钮时，遗留在 JS 里的事件监听函数往往无人敢删，代码迅速腐化为历史包袱。
+
+![按技术类型分离 vs 按自包含独立组件分离的文件结构对比](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260514021614611.png)
+
+现代 Web 确立了新的架构共识：**按自包含、独立、可重用的组件进行纵向切分（Separation by Component）**。每个组件拥有专属的独立文件夹，内部封装它自身所需的 HTML 结构、CSS 作用域样式与 JS 交互逻辑。
+
+### 5.2 组件的封装目标
+
+![复杂的卡片界面如果不进行封装，会导致海量冗余标签堆砌](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260514021054740.png)
+
+![组件封装目标：将冗长标签压缩为整洁自解释的自定义标签](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260514021308406.png)
+
+通过将几十行复杂的标记折叠为单一语义标签，页面呈现出极高的自解释性：
 
 ```html
-<div class="location-card">
-  <div class="card-map-header">
-    <img src="map.jpg" alt="Joshua Tree map">
-    <div class="card-photo-ring">
-      <img class="card-photo"
-           src="turtle-rock.jpg"
-           alt="Turtle Rock">
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="card-title-row">
-      <div class="card-titles">
-        <h2 class="card-name">Turtle Rock</h2>
-        <p class="card-subtitle">
-          Joshua Tree National Park
-        </p>
-      </div>
-      <span class="card-region">California</span>
-    </div>
-    <hr class="card-divider">
-    <section class="card-about">
-      <h3>About Turtle Rock</h3>
-      <p>Descriptive text goes here.</p>
-    </section>
-  </div>
-</div>
-
-<!--使用组件，我们可以将所有内容折叠成一个自定义元素，该元素将所需的数据作为属性传递。 -->
+<!-- 优雅的组件化使用方式 -->
 <location-card
   name="Turtle Rock"
   subtitle="Joshua Tree National Park"
@@ -213,19 +201,137 @@ post请求
 </location-card>
 ```
 
-近年来，一种新的架构正在兴起：它不再按关注点分离，而是按自包含、独立、可重用的组件进行分离。这种方法在 2014-2015 年左右由 React 推广开来，尽管早期的 UI 框架和面向对象编程中也存在类似的雏形。然而，这两种方法可以共存：一种是按组件分离，另一种是在每个组件内部进行关注点分离。
+---
 
-**组件的文件结构**
+## 6. Vue.js 单文件组件与响应式实现
 
-![image-20260514021614611](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20260514021614611.png)
+在 Vue 3 中，组件是纯粹且完备的自包含实体。使用 Composition API 可以极其优雅地实现上述 `LocationCard`：
 
-这就是这种关注点分离在实践中的样子。我们为每个组件创建一个单独的文件夹，其中只包含定义该组件所需的 HTML、CSS 和 JS 文件。
+```html
+<!-- LocationCard.vue -->
+<template>
+  <div class="location-card">
+    <div class="card-map-header">
+      <img :src="mapSrc" :alt="`${name} map`">
+      <div class="card-photo-ring">
+        <img class="card-photo" :src="photoSrc" :alt="name">
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-title-row">
+        <div class="card-titles">
+          <h2 class="card-name">{{ name }}</h2>
+          <p class="card-subtitle">{{ subtitle }}</p>
+        </div>
+        <span class="card-region">{{ region }}</span>
+      </div>
+      <hr class="card-divider">
+      <section class="card-about">
+        <h3>About {{ name }}</h3>
+        <p>{{ description }}</p>
+        <!-- 响应式点赞交互 -->
+        <button class="like-btn" @click="handleLike">
+          ❤️ 喜欢 ({{ likes }})
+        </button>
+      </section>
+    </div>
+  </div>
+</template>
 
-### Vue.js 组件
+<script setup>
+import { ref } from 'vue';
 
-Vue 组件是纯 JavaScript 对象，包含两个主要部分：
+// 声明组件的输入属性契约 (Props)
+const props = defineProps({
+  name: { type: String, required: true },
+  subtitle: { type: String, default: '' },
+  region: { type: String, default: '' },
+  mapSrc: { type: String, required: true },
+  photoSrc: { type: String, required: true },
+  description: { type: String, default: '' }
+});
 
-- `setup()`： 用于存放响应式状态和逻辑——返回模板需要访问的值
-- `template`： 组件的 HTML 代码，以模板字符串的形式存在
+// 声明组件向外派发的事件契约 (Emits)
+const emit = defineEmits(['like-updated']);
 
-我们使用 *default* 导出，因此可以从任何地方按名称导入组件：
+// 组件内部独立的响应式状态
+const likes = ref(0);
+
+function handleLike() {
+  likes.value++;
+  emit('like-updated', { name: props.name, totalLikes: likes.value });
+}
+</script>
+
+<style scoped>
+/* scoped 属性保证所有样式被哈希隔离，绝不污染全局外部页面！ */
+.location-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+</style>
+```
+
+---
+
+## 7. Web Components 原生浏览器标准
+
+组件化并非仅仅存在于 Vue 或 React 等第三方框架中。W3C 与 WHATWG 联合为浏览器原生平台注入了完整的 **Web Components 标准规范体系**：
+
+```mermaid
+mindmap
+  root((Web Components 原生标准三大件))
+    Custom Elements (自定义元素)
+      customElements.define
+      生命周期回调函数
+      属性监听 attributeChanged
+    Shadow DOM (影子 DOM)
+      attachShadow
+      彻底隔离 CSS 样式
+      内部 DOM 节点隐身封装
+    HTML Templates (模板与插槽)
+      &lt;template&gt; 惰性渲染标签
+      &lt;slot&gt; 声明式内容投影
+```
+
+::: example 使用原生 JavaScript 编写纯原生 Web Component
+```javascript
+class NativeLocationCard extends HTMLElement {
+  constructor() {
+    super();
+    // 1. 创建封闭的 Shadow Root，样式彻底隔离
+    this.attachShadow({ mode: 'open' });
+  }
+
+  // 2. 生命周期回调：当元素被挂载插入到页面真实 DOM 时触发
+  connectedCallback() {
+    const name = this.getAttribute('name') || 'Unnamed';
+    const photo = this.getAttribute('photo-src') || '';
+
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          display: block;
+          border: 1px solid #e5e7eb;
+          border-radius: 8px;
+          padding: 16px;
+        }
+        h2 { color: #111827; margin: 0; }
+        img { border-radius: 50%; width: 64px; height: 64px; }
+      </style>
+      <div class="card">
+        <img src="${photo}" alt="${name}">
+        <h2>${name}</h2>
+        <!-- 插槽：允许外部在使用该标签时投影自定义描述段落 -->
+        <slot></slot>
+      </div>
+    `;
+  }
+}
+
+// 3. 在浏览器全局注册自定义标签名（规范强制要求标签名必须包含短横线连字符！）
+customElements.define('native-location-card', NativeLocationCard);
+```
+:::
