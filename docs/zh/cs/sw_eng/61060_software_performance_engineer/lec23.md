@@ -2,7 +2,7 @@
 title: GPU 架构
 type: lecture
 lecture: 23
-tags: []
+tags: [GPU]
 status: complete
 ---
 # Lec 23 GPU 架构
