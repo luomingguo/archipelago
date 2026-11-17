@@ -9,8 +9,8 @@ status: complete
 
 这门课涵盖与软件性能工程相关的各种主题。
 ## 前置学习内容
-- [软件构造基础](../element_of_software_construction/index.md)
-- [编程基础](../fundamentals_of_programming/index.md)
+- [6.1020 软件构造基础](../61020_element_of_software_construction/index.md)
+- [6.1010 程序设计基础](../61010_fundamentals_of_programming/index.md)
 
 ## 课表
 ## 主题

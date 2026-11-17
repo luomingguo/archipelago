@@ -9,7 +9,7 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # 15.783 产品设计与开发
 
-> MIT Sloan (15.783J) · MIT Mechanical Engineering (2.739J) · RISD Industrial Design Studio · Spring 2026  
+> MIT Sloan (15.783J) · MIT Mechanical Engineering (2.739J) · RISD Industrial Design Studio · Spring 2026
 > 教学团队：Prof. Steven Eppinger (MIT Sloan)、Kamala Grasso (MIT MechE)、Heewon Lee (RISD ID)
 
 ## TL;DR
@@ -18,9 +18,6 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 - 全学期 24 次教学研讨采用“理论方法讲授”与“敏捷工坊评审（Demo & Retro）”双轨制，以量化需求权衡、系统级模块化架构与严谨的经济学模型支撑关键设计决策。
 - 知识体系以 Ulrich、Eppinger 与 Yang 合著的《Product Design and Development》（第 8 版，2026）为理论基石，辅以 Stripe 支付架构、Airbnb 战略转向等当代商业与硬科技案例。
 
-::: definition [敏捷双周冲刺（Two-Week Sprints）]
-在 15.783J 的现代教学体系中，产品开发被划分为 6 个为期两周的迭代冲刺（Sprint 0 至 Sprint 5）。每个 Sprint 均设定明确的交付物目标（如机会池评分、概念草模、工作功能原型、精细测试模型、Alpha 样机），并在末尾执行敏捷团队评审（Sprint Demo & Review）与复盘会议（Sprint Retrospective），替代传统耗时冗长的线性阶段评审。
-:::
 
 ## 课程定位与跨学科协同机制
 
@@ -40,7 +37,7 @@ Spring 2026 教学大纲由 6 个敏捷冲刺阶段驱动，共 24 次正式课�
 
 | 冲刺阶段 | 讲次与日期 | 核心主题 | 推荐阅读材料与参考资料 | 团队里程碑与交付物 |
 | :--- | :--- | :--- | :--- | :--- |
-| **Sprint 0**<br>机会分析<br>(Opportunity Analysis) | **Class 1**<br>2 月 3 日 | **引论与设计思维**<br>(Introduction + Design Thinking) | • PDD Ch. 1: Introduction<br>• PDD Ch. 2: Processes & Organizations<br>• PDD Ch. 3: Opportunity Identification<br>• *(选读)* Irene Au: *Design and the Self* | 提交 2 个产品创新机会提案 |
+| **Sprint 0**<br>机会分析<br>(Opportunity Analysis) | **Class 1**<br>2 月 3 日 | **导论与设计思维**<br>(Introduction + Design Thinking) | • PDD Ch. 1: Introduction<br>• PDD Ch. 2: Processes & Organizations<br>• PDD Ch. 3: Opportunity Identification<br>• *(选读)* Irene Au: *Design and the Self* | 提交 2 个产品创新机会提案 |
 | | **Class 2**<br>2 月 5 日 | **系统化创新与 R-W-W 评估法**<br>(Systematic Innovation & R-W-W) | • PDD Ch. 3 (Real-Win-Worth-it 章节)<br>• Day: *Is It Real? Can We Win? Is It Worth Doing?* (HBR)<br>• *(选读)* Tim Brown: *Design Thinking* (HBR) | 对全班 50 个机会完成盲审打分 |
 | | **Class 3**<br>2 月 10 日 | **客户需求分析与待办任务**<br>(Customer Needs Analysis & JTBD) | • PDD Ch. 5: Identifying Customer Needs<br>• Parallel (2026): *What Are Jobs-To-Be-Done (JTBD)*<br>• Patnaik: *Needfinding: The Why and How* | 小组深入调研排名前列的潜在机会 |
 | | **Class 4**<br>2 月 12 日 | **项目路演与跨学科组队**<br>(Project Selection & Pitching) | • 课堂提案路演与导师评审 | 中午提交 Pitch 演示，确定跨学科团队构成 |

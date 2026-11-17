@@ -22,7 +22,7 @@ status: complete
 
 ### 先修课程
 
-- [6.1800 计算机系统工程（Computer Systems Engineering）](../os/index.md) 或同等计算机系统与体系结构基础
+- [6.1800 计算机系统工程（Computer Systems Engineering）](../61810_os/index.md) 或同等计算机系统与体系结构基础
 - 基础概率论、线性代数与信号处理常识（傅里叶变换、频域分析与离散采样）
 
 ### 官方对课程描述的翻译

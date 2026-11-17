@@ -8,9 +8,14 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # Lec 5 创造力与概念生成（Creativity and Concept Generation）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 7, 8  
-> 拓展参考：TED, *The Creative Spark*; Genrich Altshuller, *TRIZ Theory*; Alex Osborn, *Applied Imagination (SCAMPER)*
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 6  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 7, 8  
+> **推荐阅读材料与参考资料**：
+> - PDD Ch. 7: Concept Generation
+> - TED: *The Creative Spark Playlist*
+> - Square Sequel: *Design Thinking Ideation Techniques*
 
 ## TL;DR
 

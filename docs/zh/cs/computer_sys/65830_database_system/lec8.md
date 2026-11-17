@@ -193,8 +193,7 @@ $$\widehat{\text{Card}}(X < 5) = \frac{5}{9} \times 9 = 5$$
 ![等宽直方图线性插值估算与边界误差分析](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/66c00c19b2c60.png)
 
 例如对于查询谓词 $X < 23\text{K}$，该条件完全覆盖了前四个桶（占比分别为 $0.61, 0.09, 0.05, 0.036$），并且部分覆盖了第五个桶（$[20\text{K}, 25\text{K}]$，该桶总频数为 $0.02$）。线性插值比例为 $\frac{23\text{K} - 20\text{K}}{25\text{K} - 20\text{K}} = \frac{3}{5}$，其综合基数预估为：
-$$\widehat{\text{Card}}(X < 23\text{K}) = \left(0.61 + 0.09 + 0.05 + 0.036 + 0.02 \times \frac{3}{5}
-ight) \times |R|$$
+$$\widehat{\text{Card}}(X < 23\text{K}) = \left(0.61 + 0.09 + 0.05 + 0.036 + 0.02 \times \frac{3}{5}\right) \times |R|$$
 
 等宽直方图的最大局限在于：当数据存在长尾倾斜（Skew）时，某些高频极端值会与大量稀疏值挤在同一个宽桶内，导致点查估计出现严重失真。
 

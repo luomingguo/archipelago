@@ -8,9 +8,14 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # Lec 8 原型制作（Prototyping）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 14  
-> 拓展参考：iRobot PackBot Development Case; Formlabs, *Additive Manufacturing Guide*; Michael Schrage, *Serious Play*
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 9  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 14  
+> **推荐阅读材料与参考资料**：
+> - PDD Ch. 14: Prototyping
+> - Wevolver (2025): *How to 3D Print: Guide for Engineers*
+> - Teel (2026): *How to Prototype Electronic Hardware*
 
 ## TL;DR
 

@@ -1,5 +1,5 @@
 ---
-title: **函数作为一等公民对象与作用域**
+title: 函数作为一等公民对象与作用域
 type: lecture
 lecture: 8
 tags: []

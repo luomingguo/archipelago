@@ -8,9 +8,14 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # Lec 9 体验与服务设计（Experience and Service Design）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 17  
-> 拓展参考：G. Lynn Shostack, *Designing Services That Deliver*; Don Norman, *People, Not Just Users*; Zipcar & Disney MagicBand Harvard Case Studies
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 10  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 17  
+> **推荐阅读材料与参考资料**：
+> - PDD Ch. 17: Design of Services (Zipcar 案例)
+> - Wired: *Disney's $1 Billion Bet on a Magical Wristband*
+> - Don Norman: *Words Matter: People, Not Users*
 
 ## TL;DR
 

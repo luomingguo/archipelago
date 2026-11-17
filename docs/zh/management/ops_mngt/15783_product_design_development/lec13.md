@@ -1,18 +1,20 @@
 ---
-title: '用户体验设计 | 产品设计与实现'
+title: 用户体验设计
 type: lecture
 lecture: 13
 tags: [user-experience, interaction-design, usability-heuristics, affordance, mental-models]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-# Lec 13 用户体验设计
+# Lec 13 用户体验设计（User Experience Design）
 
-> 参考资料：
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
 >
-> - Maven UX Design Principles;
-> - Don Norman, *The Design of Everyday Things*;
-> - Jakob Nielsen, *10 Usability Heuristics*（done）
+> **对应讲次**：Class 15  
+> **核心教材**：前沿专题  
+> **推荐阅读材料与参考资料**：
+> - Maven: *Six UX Principles with Real-World Products*
+> - 软硬件融合交互动线优化
 
 ## TL;DR
 

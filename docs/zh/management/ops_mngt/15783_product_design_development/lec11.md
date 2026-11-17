@@ -8,9 +8,14 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # Lec 11 面向环境可持续性的设计（Design for Environment）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 12  
-> 拓展参考：Ellen MacArthur Foundation, *The Circular Design Guide*; William McDonough & Michael Braungart, *Cradle to Cradle*; Herman Miller Environmental Case Study
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 12  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 12  
+> **推荐阅读材料与参考资料**：
+> - PDD Ch. 12: Design for Environment (DfE)
+> - Ellen MacArthur Foundation: *Circular Design Guide*
+> - Franklin-Wallis (NYT): *I'm Appalled by Recycling*
 
 ## TL;DR
 
