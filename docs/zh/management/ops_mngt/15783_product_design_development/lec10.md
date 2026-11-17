@@ -8,9 +8,14 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # Lec 10 工业设计（Industrial Design）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 11  
-> 拓展参考：IDSA Official Definition; Dieter Rams, *Ten Principles for Good Design*; Yves Béhar, *Designing Objects That Tell Stories* (TED)
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 11  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 11  
+> **推荐阅读材料与参考资料**：
+> - PDD Ch. 11: Industrial Design
+> - Yves Béhar (fuseproject): *TED Talk on Design*
+> - Gembah (2025): *Industrial Design Trends for 2025*
 
 ## TL;DR
 

@@ -21,7 +21,7 @@ status: complete
 ### 先修课程
 
 - **[6.1210 算法导论（Introduction to Algorithms）](../../tcs/61210_introduction_to_algorithms/index.md)**：掌握渐进复杂度分析、基础图算法与基本数据结构设计。
-- **推荐先修或辅助知识**：建议掌握计算机体系结构（如 [6.1910 计算结构](../../arch/computation_structures/index.md)）或操作系统工程（如 [6.1800 计算机系统工程](../../computer_sys/os/index.md)），熟悉硬件缓存层级、虚拟内存与底层多线程并发编程。
+- **推荐先修或辅助知识**：建议掌握计算机体系结构（如 [6.1910 计算结构](../../arch/computation_structures/index.md)）或操作系统工程（如 [6.1810 操作系统工程](../../computer_sys/61810_os/index.md)），熟悉硬件缓存层级、虚拟内存与底层多线程并发编程。
 
 ### 官方课程描述与培养目标
 

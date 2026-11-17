@@ -33,11 +33,11 @@
           "notes": [
             {
               "title": "Lec 6 系统调用入口/出口",
-              "url": "/zh/os/lec6"
+              "url": "/zh/61810_os/lec6"
             },
             {
               "title": "Lec 7 系统调用拦截",
-              "url": "/zh/os/lec7"
+              "url": "/zh/61810_os/lec7"
             }
           ]
         },
@@ -49,11 +49,11 @@
           "notes": [
             {
               "title": "Lec 13 线程切换与调度",
-              "url": "/zh/os/lec13"
+              "url": "/zh/61810_os/lec13"
             },
             {
               "title": "Lec 12 锁",
-              "url": "/zh/os/lec12"
+              "url": "/zh/61810_os/lec12"
             }
           ]
         },
@@ -65,11 +65,11 @@
           "notes": [
             {
               "title": "Lec 5 虚拟内存 & 页表",
-              "url": "/zh/os/lec5"
+              "url": "/zh/61810_os/lec5"
             },
             {
               "title": "Lec 8 页错误",
-              "url": "/zh/os/lec8"
+              "url": "/zh/61810_os/lec8"
             }
           ]
         },
@@ -81,11 +81,11 @@
           "notes": [
             {
               "title": "Lec 17 文件系统",
-              "url": "/zh/os/lec17"
+              "url": "/zh/61810_os/lec17"
             },
             {
               "title": "Lec 9 磁盘分页 & 超级页",
-              "url": "/zh/os/lec9"
+              "url": "/zh/61810_os/lec9"
             }
           ]
         },
@@ -97,11 +97,11 @@
           "notes": [
             {
               "title": "Lec 18 Linux ext3的崩溃恢复",
-              "url": "/zh/os/lec18"
+              "url": "/zh/61810_os/lec18"
             },
             {
               "title": "Lec 19 文件系统性能 & 快速崩溃恢复",
-              "url": "/zh/os/lec19"
+              "url": "/zh/61810_os/lec19"
             }
           ]
         },
@@ -129,11 +129,11 @@
           "notes": [
             {
               "title": "Lec 2 用C语言编程Xv6",
-              "url": "/zh/os/lec2"
+              "url": "/zh/61810_os/lec2"
             },
             {
               "title": "Lec 3 操作系统设计（隔离、进程与内核组织）",
-              "url": "/zh/os/lec3"
+              "url": "/zh/61810_os/lec3"
             }
           ]
         }

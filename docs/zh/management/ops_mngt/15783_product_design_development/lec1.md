@@ -8,9 +8,15 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # Lec 1 导论与设计思维（Introduction and Design Thinking）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapters 1, 2, 3  
-> 拓展参考：Irene Au, *Design and the Self*; Tim Brown, *Change by Design*; Bloomberg & Red Dot Design Indices
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 1  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 1, 2, 3  
+> **推荐阅读材料与参考资料**：
+> - PDD Ch. 1: Introduction
+> - PDD Ch. 2: Processes & Organizations
+> - PDD Ch. 3: Opportunity Identification
+> - *(选读)* Irene Au: *Design and the Self*
 
 ## TL;DR
 

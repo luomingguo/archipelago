@@ -21,8 +21,8 @@ source: https://jshun.csail.mit.edu/6506-f25/
 ### 先修课程
 
 - [6.1220 算法的设计与分析（Design and Analysis of Algorithms）](../../tcs/61220_design_and_analysis_of_algos/index.md)：熟练掌握渐近分析、动态规划、分治法、高级数据结构与理论复杂度下界。
-- [6.1060 软件性能工程（Software Performance Engineering）](../software_performance_engineer/index.md)：熟悉现代处理器体系结构、缓存层次、C/C++ 底层内存布局、SIMD 向量化与基准评测。
-- [6.1020 软件构造基础（Elements of Software Construction）](../element_of_software_construction/index.md)：具备中大型系统的规格设计、抽象屏障维护与防御性编程素养。
+- [6.1060 软件性能工程（Software Performance Engineering）](../61060_software_performance_engineer/index.md)：熟悉现代处理器体系结构、缓存层次、C/C++ 底层内存布局、SIMD 向量化与基准评测。
+- [6.1020 软件构造基础（Elements of Software Construction）](../61020_element_of_software_construction/index.md)：具备中大型系统的规格设计、抽象屏障维护与防御性编程素养。
 
 ### 官方对课程描述的翻译
 

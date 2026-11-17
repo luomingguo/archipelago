@@ -6,11 +6,15 @@ tags: [product-specifications, target-specifications, qfd-matrix, engineering-me
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-# Lec 7 产品规格
+# Lec 7 产品规格（Product Specifications）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 6  
-> 拓展参考：Yoji Akao, *Quality Function Deployment (QFD)*; Don Clausing, *Total Quality Development*; Target Costing Methodology
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 8  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 6  
+> **推荐阅读材料与参考资料**：
+> - PDD Ch. 6: Product Specifications
+> - 练习：需求矩阵向工程指标的映射转化
 
 ## TL;DR
 

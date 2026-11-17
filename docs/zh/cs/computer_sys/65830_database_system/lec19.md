@@ -394,7 +394,7 @@ Lineage: transformations used to build a dataset • Recover lost partition by a
 
 ## 论文阅读：RDDs
 
-[RDDs](./RDDs.md)
+[RDDs](./paper/spark_rdd_cluster_computing.md)
 
 《Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing, OSDI'12》 最佳博士论文
 

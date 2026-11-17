@@ -1,5 +1,5 @@
 ---
-title: 系统化创新与R-W-W
+title: 系统化创新与 R-W-W
 type: lecture
 lecture: 2
 tags: [systematic-innovation, rww-framework, opportunity-evaluation, opportunity-tournament]
@@ -8,9 +8,14 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # Lec 2 系统化创新与 R-W-W（Systematic Innovation and Real-Win-Worth-it）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 3, 4  
-> 拓展参考：George S. Day, *Is It Real? Can We Win? Is It Worth Doing?* (HBR); Christian Terwiesch & Karl Ulrich, *Innovation Tournaments*; Jeanne Liedtka, *Why Design Thinking Works*
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 2  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 3, 4  
+> **推荐阅读材料与参考资料**：
+> - PDD Ch. 3 (Real-Win-Worth-it 章节)
+> - Day: *Is It Real? Can We Win? Is It Worth Doing?* (HBR)
+> - *(选读)* Tim Brown: *Design Thinking* (HBR)
 
 ## TL;DR
 

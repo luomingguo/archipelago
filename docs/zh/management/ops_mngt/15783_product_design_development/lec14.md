@@ -8,9 +8,13 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # Lec 14 产品开发经济学（Product Development Economics）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 18  
-> 拓展参考：McKinsey & Co. *Cost of Delay Model*; Richard Brealey & Stewart Myers, *Principles of Corporate Finance*
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 16  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 18  
+> **推荐阅读材料与参考资料**：
+> - PDD Ch. 18: Product Development Economics
+> - 基础财务净现值（NPV）与敏感度分析模型
 
 ## TL;DR
 

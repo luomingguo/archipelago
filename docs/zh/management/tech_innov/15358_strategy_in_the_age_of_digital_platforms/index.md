@@ -1,26 +1,29 @@
 ---
-title: '15.358 数字平台时代的商业战略 (Strategy in the Age of Digital Platforms)'
+title: '15.358 数字平台时代的商业战略'
 type: course
-course: '15.358 数字平台时代的商业战略 (Strategy in the Age of Digital Platforms)'
+course: '15.358 数字平台时代的商业战略'
 course_id: '15.358'
 tags: [platform-strategy, digital-ecosystems, two-sided-markets, network-orchestration]
 status: stub
 source: 'https://ocw.mit.edu/courses/15-358-the-software-business-fall-2005/'
 ---
 
-# 15.358 数字平台时代的商业战略 (Strategy in the Age of Digital Platforms)
-
-> MIT Course 15 · Technology, Innovation, and Entrepreneurship · 技术、创新与创业 · 课号 15.358
-
+# 15.358 数字平台时代的商业战略
+> 15.358 Strategy in the Age of Digital Platforms
+> 常规开设
 ## TL;DR
-
 - 剖析软件、互联网与移动生态中平台商业模式的治理机制与竞争动态。
 - 解决平台冷启动的“鸡与蛋”悖论，设计双边多边市场的开放程度与 API 生态激励。
 - 平台所有者与生态应用开发者的竞合格局，应对围墙花园（Walled Garden）反垄断审查。
 
-## 课程简介 / Description
+## 课程介绍
 
-This subject is a seminar-style course aimed at anyone who is interested in founding a software company or working for a software company or company that uses software technology extensively as a senior manager, developer, or product/program manager. It is also appropriate for people interested in the industry or in working as an industry analyst. Many of the issues we discuss are highly relevant for companies whose businesses are heavily dependent on software, such as in e-business or financial services, or embedded software for industrial applications.
+### 先修课程
+- 15.900 or 15.902
+
+### 课程描述
+
+本课程探讨对管理者和创业者至关重要的战略概念和框架，例如产品战略与平台战略的区别，以及创新平台与交易平台（或混合型）商业模式的差异。课程将深入剖析催生新平台、新业务和新创公司的新型硬件和软件技术。主题可能包括：生成式人工智能作为一种新型创新平台，以及更广泛的人工智能/机器学习项目；零工/共享（*Gig/sharing*）经济项目；金融科技项目；以及量子计算、通信和生物技术领域的新型平台技术。
 
 ## 讲义 / Lecture Notes
 

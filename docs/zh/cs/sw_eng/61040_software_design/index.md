@@ -73,40 +73,6 @@ MIT 的计算机教学有着讲授科研原创方法的悠久传统，而这些�
   - **核心主题**：阐述**概念设计**（Concept Design）理论，系统探讨软件功能设计的本质——如何通过解耦、重用和清晰定义“概念”来消除软件中让人费解的交互缺陷，也是 6.104 课程核心设计思想的理论基石。
   - **出版信息**：由 Princeton University Press 于 2021 年出版。
 
-## 课程知识体系
-
-```mermaid
-flowchart TD
-    subgraph S1["阶段一：问题与边界"]
-        direction TB
-        A1["真实痛点与逆境创新"] --> A2["问题框架 (Problem Framing)"]
-        A2 --> A3["利益相关者与实证验证"]
-    end
-
-    subgraph S2["阶段二：概念设计核心"]
-        direction TB
-        B1["识别与定义概念 (Purpose & Principle)"] --> B2["状态建模与动作规约 (State & Actions)"]
-        B2 --> B3["正交分解与因果同步 (Sync / Reactions)"]
-        B3 --> B4["防范概念缺陷与隐式耦合"]
-    end
-
-    subgraph S3["阶段三：人机与 AI 架构"]
-        direction TB
-        C1["人机交互与心智模型"] --> C2["LLM 代码架构与上下文工程"]
-        C2 --> C3["Agentic AI 行为导轨 (Guiderails)"]
-        C3 --> C4["MCP 协议与结构化交互"]
-    end
-
-    subgraph S4["阶段四：全栈实现与验证"]
-        direction TB
-        D1["Bun + sync-engine 概念工程化"] --> D2["响应式前端与视觉排版"]
-        D2 --> D3["真实用户测试 (User Testing)"]
-        D3 --> D4["价值敏感设计 (VSD) 与反思实践"]
-    end
-
-    S1 --> S2 --> S3 --> S4
-```
-
 ### 概念设计方法论体系
 
 课程在官方资源中心梳理了 12 篇核心方法论文献，系统构建了从概念界定、规格书写到架构防错的完整理论基石：

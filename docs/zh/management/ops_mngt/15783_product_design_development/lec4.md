@@ -8,9 +8,14 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # Lec 4 敏捷开发过程（Agile Development Process）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 19  
-> 拓展参考：Scrum Alliance, *The Scrum Guide*; CoLab Software, *Agile for Hardware*; Steven Eppinger & Tyson Browning, *Design Structure Matrix Methods and Applications*
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 5  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 19  
+> **推荐阅读材料与参考资料**：
+> - PDD Ch. 19: Agile Project Management
+> - Scrum Alliance: *The Essence of Scrum*
+> - CoLab / Eppinger: *Agile for Hardware Development*
 
 ## TL;DR
 

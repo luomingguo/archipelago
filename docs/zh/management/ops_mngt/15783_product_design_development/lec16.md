@@ -8,9 +8,14 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # Lec 16 产品测试与战略转向（Product Testing and Strategic Pivots）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 9  
-> 拓展参考：Harvard Business School, *Airbnb Case Study*; Eric Ries, *The Lean Startup*; Sean Ellis, *Product-Market Fit Survey*
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 19  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 9  
+> **推荐阅读材料与参考资料**：
+> - BreakoutLearning 在线案例研讨：*Airbnb Case Study*
+> - PDD Ch. 9: Concept Testing
+> - 针对产品市场契合点（PMF）的假说验证与转向机制
 
 ## TL;DR
 

@@ -1,19 +1,20 @@
 ---
-title: 产品领导力 ｜ 产品设计与实现
+title: 产品领导力
 type: lecture
 lecture: 17
 tags: [product-leadership, cross-functional-teams, product-management, prioritization-frameworks, team-dynamics]
 status: complete
 source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
-# Lec 17 产品领导力
+# Lec 17 产品领导力（Product Leadership）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 19  
-> 拓展参考：
-> Productboard, *The Ultimate Guide to Product Management*;
-> Marty Cagan, *Inspired*;
-> Teresa Torres, *Continuous Discovery Habits*
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 21  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 19  
+> **推荐阅读材料与参考资料**：
+> - UpGrad: *Product Management Roles & Career Pathways*
+> - Productboard: *The Ultimate Guide to Product Management*
 
 ## TL;DR
 

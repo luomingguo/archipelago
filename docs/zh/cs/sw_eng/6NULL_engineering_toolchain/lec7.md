@@ -41,32 +41,6 @@ $$\hat{y} \sim \pi_\theta(\cdot \mid x)$$
 
 同时，模型拥有一个物理上不可逾越的硬边界——**上下文窗口（Context Window）**。不管是用户输入的提示词，还是模型自己生成的代码，都必须容纳在这一固定长度的 Token 数组内。
 
-### 工具调用（Tool-calling）与 Agent Harness 原理
-
-那么，一个只会预测下一个词的概率模型，究竟是如何操纵我们的电脑运行 Shell 命令并修改代码的？
-
-实际上，**驱动智能体的底层运行时框架（Agent Harness），用不到 200 行 Python 代码就可以完整实现**！其核心循环如下：
-
-```mermaid
-flowchart TD
-    User["用户输入目标任务"] --> Prompt["组装当前上下文 Prompt<br/>(系统指令 + 历史对话 + 可用工具声明)"]
-    Prompt --> Infer["调用 LLM 执行推理采样"]
-    Infer --> Check{"模型输出是否命中工具调用协议？"}
-    Check -->|"纯文本回复"| Done["渲染给人类，结束本轮交互"]
-    Check -->|"结构化工具调用请求<br/>(例如: run_command: pytest)"| Exec["Harness 拦截并在本地沙箱中执行工具"]
-    Exec --> Append["将工具返回的标准输出作为 Observation<br/>追加回 Prompt 尾部"]
-    Append --> Infer
-```
-
-在这个自闭环循环中：
-1. Harness 在向模型发送请求时，会在提示词中附带一段标准 JSON 模式（Schema），声明“你拥有 `read_file`、`edit_file`、`run_command` 三个工具”；
-2. 当模型判断当前需要运行测试时，它不会输出自然语言，而是输出一段特殊的标记字符串（如 `{"tool": "run_command", "args": {"cmd": "pytest"}}`）；
-3. Harness 捕获到这一标记后，**暂停模型推理**，在宿主机或安全沙箱中实际执行 `pytest`；
-4. 随后 Harness 将终端输出的真实测试报错信息（例如 `AssertionError: assert 42 == 0`）作为下一轮对话的系统输入塞回上下文；
-5. 模型重新看到真实的报错物理现实，从而在下一轮推理中自主决定打开文件修复缺陷！
-
-这就是所谓“自主性”的全部本质——**利用外部工具执行结果作为反馈信号驱动的自回归状态机**。
-
 ### 极简 Agent Harness 核心循环
 
 驱动智能体执行复杂工程操作的运行时宿主（Agent Harness），其核心调度状态机极其简洁，在概念上仅需约 200 行代码即可形式化表达：

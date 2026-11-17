@@ -8,9 +8,14 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # Lec 3 客户需求分析（Identifying Customer Needs）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 5  
-> 拓展参考：Dev Patnaik & Robert Becker, *Needfinding*; Abbie Griffin & John Hauser, *The Voice of the Customer*; Clayton Christensen, *Jobs to be Done*
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 3
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 5
+> **推荐阅读材料与参考资料**：
+> - PDD Ch. 5: Identifying Customer Needs
+> - Parallel (2026): *What Are Jobs-To-Be-Done (JTBD)*
+> - Patnaik: *Needfinding: The Why and How*
 
 ## TL;DR
 
@@ -39,7 +44,7 @@ flowchart TD
     S2 --> S3["步骤 3: 组织需求的层级结构<br/>(亲和图 / 初级-次级-三级需求)"]
     S3 --> S4["步骤 4: 确定需求的相对重要性<br/>(客户打分 / 层次分析 AHP)"]
     S4 --> S5["步骤 5: 审视结果与流程复盘<br/>(检查极端场景与潜在遗漏)"]
-    
+
     style S1 fill:#f4f4f5,stroke:#71717a
     style S2 fill:#dbeafe,stroke:#2563eb,stroke-width:2px
     style S3 fill:#f4f4f5,stroke:#71717a
@@ -52,7 +57,7 @@ flowchart TD
 获取客户数据的主要途径包括一对一访谈（One-on-One Interviews）、焦点小组（Focus Groups）与就地观察探查（Contextual Inquiry / Observation）。在硬件和创新消费品开发中，**一对一就地访谈结合实地观察**是最具信息密度的方法。
 
 - **情境调查（Contextual Inquiry）：** 必须在产品的真实使用环境（如用户的车库、厨房、施工工地）进行，而不是把用户请到单向玻璃会议室。现场环境中的尘土、狭窄空间、光照不足等物理约束，会直接激发用户的真实抱怨。
-- **铅质用户与极端用户（Lead & Extreme Users）：** 领先用户（Lead Users）通常比大众市场早数月甚至数年感知到某种极端痛点，并已经自行改装工具进行应对；极端用户（如极度手残者、重度依赖者、儿童或行动不便老人）能将普通用户忽略的微小摩擦力放大十倍，是激发结构创新的宝矿。
+- **领先用户与特殊用户（Lead & Extreme Users）：** 领先用户（Lead Users）通常比大众市场早数月甚至数年感知到某种极端痛点，并已经自行改装工具进行应对；极端用户（如极度手残者、重度依赖者、儿童或行动不便老人）能将普通用户忽略的微小摩擦力放大十倍，是激发结构创新的宝矿。
 
 ::: theorem [Griffin-Hauser 访谈收益递减定律 (Sample Size Rule)]
 MIT 教授 Abbie Griffin 与 John R. Hauser 在经典论文 *The Voice of the Customer* 中证实：在单一细分市场中，对 10 到 20 名目标用户进行充分的结构化深度访谈，就足以揭示该市场 80% 至 90% 的潜在需求。此后每增加一次访谈所能捕获的新需求数量呈指数级递减。
@@ -70,7 +75,7 @@ MIT 教授 Abbie Griffin 与 John R. Hauser 在经典论文 *The Voice of the Cu
 5. **严禁使用“必须”或“应该”（Avoid 'Must' and 'Should'）：** 所有需求均属于待权衡项，赋予绝对化措辞会在后续工程权衡中造成人为僵化。
 :::
 
-::: example [从访谈原话到规范需求陈述的逐条转译示范]
+
 下表展示了团队在开发一款便携式电钻时，如何将用户的口头抱怨转译为合格的需求陈述：
 
 | 用户现场原始记录（Raw Data） | 错误转译范例（反面教材） | 规范需求陈述（遵循五大原则） | 纠错说明 |
@@ -79,8 +84,6 @@ MIT 教授 Abbie Griffin 与 John R. Hauser 在经典论文 *The Voice of the Cu
 | “天黑在配电箱里修电，单手根本摸不着螺丝眼。” | 电钻前部必须装一个高亮 LED 探照灯。（错误） | 电钻照亮紧固件及其紧邻的作业工作面。 | 错误范例使用了禁忌词“必须”并指定了“LED”；规范语句聚焦照明属性。 |
 | “换批头太费劲了，还得找那个小扳手，老丢。” | 电钻不要让用户丢扳手。（错误） | 电钻无需专用独立工具即可快速更换作业夹头。 | 错误范例为无效否定句；规范语句使用肯定句阐述免工具更换能力。 |
 | “电池用一会儿就没电了，关键充得太慢了。” | 电钻电池很大。（错误） | 电钻单次充满电后支持高负荷连续作业数小时；电钻支持快速补充电能。 | 错误范例缺乏特异性；规范语句将其拆解为续航容量与补能速度两个独立属性。 |
-:::
-
 ### 3. 步骤 3：构建三级需求树（Organize into Hierarchy）
 
 一次全面的调研通常会产出 50 到 200 条具体的需求陈述。团队需要运用**亲和图法（Affinity Diagramming）**，将这些散乱的便签按语义亲和性进行聚类分组：
@@ -127,13 +130,13 @@ MIT 教授 Abbie Griffin 与 John R. Hauser 在经典论文 *The Voice of the Cu
       ▲
       │                 [魅力型需求 / 潜在需求] (超出预期，带来极大惊喜)
  极高 │                       /
-      │                      / 
+      │                      /
       │                     /    [期望型需求] (性能越强，满意度线性增加)
       │                    /   /
  默认 │                   /  /
  ───┼──────────────────/─/──────────────────────► 物理实现程度 (Execution)
       │                / /
-      │               // 
+      │               //
  极低 │              /   [基本型需求] (理所应当，不满足则极其愤怒)
       ▼
 ```

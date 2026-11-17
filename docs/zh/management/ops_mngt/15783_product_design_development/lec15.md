@@ -8,9 +8,14 @@ source: 'https://studylib.net/doc/28287998/syllabuspdd-spring-2026--1-'
 ---
 # Lec 15 产品成本与商业模式（Product Cost and Business Models）
 
-> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026  
-> 核心教材：*Product Design and Development* (8th Edition) Chapter 13  
-> 拓展参考：Alexander Osterwalder, *Business Model Generation*; Robin Cooper & Regine Slagmulder, *Target Costing*; WAZER Desktop Waterjet Case Study
+> MIT 15.783J / 2.739J · Product Design and Development · Spring 2026
+>
+> **对应讲次**：Class 17  
+> **核心教材**：*Product Design and Development* (8th Edition) Ch. 13  
+> **推荐阅读材料与参考资料**：
+> - Cooper & Slagmulder: *Develop Products with Target Costing*
+> - Ovans (HBR): *What Is a Business Model?*
+> - Strategyzer: *The Business Model Canvas*
 
 ## TL;DR
 
