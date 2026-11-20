@@ -223,10 +223,6 @@ for (const file of files) {
       issues.push(issue('required', alias ? 'bad-tldr-heading' : 'no-tldr', local, alias ? '标题必须精确写成 ## TL;DR' : '缺 ## TL;DR'))
     }
   }
-
-  if (fm.status === 'complete' && expected !== 'course' && !/^##\s*我的理解\s*$/m.test(body) && !/:::\s*insight\b/.test(body)) {
-    issues.push(issue('recommendation', 'no-insight', local, 'complete 页面缺作者自己的理解或判断'))
-  }
 }
 
 const countsBySeverity = { error: 0, required: 0, recommendation: 0 }

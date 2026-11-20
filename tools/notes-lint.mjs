@@ -190,9 +190,6 @@ async function lintFile(file, docsDir) {
 
   // ── 必填区块 ─────────────────────────────────────────────────
   if (fm?.status === 'complete') {
-    if (meta.inferredType !== 'course' && !/^##\s*我的理解\s*$/m.test(body) && !/:::\s*insight/.test(body)) {
-      out.push(f('warning', 'no-insight', '缺「## 我的理解」区块'))
-    }
     if (meta.isContentPage && h2s.length === 0) {
       out.push(f('error', 'no-h2', '没有任何 H2，无法按章节分块'))
     }

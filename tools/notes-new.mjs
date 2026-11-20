@@ -178,12 +178,6 @@ ${crumb}
 - （适用边界，以及它连接到什么知识。）
 
 ${bodies[noteType]}
-
-## 我的理解
-
-::: insight
-（写自己的判断：为什么这样设计、它与什么概念相通，或原先的理解哪里错了。）
-:::
 `
 
 await fs.mkdir(targetDir, { recursive: true })

@@ -39,7 +39,7 @@ Treat the external note body as the latest content unless the user says otherwis
 - carry over every substantive source section, example, code block, formula, table, image reference, and personal observation;
 - add the required TL;DR and honest metadata without inventing missing course content;
 - use `status: draft` when the source ends mid-topic or contains a real unfinished placeholder;
-- keep quality recommendations separate from mandatory findings, and do not add filler merely to silence `code-heavy` or `no-insight` advice.
+- keep quality recommendations separate from mandatory findings, and do not add filler merely to silence `code-heavy` advice.
 
 For a whole course, read and follow `.agents/skills/course-notes-audit/SKILL.md`. Run its deterministic audit and the repository content linter before and after the merge. A semantic comparison may ignore expected frontmatter, whitespace, TL;DR, and code-fence-language changes, but it must still demonstrate that no source content was lost.
 
