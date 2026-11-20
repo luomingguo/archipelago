@@ -21,8 +21,6 @@ source: https://designftw.mit.edu/lectures/
 - **舒适阅读的几何铁律**：用可变字体，空间占用小； line height 1. 5 ～ 2 之间；要视觉平衡，就把大号文字调细一点，把小号文字调粗一点；将单行字符数严格限制在 80 个西文字符（或 中文，则不应超过 40 个）
 - **现代响应式排版工程**：运用 CSS `clamp()` 建立平滑缩放的流式字阶，配合 `@font-face` 与 `font-display: swap` 消除 FOIT 闪烁，兼顾视觉优雅与极速首屏性能。
 
-
-
 ## 课程组织
 
 - 字体（*typeface*）与字型（*font*）， 样式（*style*）、字重（*weight*）
@@ -32,7 +30,6 @@ source: https://designftw.mit.edu/lectures/
 - 对齐（*alignment*）与布局
 - 色彩与对比度（*contrast*）
 - 响应式排版
-
 
 ## 一、字体
 
@@ -61,27 +58,21 @@ source: https://designftw.mit.edu/lectures/
 
 通常，人们在看到正确使用字体的原则被严重违背的案例时，才能更好地理解使用合适字体的重要性。
 
-![官方材料字体违和示例](https://designftw.mit.edu/lectures/typography/img/inappropriate-comic-sans-1.jpg)
+![官方材料字体违和示例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/inappropriate-comic-sans-1.jpg)
 
 case 1: 官方机构（如警察局、医院、法院）在发布声明或指南时，通常需要借助中性、稳重、结构严谨的无衬线体（如 Helvetica、Arial、Frutiger）或衬线体（如 Times New Roman）来建立专业、可靠、值得信赖的形象。过于随意的圆润手写体消解了公文应有的庄重感，容易让受众在潜意识里质疑信息的正式程度与机构的专业水准。
 
-![欧洲核子研究中心（CERN）发现 上帝粒子（希格斯玻色子）的官方演示文稿](https://designftw.mit.edu/lectures/typography/img/inappropriate-comic-sans-2.jpg)
+![欧洲核子研究中心（CERN）发现 上帝粒子（希格斯玻色子）的官方演示文稿](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/inappropriate-comic-sans-2.jpg)
 
 Case 2: 2012 年 7 月 4 日，CERN 召开全球瞩目的新闻发布会，宣布发现了物理学界苦寻半个世纪的**希格斯玻色子（Higgs Boson）**。这是人类科学史上的里程碑时刻，耗资数十亿美元的大型强子对撞机（LHC）正是为此而建。使用了“臭名昭著”的 Comic Sans 字体。原本代表人类智慧巅峰、极其精密严谨的粒子物理学突破，在屏幕上一瞬间变得像**小学五年级的科学手抄报**。
 
-
-
 ### 1.3 衬线 vs. 无衬线
 
-
-
-![衬线 vs. 无衬线](/Users/mac/Library/Application Support/typora-user-images/image-20261119112633722.png)
+![衬线 vs. 无衬线](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119112633722.png)
 
 “serif（衬线）”字体是指带有衬线的字体，**历史更悠久，更具正式感**。
 
 而“sans-serif（无衬线）”字体则是指没有衬线的字体（注：“sans”在法语中意为“无/没有”）， 兴起于 1920 年代及以后，更具**现代感**。
-
-
 
 > 衬线字体更容易阅读吗？
 
@@ -91,25 +82,17 @@ Case 2: 2012 年 7 月 4 日，CERN 召开全球瞩目的新闻发布会，宣�
 
 早期研究发现读者更偏好衬线字体。 **近期研究表明，用户在线阅读正文时更偏好无衬线字体。** **在几乎所有研究中，读者的偏好或主观感知的易读性与实际阅读表现并不一致。**
 
-
-
-![华盛顿邮报示例](https://designftw.mit.edu/lectures/typography/img/washington-post.png)华盛顿邮报新闻标题采用经典的**衬线体**（传递权威与传统新闻感），而下方的文章摘要和正文则采用简洁的**无衬线体**（提升屏幕阅读体验)。
+![华盛顿邮报示例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/washington-post.png)华盛顿邮报新闻标题采用经典的**衬线体**（传递权威与传统新闻感），而下方的文章摘要和正文则采用简洁的**无衬线体**（提升屏幕阅读体验)。
 
 相反，A List Apart 采用现代利落的**无衬线体**，而下方的正文段落则采用经典易读的**衬线体**，形成与上一页相反的经典搭配。
 
-![A List Apart示例](https://designftw.mit.edu/lectures/typography/img/ala.png)
-
-
+![A List Apart示例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/ala.png)
 
 ### 1.4 字重、字形
 
+![等宽字体 VS 变宽字体](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119113721042.png)
 
-
-![等宽字体 VS 变宽字体](/Users/mac/Library/Application Support/typora-user-images/image-20261119113721042.png)
-
-
-
-![字体族、字重、斜体示例](/Users/mac/Library/Application Support/typora-user-images/image-20261119113756245.png)
+![字体族、字重、斜体示例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119113756245.png)
 
 ## 二、字体技术
 
@@ -126,7 +109,6 @@ h1 {
 }
 ```
 
-
 | **扩展名（Extension）**   | **说明**                                                     |
 | ------------------------- | ------------------------------------------------------------ |
 | **`\*.woff`, `\*.woff2`** | **Web 开放字体格式文件（Web Open Font Format file）**：专为网络设计的压缩字体文件。可用时应优先选用。WOFF 2 提供更好的压缩率。 |
@@ -134,17 +116,12 @@ h1 {
 | **`\*.otc`, `\*.ttc`**    | **OpenType/TrueType 字体合集**：将多个字面（字重/样式）打包在同一个文件中。目前 `@font-face` 尚不支持，但已有相关支持计划。 |
 | **`\*.eot`**              | **嵌入式 OpenType 文件（Embedded OpenType file）**：较老旧的格式，专为 IE 浏览器设计。具有历史意义，但在今天已无实际用途。 |
 
-
 ### 2.1 字符
 
 字符（*Character*）是书面语言中具有语义价值的最小组成部分。字符本质上是编码点（codepoints）。
 字形（*Glyph*）是是字符的具体形状、设计或视觉呈现形式。
 
-![字符 vs 字形](/Users/mac/Library/Application Support/typora-user-images/image-20261119115514114.png)
-
-
-
-
+![字符 vs 字形](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119115514114.png)
 
 ### 2.2 连字
 
@@ -163,9 +140,7 @@ feature liga {
     sub f i by f_i;       /* 将连续的 f i 替换为连字字形 f_i */
 } liga;
 ```
-![liga连字效果](/Users/mac/Library/Application Support/typora-user-images/image-20261119122358938.png)
-
-
+![liga连字效果](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119122358938.png)
 
 ### 2.3 标点符号
 
@@ -177,8 +152,6 @@ feature liga {
 - **短破折号（en dashes, `–`）**：用于表示范围（如时间、数字区间）
 - **长破折号（em dashes, `—`）**：用于在句子结构中制造强烈的语义停顿或转折
 
-
-
 ### 2.4 可变字体
 
 *在数字字体刚起步时，每个字符都是由位图（bitmap）构成的，因此每一个字号都必须单独绘制。如果你强行放大某个字符，而不是使用专门为大字号绘制的版本，就会看到明显的像素颗粒。这迫使字体设计师不得不做海量的重复劳动；而如果你需要一个未被预先绘制的字号，那就只能自认倒霉了。*
@@ -187,13 +160,13 @@ feature liga {
 
 *可变字体（Variable fonts）则是一场类似的革命——它将原本离散、需要分别绘制并独立存储的字重与字宽样式，整合进了一个单一、灵活的字体设计之中*
 
-![Tofino 字体家族](/Users/mac/Library/Application Support/typora-user-images/image-20261119141926056.png)
+![Tofino 字体家族](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119141926056.png)
 
 在传统静态字体时代，完整引入这样一个包含不同字宽和字重组合的字体家族，需要加载多达 37 个独立的字体文件。37 个文件，每个约 ~45KB（总计 1.5 MB），是离散的设计空间。
 
 使用可变字体，只需要1 个文件，沿设计轴（design axes）进行插值计算，每条轴约 ~90KB（总计 180 KB），连续的设计空间。在可变字体中，“Deltas（增量）”指的是字形轮廓上各个锚点从默认状态向极值状态移动的坐标偏移量；当沿着“字重轴”调节粗细时，系统正是根据这些预设的锚点位移增量实时插值计算出新的轮廓形态。
 
-![可变字体的的增量](/Users/mac/Library/Application Support/typora-user-images/image-20261119142323047.png)
+![可变字体的的增量](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119142323047.png)
 
 已注册的可变轴：
 
@@ -207,9 +180,7 @@ feature liga {
 
 除了常见的字重 `wght` 外，Dunbar 可变字体最著名的特色是拥有自定义的可变轴——**x 高度（x-height）**，可以让小写字母的 x 高度在矮胖的文本体与高挑的展示体之间平滑过渡。
 
-![Dunbar variable font](https://designftw.mit.edu/lectures/typography/img/dunbar.gif)
-
-
+![Dunbar variable font](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/dunbar.gif)
 
 举个例子
 
@@ -229,25 +200,15 @@ h1 {
 }
 ```
 
-
-
-
-
 🔥 **如果你想让不同字号的文字在视觉上\*感觉\*粗细一致，就把大号文字调细一点，把小号文字调粗一点。**
 
-![Tweet: “If you want text of different sizes to *feel* like the same weight, make larger text thinner and smaller text bolder.”](https://designftw.mit.edu/lectures/typography/img/text-different-sizes.png)
+![Tweet: “If you want text of different sizes to *feel* like the same weight, make larger text thinner and smaller text bolder.”](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/text-different-sizes.png)
 
-
-
-![通过调节font-weight弥合font-size，达到视觉平衡](/Users/mac/Library/Application Support/typora-user-images/image-20261119143439253.png)
-
-
+![通过调节font-weight弥合font-size，达到视觉平衡](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119143439253.png)
 
 *通常情况下，专业字体都会为小型大写字母（small caps）、上标（superscripts）和下标（subscripts）专门绘制独立字形。这些字形并不仅仅是常规字形的简单缩小版（简单缩小只需调整字号即可），而是经过专门设计、拥有相对更粗笔画的字形，以便与正常大小的主体文字搭配时看起来协调统一。*
 
 *如果字体没有提供这类专用字形，而我们仅仅通过调小字号（如这里把 `<abbr>` 设为 `80%`、把 `<sup>` 设为 `50%`）来生硬模拟小型大写字母和上标，排版效果就会显得非常草率——因为字号缩放会导致它们的笔画粗细变得极不均匀（例如 `[citation needed]` 显得过细发虚）。而可变字重字体（Variable weight fonts）同样可以帮助我们完美解决这一问题（只需单独提高缩略词和上标的 `font-weight` 即可）。*
-
-
 
 ```html
 <p><abbr>MIT</abbr>, Cambridge, <abbr>MA</abbr>
@@ -270,19 +231,9 @@ sup {
 }
 ```
 
-
-
-
-
 **[v-fonts.com](https://v-fonts.com/)** 是设计师和前端开发者最常用的**可变字体（Variable Fonts）在线资源库与交互测试平台**，
 
-
-
 ### 2.5 多色字体
-
-
-
-
 
 ## 三、字符与行间距
 
@@ -296,11 +247,11 @@ sup {
 
 - **行距（Leading）**：文本行（基线）之间的垂直间距
 
-![kerning insignt](/Users/mac/Library/Application Support/typora-user-images/image-20261119123725849.png)
+![kerning insignt](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119123725849.png)
 
 [字偶距调整（Kerning）](https://en.wikipedia.org/wiki/Kerning)是指调整单个字符对之间间距的过程，以达到视觉上和谐美观的效果。
 
-![with VS without kerning](/Users/mac/Library/Application Support/typora-user-images/image-20261119123849109.png)
+![with VS without kerning](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119123849109.png)
 
 请注意，字偶距（kerning）与字距（letter-spacing，在传统印刷排印中称为 **tracking**）并不相同，后者会无差别地作用于所有字符之间。
 
@@ -308,13 +259,9 @@ sup {
 
 - **[letter-spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing:)**（控制整体字距）：当前为 `0em`（可调节正负值来统一增减所有字符之间的间距）。
 
-
-
 ### 3.2 字体度量指标
 
-![字体的指标](/Users/mac/Library/Application Support/typora-user-images/image-20261119130746709.png)
-
-
+![字体的指标](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119130746709.png)
 
 **图示术语（以单词 `Sphinx` 为例，从上到下）：**
 
@@ -329,7 +276,7 @@ sup {
 
 足够的行间距对于在垂直维度上辨识词形是必不可少的，但过大的行间距又会让眼睛更难回溯定位到下一行的开头。行间距也被称为行距（leading，发音类似于“ledding”）。行距是指相邻两行基线之间的距离。字号和行距两者都非常重要。
 
-![line-height = 1示例](/Users/mac/Library/Application Support/typora-user-images/image-20261119131222767.png)
+![line-height = 1示例](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119131222767.png)
 
 ```css
 line-height: 1;
@@ -337,13 +284,9 @@ line-height: 1;
 
 行高当前设置为 `1`（无单位倍数，即行高等于字号本身。在上方演示文本中可以看到，当设为 `1` 时，上一行的降部如 `g`、`p` 和下一行的升部如 `h`、`l` 几乎贴在一起，显得非常拥挤）。
 
-
-
-
-
 患有某些认知障碍的人群在阅读行间距过近的文本时会非常吃力。**[Web 内容无障碍指南](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html)**建议行高（line height）至少为 1.5，甚至可以高达 2！
 
-![css相对长度单位](/Users/mac/Library/Application Support/typora-user-images/image-20261119131628348.png)
+![css相对长度单位](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119131628348.png)
 
 通过色块直观对比三种基于字体的相对单位：
 
@@ -353,8 +296,6 @@ line-height: 1;
 
 - **$\leftrightarrow$ `1ch`（蓝色竖条）**：等于当前字体中数字 **`0`（零）的字形前进宽度**（图中蓝色竖条的宽度正好精准包住了数字 `0` 的宽度，这也是前面提到的“单行 45–75 个字符”在 CSS 中常直接用 `max-width: 65ch` 来实现的原理）。
 
-
-
 对于存在某些阅读障碍或视力障碍的人群而言，过长的文本行可能会成为一道巨大的障碍。他们很难在阅读时保持专注位置并跟上文本的流畅度，过短又会破坏完整的语法语义停顿与思维心流。
 
 Web 内容无障碍指南建议**每行文本不应超过 80 个字符或字形（如果是中日韩 CJK 文字，则不应超过 40 个）**，这里的‘字形’是指该文本书写系统中的基本书写单位。
@@ -363,21 +304,15 @@ Web 内容无障碍指南建议**每行文本不应超过 80 个字符或字形�
 max-width: 80em;
 ```
 
-
-
 两端对齐（*Justified alignment*）能够显著提升版面效果，因为它有助于在左右两侧同时贯彻对齐的设计原则。然而，如果处理得草率且不够用心，它也会彻底破坏版面。在没有断字（*hyphenation*）处理的情况下，单词之间往往会出现极不均匀的空隙，产生令人不适的“受困留白”（trapped space / 视觉孤岛，排版中常称为“文字河流”）。行宽越窄，这个问题就越严重。如果在 HTML 中正确声明了语言属性，CSS 可以通过 `hyphens` 属性提供基础的自动断字功能。**但在极窄的行宽下应完全避免使用两端对齐——哪怕开启再多断字也救不了你**。
-
-
 
 窄行宽、左对齐、自动断字效果
 
-![窄行宽下左对齐，自动段字](/Users/mac/Library/Application Support/typora-user-images/image-20261119133148144.png)
+![窄行宽下左对齐，自动段字](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119133148144.png)
 
 窄行款、中间对齐、不自动断字效果
 
-![窄行款下中间对齐](/Users/mac/Library/Application Support/typora-user-images/image-20261119133105652.png)
-
-
+![窄行款下中间对齐](https://tc-1258979383.cos.ap-guangzhou.myqcloud.com/image-20261119133105652.png)
 
 ## 四、 响应式流式排版
 

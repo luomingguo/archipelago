@@ -44,7 +44,7 @@ The linter accepts a directory and recursively checks its Markdown files. Separa
 
 - blocking content errors;
 - mandatory migration rules such as `no-type`, `no-tags` (non-concept only), `no-tldr`, `concept-structure`, `concept-incomplete`, `course-metadata`, and `repeated-course-metadata`;
-- quality recommendations such as `code-heavy`, `vague-heading`, `image-alt`, and `no-insight`.
+- quality recommendations such as `code-heavy`, `vague-heading`, and `image-alt`.
 
 Never classify legacy length or hierarchy rules such as `long-section`, `short-section`, `too-short`, `empty-section`, `heading-skip`, or `deep-heading` as findings; they are outside the current content contract.
 
